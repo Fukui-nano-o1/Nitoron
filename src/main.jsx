@@ -329,7 +329,11 @@ function App() {
       </div>
     </main>
 
-    <nav className="mobile-nav">{PAGES.map((item) => <button key={item.id} className={active === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><span>{item.icon}</span>{item.label.slice(0, 4)}</button>)}<button onClick={openNew}><span>＋</span>新規</button></nav>
+    <nav className="mobile-nav">
+      {PAGES.map((item) => <button key={item.id} className={active === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><span>{item.icon}</span>{item.label.slice(0, 4)}</button>)}
+      <button onClick={() => setShowSearch(true)}><span className="mobile-nav-ico">{Icon.search}</span>検索</button>
+      <button onClick={openNew}><span className="mobile-nav-ico plus">{Icon.plus}</span>新規</button>
+    </nav>
     {editorNote && <NoteEditor note={editorNote} onPatch={(p) => patchNote(editorNote.id, p)} onClose={closeEditor} onDelete={() => { removeNote(editorNote.id); setEditorId(null) }} />}
     {showSearch && <Search query={query} setQuery={setQuery} items={visible} onClose={() => setShowSearch(false)} onPick={(item) => { setShowSearch(false); openNote(item.id) }} />}
   </div>
