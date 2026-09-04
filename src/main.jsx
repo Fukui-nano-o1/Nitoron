@@ -13,9 +13,9 @@ const initialNotes = [
 ]
 
 const PAGES = [
-  { id: 'home', icon: '🏠', label: 'ホーム', title: 'ホーム', cover: 'linear-gradient(120deg,#d9e8dc,#eef3e6 55%,#f6f1e3)' },
-  { id: 'notes', icon: '📝', label: 'メモ', title: 'メモ', cover: 'linear-gradient(120deg,#cfe3d8,#dcebe2 50%,#eef5ec)' },
-  { id: 'report', icon: '📊', label: 'レポート', title: 'レポート', cover: 'linear-gradient(120deg,#e3dccf,#efe9da 55%,#f7f4ea)' },
+  { id: 'home', art: 'home', label: 'ホーム', title: 'ホーム', cover: 'linear-gradient(120deg,#d9e8dc,#eef3e6 55%,#f6f1e3)' },
+  { id: 'notes', art: 'memo', label: 'メモ', title: 'メモ', cover: 'linear-gradient(120deg,#cfe3d8,#dcebe2 50%,#eef5ec)' },
+  { id: 'report', art: 'report', label: 'レポート', title: 'レポート', cover: 'linear-gradient(120deg,#e3dccf,#efe9da 55%,#f7f4ea)' },
 ]
 
 const TYPE_COLORS = { 'メモ': 'tag-blue', 'アイデア': 'tag-yellow', 'タスク': 'tag-green' }
@@ -45,6 +45,81 @@ const Icon = {
   check: <svg viewBox="0 0 16 16" width="12" height="12"><path fill="currentColor" d="M13.53 4.22a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l2.47 2.47 5.97-5.97a.75.75 0 0 1 1.06 0Z"/></svg>,
 }
 
+/* ---------- Hand-drawn duotone artwork (Nitoron's own icon language) ---------- */
+
+const INK = '#37352f', GRN = '#4d9e68', GRNL = '#cfe8d6', YEL = '#f2ce74', CRM = '#faf6ec'
+const artProps = (size) => ({ width: size, height: size, viewBox: '0 0 48 48', 'aria-hidden': true })
+
+const Art = {
+  sprout: ({ size = 24 }) => <svg {...artProps(size)}>
+    <path d="M24 42 C24 34 24 29 24 23" stroke={INK} strokeWidth="2.8" strokeLinecap="round" fill="none" />
+    <path d="M23 25 C14 25 9.5 19 9 11.5 C18 12 23 17 23.5 25 Z" fill={GRNL} stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
+    <path d="M24.5 21 C25 12.5 30 7.5 39 7 C38.5 15 33 20.5 24.5 21 Z" fill={GRN} stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
+    <path d="M15 42 h18" stroke={INK} strokeWidth="2.8" strokeLinecap="round" />
+  </svg>,
+  home: ({ size = 24 }) => <svg {...artProps(size)}>
+    <rect x="10" y="21" width="28" height="21" rx="2" fill={CRM} stroke={INK} strokeWidth="2.6" />
+    <path d="M5 23 L24 6 L43 23 Z" fill={GRNL} stroke={INK} strokeWidth="2.6" strokeLinejoin="round" />
+    <rect x="20" y="30" width="8" height="12" rx="3.5" fill={GRN} stroke={INK} strokeWidth="2.4" />
+    <path d="M24 6 C24 3.5 26 2 28.5 2 C28.5 4.5 26.5 6 24 6 Z" fill={GRN} stroke={INK} strokeWidth="2" strokeLinejoin="round" />
+  </svg>,
+  memo: ({ size = 24 }) => <svg {...artProps(size)}>
+    <rect x="7" y="5" width="26" height="38" rx="3" fill="#fff" stroke={INK} strokeWidth="2.6" />
+    <path d="M12 13 h16 M12 19 h16 M12 25 h9" stroke={GRNL} strokeWidth="2.6" strokeLinecap="round" />
+    <path d="M22 33 L34 21 L40 27 L28 39 Z" fill={YEL} stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
+    <path d="M34 21 L38 17 L44 23 L40 27 Z" fill={GRN} stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
+    <path d="M22 33 L28 39 L19 42 Z" fill={CRM} stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
+  </svg>,
+  report: ({ size = 24 }) => <svg {...artProps(size)}>
+    <path d="M7 42 H41" stroke={INK} strokeWidth="2.8" strokeLinecap="round" />
+    <rect x="10" y="28" width="7.5" height="14" fill={GRNL} stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
+    <rect x="20.5" y="21" width="7.5" height="21" fill={YEL} stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
+    <rect x="31" y="13" width="7.5" height="29" fill={GRN} stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
+    <path d="M35 13 C35 7.5 38.5 5 43 5 C43 9.5 40 13 35 13 Z" fill={GRNL} stroke={INK} strokeWidth="2.2" strokeLinejoin="round" />
+  </svg>,
+  doc: ({ size = 24 }) => <svg {...artProps(size)}>
+    <path d="M11 7 H28 L37 16 V41 H11 Z" fill="#fff" stroke={INK} strokeWidth="2.6" strokeLinejoin="round" />
+    <path d="M28 7 V16 H37" fill={GRNL} stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
+    <path d="M16 24 h16 M16 30 h16 M16 36 h9" stroke={GRNL} strokeWidth="2.6" strokeLinecap="round" />
+  </svg>,
+  rocket: ({ size = 24 }) => <svg {...artProps(size)}>
+    <path d="M24 4 C30 9 32 17 32 25 L24 33 L16 25 C16 17 18 9 24 4 Z" fill={CRM} stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
+    <circle cx="24" cy="17" r="4.2" fill={GRNL} stroke={INK} strokeWidth="2.2" />
+    <path d="M16 25 L9 33 L17 32 Z" fill={GRN} stroke={INK} strokeWidth="2.2" strokeLinejoin="round" />
+    <path d="M32 25 L39 33 L31 32 Z" fill={GRN} stroke={INK} strokeWidth="2.2" strokeLinejoin="round" />
+    <path d="M24 34 C26.5 37.5 26.5 40.5 24 44 C21.5 40.5 21.5 37.5 24 34 Z" fill={YEL} stroke={INK} strokeWidth="2.2" strokeLinejoin="round" />
+  </svg>,
+  folder: ({ size = 24 }) => <svg {...artProps(size)}>
+    <path d="M6 13 a3 3 0 0 1 3 -3 h9 l4 4 h17 a3 3 0 0 1 3 3 v18 a3 3 0 0 1 -3 3 H9 a3 3 0 0 1 -3 -3 Z" fill={GRNL} stroke={INK} strokeWidth="2.6" strokeLinejoin="round" />
+    <path d="M24 33 C24 28.5 24 26.5 24 24.5 M23.3 26 C19 26 16.7 23 16.5 19 C21 19.2 23.2 22 23.3 26 Z M24.7 24 C25 19.8 27.5 17.3 32 17 C31.7 21.3 29 23.8 24.7 24 Z" fill={GRN} stroke={INK} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>,
+  keyboard: ({ size = 24 }) => <svg {...artProps(size)}>
+    <rect x="5" y="13" width="38" height="22" rx="4" fill="#fff" stroke={INK} strokeWidth="2.6" />
+    <path d="M11 20 h3 M18 20 h3 M25 20 h3 M32 20 h3 M11 26 h3 M18 26 h3 M25 26 h3 M32 26 h3" stroke={GRN} strokeWidth="2.8" strokeLinecap="round" />
+    <path d="M16 31 h16" stroke={GRNL} strokeWidth="3" strokeLinecap="round" />
+  </svg>,
+  bulb: ({ size = 24 }) => <svg {...artProps(size)}>
+    <path d="M24 4 a12.5 12.5 0 0 1 7.3 22.6 c-1.6 1.2 -2.3 2.5 -2.3 4.4 h-10 c0 -1.9 -.7 -3.2 -2.3 -4.4 A12.5 12.5 0 0 1 24 4 Z" fill={YEL} stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
+    <path d="M24 31 V22 M23.4 24 C20.2 24 18.5 21.8 18.4 18.8 C21.7 19 23.3 21 23.4 24 Z" fill={GRN} stroke={INK} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M20 35 h8 M20.5 39 h7" stroke={INK} strokeWidth="2.4" strokeLinecap="round" />
+  </svg>,
+  megaphone: ({ size = 24 }) => <svg {...artProps(size)}>
+    <path d="M12 19 L30 10 V38 L12 29 Z" fill={GRNL} stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
+    <rect x="5" y="19" width="7" height="10" rx="2" fill={GRN} stroke={INK} strokeWidth="2.4" />
+    <path d="M34 18 a8.5 8.5 0 0 1 0 12 M38.5 14 a15 15 0 0 1 0 20" stroke={INK} strokeWidth="2.4" strokeLinecap="round" fill="none" />
+  </svg>,
+  smile: ({ size = 24 }) => <svg {...artProps(size)}>
+    <circle cx="24" cy="24" r="17" fill={YEL} stroke={INK} strokeWidth="2.6" />
+    <circle cx="18" cy="21" r="1.9" fill={INK} /><circle cx="30" cy="21" r="1.9" fill={INK} />
+    <path d="M16.5 28 a8.5 6.5 0 0 0 15 0" stroke={INK} strokeWidth="2.4" strokeLinecap="round" fill="none" />
+  </svg>,
+  picture: ({ size = 24 }) => <svg {...artProps(size)}>
+    <rect x="6" y="9" width="36" height="30" rx="3" fill="#fff" stroke={INK} strokeWidth="2.6" />
+    <circle cx="16.5" cy="18.5" r="4" fill={YEL} stroke={INK} strokeWidth="2.2" />
+    <path d="M8.5 36 L19 25 L25 31 L32 23 L39.5 36 Z" fill={GRNL} stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
+  </svg>,
+}
+
 /* ---------- Block editor (Notion-style input) ---------- */
 
 const SLASH_ITEMS = [
@@ -56,7 +131,7 @@ const SLASH_ITEMS = [
   { type: 'number', label: '番号付きリスト', desc: '番号付きのリストを作成します。', badge: '1.', keys: 'number list' },
   { type: 'todo', label: 'ToDoリスト', desc: 'チェックボックス付きのリストです。', badge: '☑', keys: 'todo check' },
   { type: 'quote', label: '引用', desc: '引用文を記載します。', badge: '❝', keys: 'quote' },
-  { type: 'callout', label: 'コールアウト', desc: '文章を目立たせます。', badge: '💡', keys: 'callout' },
+  { type: 'callout', label: 'コールアウト', desc: '文章を目立たせます。', badge: 'art:bulb', keys: 'callout' },
   { type: 'divider', label: '区切り線', desc: 'ブロックを視覚的に分割します。', badge: '—', keys: 'divider hr' },
 ]
 
@@ -191,7 +266,7 @@ function BlockEditor({ blocks, onChange }) {
               {block.type === 'bullet' && <span className="b-marker">•</span>}
               {block.type === 'number' && <span className="b-marker num">{numberCount}.</span>}
               {block.type === 'todo' && <button className={`b-check ${block.checked ? 'on' : ''}`} onMouseDown={(e) => e.preventDefault()} onClick={() => patch(block.id, { checked: !block.checked })}>{block.checked && Icon.check}</button>}
-              {block.type === 'callout' && <span className="b-callout-ico">💡</span>}
+              {block.type === 'callout' && <span className="b-callout-ico"><Art.bulb size={18} /></span>}
               <textarea
                 rows={1}
                 ref={(el) => { refs.current[block.id] = el; resizeArea(el) }}
@@ -208,7 +283,7 @@ function BlockEditor({ blocks, onChange }) {
             className={`slash-item ${index === Math.min(menu.index, menuItems.length - 1) ? 'sel' : ''}`}
             onMouseDown={(e) => { e.preventDefault(); applyMenu(item, block) }}
           >
-            <span className="slash-badge">{item.badge}</span>
+            <span className="slash-badge">{item.badge.startsWith('art:') ? Art[item.badge.slice(4)]({ size: 22 }) : item.badge}</span>
             <span><span className="slash-label">{item.label}</span><span className="slash-desc">{item.desc}</span></span>
           </button>)}
           {!menuItems.length && <p className="slash-empty">結果はありません</p>}
@@ -277,7 +352,7 @@ function App() {
   return <div className={`app ${sidebarOpen ? 'sidebar-visible' : ''}`}>
     <aside className="sidebar" aria-label="ワークスペース">
       <div className="switcher">
-        <button className="switcher-name"><span className="ws-logo">N</span><span className="ws-label">Nitoron</span>{Icon.chevronDown}</button>
+        <button className="switcher-name"><span className="ws-logo"><Art.sprout size={16} /></span><span className="ws-label">Nitoron</span>{Icon.chevronDown}</button>
         <button className="icon-btn collapse" onClick={() => setSidebarOpen(false)} aria-label="サイドバーを閉じる">{Icon.chevronsLeft}</button>
       </div>
       <div className="side-section">
@@ -288,7 +363,7 @@ function App() {
       <div className="side-section">
         <p className="side-heading">プライベート</p>
         {PAGES.map((item) => <button key={item.id} className={`side-item page-item ${active === item.id ? 'active' : ''}`} onClick={() => navigate(item.id)}>
-          <span className="side-ico emoji">{item.icon}</span><span className="side-label">{item.label}</span>
+          <span className="side-ico art">{Art[item.art]({ size: 17 })}</span><span className="side-label">{item.label}</span>
           <span className="row-hover-actions"><span className="mini-btn">{Icon.dots}</span><span className="mini-btn">{Icon.plus}</span></span>
         </button>)}
         <button className="side-item muted" onClick={openNew}><span className="side-ico">{Icon.plus}</span>新規ページ</button>
@@ -303,7 +378,7 @@ function App() {
     <main className="main">
       <header className="topbar">
         {!sidebarOpen && <button className="icon-btn" onClick={() => setSidebarOpen(true)} aria-label="サイドバーを開く">{Icon.menu}</button>}
-        <button className="crumb"><span className="crumb-ico">{page.icon}</span><span>{page.label}</span></button>
+        <button className="crumb"><span className="crumb-ico">{Art[page.art]({ size: 17 })}</span><span>{page.label}</span></button>
         <div className="topbar-right">
           <span className="edited">今日 編集</span>
           <button className="top-share">共有</button>
@@ -319,8 +394,8 @@ function App() {
         </section> : <>
           <div className="cover" style={{ background: page.cover }}><button className="cover-btn">カバー画像を変更</button></div>
           <section className="page-canvas">
-            <div className="page-icon"><button>{page.icon}</button></div>
-            <div className="title-controls"><button>😀 アイコンを変更</button><button>🖼 カバー画像を追加</button><button>💬 コメントを追加</button></div>
+            <div className="page-icon"><button>{Art[page.art]({ size: 62 })}</button></div>
+            <div className="title-controls"><button><Art.smile size={15} /> アイコンを変更</button><button><Art.picture size={15} /> カバー画像を追加</button><button>{Icon.comment} コメントを追加</button></div>
             <h1 className="page-title">{page.title}</h1>
             {active === 'notes' && <Database items={notes} onCompose={openNew} onOpen={openNote} />}
             {active === 'report' && <Report items={notes} />}
@@ -330,7 +405,7 @@ function App() {
     </main>
 
     <nav className="mobile-nav">
-      {PAGES.map((item) => <button key={item.id} className={active === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><span>{item.icon}</span>{item.label.slice(0, 4)}</button>)}
+      {PAGES.map((item) => <button key={item.id} className={active === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><span className="mobile-nav-ico">{Art[item.art]({ size: 20 })}</span>{item.label.slice(0, 4)}</button>)}
       <button onClick={() => setShowSearch(true)}><span className="mobile-nav-ico">{Icon.search}</span>検索</button>
       <button onClick={openNew}><span className="mobile-nav-ico plus">{Icon.plus}</span>新規</button>
     </nav>
@@ -342,10 +417,10 @@ function App() {
 /* ---------- Pages ---------- */
 
 const LEARN_CARDS = [
-  { id: 'l1', emoji: '🚀', title: 'Nitoronをはじめよう', sub: '3分で読めます', cover: 'linear-gradient(135deg,#fdecc8,#f6e0b8)' },
-  { id: 'l2', emoji: '📝', title: 'メモの基本', sub: '5分で読めます', cover: 'linear-gradient(135deg,#dbeddb,#c9e2cd)' },
-  { id: 'l3', emoji: '🗂️', title: 'データベースで整理する', sub: '4分で読めます', cover: 'linear-gradient(135deg,#d3e5ef,#c2d8e8)' },
-  { id: 'l4', emoji: '⌨️', title: 'ショートカット一覧', sub: '2分で読めます', cover: 'linear-gradient(135deg,#e8deee,#dccfe6)' },
+  { id: 'l1', art: 'rocket', title: 'Nitoronをはじめよう', sub: '3分で読めます', cover: 'linear-gradient(135deg,#fdecc8,#f6e0b8)' },
+  { id: 'l2', art: 'memo', title: 'メモの基本', sub: '5分で読めます', cover: 'linear-gradient(135deg,#dbeddb,#c9e2cd)' },
+  { id: 'l3', art: 'folder', title: 'データベースで整理する', sub: '4分で読めます', cover: 'linear-gradient(135deg,#d3e5ef,#c2d8e8)' },
+  { id: 'l4', art: 'keyboard', title: 'ショートカット一覧', sub: '2分で読めます', cover: 'linear-gradient(135deg,#e8deee,#dccfe6)' },
 ]
 
 function SectionHead({ icon, label }) {
@@ -373,11 +448,11 @@ function Home({ notes, onNavigate, onCompose, onOpen, onSearch }) {
     <SectionHead icon={Icon.clock} label="最近アクセスしたページ" />
     <div className="card-row">
       {PAGES.filter((p) => p.id !== 'home').map((p) => <button key={p.id} className="page-card" onClick={() => onNavigate(p.id)}>
-        <div className="card-cover" style={{ background: p.cover }} /><span className="card-emoji">{p.icon}</span>
+        <div className="card-cover" style={{ background: p.cover }} /><span className="card-emoji">{Art[p.art]({ size: 24 })}</span>
         <p className="card-name">{p.label}</p><p className="card-sub"><span className="card-sub-ico">{Icon.clock}</span>今日</p>
       </button>)}
       {notes.slice(0, 2).map((item) => <button key={item.id} className="page-card" onClick={() => onOpen(item.id)}>
-        <div className="card-cover plain" /><span className="card-emoji">📄</span>
+        <div className="card-cover plain" /><span className="card-emoji"><Art.doc size={24} /></span>
         <p className="card-name">{item.title || '無題'}</p><p className="card-sub"><span className="card-sub-ico">{Icon.clock}</span>{item.date.slice(5).replace('-', '/')}</p>
       </button>)}
       <button className="page-card new" onClick={onCompose}><span className="card-plus">{Icon.plus}</span><p className="card-name">新規ページ</p></button>
@@ -419,7 +494,7 @@ function Home({ notes, onNavigate, onCompose, onOpen, onSearch }) {
     <SectionHead icon={Icon.book} label="学ぶ" />
     <div className="learn-row">
       {LEARN_CARDS.map((card) => <button key={card.id} className="learn-card">
-        <div className="learn-cover" style={{ background: card.cover }}><span>{card.emoji}</span></div>
+        <div className="learn-cover" style={{ background: card.cover }}>{Art[card.art]({ size: 42 })}</div>
         <p className="learn-title">{card.title}</p>
         <p className="learn-sub">{card.sub}</p>
       </button>)}
@@ -461,7 +536,7 @@ function Database({ items, onCompose, onOpen }) {
 function Report({ items }) {
   const chosen = items.slice(0, 5)
   return <>
-    <div className="block callout gray"><span className="callout-ico">📣</span><p>レポートの下書きです。メモが増えるほど、内容を組み立てやすくなります。</p></div>
+    <div className="block callout gray"><span className="callout-ico"><Art.megaphone size={20} /></span><p>レポートの下書きです。メモが増えるほど、内容を組み立てやすくなります。</p></div>
     <h2 className="block-h2">要点のまとめ</h2>
     <p className="block-p">以下のメモをもとに、内容を組み立てます。</p>
     {chosen.map((item, index) => <div className="numbered" key={item.id}>
