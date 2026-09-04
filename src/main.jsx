@@ -2,18 +2,18 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles.css'
 
-const initialObservations = [
-  { id: 'o1', title: '圃場の変化を記録する', body: '写真・数字・文章を、まず観測事実として残します。', crop: 'ブロッコリー', date: '2026-09-03', type: '記録' },
-  { id: 'o2', title: '発表の核をつくる', body: '観測をつなぎ、再現できる判断へ変えます。', crop: '共通', date: '2026-09-02', type: '仮説' },
+const initialNotes = [
+  { id: 'o1', title: 'はじめてのメモ', body: '写真・数字・文章など、気づいたことをそのまま残します。', category: '日常', date: '2026-09-03', type: 'メモ' },
+  { id: 'o2', title: 'レポートの下書きをつくる', body: 'メモをつなげて、伝わる形にまとめます。', category: '仕事', date: '2026-09-02', type: 'アイデア' },
 ]
 
 const PAGES = [
   { id: 'home', icon: '🏠', label: 'ホーム', title: 'ホーム', cover: 'linear-gradient(120deg,#d9e8dc,#eef3e6 55%,#f6f1e3)' },
-  { id: 'observations', icon: '🌱', label: '観測データベース', title: '観測データベース', cover: 'linear-gradient(120deg,#cfe3d8,#dcebe2 50%,#eef5ec)' },
-  { id: 'presentation', icon: '📊', label: '経営発表', title: '経営発表', cover: 'linear-gradient(120deg,#e3dccf,#efe9da 55%,#f7f4ea)' },
+  { id: 'notes', icon: '📝', label: 'メモ', title: 'メモ', cover: 'linear-gradient(120deg,#cfe3d8,#dcebe2 50%,#eef5ec)' },
+  { id: 'report', icon: '📊', label: 'レポート', title: 'レポート', cover: 'linear-gradient(120deg,#e3dccf,#efe9da 55%,#f7f4ea)' },
 ]
 
-const TYPE_COLORS = { '記録': 'tag-green', '仮説': 'tag-blue', '気づき': 'tag-yellow' }
+const TYPE_COLORS = { 'メモ': 'tag-blue', 'アイデア': 'tag-yellow', 'タスク': 'tag-green' }
 
 const Icon = {
   search: <svg viewBox="0 0 20 20" width="18" height="18"><path fill="currentColor" d="M8.5 3a5.5 5.5 0 0 1 4.38 8.83l3.65 3.64a.75.75 0 1 1-1.06 1.06l-3.65-3.64A5.5 5.5 0 1 1 8.5 3Zm0 1.5a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg>,
@@ -42,12 +42,16 @@ function App() {
   const [showSearch, setShowSearch] = useState(false)
   const [query, setQuery] = useState('')
   const [starred, setStarred] = useState(false)
-  const [observations, setObservations] = useState(() => {
-    try { return JSON.parse(localStorage.getItem('nitoron:observations')) || initialObservations } catch { return initialObservations }
+  const [notes, setNotes] = useState(() => {
+    try {
+      const stored = JSON.parse(localStorage.getItem('nitoron:observations'))
+      if (!stored) return initialNotes
+      return stored.map((item) => ({ ...item, category: item.category ?? item.crop ?? '未分類', type: TYPE_COLORS[item.type] ? item.type : 'メモ' }))
+    } catch { return initialNotes }
   })
-  const [draft, setDraft] = useState({ title: '', body: '', crop: '', type: '記録' })
+  const [draft, setDraft] = useState({ title: '', body: '', category: '', type: 'メモ' })
 
-  useEffect(() => localStorage.setItem('nitoron:observations', JSON.stringify(observations)), [observations])
+  useEffect(() => localStorage.setItem('nitoron:observations', JSON.stringify(notes)), [notes])
   useEffect(() => {
     const keydown = (event) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); setShowSearch(true) }
@@ -58,15 +62,15 @@ function App() {
   }, [])
 
   const page = PAGES.find((item) => item.id === active)
-  const visible = useMemo(() => observations.filter((item) => `${item.title} ${item.body} ${item.crop} ${item.type}`.toLowerCase().includes(query.toLowerCase())), [observations, query])
-  const addObservation = () => {
+  const visible = useMemo(() => notes.filter((item) => `${item.title} ${item.body} ${item.category} ${item.type}`.toLowerCase().includes(query.toLowerCase())), [notes, query])
+  const addNote = () => {
     if (!draft.title.trim() && !draft.body.trim()) return
-    setObservations((current) => [{ id: crypto.randomUUID(), title: draft.title.trim() || '名前のないページ', body: draft.body.trim(), crop: draft.crop.trim() || '未分類', type: draft.type, date: new Date().toISOString().slice(0, 10) }, ...current])
-    setDraft({ title: '', body: '', crop: '', type: '記録' })
+    setNotes((current) => [{ id: crypto.randomUUID(), title: draft.title.trim() || '無題', body: draft.body.trim(), category: draft.category.trim() || '未分類', type: draft.type, date: new Date().toISOString().slice(0, 10) }, ...current])
+    setDraft({ title: '', body: '', category: '', type: 'メモ' })
     setShowComposer(false)
-    setActive('observations')
+    setActive('notes')
   }
-  const removeObservation = (id) => setObservations((current) => current.filter((item) => item.id !== id))
+  const removeNote = (id) => setNotes((current) => current.filter((item) => item.id !== id))
   const navigate = (id) => { setActive(id); if (window.innerWidth <= 720) setSidebarOpen(false) }
 
   return <div className={`app ${sidebarOpen ? 'sidebar-visible' : ''}`}>
@@ -114,25 +118,25 @@ function App() {
           <div className="page-icon"><button>{page.icon}</button></div>
           <div className="title-controls"><button>😀 アイコンを変更</button><button>🖼 カバー画像を追加</button><button>💬 コメントを追加</button></div>
           <h1 className="page-title">{page.title}</h1>
-          {active === 'home' && <Home observations={observations} onNavigate={navigate} onCompose={() => setShowComposer(true)} />}
-          {active === 'observations' && <Database items={observations} onCompose={() => setShowComposer(true)} onDelete={removeObservation} />}
-          {active === 'presentation' && <Presentation items={observations} />}
+          {active === 'home' && <Home notes={notes} onNavigate={navigate} onCompose={() => setShowComposer(true)} />}
+          {active === 'notes' && <Database items={notes} onCompose={() => setShowComposer(true)} onDelete={removeNote} />}
+          {active === 'report' && <Report items={notes} />}
         </section>
       </div>
     </main>
 
     <nav className="mobile-nav">{PAGES.map((item) => <button key={item.id} className={active === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><span>{item.icon}</span>{item.label.slice(0, 4)}</button>)}<button onClick={() => setShowComposer(true)}><span>＋</span>新規</button></nav>
-    {showComposer && <Composer draft={draft} setDraft={setDraft} onClose={() => setShowComposer(false)} onSave={addObservation} />}
-    {showSearch && <Search query={query} setQuery={setQuery} items={visible} onClose={() => setShowSearch(false)} onPick={() => { setShowSearch(false); setActive('observations') }} />}
+    {showComposer && <Composer draft={draft} setDraft={setDraft} onClose={() => setShowComposer(false)} onSave={addNote} />}
+    {showSearch && <Search query={query} setQuery={setQuery} items={visible} onClose={() => setShowSearch(false)} onPick={() => { setShowSearch(false); setActive('notes') }} />}
   </div>
 }
 
-function Home({ observations, onNavigate, onCompose }) {
+function Home({ notes, onNavigate, onCompose }) {
   const hour = new Date().getHours()
   const greeting = hour < 5 ? 'こんばんは' : hour < 11 ? 'おはようございます' : hour < 18 ? 'こんにちは' : 'こんばんは'
   return <>
     <p className="home-greeting">{greeting}、たきとさん</p>
-    <div className="block callout"><span className="callout-ico">💡</span><p>観測を残すほど、経営発表の説得力が上がります。まずは今日の圃場から。</p></div>
+    <div className="block callout"><span className="callout-ico">💡</span><p>メモを残すほど、レポートがまとめやすくなります。まずは今日の一件から。</p></div>
     <p className="block-heading">最近アクセスしたページ</p>
     <div className="card-row">
       {PAGES.filter((p) => p.id !== 'home').map((p) => <button key={p.id} className="page-card" onClick={() => onNavigate(p.id)}>
@@ -141,9 +145,9 @@ function Home({ observations, onNavigate, onCompose }) {
       </button>)}
       <button className="page-card new" onClick={onCompose}><span className="card-plus">{Icon.plus}</span><p className="card-name">新規ページ</p></button>
     </div>
-    <p className="block-heading">最近の観測</p>
+    <p className="block-heading">最近のメモ</p>
     <div className="link-list">
-      {observations.slice(0, 4).map((item) => <button key={item.id} className="page-link" onClick={() => onNavigate('observations')}>
+      {notes.slice(0, 4).map((item) => <button key={item.id} className="page-link" onClick={() => onNavigate('notes')}>
         <span className="link-ico">{Icon.page}</span><span className="link-title">{item.title}</span><span className="link-date">{item.date}</span>
       </button>)}
     </div>
@@ -161,7 +165,7 @@ function Database({ items, onCompose, onDelete }) {
         <thead><tr>
           <th><span>{Icon.text}名前</span></th>
           <th><span>{Icon.tag}タグ</span></th>
-          <th><span>{Icon.tag}作物</span></th>
+          <th><span>{Icon.tag}カテゴリ</span></th>
           <th><span>{Icon.calendar}日付</span></th>
           <th className="th-plus"><span>{Icon.plus}</span></th>
         </tr></thead>
@@ -169,7 +173,7 @@ function Database({ items, onCompose, onDelete }) {
           {items.map((item) => <tr key={item.id}>
             <td className="cell-name"><span className="cell-ico">{Icon.page}</span><span className="cell-title">{item.title}</span><button className="open-hint" onClick={() => onDelete(item.id)}>削除</button></td>
             <td><span className={`tag ${TYPE_COLORS[item.type] || 'tag-gray'}`}>{item.type}</span></td>
-            <td><span className="tag tag-brown">{item.crop}</span></td>
+            <td><span className="tag tag-brown">{item.category}</span></td>
             <td className="cell-date">{item.date}</td>
             <td />
           </tr>)}
@@ -181,17 +185,17 @@ function Database({ items, onCompose, onDelete }) {
   </div>
 }
 
-function Presentation({ items }) {
+function Report({ items }) {
   const chosen = items.slice(0, 5)
   return <>
-    <div className="block callout gray"><span className="callout-ico">📣</span><p>発表の土台です。観測が増えるほど、原因・行動・結果をつなげられます。</p></div>
-    <h2 className="block-h2">観測から得た学び</h2>
-    <p className="block-p">以下の観測をもとに、課題・原因・行動・成果を組み立てます。</p>
+    <div className="block callout gray"><span className="callout-ico">📣</span><p>レポートの下書きです。メモが増えるほど、内容を組み立てやすくなります。</p></div>
+    <h2 className="block-h2">要点のまとめ</h2>
+    <p className="block-p">以下のメモをもとに、内容を組み立てます。</p>
     {chosen.map((item, index) => <div className="numbered" key={item.id}>
       <span className="num">{index + 1}.</span>
       <div><p className="num-title">{item.title}</p><p className="num-body">{item.body || '内容を追加してください。'}</p></div>
     </div>)}
-    <blockquote className="block-quote">結論にしない。観測を、再現できる判断へ。</blockquote>
+    <blockquote className="block-quote">日々の記録が、次の判断をつくる。</blockquote>
     <div className="add-block"><span>{Icon.plus}</span>クリックして下に追加</div>
   </>
 }
@@ -199,14 +203,14 @@ function Presentation({ items }) {
 function Composer({ draft, setDraft, onClose, onSave }) {
   return <div className="overlay" role="dialog" aria-modal="true" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
     <div className="peek">
-      <div className="peek-bar"><span className="peek-hint">新規ページ — 観測データベース</span><button className="icon-btn" onClick={onClose} aria-label="閉じる">✕</button></div>
+      <div className="peek-bar"><span className="peek-hint">新規ページ — メモ</span><button className="icon-btn" onClick={onClose} aria-label="閉じる">✕</button></div>
       <div className="peek-body">
         <input className="peek-title" autoFocus value={draft.title} onChange={(e) => setDraft({ ...draft, title: e.target.value })} placeholder="無題" />
         <div className="peek-props">
           <div className="prop"><span className="prop-label">{Icon.tag}タグ</span>
-            <select value={draft.type} onChange={(e) => setDraft({ ...draft, type: e.target.value })}><option>記録</option><option>仮説</option><option>気づき</option></select></div>
-          <div className="prop"><span className="prop-label">{Icon.tag}作物</span>
-            <input value={draft.crop} onChange={(e) => setDraft({ ...draft, crop: e.target.value })} placeholder="空" /></div>
+            <select value={draft.type} onChange={(e) => setDraft({ ...draft, type: e.target.value })}><option>メモ</option><option>アイデア</option><option>タスク</option></select></div>
+          <div className="prop"><span className="prop-label">{Icon.tag}カテゴリ</span>
+            <input value={draft.category} onChange={(e) => setDraft({ ...draft, category: e.target.value })} placeholder="空" /></div>
         </div>
         <textarea className="peek-text" value={draft.body} onChange={(e) => setDraft({ ...draft, body: e.target.value })} placeholder="「/」でコマンドを入力するか、そのまま書き始めてください…" />
       </div>
@@ -223,7 +227,7 @@ function Search({ query, setQuery, items, onClose, onPick }) {
         <p className="search-section">{query ? '検索結果' : '最近のページ'}</p>
         {items.map((item) => <button key={item.id} onClick={onPick}>
           <span className="link-ico">{Icon.page}</span>
-          <span className="sr-main"><strong>{item.title}</strong><span>観測データベース 内</span></span>
+          <span className="sr-main"><strong>{item.title}</strong><span>メモ 内</span></span>
           <span className="sr-date">{item.date}</span>
         </button>)}
         {!items.length && <p className="no-hit">一致する結果はありません。</p>}
