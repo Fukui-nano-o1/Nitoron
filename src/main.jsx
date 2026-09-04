@@ -33,6 +33,10 @@ const Icon = {
   inbox: <svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M3.9 2.5h8.2c.62 0 1.17.38 1.4.95l1.4 3.5c.07.18.1.36.1.55v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12V7.5c0-.19.03-.37.1-.55l1.4-3.5c.23-.57.78-.95 1.4-.95ZM3.9 4 2.7 7h2.8a.75.75 0 0 1 .67.41l.55 1.09h2.56l.55-1.09A.75.75 0 0 1 10.5 7h2.8L12.1 4H3.9ZM2.5 8.5V12h11V8.5h-2.54l-.55 1.09a.75.75 0 0 1-.66.41h-3.5a.75.75 0 0 1-.66-.41L5.04 8.5H2.5Z"/></svg>,
   trash: <svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M6.5 1.75h3c.41 0 .75.34.75.75v.75h3a.75.75 0 0 1 0 1.5h-.56l-.65 8.42A1.5 1.5 0 0 1 10.55 14.5h-5.1a1.5 1.5 0 0 1-1.5-1.33L3.31 4.75h-.56a.75.75 0 0 1 0-1.5h3V2.5c0-.41.34-.75.75-.75Zm-1.68 3 .62 8.25h5.12l.62-8.25H4.82ZM6.75 6.5c.28 0 .5.22.5.5v4a.5.5 0 0 1-1 0V7c0-.28.22-.5.5-.5Zm2.5 0c.28 0 .5.22.5.5v4a.5.5 0 0 1-1 0V7c0-.28.22-.5.5-.5Z"/></svg>,
   gear: <svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M6.9 1.5h2.2c.34 0 .63.23.72.56l.34 1.31c.36.15.7.35 1.01.58l1.3-.37a.75.75 0 0 1 .85.35l1.1 1.9a.75.75 0 0 1-.13.92l-.96.93a4.9 4.9 0 0 1 0 1.17l.96.93c.25.24.3.62.13.92l-1.1 1.9a.75.75 0 0 1-.85.35l-1.3-.37c-.31.23-.65.43-1.01.58l-.34 1.3a.75.75 0 0 1-.72.57H6.9a.75.75 0 0 1-.72-.56l-.34-1.31a5.1 5.1 0 0 1-1.01-.58l-1.3.37a.75.75 0 0 1-.85-.35l-1.1-1.9a.75.75 0 0 1 .13-.92l.96-.93a4.9 4.9 0 0 1 0-1.17l-.96-.93a.75.75 0 0 1-.13-.92l1.1-1.9a.75.75 0 0 1 .85-.35l1.3.37c.31-.23.65-.43 1.01-.58l.34-1.3a.75.75 0 0 1 .72-.57ZM8 5.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z"/></svg>,
+  clock: <svg viewBox="0 0 16 16" width="15" height="15"><path fill="currentColor" d="M8 1.5a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13Zm0 1.5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 1.25c.41 0 .75.34.75.75v2.69l1.78 1.78a.75.75 0 1 1-1.06 1.06l-2-2A.75.75 0 0 1 7.25 8V5c0-.41.34-.75.75-.75Z"/></svg>,
+  sparkle: <svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M8 1.25c.3 0 .57.18.68.46l1.1 2.74 2.74 1.1a.73.73 0 0 1 0 1.36l-2.74 1.1-1.1 2.74a.73.73 0 0 1-1.36 0l-1.1-2.74-2.74-1.1a.73.73 0 0 1 0-1.36l2.74-1.1 1.1-2.74A.73.73 0 0 1 8 1.25Zm5 8.25c.26 0 .49.16.58.4l.55 1.47 1.47.55a.62.62 0 0 1 0 1.16l-1.47.55-.55 1.47a.62.62 0 0 1-1.16 0l-.55-1.47-1.47-.55a.62.62 0 0 1 0-1.16l1.47-.55.55-1.47c.09-.24.32-.4.58-.4Z"/></svg>,
+  book: <svg viewBox="0 0 16 16" width="15" height="15"><path fill="currentColor" d="M4.25 1.5h8.25c.41 0 .75.34.75.75v11.5a.75.75 0 0 1-.75.75H4.25A2.25 2.25 0 0 1 2 12.25v-8.5A2.25 2.25 0 0 1 4.25 1.5ZM3.5 12.25c0 .41.34.75.75.75h7.5v-2H4.25a.75.75 0 0 0-.75.75v.5Zm8.25-2.75V3H4.25a.75.75 0 0 0-.75.75v5.88c.24-.08.49-.13.75-.13h7.5Z"/></svg>,
+  checkbox: <svg viewBox="0 0 16 16" width="15" height="15"><path fill="currentColor" d="M3.5 2h9A1.5 1.5 0 0 1 14 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12.5v-9A1.5 1.5 0 0 1 3.5 2Zm0 1.5v9h9v-9h-9Zm7.53 2.47a.75.75 0 0 1 0 1.06l-3 3a.75.75 0 0 1-1.06 0l-1.5-1.5a.75.75 0 1 1 1.06-1.06l.97.97 2.47-2.47a.75.75 0 0 1 1.06 0Z"/></svg>,
 }
 
 function App() {
@@ -113,15 +117,18 @@ function App() {
       </header>
 
       <div className="scroll-area">
-        <div className="cover" style={{ background: page.cover }}><button className="cover-btn">カバー画像を変更</button></div>
-        <section className="page-canvas">
-          <div className="page-icon"><button>{page.icon}</button></div>
-          <div className="title-controls"><button>😀 アイコンを変更</button><button>🖼 カバー画像を追加</button><button>💬 コメントを追加</button></div>
-          <h1 className="page-title">{page.title}</h1>
-          {active === 'home' && <Home notes={notes} onNavigate={navigate} onCompose={() => setShowComposer(true)} />}
-          {active === 'notes' && <Database items={notes} onCompose={() => setShowComposer(true)} onDelete={removeNote} />}
-          {active === 'report' && <Report items={notes} />}
-        </section>
+        {active === 'home' ? <section className="home-canvas">
+          <Home notes={notes} onNavigate={navigate} onCompose={() => setShowComposer(true)} onSearch={() => setShowSearch(true)} />
+        </section> : <>
+          <div className="cover" style={{ background: page.cover }}><button className="cover-btn">カバー画像を変更</button></div>
+          <section className="page-canvas">
+            <div className="page-icon"><button>{page.icon}</button></div>
+            <div className="title-controls"><button>😀 アイコンを変更</button><button>🖼 カバー画像を追加</button><button>💬 コメントを追加</button></div>
+            <h1 className="page-title">{page.title}</h1>
+            {active === 'notes' && <Database items={notes} onCompose={() => setShowComposer(true)} onDelete={removeNote} />}
+            {active === 'report' && <Report items={notes} />}
+          </section>
+        </>}
       </div>
     </main>
 
@@ -131,24 +138,87 @@ function App() {
   </div>
 }
 
-function Home({ notes, onNavigate, onCompose }) {
+const LEARN_CARDS = [
+  { id: 'l1', emoji: '🚀', title: 'Nitoronをはじめよう', sub: '3分で読めます', cover: 'linear-gradient(135deg,#fdecc8,#f6e0b8)' },
+  { id: 'l2', emoji: '📝', title: 'メモの基本', sub: '5分で読めます', cover: 'linear-gradient(135deg,#dbeddb,#c9e2cd)' },
+  { id: 'l3', emoji: '🗂️', title: 'データベースで整理する', sub: '4分で読めます', cover: 'linear-gradient(135deg,#d3e5ef,#c2d8e8)' },
+  { id: 'l4', emoji: '⌨️', title: 'ショートカット一覧', sub: '2分で読めます', cover: 'linear-gradient(135deg,#e8deee,#dccfe6)' },
+]
+
+function SectionHead({ icon, label }) {
+  return <div className="home-sec">
+    <span className="home-sec-ico">{icon}</span><span>{label}</span><span className="home-sec-caret">{Icon.chevronDown}</span>
+    <button className="icon-btn home-sec-more" aria-label="オプション">{Icon.dots}</button>
+  </div>
+}
+
+function Home({ notes, onNavigate, onCompose, onSearch }) {
   const hour = new Date().getHours()
   const greeting = hour < 5 ? 'こんばんは' : hour < 11 ? 'おはようございます' : hour < 18 ? 'こんにちは' : 'こんばんは'
+  const fmtDay = (offset) => {
+    const d = new Date(); d.setDate(d.getDate() + offset)
+    return new Intl.DateTimeFormat('ja-JP', { month: 'numeric', day: 'numeric', weekday: 'short' }).format(d)
+  }
   return <>
-    <p className="home-greeting">{greeting}、たきとさん</p>
-    <div className="block callout"><span className="callout-ico">💡</span><p>メモを残すほど、レポートがまとめやすくなります。まずは今日の一件から。</p></div>
-    <p className="block-heading">最近アクセスしたページ</p>
+    <h1 className="home-hello">{greeting}、たきとさん</h1>
+    <button className="ai-bar" onClick={onSearch}>
+      <span className="ai-ico">{Icon.sparkle}</span>
+      <span className="ai-placeholder">検索したり、質問したりしましょう…</span>
+      <span className="ai-kbd"><kbd>⌘</kbd><kbd>K</kbd></span>
+    </button>
+
+    <SectionHead icon={Icon.clock} label="最近アクセスしたページ" />
     <div className="card-row">
       {PAGES.filter((p) => p.id !== 'home').map((p) => <button key={p.id} className="page-card" onClick={() => onNavigate(p.id)}>
         <div className="card-cover" style={{ background: p.cover }} /><span className="card-emoji">{p.icon}</span>
-        <p className="card-name">{p.label}</p><p className="card-sub">たきと・今日</p>
+        <p className="card-name">{p.label}</p><p className="card-sub"><span className="card-sub-ico">{Icon.clock}</span>今日</p>
+      </button>)}
+      {notes.slice(0, 2).map((item) => <button key={item.id} className="page-card" onClick={() => onNavigate('notes')}>
+        <div className="card-cover plain" /><span className="card-emoji">📄</span>
+        <p className="card-name">{item.title}</p><p className="card-sub"><span className="card-sub-ico">{Icon.clock}</span>{item.date.slice(5).replace('-', '/')}</p>
       </button>)}
       <button className="page-card new" onClick={onCompose}><span className="card-plus">{Icon.plus}</span><p className="card-name">新規ページ</p></button>
     </div>
-    <p className="block-heading">最近のメモ</p>
-    <div className="link-list">
-      {notes.slice(0, 4).map((item) => <button key={item.id} className="page-link" onClick={() => onNavigate('notes')}>
-        <span className="link-ico">{Icon.page}</span><span className="link-title">{item.title}</span><span className="link-date">{item.date}</span>
+
+    <SectionHead icon={Icon.calendar} label="今後の予定" />
+    <div className="event-widget">
+      <div className="event-day">
+        <p className="event-date"><b>今日</b> {fmtDay(0)}</p>
+        <div className="event blue"><p className="event-name">メモを見返す</p><p className="event-time">9:00 – 9:30</p></div>
+        <div className="event green"><p className="event-name">レポートを書く</p><p className="event-time">16:00 – 17:00</p></div>
+      </div>
+      <div className="event-day">
+        <p className="event-date"><b>明日</b> {fmtDay(1)}</p>
+        <div className="event gray"><p className="event-name">週次のふりかえり</p><p className="event-time">終日</p></div>
+      </div>
+      <div className="event-day connect">
+        <p className="event-date">カレンダー</p>
+        <p className="connect-text">カレンダーを接続すると、ここに予定が表示されます。</p>
+        <button className="connect-btn">カレンダーを接続</button>
+      </div>
+    </div>
+
+    <SectionHead icon={Icon.checkbox} label="マイタスク" />
+    <div className="home-widget">
+      <div className="widget-tabs"><button className="widget-tab active">{Icon.table}<span>メモ</span></button><button className="widget-tab">{Icon.plus}</button></div>
+      <div className="widget-rows">
+        {notes.slice(0, 4).map((item) => <button key={item.id} className="widget-row" onClick={() => onNavigate('notes')}>
+          <span className="link-ico">{Icon.page}</span>
+          <span className="widget-row-title">{item.title}</span>
+          <span className={`tag ${TYPE_COLORS[item.type] || 'tag-gray'}`}>{item.type}</span>
+          <span className="widget-row-date">{item.date}</span>
+        </button>)}
+        <button className="widget-row new" onClick={onCompose}><span className="link-ico">{Icon.plus}</span><span className="widget-row-title muted">新規</span></button>
+      </div>
+      <button className="widget-foot" onClick={() => onNavigate('notes')}>すべて表示</button>
+    </div>
+
+    <SectionHead icon={Icon.book} label="学ぶ" />
+    <div className="learn-row">
+      {LEARN_CARDS.map((card) => <button key={card.id} className="learn-card">
+        <div className="learn-cover" style={{ background: card.cover }}><span>{card.emoji}</span></div>
+        <p className="learn-title">{card.title}</p>
+        <p className="learn-sub">{card.sub}</p>
       </button>)}
     </div>
   </>
