@@ -1,16 +1,21 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
+import { supabase } from './supabase.js'
 import './styles.css'
 
 const uid = () => crypto.randomUUID()
+const isUuid = (value) => /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(value || '')
 const today = () => new Date().toISOString().slice(0, 10)
 const textBlock = (text = '', type = 'text') => ({ id: uid(), type, text })
 const noteText = (note) => (note.blocks || []).map((b) => b.text).filter(Boolean).join(' ')
 
-const initialNotes = [
-  { id: 'o1', title: 'はじめてのメモ', blocks: [textBlock('写真・数字・文章など、気づいたことをそのまま残します。')], category: '日常', date: '2026-09-03', type: 'メモ' },
-  { id: 'o2', title: 'レポートの下書きをつくる', blocks: [textBlock('メモをつなげて、伝わる形にまとめます。')], category: '仕事', date: '2026-09-02', type: 'アイデア' },
+const makeInitialNotes = () => [
+  { id: uid(), title: 'はじめてのメモ', blocks: [textBlock('写真・数字・文章など、気づいたことをそのまま残します。')], category: '日常', date: '2026-09-03', type: 'メモ' },
+  { id: uid(), title: 'レポートの下書きをつくる', blocks: [textBlock('メモをつなげて、伝わる形にまとめます。')], category: '仕事', date: '2026-09-02', type: 'アイデア' },
 ]
+
+const rowFromNote = (note) => ({ id: note.id, title: note.title, category: note.category, type: note.type, date: note.date, blocks: note.blocks })
+const noteFromRow = (row) => ({ id: row.id, title: row.title || '', category: row.category || '未分類', type: row.type || 'メモ', date: (row.date || today()).slice(0, 10), blocks: Array.isArray(row.blocks) && row.blocks.length ? row.blocks : [textBlock()] })
 
 const PAGES = [
   { id: 'home', art: 'home', label: 'ホーム', title: 'ホーム', cover: 'linear-gradient(120deg,#d9e8dc,#eef3e6 55%,#f6f1e3)' },
@@ -305,23 +310,55 @@ function App() {
   const [notes, setNotes] = useState(() => {
     try {
       const stored = JSON.parse(localStorage.getItem('nitoron:observations'))
-      if (!stored) return initialNotes
+      if (!stored) return makeInitialNotes()
       return stored.map((item) => ({
         ...item,
+        id: isUuid(item.id) ? item.id : uid(),
         category: item.category ?? item.crop ?? '未分類',
         type: TYPE_COLORS[item.type] ? item.type : 'メモ',
         blocks: item.blocks?.length ? item.blocks : (item.body ? item.body.split('\n').map((line) => textBlock(line)) : [textBlock()]),
       }))
-    } catch { return initialNotes }
+    } catch { return makeInitialNotes() }
   })
+  const [cloud, setCloud] = useState(supabase ? 'loading' : 'off') // off | loading | online | error
 
   const stateRef = useRef(null)
   stateRef.current = { notes, editorId }
+  const syncTimers = useRef({})
 
   useEffect(() => localStorage.setItem('nitoron:observations', JSON.stringify(notes)), [notes])
 
-  const patchNote = (id, p) => setNotes((current) => current.map((n) => n.id === id ? { ...n, ...p, date: today() } : n))
-  const removeNote = (id) => setNotes((current) => current.filter((n) => n.id !== id))
+  // Initial cloud load: server wins when it has rows; otherwise seed it with local notes.
+  useEffect(() => {
+    if (!supabase) return
+    let cancelled = false
+    supabase.from('notes').select('*').order('created_at', { ascending: false }).then(({ data, error }) => {
+      if (cancelled) return
+      if (error) { setCloud('error'); return }
+      if (data.length) setNotes(data.map(noteFromRow))
+      else if (stateRef.current.notes.length) supabase.from('notes').upsert(stateRef.current.notes.map(rowFromNote)).then(() => {})
+      setCloud('online')
+    })
+    return () => { cancelled = true }
+  }, [])
+
+  const queuePush = (id) => {
+    if (!supabase) return
+    clearTimeout(syncTimers.current[id])
+    syncTimers.current[id] = setTimeout(() => {
+      const note = stateRef.current.notes.find((n) => n.id === id)
+      if (note) supabase.from('notes').upsert(rowFromNote(note)).then(({ error }) => { if (error) setCloud('error') })
+    }, 800)
+  }
+  const patchNote = (id, p) => {
+    setNotes((current) => current.map((n) => n.id === id ? { ...n, ...p, date: today() } : n))
+    queuePush(id)
+  }
+  const removeNote = (id) => {
+    clearTimeout(syncTimers.current[id])
+    setNotes((current) => current.filter((n) => n.id !== id))
+    if (supabase) supabase.from('notes').delete().eq('id', id).then(({ error }) => { if (error) setCloud('error') })
+  }
   const closeEditor = () => {
     const { notes: current, editorId: id } = stateRef.current
     const note = current.find((n) => n.id === id)
@@ -409,7 +446,7 @@ function App() {
       <button onClick={() => setShowSearch(true)}><span className="mobile-nav-ico">{Icon.search}</span>検索</button>
       <button onClick={openNew}><span className="mobile-nav-ico plus">{Icon.plus}</span>新規</button>
     </nav>
-    {editorNote && <NoteEditor note={editorNote} onPatch={(p) => patchNote(editorNote.id, p)} onClose={closeEditor} onDelete={() => { removeNote(editorNote.id); setEditorId(null) }} />}
+    {editorNote && <NoteEditor note={editorNote} cloud={cloud} onPatch={(p) => patchNote(editorNote.id, p)} onClose={closeEditor} onDelete={() => { removeNote(editorNote.id); setEditorId(null) }} />}
     {showSearch && <Search query={query} setQuery={setQuery} items={visible} onClose={() => setShowSearch(false)} onPick={(item) => { setShowSearch(false); openNote(item.id) }} />}
   </div>
 }
@@ -548,14 +585,16 @@ function Report({ items }) {
   </>
 }
 
-function NoteEditor({ note, onPatch, onClose, onDelete }) {
+const CLOUD_LABELS = { off: '自動保存(この端末のみ)', loading: '同期中…', online: 'クラウドに自動保存', error: '同期エラー・ローカル保存' }
+
+function NoteEditor({ note, cloud, onPatch, onClose, onDelete }) {
   const bodyRef = useRef(null)
   return <div className="overlay" role="dialog" aria-modal="true" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
     <div className="peek">
       <div className="peek-bar">
         <span className="peek-hint">メモ</span>
         <div className="peek-bar-right">
-          <span className="autosave">自動保存</span>
+          <span className="autosave">{CLOUD_LABELS[cloud] || '自動保存'}</span>
           <button className="icon-btn" onClick={onDelete} aria-label="削除">{Icon.trash}</button>
           <button className="icon-btn" aria-label="その他">{Icon.dots}</button>
           <button className="icon-btn" onClick={onClose} aria-label="閉じる">✕</button>
