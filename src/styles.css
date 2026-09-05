@@ -513,6 +513,37 @@ kbd { font-family: inherit; }
 .slash-desc { display: block; font-size: 12px; color: var(--text-3); }
 .slash-empty { margin: 0; padding: 12px 8px 14px; font-size: 13px; color: var(--text-3); text-align: center; }
 
+.settings-modal {
+  width: min(100%, 560px); max-height: min(80vh, 600px);
+  display: flex; flex-direction: column;
+  background: #fff; border-radius: 12px; overflow: hidden;
+  box-shadow: rgba(15, 15, 15, 0.05) 0 0 0 1px, rgba(15, 15, 15, 0.1) 0 5px 10px, rgba(15, 15, 15, 0.2) 0 15px 40px;
+  animation: rise 180ms ease;
+}
+.settings-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 10px 10px 16px; border-bottom: 1px solid var(--border);
+}
+.settings-body { padding: 8px 24px 24px; overflow-y: auto; }
+.settings-sec { margin: 18px 0 6px; font-size: 12px; font-weight: 600; color: var(--text-3); }
+.settings-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 10px 0; border-bottom: 1px solid var(--border);
+}
+.settings-info { min-width: 0; }
+.settings-label { margin: 0; font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+.settings-desc { margin: 3px 0 0; font-size: 12.5px; line-height: 1.5; color: var(--text-3); }
+.settings-input {
+  flex: none; width: 180px;
+  border: 1px solid var(--border); border-radius: 6px;
+  padding: 6px 10px; font-size: 14px; outline: 0; background: #fff;
+}
+.settings-input:focus { border-color: var(--blue); box-shadow: 0 0 0 2px rgba(35, 131, 226, 0.2); }
+.sync-dot { width: 8px; height: 8px; border-radius: 50%; flex: none; background: #b3b2ae; }
+.sync-dot.online { background: #4d9e68; }
+.sync-dot.error { background: #eb5757; }
+.sync-dot.loading { background: #f2ce74; }
+
 .search-modal {
   width: min(100%, 620px); max-height: min(70vh, 560px);
   display: flex; flex-direction: column;
@@ -586,6 +617,9 @@ kbd { font-family: inherit; }
     animation: sheet-up 220ms ease;
   }
   .peek-bar { padding-top: max(8px, env(safe-area-inset-top)); }
+  .settings-modal { width: 100%; max-height: none; border-radius: 0; animation: sheet-up 220ms ease; }
+  .settings-bar { padding-top: max(10px, env(safe-area-inset-top)); }
+  .settings-input { width: 150px; font-size: 16px; }
   .peek-body { flex: 1; padding: 20px 20px calc(24px + env(safe-area-inset-bottom)); }
   .peek-title { font-size: 27px; }
   .handle { display: none; }

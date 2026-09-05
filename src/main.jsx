@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { supabase } from './supabase.js'
+import { supabase, ensureSession } from './supabase.js'
 import './styles.css'
 
 const uid = () => crypto.randomUUID()
@@ -320,30 +320,50 @@ function App() {
       }))
     } catch { return makeInitialNotes() }
   })
-  const [cloud, setCloud] = useState(supabase ? 'loading' : 'off') // off | loading | online | error
+  const [cloud, setCloud] = useState(supabase ? 'loading' : 'off') // off | loading | online | error | noauth
+  const [showSettings, setShowSettings] = useState(false)
+  const [displayName, setDisplayName] = useState(() => localStorage.getItem('nitoron:name') || 'たきと')
 
   const stateRef = useRef(null)
   stateRef.current = { notes, editorId }
   const syncTimers = useRef({})
+  const sessionRef = useRef(null)
 
   useEffect(() => localStorage.setItem('nitoron:observations', JSON.stringify(notes)), [notes])
+  useEffect(() => localStorage.setItem('nitoron:name', displayName), [displayName])
 
-  // Initial cloud load: server wins when it has rows; otherwise seed it with local notes.
+  // Establish an anonymous session, then load: server wins when it has rows;
+  // otherwise seed it with local notes.
   useEffect(() => {
     if (!supabase) return
     let cancelled = false
-    supabase.from('notes').select('*').order('created_at', { ascending: false }).then(({ data, error }) => {
+    ;(async () => {
+      const session = await ensureSession()
+      if (cancelled) return
+      if (!session) { setCloud('noauth'); return }
+      sessionRef.current = session
+      const { data, error } = await supabase.from('notes').select('*').order('created_at', { ascending: false })
       if (cancelled) return
       if (error) { setCloud('error'); return }
       if (data.length) setNotes(data.map(noteFromRow))
       else if (stateRef.current.notes.length) supabase.from('notes').upsert(stateRef.current.notes.map(rowFromNote)).then(() => {})
       setCloud('online')
-    })
+      const { data: s } = await supabase.from('settings').select('display_name').maybeSingle()
+      if (!cancelled && s?.display_name) setDisplayName(s.display_name)
+    })()
     return () => { cancelled = true }
   }, [])
 
+  const renameUser = (name) => {
+    setDisplayName(name)
+    clearTimeout(syncTimers.current['@name'])
+    syncTimers.current['@name'] = setTimeout(() => {
+      if (supabase && sessionRef.current) supabase.from('settings').upsert({ user_id: sessionRef.current.user.id, display_name: name }).then(() => {})
+    }, 800)
+  }
+
   const queuePush = (id) => {
-    if (!supabase) return
+    if (!supabase || !sessionRef.current) return
     clearTimeout(syncTimers.current[id])
     syncTimers.current[id] = setTimeout(() => {
       const note = stateRef.current.notes.find((n) => n.id === id)
@@ -357,7 +377,7 @@ function App() {
   const removeNote = (id) => {
     clearTimeout(syncTimers.current[id])
     setNotes((current) => current.filter((n) => n.id !== id))
-    if (supabase) supabase.from('notes').delete().eq('id', id).then(({ error }) => { if (error) setCloud('error') })
+    if (supabase && sessionRef.current) supabase.from('notes').delete().eq('id', id).then(({ error }) => { if (error) setCloud('error') })
   }
   const closeEditor = () => {
     const { notes: current, editorId: id } = stateRef.current
@@ -375,7 +395,7 @@ function App() {
   useEffect(() => {
     const keydown = (event) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); setShowSearch(true) }
-      if (event.key === 'Escape') { setShowSearch(false); if (stateRef.current.editorId) closeEditor() }
+      if (event.key === 'Escape') { setShowSearch(false); setShowSettings(false); if (stateRef.current.editorId) closeEditor() }
     }
     window.addEventListener('keydown', keydown)
     return () => window.removeEventListener('keydown', keydown)
@@ -406,7 +426,7 @@ function App() {
         <button className="side-item muted" onClick={openNew}><span className="side-ico">{Icon.plus}</span>新規ページ</button>
       </div>
       <div className="side-section bottom">
-        <button className="side-item muted"><span className="side-ico">{Icon.gear}</span>設定</button>
+        <button className="side-item muted" onClick={() => setShowSettings(true)}><span className="side-ico">{Icon.gear}</span>設定</button>
         <button className="side-item muted"><span className="side-ico">{Icon.trash}</span>ゴミ箱</button>
       </div>
     </aside>
@@ -427,7 +447,7 @@ function App() {
 
       <div className="scroll-area">
         {active === 'home' ? <section className="home-canvas">
-          <Home notes={notes} onNavigate={navigate} onCompose={openNew} onOpen={openNote} onSearch={() => setShowSearch(true)} />
+          <Home notes={notes} name={displayName} onNavigate={navigate} onCompose={openNew} onOpen={openNote} onSearch={() => setShowSearch(true)} />
         </section> : <>
           <div className="cover" style={{ background: page.cover }}><button className="cover-btn">カバー画像を変更</button></div>
           <section className="page-canvas">
@@ -447,6 +467,7 @@ function App() {
       <button onClick={openNew}><span className="mobile-nav-ico plus">{Icon.plus}</span>新規</button>
     </nav>
     {editorNote && <NoteEditor note={editorNote} cloud={cloud} onPatch={(p) => patchNote(editorNote.id, p)} onClose={closeEditor} onDelete={() => { removeNote(editorNote.id); setEditorId(null) }} />}
+    {showSettings && <Settings cloud={cloud} name={displayName} onName={renameUser} onClose={() => setShowSettings(false)} />}
     {showSearch && <Search query={query} setQuery={setQuery} items={visible} onClose={() => setShowSearch(false)} onPick={(item) => { setShowSearch(false); openNote(item.id) }} />}
   </div>
 }
@@ -467,7 +488,7 @@ function SectionHead({ icon, label }) {
   </div>
 }
 
-function Home({ notes, onNavigate, onCompose, onOpen, onSearch }) {
+function Home({ notes, name, onNavigate, onCompose, onOpen, onSearch }) {
   const hour = new Date().getHours()
   const greeting = hour < 5 ? 'こんばんは' : hour < 11 ? 'おはようございます' : hour < 18 ? 'こんにちは' : 'こんばんは'
   const fmtDay = (offset) => {
@@ -475,7 +496,7 @@ function Home({ notes, onNavigate, onCompose, onOpen, onSearch }) {
     return new Intl.DateTimeFormat('ja-JP', { month: 'numeric', day: 'numeric', weekday: 'short' }).format(d)
   }
   return <>
-    <h1 className="home-hello">{greeting}、たきとさん</h1>
+    <h1 className="home-hello">{greeting}、{name}さん</h1>
     <button className="ai-bar" onClick={onSearch}>
       <span className="ai-ico">{Icon.sparkle}</span>
       <span className="ai-placeholder">検索したり、質問したりしましょう…</span>
@@ -658,7 +679,36 @@ function Report({ items }) {
   </>
 }
 
-const CLOUD_LABELS = { off: '自動保存(この端末のみ)', loading: '同期中…', online: 'クラウドに自動保存', error: '同期エラー・ローカル保存' }
+const CLOUD_LABELS = { off: '自動保存(この端末のみ)', loading: '同期中…', online: 'クラウドに自動保存', error: '同期エラー・ローカル保存', noauth: '同期オフ(この端末のみ)' }
+const CLOUD_DETAILS = {
+  off: 'Supabaseのキーが設定されていないため、この端末のブラウザにのみ保存されます。',
+  loading: 'クラウドに接続しています…',
+  online: 'メモと設定はクラウドに自動保存されます。この端末専用のアカウントで、他の人からは見えません。',
+  error: 'クラウドに接続できませんでした。データはこの端末に保存されており、接続が戻ると再同期されます。',
+  noauth: 'サインインできませんでした。SupabaseのAuthentication設定で「Anonymous sign-ins」を有効にすると、この端末のデータがクラウドに同期されます。',
+}
+
+function Settings({ cloud, name, onName, onClose }) {
+  return <div className="overlay" role="dialog" aria-modal="true" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
+    <div className="settings-modal">
+      <div className="settings-bar"><span className="peek-hint">設定</span><button className="icon-btn" onClick={onClose} aria-label="閉じる">✕</button></div>
+      <div className="settings-body">
+        <p className="settings-sec">アカウント</p>
+        <div className="settings-row">
+          <div className="settings-info"><p className="settings-label">表示名</p><p className="settings-desc">ホームのあいさつに使われます。</p></div>
+          <input className="settings-input" value={name} onChange={(e) => onName(e.target.value)} placeholder="名前" />
+        </div>
+        <p className="settings-sec">同期</p>
+        <div className="settings-row">
+          <div className="settings-info">
+            <p className="settings-label"><span className={`sync-dot ${cloud}`} />{CLOUD_LABELS[cloud]}</p>
+            <p className="settings-desc">{CLOUD_DETAILS[cloud]}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+}
 
 function NoteEditor({ note, cloud, onPatch, onClose, onDelete }) {
   const bodyRef = useRef(null)
