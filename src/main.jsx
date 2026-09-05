@@ -304,7 +304,6 @@ function App() {
   const [active, setActive] = useState('home')
   const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth > 720)
   const [editorId, setEditorId] = useState(null)
-  const [showSearch, setShowSearch] = useState(false)
   const [query, setQuery] = useState('')
   const [starred, setStarred] = useState(false)
   const [notes, setNotes] = useState(() => {
@@ -323,8 +322,9 @@ function App() {
   const [cloud, setCloud] = useState(supabase ? 'loading' : 'off') // off | loading | online | error
 
   const stateRef = useRef(null)
-  stateRef.current = { notes, editorId }
+  stateRef.current = { notes, editorId, active }
   const syncTimers = useRef({})
+  const prevPage = useRef('home')
 
   useEffect(() => localStorage.setItem('nitoron:observations', JSON.stringify(notes)), [notes])
 
@@ -371,11 +371,19 @@ function App() {
     setEditorId(note.id)
   }
   const openNote = (id) => { setActive('notes'); setEditorId(id) }
+  const openSearch = () => {
+    setActive((current) => { if (current !== 'search') prevPage.current = current; return 'search' })
+    if (window.innerWidth <= 720) setSidebarOpen(false)
+  }
+  const closeSearch = () => setActive(prevPage.current || 'home')
 
   useEffect(() => {
     const keydown = (event) => {
-      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); setShowSearch(true) }
-      if (event.key === 'Escape') { setShowSearch(false); if (stateRef.current.editorId) closeEditor() }
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); openSearch() }
+      if (event.key === 'Escape') {
+        if (stateRef.current.editorId) closeEditor()
+        else if (stateRef.current.active === 'search') closeSearch()
+      }
     }
     window.addEventListener('keydown', keydown)
     return () => window.removeEventListener('keydown', keydown)
@@ -383,7 +391,6 @@ function App() {
 
   const page = PAGES.find((item) => item.id === active)
   const editorNote = notes.find((n) => n.id === editorId)
-  const visible = useMemo(() => notes.filter((item) => `${item.title} ${noteText(item)} ${item.category} ${item.type}`.toLowerCase().includes(query.toLowerCase())), [notes, query])
   const navigate = (id) => { setActive(id); if (window.innerWidth <= 720) setSidebarOpen(false) }
 
   return <div className={`app ${sidebarOpen ? 'sidebar-visible' : ''}`}>
@@ -393,7 +400,7 @@ function App() {
         <button className="icon-btn collapse" onClick={() => setSidebarOpen(false)} aria-label="サイドバーを閉じる">{Icon.chevronsLeft}</button>
       </div>
       <div className="side-section">
-        <button className="side-item" onClick={() => setShowSearch(true)}><span className="side-ico">{Icon.search}</span>検索<kbd>⌘K</kbd></button>
+        <button className={`side-item ${active === 'search' ? 'active' : ''}`} onClick={openSearch}><span className="side-ico">{Icon.search}</span>検索<kbd>⌘K</kbd></button>
         <button className={`side-item ${active === 'home' ? 'active' : ''}`} onClick={() => navigate('home')}><span className="side-ico">{Icon.home}</span>ホーム</button>
         <button className="side-item"><span className="side-ico">{Icon.inbox}</span>受信トレイ</button>
       </div>
@@ -415,19 +422,22 @@ function App() {
     <main className="main">
       <header className="topbar">
         {!sidebarOpen && <button className="icon-btn" onClick={() => setSidebarOpen(true)} aria-label="サイドバーを開く">{Icon.menu}</button>}
-        <button className="crumb"><span className="crumb-ico">{Art[page.art]({ size: 17 })}</span><span>{page.label}</span></button>
-        <div className="topbar-right">
+        {active === 'search'
+          ? <button className="crumb"><span className="crumb-ico">{Icon.search}</span><span>検索</span></button>
+          : <button className="crumb"><span className="crumb-ico">{Art[page.art]({ size: 17 })}</span><span>{page.label}</span></button>}
+        {active !== 'search' && <div className="topbar-right">
           <span className="edited">今日 編集</span>
           <button className="top-share">共有</button>
           <button className="icon-btn" aria-label="コメント">{Icon.comment}</button>
           <button className={`icon-btn ${starred ? 'starred' : ''}`} onClick={() => setStarred((s) => !s)} aria-label="お気に入り">{Icon.star}</button>
           <button className="icon-btn" aria-label="その他">{Icon.dots}</button>
-        </div>
+        </div>}
       </header>
 
       <div className="scroll-area">
-        {active === 'home' ? <section className="home-canvas">
-          <Home notes={notes} onNavigate={navigate} onCompose={openNew} onOpen={openNote} onSearch={() => setShowSearch(true)} />
+        {active === 'search' ? <SearchPage notes={notes} query={query} setQuery={setQuery} onOpen={openNote} onNavigate={navigate} onClose={closeSearch} />
+        : active === 'home' ? <section className="home-canvas">
+          <Home notes={notes} onNavigate={navigate} onCompose={openNew} onOpen={openNote} onSearch={openSearch} />
         </section> : <>
           <div className="cover" style={{ background: page.cover }}><button className="cover-btn">カバー画像を変更</button></div>
           <section className="page-canvas">
@@ -443,11 +453,10 @@ function App() {
 
     <nav className="mobile-nav">
       {PAGES.map((item) => <button key={item.id} className={active === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><span className="mobile-nav-ico">{Art[item.art]({ size: 20 })}</span>{item.label.slice(0, 4)}</button>)}
-      <button onClick={() => setShowSearch(true)}><span className="mobile-nav-ico">{Icon.search}</span>検索</button>
+      <button className={active === 'search' ? 'active' : ''} onClick={openSearch}><span className="mobile-nav-ico">{Icon.search}</span>検索</button>
       <button onClick={openNew}><span className="mobile-nav-ico plus">{Icon.plus}</span>新規</button>
     </nav>
     {editorNote && <NoteEditor note={editorNote} cloud={cloud} onPatch={(p) => patchNote(editorNote.id, p)} onClose={closeEditor} onDelete={() => { removeNote(editorNote.id); setEditorId(null) }} />}
-    {showSearch && <Search query={query} setQuery={setQuery} items={visible} onClose={() => setShowSearch(false)} onPick={(item) => { setShowSearch(false); openNote(item.id) }} />}
   </div>
 }
 
@@ -621,22 +630,215 @@ function NoteEditor({ note, cloud, onPatch, onClose, onDelete }) {
   </div>
 }
 
-function Search({ query, setQuery, items, onClose, onPick }) {
-  return <div className="overlay search-overlay" role="dialog" aria-modal="true" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
-    <div className="search-modal">
-      <div className="search-input-row"><span className="search-ico">{Icon.search}</span><input autoFocus value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Nitoronを検索…" /><kbd>Esc</kbd></div>
-      <div className="search-results">
-        <p className="search-section">{query ? '検索結果' : '最近のページ'}</p>
-        {items.map((item) => <button key={item.id} onClick={() => onPick(item)}>
-          <span className="link-ico">{Icon.page}</span>
-          <span className="sr-main"><strong>{item.title || '無題'}</strong><span>メモ 内</span></span>
-          <span className="sr-date">{item.date}</span>
-        </button>)}
-        {!items.length && <p className="no-hit">一致する結果はありません。</p>}
-      </div>
-      <div className="search-foot"><span><kbd>↑↓</kbd> 移動</span><span><kbd>⏎</kbd> 開く</span></div>
-    </div>
+/* ---------- Search page (Notion-style full page search) ---------- */
+
+const SORT_OPTIONS = [
+  { value: 'relevance', label: '関連順' },
+  { value: 'newest', label: '最終更新 : 新しい順' },
+  { value: 'oldest', label: '最終更新 : 古い順' },
+]
+const DATE_OPTIONS = [
+  { value: 'any', label: 'いつでも' },
+  { value: 'today', label: '今日' },
+  { value: 'week', label: '過去7日間' },
+  { value: 'month', label: '過去30日間' },
+]
+
+const daysAgo = (dateStr) => Math.floor((Date.now() - new Date(dateStr + 'T00:00:00')) / 86400000)
+const bucketOf = (dateStr) => {
+  const n = daysAgo(dateStr)
+  return n <= 0 ? '今日' : n === 1 ? '昨日' : n <= 7 ? '過去1週間' : n <= 30 ? '過去30日間' : 'それ以前'
+}
+const relativeDate = (dateStr) => {
+  const n = daysAgo(dateStr)
+  return n <= 0 ? '今日' : n === 1 ? '昨日' : n <= 7 ? `${n}日前` : dateStr.slice(5).replace('-', '/')
+}
+
+function Highlight({ text, query }) {
+  if (!query) return text
+  const parts = []
+  let rest = text
+  let key = 0
+  while (rest) {
+    const i = rest.toLowerCase().indexOf(query)
+    if (i < 0) { parts.push(rest); break }
+    if (i > 0) parts.push(rest.slice(0, i))
+    parts.push(<mark key={key++}>{rest.slice(i, i + query.length)}</mark>)
+    rest = rest.slice(i + query.length)
+  }
+  return parts
+}
+
+const snippetFor = (note, query) => {
+  const texts = (note.blocks || []).map((b) => b.text).filter(Boolean)
+  if (!query) return texts.join(' ').slice(0, 90)
+  const hit = texts.find((t) => t.toLowerCase().includes(query))
+  if (!hit) return texts.join(' ').slice(0, 90)
+  const i = hit.toLowerCase().indexOf(query)
+  const start = Math.max(0, i - 30)
+  return (start > 0 ? '…' : '') + hit.slice(start, start + 120)
+}
+
+function FilterChip({ label, value, options, onChange, alwaysShowValue }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef(null)
+  useEffect(() => {
+    if (!open) return
+    const onDown = (e) => { if (!ref.current?.contains(e.target)) setOpen(false) }
+    const onKey = (e) => { if (e.key === 'Escape') { e.stopPropagation(); setOpen(false) } }
+    document.addEventListener('mousedown', onDown)
+    window.addEventListener('keydown', onKey, true)
+    return () => { document.removeEventListener('mousedown', onDown); window.removeEventListener('keydown', onKey, true) }
+  }, [open])
+  const current = options.find((o) => o.value === value) || options[0]
+  const isDefault = value === options[0].value
+  return <div className="chip-wrap" ref={ref}>
+    <button className={`chip ${!isDefault ? 'on' : ''}`} onClick={() => setOpen((o) => !o)}>
+      <span>{alwaysShowValue ? `${label} : ${current.label}` : isDefault ? label : `${label} : ${current.label}`}</span>
+      {Icon.chevronDown}
+    </button>
+    {open && <div className="chip-menu">
+      {options.map((o) => <button key={o.value} className={o.value === value ? 'sel' : ''} onClick={() => { onChange(o.value); setOpen(false) }}>
+        <span>{o.label}</span>{o.value === value && <span className="chip-check">{Icon.check}</span>}
+      </button>)}
+    </div>}
   </div>
+}
+
+function SearchPage({ notes, query, setQuery, onOpen, onNavigate, onClose }) {
+  const [sort, setSort] = useState('relevance')
+  const [titleOnly, setTitleOnly] = useState(false)
+  const [tag, setTag] = useState('all')
+  const [cat, setCat] = useState('all')
+  const [dateRange, setDateRange] = useState('any')
+  const [sel, setSel] = useState(0)
+  const inputRef = useRef(null)
+  const q = query.trim().toLowerCase()
+
+  const tagOptions = useMemo(() => [{ value: 'all', label: 'すべてのタグ' }, ...Object.keys(TYPE_COLORS).map((t) => ({ value: t, label: t }))], [])
+  const catOptions = useMemo(() => [{ value: 'all', label: 'すべてのカテゴリ' }, ...[...new Set(notes.map((n) => n.category))].map((c) => ({ value: c, label: c }))], [notes])
+  const hasFilters = titleOnly || tag !== 'all' || cat !== 'all' || dateRange !== 'any'
+
+  const results = useMemo(() => {
+    let list = notes.filter((n) => {
+      if (tag !== 'all' && n.type !== tag) return false
+      if (cat !== 'all' && n.category !== cat) return false
+      if (dateRange !== 'any') {
+        const d = daysAgo(n.date)
+        if (dateRange === 'today' && d > 0) return false
+        if (dateRange === 'week' && d > 7) return false
+        if (dateRange === 'month' && d > 30) return false
+      }
+      if (!q) return true
+      const inTitle = (n.title || '').toLowerCase().includes(q)
+      if (titleOnly) return inTitle
+      return inTitle || noteText(n).toLowerCase().includes(q) || n.category.toLowerCase().includes(q) || n.type.toLowerCase().includes(q)
+    })
+    const score = (n) => ((n.title || '').toLowerCase().includes(q) ? 2 : 0) + (noteText(n).toLowerCase().includes(q) ? 1 : 0)
+    if (sort === 'oldest') return [...list].sort((a, b) => a.date.localeCompare(b.date))
+    if (sort === 'relevance' && q) return [...list].sort((a, b) => score(b) - score(a) || b.date.localeCompare(a.date))
+    return [...list].sort((a, b) => b.date.localeCompare(a.date))
+  }, [notes, q, sort, titleOnly, tag, cat, dateRange])
+
+  const groups = useMemo(() => {
+    if (q && sort === 'relevance') return [['検索結果', results]]
+    const map = new Map()
+    for (const n of results) {
+      const b = bucketOf(n.date)
+      if (!map.has(b)) map.set(b, [])
+      map.get(b).push(n)
+    }
+    return [...map.entries()]
+  }, [results, q, sort])
+
+  useEffect(() => { setSel(0) }, [q, sort, titleOnly, tag, cat, dateRange])
+  useEffect(() => { inputRef.current?.focus() }, [])
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'ArrowDown') { e.preventDefault(); setSel((s) => Math.min(s + 1, results.length - 1)) }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); setSel((s) => Math.max(s - 1, 0)) }
+    else if (e.key === 'Enter' && results[sel]) onOpen(results[sel].id)
+  }
+
+  let flatIndex = -1
+  return <section className="search-page">
+    <div className="sp-input-row">
+      <span className="sp-input-ico">{Icon.search}</span>
+      <input
+        ref={inputRef}
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={handleKeyDown}
+        placeholder="Nitoronを検索…"
+        aria-label="検索"
+      />
+      {query && <button className="sp-clear" onClick={() => { setQuery(''); inputRef.current?.focus() }} aria-label="クリア">✕</button>}
+      <button className="sp-esc" onClick={onClose}>Esc</button>
+    </div>
+
+    <div className="sp-filters">
+      <FilterChip label="並べ替え" value={sort} options={SORT_OPTIONS} onChange={setSort} alwaysShowValue />
+      <span className="sp-filter-sep" />
+      <button className={`chip ${titleOnly ? 'on' : ''}`} onClick={() => setTitleOnly((v) => !v)}>
+        {titleOnly && <span className="chip-check">{Icon.check}</span>}<span>タイトルのみ</span>
+      </button>
+      <FilterChip label="タグ" value={tag} options={tagOptions} onChange={setTag} />
+      <FilterChip label="カテゴリ" value={cat} options={catOptions} onChange={setCat} />
+      <FilterChip label="最終更新" value={dateRange} options={DATE_OPTIONS} onChange={setDateRange} />
+      {hasFilters && <button className="chip clear-chip" onClick={() => { setTitleOnly(false); setTag('all'); setCat('all'); setDateRange('any') }}>フィルターをクリア</button>}
+    </div>
+
+    {(q || hasFilters) && <p className="sp-count">{results.length}件の結果</p>}
+
+    <div className="sp-results">
+      {!q && !hasFilters && <div className="sp-quick">
+        <p className="sp-group-head">ページ</p>
+        {PAGES.filter((p) => p.id !== 'home').map((p) => <button key={p.id} className="sp-row sp-page-row" onClick={() => onNavigate(p.id)}>
+          <span className="sp-row-ico art">{Art[p.art]({ size: 18 })}</span>
+          <span className="sp-row-main"><span className="sp-row-title">{p.label}</span></span>
+        </button>)}
+      </div>}
+
+      {groups.filter(([, items]) => items.length).map(([bucket, items]) => <div key={bucket}>
+        <p className="sp-group-head">{bucket}</p>
+        {items.map((item) => {
+          flatIndex += 1
+          const index = flatIndex
+          const snippet = snippetFor(item, q)
+          return <button
+            key={item.id}
+            className={`sp-row ${index === sel ? 'sel' : ''}`}
+            onClick={() => onOpen(item.id)}
+            onMouseMove={() => { if (index !== sel) setSel(index) }}
+          >
+            <span className="sp-row-ico">{Icon.page}</span>
+            <span className="sp-row-main">
+              <span className="sp-row-title"><Highlight text={item.title || '無題'} query={q} /></span>
+              <span className="sp-row-sub">
+                <span className="sp-row-path">メモ 内</span>
+                {snippet && <><span className="sp-row-dot">·</span><span className="sp-row-snippet"><Highlight text={snippet} query={q} /></span></>}
+              </span>
+            </span>
+            <span className={`tag ${TYPE_COLORS[item.type] || 'tag-gray'}`}>{item.type}</span>
+            <span className="sp-row-date">{relativeDate(item.date)}</span>
+          </button>
+        })}
+      </div>)}
+
+      {(q || hasFilters) && !results.length && <div className="sp-empty">
+        <div className="sp-empty-art"><Art.folder size={54} /></div>
+        <p className="sp-empty-title">一致する結果はありません。</p>
+        <p className="sp-empty-sub">キーワードを短くするか、フィルターを解除してみてください。</p>
+        {hasFilters && <button className="sp-empty-btn" onClick={() => { setTitleOnly(false); setTag('all'); setCat('all'); setDateRange('any') }}>フィルターをクリア</button>}
+      </div>}
+    </div>
+
+    <div className="sp-foot">
+      <span><kbd>↑↓</kbd> 移動</span>
+      <span><kbd>⏎</kbd> 開く</span>
+      <span><kbd>Esc</kbd> 閉じる</span>
+    </div>
+  </section>
 }
 
 createRoot(document.getElementById('root')).render(<App />)
