@@ -122,7 +122,9 @@ kbd { font-family: inherit; }
 }
 .cover:hover .cover-btn { opacity: 1; }
 .page-canvas { max-width: 960px; margin: 0 auto; padding: 0 96px 30vh; }
-.page-icon { margin-top: -38px; }
+/* The icon straddles the cover's bottom edge; the cover is positioned, so the
+   icon needs its own stacking context to paint on top of it, like Notion. */
+.page-icon { margin-top: -38px; position: relative; z-index: 1; width: fit-content; }
 .page-icon button {
   font-size: 66px; line-height: 1; border-radius: 8px; padding: 4px;
 }
