@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { supabase } from './supabase.js'
+import { supabase, ensureSession } from './supabase.js'
 import './styles.css'
 
 const uid = () => crypto.randomUUID()
@@ -320,30 +320,50 @@ function App() {
       }))
     } catch { return makeInitialNotes() }
   })
-  const [cloud, setCloud] = useState(supabase ? 'loading' : 'off') // off | loading | online | error
+  const [cloud, setCloud] = useState(supabase ? 'loading' : 'off') // off | loading | online | error | noauth
+  const [showSettings, setShowSettings] = useState(false)
+  const [displayName, setDisplayName] = useState(() => localStorage.getItem('nitoron:name') || 'たきと')
 
   const stateRef = useRef(null)
   stateRef.current = { notes, editorId }
   const syncTimers = useRef({})
+  const sessionRef = useRef(null)
 
   useEffect(() => localStorage.setItem('nitoron:observations', JSON.stringify(notes)), [notes])
+  useEffect(() => localStorage.setItem('nitoron:name', displayName), [displayName])
 
-  // Initial cloud load: server wins when it has rows; otherwise seed it with local notes.
+  // Establish an anonymous session, then load: server wins when it has rows;
+  // otherwise seed it with local notes.
   useEffect(() => {
     if (!supabase) return
     let cancelled = false
-    supabase.from('notes').select('*').order('created_at', { ascending: false }).then(({ data, error }) => {
+    ;(async () => {
+      const session = await ensureSession()
+      if (cancelled) return
+      if (!session) { setCloud('noauth'); return }
+      sessionRef.current = session
+      const { data, error } = await supabase.from('notes').select('*').order('created_at', { ascending: false })
       if (cancelled) return
       if (error) { setCloud('error'); return }
       if (data.length) setNotes(data.map(noteFromRow))
       else if (stateRef.current.notes.length) supabase.from('notes').upsert(stateRef.current.notes.map(rowFromNote)).then(() => {})
       setCloud('online')
-    })
+      const { data: s } = await supabase.from('settings').select('display_name').maybeSingle()
+      if (!cancelled && s?.display_name) setDisplayName(s.display_name)
+    })()
     return () => { cancelled = true }
   }, [])
 
+  const renameUser = (name) => {
+    setDisplayName(name)
+    clearTimeout(syncTimers.current['@name'])
+    syncTimers.current['@name'] = setTimeout(() => {
+      if (supabase && sessionRef.current) supabase.from('settings').upsert({ user_id: sessionRef.current.user.id, display_name: name }).then(() => {})
+    }, 800)
+  }
+
   const queuePush = (id) => {
-    if (!supabase) return
+    if (!supabase || !sessionRef.current) return
     clearTimeout(syncTimers.current[id])
     syncTimers.current[id] = setTimeout(() => {
       const note = stateRef.current.notes.find((n) => n.id === id)
@@ -357,7 +377,7 @@ function App() {
   const removeNote = (id) => {
     clearTimeout(syncTimers.current[id])
     setNotes((current) => current.filter((n) => n.id !== id))
-    if (supabase) supabase.from('notes').delete().eq('id', id).then(({ error }) => { if (error) setCloud('error') })
+    if (supabase && sessionRef.current) supabase.from('notes').delete().eq('id', id).then(({ error }) => { if (error) setCloud('error') })
   }
   const closeEditor = () => {
     const { notes: current, editorId: id } = stateRef.current
@@ -375,7 +395,7 @@ function App() {
   useEffect(() => {
     const keydown = (event) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); setShowSearch(true) }
-      if (event.key === 'Escape') { setShowSearch(false); if (stateRef.current.editorId) closeEditor() }
+      if (event.key === 'Escape') { setShowSearch(false); setShowSettings(false); if (stateRef.current.editorId) closeEditor() }
     }
     window.addEventListener('keydown', keydown)
     return () => window.removeEventListener('keydown', keydown)
@@ -406,7 +426,7 @@ function App() {
         <button className="side-item muted" onClick={openNew}><span className="side-ico">{Icon.plus}</span>新規ページ</button>
       </div>
       <div className="side-section bottom">
-        <button className="side-item muted"><span className="side-ico">{Icon.gear}</span>設定</button>
+        <button className="side-item muted" onClick={() => setShowSettings(true)}><span className="side-ico">{Icon.gear}</span>設定</button>
         <button className="side-item muted"><span className="side-ico">{Icon.trash}</span>ゴミ箱</button>
       </div>
     </aside>
@@ -427,7 +447,7 @@ function App() {
 
       <div className="scroll-area">
         {active === 'home' ? <section className="home-canvas">
-          <Home notes={notes} onNavigate={navigate} onCompose={openNew} onOpen={openNote} onSearch={() => setShowSearch(true)} />
+          <Home notes={notes} name={displayName} onNavigate={navigate} onCompose={openNew} onOpen={openNote} onSearch={() => setShowSearch(true)} />
         </section> : <>
           <div className="cover" style={{ background: page.cover }}><button className="cover-btn">カバー画像を変更</button></div>
           <section className="page-canvas">
@@ -447,6 +467,7 @@ function App() {
       <button onClick={openNew}><span className="mobile-nav-ico plus">{Icon.plus}</span>新規</button>
     </nav>
     {editorNote && <NoteEditor note={editorNote} cloud={cloud} onPatch={(p) => patchNote(editorNote.id, p)} onClose={closeEditor} onDelete={() => { removeNote(editorNote.id); setEditorId(null) }} />}
+    {showSettings && <Settings cloud={cloud} name={displayName} onName={renameUser} onClose={() => setShowSettings(false)} />}
     {showSearch && <Search query={query} setQuery={setQuery} items={visible} onClose={() => setShowSearch(false)} onPick={(item) => { setShowSearch(false); openNote(item.id) }} />}
   </div>
 }
@@ -467,7 +488,7 @@ function SectionHead({ icon, label }) {
   </div>
 }
 
-function Home({ notes, onNavigate, onCompose, onOpen, onSearch }) {
+function Home({ notes, name, onNavigate, onCompose, onOpen, onSearch }) {
   const hour = new Date().getHours()
   const greeting = hour < 5 ? 'こんばんは' : hour < 11 ? 'おはようございます' : hour < 18 ? 'こんにちは' : 'こんばんは'
   const fmtDay = (offset) => {
@@ -475,7 +496,7 @@ function Home({ notes, onNavigate, onCompose, onOpen, onSearch }) {
     return new Intl.DateTimeFormat('ja-JP', { month: 'numeric', day: 'numeric', weekday: 'short' }).format(d)
   }
   return <>
-    <h1 className="home-hello">{greeting}、たきとさん</h1>
+    <h1 className="home-hello">{greeting}、{name}さん</h1>
     <button className="ai-bar" onClick={onSearch}>
       <span className="ai-ico">{Icon.sparkle}</span>
       <span className="ai-placeholder">検索したり、質問したりしましょう…</span>
@@ -539,34 +560,107 @@ function Home({ notes, onNavigate, onCompose, onOpen, onSearch }) {
   </>
 }
 
+const DB_VIEWS = [
+  { id: 'table', label: 'テーブルビュー', icon: 'table' },
+  { id: 'list', label: 'リストビュー', icon: 'menu' },
+]
+const DB_SORTS = [
+  { id: 'date-desc', label: '日付(新しい順)' },
+  { id: 'date-asc', label: '日付(古い順)' },
+  { id: 'title-asc', label: '名前(昇順)' },
+]
+const DB_TAGS = Object.keys(TYPE_COLORS)
+
 function Database({ items, onCompose, onOpen }) {
+  const [view, setView] = useState(() => localStorage.getItem('nitoron:dbview') || 'table')
+  const [pop, setPop] = useState(null) // 'filter' | 'sort' | null
+  const [filterTag, setFilterTag] = useState('')
+  const [sort, setSort] = useState('date-desc')
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [q, setQ] = useState('')
+
+  useEffect(() => localStorage.setItem('nitoron:dbview', view), [view])
+
+  const rows = useMemo(() => {
+    let list = items
+    if (filterTag) list = list.filter((n) => n.type === filterTag)
+    if (q.trim()) list = list.filter((n) => `${n.title} ${noteText(n)} ${n.category}`.toLowerCase().includes(q.trim().toLowerCase()))
+    const sorted = [...list]
+    if (sort === 'date-asc') sorted.sort((a, b) => a.date.localeCompare(b.date))
+    else if (sort === 'title-asc') sorted.sort((a, b) => (a.title || '無題').localeCompare(b.title || '無題', 'ja'))
+    else sorted.sort((a, b) => b.date.localeCompare(a.date))
+    return sorted
+  }, [items, filterTag, q, sort])
+
+  const tagChip = (item) => <span className={`tag ${TYPE_COLORS[item.type] || 'tag-gray'}`}>{item.type}</span>
+
   return <div className="db">
     <div className="db-toolbar">
-      <div className="db-views"><button className="db-view active">{Icon.table}<span>テーブルビュー</span></button><button className="db-view muted">{Icon.plus}</button></div>
-      <div className="db-actions"><button>フィルター</button><button>並べ替え</button><button className="icon-btn">{Icon.search}</button><button className="icon-btn">{Icon.dots}</button><button className="db-new" onClick={onCompose}>新規<span className="db-new-caret">{Icon.chevronDown}</span></button></div>
+      <div className="db-views">
+        {DB_VIEWS.map((v) => <button key={v.id} className={`db-view ${view === v.id ? 'active' : ''}`} onClick={() => setView(v.id)}>{Icon[v.icon]}<span>{v.label}</span></button>)}
+        <button className="db-view muted" aria-label="ビューを追加">{Icon.plus}</button>
+      </div>
+      <div className="db-actions">
+        <button className={filterTag ? 'on' : ''} onClick={() => setPop(pop === 'filter' ? null : 'filter')}>フィルター</button>
+        <button className={sort !== 'date-desc' ? 'on' : ''} onClick={() => setPop(pop === 'sort' ? null : 'sort')}>並べ替え</button>
+        <button className={`icon-btn ${searchOpen ? 'on' : ''}`} aria-label="データベース内を検索" onClick={() => { setSearchOpen(!searchOpen); if (searchOpen) setQ('') }}>{Icon.search}</button>
+        <button className="db-new" onClick={onCompose}>新規<span className="db-new-caret">{Icon.chevronDown}</span></button>
+      </div>
     </div>
-    <div className="db-scroll">
+
+    {pop && <>
+      <div className="db-backdrop" onClick={() => setPop(null)} />
+      <div className="db-pop">
+        <p className="db-pop-head">{pop === 'filter' ? 'タグで絞り込む' : '並べ替え'}</p>
+        {pop === 'filter' ? <>
+          <button className="db-opt" onClick={() => { setFilterTag(''); setPop(null) }}><span className="db-opt-label">すべて</span>{!filterTag && <span className="db-opt-check">{Icon.check}</span>}</button>
+          {DB_TAGS.map((t) => <button key={t} className="db-opt" onClick={() => { setFilterTag(t); setPop(null) }}>
+            <span className={`tag ${TYPE_COLORS[t]}`}>{t}</span>{filterTag === t && <span className="db-opt-check">{Icon.check}</span>}
+          </button>)}
+        </> : DB_SORTS.map((s) => <button key={s.id} className="db-opt" onClick={() => { setSort(s.id); setPop(null) }}>
+          <span className="db-opt-label">{s.label}</span>{sort === s.id && <span className="db-opt-check">{Icon.check}</span>}
+        </button>)}
+      </div>
+    </>}
+
+    {searchOpen && <div className="db-search-row">
+      <span className="search-ico">{Icon.search}</span>
+      <input autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder="検索…" />
+      {q && <button className="icon-btn" aria-label="クリア" onClick={() => setQ('')}>✕</button>}
+    </div>}
+
+    {view === 'table' ? <div className="db-scroll">
       <table className="db-table">
         <thead><tr>
-          <th><span>{Icon.text}名前</span></th>
+          <th className="th-name"><span>{Icon.text}名前</span></th>
           <th><span>{Icon.tag}タグ</span></th>
           <th><span>{Icon.tag}カテゴリ</span></th>
           <th><span>{Icon.calendar}日付</span></th>
           <th className="th-plus"><span>{Icon.plus}</span></th>
         </tr></thead>
         <tbody>
-          {items.map((item) => <tr key={item.id} onClick={() => onOpen(item.id)}>
+          {rows.map((item) => <tr key={item.id} onClick={() => onOpen(item.id)}>
             <td className="cell-name"><span className="cell-ico">{Icon.page}</span><span className="cell-title">{item.title || '無題'}</span><span className="open-hint">開く</span></td>
-            <td><span className={`tag ${TYPE_COLORS[item.type] || 'tag-gray'}`}>{item.type}</span></td>
+            <td>{tagChip(item)}</td>
             <td><span className="tag tag-brown">{item.category}</span></td>
             <td className="cell-date">{item.date}</td>
             <td />
           </tr>)}
+          {!rows.length && <tr className="row-empty"><td colSpan="5">一致する結果はありません。</td></tr>}
           <tr className="row-new" onClick={onCompose}><td colSpan="5"><span>{Icon.plus}</span>新規</td></tr>
         </tbody>
-        <tfoot><tr><td colSpan="5">カウント <b>{items.length}</b></td></tr></tfoot>
+        <tfoot><tr><td colSpan="5">カウント <b>{rows.length}</b></td></tr></tfoot>
       </table>
-    </div>
+    </div> : <div className="db-list">
+      {rows.map((item) => <button key={item.id} className="db-list-row" onClick={() => onOpen(item.id)}>
+        <span className="cell-ico">{Icon.page}</span>
+        <span className="db-list-title">{item.title || '無題'}</span>
+        <span className="db-list-props">{tagChip(item)}<span className="db-list-date">{item.date.slice(5).replace('-', '/')}</span></span>
+      </button>)}
+      {!rows.length && <p className="db-list-empty">一致する結果はありません。</p>}
+      <button className="db-list-row new" onClick={onCompose}><span className="cell-ico">{Icon.plus}</span><span className="db-list-title muted">新規</span></button>
+      <p className="db-list-count">カウント <b>{rows.length}</b></p>
+    </div>}
   </div>
 }
 
@@ -585,7 +679,36 @@ function Report({ items }) {
   </>
 }
 
-const CLOUD_LABELS = { off: '自動保存(この端末のみ)', loading: '同期中…', online: 'クラウドに自動保存', error: '同期エラー・ローカル保存' }
+const CLOUD_LABELS = { off: '自動保存(この端末のみ)', loading: '同期中…', online: 'クラウドに自動保存', error: '同期エラー・ローカル保存', noauth: '同期オフ(この端末のみ)' }
+const CLOUD_DETAILS = {
+  off: 'Supabaseのキーが設定されていないため、この端末のブラウザにのみ保存されます。',
+  loading: 'クラウドに接続しています…',
+  online: 'メモと設定はクラウドに自動保存されます。この端末専用のアカウントで、他の人からは見えません。',
+  error: 'クラウドに接続できませんでした。データはこの端末に保存されており、接続が戻ると再同期されます。',
+  noauth: 'サインインできませんでした。SupabaseのAuthentication設定で「Anonymous sign-ins」を有効にすると、この端末のデータがクラウドに同期されます。',
+}
+
+function Settings({ cloud, name, onName, onClose }) {
+  return <div className="overlay" role="dialog" aria-modal="true" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
+    <div className="settings-modal">
+      <div className="settings-bar"><span className="peek-hint">設定</span><button className="icon-btn" onClick={onClose} aria-label="閉じる">✕</button></div>
+      <div className="settings-body">
+        <p className="settings-sec">アカウント</p>
+        <div className="settings-row">
+          <div className="settings-info"><p className="settings-label">表示名</p><p className="settings-desc">ホームのあいさつに使われます。</p></div>
+          <input className="settings-input" value={name} onChange={(e) => onName(e.target.value)} placeholder="名前" />
+        </div>
+        <p className="settings-sec">同期</p>
+        <div className="settings-row">
+          <div className="settings-info">
+            <p className="settings-label"><span className={`sync-dot ${cloud}`} />{CLOUD_LABELS[cloud]}</p>
+            <p className="settings-desc">{CLOUD_DETAILS[cloud]}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+}
 
 function NoteEditor({ note, cloud, onPatch, onClose, onDelete }) {
   const bodyRef = useRef(null)
