@@ -539,34 +539,107 @@ function Home({ notes, onNavigate, onCompose, onOpen, onSearch }) {
   </>
 }
 
+const DB_VIEWS = [
+  { id: 'table', label: 'テーブルビュー', icon: 'table' },
+  { id: 'list', label: 'リストビュー', icon: 'menu' },
+]
+const DB_SORTS = [
+  { id: 'date-desc', label: '日付(新しい順)' },
+  { id: 'date-asc', label: '日付(古い順)' },
+  { id: 'title-asc', label: '名前(昇順)' },
+]
+const DB_TAGS = Object.keys(TYPE_COLORS)
+
 function Database({ items, onCompose, onOpen }) {
+  const [view, setView] = useState(() => localStorage.getItem('nitoron:dbview') || 'table')
+  const [pop, setPop] = useState(null) // 'filter' | 'sort' | null
+  const [filterTag, setFilterTag] = useState('')
+  const [sort, setSort] = useState('date-desc')
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [q, setQ] = useState('')
+
+  useEffect(() => localStorage.setItem('nitoron:dbview', view), [view])
+
+  const rows = useMemo(() => {
+    let list = items
+    if (filterTag) list = list.filter((n) => n.type === filterTag)
+    if (q.trim()) list = list.filter((n) => `${n.title} ${noteText(n)} ${n.category}`.toLowerCase().includes(q.trim().toLowerCase()))
+    const sorted = [...list]
+    if (sort === 'date-asc') sorted.sort((a, b) => a.date.localeCompare(b.date))
+    else if (sort === 'title-asc') sorted.sort((a, b) => (a.title || '無題').localeCompare(b.title || '無題', 'ja'))
+    else sorted.sort((a, b) => b.date.localeCompare(a.date))
+    return sorted
+  }, [items, filterTag, q, sort])
+
+  const tagChip = (item) => <span className={`tag ${TYPE_COLORS[item.type] || 'tag-gray'}`}>{item.type}</span>
+
   return <div className="db">
     <div className="db-toolbar">
-      <div className="db-views"><button className="db-view active">{Icon.table}<span>テーブルビュー</span></button><button className="db-view muted">{Icon.plus}</button></div>
-      <div className="db-actions"><button>フィルター</button><button>並べ替え</button><button className="icon-btn">{Icon.search}</button><button className="icon-btn">{Icon.dots}</button><button className="db-new" onClick={onCompose}>新規<span className="db-new-caret">{Icon.chevronDown}</span></button></div>
+      <div className="db-views">
+        {DB_VIEWS.map((v) => <button key={v.id} className={`db-view ${view === v.id ? 'active' : ''}`} onClick={() => setView(v.id)}>{Icon[v.icon]}<span>{v.label}</span></button>)}
+        <button className="db-view muted" aria-label="ビューを追加">{Icon.plus}</button>
+      </div>
+      <div className="db-actions">
+        <button className={filterTag ? 'on' : ''} onClick={() => setPop(pop === 'filter' ? null : 'filter')}>フィルター</button>
+        <button className={sort !== 'date-desc' ? 'on' : ''} onClick={() => setPop(pop === 'sort' ? null : 'sort')}>並べ替え</button>
+        <button className={`icon-btn ${searchOpen ? 'on' : ''}`} aria-label="データベース内を検索" onClick={() => { setSearchOpen(!searchOpen); if (searchOpen) setQ('') }}>{Icon.search}</button>
+        <button className="db-new" onClick={onCompose}>新規<span className="db-new-caret">{Icon.chevronDown}</span></button>
+      </div>
     </div>
-    <div className="db-scroll">
+
+    {pop && <>
+      <div className="db-backdrop" onClick={() => setPop(null)} />
+      <div className="db-pop">
+        <p className="db-pop-head">{pop === 'filter' ? 'タグで絞り込む' : '並べ替え'}</p>
+        {pop === 'filter' ? <>
+          <button className="db-opt" onClick={() => { setFilterTag(''); setPop(null) }}><span className="db-opt-label">すべて</span>{!filterTag && <span className="db-opt-check">{Icon.check}</span>}</button>
+          {DB_TAGS.map((t) => <button key={t} className="db-opt" onClick={() => { setFilterTag(t); setPop(null) }}>
+            <span className={`tag ${TYPE_COLORS[t]}`}>{t}</span>{filterTag === t && <span className="db-opt-check">{Icon.check}</span>}
+          </button>)}
+        </> : DB_SORTS.map((s) => <button key={s.id} className="db-opt" onClick={() => { setSort(s.id); setPop(null) }}>
+          <span className="db-opt-label">{s.label}</span>{sort === s.id && <span className="db-opt-check">{Icon.check}</span>}
+        </button>)}
+      </div>
+    </>}
+
+    {searchOpen && <div className="db-search-row">
+      <span className="search-ico">{Icon.search}</span>
+      <input autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder="検索…" />
+      {q && <button className="icon-btn" aria-label="クリア" onClick={() => setQ('')}>✕</button>}
+    </div>}
+
+    {view === 'table' ? <div className="db-scroll">
       <table className="db-table">
         <thead><tr>
-          <th><span>{Icon.text}名前</span></th>
+          <th className="th-name"><span>{Icon.text}名前</span></th>
           <th><span>{Icon.tag}タグ</span></th>
           <th><span>{Icon.tag}カテゴリ</span></th>
           <th><span>{Icon.calendar}日付</span></th>
           <th className="th-plus"><span>{Icon.plus}</span></th>
         </tr></thead>
         <tbody>
-          {items.map((item) => <tr key={item.id} onClick={() => onOpen(item.id)}>
+          {rows.map((item) => <tr key={item.id} onClick={() => onOpen(item.id)}>
             <td className="cell-name"><span className="cell-ico">{Icon.page}</span><span className="cell-title">{item.title || '無題'}</span><span className="open-hint">開く</span></td>
-            <td><span className={`tag ${TYPE_COLORS[item.type] || 'tag-gray'}`}>{item.type}</span></td>
+            <td>{tagChip(item)}</td>
             <td><span className="tag tag-brown">{item.category}</span></td>
             <td className="cell-date">{item.date}</td>
             <td />
           </tr>)}
+          {!rows.length && <tr className="row-empty"><td colSpan="5">一致する結果はありません。</td></tr>}
           <tr className="row-new" onClick={onCompose}><td colSpan="5"><span>{Icon.plus}</span>新規</td></tr>
         </tbody>
-        <tfoot><tr><td colSpan="5">カウント <b>{items.length}</b></td></tr></tfoot>
+        <tfoot><tr><td colSpan="5">カウント <b>{rows.length}</b></td></tr></tfoot>
       </table>
-    </div>
+    </div> : <div className="db-list">
+      {rows.map((item) => <button key={item.id} className="db-list-row" onClick={() => onOpen(item.id)}>
+        <span className="cell-ico">{Icon.page}</span>
+        <span className="db-list-title">{item.title || '無題'}</span>
+        <span className="db-list-props">{tagChip(item)}<span className="db-list-date">{item.date.slice(5).replace('-', '/')}</span></span>
+      </button>)}
+      {!rows.length && <p className="db-list-empty">一致する結果はありません。</p>}
+      <button className="db-list-row new" onClick={onCompose}><span className="cell-ico">{Icon.plus}</span><span className="db-list-title muted">新規</span></button>
+      <p className="db-list-count">カウント <b>{rows.length}</b></p>
+    </div>}
   </div>
 }
 
