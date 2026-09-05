@@ -468,6 +468,34 @@ kbd { font-family: inherit; }
 .slash-desc { display: block; font-size: 12px; color: var(--text-3); }
 .slash-empty { margin: 0; padding: 12px 8px 14px; font-size: 13px; color: var(--text-3); text-align: center; }
 
+/* ---------- Auth ---------- */
+.account-mail { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; }
+.account-action { flex: none; margin-left: auto; font-size: 11px; color: var(--text-3); }
+.auth-modal {
+  width: min(100%, 384px);
+  display: flex; flex-direction: column;
+  background: #fff; border-radius: 12px; padding: 30px 32px 22px;
+  box-shadow: rgba(15, 15, 15, 0.05) 0 0 0 1px, rgba(15, 15, 15, 0.1) 0 5px 10px, rgba(15, 15, 15, 0.2) 0 15px 40px;
+  animation: rise 160ms ease;
+}
+.auth-logo { display: grid; place-items: center; margin-bottom: 10px; }
+.auth-title { margin: 0; font-size: 20px; font-weight: 700; text-align: center; }
+.auth-sub { margin: 6px 0 18px; font-size: 13px; color: var(--text-3); text-align: center; line-height: 1.5; }
+.auth-label { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; font-size: 12px; font-weight: 600; color: var(--text-2); }
+.auth-label input { border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; font-size: 14px; outline: 0; }
+.auth-label input:focus { border-color: var(--blue); box-shadow: 0 0 0 2px rgba(35, 131, 226, 0.15); }
+.auth-notice { margin: 0 0 12px; padding: 8px 10px; border-radius: 6px; font-size: 13px; line-height: 1.5; }
+.auth-notice.error { background: #fdebec; color: #5d1715; }
+.auth-notice.info { background: #dbeddb; color: #1c3829; }
+.auth-submit {
+  background: var(--blue); color: #fff; font-size: 14px; font-weight: 500;
+  padding: 8px 12px; border-radius: 6px; margin-top: 2px;
+}
+.auth-submit:hover { background: var(--blue-hover); }
+.auth-submit:disabled { opacity: 0.6; cursor: default; }
+.auth-switch { margin-top: 14px; font-size: 13px; color: var(--text-3); }
+.auth-switch:hover { color: var(--text); text-decoration: underline; }
+
 .search-modal {
   width: min(100%, 620px); max-height: min(70vh, 560px);
   display: flex; flex-direction: column;

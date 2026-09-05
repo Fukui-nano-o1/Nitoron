@@ -48,6 +48,7 @@ const Icon = {
   book: <svg viewBox="0 0 16 16" width="15" height="15"><path fill="currentColor" d="M4.25 1.5h8.25c.41 0 .75.34.75.75v11.5a.75.75 0 0 1-.75.75H4.25A2.25 2.25 0 0 1 2 12.25v-8.5A2.25 2.25 0 0 1 4.25 1.5ZM3.5 12.25c0 .41.34.75.75.75h7.5v-2H4.25a.75.75 0 0 0-.75.75v.5Zm8.25-2.75V3H4.25a.75.75 0 0 0-.75.75v5.88c.24-.08.49-.13.75-.13h7.5Z"/></svg>,
   checkbox: <svg viewBox="0 0 16 16" width="15" height="15"><path fill="currentColor" d="M3.5 2h9A1.5 1.5 0 0 1 14 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12.5v-9A1.5 1.5 0 0 1 3.5 2Zm0 1.5v9h9v-9h-9Zm7.53 2.47a.75.75 0 0 1 0 1.06l-3 3a.75.75 0 0 1-1.06 0l-1.5-1.5a.75.75 0 1 1 1.06-1.06l.97.97 2.47-2.47a.75.75 0 0 1 1.06 0Z"/></svg>,
   check: <svg viewBox="0 0 16 16" width="12" height="12"><path fill="currentColor" d="M13.53 4.22a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l2.47 2.47 5.97-5.97a.75.75 0 0 1 1.06 0Z"/></svg>,
+  user: <svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M8 1.75a3.25 3.25 0 1 1 0 6.5 3.25 3.25 0 0 1 0-6.5Zm0 1.5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5ZM8 9.5c2.76 0 5.25 1.44 5.25 3.55v.2a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75v-.2C2.75 10.94 5.24 9.5 8 9.5Zm0 1.5c-2.02 0-3.4.88-3.68 1.5h7.36c-.28-.62-1.66-1.5-3.68-1.5Z"/></svg>,
 }
 
 /* ---------- Hand-drawn duotone artwork (Nitoron's own icon language) ---------- */
@@ -320,34 +321,51 @@ function App() {
       }))
     } catch { return makeInitialNotes() }
   })
-  const [cloud, setCloud] = useState(supabase ? 'loading' : 'off') // off | loading | online | error
+  const [cloud, setCloud] = useState(supabase ? 'loading' : 'off') // off | signedout | loading | online | error
+  const [session, setSession] = useState(null)
+  const [authReady, setAuthReady] = useState(!supabase)
+  const [showAuth, setShowAuth] = useState(false)
 
   const stateRef = useRef(null)
-  stateRef.current = { notes, editorId }
+  stateRef.current = { notes, editorId, session }
   const syncTimers = useRef({})
 
   useEffect(() => localStorage.setItem('nitoron:observations', JSON.stringify(notes)), [notes])
 
-  // Initial cloud load: server wins when it has rows; otherwise seed it with local notes.
   useEffect(() => {
     if (!supabase) return
+    supabase.auth.getSession().then(({ data }) => { setSession(data.session); setAuthReady(true) })
+    const { data: sub } = supabase.auth.onAuthStateChange((_event, s) => { setSession(s); if (s) setShowAuth(false) })
+    return () => sub.subscription.unsubscribe()
+  }, [])
+
+  // Cloud load on login: server wins when it has rows; otherwise seed it with local notes.
+  const userId = session?.user?.id
+  useEffect(() => {
+    if (!supabase || !authReady) return
+    if (!userId) { setCloud('signedout'); return }
     let cancelled = false
-    supabase.from('notes').select('*').order('created_at', { ascending: false }).then(({ data, error }) => {
+    setCloud('loading')
+    const load = async () => {
+      // ログイン機能導入前に作られた所有者なしの行を引き取る
+      await supabase.from('notes').update({ user_id: userId }).is('user_id', null)
+      const { data, error } = await supabase.from('notes').select('*').order('created_at', { ascending: false })
       if (cancelled) return
       if (error) { setCloud('error'); return }
       if (data.length) setNotes(data.map(noteFromRow))
       else if (stateRef.current.notes.length) supabase.from('notes').upsert(stateRef.current.notes.map(rowFromNote)).then(() => {})
       setCloud('online')
-    })
+    }
+    load()
     return () => { cancelled = true }
-  }, [])
+  }, [authReady, userId])
 
   const queuePush = (id) => {
     if (!supabase) return
     clearTimeout(syncTimers.current[id])
     syncTimers.current[id] = setTimeout(() => {
       const note = stateRef.current.notes.find((n) => n.id === id)
-      if (note) supabase.from('notes').upsert(rowFromNote(note)).then(({ error }) => { if (error) setCloud('error') })
+      if (note && stateRef.current.session) supabase.from('notes').upsert(rowFromNote(note)).then(({ error }) => { if (error) setCloud('error') })
     }, 800)
   }
   const patchNote = (id, p) => {
@@ -357,7 +375,7 @@ function App() {
   const removeNote = (id) => {
     clearTimeout(syncTimers.current[id])
     setNotes((current) => current.filter((n) => n.id !== id))
-    if (supabase) supabase.from('notes').delete().eq('id', id).then(({ error }) => { if (error) setCloud('error') })
+    if (supabase && stateRef.current.session) supabase.from('notes').delete().eq('id', id).then(({ error }) => { if (error) setCloud('error') })
   }
   const closeEditor = () => {
     const { notes: current, editorId: id } = stateRef.current
@@ -406,6 +424,9 @@ function App() {
         <button className="side-item muted" onClick={openNew}><span className="side-ico">{Icon.plus}</span>新規ページ</button>
       </div>
       <div className="side-section bottom">
+        {supabase && authReady && (session
+          ? <button className="side-item muted" onClick={() => supabase.auth.signOut()} title={session.user.email}><span className="side-ico">{Icon.user}</span><span className="account-mail">{session.user.email}</span><span className="account-action">ログアウト</span></button>
+          : <button className="side-item muted" onClick={() => setShowAuth(true)}><span className="side-ico">{Icon.user}</span>ログイン</button>)}
         <button className="side-item muted"><span className="side-ico">{Icon.gear}</span>設定</button>
         <button className="side-item muted"><span className="side-ico">{Icon.trash}</span>ゴミ箱</button>
       </div>
@@ -448,6 +469,7 @@ function App() {
     </nav>
     {editorNote && <NoteEditor note={editorNote} cloud={cloud} onPatch={(p) => patchNote(editorNote.id, p)} onClose={closeEditor} onDelete={() => { removeNote(editorNote.id); setEditorId(null) }} />}
     {showSearch && <Search query={query} setQuery={setQuery} items={visible} onClose={() => setShowSearch(false)} onPick={(item) => { setShowSearch(false); openNote(item.id) }} />}
+    {showAuth && !session && <AuthModal onClose={() => setShowAuth(false)} />}
   </div>
 }
 
@@ -585,7 +607,7 @@ function Report({ items }) {
   </>
 }
 
-const CLOUD_LABELS = { off: '自動保存(この端末のみ)', loading: '同期中…', online: 'クラウドに自動保存', error: '同期エラー・ローカル保存' }
+const CLOUD_LABELS = { off: '自動保存(この端末のみ)', signedout: 'この端末に保存・ログインで同期', loading: '同期中…', online: 'クラウドに自動保存', error: '同期エラー・ローカル保存' }
 
 function NoteEditor({ note, cloud, onPatch, onClose, onDelete }) {
   const bodyRef = useRef(null)
@@ -618,6 +640,52 @@ function NoteEditor({ note, cloud, onPatch, onClose, onDelete }) {
         <BlockEditor blocks={note.blocks} onChange={(blocks) => onPatch({ blocks })} />
       </div>
     </div>
+  </div>
+}
+
+function AuthModal({ onClose }) {
+  const [mode, setMode] = useState('signin') // signin | signup
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [notice, setNotice] = useState(null) // { kind: 'error' | 'info', text }
+  const [busy, setBusy] = useState(false)
+
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') { e.stopPropagation(); onClose() } }
+    window.addEventListener('keydown', onKey, true)
+    return () => window.removeEventListener('keydown', onKey, true)
+  }, [])
+
+  const submit = async (e) => {
+    e.preventDefault()
+    if (busy) return
+    setBusy(true); setNotice(null)
+    const { data, error } = mode === 'signin'
+      ? await supabase.auth.signInWithPassword({ email, password })
+      : await supabase.auth.signUp({ email, password })
+    setBusy(false)
+    if (error) { setNotice({ kind: 'error', text: error.message }); return }
+    if (!data.session) { setNotice({ kind: 'info', text: '確認メールを送信しました。メール内のリンクを開いてから、ここでログインしてください。' }); setMode('signin'); return }
+    onClose()
+  }
+
+  return <div className="overlay" role="dialog" aria-modal="true" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
+    <form className="auth-modal" onSubmit={submit}>
+      <span className="auth-logo"><Art.sprout size={36} /></span>
+      <h2 className="auth-title">{mode === 'signin' ? 'Nitoronにログイン' : 'アカウントを作成'}</h2>
+      <p className="auth-sub">メモをクラウドに同期して、どの端末からも開けるようにします。</p>
+      <label className="auth-label">メールアドレス
+        <input type="email" required autoFocus value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" autoComplete="email" />
+      </label>
+      <label className="auth-label">パスワード
+        <input type="password" required minLength={6} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="6文字以上" autoComplete={mode === 'signin' ? 'current-password' : 'new-password'} />
+      </label>
+      {notice && <p className={`auth-notice ${notice.kind}`}>{notice.text}</p>}
+      <button className="auth-submit" type="submit" disabled={busy}>{busy ? '送信中…' : mode === 'signin' ? 'ログイン' : '登録する'}</button>
+      <button className="auth-switch" type="button" onClick={() => { setMode(mode === 'signin' ? 'signup' : 'signin'); setNotice(null) }}>
+        {mode === 'signin' ? 'アカウントがない場合は新規登録' : 'すでにアカウントがある場合はログイン'}
+      </button>
+    </form>
   </div>
 }
 
