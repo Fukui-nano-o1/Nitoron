@@ -260,7 +260,7 @@ function BlockEditor({ blocks, onChange }) {
       numberCount = block.type === 'number' ? (blocks[i - 1]?.type === 'number' ? numberCount + 1 : 1) : 0
       const placeholder = block.type === 'h1' ? '見出し1' : block.type === 'h2' ? '見出し2' : block.type === 'h3' ? '見出し3'
         : blocks.length === 1 && i === 0 ? '入力するか、コマンドは半角「/」を押してください…' : ''
-      return <div className="block-row" key={block.id}>
+      return <div className="block-row" key={block.id} data-bid={block.id}>
         <div className="handle">
           <button aria-label="ブロックを追加" onClick={() => insertAfter(block.id, textBlock())}>{Icon.plus}</button>
           <button className="grip" aria-label="移動">⠿</button>
@@ -570,18 +570,164 @@ function Database({ items, onCompose, onOpen }) {
   </div>
 }
 
+const REPORT_KEY = 'nitoron:report'
+const REPORT_STATUS = [
+  { id: 'draft', label: '下書き', cls: 'st-gray' },
+  { id: 'review', label: 'レビュー中', cls: 'st-yellow' },
+  { id: 'done', label: '完成', cls: 'st-green' },
+]
+const TYPE_BAR_COLORS = { 'メモ': '#529cca', 'アイデア': '#e2ae3c', 'タスク': '#4d9e68' }
+
+const makeReportBlocks = () => [
+  textBlock('自由に編集できるレポートの下書きです。半角「/」でブロックを追加、右上の「メモを挿入」で記録を本文に取り込めます。', 'callout'),
+  textBlock('概要', 'h2'),
+  textBlock(''),
+  textBlock('要点', 'h2'),
+  textBlock('', 'bullet'),
+  textBlock('まとめ', 'h2'),
+  textBlock(''),
+]
+
+const blockPlain = (b) => {
+  if (b.type === 'h1') return `# ${b.text}`
+  if (b.type === 'h2') return `## ${b.text}`
+  if (b.type === 'h3') return `### ${b.text}`
+  if (b.type === 'bullet') return `・${b.text}`
+  if (b.type === 'todo') return `${b.checked ? '☑' : '☐'} ${b.text}`
+  if (b.type === 'quote') return `> ${b.text}`
+  if (b.type === 'divider') return '---'
+  return b.text
+}
+
 function Report({ items }) {
-  const chosen = items.slice(0, 5)
+  const [report, setReport] = useState(() => {
+    try {
+      const stored = JSON.parse(localStorage.getItem(REPORT_KEY))
+      if (Array.isArray(stored?.blocks) && stored.blocks.length) return { status: stored.status || 'draft', blocks: stored.blocks, updated: stored.updated || null }
+    } catch {}
+    return { status: 'draft', blocks: makeReportBlocks(), updated: null }
+  })
+  const [showInsert, setShowInsert] = useState(false)
+  const [copied, setCopied] = useState(false)
+
+  useEffect(() => localStorage.setItem(REPORT_KEY, JSON.stringify(report)), [report])
+
+  const setBlocks = (blocks) => setReport((r) => ({ ...r, blocks, updated: new Date().toISOString() }))
+  const status = REPORT_STATUS.find((s) => s.id === report.status) || REPORT_STATUS[0]
+
+  const stats = useMemo(() => {
+    const days = [...Array(7)].map((_, i) => {
+      const d = new Date(); d.setDate(d.getDate() - (6 - i))
+      const key = d.toISOString().slice(0, 10)
+      return { key, label: new Intl.DateTimeFormat('ja-JP', { weekday: 'narrow' }).format(d), count: items.filter((n) => n.date === key).length }
+    })
+    const typeCounts = Object.keys(TYPE_BAR_COLORS).map((type) => ({ type, count: items.filter((n) => n.type === type).length }))
+    let todoAll = 0, todoDone = 0
+    items.forEach((n) => (n.blocks || []).forEach((b) => { if (b.type === 'todo') { todoAll += 1; if (b.checked) todoDone += 1 } }))
+    const chars = report.blocks.reduce((sum, b) => sum + (b.text || '').length, 0)
+    return {
+      days,
+      weekAdds: days.reduce((sum, d) => sum + d.count, 0),
+      categories: new Set(items.map((n) => n.category)).size,
+      typeCounts, todoAll, todoDone,
+      chars, readMin: Math.max(1, Math.ceil(chars / 500)),
+    }
+  }, [items, report.blocks])
+
+  const headings = report.blocks.filter((b) => ['h1', 'h2', 'h3'].includes(b.type) && b.text.trim())
+  const jumpTo = (id) => document.querySelector(`[data-bid="${id}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+
+  const insertNote = (note) => {
+    setShowInsert(false)
+    const cloned = (note.blocks || []).filter((b) => b.text || b.type === 'divider').map((b) => ({ ...b, id: uid() }))
+    setBlocks([...report.blocks, textBlock(note.title || '無題', 'h3'), ...(cloned.length ? cloned : [textBlock()]), textBlock('', 'divider')])
+  }
+
+  const copyReport = async () => {
+    let num = 0
+    const text = report.blocks.map((b) => {
+      num = b.type === 'number' ? num + 1 : 0
+      return b.type === 'number' ? `${num}. ${b.text}` : blockPlain(b)
+    }).filter(Boolean).join('\n')
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopied(true); setTimeout(() => setCopied(false), 1600)
+    } catch {}
+  }
+
+  const updatedLabel = report.updated
+    ? `${new Intl.DateTimeFormat('ja-JP', { month: 'numeric', day: 'numeric', hour: 'numeric', minute: '2-digit' }).format(new Date(report.updated))} 更新`
+    : '未編集'
+  const dayMax = Math.max(1, ...stats.days.map((d) => d.count))
+  const typeMax = Math.max(1, ...stats.typeCounts.map((t) => t.count))
+  const todoRate = stats.todoAll ? Math.round((stats.todoDone / stats.todoAll) * 100) : null
+
   return <>
-    <div className="block callout gray"><span className="callout-ico"><Art.megaphone size={20} /></span><p>レポートの下書きです。メモが増えるほど、内容を組み立てやすくなります。</p></div>
-    <h2 className="block-h2">要点のまとめ</h2>
-    <p className="block-p">以下のメモをもとに、内容を組み立てます。</p>
-    {chosen.map((item, index) => <div className="numbered" key={item.id}>
-      <span className="num">{index + 1}.</span>
-      <div><p className="num-title">{item.title || '無題'}</p><p className="num-body">{noteText(item) || '内容を追加してください。'}</p></div>
-    </div>)}
-    <blockquote className="block-quote">日々の記録が、次の判断をつくる。</blockquote>
-    <div className="add-block"><span>{Icon.plus}</span>クリックして下に追加</div>
+    <div className="report-bar">
+      <label className={`status-chip ${status.cls}`}>
+        <span className="status-dot" />{status.label}{Icon.chevronDown}
+        <select value={report.status} onChange={(e) => setReport((r) => ({ ...r, status: e.target.value }))} aria-label="レポートのステータス">
+          {REPORT_STATUS.map((s) => <option key={s.id} value={s.id}>{s.label}</option>)}
+        </select>
+      </label>
+      <span className="report-meta">{stats.chars.toLocaleString()}文字 · 読了 約{stats.readMin}分 · {updatedLabel}</span>
+      <div className="report-actions">
+        <div className="insert-wrap">
+          <button className="report-btn" onClick={() => setShowInsert((v) => !v)}>{Icon.page}<span>メモを挿入</span>{Icon.chevronDown}</button>
+          {showInsert && <>
+            <div className="menu-backdrop" onClick={() => setShowInsert(false)} />
+            <div className="insert-menu">
+              <p className="slash-head">メモを本文に取り込む</p>
+              {items.map((n) => <button key={n.id} className="insert-item" onClick={() => insertNote(n)}>
+                <span className="link-ico">{Icon.page}</span>
+                <span className="insert-title">{n.title || '無題'}</span>
+                <span className="insert-date">{n.date.slice(5).replace('-', '/')}</span>
+              </button>)}
+              {!items.length && <p className="slash-empty">メモがありません</p>}
+            </div>
+          </>}
+        </div>
+        <button className="report-btn" onClick={copyReport}>{copied ? <>{Icon.check}<span>コピーしました</span></> : <span>テキストをコピー</span>}</button>
+      </div>
+    </div>
+
+    <div className="kpi-grid">
+      <div className="kpi"><p className="kpi-label">メモ総数</p><p className="kpi-value">{items.length}<small>件</small></p><p className="kpi-sub">すべての記録</p></div>
+      <div className="kpi"><p className="kpi-label">今週の追加</p><p className="kpi-value">{stats.weekAdds}<small>件</small></p><p className="kpi-sub">直近7日間</p></div>
+      <div className="kpi"><p className="kpi-label">カテゴリ</p><p className="kpi-value">{stats.categories}<small>種類</small></p><p className="kpi-sub">整理中のテーマ</p></div>
+      <div className="kpi"><p className="kpi-label">ToDo完了率</p><p className="kpi-value">{todoRate === null ? '—' : <>{todoRate}<small>%</small></>}</p><p className="kpi-sub">{stats.todoAll ? `${stats.todoDone} / ${stats.todoAll} 完了` : 'ToDoはまだありません'}</p></div>
+    </div>
+
+    <div className="report-charts">
+      <div className="chart-card">
+        <p className="chart-title">7日間のメモ活動</p>
+        <div className="bar-chart">
+          {stats.days.map((d) => <div className="bar-col" key={d.key}>
+            <span className="bar-count">{d.count || ''}</span>
+            <div className="bar-area"><div className={`bar ${d.count ? '' : 'zero'}`} style={{ height: d.count ? `${(d.count / dayMax) * 100}%` : '3px' }} /></div>
+            <span className="bar-label">{d.label}</span>
+          </div>)}
+        </div>
+      </div>
+      <div className="chart-card">
+        <p className="chart-title">タグの内訳</p>
+        <div className="hbars">
+          {stats.typeCounts.map((t) => <div className="hbar-row" key={t.type}>
+            <span className={`tag ${TYPE_COLORS[t.type] || 'tag-gray'}`}>{t.type}</span>
+            <div className="hbar-track"><div className="hbar" style={{ width: `${(t.count / typeMax) * 100}%`, background: TYPE_BAR_COLORS[t.type] }} /></div>
+            <span className="hbar-count">{t.count}</span>
+          </div>)}
+        </div>
+      </div>
+    </div>
+
+    <div className="report-layout">
+      <div className="report-doc"><BlockEditor blocks={report.blocks} onChange={setBlocks} /></div>
+      {headings.length > 0 && <aside className="report-outline">
+        <p className="outline-head">目次</p>
+        {headings.map((h) => <button key={h.id} className={`outline-item lv-${h.type}`} onClick={() => jumpTo(h.id)}>{h.text}</button>)}
+      </aside>}
+    </div>
   </>
 }
 
