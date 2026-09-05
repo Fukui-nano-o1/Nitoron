@@ -697,11 +697,15 @@ function FilterChip({ label, value, options, onChange, alwaysShowValue }) {
       <span>{alwaysShowValue ? `${label} : ${current.label}` : isDefault ? label : `${label} : ${current.label}`}</span>
       {Icon.chevronDown}
     </button>
-    {open && <div className="chip-menu">
-      {options.map((o) => <button key={o.value} className={o.value === value ? 'sel' : ''} onClick={() => { onChange(o.value); setOpen(false) }}>
-        <span>{o.label}</span>{o.value === value && <span className="chip-check">{Icon.check}</span>}
-      </button>)}
-    </div>}
+    {open && <>
+      <div className="chip-backdrop" onMouseDown={() => setOpen(false)} />
+      <div className="chip-menu">
+        <p className="chip-menu-title">{label}</p>
+        {options.map((o) => <button key={o.value} className={o.value === value ? 'sel' : ''} onClick={() => { onChange(o.value); setOpen(false) }}>
+          <span>{o.label}</span>{o.value === value && <span className="chip-check">{Icon.check}</span>}
+        </button>)}
+      </div>
+    </>}
   </div>
 }
 

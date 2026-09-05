@@ -511,13 +511,15 @@ kbd { font-family: inherit; }
 .chip-check { display: inline-grid; place-items: center; }
 .chip.clear-chip { border-color: transparent; color: var(--text-3); }
 .chip.clear-chip:hover { color: var(--text-2); }
+.chip-backdrop { display: none; }
 .chip-menu {
-  position: absolute; z-index: 40; top: calc(100% + 6px); left: 0;
+  position: absolute; z-index: 45; top: calc(100% + 6px); left: 0;
   min-width: 200px; padding: 6px;
   background: #fff; border-radius: 10px;
   box-shadow: rgba(15, 15, 15, 0.05) 0 0 0 1px, rgba(15, 15, 15, 0.1) 0 5px 10px, rgba(15, 15, 15, 0.2) 0 15px 40px;
   animation: rise 140ms ease;
 }
+.chip-menu-title { display: none; }
 .chip-menu button {
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
   width: 100%; padding: 6px 8px; border-radius: 6px;
@@ -615,11 +617,50 @@ kbd { font-family: inherit; }
   .slash-menu { width: min(324px, calc(100vw - 48px)); max-height: 240px; }
 
   .ai-kbd, .side-item kbd { display: none; }
-  .search-page { padding: 16px 20px 120px; min-height: 0; }
-  .sp-input-row input { font-size: 18px; }
+
+  /* Search page becomes app-like: sticky bar, scrollable chips, bottom-sheet menus */
+  .search-page { padding: 0 16px 120px; min-height: 0; }
+  .sp-input-row {
+    position: sticky; top: 44px; z-index: 15;
+    background: var(--bg); padding: 8px 0 10px;
+  }
+  .sp-input-row input { font-size: 17px; }
+  .sp-input-ico svg { width: 19px; height: 19px; }
+  .sp-clear { width: 26px; height: 26px; font-size: 13px; }
   .sp-esc, .sp-foot { display: none; }
-  .sp-row { padding: 10px; }
+  .sp-filters {
+    flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    margin: 0 -16px; padding: 10px 16px 6px;
+    scrollbar-width: none;
+  }
+  .sp-filters::-webkit-scrollbar { display: none; }
+  .sp-filters > * { flex: none; }
+  .chip { padding: 6px 12px; }
+  .sp-count { margin-top: 10px; }
+  .sp-group-head { margin-top: 14px; }
+  .sp-row { padding: 12px 10px; }
+  .sp-row-title { font-size: 15px; }
+  .sp-row-sub { font-size: 13px; }
   .sp-row-date { display: none; }
+  .sp-empty { padding-top: 48px; }
+
+  .chip-backdrop {
+    display: block; position: fixed; z-index: 44; inset: 0;
+    background: rgba(15, 15, 15, 0.35);
+    animation: fade 150ms ease;
+  }
+  .chip-menu {
+    position: fixed; inset: auto 0 0 0; top: auto;
+    min-width: 0; border-radius: 14px 14px 0 0;
+    padding: 8px 10px calc(10px + env(safe-area-inset-bottom));
+    max-height: 60vh; overflow-y: auto;
+    animation: sheet-up 200ms ease;
+  }
+  .chip-menu-title {
+    display: block; margin: 6px 8px 8px;
+    font-size: 12px; font-weight: 600; color: var(--text-3);
+  }
+  .chip-menu button { padding: 12px 10px; font-size: 15px; }
 
   .mobile-nav {
     position: fixed; z-index: 20; inset: auto 0 0; height: 60px;
