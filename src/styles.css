@@ -691,3 +691,6 @@ kbd { font-family: inherit; }
 @media (max-width: 720px) {
   .import-toast { bottom: calc(72px + env(safe-area-inset-bottom)); }
 }
+
+/* ---------- Sub pages ---------- */
+.side-item.sub { padding-left: 24px; }

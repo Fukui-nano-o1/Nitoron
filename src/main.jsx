@@ -20,8 +20,8 @@ const noteFromRow = (row) => ({ id: row.id, title: row.title || '', category: ro
 
 const PAGES = [
   { id: 'home', art: 'home', label: 'ホーム', title: 'ホーム', cover: 'linear-gradient(120deg,#d9e8dc,#eef3e6 55%,#f6f1e3)' },
-  { id: 'notes', art: 'memo', label: 'メモ', title: 'メモ', cover: 'linear-gradient(120deg,#cfe3d8,#dcebe2 50%,#eef5ec)' },
-  { id: 'report', art: 'report', label: 'レポート', title: 'レポート', cover: 'linear-gradient(120deg,#e3dccf,#efe9da 55%,#f7f4ea)' },
+  { id: 'notes', art: 'memo', label: 'メモ', title: 'メモ', sub: true, cover: 'linear-gradient(120deg,#cfe3d8,#dcebe2 50%,#eef5ec)' },
+  { id: 'report', art: 'report', label: 'レポート', title: 'レポート', sub: true, cover: 'linear-gradient(120deg,#e3dccf,#efe9da 55%,#f7f4ea)' },
 ]
 
 const TYPE_COLORS = { 'メモ': 'tag-blue', 'アイデア': 'tag-yellow', 'タスク': 'tag-green' }
@@ -455,12 +455,19 @@ function App() {
       </div>
       <div className="side-section">
         <p className="side-heading">プライベート</p>
-        {PAGES.map((item) => <button key={item.id} className={`side-item page-item ${active === item.id ? 'active' : ''}`} onClick={() => navigate(item.id)}>
+        {PAGES.filter((item) => !item.sub).map((item) => <button key={item.id} className={`side-item page-item ${active === item.id ? 'active' : ''}`} onClick={() => navigate(item.id)}>
           <span className="side-ico art">{Art[item.art]({ size: 17 })}</span><span className="side-label">{item.label}</span>
           <span className="row-hover-actions"><span className="mini-btn">{Icon.dots}</span><span className="mini-btn">{Icon.plus}</span></span>
         </button>)}
         <button className="side-item muted" onClick={openNew}><span className="side-ico">{Icon.plus}</span>新規ページ</button>
         <button className="side-item muted" onClick={openImport}><span className="side-ico">{Icon.upload}</span>インポート</button>
+      </div>
+      <div className="side-section">
+        <p className="side-heading">サブページ</p>
+        {PAGES.filter((item) => item.sub).map((item) => <button key={item.id} className={`side-item page-item sub ${active === item.id ? 'active' : ''}`} onClick={() => navigate(item.id)}>
+          <span className="side-ico art">{Art[item.art]({ size: 17 })}</span><span className="side-label">{item.label}</span>
+          <span className="row-hover-actions"><span className="mini-btn">{Icon.dots}</span><span className="mini-btn">{Icon.plus}</span></span>
+        </button>)}
       </div>
       <div className="side-section bottom">
         <button className="side-item muted" onClick={() => setShowSettings(true)}><span className="side-ico">{Icon.gear}</span>設定</button>
@@ -499,7 +506,7 @@ function App() {
     </main>
 
     <nav className="mobile-nav">
-      {PAGES.map((item) => <button key={item.id} className={active === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><span className="mobile-nav-ico">{Art[item.art]({ size: 20 })}</span>{item.label.slice(0, 4)}</button>)}
+      {PAGES.filter((item) => !item.sub).map((item) => <button key={item.id} className={active === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><span className="mobile-nav-ico">{Art[item.art]({ size: 20 })}</span>{item.label.slice(0, 4)}</button>)}
       <button onClick={() => setShowSearch(true)}><span className="mobile-nav-ico">{Icon.search}</span>検索</button>
       <button onClick={openNew}><span className="mobile-nav-ico plus">{Icon.plus}</span>新規</button>
     </nav>
