@@ -674,3 +674,20 @@ kbd { font-family: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 1ms !important; transition-duration: 1ms !important; }
 }
+
+/* ---------- File import ---------- */
+.import-toast {
+  position: fixed; z-index: 60; left: 50%; bottom: 24px; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 10px; max-width: min(92vw, 480px);
+  background: #fff; border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(15, 15, 15, 0.12);
+  padding: 10px 10px 10px 14px; font-size: 13.5px; color: var(--text);
+  animation: sheet-up 0.18s ease-out;
+}
+.import-toast-ico { flex: none; display: grid; place-items: center; color: var(--text-3); }
+.import-toast.error .import-toast-ico { color: #d44c47; }
+.import-toast.error { border-color: #f1c4c2; }
+.import-toast-text { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 720px) {
+  .import-toast { bottom: calc(72px + env(safe-area-inset-bottom)); }
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { supabase, ensureSession } from './supabase.js'
+import { importFile, IMPORT_ACCEPT } from './importers.js'
 import './styles.css'
 
 const uid = () => crypto.randomUUID()
@@ -48,6 +49,7 @@ const Icon = {
   book: <svg viewBox="0 0 16 16" width="15" height="15"><path fill="currentColor" d="M4.25 1.5h8.25c.41 0 .75.34.75.75v11.5a.75.75 0 0 1-.75.75H4.25A2.25 2.25 0 0 1 2 12.25v-8.5A2.25 2.25 0 0 1 4.25 1.5ZM3.5 12.25c0 .41.34.75.75.75h7.5v-2H4.25a.75.75 0 0 0-.75.75v.5Zm8.25-2.75V3H4.25a.75.75 0 0 0-.75.75v5.88c.24-.08.49-.13.75-.13h7.5Z"/></svg>,
   checkbox: <svg viewBox="0 0 16 16" width="15" height="15"><path fill="currentColor" d="M3.5 2h9A1.5 1.5 0 0 1 14 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12.5v-9A1.5 1.5 0 0 1 3.5 2Zm0 1.5v9h9v-9h-9Zm7.53 2.47a.75.75 0 0 1 0 1.06l-3 3a.75.75 0 0 1-1.06 0l-1.5-1.5a.75.75 0 1 1 1.06-1.06l.97.97 2.47-2.47a.75.75 0 0 1 1.06 0Z"/></svg>,
   check: <svg viewBox="0 0 16 16" width="12" height="12"><path fill="currentColor" d="M13.53 4.22a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l2.47 2.47 5.97-5.97a.75.75 0 0 1 1.06 0Z"/></svg>,
+  upload: <svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M8 1.5c.2 0 .39.08.53.22l3 3a.75.75 0 1 1-1.06 1.06L8.75 4.06V10a.75.75 0 0 1-1.5 0V4.06L5.53 5.78a.75.75 0 0 1-1.06-1.06l3-3A.75.75 0 0 1 8 1.5ZM2.75 9.5c.41 0 .75.34.75.75v2.25h9v-2.25a.75.75 0 0 1 1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H3.25C2.56 14 2 13.44 2 12.75v-2.5c0-.41.34-.75.75-.75Z"/></svg>,
 }
 
 /* ---------- Hand-drawn duotone artwork (Nitoron's own icon language) ---------- */
@@ -323,6 +325,9 @@ function App() {
   const [cloud, setCloud] = useState(supabase ? 'loading' : 'off') // off | loading | online | error | noauth
   const [showSettings, setShowSettings] = useState(false)
   const [displayName, setDisplayName] = useState(() => localStorage.getItem('nitoron:name') || 'たきと')
+  const [importStatus, setImportStatus] = useState(null) // { total, done, errors } | null
+  const fileRef = useRef(null)
+  const importTimer = useRef(null)
 
   const stateRef = useRef(null)
   stateRef.current = { notes, editorId }
@@ -392,6 +397,33 @@ function App() {
   }
   const openNote = (id) => { setActive('notes'); setEditorId(id) }
 
+  const openImport = () => fileRef.current?.click()
+  const importNotes = async (files) => {
+    if (!files.length) return
+    clearTimeout(importTimer.current)
+    setImportStatus({ total: files.length, done: 0, errors: [] })
+    const created = []
+    for (const file of files) {
+      try {
+        const { title, blocks } = await importFile(file)
+        const note = { id: uid(), title, blocks, category: '経営発表', type: 'メモ', date: today() }
+        created.push(note)
+        setNotes((current) => [note, ...current])
+        queuePush(note.id)
+        setImportStatus((s) => s && { ...s, done: s.done + 1 })
+      } catch (err) {
+        console.error('import failed:', file.name, err)
+        setImportStatus((s) => s && { ...s, done: s.done + 1, errors: [...s.errors, file.name] })
+      }
+    }
+    if (created.length === 1 && files.length === 1) { setActive('notes'); setEditorId(created[0].id) }
+    else if (created.length) setActive('notes')
+    setImportStatus((s) => {
+      if (s && !s.errors.length) importTimer.current = setTimeout(() => setImportStatus(null), 3000)
+      return s
+    })
+  }
+
   useEffect(() => {
     const keydown = (event) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); setShowSearch(true) }
@@ -406,7 +438,11 @@ function App() {
   const visible = useMemo(() => notes.filter((item) => `${item.title} ${noteText(item)} ${item.category} ${item.type}`.toLowerCase().includes(query.toLowerCase())), [notes, query])
   const navigate = (id) => { setActive(id); if (window.innerWidth <= 720) setSidebarOpen(false) }
 
-  return <div className={`app ${sidebarOpen ? 'sidebar-visible' : ''}`}>
+  return <div
+    className={`app ${sidebarOpen ? 'sidebar-visible' : ''}`}
+    onDragOver={(e) => e.preventDefault()}
+    onDrop={(e) => { e.preventDefault(); const files = [...e.dataTransfer.files]; if (files.length) importNotes(files) }}
+  >
     <aside className="sidebar" aria-label="ワークスペース">
       <div className="switcher">
         <button className="switcher-name"><span className="ws-logo"><Art.sprout size={16} /></span><span className="ws-label">Nitoron</span>{Icon.chevronDown}</button>
@@ -424,6 +460,7 @@ function App() {
           <span className="row-hover-actions"><span className="mini-btn">{Icon.dots}</span><span className="mini-btn">{Icon.plus}</span></span>
         </button>)}
         <button className="side-item muted" onClick={openNew}><span className="side-ico">{Icon.plus}</span>新規ページ</button>
+        <button className="side-item muted" onClick={openImport}><span className="side-ico">{Icon.upload}</span>インポート</button>
       </div>
       <div className="side-section bottom">
         <button className="side-item muted" onClick={() => setShowSettings(true)}><span className="side-ico">{Icon.gear}</span>設定</button>
@@ -447,14 +484,14 @@ function App() {
 
       <div className="scroll-area">
         {active === 'home' ? <section className="home-canvas">
-          <Home notes={notes} name={displayName} onNavigate={navigate} onCompose={openNew} onOpen={openNote} onSearch={() => setShowSearch(true)} />
+          <Home notes={notes} name={displayName} onNavigate={navigate} onCompose={openNew} onImport={openImport} onOpen={openNote} onSearch={() => setShowSearch(true)} />
         </section> : <>
           <div className="cover" style={{ background: page.cover }}><button className="cover-btn">カバー画像を変更</button></div>
           <section className="page-canvas">
             <div className="page-icon"><button>{Art[page.art]({ size: 62 })}</button></div>
             <div className="title-controls"><button><Art.smile size={15} /> アイコンを変更</button><button><Art.picture size={15} /> カバー画像を追加</button><button>{Icon.comment} コメントを追加</button></div>
             <h1 className="page-title">{page.title}</h1>
-            {active === 'notes' && <Database items={notes} onCompose={openNew} onOpen={openNote} />}
+            {active === 'notes' && <Database items={notes} onCompose={openNew} onImport={openImport} onOpen={openNote} />}
             {active === 'report' && <Report items={notes} />}
           </section>
         </>}
@@ -469,6 +506,19 @@ function App() {
     {editorNote && <NoteEditor note={editorNote} cloud={cloud} onPatch={(p) => patchNote(editorNote.id, p)} onClose={closeEditor} onDelete={() => { removeNote(editorNote.id); setEditorId(null) }} />}
     {showSettings && <Settings cloud={cloud} name={displayName} onName={renameUser} onClose={() => setShowSettings(false)} />}
     {showSearch && <Search query={query} setQuery={setQuery} items={visible} onClose={() => setShowSearch(false)} onPick={(item) => { setShowSearch(false); openNote(item.id) }} />}
+    <input
+      ref={fileRef} type="file" multiple accept={IMPORT_ACCEPT} style={{ display: 'none' }}
+      onChange={(e) => { importNotes([...e.target.files]); e.target.value = '' }}
+    />
+    {importStatus && <div className={`import-toast ${importStatus.errors.length ? 'error' : ''}`} role="status">
+      <span className="import-toast-ico">{Icon.upload}</span>
+      <span className="import-toast-text">{importStatus.done < importStatus.total
+        ? `インポート中… (${importStatus.done}/${importStatus.total})`
+        : importStatus.errors.length
+          ? `読み込めなかったファイル: ${importStatus.errors.join('、')}`
+          : `${importStatus.total - importStatus.errors.length}件のファイルを取り込みました`}</span>
+      <button className="icon-btn" aria-label="閉じる" onClick={() => { clearTimeout(importTimer.current); setImportStatus(null) }}>✕</button>
+    </div>}
   </div>
 }
 
@@ -488,7 +538,7 @@ function SectionHead({ icon, label }) {
   </div>
 }
 
-function Home({ notes, name, onNavigate, onCompose, onOpen, onSearch }) {
+function Home({ notes, name, onNavigate, onCompose, onImport, onOpen, onSearch }) {
   const hour = new Date().getHours()
   const greeting = hour < 5 ? 'こんばんは' : hour < 11 ? 'おはようございます' : hour < 18 ? 'こんにちは' : 'こんばんは'
   const fmtDay = (offset) => {
@@ -514,6 +564,7 @@ function Home({ notes, name, onNavigate, onCompose, onOpen, onSearch }) {
         <p className="card-name">{item.title || '無題'}</p><p className="card-sub"><span className="card-sub-ico">{Icon.clock}</span>{item.date.slice(5).replace('-', '/')}</p>
       </button>)}
       <button className="page-card new" onClick={onCompose}><span className="card-plus">{Icon.plus}</span><p className="card-name">新規ページ</p></button>
+      <button className="page-card new" onClick={onImport}><span className="card-plus">{Icon.upload}</span><p className="card-name">ファイルを取り込む</p><p className="card-sub">Word・Excel・PDF</p></button>
     </div>
 
     <SectionHead icon={Icon.calendar} label="今後の予定" />
@@ -571,7 +622,7 @@ const DB_SORTS = [
 ]
 const DB_TAGS = Object.keys(TYPE_COLORS)
 
-function Database({ items, onCompose, onOpen }) {
+function Database({ items, onCompose, onImport, onOpen }) {
   const [view, setView] = useState(() => localStorage.getItem('nitoron:dbview') || 'table')
   const [pop, setPop] = useState(null) // 'filter' | 'sort' | null
   const [filterTag, setFilterTag] = useState('')
@@ -604,6 +655,7 @@ function Database({ items, onCompose, onOpen }) {
         <button className={filterTag ? 'on' : ''} onClick={() => setPop(pop === 'filter' ? null : 'filter')}>フィルター</button>
         <button className={sort !== 'date-desc' ? 'on' : ''} onClick={() => setPop(pop === 'sort' ? null : 'sort')}>並べ替え</button>
         <button className={`icon-btn ${searchOpen ? 'on' : ''}`} aria-label="データベース内を検索" onClick={() => { setSearchOpen(!searchOpen); if (searchOpen) setQ('') }}>{Icon.search}</button>
+        <button onClick={onImport}>インポート</button>
         <button className="db-new" onClick={onCompose}>新規<span className="db-new-caret">{Icon.chevronDown}</span></button>
       </div>
     </div>

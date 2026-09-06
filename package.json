@@ -11,9 +11,11 @@
   "dependencies": {
     "@supabase/supabase-js": "latest",
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
+    "mammoth": "^1.12.2",
+    "pdfjs-dist": "^6.3.289",
     "react": "latest",
-    "react-dom": "latest"
-  },
-  "devDependencies": {}
+    "react-dom": "latest",
+    "vite": "latest",
+    "xlsx": "^0.18.5"
+  }
 }
