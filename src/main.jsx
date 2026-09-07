@@ -140,6 +140,7 @@ const SLASH_ITEMS = [
   { type: 'quote', label: '引用', desc: '引用文を記載します。', badge: '❝', keys: 'quote' },
   { type: 'callout', label: 'コールアウト', desc: '文章を目立たせます。', badge: 'art:bulb', keys: 'callout' },
   { type: 'divider', label: '区切り線', desc: 'ブロックを視覚的に分割します。', badge: '—', keys: 'divider hr' },
+  { type: 'embed', label: 'ファイルを埋め込む', desc: 'Word・Excel・PDFなどの内容をここに挿入します。', badge: 'art:doc', keys: 'embed import file word excel pdf' },
 ]
 
 const LIST_TYPES = ['bullet', 'number', 'todo']
@@ -147,7 +148,7 @@ const MD_SHORTCUTS = [['# ', 'h1'], ['## ', 'h2'], ['### ', 'h3'], ['- ', 'bulle
 
 const resizeArea = (el) => { if (el) { el.style.height = 'auto'; el.style.height = el.scrollHeight + 'px' } }
 
-function BlockEditor({ blocks, onChange }) {
+function BlockEditor({ blocks, onChange, onEmbed }) {
   const [menu, setMenu] = useState(null) // { blockId, index }
   const refs = useRef({})
   const [focusTo, setFocusTo] = useState(null) // { id, pos }
@@ -176,6 +177,11 @@ function BlockEditor({ blocks, onChange }) {
 
   const applyMenu = (item, block) => {
     setMenu(null)
+    if (item.type === 'embed') {
+      patch(block.id, { type: 'text', text: '' })
+      onEmbed?.(block.id)
+      return
+    }
     if (item.type === 'divider') {
       const after = textBlock()
       const i = blocks.findIndex((b) => b.id === block.id)
@@ -328,6 +334,7 @@ function App() {
   const [importStatus, setImportStatus] = useState(null) // { total, done, errors } | null
   const fileRef = useRef(null)
   const importTimer = useRef(null)
+  const importTarget = useRef(null) // null → 新規ノートを作成 / { noteId, blockId } → そのノートに埋め込み
 
   const stateRef = useRef(null)
   stateRef.current = { notes, editorId }
@@ -397,27 +404,51 @@ function App() {
   }
   const openNote = (id) => { setActive('notes'); setEditorId(id) }
 
-  const openImport = () => fileRef.current?.click()
+  const openImport = () => { importTarget.current = null; fileRef.current?.click() }
+  const openEmbed = (noteId, blockId) => { importTarget.current = { noteId, blockId }; fileRef.current?.click() }
   const importNotes = async (files) => {
     if (!files.length) return
+    const target = importTarget.current
+    importTarget.current = null
     clearTimeout(importTimer.current)
     setImportStatus({ total: files.length, done: 0, errors: [] })
     const created = []
+    const embedded = []
     for (const file of files) {
       try {
         const { title, blocks } = await importFile(file)
-        const note = { id: uid(), title, blocks, category: '経営発表', type: 'メモ', date: today() }
-        created.push(note)
-        setNotes((current) => [note, ...current])
-        queuePush(note.id)
+        if (target) {
+          if (files.length > 1) embedded.push(textBlock(title, 'h2'))
+          embedded.push(...blocks)
+        } else {
+          const note = { id: uid(), title, blocks, category: '経営発表', type: 'メモ', date: today() }
+          created.push(note)
+          setNotes((current) => [note, ...current])
+          queuePush(note.id)
+        }
         setImportStatus((s) => s && { ...s, done: s.done + 1 })
       } catch (err) {
         console.error('import failed:', file.name, err)
         setImportStatus((s) => s && { ...s, done: s.done + 1, errors: [...s.errors, file.name] })
       }
     }
-    if (created.length === 1 && files.length === 1) { setActive('notes'); setEditorId(created[0].id) }
-    else if (created.length) setActive('notes')
+    if (target && embedded.length) {
+      // 空のテキストブロック(スラッシュで呼び出した行)はそのまま置き換え、それ以外は直後に挿入する。
+      setNotes((current) => current.map((n) => {
+        if (n.id !== target.noteId) return n
+        const next = [...n.blocks]
+        const i = next.findIndex((b) => b.id === target.blockId)
+        if (i === -1) next.push(...embedded)
+        else if (next[i].type === 'text' && !next[i].text.trim()) next.splice(i, 1, ...embedded)
+        else next.splice(i + 1, 0, ...embedded)
+        return { ...n, blocks: next, date: today() }
+      }))
+      queuePush(target.noteId)
+    }
+    if (!target) {
+      if (created.length === 1 && files.length === 1) { setActive('notes'); setEditorId(created[0].id) }
+      else if (created.length) setActive('notes')
+    }
     setImportStatus((s) => {
       if (s && !s.errors.length) importTimer.current = setTimeout(() => setImportStatus(null), 3000)
       return s
@@ -510,7 +541,7 @@ function App() {
       <button onClick={() => setShowSearch(true)}><span className="mobile-nav-ico">{Icon.search}</span>検索</button>
       <button onClick={openNew}><span className="mobile-nav-ico plus">{Icon.plus}</span>新規</button>
     </nav>
-    {editorNote && <NoteEditor note={editorNote} cloud={cloud} onPatch={(p) => patchNote(editorNote.id, p)} onClose={closeEditor} onDelete={() => { removeNote(editorNote.id); setEditorId(null) }} />}
+    {editorNote && <NoteEditor note={editorNote} cloud={cloud} onPatch={(p) => patchNote(editorNote.id, p)} onEmbed={(blockId) => openEmbed(editorNote.id, blockId)} onClose={closeEditor} onDelete={() => { removeNote(editorNote.id); setEditorId(null) }} />}
     {showSettings && <Settings cloud={cloud} name={displayName} onName={renameUser} onClose={() => setShowSettings(false)} />}
     {showSearch && <Search query={query} setQuery={setQuery} items={visible} onClose={() => setShowSearch(false)} onPick={(item) => { setShowSearch(false); openNote(item.id) }} />}
     <input
@@ -769,7 +800,7 @@ function Settings({ cloud, name, onName, onClose }) {
   </div>
 }
 
-function NoteEditor({ note, cloud, onPatch, onClose, onDelete }) {
+function NoteEditor({ note, cloud, onPatch, onEmbed, onClose, onDelete }) {
   const bodyRef = useRef(null)
   return <div className="overlay" role="dialog" aria-modal="true" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
     <div className="peek">
@@ -777,6 +808,7 @@ function NoteEditor({ note, cloud, onPatch, onClose, onDelete }) {
         <span className="peek-hint">メモ</span>
         <div className="peek-bar-right">
           <span className="autosave">{CLOUD_LABELS[cloud] || '自動保存'}</span>
+          <button className="icon-btn" onClick={() => onEmbed(null)} aria-label="ファイルを埋め込む" title="ファイルを埋め込む (Word・Excel・PDF)">{Icon.upload}</button>
           <button className="icon-btn" onClick={onDelete} aria-label="削除">{Icon.trash}</button>
           <button className="icon-btn" aria-label="その他">{Icon.dots}</button>
           <button className="icon-btn" onClick={onClose} aria-label="閉じる">✕</button>
@@ -797,7 +829,7 @@ function NoteEditor({ note, cloud, onPatch, onClose, onDelete }) {
             <input value={note.category === '未分類' ? '' : note.category} onChange={(e) => onPatch({ category: e.target.value || '未分類' })} placeholder="空" /></div>
           <div className="prop"><span className="prop-label">{Icon.calendar}日付</span><span className="prop-value">{note.date}</span></div>
         </div>
-        <BlockEditor blocks={note.blocks} onChange={(blocks) => onPatch({ blocks })} />
+        <BlockEditor blocks={note.blocks} onChange={(blocks) => onPatch({ blocks })} onEmbed={onEmbed} />
       </div>
     </div>
   </div>
