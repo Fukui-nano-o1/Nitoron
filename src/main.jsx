@@ -304,7 +304,6 @@ function App() {
   const [active, setActive] = useState('home')
   const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth > 720)
   const [editorId, setEditorId] = useState(null)
-  const [showSearch, setShowSearch] = useState(false)
   const [query, setQuery] = useState('')
   const [starred, setStarred] = useState(false)
   const [notes, setNotes] = useState(() => {
@@ -394,14 +393,14 @@ function App() {
 
   useEffect(() => {
     const keydown = (event) => {
-      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); setShowSearch(true) }
-      if (event.key === 'Escape') { setShowSearch(false); setShowSettings(false); if (stateRef.current.editorId) closeEditor() }
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); setActive('search') }
+      if (event.key === 'Escape') { setShowSettings(false); if (stateRef.current.editorId) closeEditor() }
     }
     window.addEventListener('keydown', keydown)
     return () => window.removeEventListener('keydown', keydown)
   }, [])
 
-  const page = PAGES.find((item) => item.id === active)
+  const page = PAGES.find((item) => item.id === active) || { id: 'search', label: '検索' }
   const editorNote = notes.find((n) => n.id === editorId)
   const visible = useMemo(() => notes.filter((item) => `${item.title} ${noteText(item)} ${item.category} ${item.type}`.toLowerCase().includes(query.toLowerCase())), [notes, query])
   const navigate = (id) => { setActive(id); if (window.innerWidth <= 720) setSidebarOpen(false) }
@@ -413,7 +412,7 @@ function App() {
         <button className="icon-btn collapse" onClick={() => setSidebarOpen(false)} aria-label="サイドバーを閉じる">{Icon.chevronsLeft}</button>
       </div>
       <div className="side-section">
-        <button className="side-item" onClick={() => setShowSearch(true)}><span className="side-ico">{Icon.search}</span>検索<kbd>⌘K</kbd></button>
+        <button className={`side-item ${active === 'search' ? 'active' : ''}`} onClick={() => navigate('search')}><span className="side-ico">{Icon.search}</span>検索<kbd>⌘K</kbd></button>
         <button className={`side-item ${active === 'home' ? 'active' : ''}`} onClick={() => navigate('home')}><span className="side-ico">{Icon.home}</span>ホーム</button>
         <button className="side-item"><span className="side-ico">{Icon.inbox}</span>受信トレイ</button>
       </div>
@@ -435,7 +434,7 @@ function App() {
     <main className="main">
       <header className="topbar">
         {!sidebarOpen && <button className="icon-btn" onClick={() => setSidebarOpen(true)} aria-label="サイドバーを開く">{Icon.menu}</button>}
-        <button className="crumb"><span className="crumb-ico">{Art[page.art]({ size: 17 })}</span><span>{page.label}</span></button>
+        <button className="crumb"><span className="crumb-ico">{page.art ? Art[page.art]({ size: 17 }) : Icon.search}</span><span>{page.label}</span></button>
         <div className="topbar-right">
           <span className="edited">今日 編集</span>
           <button className="top-share">共有</button>
@@ -447,8 +446,8 @@ function App() {
 
       <div className="scroll-area">
         {active === 'home' ? <section className="home-canvas">
-          <Home notes={notes} name={displayName} onNavigate={navigate} onCompose={openNew} onOpen={openNote} onSearch={() => setShowSearch(true)} />
-        </section> : <>
+          <Home notes={notes} name={displayName} onNavigate={navigate} onCompose={openNew} onOpen={openNote} onSearch={() => navigate('search')} />
+        </section> : active === 'search' ? <SearchPage query={query} setQuery={setQuery} items={visible} onPick={(item) => openNote(item.id)} /> : <>
           <div className="cover" style={{ background: page.cover }}><button className="cover-btn">カバー画像を変更</button></div>
           <section className="page-canvas">
             <div className="page-icon"><button>{Art[page.art]({ size: 62 })}</button></div>
@@ -463,12 +462,11 @@ function App() {
 
     <nav className="mobile-nav">
       {PAGES.map((item) => <button key={item.id} className={active === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><span className="mobile-nav-ico">{Art[item.art]({ size: 20 })}</span>{item.label.slice(0, 4)}</button>)}
-      <button onClick={() => setShowSearch(true)}><span className="mobile-nav-ico">{Icon.search}</span>検索</button>
+      <button className={active === 'search' ? 'active' : ''} onClick={() => navigate('search')}><span className="mobile-nav-ico">{Icon.search}</span>検索</button>
       <button onClick={openNew}><span className="mobile-nav-ico plus">{Icon.plus}</span>新規</button>
     </nav>
     {editorNote && <NoteEditor note={editorNote} cloud={cloud} onPatch={(p) => patchNote(editorNote.id, p)} onClose={closeEditor} onDelete={() => { removeNote(editorNote.id); setEditorId(null) }} />}
     {showSettings && <Settings cloud={cloud} name={displayName} onName={renameUser} onClose={() => setShowSettings(false)} />}
-    {showSearch && <Search query={query} setQuery={setQuery} items={visible} onClose={() => setShowSearch(false)} onPick={(item) => { setShowSearch(false); openNote(item.id) }} />}
   </div>
 }
 
@@ -744,22 +742,23 @@ function NoteEditor({ note, cloud, onPatch, onClose, onDelete }) {
   </div>
 }
 
-function Search({ query, setQuery, items, onClose, onPick }) {
-  return <div className="overlay search-overlay" role="dialog" aria-modal="true" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
-    <div className="search-modal">
-      <div className="search-input-row"><span className="search-ico">{Icon.search}</span><input autoFocus value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Nitoronを検索…" /><kbd>Esc</kbd></div>
-      <div className="search-results">
-        <p className="search-section">{query ? '検索結果' : '最近のページ'}</p>
-        {items.map((item) => <button key={item.id} onClick={() => onPick(item)}>
-          <span className="link-ico">{Icon.page}</span>
-          <span className="sr-main"><strong>{item.title || '無題'}</strong><span>メモ 内</span></span>
-          <span className="sr-date">{item.date}</span>
-        </button>)}
-        {!items.length && <p className="no-hit">一致する結果はありません。</p>}
-      </div>
-      <div className="search-foot"><span><kbd>↑↓</kbd> 移動</span><span><kbd>⏎</kbd> 開く</span></div>
+function SearchPage({ query, setQuery, items, onPick }) {
+  return <section className="search-canvas">
+    <div className="search-input-row">
+      <span className="search-ico">{Icon.search}</span>
+      <input autoFocus value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Nitoronを検索…" />
+      {query && <button className="icon-btn" aria-label="クリア" onClick={() => setQuery('')}>✕</button>}
     </div>
-  </div>
+    <div className="search-results">
+      <p className="search-section">{query ? '検索結果' : '最近のページ'}</p>
+      {items.map((item) => <button key={item.id} onClick={() => onPick(item)}>
+        <span className="link-ico">{Icon.page}</span>
+        <span className="sr-main"><strong>{item.title || '無題'}</strong><span>メモ 内</span></span>
+        <span className="sr-date">{item.date}</span>
+      </button>)}
+      {!items.length && <p className="no-hit">一致する結果はありません。</p>}
+    </div>
+  </section>
 }
 
 createRoot(document.getElementById('root')).render(<App />)
