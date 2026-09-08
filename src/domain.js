@@ -1,3 +1,4 @@
+import { sanitizeAttachments } from './attachment-domain.js'
 export const uid = () => crypto.randomUUID()
 export const today = () => new Date().toLocaleDateString('sv-SE')
 export const textBlock = (text = '', type = 'text') => ({ id: uid(), type, text })
@@ -20,7 +21,7 @@ export const emptyMeta = (kind = 'presentation') => ({
   start: '', end: '', coverUrl: '', summary: '', issue: '', hypothesis: '', action: '', result: '',
   interpretation: '', learning: '', conditions: '', stage: '仮説',
   target: '', deadline: '', criterion: '', revenue: '', cost: '', hours: '', yieldKg: '',
-  observations: [], sources: [], origin: null,
+  observations: [], sources: [], attachments: [], origin: null,
 })
 const string = value => typeof value === 'string' ? value : typeof value === 'number' && Number.isFinite(value) ? String(value) : ''
 export function sanitizeMeta(raw) {
@@ -28,6 +29,7 @@ export function sanitizeMeta(raw) {
   const m = emptyMeta(['presentation', 'challenge', 'learning'].includes(raw.kind) ? raw.kind : 'presentation')
   for (const key of Object.keys(m)) if (typeof m[key] === 'string' && key !== 'kind') m[key] = string(raw[key])
   m.coverUrl = safeUrl(m.coverUrl) || ''
+  m.attachments = sanitizeAttachments(raw.attachments)
   if (!PHASES.includes(m.stage)) m.stage = '仮説'
   m.observations = (Array.isArray(raw.observations) ? raw.observations : []).filter(x => x && typeof x === 'object').map(o => ({ id: string(o.id) || uid(), date: string(o.date), fact: string(o.fact), conditions: string(o.conditions), evidence: string(o.evidence) }))
   m.sources = (Array.isArray(raw.sources) ? raw.sources : []).filter(x => x && typeof x === 'object').map(s => ({ id: string(s.id) || uid(), title: string(s.title), url: string(s.url), date: string(s.date) }))
@@ -110,6 +112,7 @@ export function exportMarkdown(r) {
     if (m.kind === 'challenge') lines.push('', '## 挑戦の計画', `進捗: ${m.stage}`, `目標: ${m.target}`, `判定基準: ${m.criterion}`, `期限: ${m.deadline}`)
     if (m.origin) lines.push('', `参考にした発表: ${m.origin.title} (${m.origin.id})`)
     if (m.sources.length) lines.push('', '## 出典・資料', '', ...m.sources.map(s => `- ${s.title || '資料'}: ${s.url || ''} (${s.date || '日付未記録'})`))
+    if (m.attachments?.length) lines.push('', '## 添付資料', '', ...m.attachments.map(a => `- ${a.name}${a.caption ? ` — ${a.caption}` : ''}`), '', '添付ファイル本体はこのMarkdownに含まれません。Nitoronの記録から開いてください。')
   }
   for (const b of r.blocks || []) lines.push('', `${({ h1: '# ', h2: '## ', h3: '### ', bullet: '- ', quote: '> ', todo: b.checked ? '- [x] ' : '- [ ] ' })[b.type] || ''}${b.text || ''}`)
   return lines.join('\n')

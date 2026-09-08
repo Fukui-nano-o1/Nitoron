@@ -1,13 +1,15 @@
 import React from 'react'
 import Cover from './Cover.jsx'
+import { AttachmentList } from './Attachments.jsx'
+import { imageAttachments } from './attachment-domain.js'
 import { KINDS, SECTIONS, METRICS, number, formatNumber, safeUrl } from './domain.js'
-export default function RecordBody({ record }) {
+export default function RecordBody({ record, hideHeading = false, hideCover = false }) {
   const m = record.meta
   return <div className="record-body">
-    <div className="record-kicker">{KINDS[m?.kind || 'memo']}{m?.kind === 'challenge' && ` / ${m.stage}`}</div>
+    {!hideHeading && <><div className="record-kicker">{KINDS[m?.kind || 'memo']}{m?.kind === 'challenge' && ` / ${m.stage}`}</div>
     <h1>{record.title || '無題'}</h1>
-    <div className="byline">{m?.author || '発表者未記録'}{m?.club && ` · ${m.club}`}<span>記録日 {record.date}</span></div>
-    {m?.coverUrl && <Cover record={record} className="reading-cover" eager />}
+    <div className="byline">{m?.author || '発表者未記録'}{m?.club && ` · ${m.club}`}<span>記録日 {record.date}</span></div></>}
+    {!hideCover && (m?.coverUrl || imageAttachments(record).length > 0) && <Cover record={record} className="reading-cover" eager />}
     {m && <>
       {m.summary && <p className="record-summary" id="document-summary">{m.summary}</p>}
       <dl className="conditions-grid">
@@ -27,6 +29,7 @@ export default function RecordBody({ record }) {
       </div><p className="hint">対象期間・対象面積の合計値。経費に含めた範囲は比較条件を参照。</p></section>}
       {!!m.sources.length && <section className="read-section"><h2>出典・資料</h2>{m.sources.map(s => <p className="source-line" key={s.id}>{safeUrl(s.url) ? <a href={safeUrl(s.url)} rel="noopener noreferrer" target="_blank">{s.title || s.url}</a> : s.title || '資料名未記録'}{s.date && <span> · {s.date}</span>}</p>)}</section>}
     </>}
+    <AttachmentList attachments={m?.attachments} />
     {!!record.blocks.filter(b => b.text).length && <section className="read-section">{m && <h2>補足</h2>}{record.blocks.map(b => {
       if (b.type === 'divider') return <hr key={b.id} />
       if (!b.text) return null

@@ -1,5 +1,6 @@
 import { supabase } from './supabase.js'
 import { fromRow, normalize, snapshot, publicationProblems } from './domain.js'
+import { EMPTY_FILTERS } from './search.js'
 export const PAGE_SIZE = 24
 export const FEEDBACK_KINDS = ['質問', '指摘', '提案', '試した結果']
 const message = error => ['PGRST205', '42P01'].includes(error?.code)
@@ -7,12 +8,21 @@ const message = error => ['PGRST205', '42P01'].includes(error?.code)
   : '読み込み・保存ができませんでした。接続を確認して再試行してください。'
 const requireClient = () => { if (!supabase) throw new Error('クラウドに接続できません。') }
 const unpack = row => ({ ...fromRow(row.snapshot), id: row.id, publication: { id: row.id, owner: row.owner_id, publishedAt: row.published_at, updatedAt: row.updated_at, isPublic: row.is_public } })
-export async function listPublic({ query = '', region = '', page = 0 } = {}) {
+export async function listPublic({ query = '', region = '', page = 0, filters = EMPTY_FILTERS, sort = 'recent', bookmarkedBy } = {}) {
   requireClient()
-  let request = supabase.from('nitoron_publications').select('*', { count: 'exact' }).eq('is_public', true)
+  if (bookmarkedBy === null) return { records: [], count: 0 }
+  let request = supabase.from('nitoron_publications').select(bookmarkedBy ? '*,nitoron_bookmarks!inner(user_id)' : '*', { count: 'exact' }).eq('is_public', true)
   for (const term of normalize(query).split(/\s+/).filter(Boolean)) request = request.ilike('search_text', `%${term.replace(/[\\%_]/g, '\\$&')}%`)
-  if (region.trim()) request = request.ilike('snapshot->meta->>region', `%${region.trim().replace(/[\\%_]/g, '\\$&')}%`)
-  const { data, error, count } = await request.order('updated_at', { ascending: false }).order('id').range(page * PAGE_SIZE, (page + 1) * PAGE_SIZE - 1)
+  if (region.trim()) request = request.ilike('region_search', `%${normalize(region).trim().replace(/[\\%_]/g, '\\$&')}%`)
+  if (filters.crop.trim()) request = request.ilike('crop_search', `%${normalize(filters.crop).trim().replace(/[\\%_]/g, '\\$&')}%`)
+  if (filters.kind !== 'all') request = request.eq('snapshot->meta->>kind', filters.kind)
+  if (filters.stage !== 'all') request = request.eq('snapshot->meta->>kind', 'challenge').eq('snapshot->meta->>stage', filters.stage)
+  if (filters.from) request = request.gte('snapshot->>date', filters.from)
+  if (filters.to) request = request.lte('snapshot->>date', filters.to)
+  if (filters.numbers) request = request.eq('has_metrics', true)
+  if (bookmarkedBy) request = request.eq('nitoron_bookmarks.user_id', bookmarkedBy)
+  request = sort === 'title' ? request.order('title_search') : request.order('updated_at', { ascending: false })
+  const { data, error, count } = await request.order('id').range(page * PAGE_SIZE, (page + 1) * PAGE_SIZE - 1)
   if (error) throw new Error(message(error))
   return { records: data.map(unpack), count }
 }
@@ -60,4 +70,46 @@ export async function deleteFeedback(id) {
   requireClient()
   const { data, error } = await supabase.from('nitoron_feedback').delete().eq('id', id).select('id').maybeSingle()
   if (error || !data) throw new Error('指摘を削除できませんでした。')
+}
+
+export async function listBookmarks(userId) {
+  requireClient()
+  const ids = []
+  for (let offset = 0; ; offset += 500) {
+    const { data, error } = await supabase.from('nitoron_bookmarks').select('publication_id').eq('user_id', userId).order('publication_id').range(offset, offset + 499)
+    if (error) throw new Error('保存リストを取得できませんでした。')
+    ids.push(...data.map(r => r.publication_id)); if (data.length < 500) return ids
+  }
+}
+export async function setBookmark(userId, id, saved) {
+  requireClient()
+  const request = saved ? supabase.from('nitoron_bookmarks').upsert({ user_id: userId, publication_id: id }, { onConflict: 'user_id,publication_id', ignoreDuplicates: true })
+    : supabase.from('nitoron_bookmarks').delete().eq('user_id', userId).eq('publication_id', id)
+  const { error } = await request
+  if (error) throw new Error('保存リストを更新できませんでした。再試行してください。')
+}
+export async function listReplies(publicationId) {
+  requireClient()
+  const { data, error } = await supabase.from('nitoron_feedback_replies').select('*').eq('publication_id', publicationId).order('created_at').order('id').limit(500)
+  if (error) throw new Error(message(error))
+  return data
+}
+export async function postReply(publicationId, feedbackId, session, { author, body }) {
+  requireClient()
+  if (!session?.user || session.user.is_anonymous || !session.user.email_confirmed_at) throw new Error('メールを確認してから返信してください。')
+  const { error } = await supabase.from('nitoron_feedback_replies').insert({ publication_id: publicationId, feedback_id: feedbackId, user_id: session.user.id, author: author.trim(), body: body.trim() }).select('id').single()
+  if (error) throw new Error(error.code === 'P0001' ? '少し間隔をあけて投稿してください。' : message(error))
+}
+export async function deleteReply(id) {
+  const { error } = await supabase.from('nitoron_feedback_replies').delete().eq('id', id)
+  if (error) throw new Error('返信を削除できませんでした。')
+}
+export async function listResolutions(publicationId) {
+  const { data, error } = await supabase.from('nitoron_feedback_resolutions').select('*').eq('publication_id', publicationId)
+  if (error) throw new Error(message(error))
+  return data
+}
+export async function setResolution(publicationId, feedbackId, session, status) {
+  const { error } = await supabase.from('nitoron_feedback_resolutions').upsert({ publication_id: publicationId, feedback_id: feedbackId, user_id: session.user.id, status }).select('feedback_id').single()
+  if (error) throw new Error('対応状況を更新できませんでした。')
 }

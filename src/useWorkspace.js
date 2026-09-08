@@ -127,8 +127,9 @@ export default function useWorkspace() {
     return () => { mounted.current = false; generation.current++; clearTimeout(timer.current); sub?.data.subscription.unsubscribe(); window.removeEventListener('online', onOnline); window.removeEventListener('beforeunload', beforeUnload) }
   }, [load, flush])
 
-  const put = useCallback(record => {
+  const put = useCallback((record, expectedOwner) => {
     const s = state.current
+    if (expectedOwner !== undefined && s.owner !== expectedOwner) return null
     s.records = [record, ...s.records.filter(r => r.id !== record.id)]
     s.pending[record.id] = uid(); setRecords([...s.records])
     const cached = persist()

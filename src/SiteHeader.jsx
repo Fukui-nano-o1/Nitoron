@@ -1,13 +1,12 @@
-import React from 'react'
-
-export const NAV = [['discover', '発表を探す'], ['mine', '自分の記録'], ['challenges', '挑戦'], ['learning', '学習ノート'], ['compare', '比較']]
+import React, { useState } from 'react'
+import Icon from './Icon.jsx'
+export const NAV = [['discover', '探す', 'search'], ['saved', '保存リスト', 'heart'], ['mine', '自分の記録', 'book'], ['compare', '比較', 'compare']]
 export default function SiteHeader({ view, name, ready, selectedCount, onCreate, onAccount }) {
-  const current = id => view === id || id === 'mine' && view === 'record' || id === 'discover' && view === 'public'
-  return <header className="site-header print-hidden">
-    <div className="header-top">
-      <a className="brand" href="#/discover" aria-label="Nitoron 発表を探す">nitoron<span>4H CLUB</span></a>
-      <nav className="desktop-navigation" aria-label="メインナビゲーション">{NAV.map(([id, label]) => <a key={id} href={`#/${id}`} aria-current={current(id) ? 'page' : undefined}>{label}{id === 'compare' && selectedCount > 0 && <span className="nav-count">{selectedCount}</span>}</a>)}</nav>
-      <div className="header-actions"><button className="create-link" disabled={!ready} onClick={onCreate}>発表を書く</button><button className="profile-control" onClick={onAccount} aria-label={name ? `${name}のアカウント` : 'アカウント・ログイン'}><span className="profile-avatar" aria-hidden="true">{name?.slice(0, 1) || 'N'}</span><span className="profile-label">{name || 'ログイン'}</span></button></div>
-    </div>
-  </header>
+  const [menu, setMenu] = useState(false)
+  return <header className="site-header print-hidden"><div className="header-top">
+    <a className="brand" href="#/discover" aria-label="Nitoron 発表を探す">nitoron</a>
+    <nav className="desktop-navigation" aria-label="メインナビゲーション">{[['discover', '経営発表'], ['challenges', '挑戦'], ['learning', '学び']].map(([id, label]) => <a key={id} href={`#/${id}`} aria-current={view === id || id === 'discover' && view === 'public' ? 'page' : undefined}>{label}</a>)}</nav>
+    <div className="header-actions"><button className="create-link" disabled={!ready} onClick={onCreate}>発表を掲載する</button><a className="header-save" href="#/saved" aria-label="保存リスト"><Icon name="heart" /></a><button className="profile-control" aria-expanded={menu} aria-label="アカウントメニュー" onClick={() => setMenu(!menu)}><Icon name="menu" size={18} /><span className="profile-avatar">{name?.slice(0, 1) || <Icon name="user" size={20} />}</span></button></div>
+    {menu && <><button className="menu-backdrop" aria-label="メニューを閉じる" onClick={() => setMenu(false)} /><nav className="account-menu" aria-label="自分のメニュー">{NAV.filter(([id]) => id !== 'discover').map(([id, label]) => <a key={id} href={`#/${id}`} onClick={() => setMenu(false)}>{label}{id === 'compare' && selectedCount > 0 ? `（${selectedCount}）` : ''}</a>)}<a href="#/challenges" onClick={() => setMenu(false)}>自分の挑戦</a><a href="#/learning" onClick={() => setMenu(false)}>学習ノート</a><button onClick={() => { setMenu(false); onAccount() }}>{name || 'ログイン・登録'}</button></nav></>}
+  </div></header>
 }

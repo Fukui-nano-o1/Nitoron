@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import BlockEditor from './BlockEditor.jsx'
 import RecordBody from './RecordBody.jsx'
 import Cover from './Cover.jsx'
+import Attachments from './Attachments.jsx'
 import { KINDS, PHASES, SECTIONS, METRICS, emptyMeta, today, uid, exportMarkdown } from './domain.js'
 import { Field, Dialog, download } from './ui.jsx'
 
-export default function Editor({ record, onChange, onPublish, onDelete, published, onUnpublish, onShare, onDerive, discussion }) {
+export default function Editor({ record, onChange, onPublish, onDelete, published, onUnpublish, onShare, onDerive, discussion, session, flush }) {
   const [tab, setTab] = useState('edit'), [confirmDelete, setConfirmDelete] = useState(false)
+  const [uploading, setUploading] = useState(false)
   const m = record.meta
   const patch = update => onChange({ ...record, ...update })
   const meta = update => patch({ meta: { ...m, ...update } })
@@ -16,7 +18,7 @@ export default function Editor({ record, onChange, onPublish, onDelete, publishe
       <a href="#/mine" className="back-link">自分の記録</a>
       <span className="document-type">{KINDS[m?.kind || 'memo']}</span>
       <div className="actions"><button className="quiet" onClick={() => download(`${record.title || '記録'}.md`, exportMarkdown(record), 'text/markdown')}>書き出す</button>
-        <button className="primary" onClick={onPublish} disabled={!m}>{published ? '公開版を更新' : '公開する'}</button></div>
+        <button className="primary" onClick={onPublish} disabled={!m || uploading}>{published ? '公開版を更新' : '公開する'}</button></div>
     </header>
     <div className="document-layout">
       <aside className="document-outline"><p>この記録</p><a href="#document-summary" onClick={e => { e.preventDefault(); document.getElementById('document-summary')?.scrollIntoView({ behavior: 'smooth' }) }}>概要</a>
@@ -25,7 +27,7 @@ export default function Editor({ record, onChange, onPublish, onDelete, publishe
       </aside>
       <article className="document">
         <div className="document-heading"><div className="eyebrow">{m ? '4H CLUB / FIELD RECORD' : 'FIELD NOTE'}</div>
-          <div className="segmented"><button aria-pressed={tab === 'edit'} onClick={() => setTab('edit')}>書く</button><button aria-pressed={tab === 'read'} onClick={() => setTab('read')}>読む</button></div></div>
+          <div className="segmented"><button aria-pressed={tab === 'edit'} onClick={() => setTab('edit')}>書く</button><button aria-pressed={tab === 'read'} disabled={uploading} onClick={() => setTab('read')}>読む</button></div></div>
         {published && <div className="notice">公開版があります。ここでの変更は「公開版を更新」で反映します。<div className="actions"><button onClick={onShare}>リンクを共有</button><a href={`#/public/${record.id}`}>公開版を見る</a><button onClick={onUnpublish}>公開を停止</button></div></div>}
         {tab === 'read' ? <><RecordBody record={record} /><div className="actions print-hidden"><button className="secondary" onClick={() => window.print()}>印刷・PDFに保存</button><button className="secondary" onClick={() => onDerive('challenge')}>次の挑戦をつくる</button></div>{discussion}</> : <>
           <input className="title-input" aria-label="記録のタイトル" placeholder={m ? '発表のタイトル' : 'メモのタイトル'} maxLength={200} value={record.title} onChange={e => patch({ title: e.target.value })} />
@@ -35,7 +37,8 @@ export default function Editor({ record, onChange, onPublish, onDelete, publishe
             <BlockEditor blocks={record.blocks} onChange={blocks => patch({ blocks })} />
             <button className="secondary" onClick={() => meta(emptyMeta())}>このメモを経営発表にする</button>
           </> : <>
-            <details className="details cover-settings"><summary>{m.coverUrl ? 'カバー写真を変更' : 'カバー写真を追加'}</summary>
+            <Attachments record={record} session={session} flush={flush} onChange={onChange} onBusy={setUploading} />
+            <details className="details cover-settings"><summary>外部の写真URLを使う</summary>
               {m.coverUrl && <Cover record={record} className="editor-cover" />}
               <Field label="写真のURL" help="自分の写真など、公開してよい画像のURLを入力。空欄でも記録できます。"><input type="url" value={m.coverUrl || ''} onChange={e => meta({ coverUrl: e.target.value })} placeholder="https://" /></Field>
               {m.coverUrl && <button className="quiet" onClick={() => meta({ coverUrl: '' })}>写真を外す</button>}
