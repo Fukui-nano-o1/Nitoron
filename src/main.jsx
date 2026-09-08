@@ -48,6 +48,7 @@ const Icon = {
   book: <svg viewBox="0 0 16 16" width="15" height="15"><path fill="currentColor" d="M4.25 1.5h8.25c.41 0 .75.34.75.75v11.5a.75.75 0 0 1-.75.75H4.25A2.25 2.25 0 0 1 2 12.25v-8.5A2.25 2.25 0 0 1 4.25 1.5ZM3.5 12.25c0 .41.34.75.75.75h7.5v-2H4.25a.75.75 0 0 0-.75.75v.5Zm8.25-2.75V3H4.25a.75.75 0 0 0-.75.75v5.88c.24-.08.49-.13.75-.13h7.5Z"/></svg>,
   checkbox: <svg viewBox="0 0 16 16" width="15" height="15"><path fill="currentColor" d="M3.5 2h9A1.5 1.5 0 0 1 14 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12.5v-9A1.5 1.5 0 0 1 3.5 2Zm0 1.5v9h9v-9h-9Zm7.53 2.47a.75.75 0 0 1 0 1.06l-3 3a.75.75 0 0 1-1.06 0l-1.5-1.5a.75.75 0 1 1 1.06-1.06l.97.97 2.47-2.47a.75.75 0 0 1 1.06 0Z"/></svg>,
   check: <svg viewBox="0 0 16 16" width="12" height="12"><path fill="currentColor" d="M13.53 4.22a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l2.47 2.47 5.97-5.97a.75.75 0 0 1 1.06 0Z"/></svg>,
+  sliders: <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M1.75 4.5h6.4M12.9 4.5h1.35M1.75 11.5h1.35M6.5 11.5h7.75"/><circle cx="10.6" cy="4.5" r="2"/><circle cx="4.4" cy="11.5" r="2"/></svg>,
 }
 
 /* ---------- Hand-drawn duotone artwork (Nitoron's own icon language) ---------- */
@@ -435,7 +436,7 @@ function App() {
       </header>
 
       <div className="scroll-area">
-        {active === 'search' ? <SearchPage notes={notes} query={query} setQuery={setQuery} onOpen={openNote} onNavigate={navigate} onClose={closeSearch} />
+        {active === 'search' ? <SearchPage notes={notes} query={query} setQuery={setQuery} onOpen={openNote} />
         : active === 'home' ? <section className="home-canvas">
           <Home notes={notes} onNavigate={navigate} onCompose={openNew} onOpen={openNote} onSearch={openSearch} />
         </section> : <>
@@ -630,7 +631,7 @@ function NoteEditor({ note, cloud, onPatch, onClose, onDelete }) {
   </div>
 }
 
-/* ---------- Search page (Notion-style full page search) ---------- */
+/* ---------- Search page (Airbnb-style structured search) ---------- */
 
 const SORT_OPTIONS = [
   { value: 'relevance', label: '関連順' },
@@ -645,10 +646,6 @@ const DATE_OPTIONS = [
 ]
 
 const daysAgo = (dateStr) => Math.floor((Date.now() - new Date(dateStr + 'T00:00:00')) / 86400000)
-const bucketOf = (dateStr) => {
-  const n = daysAgo(dateStr)
-  return n <= 0 ? '今日' : n === 1 ? '昨日' : n <= 7 ? '過去1週間' : n <= 30 ? '過去30日間' : 'それ以前'
-}
 const relativeDate = (dateStr) => {
   const n = daysAgo(dateStr)
   return n <= 0 ? '今日' : n === 1 ? '昨日' : n <= 7 ? `${n}日前` : dateStr.slice(5).replace('-', '/')
@@ -679,49 +676,84 @@ const snippetFor = (note, query) => {
   return (start > 0 ? '…' : '') + hit.slice(start, start + 120)
 }
 
-function FilterChip({ label, value, options, onChange, alwaysShowValue }) {
-  const [open, setOpen] = useState(false)
-  const ref = useRef(null)
-  useEffect(() => {
-    if (!open) return
-    const onDown = (e) => { if (!ref.current?.contains(e.target)) setOpen(false) }
-    const onKey = (e) => { if (e.key === 'Escape') { e.stopPropagation(); setOpen(false) } }
-    document.addEventListener('mousedown', onDown)
-    window.addEventListener('keydown', onKey, true)
-    return () => { document.removeEventListener('mousedown', onDown); window.removeEventListener('keydown', onKey, true) }
-  }, [open])
-  const current = options.find((o) => o.value === value) || options[0]
-  const isDefault = value === options[0].value
-  return <div className="chip-wrap" ref={ref}>
-    <button className={`chip ${!isDefault ? 'on' : ''}`} onClick={() => setOpen((o) => !o)}>
-      <span>{alwaysShowValue ? `${label} : ${current.label}` : isDefault ? label : `${label} : ${current.label}`}</span>
-      {Icon.chevronDown}
-    </button>
-    {open && <>
-      <div className="chip-backdrop" onMouseDown={() => setOpen(false)} />
-      <div className="chip-menu">
-        <p className="chip-menu-title">{label}</p>
-        {options.map((o) => <button key={o.value} className={o.value === value ? 'sel' : ''} onClick={() => { onChange(o.value); setOpen(false) }}>
-          <span>{o.label}</span>{o.value === value && <span className="chip-check">{Icon.check}</span>}
-        </button>)}
+const TAG_META = {
+  'メモ': { art: 'memo', cover: 'linear-gradient(135deg,#d3e5ef,#c2d8e8)' },
+  'アイデア': { art: 'bulb', cover: 'linear-gradient(135deg,#fdecc8,#f6e0b8)' },
+  'タスク': { art: 'rocket', cover: 'linear-gradient(135deg,#dbeddb,#c9e2cd)' },
+}
+
+function FilterModal({ sort, setSort, titleOnly, setTitleOnly, cat, setCat, categories, dateRange, setDateRange, count, onClear, onClose }) {
+  return <div className="overlay ab-modal-overlay" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
+    <div className="ab-modal" role="dialog" aria-modal="true">
+      <div className="ab-modal-head">
+        <button className="icon-btn" onClick={onClose} aria-label="閉じる">✕</button>
+        <p>フィルター</p>
+        <span className="ab-modal-spacer" />
       </div>
-    </>}
+      <div className="ab-modal-body">
+        <section className="ab-sec">
+          <p className="ab-sec-title">並べ替え</p>
+          {SORT_OPTIONS.map((o) => <button key={o.value} className="ab-radio-row" onClick={() => setSort(o.value)}>
+            <span>{o.label}</span>
+            <span className={`ab-radio ${sort === o.value ? 'on' : ''}`} />
+          </button>)}
+        </section>
+        <section className="ab-sec">
+          <p className="ab-sec-title">検索対象</p>
+          <button className="ab-switch-row" onClick={() => setTitleOnly((v) => !v)}>
+            <span className="ab-switch-text"><span className="ab-switch-label">タイトルのみ</span><span className="ab-switch-desc">本文を除いて、タイトルだけを検索します。</span></span>
+            <span className={`ab-switch ${titleOnly ? 'on' : ''}`} />
+          </button>
+        </section>
+        <section className="ab-sec">
+          <p className="ab-sec-title">カテゴリ</p>
+          <div className="ab-pills">
+            <button className={`ab-pill ${cat === 'all' ? 'on' : ''}`} onClick={() => setCat('all')}>すべて</button>
+            {categories.map((c) => <button key={c} className={`ab-pill ${cat === c ? 'on' : ''}`} onClick={() => setCat(c)}>{c}</button>)}
+          </div>
+        </section>
+        <section className="ab-sec last">
+          <p className="ab-sec-title">最終更新</p>
+          <div className="ab-pills">
+            {DATE_OPTIONS.map((o) => <button key={o.value} className={`ab-pill ${dateRange === o.value ? 'on' : ''}`} onClick={() => setDateRange(o.value)}>{o.label}</button>)}
+          </div>
+        </section>
+      </div>
+      <div className="ab-modal-foot">
+        <button className="ab-clear" onClick={onClear}>すべてクリア</button>
+        <button className="ab-show" onClick={onClose}>{count}件を表示</button>
+      </div>
+    </div>
   </div>
 }
 
-function SearchPage({ notes, query, setQuery, onOpen, onNavigate, onClose }) {
+function SearchPage({ notes, query, setQuery, onOpen }) {
   const [sort, setSort] = useState('relevance')
   const [titleOnly, setTitleOnly] = useState(false)
   const [tag, setTag] = useState('all')
   const [cat, setCat] = useState('all')
   const [dateRange, setDateRange] = useState('any')
-  const [sel, setSel] = useState(0)
-  const inputRef = useRef(null)
+  const [seg, setSeg] = useState(null) // null | 'keyword' | 'cat' | 'date'
+  const [showFilters, setShowFilters] = useState(false)
+  const barRef = useRef(null)
   const q = query.trim().toLowerCase()
 
-  const tagOptions = useMemo(() => [{ value: 'all', label: 'すべてのタグ' }, ...Object.keys(TYPE_COLORS).map((t) => ({ value: t, label: t }))], [])
-  const catOptions = useMemo(() => [{ value: 'all', label: 'すべてのカテゴリ' }, ...[...new Set(notes.map((n) => n.category))].map((c) => ({ value: c, label: c }))], [notes])
-  const hasFilters = titleOnly || tag !== 'all' || cat !== 'all' || dateRange !== 'any'
+  useEffect(() => {
+    if (!seg) return
+    const onDown = (e) => { if (!barRef.current?.contains(e.target)) setSeg(null) }
+    document.addEventListener('mousedown', onDown)
+    return () => document.removeEventListener('mousedown', onDown)
+  }, [seg])
+  useEffect(() => {
+    if (!seg && !showFilters) return
+    const onKey = (e) => { if (e.key === 'Escape') { e.stopPropagation(); setSeg(null); setShowFilters(false) } }
+    window.addEventListener('keydown', onKey, true)
+    return () => window.removeEventListener('keydown', onKey, true)
+  }, [seg, showFilters])
+
+  const categories = useMemo(() => [...new Set(notes.map((n) => n.category))], [notes])
+  const filterCount = (titleOnly ? 1 : 0) + (cat !== 'all' ? 1 : 0) + (dateRange !== 'any' ? 1 : 0) + (sort !== 'relevance' ? 1 : 0)
+  const hasFilters = filterCount > 0 || tag !== 'all'
 
   const results = useMemo(() => {
     let list = notes.filter((n) => {
@@ -744,104 +776,108 @@ function SearchPage({ notes, query, setQuery, onOpen, onNavigate, onClose }) {
     return [...list].sort((a, b) => b.date.localeCompare(a.date))
   }, [notes, q, sort, titleOnly, tag, cat, dateRange])
 
-  const groups = useMemo(() => {
-    if (q && sort === 'relevance') return [['検索結果', results]]
-    const map = new Map()
-    for (const n of results) {
-      const b = bucketOf(n.date)
-      if (!map.has(b)) map.set(b, [])
-      map.get(b).push(n)
-    }
-    return [...map.entries()]
-  }, [results, q, sort])
+  const clearFilters = () => { setTitleOnly(false); setCat('all'); setDateRange('any'); setSort('relevance') }
+  const dateLabel = (DATE_OPTIONS.find((o) => o.value === dateRange) || DATE_OPTIONS[0]).label
 
-  useEffect(() => { setSel(0) }, [q, sort, titleOnly, tag, cat, dateRange])
-  useEffect(() => { inputRef.current?.focus() }, [])
-
-  const handleKeyDown = (e) => {
-    if (e.key === 'ArrowDown') { e.preventDefault(); setSel((s) => Math.min(s + 1, results.length - 1)) }
-    else if (e.key === 'ArrowUp') { e.preventDefault(); setSel((s) => Math.max(s - 1, 0)) }
-    else if (e.key === 'Enter' && results[sel]) onOpen(results[sel].id)
-  }
-
-  let flatIndex = -1
   return <section className="search-page">
-    <div className="sp-input-row">
-      <span className="sp-input-ico">{Icon.search}</span>
-      <input
-        ref={inputRef}
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        onKeyDown={handleKeyDown}
-        placeholder="Nitoronを検索…"
-        aria-label="検索"
-      />
-      {query && <button className="sp-clear" onClick={() => { setQuery(''); inputRef.current?.focus() }} aria-label="クリア">✕</button>}
-      <button className="sp-esc" onClick={onClose}>Esc</button>
-    </div>
+    <div className="ab-bar-wrap" ref={barRef}>
+      <div className={`ab-bar ${seg ? 'open' : ''}`}>
+        <button className={`ab-seg ${seg === 'keyword' ? 'on' : ''}`} onClick={() => setSeg('keyword')}>
+          <span className="ab-seg-label">キーワード</span>
+          {seg === 'keyword'
+            ? <input
+                autoFocus
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => { if (e.key === 'Enter') setSeg(null) }}
+                placeholder="メモを検索"
+                aria-label="キーワード"
+              />
+            : <span className={`ab-seg-value ${query ? '' : 'muted'}`}>{query || 'メモを検索'}</span>}
+        </button>
+        <span className="ab-sep" />
+        <button className={`ab-seg ab-seg-mid ${seg === 'cat' ? 'on' : ''}`} onClick={() => setSeg(seg === 'cat' ? null : 'cat')}>
+          <span className="ab-seg-label">カテゴリ</span>
+          <span className={`ab-seg-value ${cat === 'all' ? 'muted' : ''}`}>{cat === 'all' ? 'すべてのカテゴリ' : cat}</span>
+        </button>
+        <span className="ab-sep" />
+        <button className={`ab-seg ab-seg-last ${seg === 'date' ? 'on' : ''}`} onClick={() => setSeg(seg === 'date' ? null : 'date')}>
+          <span className="ab-seg-label">最終更新</span>
+          <span className={`ab-seg-value ${dateRange === 'any' ? 'muted' : ''}`}>{dateLabel}</span>
+        </button>
+        <button className="ab-search-btn" onClick={() => setSeg(seg ? null : 'keyword')} aria-label="検索">
+          {Icon.search}<span>検索</span>
+        </button>
+      </div>
 
-    <div className="sp-filters">
-      <FilterChip label="並べ替え" value={sort} options={SORT_OPTIONS} onChange={setSort} alwaysShowValue />
-      <span className="sp-filter-sep" />
-      <button className={`chip ${titleOnly ? 'on' : ''}`} onClick={() => setTitleOnly((v) => !v)}>
-        {titleOnly && <span className="chip-check">{Icon.check}</span>}<span>タイトルのみ</span>
-      </button>
-      <FilterChip label="タグ" value={tag} options={tagOptions} onChange={setTag} />
-      <FilterChip label="カテゴリ" value={cat} options={catOptions} onChange={setCat} />
-      <FilterChip label="最終更新" value={dateRange} options={DATE_OPTIONS} onChange={setDateRange} />
-      {hasFilters && <button className="chip clear-chip" onClick={() => { setTitleOnly(false); setTag('all'); setCat('all'); setDateRange('any') }}>フィルターをクリア</button>}
-    </div>
-
-    {(q || hasFilters) && <p className="sp-count">{results.length}件の結果</p>}
-
-    <div className="sp-results">
-      {!q && !hasFilters && <div className="sp-quick">
-        <p className="sp-group-head">ページ</p>
-        {PAGES.filter((p) => p.id !== 'home').map((p) => <button key={p.id} className="sp-row sp-page-row" onClick={() => onNavigate(p.id)}>
-          <span className="sp-row-ico art">{Art[p.art]({ size: 18 })}</span>
-          <span className="sp-row-main"><span className="sp-row-title">{p.label}</span></span>
-        </button>)}
-      </div>}
-
-      {groups.filter(([, items]) => items.length).map(([bucket, items]) => <div key={bucket}>
-        <p className="sp-group-head">{bucket}</p>
-        {items.map((item) => {
-          flatIndex += 1
-          const index = flatIndex
-          const snippet = snippetFor(item, q)
-          return <button
-            key={item.id}
-            className={`sp-row ${index === sel ? 'sel' : ''}`}
-            onClick={() => onOpen(item.id)}
-            onMouseMove={() => { if (index !== sel) setSel(index) }}
-          >
-            <span className="sp-row-ico">{Icon.page}</span>
-            <span className="sp-row-main">
-              <span className="sp-row-title"><Highlight text={item.title || '無題'} query={q} /></span>
-              <span className="sp-row-sub">
-                <span className="sp-row-path">メモ 内</span>
-                {snippet && <><span className="sp-row-dot">·</span><span className="sp-row-snippet"><Highlight text={snippet} query={q} /></span></>}
-              </span>
-            </span>
-            <span className={`tag ${TYPE_COLORS[item.type] || 'tag-gray'}`}>{item.type}</span>
-            <span className="sp-row-date">{relativeDate(item.date)}</span>
+      {seg === 'cat' && <div className="ab-panel">
+        <p className="ab-panel-title">カテゴリで絞り込む</p>
+        <div className="ab-panel-grid">
+          <button className={`ab-opt ${cat === 'all' ? 'on' : ''}`} onClick={() => { setCat('all'); setSeg(null) }}>
+            <span className="ab-opt-ico"><Art.sprout size={26} /></span><span>すべて</span>
           </button>
-        })}
-      </div>)}
-
-      {(q || hasFilters) && !results.length && <div className="sp-empty">
-        <div className="sp-empty-art"><Art.folder size={54} /></div>
-        <p className="sp-empty-title">一致する結果はありません。</p>
-        <p className="sp-empty-sub">キーワードを短くするか、フィルターを解除してみてください。</p>
-        {hasFilters && <button className="sp-empty-btn" onClick={() => { setTitleOnly(false); setTag('all'); setCat('all'); setDateRange('any') }}>フィルターをクリア</button>}
+          {categories.map((c) => <button key={c} className={`ab-opt ${cat === c ? 'on' : ''}`} onClick={() => { setCat(c); setSeg(null) }}>
+            <span className="ab-opt-ico"><Art.folder size={26} /></span><span>{c}</span>
+          </button>)}
+        </div>
+      </div>}
+      {seg === 'date' && <div className="ab-panel">
+        <p className="ab-panel-title">最終更新で絞り込む</p>
+        <div className="ab-panel-grid">
+          {DATE_OPTIONS.map((o) => <button key={o.value} className={`ab-opt ${dateRange === o.value ? 'on' : ''}`} onClick={() => { setDateRange(o.value); setSeg(null) }}>
+            <span className="ab-opt-ico ico">{Icon.calendar}</span><span>{o.label}</span>
+          </button>)}
+        </div>
       </div>}
     </div>
 
-    <div className="sp-foot">
-      <span><kbd>↑↓</kbd> 移動</span>
-      <span><kbd>⏎</kbd> 開く</span>
-      <span><kbd>Esc</kbd> 閉じる</span>
+    <div className="ab-cats">
+      <div className="ab-cat-scroll">
+        <button className={`ab-cat ${tag === 'all' ? 'on' : ''}`} onClick={() => setTag('all')}>
+          <span className="ab-cat-ico"><Art.sprout size={24} /></span>すべて
+        </button>
+        {Object.keys(TYPE_COLORS).map((t) => <button key={t} className={`ab-cat ${tag === t ? 'on' : ''}`} onClick={() => setTag(t)}>
+          <span className="ab-cat-ico">{Art[TAG_META[t].art]({ size: 24 })}</span>{t}
+        </button>)}
+      </div>
+      <button className={`ab-filter-btn ${filterCount ? 'on' : ''}`} onClick={() => setShowFilters(true)}>
+        {Icon.sliders}<span>フィルター</span>
+        {filterCount > 0 && <span className="ab-filter-badge">{filterCount}</span>}
+      </button>
     </div>
+
+    <p className="ab-count">{q || hasFilters ? `${results.length}件の結果` : `${results.length}件のメモ`}</p>
+
+    {results.length > 0 && <div className="ab-grid">
+      {results.map((item) => {
+        const meta = TAG_META[item.type] || TAG_META['メモ']
+        const snippet = snippetFor(item, q)
+        return <button key={item.id} className="ab-card" onClick={() => onOpen(item.id)}>
+          <div className="ab-card-cover" style={{ background: meta.cover }}>
+            {Art[meta.art]({ size: 44 })}
+            <span className={`tag ${TYPE_COLORS[item.type] || 'tag-gray'} ab-card-tag`}>{item.type}</span>
+          </div>
+          <p className="ab-card-title"><Highlight text={item.title || '無題'} query={q} /></p>
+          {snippet && <p className="ab-card-snippet"><Highlight text={snippet} query={q} /></p>}
+          <p className="ab-card-meta">{item.category}<span className="ab-card-dot">·</span>{relativeDate(item.date)}</p>
+        </button>
+      })}
+    </div>}
+
+    {!results.length && <div className="ab-empty">
+      <div className="ab-empty-art"><Art.folder size={54} /></div>
+      <p className="ab-empty-title">一致する結果はありません。</p>
+      <p className="ab-empty-sub">キーワードを短くするか、フィルターを解除してみてください。</p>
+      {(hasFilters || q) && <button className="ab-empty-btn" onClick={() => { clearFilters(); setTag('all') }}>フィルターをすべて解除</button>}
+    </div>}
+
+    {showFilters && <FilterModal
+      sort={sort} setSort={setSort}
+      titleOnly={titleOnly} setTitleOnly={setTitleOnly}
+      cat={cat} setCat={setCat} categories={categories}
+      dateRange={dateRange} setDateRange={setDateRange}
+      count={results.length} onClear={clearFilters} onClose={() => setShowFilters(false)}
+    />}
   </section>
 }
 
