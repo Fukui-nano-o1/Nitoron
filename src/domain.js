@@ -25,6 +25,9 @@ export const emptyMeta = (kind = 'presentation') => ({
 })
 const string = value => typeof value === 'string' ? value : typeof value === 'number' && Number.isFinite(value) ? String(value) : ''
 export const hasSectionContent = m => !!(m.summary || m.crop || m.variety || m.region || m.club || m.areaA || m.start || m.end || m.conditions || m.target || m.criterion || m.deadline || SECTIONS.some(([key]) => m[key]) || METRICS.some(([key]) => m[key]) || m.observations.length || m.sources.length)
+// 発表者名は作成時に自動で入るため、空判定では見ない。
+export const isBlankRecord = r => !String(r.title || '').trim() && !(r.blocks || []).some(b => String(b?.text || '').trim())
+  && (!r.meta || !hasSectionContent(r.meta) && !r.meta.attachments?.length && !r.meta.coverUrl && !r.meta.origin)
 export function sanitizeMeta(raw) {
   if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return null
   const m = emptyMeta(['presentation', 'challenge', 'learning'].includes(raw.kind) ? raw.kind : 'presentation')
