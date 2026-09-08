@@ -45,6 +45,18 @@ export async function saveProfile(session, { display_name, region, club, bio }) 
   const { error } = await supabase.from('nitoron_profiles').upsert({ user_id: session.user.id, display_name: display_name.trim(), region: region.trim(), club: club.trim(), bio: bio.trim(), updated_at: new Date().toISOString() }).select('user_id').single()
   if (error) throw new Error('プロフィールを保存できませんでした。接続を確認して再試行してください。')
 }
+// 公開の対話記録から検証できる実績だけを数える。自己申告は含めない。
+export async function getTrust(userId, publicationIds) {
+  requireClient()
+  const count = async request => { const { count: n, error } = await request; if (error) throw new Error(message(error)); return n || 0 }
+  const [received, resolved, written, replies] = await Promise.all([
+    publicationIds.length ? count(supabase.from('nitoron_feedback').select('id', { count: 'exact', head: true }).in('publication_id', publicationIds)) : 0,
+    publicationIds.length ? count(supabase.from('nitoron_feedback_resolutions').select('feedback_id', { count: 'exact', head: true }).in('publication_id', publicationIds).eq('status', '対応済み')) : 0,
+    count(supabase.from('nitoron_feedback').select('id', { count: 'exact', head: true }).eq('user_id', userId)),
+    count(supabase.from('nitoron_feedback_replies').select('id', { count: 'exact', head: true }).eq('user_id', userId)),
+  ])
+  return { received, resolved, contributions: written + replies }
+}
 export async function getUserPublic(ownerId) {
   requireClient()
   const { data, error } = await supabase.from('nitoron_publications').select('*').eq('owner_id', ownerId).eq('is_public', true).order('updated_at', { ascending: false }).order('id').limit(60)

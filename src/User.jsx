@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import Icon from './Icon.jsx'
 import { RecordCard } from './Catalog.jsx'
-import { getUserPublic, getProfile } from './community.js'
+import { getUserPublic, getProfile, getTrust } from './community.js'
 import { ErrorNotice } from './ui.jsx'
 
 export default function User({ id, savedIds, onSave, onMenu, selectedKeys, keyOf, onSelect }) {
-  const [records, setRecords] = useState(null), [profile, setProfile] = useState(null), [error, setError] = useState('')
+  const [records, setRecords] = useState(null), [profile, setProfile] = useState(null), [trust, setTrust] = useState(null), [error, setError] = useState('')
   useEffect(() => {
     let cancelled = false
-    setRecords(null); setProfile(null); setError('')
-    getUserPublic(id).then(data => { if (!cancelled) setRecords(data) }).catch(e => { if (!cancelled) setError(e.message) })
+    setRecords(null); setProfile(null); setTrust(null); setError('')
+    getUserPublic(id).then(data => {
+      if (cancelled) return
+      setRecords(data)
+      getTrust(id, data.map(r => r.id)).then(t => { if (!cancelled) setTrust(t) }).catch(() => { /* 実績が読めなくてもページは成立する。 */ })
+    }).catch(e => { if (!cancelled) setError(e.message) })
     getProfile(id).then(p => { if (!cancelled) setProfile(p) }).catch(() => { /* 発表だけでもページは成立する。 */ })
     return () => { cancelled = true }
   }, [id])
@@ -27,9 +31,19 @@ export default function User({ id, savedIds, onSave, onMenu, selectedKeys, keyOf
           <dl className="host-stats">
             <div><dd>{records.length}</dd><dt>発表</dt></div>
             <div><dd>{facts}</dd><dt>観測した事実</dt></div>
+            {trust && trust.received > 0 && <div><dd>{trust.resolved}</dd><dt>対応した指摘</dt></div>}
             {since && <div><dd>{since}年〜</dd><dt>発表歴</dt></div>}
           </dl>
         </div>
+        {records.length > 0 && <div className="trust-card">
+          <h2>{name}さんの確認済み情報</h2>
+          <ul>
+            <li><Icon name="check" size={18} />メールアドレス（公開時に確認済み）</li>
+            {trust && trust.received > 0 && <li><Icon name="check" size={18} />受けた指摘 {trust.received}件のうち {trust.resolved}件に対応済み</li>}
+            {trust && trust.contributions > 0 && <li><Icon name="check" size={18} />ほかの発表への指摘・返信 {trust.contributions}件</li>}
+          </ul>
+          <p>実績はすべて公開の発表と対話から確認できます。</p>
+        </div>}
         {(region || club) && <div className="host-facts">
           {region && <div><Icon name="pin" size={20} />{region}で実践</div>}
           {club && <div><Icon name="flag" size={20} />{club}</div>}
