@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { supabase, ensureSession } from './supabase.js'
+import { supabase, ensureSession, loginRequired } from './supabase.js'
 import { fromRow, toRow, mergeRecords, uid } from './domain.js'
 import { drainOutbox } from './sync.js'
 
@@ -102,7 +102,8 @@ export default function useWorkspace() {
     } else {
       if (!cache) for (const record of legacy) pending[record.id] = uid()
       setStatus('この端末に保存')
-      setError('クラウドに接続できません。記録はこの端末に保存します。')
+      // ログインすれば繋がる状態はエラーではない。案内は needsLogin で行う。
+      if (!supabase || !loginRequired()) setError('クラウドに接続できません。記録はこの端末に保存します。')
     }
     if (token !== generation.current || !mounted.current) return
     setRecords([...s.records]); setReady(true)
@@ -157,9 +158,10 @@ export default function useWorkspace() {
       const next = await ensureSession()
       // Keep offline work in its own backup; do not silently attach it to an unrelated account.
       if (next) await load(next)
-      else setError('接続できませんでした。端末の記録を書き出して保管できます。')
+      else if (!supabase || !loginRequired()) setError('接続できませんでした。端末の記録を書き出して保管できます。')
     }
   }, [flush, load])
 
-  return { records, ready, session, status, error, put, remove, flush, retry }
+  const needsLogin = ready && !session && !!supabase && loginRequired()
+  return { records, ready, session, status, error, needsLogin, put, remove, flush, retry }
 }

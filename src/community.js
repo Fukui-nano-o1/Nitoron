@@ -33,6 +33,24 @@ export async function getPublic(id) {
   if (!data) throw new Error('この発表は見つからないか、公開が停止されています。')
   return unpack(data)
 }
+export async function getProfile(userId) {
+  requireClient()
+  const { data, error } = await supabase.from('nitoron_profiles').select('*').eq('user_id', userId).maybeSingle()
+  if (error) throw new Error(message(error))
+  return data
+}
+export async function saveProfile(session, { display_name, region, club, bio }) {
+  requireClient()
+  if (!session?.user) throw new Error('ログインしてからプロフィールを保存してください。')
+  const { error } = await supabase.from('nitoron_profiles').upsert({ user_id: session.user.id, display_name: display_name.trim(), region: region.trim(), club: club.trim(), bio: bio.trim(), updated_at: new Date().toISOString() }).select('user_id').single()
+  if (error) throw new Error('プロフィールを保存できませんでした。接続を確認して再試行してください。')
+}
+export async function getUserPublic(ownerId) {
+  requireClient()
+  const { data, error } = await supabase.from('nitoron_publications').select('*').eq('owner_id', ownerId).eq('is_public', true).order('updated_at', { ascending: false }).order('id').limit(60)
+  if (error) throw new Error(message(error))
+  return data.map(unpack)
+}
 export async function getOwned(userId) {
   requireClient()
   const { data, error } = await supabase.from('nitoron_publications').select('id,is_public,updated_at').eq('owner_id', userId)
@@ -108,6 +126,34 @@ export async function setBookmark(userId, id, saved) {
     : supabase.from('nitoron_bookmarks').delete().eq('user_id', userId).eq('publication_id', id)
   const { error } = await request
   if (error) throw new Error('保存リストを更新できませんでした。再試行してください。')
+}
+export async function listFollows(userId) {
+  requireClient()
+  const { data, error } = await supabase.from('nitoron_follows').select('owner_id').eq('follower_id', userId).order('owner_id').limit(1000)
+  if (error) throw new Error(message(error))
+  return data.map(r => r.owner_id)
+}
+export async function setFollow(userId, ownerId, following) {
+  requireClient()
+  const request = following ? supabase.from('nitoron_follows').upsert({ follower_id: userId, owner_id: ownerId }, { onConflict: 'follower_id,owner_id', ignoreDuplicates: true })
+    : supabase.from('nitoron_follows').delete().eq('follower_id', userId).eq('owner_id', ownerId)
+  const { error } = await request
+  if (error) throw new Error(['PGRST205', '42P01'].includes(error.code) ? message(error) : 'フォローを更新できませんでした。再試行してください。')
+}
+export async function getCardMemo(userId, publicationId) {
+  requireClient()
+  const { data, error } = await supabase.from('nitoron_card_memos').select('body').eq('user_id', userId).eq('publication_id', publicationId).maybeSingle()
+  if (error) throw new Error(message(error))
+  return data?.body || ''
+}
+export async function saveCardMemo(userId, publicationId, body) {
+  requireClient()
+  const trimmed = body.trim()
+  const request = trimmed ? supabase.from('nitoron_card_memos').upsert({ user_id: userId, publication_id: publicationId, body: trimmed }, { onConflict: 'user_id,publication_id' })
+    : supabase.from('nitoron_card_memos').delete().eq('user_id', userId).eq('publication_id', publicationId)
+  const { error } = await request
+  if (error) throw new Error(['PGRST205', '42P01'].includes(error.code) ? message(error) : 'メモを保存できませんでした。再試行してください。')
+  return trimmed
 }
 export async function listReplies(publicationId) {
   requireClient()

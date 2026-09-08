@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { newRecord, toRow, fromRow, snapshot, matches, number, per10a, publicationProblems, deriveRecord, mergeRecords, exportMarkdown, safeUrl, sanitizeMeta } from '../src/domain.js'
+import { newRecord, isBlankRecord, toRow, fromRow, snapshot, matches, number, per10a, publicationProblems, deriveRecord, mergeRecords, exportMarkdown, safeUrl, sanitizeMeta } from '../src/domain.js'
 
 test('既存メモの文章・ブロック・完了状態を引き継ぐ', () => {
   const original = { id: crypto.randomUUID(), title: '既存の記録', type: 'タスク', category: '畑', date: '2026-08-20', blocks: [{ id: 'b', type: 'todo', text: '測定する', checked: true }] }
@@ -64,4 +64,14 @@ test('書き出しでも観測・仮説・考察・出典を区別する', () =>
   const r = newRecord(); Object.assign(r.meta, { hypothesis: '原因の候補', interpretation: '結果の解釈', observations: [{ date: '2026-09-07', fact: '確認した事実', evidence: '原記録' }], sources: [{ title: '原典', url: 'https://example.com', date: '2026-01-01' }] })
   const md = exportMarkdown(r)
   for (const term of ['## 仮説', '## 考察', '## 観測した事実', '原記録', '## 出典・資料', '2026-01-01']) assert.ok(md.includes(term))
+})
+test('空の記録の判定は自動入力の発表者名を無視し、入力があれば空扱いしない', () => {
+  const blank = newRecord('presentation', 'たきと')
+  assert.equal(isBlankRecord(blank), true)
+  const memo = newRecord('memo'); assert.equal(isBlankRecord(memo), true)
+  const titled = newRecord(); titled.title = ' ブロッコリー '; assert.equal(isBlankRecord(titled), false)
+  const typed = newRecord(); typed.blocks[0].text = '観測メモ'; assert.equal(isBlankRecord(typed), false)
+  const withNumbers = newRecord(); withNumbers.meta.revenue = '1000'; assert.equal(isBlankRecord(withNumbers), false)
+  const withPhoto = newRecord(); withPhoto.meta.coverUrl = 'https://example.com/a.jpg'; assert.equal(isBlankRecord(withPhoto), false)
+  const derived = deriveRecord({ id: 'src', title: '先行事例', meta: null }, 'challenge'); assert.equal(isBlankRecord(derived), false)
 })

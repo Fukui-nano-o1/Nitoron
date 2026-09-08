@@ -31,7 +31,7 @@ export default function Discussion({ record, session, name, onAccount, onLearn }
       <div className="feedback-grid">{items.map(item => {
         const status = resolutions.find(r => r.feedback_id === item.id)?.status || '未対応'
         return <article className="feedback" key={item.id}>
-          <div className="feedback-person"><span className="avatar-circle">{item.author.slice(0, 1)}</span><div><strong>{item.author}</strong><time>{item.created_at.slice(0, 10)}</time></div></div>
+          <div className="feedback-person"><a className="avatar-circle" href={`#/user/${item.user_id}`} aria-label={`${item.author}のプロフィールを表示`}>{item.author.slice(0, 1)}</a><div><strong>{item.author}</strong><time>{item.created_at.slice(0, 10)}</time></div></div>
           <div className="feedback-tags"><span>{item.kind}</span><span>{item.section}</span><span className={`resolution ${status === '対応済み' ? 'resolved' : ''}`}>{status}</span></div>
           <p>{item.body}</p>
           <div className="feedback-actions">{visible && <button className="text-action" onClick={() => { if (!verified) onAccount(); else { setReplyTo(replyTo === item.id ? '' : item.id); setReplyBody('') } }}>返信する</button>}{onLearn && <button className="text-action" onClick={() => onLearn(item)}>学びに残す</button>}

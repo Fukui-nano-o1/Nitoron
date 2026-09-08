@@ -15,6 +15,11 @@ const paths = {
   file: <><path d="M5 3h9l5 5v13H5ZM14 3v6h5M8 13h8M8 17h6" /></>,
   check: <path d="m4 12 5 5L20 6" />,
   plus: <path d="M12 4v16M4 12h16" />,
+  pin: <><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z" /><circle cx="12" cy="10" r="2.5" /></>,
+  flag: <path d="M5 21V4h11l-2 4 2 4H5" />,
+  chat: <path d="M12 4c4.7 0 8.5 3.1 8.5 7s-3.8 7-8.5 7c-1 0-2-.1-2.9-.4L4.5 19.5l1.2-3.2A6.6 6.6 0 0 1 3.5 11c0-3.9 3.8-7 8.5-7Z" />,
+  pencil: <><path d="M4.5 19.5l.9-3.6L16.6 4.7a2.2 2.2 0 0 1 3.1 3.1L8.5 19l-4 .9" /><path d="M14.8 6.5l3.1 3.1" /></>,
+  'user-plus': <><circle cx="10" cy="8" r="4" /><path d="M3 21a7 7 0 0 1 14 0M18.5 8v6M15.5 11h6" /></>,
 }
 export default function Icon({ name, size = 22, ...props }) {
   return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>{paths[name] || paths.file}</svg>
