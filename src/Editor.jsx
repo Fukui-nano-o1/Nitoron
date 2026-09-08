@@ -21,8 +21,9 @@ export default function Editor({ record, onChange, onPublish, onDelete, publishe
         <button className="primary" onClick={onPublish} disabled={!m || uploading}>{published ? '公開版を更新' : '公開する'}</button></div>
     </header>
     <div className="document-layout">
-      <aside className="document-outline"><p>この記録</p><a href="#document-summary" onClick={e => { e.preventDefault(); document.getElementById('document-summary')?.scrollIntoView({ behavior: 'smooth' }) }}>概要</a>
-        {m && SECTIONS.map(([key, title]) => <a key={key} href={`#section-${key}`} onClick={e => { e.preventDefault(); document.getElementById(`section-${key}`)?.scrollIntoView({ behavior: 'smooth' }) }}>{title}</a>)}
+      <aside className="document-outline"><p>この記録</p>
+        {m?.inputMode === 'sections' && <><a href="#document-summary" onClick={e => { e.preventDefault(); document.getElementById('document-summary')?.scrollIntoView({ behavior: 'smooth' }) }}>概要</a>
+        {SECTIONS.map(([key, title]) => <a key={key} href={`#section-${key}`} onClick={e => { e.preventDefault(); document.getElementById(`section-${key}`)?.scrollIntoView({ behavior: 'smooth' }) }}>{title}</a>)}</>}
         <div className="outline-bottom"><button className="quiet" onClick={() => setConfirmDelete(true)}>記録を削除</button></div>
       </aside>
       <article className="document">
@@ -43,6 +44,12 @@ export default function Editor({ record, onChange, onPublish, onDelete, publishe
               <Field label="写真のURL" help="自分の写真など、公開してよい画像のURLを入力。空欄でも記録できます。"><input type="url" value={m.coverUrl || ''} onChange={e => meta({ coverUrl: e.target.value })} placeholder="https://" /></Field>
               {m.coverUrl && <button className="quiet" onClick={() => meta({ coverUrl: '' })}>写真を外す</button>}
             </details>
+            <div className="segmented input-mode-switch"><button aria-pressed={m.inputMode !== 'sections'} onClick={() => meta({ inputMode: 'free' })}>フリー入力</button><button aria-pressed={m.inputMode === 'sections'} onClick={() => meta({ inputMode: 'sections' })}>項目で分ける</button></div>
+            {m.inputMode !== 'sections' ? <>
+              <p className="hint">思いつくまま自由に書けます。切り替えても、書いた内容は消えません。</p>
+              <BlockEditor blocks={record.blocks} onChange={blocks => patch({ blocks })} />
+              {m.origin && <p className="source-line">参考にした記録：{m.origin.public ? <a href={`#/public/${m.origin.id}`}>{m.origin.title}</a> : m.origin.title}</p>}
+            </> : <>
             <section id="document-summary" className="editor-section"><Field label="要約" help="読む人が、試したことと分かったことを最初につかめるように。"><textarea rows={3} maxLength={2000} value={m.summary} onChange={e => meta({ summary: e.target.value })} placeholder="何を試し、何が分かったか。これから試す記録なら、その目的を。" /></Field>
               <div className="fields two">{textInput('author', '発表者名')}{textInput('crop', '作物', '例：ブロッコリー')}</div>
               <details className="details"><summary>地域・所属・対象期間などの条件</summary><div className="fields two">
@@ -81,6 +88,7 @@ export default function Editor({ record, onChange, onPublish, onDelete, publishe
               <button className="secondary" onClick={() => meta({ sources: [...m.sources, { id: uid(), title: '', url: '', date: '' }] })}>出典・資料を追加</button>
               <h3>補足メモ</h3><BlockEditor blocks={record.blocks} onChange={blocks => patch({ blocks })} />
             </details>
+            </>}
           </>}
         </>}
       </article>

@@ -29,9 +29,11 @@ test('未入力を0扱いせず、面積不明・0のときは10a換算しない
   for (const area of ['', '0', '-10']) assert.equal(per10a('200000', area), null)
   assert.equal(per10a('', '20'), null)
 })
-test('公開の必須項目・期間・面積・負数を検査する', () => {
-  const r = newRecord(); assert.equal(publicationProblems(r).length, 4)
-  r.title = '収穫率を測る'; Object.assign(r.meta, { author: '発表者', crop: 'ブロッコリー', summary: '検証計画', areaA: '10' })
+test('公開はタイトルだけを必須とし、期間・面積・負数を検査する', () => {
+  const r = newRecord(); assert.deepEqual(publicationProblems(r), ['タイトルを入力してください。'])
+  r.title = '収穫率を測る'
+  assert.deepEqual(publicationProblems(r), [])
+  Object.assign(r.meta, { author: '発表者', crop: 'ブロッコリー', summary: '検証計画', areaA: '10' })
   assert.deepEqual(publicationProblems(r), [])
   r.meta.end = '2026-08-01'; r.meta.start = '2026-09-01'; r.meta.cost = '-1'
   assert.equal(publicationProblems(r).length, 2)
@@ -53,6 +55,10 @@ test('出典リンクのスクリプト実行と不正なメタデータを受�
   assert.equal(safeUrl('https://example.com/'), 'https://example.com/')
   const m = sanitizeMeta({ author: { injected: true }, kind: 'unknown', sources: 'bad', observations: [null, { fact: '観測' }] })
   assert.equal(m.author, ''); assert.equal(m.kind, 'presentation'); assert.deepEqual(m.sources, []); assert.equal(m.observations.length, 1)
+  assert.equal(m.inputMode, 'sections')
+  assert.equal(sanitizeMeta({}).inputMode, 'free')
+  assert.equal(sanitizeMeta({ inputMode: 'free', summary: '項目入力より前の要約' }).inputMode, 'free')
+  assert.equal(sanitizeMeta({ summary: '項目入力で書いた要約' }).inputMode, 'sections')
 })
 test('書き出しでも観測・仮説・考察・出典を区別する', () => {
   const r = newRecord(); Object.assign(r.meta, { hypothesis: '原因の候補', interpretation: '結果の解釈', observations: [{ date: '2026-09-07', fact: '確認した事実', evidence: '原記録' }], sources: [{ title: '原典', url: 'https://example.com', date: '2026-01-01' }] })

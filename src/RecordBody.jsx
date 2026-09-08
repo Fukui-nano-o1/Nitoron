@@ -30,7 +30,7 @@ export default function RecordBody({ record, hideHeading = false, hideCover = fa
       {!!m.sources.length && <section className="read-section"><h2>出典・資料</h2>{m.sources.map(s => <p className="source-line" key={s.id}>{safeUrl(s.url) ? <a href={safeUrl(s.url)} rel="noopener noreferrer" target="_blank">{s.title || s.url}</a> : s.title || '資料名未記録'}{s.date && <span> · {s.date}</span>}</p>)}</section>}
     </>}
     <AttachmentList attachments={m?.attachments} />
-    {!!record.blocks.filter(b => b.text).length && <section className="read-section">{m && <h2>補足</h2>}{record.blocks.map(b => {
+    {!!record.blocks.filter(b => b.text).length && <section className="read-section">{m?.inputMode === 'sections' && <h2>補足</h2>}{record.blocks.map(b => {
       if (b.type === 'divider') return <hr key={b.id} />
       if (!b.text) return null
       if (['h1', 'h2', 'h3'].includes(b.type)) return <h3 key={b.id}>{b.text}</h3>

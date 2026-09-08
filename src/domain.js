@@ -17,13 +17,14 @@ export const METRICS = [
   ['revenue', '売上', '円'], ['cost', '経費', '円'], ['hours', '作業時間', '時間'], ['yieldKg', '収穫量', 'kg'],
 ]
 export const emptyMeta = (kind = 'presentation') => ({
-  schema: 1, kind, author: '', club: '', crop: '', variety: '', region: '', areaA: '',
+  schema: 1, kind, inputMode: 'free', author: '', club: '', crop: '', variety: '', region: '', areaA: '',
   start: '', end: '', coverUrl: '', summary: '', issue: '', hypothesis: '', action: '', result: '',
   interpretation: '', learning: '', conditions: '', stage: '仮説',
   target: '', deadline: '', criterion: '', revenue: '', cost: '', hours: '', yieldKg: '',
   observations: [], sources: [], attachments: [], origin: null,
 })
 const string = value => typeof value === 'string' ? value : typeof value === 'number' && Number.isFinite(value) ? String(value) : ''
+export const hasSectionContent = m => !!(m.summary || m.crop || m.variety || m.region || m.club || m.areaA || m.start || m.end || m.conditions || m.target || m.criterion || m.deadline || SECTIONS.some(([key]) => m[key]) || METRICS.some(([key]) => m[key]) || m.observations.length || m.sources.length)
 export function sanitizeMeta(raw) {
   if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return null
   const m = emptyMeta(['presentation', 'challenge', 'learning'].includes(raw.kind) ? raw.kind : 'presentation')
@@ -34,6 +35,8 @@ export function sanitizeMeta(raw) {
   m.observations = (Array.isArray(raw.observations) ? raw.observations : []).filter(x => x && typeof x === 'object').map(o => ({ id: string(o.id) || uid(), date: string(o.date), fact: string(o.fact), conditions: string(o.conditions), evidence: string(o.evidence) }))
   m.sources = (Array.isArray(raw.sources) ? raw.sources : []).filter(x => x && typeof x === 'object').map(s => ({ id: string(s.id) || uid(), title: string(s.title), url: string(s.url), date: string(s.date) }))
   m.origin = raw.origin && typeof raw.origin === 'object' && typeof raw.origin.id === 'string' ? { id: raw.origin.id, title: string(raw.origin.title), public: raw.origin.public === true } : null
+  // 項目入力で書かれた既存の記録は項目モードで開く。指定がなければフリー入力。
+  if (m.inputMode !== 'free' && m.inputMode !== 'sections') m.inputMode = hasSectionContent(m) ? 'sections' : 'free'
   return m
 }
 export function newRecord(kind = 'presentation', author = '') {
@@ -79,9 +82,7 @@ export function per10a(value, area) {
 export const formatNumber = value => value === null ? '未記録' : new Intl.NumberFormat('ja-JP', { maximumFractionDigits: 1 }).format(value)
 export function publicationProblems(record) {
   if (!record.meta) return ['メモを経営発表に変換してください。']
-  const required = [[record.title, 'タイトル'], [record.meta.author, '発表者名'], [record.meta.crop, '作物'],
-    [record.meta.summary, '要約']]
-  const issues = required.filter(([v]) => !String(v || '').trim()).map(([, label]) => `${label}を入力してください。`)
+  const issues = String(record.title || '').trim() ? [] : ['タイトルを入力してください。']
   if (record.meta.start && record.meta.end && record.meta.start > record.meta.end) issues.push('期間の終了日が開始日より前です。')
   for (const [key, label] of METRICS) if (record.meta[key] !== '' && number(record.meta[key]) === null) issues.push(`${label}は0以上の数値で入力してください。`)
   if (record.meta.areaA !== '' && !(number(record.meta.areaA) > 0)) issues.push('面積は0より大きい数値で入力してください。')
