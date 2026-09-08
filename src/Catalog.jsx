@@ -21,8 +21,8 @@ export function RecordCard({ record: r, href, selected, onSelect, publicMode, pu
 }
 export default function Catalog({ view, records, total, loading, error, query, onQuery, sort, onSort, region, onRegion, filters = EMPTY_FILTERS, onFilters, searchRef, selectedKeys, keyOf, onSelect, savedIds = [], onSave, owned = [], ownedReady, ready, onCreate, blankCount = 0, onCleanup, children }) {
   const [filterOpen, setFilterOpen] = useState(false)
-  const publicMode = ['discover', 'saved'].includes(view), active = countFilters(filters)
-  const title = view === 'discover' ? 'みんなの経営発表' : view === 'saved' ? '保存リスト' : view === 'challenges' ? '自分の挑戦' : view === 'learning' ? '学習ノート' : '自分の記録'
+  const publicMode = view === 'discover', active = countFilters(filters)
+  const title = view === 'discover' ? 'みんなの経営発表' : view === 'challenges' ? '自分の挑戦' : view === 'learning' ? '学習ノート' : '自分の記録'
   const searching = query.trim() || region.trim() || active
   return <section className="catalog">
     {SEARCH_ENABLED && <><div className="search-area"><form className="search-pill" role="search" aria-label="記録を検索" onSubmit={e => { e.preventDefault(); document.getElementById('catalog-results')?.scrollIntoView({ block: 'start', behavior: 'smooth' }); document.getElementById('catalog-results')?.focus({ preventScroll: true }) }}>
@@ -31,11 +31,11 @@ export default function Catalog({ view, records, total, loading, error, query, o
       <button type="button" className="search-filter-part" onClick={() => setFilterOpen(true)}><span>条件</span><strong>{active ? `${active}つの条件` : '条件を追加'}</strong></button><button className="search-submit" aria-label="検索する"><Icon name="search" size={21} /></button>
     </form></div>
     <div className="browse-controls"><div className="topic-tabs" aria-label="テーマで探す">{topics.map(topic => <button key={topic} aria-pressed={topic === 'すべて' ? !query : query === topic} onClick={() => onQuery(topic === 'すべて' ? '' : topic)}>{topic}</button>)}</div><button className="filter-button" onClick={() => setFilterOpen(true)}><Icon name="filter" size={18} /><span>絞り込み{active ? ` · ${active}` : ''}</span></button></div></>}
-    <div className="page-heading" id="catalog-results" tabIndex={-1}><div><h1>{searching ? `${title}の検索結果` : title}</h1>{view === 'saved' && <p>公開中の発表だけが表示されます。</p>}</div><div className="result-tools"><span>{loading ? '読み込み中' : `${total}件`}</span><select aria-label="並び順" value={sort} onChange={e => onSort(e.target.value)}><option value="recent">新しい順</option><option value="title">タイトル順</option></select></div></div>
+    <div className="page-heading" id="catalog-results" tabIndex={-1}><div><h1>{searching ? `${title}の検索結果` : title}</h1></div><div className="result-tools"><span>{loading ? '読み込み中' : `${total}件`}</span><select aria-label="並び順" value={sort} onChange={e => onSort(e.target.value)}><option value="recent">新しい順</option><option value="title">タイトル順</option></select></div></div>
     {view === 'mine' && <div className="workspace-links"><button className="text-action" disabled={!ready} onClick={onCreate}>新しい発表をつくる</button>{blankCount > 0 && <button className="text-action" disabled={!ready} onClick={onCleanup}>空の記録を整理（{blankCount}件）</button>}</div>}
     {error}
     {loading ? <div className="loading-grid" role="status" aria-label="記録を読み込み中">{[0, 1, 2, 3, 4, 5].map(i => <div className="card-skeleton" key={i}><div /><span /><span /></div>)}</div> : records.length ? <div className="record-grid">{records.map(r => <RecordCard key={r.id} record={r} href={`#/${publicMode ? 'public' : 'record'}/${r.id}`} selected={selectedKeys.includes(keyOf(r))} onSelect={onSelect} publicMode={publicMode} saved={savedIds.includes(r.id)} onSave={onSave} publicationLabel={owned.some(p => p.id === r.id && p.is_public) ? '公開中' : ownedReady ? '自分だけ' : '公開状態未確認'} />)}</div>
-      : !error && <Empty title={searching ? '一致する記録がありません' : view === 'saved' ? '気になる発表を、ここに。' : publicMode ? '最初の経営発表を掲載しよう' : 'ひとつ目の記録をつくろう'} action={searching ? <button className="secondary" onClick={() => { onQuery(''); onRegion(''); onFilters({ ...EMPTY_FILTERS }) }}>条件をクリア</button> : view === 'saved' ? <a className="primary" href="#/discover">発表を探す</a> : <button className="primary" disabled={!ready} onClick={onCreate}>記録を書き始める</button>}>{searching ? '短い単語や、別の条件で探してみてください。' : view === 'saved' ? 'ハートを押した発表を、あとから読み返せます。' : '写真や数字、気づいたことから残せます。'}</Empty>}
+      : !error && <Empty title={searching ? '一致する記録がありません' : publicMode ? '最初の経営発表を掲載しよう' : 'ひとつ目の記録をつくろう'} action={searching ? <button className="secondary" onClick={() => { onQuery(''); onRegion(''); onFilters({ ...EMPTY_FILTERS }) }}>条件をクリア</button> : <button className="primary" disabled={!ready} onClick={onCreate}>記録を書き始める</button>}>{searching ? '短い単語や、別の条件で探してみてください。' : '写真や数字、気づいたことから残せます。'}</Empty>}
     {children}
     {filterOpen && <FilterDialog filters={filters} onApply={onFilters} onClose={() => setFilterOpen(false)} />}
   </section>
