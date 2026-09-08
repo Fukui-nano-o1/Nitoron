@@ -9,11 +9,15 @@ export const supabase = key ? createClient(url, key) : null
 
 // RLS only grants access to the `authenticated` role, scoped per user.
 // An anonymous session gives each device its own user without a login screen.
+let establishing
 export async function ensureSession() {
   if (!supabase) return null
-  const { data: { session } } = await supabase.auth.getSession()
-  if (session) return session
-  const { data, error } = await supabase.auth.signInAnonymously()
-  if (error) return null
-  return data.session
+  if (!establishing) establishing = (async () => {
+    const { data: { session } } = await supabase.auth.getSession()
+    if (session) return session
+    const { data, error } = await supabase.auth.signInAnonymously()
+    if (error) return null
+    return data.session
+  })().finally(() => { establishing = null })
+  return establishing
 }
