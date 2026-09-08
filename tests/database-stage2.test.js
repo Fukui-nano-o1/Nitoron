@@ -26,6 +26,7 @@ test('写真・資料、保存リスト、返信、対応状況のSQL権限', as
       alter table storage.objects enable row level security;`)
     await db.exec(await readFile(new URL('../supabase/migrations/20260907034224_nitoron_publications_and_feedback.sql', import.meta.url), 'utf8'))
     await db.exec(await readFile(new URL('../supabase/migrations/20260908110127_nitoron_files_saved_and_dialogue.sql', import.meta.url), 'utf8'))
+    await db.exec(await readFile(new URL('../supabase/migrations/20260908150000_nitoron_activity_seen.sql', import.meta.url), 'utf8'))
     const as = async (who, sql, params = []) => {
       await db.exec(`set role ${who ? 'authenticated' : 'anon'}; select set_config('request.jwt.claim.sub','${who || ''}',false);`)
       try { return await db.query(sql, params) } finally { await db.exec("reset role; select set_config('request.jwt.claim.sub','',false);") }
@@ -82,6 +83,15 @@ test('写真・資料、保存リスト、返信、対応状況のSQL権限', as
       assert.equal((await as(OTHER,"update nitoron_feedback_resolutions set status='対応済み' returning feedback_id")).rows.length,0)
       await as(OWNER,"update nitoron_feedback_resolutions set status='対応済み'")
       assert.equal((await as(null,'select status from nitoron_feedback_resolutions')).rows[0].status,'対応済み')
+    })
+    await t.test('新着の既読は本人の分だけ書き読みでき、なりすましは拒否', async () => {
+      await as(OTHER,'insert into nitoron_publication_seen(user_id,publication_id) values($1,$2)',[OTHER,DOC])
+      assert.equal((await as(OTHER,'select * from nitoron_publication_seen')).rows.length,1)
+      assert.equal((await as(OWNER,'select * from nitoron_publication_seen')).rows.length,0)
+      await assert.rejects(as(null,'select * from nitoron_publication_seen'))
+      await assert.rejects(as(OWNER,'insert into nitoron_publication_seen(user_id,publication_id) values($1,$2)',[OTHER,DOC]))
+      await as(OTHER,'update nitoron_publication_seen set seen_at=now()')
+      assert.equal((await as(OWNER,'update nitoron_publication_seen set seen_at=now() returning user_id')).rows.length,0)
     })
     await t.test('公開停止で資料・返信・対応状況が隠れ、保存リストからも公開版が消える', async () => {
       await as(OWNER,'update nitoron_publications set is_public=false where id=$1',[DOC])
