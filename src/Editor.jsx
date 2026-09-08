@@ -3,6 +3,7 @@ import BlockEditor from './BlockEditor.jsx'
 import RecordBody from './RecordBody.jsx'
 import Cover from './Cover.jsx'
 import Attachments from './Attachments.jsx'
+import Extract from './Extract.jsx'
 import { KINDS, PHASES, SECTIONS, METRICS, emptyMeta, today, uid, exportMarkdown } from './domain.js'
 import { Field, Dialog, download } from './ui.jsx'
 
@@ -36,9 +37,11 @@ export default function Editor({ record, onChange, onPublish, onDelete, publishe
             <div className="fields two"><Field label="種類"><select value={record.type} onChange={e => patch({ type: e.target.value })}><option>メモ</option><option>アイデア</option><option>タスク</option></select></Field>
               <Field label="カテゴリ"><input value={record.category === '未分類' ? '' : record.category} onChange={e => patch({ category: e.target.value || '未分類' })} /></Field></div>
             <BlockEditor blocks={record.blocks} onChange={blocks => patch({ blocks })} />
+            <Extract record={record} onChange={onChange} />
             <button className="secondary" onClick={() => meta(emptyMeta())}>このメモを経営発表にする</button>
           </> : <>
             <Attachments record={record} session={session} flush={flush} onChange={onChange} onBusy={setUploading} />
+            <Extract record={record} onChange={onChange} note={m.inputMode === 'sections' ? '「補足メモ」' : '本文'} />
             <details className="details cover-settings"><summary>外部の写真URLを使う</summary>
               {m.coverUrl && <Cover record={record} className="editor-cover" />}
               <Field label="写真のURL" help="自分の写真など、公開してよい画像のURLを入力。空欄でも記録できます。"><input type="url" value={m.coverUrl || ''} onChange={e => meta({ coverUrl: e.target.value })} placeholder="https://" /></Field>

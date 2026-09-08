@@ -24,7 +24,8 @@ export default function Attachments({ record, session, flush, onChange, onBusy }
     setBusy(true); onBusy?.(true); setError('')
     try {
       if (chosen.length + files.length > ATTACHMENT_LIMIT) throw new Error('添付は1つの記録につき12件までです。')
-      if (!session || !await flush()) throw new Error('記録をクラウドに保存してから添付してください。')
+      if (!session) throw new Error('クラウドに接続できないため、ファイルの保管はまだ使えません。「ファイルの内容を本文に取り込む」はこの端末だけで使えます。')
+      if (!await flush()) throw new Error('記録をクラウドに保存してから添付してください。')
       for (const file of chosen) {
         if (!alive.current) break
         const asset = await uploadAttachment(file, record.id, session, sanitizeAttachments(latest.current.meta.attachments).length)

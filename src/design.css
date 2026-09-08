@@ -33,3 +33,5 @@ body{background:#fff}a{color:inherit}button:focus-visible,a:focus-visible,summar
 .profile-menu>a strong{font-size:1rem;font-weight:500;line-height:1.5}
 .profile-menu>a small{color:#6a6a6a;font-size:.8125rem;line-height:1.6}
 .profile-menu>a:hover{background:#f7f7f7}
+
+.extract-tool{display:grid;justify-items:start;gap:8px;padding:0 0 24px}.extract-tool .secondary{display:inline-flex;align-items:center;gap:8px}.extract-tool .hint{margin:0}.extract-tool .extract-done{color:#256144}
