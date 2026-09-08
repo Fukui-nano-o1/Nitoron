@@ -74,12 +74,33 @@ export async function deleteFeedback(id) {
 
 export async function listBookmarks(userId) {
   requireClient()
-  const ids = []
+  const rows = []
   for (let offset = 0; ; offset += 500) {
-    const { data, error } = await supabase.from('nitoron_bookmarks').select('publication_id').eq('user_id', userId).order('publication_id').range(offset, offset + 499)
+    const { data, error } = await supabase.from('nitoron_bookmarks').select('publication_id,created_at').eq('user_id', userId).order('publication_id').range(offset, offset + 499)
     if (error) throw new Error('保存リストを取得できませんでした。')
-    ids.push(...data.map(r => r.publication_id)); if (data.length < 500) return ids
+    rows.push(...data.map(r => ({ id: r.publication_id, savedAt: r.created_at }))); if (data.length < 500) return rows
   }
+}
+export async function listNewActivity(userId, items) {
+  requireClient()
+  if (!items.length) return {}
+  const ids = items.map(i => i.id), since = {}
+  for (const item of items) since[item.id] = item.since
+  const { data: seen, error: seenError } = await supabase.from('nitoron_publication_seen').select('publication_id,seen_at').eq('user_id', userId).in('publication_id', ids)
+  if (seenError) throw new Error(message(seenError))
+  for (const row of seen) if (row.seen_at > (since[row.publication_id] || '')) since[row.publication_id] = row.seen_at
+  const floor = Object.values(since).sort()[0]
+  const query = table => supabase.from(table).select('publication_id,created_at').in('publication_id', ids).neq('user_id', userId).gt('created_at', floor).limit(1000)
+  const [feedback, replies] = await Promise.all([query('nitoron_feedback'), query('nitoron_feedback_replies')])
+  if (feedback.error || replies.error) throw new Error(message(feedback.error || replies.error))
+  const counts = {}
+  for (const row of [...feedback.data, ...replies.data]) if (row.created_at > since[row.publication_id]) counts[row.publication_id] = (counts[row.publication_id] || 0) + 1
+  return counts
+}
+export async function markActivitySeen(userId, publicationId) {
+  requireClient()
+  const { error } = await supabase.from('nitoron_publication_seen').upsert({ user_id: userId, publication_id: publicationId, seen_at: new Date().toISOString() }, { onConflict: 'user_id,publication_id' })
+  if (error) throw new Error('新着の既読を保存できませんでした。')
 }
 export async function setBookmark(userId, id, saved) {
   requireClient()

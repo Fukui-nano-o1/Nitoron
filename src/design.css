@@ -47,3 +47,13 @@ body{background:#fff}a{color:inherit}button:focus-visible,a:focus-visible,summar
 @media(max-width:760px){.saved-page{padding:16px 24px 40px}.saved-heading{margin-bottom:24px}.saved-heading h1{font-size:1.6rem;letter-spacing:-.6px}.saved-empty{padding:24px 0 50px}.saved-empty h2{font-size:1.25rem}}
 @media(max-width:420px){.saved-page{padding-left:18px;padding-right:18px}}
 @media print{.saved-topbar{display:none!important}}
+.notify-dot{position:absolute;top:4px;right:4px;width:11px;height:11px;border-radius:50%;background:#ff385c;border:2px solid #fff;pointer-events:none}
+.profile-control{position:relative}
+.nav-icon{position:relative;display:inline-flex}
+.nav-icon .notify-dot{top:-3px;right:-6px;width:10px;height:10px}
+.notify-dot.static{position:static;width:8px;height:8px;border:0;flex-shrink:0}
+.profile-menu>a small.menu-new{color:#c4002f;font-weight:600}
+.card-badge.activity{top:auto;bottom:12px;display:inline-flex;align-items:center;gap:6px;color:#c4002f;max-width:calc(100% - 24px)}
+.card-badge.activity::before{content:'';width:7px;height:7px;border-radius:50%;background:#ff385c;flex-shrink:0}
+.card-visual:has(.photo-dots) .card-badge.activity{bottom:30px}
+@media(max-width:760px){.card-badge.activity{bottom:9px}.card-visual:has(.photo-dots) .card-badge.activity{bottom:28px}}
