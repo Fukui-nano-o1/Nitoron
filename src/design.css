@@ -17,6 +17,39 @@ body{background:#fff}a{color:inherit}button:focus-visible,a:focus-visible,summar
 @media print{.site-header,.mobile-nav,.print-hidden,.save-bar,.photo-mosaic .show-photos,.listing-aside,.listing-mobile-action{display:none!important}.workspace{padding:0}.main-content{margin:0}.listing-page{padding:0;max-width:none}.listing-columns{display:block}.photo-mosaic{height:220px;break-inside:avoid}.listing-title h1{font-size:21pt}.listing-subtitle{font-size:10pt}.document-layout{padding:0;display:block}.document{padding:0}.read-section{break-inside:avoid}.attachment-download{border:0;padding:5px;min-height:0}.attachment-download svg,.attachment-download>span:last-child{display:none}.record-body p{font-size:10pt}.publication-date{font-size:9pt}}
 
 .input-mode-switch{margin:14px 0 4px;align-self:flex-start;width:max-content}
+
+/* --- 記録編集ページ：Airbnbの掲載編集画面を参考にした更新（2026-09-08） --- */
+.save-bar{padding:14px 48px 0}
+.save-bar span{display:inline-flex;align-items:center;background:#f7f7f7;border:1px solid #ebebeb;border-radius:100px;padding:7px 14px;font-size:.75rem;font-weight:600;color:#222;line-height:1.5}
+.document-toolbar{position:sticky;top:0;z-index:25;background:#fffffff2;backdrop-filter:blur(10px)}
+.back-link{display:inline-flex;align-items:center;border:1px solid #ddd;border-radius:100px;padding:8px 18px;min-height:40px;text-decoration:none}
+.back-link:hover{border-color:#222;background:#f7f7f7}
+.document-outline{padding:36px 0}
+.document-outline a{display:block;border-radius:10px;padding:10px 12px;line-height:1.6}
+.document-outline a:hover{background:#f7f7f7;color:#222}
+.outline-bottom{border-top:1px solid #ebebeb}
+.document{padding-top:30px}
+.title-input{padding:6px 0 20px;margin-bottom:10px}
+.editor-section{border:1px solid #ddd;border-radius:16px;padding:28px;margin:0 0 20px;scroll-margin-top:96px}
+.section-heading h2{font-size:1.2rem;letter-spacing:-.2px}
+.section-number{color:#ff385c}
+.section-input{border:1px solid #b0b0b0;border-radius:8px;padding:12px 14px}
+.section-input:hover{border-color:#222}
+.editor-section .field input,.editor-section .field textarea,.editor-section .field select{background:#fff}
+.editor-section .field input:hover,.editor-section .field textarea:hover{border-color:#222}
+.details{border:1px solid #ddd;border-radius:16px;padding:4px 28px;margin:0 0 20px}
+.details summary{padding:18px 0;color:#222}
+.details summary:hover{color:#000;text-decoration:underline;text-underline-offset:3px}
+.details[open]>summary{border-bottom:1px solid #ebebeb;margin-bottom:20px}
+.editor-section .details{border:1px solid #ebebeb;border-radius:12px;padding:0 18px;margin:6px 0 0}
+.editor-section .details summary{padding:14px 0}
+.editor-section .details[open]>summary{margin-bottom:14px}
+.extra-content{margin-top:0}
+.challenge-plan{background:#fff;border-color:#ffb3c0}
+.observation-input{background:#fff;border-radius:12px;padding:20px}
+.upload-section{border:1px solid #ddd;border-radius:16px;padding:24px 28px;margin:0 0 20px}
+.input-mode-switch{margin:4px 0 20px}
+@media(max-width:760px){.save-bar{padding:12px 24px 0}.document{padding-top:16px}.title-input{padding-bottom:14px}.editor-section{padding:20px;margin-bottom:16px}.details{padding:2px 20px;margin-bottom:16px}.editor-section .details{padding:0 14px}.upload-section{padding:18px 20px;margin-bottom:16px}.observation-input{padding:15px}}
 .profile-control{text-decoration:none;color:inherit}
 .profile-page{max-width:640px;margin:0 auto;padding:30px 24px 60px;display:grid;gap:26px}
 .profile-page h1{font-size:2rem;letter-spacing:-.6px;font-weight:700;margin:0}
