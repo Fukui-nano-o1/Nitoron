@@ -5,6 +5,7 @@ import FilterDialog from './FilterDialog.jsx'
 import { KINDS, number, formatNumber } from './domain.js'
 import { imageAttachments } from './attachment-domain.js'
 import { countFilters, EMPTY_FILTERS } from './search.js'
+import { SEARCH_ENABLED } from './flags.js'
 import { Empty } from './ui.jsx'
 const topics = ['すべて', 'ブロッコリー', 'トマト', '水稲', '育苗', '土づくり', '省力化']
 export function RecordCard({ record: r, href, selected, onSelect, publicMode, publicationLabel, saved, onSave }) {
@@ -24,12 +25,12 @@ export default function Catalog({ view, records, total, loading, error, query, o
   const title = view === 'discover' ? 'みんなの経営発表' : view === 'saved' ? '保存リスト' : view === 'challenges' ? '自分の挑戦' : view === 'learning' ? '学習ノート' : '自分の記録'
   const searching = query.trim() || region.trim() || active
   return <section className="catalog">
-    <div className="search-area"><form className="search-pill" role="search" aria-label="記録を検索" onSubmit={e => { e.preventDefault(); document.getElementById('catalog-results')?.scrollIntoView({ block: 'start', behavior: 'smooth' }); document.getElementById('catalog-results')?.focus({ preventScroll: true }) }}>
+    {SEARCH_ENABLED && <><div className="search-area"><form className="search-pill" role="search" aria-label="記録を検索" onSubmit={e => { e.preventDefault(); document.getElementById('catalog-results')?.scrollIntoView({ block: 'start', behavior: 'smooth' }); document.getElementById('catalog-results')?.focus({ preventScroll: true }) }}>
       <label className="search-part"><span>キーワード</span><input ref={searchRef} type="search" maxLength={160} value={query} onChange={e => onQuery(e.target.value)} placeholder="作物や課題から探す" /></label>
       <label className="region-part"><span>地域</span><input type="search" maxLength={80} value={region} onChange={e => onRegion(e.target.value)} placeholder="すべての地域" /></label>
       <button type="button" className="search-filter-part" onClick={() => setFilterOpen(true)}><span>条件</span><strong>{active ? `${active}つの条件` : '条件を追加'}</strong></button><button className="search-submit" aria-label="検索する"><Icon name="search" size={21} /></button>
     </form></div>
-    <div className="browse-controls"><div className="topic-tabs" aria-label="テーマで探す">{topics.map(topic => <button key={topic} aria-pressed={topic === 'すべて' ? !query : query === topic} onClick={() => onQuery(topic === 'すべて' ? '' : topic)}>{topic}</button>)}</div><button className="filter-button" onClick={() => setFilterOpen(true)}><Icon name="filter" size={18} /><span>絞り込み{active ? ` · ${active}` : ''}</span></button></div>
+    <div className="browse-controls"><div className="topic-tabs" aria-label="テーマで探す">{topics.map(topic => <button key={topic} aria-pressed={topic === 'すべて' ? !query : query === topic} onClick={() => onQuery(topic === 'すべて' ? '' : topic)}>{topic}</button>)}</div><button className="filter-button" onClick={() => setFilterOpen(true)}><Icon name="filter" size={18} /><span>絞り込み{active ? ` · ${active}` : ''}</span></button></div></>}
     <div className="page-heading" id="catalog-results" tabIndex={-1}><div><h1>{searching ? `${title}の検索結果` : title}</h1>{view === 'saved' && <p>公開中の発表だけが表示されます。</p>}</div><div className="result-tools"><span>{loading ? '読み込み中' : `${total}件`}</span><select aria-label="並び順" value={sort} onChange={e => onSort(e.target.value)}><option value="recent">新しい順</option><option value="title">タイトル順</option></select></div></div>
     {view === 'mine' && <div className="workspace-links"><button className="text-action" disabled={!ready} onClick={onCreate}>新しい発表をつくる</button></div>}
     {error}

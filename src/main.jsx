@@ -16,6 +16,7 @@ import PublicRecord from './PublicRecord.jsx'
 import Icon from './Icon.jsx'
 import useBookmarks from './useBookmarks.js'
 import { EMPTY_FILTERS, filterRecord } from './search.js'
+import { SEARCH_ENABLED } from './flags.js'
 import './styles.css'
 import './design.css'
 
@@ -43,7 +44,7 @@ function App() {
   const bookmarks = useBookmarks(session, setToast, () => setDialog({ type: 'account' }))
 
   useEffect(() => { const change = () => { setRoute(routeFromLocation()); setQuery(''); setRegion(''); setFilters({ ...EMPTY_FILTERS }); setPublicPage(0); window.scrollTo(0, 0) }; window.addEventListener('hashchange', change); return () => window.removeEventListener('hashchange', change) }, [])
-  useEffect(() => { const keys = e => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (!searchRef.current) { location.hash = '/mine'; setTimeout(() => searchRef.current?.focus(), 0) } else searchRef.current.focus() } }; window.addEventListener('keydown', keys); return () => window.removeEventListener('keydown', keys) }, [])
+  useEffect(() => { if (!SEARCH_ENABLED) return; const keys = e => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (!searchRef.current) { location.hash = '/mine'; setTimeout(() => searchRef.current?.focus(), 0) } else searchRef.current.focus() } }; window.addEventListener('keydown', keys); return () => window.removeEventListener('keydown', keys) }, [])
   useEffect(() => { if (!toast) return; const t = setTimeout(() => setToast(''), 4500); return () => clearTimeout(t) }, [toast])
   useEffect(() => {
     if (previousOwner.current !== undefined && previousOwner.current !== session?.user.id) { setSelected([]); setDialog(null); setName('') }
