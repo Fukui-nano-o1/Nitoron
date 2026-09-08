@@ -1,45 +1,57 @@
 -- Nitoron demo account seed. Run with the postgres/service role (bypasses RLS).
--- Creates two demo users, three sample publications labeled 記入例, and one
--- feedback dialogue so the catalog demonstrates the product before real users post.
+-- Operator-run accounts: one per machinery maker publishing repair guides
+-- (clearly labeled unofficial), plus a drafts account holding unpublished
+-- writing examples and a visitor account for the sample dialogue.
+-- No maker impersonation, no reposted photos/videos/manuals: guide bodies are
+-- original text and sources link to official pages only.
 -- Idempotent: fixed UUIDs with upserts; re-running refreshes the demo content.
--- To remove everything: delete from auth.users where id in
---   ('de300000-0000-4000-8000-000000000001','de300000-0000-4000-8000-000000000002');
+-- To remove everything: delete from auth.users
+--   where raw_user_meta_data->>'nitoron_demo' = 'true';
 do $seed$
 declare
   demo_owner constant uuid := 'de300000-0000-4000-8000-000000000001';
   demo_visitor constant uuid := 'de300000-0000-4000-8000-000000000002';
   demo_feedback constant uuid := 'de300000-0000-4000-8000-000000000201';
   demo_reply constant uuid := 'de300000-0000-4000-8000-000000000301';
+  usr jsonb;
   rec jsonb;
 begin
   -- Reserved example.com addresses receive no mail; random password hashes mean
   -- nobody can sign in as these users. Content changes go through this script.
-  insert into auth.users (instance_id, id, aud, role, email, encrypted_password,
-    email_confirmed_at, raw_app_meta_data, raw_user_meta_data, created_at, updated_at,
-    is_anonymous, confirmation_token, recovery_token, email_change,
-    email_change_token_new, email_change_token_current)
-  values
-    ('00000000-0000-0000-0000-000000000000', demo_owner, 'authenticated', 'authenticated',
-     'nitoron-demo-farmer@example.com', extensions.crypt(gen_random_uuid()::text, extensions.gen_salt('bf')),
-     now(), '{"provider":"email","providers":["email"]}', '{"nitoron_demo":true}', now(), now(),
-     false, '', '', '', '', ''),
-    ('00000000-0000-0000-0000-000000000000', demo_visitor, 'authenticated', 'authenticated',
-     'nitoron-demo-visitor@example.com', extensions.crypt(gen_random_uuid()::text, extensions.gen_salt('bf')),
-     now(), '{"provider":"email","providers":["email"]}', '{"nitoron_demo":true}', now(), now(),
-     false, '', '', '', '', '')
-  on conflict (id) do nothing;
-  insert into auth.identities (id, provider_id, user_id, identity_data, provider,
-    last_sign_in_at, created_at, updated_at)
-  select gen_random_uuid(), u.id::text, u.id,
-    jsonb_build_object('sub', u.id::text, 'email', u.email, 'email_verified', true),
-    'email', now(), now(), now()
-  from auth.users u
-  where u.id in (demo_owner, demo_visitor)
-    and not exists (select 1 from auth.identities i where i.user_id = u.id and i.provider = 'email');
+  for usr in select value from jsonb_array_elements($users$[
+    {"id": "de300000-0000-4000-8000-000000000001", "email": "nitoron-demo-farmer@example.com"},
+    {"id": "de300000-0000-4000-8000-000000000002", "email": "nitoron-demo-visitor@example.com"},
+    {"id": "de300000-0000-4000-8000-000000000011", "email": "nitoron-demo-yanmar@example.com"},
+    {"id": "de300000-0000-4000-8000-000000000012", "email": "nitoron-demo-kubota@example.com"},
+    {"id": "de300000-0000-4000-8000-000000000013", "email": "nitoron-demo-iseki@example.com"},
+    {"id": "de300000-0000-4000-8000-000000000014", "email": "nitoron-demo-mitsubishi@example.com"}
+  ]$users$::jsonb)
+  loop
+    insert into auth.users (instance_id, id, aud, role, email, encrypted_password,
+      email_confirmed_at, raw_app_meta_data, raw_user_meta_data, created_at, updated_at,
+      is_anonymous, confirmation_token, recovery_token, email_change,
+      email_change_token_new, email_change_token_current)
+    values ('00000000-0000-0000-0000-000000000000', (usr->>'id')::uuid, 'authenticated', 'authenticated',
+      usr->>'email', extensions.crypt(gen_random_uuid()::text, extensions.gen_salt('bf')),
+      now(), '{"provider":"email","providers":["email"]}', '{"nitoron_demo":true}', now(), now(),
+      false, '', '', '', '', '')
+    on conflict (id) do nothing;
+    insert into auth.identities (id, provider_id, user_id, identity_data, provider,
+      last_sign_in_at, created_at, updated_at)
+    select gen_random_uuid(), usr->>'id', (usr->>'id')::uuid,
+      jsonb_build_object('sub', usr->>'id', 'email', usr->>'email', 'email_verified', true),
+      'email', now(), now(), now()
+    where not exists (select 1 from auth.identities i
+      where i.user_id = (usr->>'id')::uuid and i.provider = 'email');
+  end loop;
 
+  -- Policy: the demo account publishes machine-repair guides only. The crop
+  -- records stay as unpublished drafts ("public": false) as writing examples.
   for rec in select value from jsonb_array_elements($records$[
 {
   "id": "de300000-0000-4000-8000-000000000101",
+  "owner": "de300000-0000-4000-8000-000000000001",
+  "public": false,
   "title": "【記入例】ミニトマトの灌水を、勘からpF値の基準に切り替えた1作",
   "category": "ミニトマト", "type": "メモ", "date": "2026-07-25",
   "blocks": [{"id": "de300000-0000-4000-8000-000000000101-b1", "type": "text", "text": ""}],
@@ -67,6 +79,8 @@ begin
 },
 {
   "id": "de300000-0000-4000-8000-000000000102",
+  "owner": "de300000-0000-4000-8000-000000000001",
+  "public": false,
   "title": "【記入例】秋冬キャベツ、2回目の追肥を10日早めた区と慣行区の比較",
   "category": "キャベツ", "type": "メモ", "date": "2026-02-05",
   "blocks": [{"id": "de300000-0000-4000-8000-000000000102-b1", "type": "text", "text": ""}],
@@ -93,6 +107,8 @@ begin
 },
 {
   "id": "de300000-0000-4000-8000-000000000103",
+  "owner": "de300000-0000-4000-8000-000000000001",
+  "public": false,
   "title": "【記入例】市場出荷7割の販売を、1年で直販5割に切り替える挑戦",
   "category": "アスパラガス", "type": "メモ", "date": "2026-08-30",
   "blocks": [{"id": "de300000-0000-4000-8000-000000000103-b1", "type": "text", "text": ""}],
@@ -119,19 +135,74 @@ begin
     ],
     "sources": [], "attachments": [], "origin": null
   }
+},
+{
+  "id": "de300000-0000-4000-8000-000000000104",
+  "owner": "de300000-0000-4000-8000-000000000011",
+  "public": true,
+  "title": "【整備ガイド】ヤンマートラクターのエンジンオイル・オイルフィルタ交換",
+  "category": "トラクター", "type": "メモ", "date": "2026-09-08",
+  "blocks": [
+    {"id": "de300000-0000-4000-8000-000000000104-b01", "type": "text", "text": "作業は自己責任で行ってください。必ず平坦な場所でエンジンを停止し、キーを抜いてから始めます。型式ごとの規定（オイル量・粘度・交換間隔）はお手元の取扱説明書が最優先です。このガイドは公道走行に関わる保安部品や排出ガス関連装置には一切触れません。"},
+    {"id": "de300000-0000-4000-8000-000000000104-b02", "type": "h2", "text": "交換の目安"},
+    {"id": "de300000-0000-4000-8000-000000000104-b03", "type": "bullet", "text": "新車・オーバーホール後の初回は早め（目安50時間）に交換する"},
+    {"id": "de300000-0000-4000-8000-000000000104-b04", "type": "bullet", "text": "以降は200〜250時間ごと、使用が少なくても酸化するため年1回は交換する"},
+    {"id": "de300000-0000-4000-8000-000000000104-b05", "type": "bullet", "text": "オイルフィルタはオイル交換2回に1回以上。迷ったら同時交換が確実"},
+    {"id": "de300000-0000-4000-8000-000000000104-b06", "type": "h2", "text": "用意するもの"},
+    {"id": "de300000-0000-4000-8000-000000000104-b07", "type": "bullet", "text": "取扱説明書で指定された粘度・規格のディーゼル用エンジンオイル（規定量）"},
+    {"id": "de300000-0000-4000-8000-000000000104-b08", "type": "bullet", "text": "適合するオイルフィルタと新品のドレンパッキン"},
+    {"id": "de300000-0000-4000-8000-000000000104-b09", "type": "bullet", "text": "廃油処理箱、オイルジョッキ、メガネレンチ、フィルタレンチ、ウエス、手袋"},
+    {"id": "de300000-0000-4000-8000-000000000104-b10", "type": "h2", "text": "手順"},
+    {"id": "de300000-0000-4000-8000-000000000104-b11", "type": "bullet", "text": "1. 平坦地に駐車し、駐車ブレーキをかけ、エンジン停止・キー抜き。数分の暖機後ならオイルが温かく抜けやすい（火傷に注意）"},
+    {"id": "de300000-0000-4000-8000-000000000104-b12", "type": "bullet", "text": "2. エンジン下部のドレンプラグの真下に廃油受けを置き、プラグを外して古いオイルを抜き切る"},
+    {"id": "de300000-0000-4000-8000-000000000104-b13", "type": "bullet", "text": "3. オイルフィルタをフィルタレンチで反時計回りに外す。残ったオイルがこぼれるのでウエスを添える"},
+    {"id": "de300000-0000-4000-8000-000000000104-b14", "type": "bullet", "text": "4. 新しいフィルタのOリングに新油を薄く塗り、取り付け面に当たってから手で確実に締める（工具で締めすぎない）"},
+    {"id": "de300000-0000-4000-8000-000000000104-b15", "type": "bullet", "text": "5. ドレンプラグを新しいパッキンとともに締め付ける"},
+    {"id": "de300000-0000-4000-8000-000000000104-b16", "type": "bullet", "text": "6. 給油口から規定量の7〜8割を入れ、検油ゲージを確認しながら上限線まで補給する"},
+    {"id": "de300000-0000-4000-8000-000000000104-b17", "type": "bullet", "text": "7. エンジンを始動して油圧ランプの消灯を確認。停止して数分置き、油量の再点検とドレン・フィルタ周りの漏れ確認をする"},
+    {"id": "de300000-0000-4000-8000-000000000104-b18", "type": "h2", "text": "よくある失敗"},
+    {"id": "de300000-0000-4000-8000-000000000104-b19", "type": "bullet", "text": "ドレンパッキンの入れ忘れ・再利用によるオイル滲み"},
+    {"id": "de300000-0000-4000-8000-000000000104-b20", "type": "bullet", "text": "古いフィルタのOリングが取り付け面に貼り付いたまま新品を締めて二重になり、漏れる"},
+    {"id": "de300000-0000-4000-8000-000000000104-b21", "type": "bullet", "text": "上限線を超える入れすぎ。多すぎも白煙や不調の原因になる"},
+    {"id": "de300000-0000-4000-8000-000000000104-b22", "type": "bullet", "text": "オイル管理時間（メンテナンスモニター）のリセット忘れ"},
+    {"id": "de300000-0000-4000-8000-000000000104-b23", "type": "h2", "text": "廃油の処分"},
+    {"id": "de300000-0000-4000-8000-000000000104-b24", "type": "text", "text": "廃油と使用済みフィルタは、購入店・ガソリンスタンド・産業廃棄物処理業者に引き取りを依頼してください。野焼きや埋め立ては廃棄物処理法違反です。"},
+    {"id": "de300000-0000-4000-8000-000000000104-b25", "type": "text", "text": "写真・動画の転載は行っていません。実際の作業の様子は、出典・資料欄のヤンマー公式ページを参照してください。"}
+  ],
+  "meta": {
+    "schema": 1, "kind": "learning", "inputMode": "free",
+    "author": "ヤンマー整備ガイド（Nitoron運営・非公式）", "club": "", "crop": "トラクター", "variety": "",
+    "region": "", "areaA": "", "start": "", "end": "", "coverUrl": "",
+    "summary": "※ヤンマー株式会社とは無関係の、Nitoron運営による非公式アカウントです。公式サイトの公開情報をもとに自分の言葉でまとめた整備ガイドで、写真・動画・取扱説明書の転載はせず、出典欄に公式ページへのリンクのみ掲載しています。作業は自己責任で、型式ごとの取扱説明書を優先してください。",
+    "issue": "", "hypothesis": "", "action": "", "result": "",
+    "interpretation": "", "learning": "", "conditions": "",
+    "stage": "仮説", "target": "", "deadline": "", "criterion": "",
+    "revenue": "", "cost": "", "hours": "", "yieldKg": "",
+    "observations": [],
+    "sources": [
+      {"id": "de300000-0000-4000-8000-000000000104-s1", "title": "ヤンマー公式：トラクターのセルフ点検・交換", "url": "https://www.yanmar.com/jp/agri/afterservice_support/selfcheck/tractor/", "date": "2026-09-08"},
+      {"id": "de300000-0000-4000-8000-000000000104-s2", "title": "ヤンマー公式：純正オイルとフィルタ", "url": "https://www.yanmar.com/jp/agri/afterservice_support/oils_filter/", "date": "2026-09-08"}
+    ],
+    "attachments": [], "origin": null
+  }
 }
 ]$records$::jsonb)
   loop
+    -- Publication identity is immutable; on an ownership move delete the note,
+    -- which cascades to the publication, and let the upserts recreate both.
+    delete from public.notes
+    where id = (rec->>'id')::uuid and user_id is distinct from (rec->>'owner')::uuid;
     insert into public.notes (id, user_id, title, category, type, date, blocks, created_at, updated_at)
-    values ((rec->>'id')::uuid, demo_owner, rec->>'title', rec->>'category', rec->>'type', (rec->>'date')::date,
+    values ((rec->>'id')::uuid, (rec->>'owner')::uuid, rec->>'title', rec->>'category', rec->>'type', (rec->>'date')::date,
       (rec->'blocks') || jsonb_build_array(jsonb_build_object(
         'id', (rec->>'id') || '-meta', 'type', 'nitoron-presentation-v1', 'data', rec->'meta')),
       now(), now())
     on conflict (id) do update set title = excluded.title, category = excluded.category,
       type = excluded.type, date = excluded.date, blocks = excluded.blocks, updated_at = now();
     insert into public.nitoron_publications (id, owner_id, snapshot, is_public)
-    values ((rec->>'id')::uuid, demo_owner, rec, true)
-    on conflict (id) do update set snapshot = excluded.snapshot, is_public = true;
+    values ((rec->>'id')::uuid, (rec->>'owner')::uuid, rec - 'public' - 'owner',
+      coalesce((rec->>'public')::boolean, false))
+    on conflict (id) do update set snapshot = excluded.snapshot, is_public = excluded.is_public;
   end loop;
 
   -- The feedback rate-limit trigger requires verified auth claims; impersonate
