@@ -18,14 +18,18 @@ body{background:#fff}a{color:inherit}button:focus-visible,a:focus-visible,summar
 
 .input-mode-switch{margin:14px 0 4px;align-self:flex-start;width:max-content}
 .profile-control{text-decoration:none;color:inherit}
-.profile-page{max-width:640px;margin:0 auto;padding:26px 24px 60px;display:grid;gap:22px}
-.profile-page h1{font-size:1.6rem;margin:0}
-.profile-summary{display:flex;align-items:center;gap:16px;border:1px solid #eee;border-radius:16px;padding:18px 20px;box-shadow:0 1px 6px #0000000f}
-.profile-summary>div{flex:1;min-width:0}
-.profile-summary p{margin:2px 0 0;color:#6a6a6a;font-size:.875rem}
-.profile-avatar.large{width:48px;height:48px;font-size:1.2rem}
-.profile-links{display:grid;gap:10px}
-.profile-links>a{display:flex;align-items:center;gap:16px;border:1px solid #eee;border-radius:16px;padding:16px 20px;text-decoration:none;color:inherit}
-.profile-links>a:hover{background:#f7f7f7}
-.profile-links>a>span{flex:1;display:grid;gap:2px}
-.profile-links small{color:#6a6a6a}
+.profile-page{max-width:640px;margin:0 auto;padding:30px 24px 60px;display:grid;gap:26px}
+.profile-page h1{font-size:2rem;letter-spacing:-.6px;font-weight:700;margin:0}
+.profile-card{background:#fff;border-radius:24px;box-shadow:0 6px 20px #0000001f;padding:36px 24px 30px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.avatar-circle.xl{width:96px;height:96px;font-size:2.4rem;background:#222;margin-bottom:12px}
+.profile-card strong{font-size:1.375rem;font-weight:700;letter-spacing:-.3px;line-height:1.5;max-width:100%;overflow-wrap:anywhere}
+.profile-status{color:#6a6a6a;font-size:.875rem;line-height:1.6;max-width:100%;overflow-wrap:anywhere}
+.profile-card button{margin-top:20px;width:min(100%,320px)}
+.profile-note{margin:-10px 2px 0;color:#6a6a6a;font-size:.8125rem;line-height:1.8}
+.profile-menu{display:grid}
+.profile-menu>a{display:flex;align-items:center;gap:18px;padding:20px 2px;min-height:64px;text-decoration:none;color:inherit;border-bottom:1px solid #ebebeb}
+.profile-menu>a:first-child{border-top:1px solid #ebebeb}
+.profile-menu>a>span{flex:1;min-width:0;display:grid;gap:3px}
+.profile-menu>a strong{font-size:1rem;font-weight:500;line-height:1.5}
+.profile-menu>a small{color:#6a6a6a;font-size:.8125rem;line-height:1.6}
+.profile-menu>a:hover{background:#f7f7f7}
