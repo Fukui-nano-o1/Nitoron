@@ -33,6 +33,18 @@ export async function getPublic(id) {
   if (!data) throw new Error('この発表は見つからないか、公開が停止されています。')
   return unpack(data)
 }
+export async function getProfile(userId) {
+  requireClient()
+  const { data, error } = await supabase.from('nitoron_profiles').select('*').eq('user_id', userId).maybeSingle()
+  if (error) throw new Error(message(error))
+  return data
+}
+export async function saveProfile(session, { display_name, region, club, bio }) {
+  requireClient()
+  if (!session?.user) throw new Error('ログインしてからプロフィールを保存してください。')
+  const { error } = await supabase.from('nitoron_profiles').upsert({ user_id: session.user.id, display_name: display_name.trim(), region: region.trim(), club: club.trim(), bio: bio.trim(), updated_at: new Date().toISOString() }).select('user_id').single()
+  if (error) throw new Error('プロフィールを保存できませんでした。接続を確認して再試行してください。')
+}
 export async function getUserPublic(ownerId) {
   requireClient()
   const { data, error } = await supabase.from('nitoron_publications').select('*').eq('owner_id', ownerId).eq('is_public', true).order('updated_at', { ascending: false }).order('id').limit(60)

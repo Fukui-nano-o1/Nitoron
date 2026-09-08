@@ -15,6 +15,7 @@ import Catalog from './Catalog.jsx'
 import PublicRecord from './PublicRecord.jsx'
 import Profile from './Profile.jsx'
 const User = lazy(() => import('./User.jsx'))
+const ProfileEdit = lazy(() => import('./ProfileEdit.jsx'))
 import SavedList from './SavedList.jsx'
 import Icon from './Icon.jsx'
 import useBookmarks from './useBookmarks.js'
@@ -26,7 +27,7 @@ import './design.css'
 const routeFromLocation = () => {
   const [view, id] = location.hash.replace(/^#\/?/, '').split('/')
   // 経営発表に一点集中する間、挑戦・学習ノートの専用ページは閉じる。
-  return { view: ['mine', 'discover', 'saved', 'record', 'public', 'compare', 'account', 'user'].includes(view) ? view : 'discover', id }
+  return { view: ['mine', 'discover', 'saved', 'record', 'public', 'compare', 'account', 'user', 'profile'].includes(view) ? view : 'discover', id }
 }
 const keyOf = r => `${r.publication ? 'public' : 'mine'}:${r.id}`
 function App() {
@@ -170,6 +171,7 @@ function App() {
       : route.view === 'compare' ? <Compare records={selectedRecords} onRemove={select} />
       : route.view === 'account' ? <Profile session={session} name={name} selectedCount={selected.length} onAccount={() => setDialog({ type: 'account' })} />
       : route.view === 'user' ? <User key={route.id} id={route.id} savedIds={bookmarks.ids} onSave={bookmarks.toggle} selectedKeys={selected.map(keyOf)} keyOf={keyOf} onSelect={select} />
+      : route.view === 'profile' ? <ProfileEdit session={session} name={name} onName={rename} onAccount={() => setDialog({ type: 'account' })} />
       : route.view === 'saved' ? <SavedList session={session} records={publicState.records} count={publicState.count} loading={publicState.loading || !bookmarks.ready}
           error={bookmarks.error ? <ErrorNotice retry={bookmarks.retry}>{bookmarks.error}</ErrorNotice> : publicState.error ? <ErrorNotice retry={() => setRefresh(r => r + 1)}>{publicState.error}</ErrorNotice> : null}
           page={publicPage} onPage={setPublicPage} savedIds={bookmarks.ids} onSave={bookmarks.toggle} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} onAccount={() => setDialog({ type: 'account' })} />
