@@ -33,6 +33,12 @@ export async function getPublic(id) {
   if (!data) throw new Error('この発表は見つからないか、公開が停止されています。')
   return unpack(data)
 }
+export async function getUserPublic(ownerId) {
+  requireClient()
+  const { data, error } = await supabase.from('nitoron_publications').select('*').eq('owner_id', ownerId).eq('is_public', true).order('updated_at', { ascending: false }).order('id').limit(60)
+  if (error) throw new Error(message(error))
+  return data.map(unpack)
+}
 export async function getOwned(userId) {
   requireClient()
   const { data, error } = await supabase.from('nitoron_publications').select('id,is_public,updated_at').eq('owner_id', userId)
