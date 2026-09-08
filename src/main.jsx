@@ -7,7 +7,7 @@ const Compare = lazy(() => import('./Compare.jsx'))
 const Discussion = lazy(() => import('./Discussion.jsx'))
 const Account = lazy(() => import('./Account.jsx'))
 import { supabase } from './supabase.js'
-import { newRecord, deriveRecord, snapshot, publicationProblems, fromRow, uid, today } from './domain.js'
+import { newRecord, deriveRecord, snapshot, publicationProblems, fromRow, uid, today, isBlankRecord } from './domain.js'
 import { listPublic, getPublic, getOwned, publishRecord, unpublishRecord, PAGE_SIZE } from './community.js'
 import { Dialog, Empty, ErrorNotice, download } from './ui.jsx'
 import SiteHeader, { NAV } from './SiteHeader.jsx'
@@ -39,7 +39,7 @@ function App() {
   const [publicPage, setPublicPage] = useState(0), [refresh, setRefresh] = useState(0)
   const [publicRecord, setPublicRecord] = useState(null), [recordError, setRecordError] = useState('')
   const [owned, setOwned] = useState([]), [ownedReady, setOwnedReady] = useState(false)
-  const [deviceRecords, setDeviceRecords] = useState([])
+  const [deviceRecords, setDeviceRecords] = useState([]), [draft, setDraft] = useState(null)
   const searchRef = useRef(null), importRef = useRef(null), nameTimer = useRef(null)
   const previousOwner = useRef(undefined)
   const bookmarks = useBookmarks(session, setToast, () => setDialog({ type: 'account' }))
@@ -76,7 +76,9 @@ function App() {
     getPublic(route.id).then(record => { if (!cancelled) setPublicRecord(record) }).catch(e => { if (!cancelled) setRecordError(e.message) })
     return () => { cancelled = true }
   }, [route.view, route.id, refresh])
-  const editorRecord = records.find(r => r.id === route.id)
+  const editorRecord = records.find(r => r.id === route.id) || (draft && draft.id === route.id ? draft : undefined)
+  // 一度も入力しなかった下書きは、記録ページを離れた時点で破棄する。
+  useEffect(() => { setDraft(d => d && (route.view !== 'record' || route.id !== d.id) ? null : d) }, [route.view, route.id])
   useEffect(() => { document.title = `${route.view === 'record' && editorRecord ? editorRecord.title || '無題' : route.view === 'public' && publicRecord ? publicRecord.title : '4Hクラブの経営発表'} | Nitoron` }, [route.view, editorRecord?.title, publicRecord?.title])
 
   const rename = value => {
@@ -88,7 +90,19 @@ function App() {
     if (!ready) return
     const record = source ? deriveRecord(source, kind, name) : newRecord(kind, name)
     if (feedback && record.meta) record.meta.learning = `${feedback.author}（${feedback.created_at.slice(0, 10)}）の${feedback.kind}：\n${feedback.body}\n\n自分の学び：\n`
-    put(record); setDialog(null); location.hash = `/record/${record.id}`
+    // 白紙の新規作成は最初の入力まで保存しない。元記録から引き継ぐ場合は内容があるので保存する。
+    if (source) put(record)
+    else setDraft(record)
+    setDialog(null); location.hash = `/record/${record.id}`
+  }
+  const cleanupBlankRecords = async () => {
+    const blanks = records.filter(r => isBlankRecord(r) && !owned.some(p => p.id === r.id && p.is_public))
+    if (!blanks.length || !window.confirm(`何も書いていない空の記録${blanks.length}件を削除しますか？ 元に戻せません。`)) return
+    try {
+      for (const r of blanks) await remove(r.id)
+      setSelected(s => s.filter(x => !blanks.some(b => b.id === x.id)))
+      setToast(`空の記録を${blanks.length}件削除しました。`)
+    } catch (e) { setToast(e.message || '空の記録を削除できませんでした。') }
   }
   const select = record => {
     if (selected.some(r => keyOf(r) === keyOf(record))) setSelected(selected.filter(r => keyOf(r) !== keyOf(record)))
@@ -147,7 +161,7 @@ function App() {
     <a className="skip-link" href="#content" onClick={e => { e.preventDefault(); document.getElementById('content')?.focus() }}>本文へ移動</a>
     <SiteHeader view={route.view} name={name} ready={ready} onCreate={() => create('presentation')} />
     <main id="content" tabIndex={-1} className="main-content">
-      {route.view === 'record' && <div className="save-bar print-hidden"><span role="status">{status}</span></div>}
+      {route.view === 'record' && <div className="save-bar print-hidden"><span role="status">{draft && route.id === draft.id && !records.some(r => r.id === draft.id) ? '未保存の下書き · 書き始めると自動保存します' : status}</span></div>}
       {error && <div className="workspace-error print-hidden"><ErrorNotice retry={retry}>{error}</ErrorNotice></div>}
       {route.view === 'record' ? ready ? editorRecord ? <Editor key={editorRecord.id} record={editorRecord} discussion={owned.some(p => p.id === editorRecord.id) && <Discussion record={{ ...editorRecord, publication: { owner: session?.user.id, isPublic: owned.find(p => p.id === editorRecord.id)?.is_public } }} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} session={session} flush={flush} onChange={record => put(record, session?.user.id || null)} onPublish={() => { setActionError(''); setDialog({ type: 'publish', record: snapshot(editorRecord) }) }} onDelete={() => deleteRecord(editorRecord)} published={owned.some(p => p.id === editorRecord.id && p.is_public)} onUnpublish={() => stopPublication(editorRecord)} onShare={() => share(editorRecord)} /> : <Empty title="この記録は見つかりません" action={<a className="secondary" href="#/mine">自分の記録へ</a>}>保存したアカウントでログインしているか確認してください。</Empty> : <p className="loading" role="status">記録を読み込み中…</p>
       : route.view === 'public' ? recordError ? <div className="catalog"><ErrorNotice retry={() => setRefresh(r => r + 1)}>{recordError}</ErrorNotice><a href="#/discover">みんなの発表へ</a></div> : publicRecord ? <PublicRecord record={publicRecord} selected={selected.some(r => keyOf(r) === keyOf(publicRecord))} onSelect={() => select(publicRecord)} saved={bookmarks.ids.includes(publicRecord.id)} onSave={() => bookmarks.toggle(publicRecord)} onShare={() => share(publicRecord)} ready={ready} discussion={<Discussion key={publicRecord.id} record={publicRecord} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} /> : <p className="loading" role="status">発表を読み込み中…</p>
@@ -157,7 +171,8 @@ function App() {
           error={route.view === 'saved' && bookmarks.error ? <ErrorNotice retry={bookmarks.retry}>{bookmarks.error}</ErrorNotice> : publicMode && publicState.error ? <ErrorNotice retry={() => setRefresh(r => r + 1)}>{publicState.error}</ErrorNotice> : null}
           query={query} onQuery={value => { setQuery(value); setPublicPage(0) }} region={region} onRegion={value => { setRegion(value); setPublicPage(0) }}
           filters={filters} onFilters={value => { setFilters(value); setPublicPage(0) }} sort={sort} onSort={value => { setSort(value); setPublicPage(0) }} savedIds={bookmarks.ids} onSave={bookmarks.toggle} searchRef={searchRef} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select}
-          owned={owned} ownedReady={ownedReady} ready={ready} onCreate={() => create('presentation')}>
+          owned={owned} ownedReady={ownedReady} ready={ready} onCreate={() => create('presentation')}
+          blankCount={publicMode ? 0 : records.filter(r => isBlankRecord(r) && !owned.some(p => p.id === r.id && p.is_public)).length} onCleanup={cleanupBlankRecords}>
         {publicMode && publicState.count > PAGE_SIZE && <div className="pagination"><button className="secondary" disabled={publicPage === 0 || publicState.loading} onClick={() => setPublicPage(p => p - 1)}>前へ</button><span>{publicPage + 1} / {Math.ceil(publicState.count / PAGE_SIZE)}</span><button className="secondary" disabled={(publicPage + 1) * PAGE_SIZE >= publicState.count || publicState.loading} onClick={() => setPublicPage(p => p + 1)}>次へ</button></div>}
         {!publicMode && <footer className="catalog-footer">{!!deviceRecords.length && <button className="quiet" onClick={() => { if (window.confirm(`端末だけに保存した${deviceRecords.length}件を、このアカウントの新しい記録として取り込みますか？`)) { for (const r of deviceRecords) put({ ...fromRow(r), id: uid() }); setDeviceRecords([]); setToast('端末の記録を取り込みました。') } }}>端末だけの記録を復元</button>}<button className="quiet" disabled={!ready} onClick={exportAll}>全記録を書き出す</button><button className="quiet" disabled={!ready} onClick={() => importRef.current.click()}>バックアップを取り込む</button><input hidden type="file" ref={importRef} accept="application/json,.json" onChange={importBackup} /></footer>}
       </Catalog>}
