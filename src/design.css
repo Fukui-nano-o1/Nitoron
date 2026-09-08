@@ -157,6 +157,23 @@ body{background:#fff}a{color:inherit}button:focus-visible,a:focus-visible,summar
 .user-main .record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 a.avatar-circle{text-decoration:none}
 a.avatar-circle:hover{box-shadow:0 0 0 2px #fff,0 0 0 4px #222}
+/* カードの三本線メニュー · Airbnbの操作シートを参考にした更新（2026-09-08） */
+.card-menu-button{position:absolute;right:44px;top:12px;width:30px;height:30px;min-height:30px;padding:0;border-radius:50%;background:#fffef9;color:#222;display:grid;place-items:center;box-shadow:0 2px 5px #0002}
+.card-menu-button:hover{transform:scale(1.08);background:#fff}
+.card-menu-author{display:flex;align-items:center;gap:12px;font-size:.9375rem;font-weight:600;margin:-6px 0 6px;overflow-wrap:anywhere}
+.card-menu-list{display:grid}
+.card-menu-row{display:flex;align-items:center;gap:16px;padding:14px 2px;border-bottom:1px solid #ebebeb;background:none;border-radius:0;text-align:left;text-decoration:none;color:#222;font-size:.9375rem;min-height:66px}
+.card-menu-list>.card-menu-row:last-child{border-bottom:0}
+.card-menu-row:hover{background:#f7f7f7}
+.card-menu-icon{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#f7f7f7;flex-shrink:0}
+.card-menu-row>span:last-child{display:grid;gap:3px;min-width:0}
+.card-menu-row strong{font-weight:600;line-height:1.5;overflow-wrap:anywhere}
+.card-menu-row small{font-size:.8125rem;color:#6a6a6a;line-height:1.6}
+.card-menu-memo{display:grid;gap:12px;padding:4px 2px 18px;border-bottom:1px solid #ebebeb}
+.card-menu-memo textarea{background:#fff;min-height:96px}
+.card-menu-memo .secondary{justify-self:end;min-height:42px;padding:9px 18px;font-size:.875rem}
+.card-menu-memo .hint{margin:0}
+@media(max-width:760px){.card-menu-button{right:38px;top:8px;width:28px;height:28px;min-height:28px}.card-menu-row{min-height:60px}}
 @media(max-width:1100px){.user-page{padding-left:32px;padding-right:32px}.user-columns{grid-template-columns:320px minmax(0,1fr);gap:36px}}
 @media(max-width:760px){.user-page{padding:16px 24px 60px}.user-columns{display:block}.user-aside{position:static;margin-bottom:30px}.host-card{padding:24px 20px}.host-identity .avatar-circle.xl{width:88px;height:88px;font-size:2.2rem}.host-identity strong{font-size:1.3rem}.host-stats{min-width:88px}.host-stats dd{font-size:1.2rem}.user-main h1{font-size:1.25rem}.user-main .record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:420px){.user-page{padding-left:18px;padding-right:18px}}

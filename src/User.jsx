@@ -4,7 +4,7 @@ import { RecordCard } from './Catalog.jsx'
 import { getUserPublic } from './community.js'
 import { ErrorNotice } from './ui.jsx'
 
-export default function User({ id, savedIds, onSave, selectedKeys, keyOf, onSelect }) {
+export default function User({ id, savedIds, onSave, onMenu, selectedKeys, keyOf, onSelect }) {
   const [records, setRecords] = useState(null), [error, setError] = useState('')
   useEffect(() => {
     let cancelled = false
@@ -35,7 +35,7 @@ export default function User({ id, savedIds, onSave, selectedKeys, keyOf, onSele
       </aside>
       <div className="user-main">
         <h1>{name}さんの発表</h1>
-        {records.length ? <div className="record-grid">{records.map(r => <RecordCard key={r.id} record={r} href={`#/public/${r.id}`} publicMode selected={selectedKeys.includes(keyOf(r))} onSelect={onSelect} saved={savedIds.includes(r.id)} onSave={onSave} />)}</div>
+        {records.length ? <div className="record-grid">{records.map(r => <RecordCard key={r.id} record={r} href={`#/public/${r.id}`} publicMode selected={selectedKeys.includes(keyOf(r))} onSelect={onSelect} saved={savedIds.includes(r.id)} onSave={onSave} onMenu={onMenu} />)}</div>
           : <p className="hint">公開中の発表はまだありません。</p>}
       </div>
     </div>}
