@@ -29,7 +29,7 @@ export default function Editor({ record, onChange, onPublish, onDelete, publishe
         <div className="document-heading"><div className="eyebrow">{m ? '4H CLUB / FIELD RECORD' : 'FIELD NOTE'}</div>
           <div className="segmented"><button aria-pressed={tab === 'edit'} onClick={() => setTab('edit')}>書く</button><button aria-pressed={tab === 'read'} disabled={uploading} onClick={() => setTab('read')}>読む</button></div></div>
         {published && <div className="notice">公開版があります。ここでの変更は「公開版を更新」で反映します。<div className="actions"><button onClick={onShare}>リンクを共有</button><a href={`#/public/${record.id}`}>公開版を見る</a><button onClick={onUnpublish}>公開を停止</button></div></div>}
-        {tab === 'read' ? <><RecordBody record={record} /><div className="actions print-hidden"><button className="secondary" onClick={() => window.print()}>印刷・PDFに保存</button><button className="secondary" onClick={() => onDerive('challenge')}>次の挑戦をつくる</button></div>{discussion}</> : <>
+        {tab === 'read' ? <><RecordBody record={record} /><div className="actions print-hidden"><button className="secondary" onClick={() => window.print()}>印刷・PDFに保存</button></div>{discussion}</> : <>
           <input className="title-input" aria-label="記録のタイトル" placeholder={m ? '発表のタイトル' : 'メモのタイトル'} maxLength={200} value={record.title} onChange={e => patch({ title: e.target.value })} />
           {!m ? <>
             <div className="fields two"><Field label="種類"><select value={record.type} onChange={e => patch({ type: e.target.value })}><option>メモ</option><option>アイデア</option><option>タスク</option></select></Field>
