@@ -17,3 +17,15 @@ body{background:#fff}a{color:inherit}button:focus-visible,a:focus-visible,summar
 @media print{.site-header,.mobile-nav,.print-hidden,.save-bar,.photo-mosaic .show-photos,.listing-aside,.listing-mobile-action{display:none!important}.workspace{padding:0}.main-content{margin:0}.listing-page{padding:0;max-width:none}.listing-columns{display:block}.photo-mosaic{height:220px;break-inside:avoid}.listing-title h1{font-size:21pt}.listing-subtitle{font-size:10pt}.document-layout{padding:0;display:block}.document{padding:0}.read-section{break-inside:avoid}.attachment-download{border:0;padding:5px;min-height:0}.attachment-download svg,.attachment-download>span:last-child{display:none}.record-body p{font-size:10pt}.publication-date{font-size:9pt}}
 
 .input-mode-switch{margin:14px 0 4px;align-self:flex-start;width:max-content}
+.profile-control{text-decoration:none;color:inherit}
+.profile-page{max-width:640px;margin:0 auto;padding:26px 24px 60px;display:grid;gap:22px}
+.profile-page h1{font-size:1.6rem;margin:0}
+.profile-summary{display:flex;align-items:center;gap:16px;border:1px solid #eee;border-radius:16px;padding:18px 20px;box-shadow:0 1px 6px #0000000f}
+.profile-summary>div{flex:1;min-width:0}
+.profile-summary p{margin:2px 0 0;color:#6a6a6a;font-size:.875rem}
+.profile-avatar.large{width:48px;height:48px;font-size:1.2rem}
+.profile-links{display:grid;gap:10px}
+.profile-links>a{display:flex;align-items:center;gap:16px;border:1px solid #eee;border-radius:16px;padding:16px 20px;text-decoration:none;color:inherit}
+.profile-links>a:hover{background:#f7f7f7}
+.profile-links>a>span{flex:1;display:grid;gap:2px}
+.profile-links small{color:#6a6a6a}

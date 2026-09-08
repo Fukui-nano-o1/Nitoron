@@ -13,6 +13,7 @@ import { Dialog, Empty, ErrorNotice, download } from './ui.jsx'
 import SiteHeader, { NAV } from './SiteHeader.jsx'
 import Catalog from './Catalog.jsx'
 import PublicRecord from './PublicRecord.jsx'
+import Profile from './Profile.jsx'
 import Icon from './Icon.jsx'
 import useBookmarks from './useBookmarks.js'
 import { EMPTY_FILTERS, filterRecord } from './search.js'
@@ -23,7 +24,7 @@ import './design.css'
 const routeFromLocation = () => {
   const [view, id] = location.hash.replace(/^#\/?/, '').split('/')
   // 経営発表に一点集中する間、挑戦・学習ノートの専用ページは閉じる。
-  return { view: ['mine', 'discover', 'saved', 'record', 'public', 'compare'].includes(view) ? view : 'discover', id }
+  return { view: ['mine', 'discover', 'saved', 'record', 'public', 'compare', 'account'].includes(view) ? view : 'discover', id }
 }
 const keyOf = r => `${r.publication ? 'public' : 'mine'}:${r.id}`
 function App() {
@@ -144,13 +145,14 @@ function App() {
   const nav = NAV
   return <div className="workspace">
     <a className="skip-link" href="#content" onClick={e => { e.preventDefault(); document.getElementById('content')?.focus() }}>本文へ移動</a>
-    <SiteHeader view={route.view} name={name} ready={ready} selectedCount={selected.length} onCreate={() => create('presentation')} onAccount={() => setDialog({ type: 'account' })} />
+    <SiteHeader view={route.view} name={name} ready={ready} onCreate={() => create('presentation')} />
     <main id="content" tabIndex={-1} className="main-content">
       {route.view === 'record' && <div className="save-bar print-hidden"><span role="status">{status}</span></div>}
       {error && <div className="workspace-error print-hidden"><ErrorNotice retry={retry}>{error}</ErrorNotice></div>}
       {route.view === 'record' ? ready ? editorRecord ? <Editor key={editorRecord.id} record={editorRecord} discussion={owned.some(p => p.id === editorRecord.id) && <Discussion record={{ ...editorRecord, publication: { owner: session?.user.id, isPublic: owned.find(p => p.id === editorRecord.id)?.is_public } }} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} session={session} flush={flush} onChange={record => put(record, session?.user.id || null)} onPublish={() => { setActionError(''); setDialog({ type: 'publish', record: snapshot(editorRecord) }) }} onDelete={() => deleteRecord(editorRecord)} published={owned.some(p => p.id === editorRecord.id && p.is_public)} onUnpublish={() => stopPublication(editorRecord)} onShare={() => share(editorRecord)} /> : <Empty title="この記録は見つかりません" action={<a className="secondary" href="#/mine">自分の記録へ</a>}>保存したアカウントでログインしているか確認してください。</Empty> : <p className="loading" role="status">記録を読み込み中…</p>
       : route.view === 'public' ? recordError ? <div className="catalog"><ErrorNotice retry={() => setRefresh(r => r + 1)}>{recordError}</ErrorNotice><a href="#/discover">みんなの発表へ</a></div> : publicRecord ? <PublicRecord record={publicRecord} selected={selected.some(r => keyOf(r) === keyOf(publicRecord))} onSelect={() => select(publicRecord)} saved={bookmarks.ids.includes(publicRecord.id)} onSave={() => bookmarks.toggle(publicRecord)} onShare={() => share(publicRecord)} ready={ready} discussion={<Discussion key={publicRecord.id} record={publicRecord} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} /> : <p className="loading" role="status">発表を読み込み中…</p>
       : route.view === 'compare' ? <Compare records={selectedRecords} onRemove={select} />
+      : route.view === 'account' ? <Profile session={session} name={name} selectedCount={selected.length} onAccount={() => setDialog({ type: 'account' })} />
       : <Catalog view={route.view} records={displayed} total={publicMode ? publicState.count : displayed.length} loading={publicMode ? publicState.loading || route.view === 'saved' && !bookmarks.ready : !ready}
           error={route.view === 'saved' && bookmarks.error ? <ErrorNotice retry={bookmarks.retry}>{bookmarks.error}</ErrorNotice> : publicMode && publicState.error ? <ErrorNotice retry={() => setRefresh(r => r + 1)}>{publicState.error}</ErrorNotice> : null}
           query={query} onQuery={value => { setQuery(value); setPublicPage(0) }} region={region} onRegion={value => { setRegion(value); setPublicPage(0) }}
@@ -161,7 +163,7 @@ function App() {
       </Catalog>}
     </main>
     {!!selected.length && route.view !== 'compare' && <div className="compare-tray print-hidden"><span>{selected.length}件を選択中</span><a href="#/compare">並べて比較する</a><button onClick={() => setSelected([])}>解除</button></div>}
-    <nav className="mobile-nav print-hidden" aria-label="モバイルナビゲーション">{nav.map(([id, label, icon]) => <a key={id} href={`#/${id}`} aria-current={route.view === id || id === 'mine' && route.view === 'record' || id === 'discover' && route.view === 'public' ? 'page' : undefined}><Icon name={icon} size={23} /><span>{label}</span></a>)}<button onClick={() => setDialog({ type: 'account' })}><Icon name="user" size={23} /><span>アカウント</span></button></nav>
+    <nav className="mobile-nav print-hidden" aria-label="モバイルナビゲーション">{nav.map(([id, label, icon]) => <a key={id} href={`#/${id}`} aria-current={route.view === id || id === 'mine' && route.view === 'record' || id === 'discover' && route.view === 'public' ? 'page' : undefined}><Icon name={icon} size={23} /><span>{label}</span></a>)}<a href="#/account" aria-current={route.view === 'account' ? 'page' : undefined}><Icon name="user" size={23} /><span>アカウント</span></a></nav>
     {toast && <div className="toast print-hidden" role="status">{toast}</div>}
     {dialog?.type === 'account' && <Account session={session} name={name} onName={rename} flush={flush} onClose={() => setDialog(null)} />}
     {dialog?.type === 'publish' && <Dialog title="公開する内容を確認" wide onClose={busy ? () => {} : () => setDialog(null)}><p className="notice">以下の本文・名前・地域・数字・写真・添付資料・資料リンクが、ログインなしで誰でも読めるようになります。個人情報や他人の未公開情報が含まれていないか確認してください。</p>
