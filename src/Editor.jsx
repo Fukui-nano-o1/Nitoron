@@ -44,6 +44,7 @@ export default function Editor({ record, onChange, onPublish, onDelete, publishe
               <Field label="写真のURL" help="自分の写真など、公開してよい画像のURLを入力。空欄でも記録できます。"><input type="url" value={m.coverUrl || ''} onChange={e => meta({ coverUrl: e.target.value })} placeholder="https://" /></Field>
               {m.coverUrl && <button className="quiet" onClick={() => meta({ coverUrl: '' })}>写真を外す</button>}
             </details>
+            <Field label="分類" help="機械の故障などの困りごとの記録は「トラブル」へ。"><select value={m.kind} onChange={e => meta({ kind: e.target.value })}>{Object.entries(KINDS).filter(([key]) => key !== 'memo').map(([key, label]) => <option key={key} value={key}>{label}</option>)}</select></Field>
             <div className="segmented input-mode-switch"><button aria-pressed={m.inputMode !== 'sections'} onClick={() => meta({ inputMode: 'free' })}>フリー入力</button><button aria-pressed={m.inputMode === 'sections'} onClick={() => meta({ inputMode: 'sections' })}>項目で分ける</button></div>
             {m.inputMode !== 'sections' ? <>
               <p className="hint">思いつくまま自由に書けます。切り替えても、書いた内容は消えません。</p>

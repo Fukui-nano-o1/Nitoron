@@ -55,6 +55,7 @@ test('出典リンクのスクリプト実行と不正なメタデータを受�
   assert.equal(safeUrl('https://example.com/'), 'https://example.com/')
   const m = sanitizeMeta({ author: { injected: true }, kind: 'unknown', sources: 'bad', observations: [null, { fact: '観測' }] })
   assert.equal(m.author, ''); assert.equal(m.kind, 'presentation'); assert.deepEqual(m.sources, []); assert.equal(m.observations.length, 1)
+  assert.equal(sanitizeMeta({ kind: 'trouble' }).kind, 'trouble')
   assert.equal(m.inputMode, 'sections')
   assert.equal(sanitizeMeta({}).inputMode, 'free')
   assert.equal(sanitizeMeta({ inputMode: 'free', summary: '項目入力より前の要約' }).inputMode, 'free')

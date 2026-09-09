@@ -3,7 +3,7 @@ export const uid = () => crypto.randomUUID()
 export const today = () => new Date().toLocaleDateString('sv-SE')
 export const textBlock = (text = '', type = 'text') => ({ id: uid(), type, text })
 export const META = 'nitoron-presentation-v1'
-export const KINDS = { presentation: '経営発表', challenge: '挑戦', learning: '学習ノート', memo: 'メモ' }
+export const KINDS = { presentation: '経営発表', challenge: '挑戦', learning: '学習ノート', trouble: 'トラブル', memo: 'メモ' }
 export const PHASES = ['仮説', '計画中', '実践中', '振り返り', '完了']
 export const SECTIONS = [
   ['issue', '課題', '何が起きていて、何を変えたいか'],
@@ -30,7 +30,7 @@ export const isBlankRecord = r => !String(r.title || '').trim() && !(r.blocks ||
   && (!r.meta || !hasSectionContent(r.meta) && !r.meta.attachments?.length && !r.meta.coverUrl && !r.meta.origin)
 export function sanitizeMeta(raw) {
   if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return null
-  const m = emptyMeta(['presentation', 'challenge', 'learning'].includes(raw.kind) ? raw.kind : 'presentation')
+  const m = emptyMeta(['presentation', 'challenge', 'learning', 'trouble'].includes(raw.kind) ? raw.kind : 'presentation')
   for (const key of Object.keys(m)) if (typeof m[key] === 'string' && key !== 'kind') m[key] = string(raw[key])
   m.coverUrl = safeUrl(m.coverUrl) || ''
   m.attachments = sanitizeAttachments(raw.attachments)
