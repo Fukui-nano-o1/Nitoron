@@ -212,3 +212,11 @@ a.avatar-circle:hover{box-shadow:0 0 0 2px #fff,0 0 0 4px #222}
 .trust-card li svg{flex-shrink:0;margin-top:4px;color:#222}
 .trust-card p{margin:18px 0 0;font-size:.8125rem;color:#6a6a6a;line-height:1.7}
 @media(max-width:760px){.trust-card{padding:20px}}
+/* 発表ページ：Airbnbのハイライト行・モバイル固定バーを参考にした更新（2026-09-09） */
+.listing-highlights{display:grid;gap:24px;padding:2px 0 30px;border-bottom:1px solid #ebebeb;margin-bottom:28px}
+.listing-highlights>div{display:flex;gap:18px;align-items:flex-start;min-width:0}
+.listing-highlights svg{flex-shrink:0;margin-top:1px;color:#222}
+.listing-highlights strong{display:block;font-size:.9375rem;font-weight:600;line-height:1.5;overflow-wrap:anywhere}
+.listing-highlights small{display:block;font-size:.8125rem;color:#6a6a6a;line-height:1.7;margin-top:2px}
+.listing-mobile-action .text-action{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:760px){.listing-highlights{gap:20px;padding-bottom:26px}}
