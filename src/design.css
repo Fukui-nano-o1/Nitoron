@@ -245,3 +245,17 @@ a.avatar-circle:hover{box-shadow:0 0 0 2px #fff,0 0 0 4px #222}
 @media(max-width:1100px){.desktop-navigation>a.manage-link{padding:9px 14px}}
 @media(max-width:760px){.desktop-navigation{display:none}.nav-divider{display:none}.talks-page{padding:16px 24px 60px}.talks-page h1{font-size:1.6rem}.talk-row{min-height:66px;padding:13px 2px}}
 @media(max-width:420px){.talks-page{padding-left:18px;padding-right:18px}}
+
+/* 発見・検索：ホームのテーマ別横スクロール行。作物の行はcrop条件、課題の行はq条件で「すべて見る」へ引き継ぐ。 */
+.home-rows{padding-bottom:20px}
+.home-row{margin-bottom:34px}
+.home-row-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:0 0 14px}
+.home-row-head h2{font-size:1.08rem;font-weight:700;letter-spacing:-.2px;margin:0}
+.home-row-head a{font-size:.875rem;font-weight:600;color:#222;white-space:nowrap;text-underline-offset:4px}
+.home-row-scroll{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 70px)/6);gap:28px 14px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:6px;scrollbar-width:none}
+.home-row-scroll::-webkit-scrollbar{display:none}
+.home-row-scroll>*{scroll-snap-align:start}
+.home-row .empty{padding:40px 8px}
+.browse-controls{justify-content:flex-end;border-bottom:0;margin-bottom:8px;padding:6px 0}
+@media(max-width:1100px){.home-row-scroll{grid-auto-columns:calc((100% - 36px)/4);gap:24px 12px}}
+@media(max-width:760px){.home-row{margin-bottom:26px}.home-row-head h2{font-size:1rem}.home-row-scroll{grid-auto-columns:calc((100% - 24px)/2.3);gap:20px 12px}}

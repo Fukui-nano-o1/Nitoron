@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, lazy, Suspense } from 'react'
+import React, { useEffect, useMemo, useRef, useState, lazy, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import useWorkspace from './useWorkspace.js'
 const Editor = lazy(() => import('./Editor.jsx'))
@@ -13,6 +13,7 @@ import { listPublic, getPublic, getOwned, publishRecord, unpublishRecord, PAGE_S
 import { Dialog, Empty, ErrorNotice, download } from './ui.jsx'
 import SiteHeader, { NAV, currentTab } from './SiteHeader.jsx'
 import Catalog from './Catalog.jsx'
+import Home from './Home.jsx'
 import PublicRecord from './PublicRecord.jsx'
 import Profile from './Profile.jsx'
 const User = lazy(() => import('./User.jsx'))
@@ -23,19 +24,21 @@ import useBookmarks from './useBookmarks.js'
 import useActivity from './useActivity.js'
 import useFollows from './useFollows.js'
 import CardMenu from './CardMenu.jsx'
-import { EMPTY_FILTERS, filterRecord } from './search.js'
+import { EMPTY_FILTERS, filterRecord, listFromParams, paramsFromList } from './search.js'
 import { SEARCH_ENABLED } from './flags.js'
 import './styles.css'
 import './design.css'
 
 const routeFromLocation = () => {
-  const [view, id, section] = location.hash.replace(/^#\/?/, '').split('/')
+  // 検索結果ページの条件は「#/search?q=…」のようにハッシュ内のクエリで持ち、URLを正とする。
+  const [path, params = ''] = location.hash.replace(/^#\/?/, '').split('?')
+  const [view, id, section] = path.split('/')
   // 経営発表に一点集中する間、挑戦・学習ノートの専用ページは閉じる。
-  return { view: ['mine', 'discover', 'saved', 'record', 'public', 'compare', 'account', 'user', 'profile', 'talks'].includes(view) ? view : 'discover', id, section }
+  return { view: ['mine', 'discover', 'search', 'saved', 'record', 'public', 'compare', 'account', 'user', 'profile', 'talks'].includes(view) ? view : 'discover', id, section, params }
 }
 const keyOf = r => `${r.publication ? 'public' : 'mine'}:${r.id}`
 // スクロール位置を覚えておく画面。詳細（public・record）は常に先頭から表示する。
-const SCROLL_VIEWS = ['discover', 'saved', 'mine', 'talks', 'account', 'user', 'compare', 'profile']
+const SCROLL_VIEWS = ['discover', 'search', 'saved', 'mine', 'talks', 'account', 'user', 'compare', 'profile']
 const scrollKeyOf = r => SCROLL_VIEWS.includes(r.view) ? (r.view === 'user' ? `user:${r.id}` : r.view) : null
 // 参照の同一性を保つため固定オブジェクトにする（毎回生成するとfiltersの同一性が崩れ、一覧取得のeffectがループする）。
 const LIST_DEFAULTS = Object.freeze({ query: '', region: '', filters: EMPTY_FILTERS, sort: 'recent', page: 0 })
@@ -46,14 +49,31 @@ function App() {
   const routeRef = useRef(route)
   routeRef.current = route
   // 一覧の検索語・地域・絞り込み・並び順・ページ番号を画面ごとに保持し、詳細から戻っても再入力させない。
+  // 検索結果ページだけはURLを正とし、条件をハッシュのクエリから復元する。
   const [listStates, setListStates] = useState({})
-  const { query, region, filters, sort, page: publicPage } = listStates[route.view] || LIST_DEFAULTS
+  const isSearch = route.view === 'search'
+  // filtersの参照同一性を保つためmemo化する（毎回生成すると一覧取得のeffectがループする）。
+  const urlState = useMemo(() => isSearch ? listFromParams(route.params) : null, [isSearch, route.params])
+  const { query, region, filters, sort, page: publicPage } = urlState || listStates[route.view] || LIST_DEFAULTS
   const patchList = patch => setListStates(s => ({ ...s, [route.view]: { ...(s[route.view] || LIST_DEFAULTS), ...patch } }))
-  const setQuery = value => patchList({ query: value, page: 0 })
-  const setRegion = value => patchList({ region: value, page: 0 })
-  const setFilters = value => patchList({ filters: value, page: 0 })
-  const setSort = value => patchList({ sort: value, page: 0 })
-  const setPublicPage = value => patchList({ page: typeof value === 'function' ? value(publicPage) : value })
+  // 検索条件の変更はURLへ書く。入力中（push=false）は履歴を増やさず置き換え、
+  // 検索確定・条件適用・ページ移動（push=true）だけを履歴の区切りにする。
+  const goSearch = (patch, push) => {
+    const qs = paramsFromList({ ...(urlState || LIST_DEFAULTS), ...patch })
+    const target = `#/search${qs ? `?${qs}` : ''}`
+    if (location.hash === target) return
+    if (push) location.hash = target
+    else { history.replaceState(history.state, '', target); setRoute(routeFromLocation()) }
+  }
+  const setQuery = value => isSearch ? goSearch({ query: value, page: 0 }, false) : patchList({ query: value, page: 0 })
+  const setRegion = value => isSearch ? goSearch({ region: value, page: 0 }, false) : patchList({ region: value, page: 0 })
+  const setFilters = value => isSearch ? goSearch({ filters: value, page: 0 }, true) : patchList({ filters: value, page: 0 })
+  const setSort = value => isSearch ? goSearch({ sort: value, page: 0 }, true) : patchList({ sort: value, page: 0 })
+  const setPublicPage = value => {
+    const next = typeof value === 'function' ? value(publicPage) : value
+    isSearch ? goSearch({ page: next }, true) : patchList({ page: next })
+  }
+  const resetSearch = () => isSearch ? goSearch({ ...LIST_DEFAULTS }, true) : patchList({ query: '', region: '', filters: { ...EMPTY_FILTERS }, page: 0 })
   const [dialog, setDialog] = useState(null), [name, setName] = useState(() => { try { return localStorage.getItem('nitoron:name') || '' } catch { return '' } })
   const [selected, setSelected] = useState([]), [toast, setToast] = useState('')
   const [busy, setBusy] = useState(false), [actionError, setActionError] = useState('')
@@ -101,10 +121,10 @@ function App() {
     window.addEventListener('wheel', cancel, { once: true, passive: true })
     window.addEventListener('touchstart', cancel, { once: true, passive: true })
     return () => { stop = true; clearTimeout(timer); window.removeEventListener('wheel', cancel); window.removeEventListener('touchstart', cancel) }
-  }, [route.view, route.id])
+  }, [route.view, route.id, route.params])
   // 直接URLで詳細を開いたなど、アプリ内の戻り先がないときは「探す」へ戻す。
   const backToList = () => { if (navigated.current) history.back(); else location.hash = '/discover' }
-  useEffect(() => { if (!SEARCH_ENABLED) return; const keys = e => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (!searchRef.current) { location.hash = '/mine'; setTimeout(() => searchRef.current?.focus(), 0) } else searchRef.current.focus() } }; window.addEventListener('keydown', keys); return () => window.removeEventListener('keydown', keys) }, [])
+  useEffect(() => { if (!SEARCH_ENABLED) return; const keys = e => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (!searchRef.current) { location.hash = '/discover'; setTimeout(() => searchRef.current?.focus(), 0) } else searchRef.current.focus() } }; window.addEventListener('keydown', keys); return () => window.removeEventListener('keydown', keys) }, [])
   useEffect(() => { if (!toast) return; const t = setTimeout(() => setToast(''), 4500); return () => clearTimeout(t) }, [toast])
   useEffect(() => {
     if (previousOwner.current !== undefined && previousOwner.current !== session?.user.id) { setSelected([]); setDialog(null); setName('') }
@@ -121,7 +141,7 @@ function App() {
     try { const cached = JSON.parse(localStorage.getItem('nitoron:workspace:v1:device') || 'null'); setDeviceRecords(Array.isArray(cached?.records) ? cached.records : []) } catch { setDeviceRecords([]) }
   }, [ready, session?.user.id])
   useEffect(() => {
-    if (!['discover', 'saved'].includes(route.view)) return
+    if (!['search', 'saved'].includes(route.view)) return
     if (route.view === 'saved' && !bookmarks.ready) return
     let cancelled = false
     setPublicState(s => ({ ...s, loading: true, error: '' }))
@@ -224,7 +244,7 @@ function App() {
     } catch (err) { setToast(err.message || '読み込めませんでした。') }
   }
 
-  const publicMode = ['discover', 'saved'].includes(route.view)
+  const publicMode = route.view === 'search'
   const list = publicMode ? publicState.records : records.filter(r => filterRecord(r, { query, region, filters }))
   const displayed = publicMode ? list : [...list].sort(sort === 'title' ? (a, b) => a.title.localeCompare(b.title, 'ja') : (a, b) => b.date.localeCompare(a.date))
   const selectedRecords = selected.map(r => r.publication ? r : records.find(x => x.id === r.id)).filter(Boolean)
@@ -243,13 +263,14 @@ function App() {
           savedNew={bookmarks.rows.reduce((n, b) => n + (activity.counts[b.id] || 0), 0)} mineNew={owned.reduce((n, p) => n + (activity.counts[p.id] || 0), 0)} />
       : route.view === 'user' ? <User key={route.id} id={route.id} savedIds={bookmarks.ids} onSave={bookmarks.toggle} onMenu={setMenuRecord} selectedKeys={selected.map(keyOf)} keyOf={keyOf} onSelect={select} />
       : route.view === 'profile' ? <ProfileEdit session={session} name={name} onName={rename} onAccount={() => setDialog({ type: 'account' })} />
+      : route.view === 'discover' ? <Home savedIds={bookmarks.ids} onSave={bookmarks.toggle} onMenu={setMenuRecord} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} searchRef={searchRef} />
       : route.view === 'saved' ? <SavedList session={session} records={publicState.records} count={publicState.count} loading={publicState.loading || !bookmarks.ready}
           error={bookmarks.error ? <ErrorNotice retry={bookmarks.retry}>{bookmarks.error}</ErrorNotice> : publicState.error ? <ErrorNotice retry={() => setRefresh(r => r + 1)}>{publicState.error}</ErrorNotice> : null}
           page={publicPage} onPage={setPublicPage} savedIds={bookmarks.ids} onSave={bookmarks.toggle} onMenu={setMenuRecord} activityCounts={activity.counts} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} onAccount={() => setDialog({ type: 'account' })} />
       : <Catalog view={route.view} records={displayed} total={publicMode ? publicState.count : displayed.length} loading={publicMode ? publicState.loading : !ready}
           error={publicMode && publicState.error ? <ErrorNotice retry={() => setRefresh(r => r + 1)}>{publicState.error}</ErrorNotice> : null}
-          query={query} onQuery={value => { setQuery(value); setPublicPage(0) }} region={region} onRegion={value => { setRegion(value); setPublicPage(0) }}
-          filters={filters} onFilters={value => { setFilters(value); setPublicPage(0) }} sort={sort} onSort={value => { setSort(value); setPublicPage(0) }} savedIds={bookmarks.ids} onSave={bookmarks.toggle} onMenu={setMenuRecord} activityCounts={activity.counts} searchRef={searchRef} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select}
+          query={query} onQuery={setQuery} region={region} onRegion={setRegion}
+          filters={filters} onFilters={setFilters} sort={sort} onSort={setSort} onReset={resetSearch} savedIds={bookmarks.ids} onSave={bookmarks.toggle} onMenu={setMenuRecord} activityCounts={activity.counts} searchRef={searchRef} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select}
           owned={owned} ownedReady={ownedReady} ready={ready} onCreate={() => create('presentation')}
           blankCount={publicMode ? 0 : records.filter(r => isBlankRecord(r) && !owned.some(p => p.id === r.id && p.is_public)).length} onCleanup={cleanupBlankRecords}>
         {publicMode && publicState.count > PAGE_SIZE && <div className="pagination"><button className="secondary" disabled={publicPage === 0 || publicState.loading} onClick={() => setPublicPage(p => p - 1)}>前へ</button><span>{publicPage + 1} / {Math.ceil(publicState.count / PAGE_SIZE)}</span><button className="secondary" disabled={(publicPage + 1) * PAGE_SIZE >= publicState.count || publicState.loading} onClick={() => setPublicPage(p => p + 1)}>次へ</button></div>}

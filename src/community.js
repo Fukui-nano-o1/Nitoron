@@ -8,7 +8,7 @@ const message = error => ['PGRST205', '42P01'].includes(error?.code)
   : '読み込み・保存ができませんでした。接続を確認して再試行してください。'
 const requireClient = () => { if (!supabase) throw new Error('クラウドに接続できません。') }
 const unpack = row => ({ ...fromRow(row.snapshot), id: row.id, publication: { id: row.id, owner: row.owner_id, publishedAt: row.published_at, updatedAt: row.updated_at, isPublic: row.is_public } })
-export async function listPublic({ query = '', region = '', page = 0, filters = EMPTY_FILTERS, sort = 'recent', bookmarkedBy } = {}) {
+export async function listPublic({ query = '', region = '', page = 0, filters = EMPTY_FILTERS, sort = 'recent', bookmarkedBy, limit = PAGE_SIZE } = {}) {
   requireClient()
   if (bookmarkedBy === null) return { records: [], count: 0 }
   let request = supabase.from('nitoron_publications').select(bookmarkedBy ? '*,nitoron_bookmarks!inner(user_id)' : '*', { count: 'exact' }).eq('is_public', true)
@@ -22,7 +22,7 @@ export async function listPublic({ query = '', region = '', page = 0, filters = 
   if (filters.numbers) request = request.eq('has_metrics', true)
   if (bookmarkedBy) request = request.eq('nitoron_bookmarks.user_id', bookmarkedBy)
   request = sort === 'title' ? request.order('title_search') : request.order('updated_at', { ascending: false })
-  const { data, error, count } = await request.order('id').range(page * PAGE_SIZE, (page + 1) * PAGE_SIZE - 1)
+  const { data, error, count } = await request.order('id').range(page * PAGE_SIZE, page * PAGE_SIZE + Math.min(limit, PAGE_SIZE) - 1)
   if (error) throw new Error(message(error))
   return { records: data.map(unpack), count }
 }

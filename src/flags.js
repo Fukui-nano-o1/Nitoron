@@ -1,3 +1,2 @@
-// 公開発表がまだゼロのため、検索まわりのUIを一時的に隠している。
-// 要望が出たら true に戻すだけで、検索ピル・テーマタブ・絞り込み・Ctrl+Kが復元される。
-export const SEARCH_ENABLED = false
+// 検索は常設。falseに戻すと検索ピル・絞り込み・Ctrl+Kを一括で隠せる。
+export const SEARCH_ENABLED = true
