@@ -6,11 +6,12 @@ import RecordBody from './RecordBody.jsx'
 const Compare = lazy(() => import('./Compare.jsx'))
 const Discussion = lazy(() => import('./Discussion.jsx'))
 const Account = lazy(() => import('./Account.jsx'))
+const Talks = lazy(() => import('./Talks.jsx'))
 import { supabase } from './supabase.js'
 import { newRecord, deriveRecord, snapshot, publicationProblems, fromRow, uid, today, isBlankRecord } from './domain.js'
 import { listPublic, getPublic, getOwned, publishRecord, unpublishRecord, PAGE_SIZE } from './community.js'
 import { Dialog, Empty, ErrorNotice, download } from './ui.jsx'
-import SiteHeader, { NAV } from './SiteHeader.jsx'
+import SiteHeader, { NAV, currentTab } from './SiteHeader.jsx'
 import Catalog from './Catalog.jsx'
 import PublicRecord from './PublicRecord.jsx'
 import Profile from './Profile.jsx'
@@ -30,19 +31,33 @@ import './design.css'
 const routeFromLocation = () => {
   const [view, id, section] = location.hash.replace(/^#\/?/, '').split('/')
   // 経営発表に一点集中する間、挑戦・学習ノートの専用ページは閉じる。
-  return { view: ['mine', 'discover', 'saved', 'record', 'public', 'compare', 'account', 'user', 'profile'].includes(view) ? view : 'discover', id, section }
+  return { view: ['mine', 'discover', 'saved', 'record', 'public', 'compare', 'account', 'user', 'profile', 'talks'].includes(view) ? view : 'discover', id, section }
 }
 const keyOf = r => `${r.publication ? 'public' : 'mine'}:${r.id}`
+// スクロール位置を覚えておく画面。詳細（public・record）は常に先頭から表示する。
+const SCROLL_VIEWS = ['discover', 'saved', 'mine', 'talks', 'account', 'user', 'compare', 'profile']
+const scrollKeyOf = r => SCROLL_VIEWS.includes(r.view) ? (r.view === 'user' ? `user:${r.id}` : r.view) : null
+const listDefaults = () => ({ query: '', region: '', filters: { ...EMPTY_FILTERS }, sort: 'recent', page: 0 })
 function App() {
   const workspace = useWorkspace()
   const { records, ready, session, status, error, needsLogin, put, remove, flush, retry } = workspace
-  const [route, setRoute] = useState(routeFromLocation), [query, setQuery] = useState(''), [region, setRegion] = useState('')
-  const [filters, setFilters] = useState({ ...EMPTY_FILTERS }), [sort, setSort] = useState('recent')
+  const [route, setRoute] = useState(routeFromLocation)
+  const routeRef = useRef(route)
+  routeRef.current = route
+  // 一覧の検索語・地域・絞り込み・並び順・ページ番号を画面ごとに保持し、詳細から戻っても再入力させない。
+  const [listStates, setListStates] = useState({})
+  const { query, region, filters, sort, page: publicPage } = listStates[route.view] || listDefaults()
+  const patchList = patch => setListStates(s => ({ ...s, [route.view]: { ...(s[route.view] || listDefaults()), ...patch } }))
+  const setQuery = value => patchList({ query: value, page: 0 })
+  const setRegion = value => patchList({ region: value, page: 0 })
+  const setFilters = value => patchList({ filters: value, page: 0 })
+  const setSort = value => patchList({ sort: value, page: 0 })
+  const setPublicPage = value => patchList({ page: typeof value === 'function' ? value(publicPage) : value })
   const [dialog, setDialog] = useState(null), [name, setName] = useState(() => { try { return localStorage.getItem('nitoron:name') || '' } catch { return '' } })
   const [selected, setSelected] = useState([]), [toast, setToast] = useState('')
   const [busy, setBusy] = useState(false), [actionError, setActionError] = useState('')
   const [publicState, setPublicState] = useState({ records: [], count: 0, loading: true, error: '' })
-  const [publicPage, setPublicPage] = useState(0), [refresh, setRefresh] = useState(0)
+  const [refresh, setRefresh] = useState(0)
   const [publicRecord, setPublicRecord] = useState(null), [recordError, setRecordError] = useState('')
   const [owned, setOwned] = useState([]), [ownedReady, setOwnedReady] = useState(false)
   const [deviceRecords, setDeviceRecords] = useState([]), [draft, setDraft] = useState(null)
@@ -55,7 +70,39 @@ function App() {
   const accountFromMenu = () => { setMenuRecord(null); setDialog({ type: 'account' }) }
   const follows = useFollows(session, setToast, accountFromMenu)
 
-  useEffect(() => { const change = () => { setRoute(routeFromLocation()); setQuery(''); setRegion(''); setFilters({ ...EMPTY_FILTERS }); setPublicPage(0); window.scrollTo(0, 0) }; window.addEventListener('hashchange', change); return () => window.removeEventListener('hashchange', change) }, [])
+  const scrollStore = useRef({}), pendingScroll = useRef(null), navigated = useRef(false)
+  useEffect(() => {
+    const change = () => {
+      // 離れる画面のスクロール位置を保存し、戻り先に保存があれば復帰を予約する。条件はリセットしない。
+      const prevKey = scrollKeyOf(routeRef.current)
+      if (prevKey) scrollStore.current[prevKey] = window.scrollY
+      navigated.current = true
+      const next = routeFromLocation(), nextKey = scrollKeyOf(next)
+      pendingScroll.current = nextKey && scrollStore.current[nextKey] != null ? { key: nextKey, y: scrollStore.current[nextKey] } : null
+      if (!pendingScroll.current) window.scrollTo(0, 0)
+      setRoute(next)
+    }
+    window.addEventListener('hashchange', change); return () => window.removeEventListener('hashchange', change)
+  }, [])
+  // 一覧へ戻ったら、内容の読み込みを待ってから元の位置へスクロールを復帰する。利用者が操作したら中断する。
+  useEffect(() => {
+    const target = pendingScroll.current
+    if (!target || target.key !== scrollKeyOf(route)) return
+    pendingScroll.current = null
+    let stop = false, timer = null, tries = 25
+    const cancel = () => { stop = true }
+    const attempt = () => {
+      if (stop) return
+      window.scrollTo(0, target.y)
+      if (Math.abs(window.scrollY - target.y) > 2 && --tries > 0) timer = setTimeout(attempt, 80)
+    }
+    attempt()
+    window.addEventListener('wheel', cancel, { once: true, passive: true })
+    window.addEventListener('touchstart', cancel, { once: true, passive: true })
+    return () => { stop = true; clearTimeout(timer); window.removeEventListener('wheel', cancel); window.removeEventListener('touchstart', cancel) }
+  }, [route.view, route.id])
+  // 直接URLで詳細を開いたなど、アプリ内の戻り先がないときは「探す」へ戻す。
+  const backToList = () => { if (navigated.current) history.back(); else location.hash = '/discover' }
   useEffect(() => { if (!SEARCH_ENABLED) return; const keys = e => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (!searchRef.current) { location.hash = '/mine'; setTimeout(() => searchRef.current?.focus(), 0) } else searchRef.current.focus() } }; window.addEventListener('keydown', keys); return () => window.removeEventListener('keydown', keys) }, [])
   useEffect(() => { if (!toast) return; const t = setTimeout(() => setToast(''), 4500); return () => clearTimeout(t) }, [toast])
   useEffect(() => {
@@ -180,16 +227,16 @@ function App() {
   const list = publicMode ? publicState.records : records.filter(r => filterRecord(r, { query, region, filters }))
   const displayed = publicMode ? list : [...list].sort(sort === 'title' ? (a, b) => a.title.localeCompare(b.title, 'ja') : (a, b) => b.date.localeCompare(a.date))
   const selectedRecords = selected.map(r => r.publication ? r : records.find(x => x.id === r.id)).filter(Boolean)
-  const nav = NAV
   return <div className="workspace">
     <a className="skip-link" href="#content" onClick={e => { e.preventDefault(); document.getElementById('content')?.focus() }}>本文へ移動</a>
-    <SiteHeader view={route.view} name={name} ready={ready} notify={activity.total > 0} onCreate={() => create('presentation')} />
+    <SiteHeader view={route.view} name={name} notify={activity.total > 0} />
     <main id="content" tabIndex={-1} className="main-content">
       {route.view === 'record' && <div className="save-bar print-hidden"><span role="status">{draft && route.id === draft.id && !records.some(r => r.id === draft.id) ? '未保存の下書き · 書き始めると自動保存します' : status}</span></div>}
       {error && <div className="workspace-error print-hidden"><ErrorNotice retry={retry}>{error}</ErrorNotice></div>}
       {!error && needsLogin && ['mine', 'record'].includes(route.view) && <div className="workspace-error print-hidden"><div className="notice" role="status"><span>記録はこの端末に保存しています。登録・ログインするとクラウドに保存し、公開や指摘ができます。</span> <button onClick={() => setDialog({ type: 'account' })}>登録・ログイン</button></div></div>}
-      {route.view === 'record' ? ready ? editorRecord ? <Editor key={editorRecord.id} record={editorRecord} discussion={owned.some(p => p.id === editorRecord.id) && <Discussion record={{ ...editorRecord, publication: { owner: session?.user.id, isPublic: owned.find(p => p.id === editorRecord.id)?.is_public } }} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} session={session} flush={flush} onChange={record => put(record, session?.user.id || null)} onPublish={() => { setActionError(''); setDialog({ type: 'publish', record: snapshot(editorRecord) }) }} onDelete={() => deleteRecord(editorRecord)} published={owned.some(p => p.id === editorRecord.id && p.is_public)} onUnpublish={() => stopPublication(editorRecord)} onShare={() => share(editorRecord)} /> : <Empty title="この記録は見つかりません" action={<a className="secondary" href="#/mine">自分の記録へ</a>}>保存したアカウントでログインしているか確認してください。</Empty> : <p className="loading" role="status">記録を読み込み中…</p>
-      : route.view === 'public' ? recordError ? <div className="catalog"><ErrorNotice retry={() => setRefresh(r => r + 1)}>{recordError}</ErrorNotice><a href="#/discover">みんなの発表へ</a></div> : publicRecord ? <PublicRecord record={publicRecord} selected={selected.some(r => keyOf(r) === keyOf(publicRecord))} onSelect={() => select(publicRecord)} saved={bookmarks.ids.includes(publicRecord.id)} onSave={() => bookmarks.toggle(publicRecord)} onShare={() => share(publicRecord)} ready={ready} discussion={<Discussion key={publicRecord.id} record={publicRecord} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} /> : <p className="loading" role="status">発表を読み込み中…</p>
+      {route.view === 'record' ? ready ? editorRecord ? <Editor key={editorRecord.id} record={editorRecord} discussion={owned.some(p => p.id === editorRecord.id) && <Discussion record={{ ...editorRecord, publication: { owner: session?.user.id, isPublic: owned.find(p => p.id === editorRecord.id)?.is_public } }} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} session={session} flush={flush} onChange={record => put(record, session?.user.id || null)} onPublish={() => { setActionError(''); setDialog({ type: 'publish', record: snapshot(editorRecord) }) }} onDelete={() => deleteRecord(editorRecord)} published={owned.some(p => p.id === editorRecord.id && p.is_public)} onUnpublish={() => stopPublication(editorRecord)} onShare={() => share(editorRecord)} /> : <Empty title="この記録は見つかりません" action={<a className="secondary" href="#/mine">自分の実践へ</a>}>保存したアカウントでログインしているか確認してください。</Empty> : <p className="loading" role="status">記録を読み込み中…</p>
+      : route.view === 'public' ? recordError ? <div className="catalog"><ErrorNotice retry={() => setRefresh(r => r + 1)}>{recordError}</ErrorNotice><a href="#/discover">みんなの発表へ</a></div> : publicRecord ? <PublicRecord record={publicRecord} onBack={backToList} selected={selected.some(r => keyOf(r) === keyOf(publicRecord))} onSelect={() => select(publicRecord)} saved={bookmarks.ids.includes(publicRecord.id)} onSave={() => bookmarks.toggle(publicRecord)} onShare={() => share(publicRecord)} ready={ready} discussion={<Discussion key={publicRecord.id} record={publicRecord} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} /> : <p className="loading" role="status">発表を読み込み中…</p>
+      : route.view === 'talks' ? <Talks session={session} bookmarks={bookmarks} onAccount={() => setDialog({ type: 'account' })} />
       : route.view === 'compare' ? <Compare records={selectedRecords} onRemove={select} />
       : route.view === 'account' ? <Profile session={session} name={name} selectedCount={selected.length} onAccount={() => setDialog({ type: 'account' })}
           savedNew={bookmarks.rows.reduce((n, b) => n + (activity.counts[b.id] || 0), 0)} mineNew={owned.reduce((n, p) => n + (activity.counts[p.id] || 0), 0)} />
@@ -209,7 +256,7 @@ function App() {
       </Catalog>}
     </main>
     {!!selected.length && route.view !== 'compare' && <div className="compare-tray print-hidden"><span>{selected.length}件を選択中</span><a href="#/compare">並べて比較する</a><button onClick={() => setSelected([])}>解除</button></div>}
-    <nav className="mobile-nav print-hidden" aria-label="モバイルナビゲーション">{nav.map(([id, label, icon]) => <a key={id} href={`#/${id}`} aria-current={route.view === id || id === 'mine' && route.view === 'record' || id === 'discover' && route.view === 'public' ? 'page' : undefined}><Icon name={icon} size={23} /><span>{label}</span></a>)}<button disabled={!ready} onClick={() => create('presentation')}><Icon name="plus" size={23} /><span>書く</span></button><a href="#/account" aria-current={route.view === 'account' ? 'page' : undefined} aria-label={activity.total > 0 ? 'アカウント（新着の指摘あり）' : undefined}><span className="nav-icon">{activity.total > 0 && <i className="notify-dot" aria-hidden="true" />}<Icon name="user" size={23} /></span><span>アカウント</span></a></nav>
+    <nav className="mobile-nav print-hidden" aria-label="モバイルナビゲーション">{NAV.map(([id, label, icon]) => <a key={id} href={`#/${id}`} aria-current={currentTab(id, route.view) ? 'page' : undefined} aria-label={id === 'talks' && activity.total > 0 ? '対話（新着の指摘あり）' : undefined}><span className="nav-icon">{id === 'talks' && activity.total > 0 && <i className="notify-dot" aria-hidden="true" />}<Icon name={icon} size={23} /></span><span>{label}</span></a>)}</nav>
     {toast && <div className="toast print-hidden" role="status">{toast}</div>}
     {menuRecord && <CardMenu key={menuRecord.id} record={menuRecord} session={session} saved={bookmarks.ids.includes(menuRecord.id)}
       onSave={() => session ? bookmarks.toggle(menuRecord) : accountFromMenu()}

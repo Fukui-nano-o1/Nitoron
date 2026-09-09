@@ -4,12 +4,12 @@ import PhotoGallery from './PhotoGallery.jsx'
 import Icon from './Icon.jsx'
 import { KINDS, METRICS, number } from './domain.js'
 import { imageAttachments, sanitizeAttachments } from './attachment-domain.js'
-export default function PublicRecord({ record, selected, onSelect, saved, onSave, onShare, onDerive, ready, discussion }) {
+export default function PublicRecord({ record, onBack, selected, onSelect, saved, onSave, onShare, onDerive, ready, discussion }) {
   const m = record.meta, count = m?.observations.filter(o => o.fact.trim()).length || 0
   const photos = imageAttachments(record).length, files = sanitizeAttachments(m?.attachments).length - photos
   const hasNumbers = METRICS.some(([key]) => number(m?.[key]) !== null)
   return <article className="listing-page">
-    <div className="listing-back print-hidden"><a href="#/discover"><Icon name="left" size={16} />発表を探す</a><span>{KINDS[m?.kind || 'memo']}</span></div>
+    <div className="listing-back print-hidden">{onBack ? <button onClick={onBack}><Icon name="left" size={16} />一覧へ戻る</button> : <a href="#/discover"><Icon name="left" size={16} />発表を探す</a>}<span>{KINDS[m?.kind || 'memo']}</span></div>
     <header className="listing-title"><h1>{record.title}</h1><div className="listing-subtitle"><span>{[m?.region, m?.crop, m?.variety].filter(Boolean).join(' · ')}</span><div className="actions print-hidden"><button className="text-action" onClick={onShare}><Icon name="share" size={18} />共有</button><button className="text-action" aria-pressed={saved} onClick={onSave}><Icon name="heart" size={18} fill={saved ? 'currentColor' : 'none'} />{saved ? '保存済み' : '保存'}</button></div></div></header>
     <PhotoGallery record={record} />
     <div className="listing-columns"><div className="listing-main"><div className="author-section"><div><h2>{m?.author || '発表者'}さんの経営発表</h2><p>{[m?.club, m?.region].filter(Boolean).join(' · ') || '4Hクラブの実践記録'}</p></div><a className="avatar-circle large" href={`#/user/${record.publication.owner}`} aria-label={`${m?.author || '発表者'}のプロフィールを表示`}>{m?.author?.slice(0, 1) || 'N'}</a></div>

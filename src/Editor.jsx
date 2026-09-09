@@ -15,7 +15,7 @@ export default function Editor({ record, onChange, onPublish, onDelete, publishe
   const textInput = (key, label, placeholder = '', type = 'text') => <Field key={key} label={label}><input type={type} value={m[key]} onChange={e => meta({ [key]: e.target.value })} placeholder={placeholder} maxLength={type === 'text' ? 160 : undefined} /></Field>
   return <>
     <header className="document-toolbar">
-      <a href="#/mine" className="back-link">自分の記録</a>
+      <a href="#/mine" className="back-link">自分の実践</a>
       <span className="document-type">{KINDS[m?.kind || 'memo']}</span>
       <div className="actions"><button className="quiet" onClick={() => download(`${record.title || '記録'}.md`, exportMarkdown(record), 'text/markdown')}>書き出す</button>
         <button className="primary" onClick={onPublish} disabled={!m || uploading}>{published ? '公開版を更新' : '公開する'}</button></div>

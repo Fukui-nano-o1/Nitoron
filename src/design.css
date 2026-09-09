@@ -220,3 +220,28 @@ a.avatar-circle:hover{box-shadow:0 0 0 2px #fff,0 0 0 4px #222}
 .listing-highlights small{display:block;font-size:.8125rem;color:#6a6a6a;line-height:1.7;margin-top:2px}
 .listing-mobile-action .text-action{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:760px){.listing-highlights{gap:20px;padding-bottom:26px}}
+/* 分野①：5タブナビ・対話ページ・一覧状態の保持（2026-09-09） */
+.nav-divider{width:1px;height:26px;background:#ddd;align-self:center}
+.desktop-navigation .notify-dot.static{margin-right:7px;width:8px;height:8px;background:#ff385c}
+.desktop-navigation>a.manage-link{height:auto;border:1px solid #ddd;border-radius:100px;padding:10px 18px;margin:auto 0;font-size:.9375rem}
+.desktop-navigation>a.manage-link:hover{background:#f7f7f7;border-color:#222}
+.desktop-navigation>a.manage-link[aria-current=page]{border-color:#222;color:#222}
+.listing-back button{display:flex;align-items:center;gap:7px;color:#222;font-size:.875rem;font-weight:400;min-height:44px;padding:0}
+.listing-back button:hover{color:#555}
+.talks-page{max-width:760px;margin:auto;padding:30px 48px 80px}
+.talks-page h1{font-size:2rem;font-weight:800;letter-spacing:-.6px;line-height:1.4;margin:0 0 8px}
+.talks-page>.hint{margin:0 0 6px}
+.talks-page h2{font-size:1.125rem;font-weight:700;letter-spacing:-.2px;line-height:1.5;margin:30px 0 4px}
+.talks-page .loading{padding:40px 0;margin:0}
+.talk-list{display:grid}
+.talk-row{display:flex;align-items:center;gap:14px;padding:16px 2px;min-height:74px;border-bottom:1px solid #ebebeb;text-decoration:none;color:#222}
+.talk-row:hover{background:#f7f7f7}
+.talk-main{flex:1;min-width:0;display:grid;gap:3px}
+.talk-row strong{font-size:.9375rem;font-weight:600;line-height:1.5;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow-wrap:anywhere}
+.talk-row small{font-size:.8125rem;color:#6a6a6a;line-height:1.6}
+.talk-new{display:inline-flex;align-items:center;gap:7px;font-size:.8125rem;font-weight:700;color:#c4002f;white-space:nowrap}
+.talk-new::before{content:'';width:7px;height:7px;border-radius:50%;background:#ff385c;flex-shrink:0}
+.talk-quiet{font-size:.8125rem;color:#6a6a6a;white-space:nowrap}
+@media(max-width:1100px){.desktop-navigation>a.manage-link{padding:9px 14px}}
+@media(max-width:760px){.desktop-navigation{display:none}.nav-divider{display:none}.talks-page{padding:16px 24px 60px}.talks-page h1{font-size:1.6rem}.talk-row{min-height:66px;padding:13px 2px}}
+@media(max-width:420px){.talks-page{padding-left:18px;padding-right:18px}}

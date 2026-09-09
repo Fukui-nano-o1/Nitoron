@@ -24,7 +24,7 @@ export function RecordCard({ record: r, href, selected, onSelect, publicMode, pu
 export default function Catalog({ view, records, total, loading, error, query, onQuery, sort, onSort, region, onRegion, filters = EMPTY_FILTERS, onFilters, searchRef, selectedKeys, keyOf, onSelect, savedIds = [], onSave, onMenu, activityCounts = {}, owned = [], ownedReady, ready, onCreate, blankCount = 0, onCleanup, children }) {
   const [filterOpen, setFilterOpen] = useState(false)
   const publicMode = view === 'discover', active = countFilters(filters)
-  const title = view === 'discover' ? 'みんなの経営発表' : view === 'challenges' ? '自分の挑戦' : view === 'learning' ? '学習ノート' : '自分の記録'
+  const title = view === 'discover' ? 'みんなの経営発表' : view === 'challenges' ? '自分の挑戦' : view === 'learning' ? '学習ノート' : '自分の実践'
   const searching = query.trim() || region.trim() || active
   return <section className="catalog">
     {SEARCH_ENABLED && <><div className="search-area"><form className="search-pill" role="search" aria-label="記録を検索" onSubmit={e => { e.preventDefault(); document.getElementById('catalog-results')?.scrollIntoView({ block: 'start', behavior: 'smooth' }); document.getElementById('catalog-results')?.focus({ preventScroll: true }) }}>

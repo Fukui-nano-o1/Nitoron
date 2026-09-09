@@ -15,7 +15,7 @@ export default function Profile({ session, name, selectedCount, savedNew = 0, mi
     {!permanent && <p className="profile-note">メールを登録すると、この端末の記録を引き継いで、別の端末からも開けます。</p>}
     <nav className="profile-menu" aria-label="自分のページ">
       {[['profile', 'プロフィールを編集', 'user', '名前・地域・自己紹介', 0],
-        ['mine', '自分の記録', 'book', mineNew ? `新着の指摘 ${mineNew}件` : '書いた発表と下書き', mineNew],
+        ['mine', '自分の実践', 'book', mineNew ? `新着の指摘 ${mineNew}件` : '書いた発表と下書き', mineNew],
         ['saved', '保存リスト', 'heart', savedNew ? `新着の指摘 ${savedNew}件` : 'ハートを付けた発表', savedNew],
         ['compare', '比較', 'compare', selectedCount ? `${selectedCount}件を選択中` : '発表を並べて比べる', 0]]
         .map(([id, label, icon, desc, alert]) => <a key={id} href={`#/${id}`}><Icon name={icon} size={24} /><span><strong>{label}</strong><small className={alert ? 'menu-new' : undefined}>{desc}</small></span>{!!alert && <i className="notify-dot static" aria-hidden="true" />}<Icon name="right" size={16} /></a>)}
