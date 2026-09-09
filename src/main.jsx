@@ -37,7 +37,8 @@ const keyOf = r => `${r.publication ? 'public' : 'mine'}:${r.id}`
 // スクロール位置を覚えておく画面。詳細（public・record）は常に先頭から表示する。
 const SCROLL_VIEWS = ['discover', 'saved', 'mine', 'talks', 'account', 'user', 'compare', 'profile']
 const scrollKeyOf = r => SCROLL_VIEWS.includes(r.view) ? (r.view === 'user' ? `user:${r.id}` : r.view) : null
-const listDefaults = () => ({ query: '', region: '', filters: { ...EMPTY_FILTERS }, sort: 'recent', page: 0 })
+// 参照の同一性を保つため固定オブジェクトにする（毎回生成するとfiltersの同一性が崩れ、一覧取得のeffectがループする）。
+const LIST_DEFAULTS = Object.freeze({ query: '', region: '', filters: EMPTY_FILTERS, sort: 'recent', page: 0 })
 function App() {
   const workspace = useWorkspace()
   const { records, ready, session, status, error, needsLogin, put, remove, flush, retry } = workspace
@@ -46,8 +47,8 @@ function App() {
   routeRef.current = route
   // 一覧の検索語・地域・絞り込み・並び順・ページ番号を画面ごとに保持し、詳細から戻っても再入力させない。
   const [listStates, setListStates] = useState({})
-  const { query, region, filters, sort, page: publicPage } = listStates[route.view] || listDefaults()
-  const patchList = patch => setListStates(s => ({ ...s, [route.view]: { ...(s[route.view] || listDefaults()), ...patch } }))
+  const { query, region, filters, sort, page: publicPage } = listStates[route.view] || LIST_DEFAULTS
+  const patchList = patch => setListStates(s => ({ ...s, [route.view]: { ...(s[route.view] || LIST_DEFAULTS), ...patch } }))
   const setQuery = value => patchList({ query: value, page: 0 })
   const setRegion = value => patchList({ region: value, page: 0 })
   const setFilters = value => patchList({ filters: value, page: 0 })
