@@ -406,3 +406,42 @@ a.avatar-circle:hover{box-shadow:0 0 0 2px #fff,0 0 0 4px #222}
 .talk-preview{display:block;color:#b86043;margin-top:2px}
 .report-form code{font-size:.75rem;word-break:break-all;background:#f7f7f7;padding:2px 6px;border-radius:4px}
 @media(max-width:760px){.reflection-grid{grid-template-columns:1fr}.reflection{padding:14px 16px}}
+
+/* ---- 分野⑦ 機械の解体新書 ---- */
+/* カード上部の機械メディア。スクロールを奪わないよう touch-action は既定のまま。 */
+.machine-media{position:relative}
+.machine-press{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.machine-cover{background:linear-gradient(135deg,#f2f2f2,#e7e7e7)}
+.machine-cover img{object-fit:contain;background:#f4f4f4}
+.machine-canvas-slot{position:absolute;inset:0;z-index:1;pointer-events:none}
+.machine-canvas-slot canvas{width:100%;height:100%;display:block}
+.machine-target-line{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:6px 10px;font-size:.72rem;font-weight:600;color:#222;background:#ffffffd9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.machine-preview-toggle{position:absolute;right:8px;bottom:32px;z-index:3;min-height:34px;width:38px;border-radius:8px;background:#fffffff0;box-shadow:0 2px 5px #0002;font-size:.72rem;font-weight:700;color:#444}
+.machine-preview-toggle[aria-pressed=true]{background:#d31d32;color:#fff}
+/* 編集①の対象行と詳細の対象表示 */
+.subject-switch{display:inline-flex;width:max-content}
+.machine-target-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:10px 0 18px;padding:12px 14px;border:1px solid #e5e5e5;border-radius:12px;background:#fafafa}
+.machine-target-section{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0;padding:12px 14px;border:1px solid #e5e5e5;border-radius:12px;background:#fafafa}
+.machine-kicker{font-size:.6875rem;font-weight:700;color:#fff;background:#d31d32;border-radius:30px;padding:3px 9px}
+/* 解体新書の選択ビュー */
+.dialog.machine-picker{width:1040px;max-width:calc(100% - 16px)}
+.machine-breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0;font-size:.875rem}
+.machine-picker-body{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px}
+.machine-viewer{position:relative;aspect-ratio:1;max-height:52dvh;background:#f4f4f4;border-radius:12px;overflow:hidden;touch-action:none}
+.machine-viewer canvas{display:block;width:100%;height:100%}
+.machine-viewer-fallback{position:absolute;inset:0;display:grid;place-items:center;padding:16px;color:#666;font-size:.875rem;text-align:center}
+.machine-viewer-tools{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:10px}
+.machine-explode{display:flex;align-items:center;gap:8px;font-size:.8125rem;color:#444}
+.machine-explode input{width:140px}
+.machine-list-pane{min-width:0;max-height:60dvh;overflow-y:auto}
+.machine-list-head{font-size:.8125rem;color:#767676;margin:12px 0 6px}
+.machine-node-list{list-style:none;margin:0;padding:0}
+.machine-node-list li{display:flex;align-items:center;gap:6px}
+.machine-node-row{flex:1;display:flex;align-items:center;gap:8px;text-align:left;min-height:40px;padding:6px 10px;border-radius:8px;font-size:.875rem}
+.machine-node-row:hover{background:#f2f2f2}
+.machine-node-row[aria-pressed=true]{background:#fdeeee;color:#b3121f;font-weight:600}
+.machine-whole{border:1px dashed #ccc;margin-bottom:4px}
+.machine-enter{white-space:nowrap}
+.machine-picker-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:14px}
+.machine-current{font-size:.875rem;font-weight:600}
+@media(max-width:760px){.machine-picker-body{grid-template-columns:1fr}.machine-viewer{max-height:44dvh}.machine-list-pane{max-height:none;overflow:visible}}

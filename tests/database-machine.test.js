@@ -2,7 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import { PGlite } from '@electric-sql/pglite'
-import { newRecord, publicSnapshot, fromRow } from '../src/domain.js'
+import { newRecord, publicSnapshot, fromRow, toRow, publishedDiffers } from '../src/domain.js'
 import { MACHINE_SUBJECT, MODEL_VERSION, resolveMachineRef } from '../src/machine-domain.js'
 const OWNER = '11111111-1111-4111-8111-111111111111'
 const DOC = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa'
@@ -65,12 +65,19 @@ test('機械参照つきの発表は既存のDB制約のまま公開・再読込
       await as(OWNER, 'update nitoron_publications set is_public=true where id=$1', [DOC])
     })
     await t.test('下書きの対象変更は公開版更新まで公開snapshotに反映されない', async () => {
-      // 直前の公開版は frontL__fasteners__a0__bolt。下書きを bonnet に変えてもDBの公開版は変わらない
-      const before = fromRow((await as(null, 'select snapshot from nitoron_publications')).rows[0].snapshot)
-      assert.equal(before.meta.machineRef.partId, 'frontL__fasteners__a0__bolt')
-      await as(OWNER, 'update nitoron_publications set snapshot=$1 where id=$2', [publicSnapshot(repair('bonnet')), DOC])
-      const after = fromRow((await as(null, 'select snapshot from nitoron_publications')).rows[0].snapshot)
-      assert.equal(after.meta.machineRef.partId, 'bonnet')
+      const published = repair('bonnet')
+      await as(OWNER, 'update nitoron_publications set snapshot=$1 where id=$2', [publicSnapshot(published), DOC])
+      const draft = repair('aircleaner__element')
+      const row = toRow(draft, OWNER)
+      await as(OWNER, 'update notes set title=$1, blocks=$2 where id=$3', [row.title, JSON.stringify(row.blocks), DOC])
+      const savedDraft = fromRow((await as(OWNER, 'select * from notes where id=$1', [DOC])).rows[0])
+      assert.deepEqual(savedDraft.meta.machineRef, draft.meta.machineRef)
+      const before = (await as(null, 'select snapshot from nitoron_publications where id=$1', [DOC])).rows[0].snapshot
+      assert.equal(fromRow(before).meta.machineRef.partId, 'bonnet')
+      assert.equal(publishedDiffers(savedDraft, before), true)
+      await as(OWNER, 'update nitoron_publications set snapshot=$1 where id=$2', [publicSnapshot(savedDraft), DOC])
+      const after = fromRow((await as(null, 'select snapshot from nitoron_publications where id=$1', [DOC])).rows[0].snapshot)
+      assert.equal(after.meta.machineRef.partId, 'aircleaner__element')
     })
     await t.test('保存済みIDはsearch_textに入るが、カタログの日本語名は入らない', async () => {
       // 検索語 'skp-101w' は snapshot 内の machineId に一致する。部品の日本語名（例：ボンネット）は

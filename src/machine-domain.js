@@ -2,7 +2,7 @@
 // カタログ・参照解決・IDの契約は提供された src/machine/catalog.js が唯一の正で、ここでは
 // subject の確認とNitoron用の表示ラベル生成だけを行う。別のカタログやモデル版判定を作らない。
 import { MACHINE_NAME, resolveMachineRef } from './machine/catalog.js'
-export { MACHINE_ID, MODEL_VERSION, ROOT_PART_ID, MACHINE_NAME, resolveMachineRef } from './machine/catalog.js'
+export { MACHINE_ID, MODEL_VERSION, ROOT_PART_ID, MACHINE_NAME, NODES, resolveMachineRef } from './machine/catalog.js'
 export const MACHINE_SUBJECT = 'machine_repair'
 export const SUBJECTS = [['normal', '通常'], [MACHINE_SUBJECT, '機械修理']]
 
