@@ -4,7 +4,7 @@ import { RecordCard } from './Catalog.jsx'
 import { getUserPublic, getProfile, getTrust } from './community.js'
 import { ErrorNotice } from './ui.jsx'
 
-export default function User({ id, savedIds, onSave, onMenu, selectedKeys, keyOf, onSelect }) {
+export default function User({ id, savedIds, onSave, selectedKeys, keyOf, onSelect }) {
   const [records, setRecords] = useState(null), [profile, setProfile] = useState(null), [trust, setTrust] = useState(null), [error, setError] = useState('')
   useEffect(() => {
     let cancelled = false
@@ -53,7 +53,7 @@ export default function User({ id, savedIds, onSave, onMenu, selectedKeys, keyOf
         <h1>{name}さんについて</h1>
         {profile?.bio && <div className="user-about"><p>{profile.bio}</p></div>}
         <h2>{name}さんの発表</h2>
-        {records.length ? <div className="record-grid">{records.map(r => <RecordCard key={r.id} record={r} href={`#/public/${r.id}`} publicMode selected={selectedKeys.includes(keyOf(r))} onSelect={onSelect} saved={savedIds.includes(r.id)} onSave={onSave} onMenu={onMenu} />)}</div>
+        {records.length ? <div className="record-grid">{records.map(r => <RecordCard key={r.id} record={r} href={`#/public/${r.id}`} publicMode selected={selectedKeys.includes(keyOf(r))} onSelect={onSelect} saved={savedIds.includes(r.id)} onSave={onSave} />)}</div>
           : <p className="hint">公開中の発表はまだありません。</p>}
       </div>
     </div>}

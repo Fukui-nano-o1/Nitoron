@@ -44,6 +44,18 @@ test('他の発表からの挑戦は元の実績を自分の実績にせず、�
   assert.notEqual(next.id, source.id); assert.equal(next.meta.author, '自分'); assert.equal(next.meta.revenue, '')
   assert.equal(next.meta.origin.id, source.id); assert.equal(next.meta.origin.public, true)
 })
+test('「この実践を試す」の派生は元の発表を変更せず、作物と参照元だけを引き継ぐ', () => {
+  const source = newRecord(); source.title = '排水対策'; source.blocks = [{ id: 'b1', type: 'text', text: '本文' }]
+  Object.assign(source.meta, { crop: 'ブロッコリー', region: '徳島', hours: '12', observations: [{ id: 'o1', date: '2026-08-01', fact: '発芽率92%', conditions: '', evidence: '' }] })
+  source.publication = { id: source.id, owner: 'owner-1', isPublic: true }
+  const before = JSON.stringify(source)
+  const next = deriveRecord(source, 'challenge', '自分')
+  assert.equal(JSON.stringify(source), before)
+  assert.equal(next.meta.kind, 'challenge'); assert.equal(next.meta.crop, 'ブロッコリー')
+  assert.deepEqual(next.meta.origin, { id: source.id, title: '排水対策', public: true })
+  assert.equal(next.meta.region, ''); assert.equal(next.meta.hours, ''); assert.deepEqual(next.meta.observations, [])
+  assert.equal(next.publication, undefined)
+})
 test('クラウドの新しい記録を読みながら、未送信の編集を保護する', () => {
   const remote = [{ id: 'a', title: 'cloud' }, { id: 'b', title: 'cloud-only' }]
   const local = [{ id: 'a', title: 'unsaved' }, { id: 'c', title: 'offline-new' }, { id: 'deleted', title: 'stale' }]

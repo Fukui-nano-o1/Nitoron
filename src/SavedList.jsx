@@ -3,7 +3,7 @@ import Icon from './Icon.jsx'
 import { RecordCard } from './Catalog.jsx'
 import { PAGE_SIZE } from './community.js'
 
-export default function SavedList({ session, records, count, loading, error, page, onPage, savedIds, onSave, onMenu, activityCounts = {}, keyOf, selectedKeys, onSelect, onAccount }) {
+export default function SavedList({ session, records, count, loading, error, page, onPage, savedIds, onSave, activityCounts = {}, keyOf, selectedKeys, onSelect, onAccount }) {
   const signedOut = !session
   return <section className="saved-page">
     <div className="saved-topbar print-hidden"><a className="round-button" href="#/discover" aria-label="みんなの発表へ戻る"><Icon name="left" size={16} /></a></div>
@@ -19,7 +19,7 @@ export default function SavedList({ session, records, count, loading, error, pag
     </div>
     : loading ? <div className="loading-grid" role="status" aria-label="保存リストを読み込み中">{[0, 1, 2, 3, 4, 5, 6, 7].map(i => <div className="card-skeleton" key={i}><div /><span /><span /></div>)}</div>
     : records.length ? <>
-      <div className="record-grid">{records.map(r => <RecordCard key={r.id} record={r} href={`#/public/${r.id}`} publicMode selected={selectedKeys.includes(keyOf(r))} onSelect={onSelect} saved={savedIds.includes(r.id)} onSave={onSave} onMenu={onMenu} newCount={activityCounts[r.id] || 0} />)}</div>
+      <div className="record-grid">{records.map(r => <RecordCard key={r.id} record={r} href={`#/public/${r.id}`} publicMode selected={selectedKeys.includes(keyOf(r))} onSelect={onSelect} saved={savedIds.includes(r.id)} onSave={onSave} newCount={activityCounts[r.id] || 0} />)}</div>
       {count > PAGE_SIZE && <div className="pagination"><button className="secondary" disabled={page === 0} onClick={() => onPage(page - 1)}>前へ</button><span>{page + 1} / {Math.ceil(count / PAGE_SIZE)}</span><button className="secondary" disabled={(page + 1) * PAGE_SIZE >= count} onClick={() => onPage(page + 1)}>次へ</button></div>}
     </>
     : !error && <div className="saved-empty">

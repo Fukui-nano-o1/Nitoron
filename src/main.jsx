@@ -23,7 +23,6 @@ import Icon from './Icon.jsx'
 import useBookmarks from './useBookmarks.js'
 import useActivity from './useActivity.js'
 import useFollows from './useFollows.js'
-import CardMenu from './CardMenu.jsx'
 import { EMPTY_FILTERS, filterRecord, listFromParams, paramsFromList } from './search.js'
 import { SEARCH_ENABLED } from './flags.js'
 import './styles.css'
@@ -87,9 +86,9 @@ function App() {
   const bookmarks = useBookmarks(session, setToast, () => setDialog({ type: 'account' }))
   const activityItems = [...owned.filter(p => p.is_public).map(p => ({ id: p.id, since: p.updated_at })), ...bookmarks.rows.filter(b => !owned.some(p => p.id === b.id)).map(b => ({ id: b.id, since: b.savedAt }))]
   const activity = useActivity(session, activityItems)
-  const [menuRecord, setMenuRecord] = useState(null)
-  const accountFromMenu = () => { setMenuRecord(null); setDialog({ type: 'account' }) }
-  const follows = useFollows(session, setToast, accountFromMenu)
+  const openAccount = () => setDialog({ type: 'account' })
+  const follows = useFollows(session, setToast, openAccount)
+  const [deriving, setDeriving] = useState(false)
 
   const scrollStore = useRef({}), pendingScroll = useRef(null), navigated = useRef(false)
   useEffect(() => {
@@ -166,8 +165,6 @@ function App() {
     const timer = setTimeout(() => document.getElementById('discussion')?.scrollIntoView({ block: 'start', behavior: 'smooth' }), 120)
     return () => clearTimeout(timer)
   }, [route.view, route.section, publicRecord])
-  // 一覧の切り替えやログアウト後に、開いていたカードメニューを残さない。
-  useEffect(() => { setMenuRecord(null) }, [route.view, route.id, session?.user.id])
   const editorRecord = records.find(r => r.id === route.id) || (draft && draft.id === route.id ? draft : undefined)
   // 一度も入力しなかった下書きは、記録ページを離れた時点で破棄する。
   useEffect(() => { setDraft(d => d && (route.view !== 'record' || route.id !== d.id) ? null : d) }, [route.view, route.id])
@@ -186,6 +183,17 @@ function App() {
     if (source) put(record)
     else setDraft(record)
     setDialog(null); location.hash = `/record/${record.id}`
+  }
+  // 「この実践を試す」：公開発表から挑戦記録を派生し、保存できたときだけ編集画面へ進む。元の発表は読むだけで変更しない。
+  const tryPractice = async source => {
+    if (!ready || deriving) return
+    setDeriving(true)
+    try {
+      const record = deriveRecord(source, 'challenge', name)
+      if (!put(record, session?.user.id || null)) throw new Error('挑戦記録を端末に保存できませんでした。空き容量を確認して、もう一度お試しください。')
+      if (session && !await flush()) throw new Error('挑戦記録は端末に残しましたが、クラウドに保存できませんでした。「自分の実践」で保存状態を確認してください。')
+      location.hash = `/record/${record.id}`
+    } catch (e) { setToast(e.message) } finally { setDeriving(false) }
   }
   const cleanupBlankRecords = async () => {
     const blanks = records.filter(r => isBlankRecord(r) && !owned.some(p => p.id === r.id && p.is_public))
@@ -256,21 +264,23 @@ function App() {
       {error && <div className="workspace-error print-hidden"><ErrorNotice retry={retry}>{error}</ErrorNotice></div>}
       {!error && needsLogin && ['mine', 'record'].includes(route.view) && <div className="workspace-error print-hidden"><div className="notice" role="status"><span>記録はこの端末に保存しています。登録・ログインするとクラウドに保存し、公開や指摘ができます。</span> <button onClick={() => setDialog({ type: 'account' })}>登録・ログイン</button></div></div>}
       {route.view === 'record' ? ready ? editorRecord ? <Editor key={editorRecord.id} record={editorRecord} discussion={owned.some(p => p.id === editorRecord.id) && <Discussion record={{ ...editorRecord, publication: { owner: session?.user.id, isPublic: owned.find(p => p.id === editorRecord.id)?.is_public } }} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} session={session} flush={flush} onChange={record => put(record, session?.user.id || null)} onPublish={() => { setActionError(''); setDialog({ type: 'publish', record: snapshot(editorRecord) }) }} onDelete={() => deleteRecord(editorRecord)} published={owned.some(p => p.id === editorRecord.id && p.is_public)} onUnpublish={() => stopPublication(editorRecord)} onShare={() => share(editorRecord)} /> : <Empty title="この記録は見つかりません" action={<a className="secondary" href="#/mine">自分の実践へ</a>}>保存したアカウントでログインしているか確認してください。</Empty> : <p className="loading" role="status">記録を読み込み中…</p>
-      : route.view === 'public' ? recordError ? <div className="catalog"><ErrorNotice retry={() => setRefresh(r => r + 1)}>{recordError}</ErrorNotice><a href="#/discover">みんなの発表へ</a></div> : publicRecord ? <PublicRecord record={publicRecord} onBack={backToList} selected={selected.some(r => keyOf(r) === keyOf(publicRecord))} onSelect={() => select(publicRecord)} saved={bookmarks.ids.includes(publicRecord.id)} onSave={() => bookmarks.toggle(publicRecord)} onShare={() => share(publicRecord)} ready={ready} discussion={<Discussion key={publicRecord.id} record={publicRecord} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} /> : <p className="loading" role="status">発表を読み込み中…</p>
+      : route.view === 'public' ? recordError ? <div className="catalog"><ErrorNotice retry={() => setRefresh(r => r + 1)}>{recordError}</ErrorNotice><a href="#/discover">みんなの発表へ</a></div> : publicRecord ? <PublicRecord record={publicRecord} onBack={backToList} selected={selected.some(r => keyOf(r) === keyOf(publicRecord))} onSelect={() => select(publicRecord)} saved={bookmarks.ids.includes(publicRecord.id)} onSave={() => bookmarks.toggle(publicRecord)} onShare={() => share(publicRecord)} ready={ready}
+          onDerive={() => tryPractice(publicRecord)} deriving={deriving} session={session} onAccount={openAccount} notify={setToast}
+          canFollow={!!publicRecord.publication.owner && session?.user.id !== publicRecord.publication.owner} following={follows.ids.includes(publicRecord.publication.owner)} onFollow={() => follows.toggle(publicRecord.publication.owner, publicRecord.meta?.author || '発表者')} discussion={<Discussion key={publicRecord.id} record={publicRecord} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} /> : <p className="loading" role="status">発表を読み込み中…</p>
       : route.view === 'talks' ? <Talks session={session} bookmarks={bookmarks} onAccount={() => setDialog({ type: 'account' })} />
       : route.view === 'compare' ? <Compare records={selectedRecords} onRemove={select} />
       : route.view === 'account' ? <Profile session={session} name={name} selectedCount={selected.length} onAccount={() => setDialog({ type: 'account' })}
           savedNew={bookmarks.rows.reduce((n, b) => n + (activity.counts[b.id] || 0), 0)} mineNew={owned.reduce((n, p) => n + (activity.counts[p.id] || 0), 0)} />
-      : route.view === 'user' ? <User key={route.id} id={route.id} savedIds={bookmarks.ids} onSave={bookmarks.toggle} onMenu={setMenuRecord} selectedKeys={selected.map(keyOf)} keyOf={keyOf} onSelect={select} />
+      : route.view === 'user' ? <User key={route.id} id={route.id} savedIds={bookmarks.ids} onSave={bookmarks.toggle} selectedKeys={selected.map(keyOf)} keyOf={keyOf} onSelect={select} />
       : route.view === 'profile' ? <ProfileEdit session={session} name={name} onName={rename} onAccount={() => setDialog({ type: 'account' })} />
-      : route.view === 'discover' ? <Home savedIds={bookmarks.ids} onSave={bookmarks.toggle} onMenu={setMenuRecord} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} searchRef={searchRef} />
+      : route.view === 'discover' ? <Home savedIds={bookmarks.ids} onSave={bookmarks.toggle} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} searchRef={searchRef} />
       : route.view === 'saved' ? <SavedList session={session} records={publicState.records} count={publicState.count} loading={publicState.loading || !bookmarks.ready}
           error={bookmarks.error ? <ErrorNotice retry={bookmarks.retry}>{bookmarks.error}</ErrorNotice> : publicState.error ? <ErrorNotice retry={() => setRefresh(r => r + 1)}>{publicState.error}</ErrorNotice> : null}
-          page={publicPage} onPage={setPublicPage} savedIds={bookmarks.ids} onSave={bookmarks.toggle} onMenu={setMenuRecord} activityCounts={activity.counts} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} onAccount={() => setDialog({ type: 'account' })} />
+          page={publicPage} onPage={setPublicPage} savedIds={bookmarks.ids} onSave={bookmarks.toggle} activityCounts={activity.counts} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} onAccount={() => setDialog({ type: 'account' })} />
       : <Catalog view={route.view} records={displayed} total={publicMode ? publicState.count : displayed.length} loading={publicMode ? publicState.loading : !ready}
           error={publicMode && publicState.error ? <ErrorNotice retry={() => setRefresh(r => r + 1)}>{publicState.error}</ErrorNotice> : null}
           query={query} onQuery={setQuery} region={region} onRegion={setRegion}
-          filters={filters} onFilters={setFilters} sort={sort} onSort={setSort} onReset={resetSearch} savedIds={bookmarks.ids} onSave={bookmarks.toggle} onMenu={setMenuRecord} activityCounts={activity.counts} searchRef={searchRef} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select}
+          filters={filters} onFilters={setFilters} sort={sort} onSort={setSort} onReset={resetSearch} savedIds={bookmarks.ids} onSave={bookmarks.toggle} activityCounts={activity.counts} searchRef={searchRef} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select}
           owned={owned} ownedReady={ownedReady} ready={ready} onCreate={() => create('presentation')}
           blankCount={publicMode ? 0 : records.filter(r => isBlankRecord(r) && !owned.some(p => p.id === r.id && p.is_public)).length} onCleanup={cleanupBlankRecords}>
         {publicMode && publicState.count > PAGE_SIZE && <div className="pagination"><button className="secondary" disabled={publicPage === 0 || publicState.loading} onClick={() => setPublicPage(p => p - 1)}>前へ</button><span>{publicPage + 1} / {Math.ceil(publicState.count / PAGE_SIZE)}</span><button className="secondary" disabled={(publicPage + 1) * PAGE_SIZE >= publicState.count || publicState.loading} onClick={() => setPublicPage(p => p + 1)}>次へ</button></div>}
@@ -280,10 +290,6 @@ function App() {
     {!!selected.length && route.view !== 'compare' && <div className="compare-tray print-hidden"><span>{selected.length}件を選択中</span><a href="#/compare">並べて比較する</a><button onClick={() => setSelected([])}>解除</button></div>}
     <nav className="mobile-nav print-hidden" aria-label="モバイルナビゲーション">{NAV.map(([id, label, icon]) => <a key={id} href={`#/${id}`} aria-current={currentTab(id, route.view) ? 'page' : undefined} aria-label={id === 'talks' && activity.total > 0 ? '対話（新着の指摘あり）' : undefined}><span className="nav-icon">{id === 'talks' && activity.total > 0 && <i className="notify-dot" aria-hidden="true" />}<Icon name={icon} size={23} /></span><span>{label}</span></a>)}</nav>
     {toast && <div className="toast print-hidden" role="status">{toast}</div>}
-    {menuRecord && <CardMenu key={menuRecord.id} record={menuRecord} session={session} saved={bookmarks.ids.includes(menuRecord.id)}
-      onSave={() => session ? bookmarks.toggle(menuRecord) : accountFromMenu()}
-      following={follows.ids.includes(menuRecord.publication?.owner)} onFollow={() => follows.toggle(menuRecord.publication?.owner, menuRecord.meta?.author || '発表者')}
-      onClose={() => setMenuRecord(null)} onAccount={accountFromMenu} notify={setToast} />}
     {dialog?.type === 'account' && <Account session={session} name={name} onName={rename} flush={flush} onClose={() => setDialog(null)} />}
     {dialog?.type === 'publish' && <Dialog title="公開する内容を確認" wide onClose={busy ? () => {} : () => setDialog(null)}><p className="notice">以下の本文・名前・地域・数字・写真・添付資料・資料リンクが、ログインなしで誰でも読めるようになります。個人情報や他人の未公開情報が含まれていないか確認してください。</p>
       <div className="publish-preview"><RecordBody record={dialog.record} /></div>

@@ -136,7 +136,8 @@ export default function useWorkspace() {
     const cached = persist()
     setStatus(cached ? (s.session ? '端末に保存・同期中…' : 'この端末に保存') : '保存できていません')
     clearTimeout(timer.current); timer.current = setTimeout(flush, 800)
-    return record
+    // 端末への保存に失敗したときは null を返し、呼び出し側が「保存できた」扱いにしないようにする。
+    return cached ? record : null
   }, [flush, persist])
 
   const remove = useCallback(async id => {

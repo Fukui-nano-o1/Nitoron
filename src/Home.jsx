@@ -39,11 +39,11 @@ function HomeRow({ row, renderCard }) {
   </section>
 }
 
-export default function Home({ savedIds, onSave, onMenu, keyOf, selectedKeys, onSelect, searchRef }) {
+export default function Home({ savedIds, onSave, keyOf, selectedKeys, onSelect, searchRef }) {
   const [query, setQuery] = useState(''), [region, setRegion] = useState(''), [filterOpen, setFilterOpen] = useState(false)
   // 検索確定・条件適用の時点で結果ページへ移動する（入力中は履歴もURLも変えない）。
   const go = (filters = EMPTY_FILTERS) => { location.hash = searchHref({ ...BASE, query, region, filters }) }
-  const renderCard = r => <RecordCard key={r.id} record={r} href={`#/public/${r.id}`} publicMode selected={selectedKeys.includes(keyOf(r))} onSelect={onSelect} saved={savedIds.includes(r.id)} onSave={onSave} onMenu={onMenu} />
+  const renderCard = r => <RecordCard key={r.id} record={r} href={`#/public/${r.id}`} publicMode selected={selectedKeys.includes(keyOf(r))} onSelect={onSelect} saved={savedIds.includes(r.id)} onSave={onSave} />
   return <section className="catalog">
     <div className="search-area"><SearchPill query={query} onQuery={setQuery} region={region} onRegion={setRegion} searchRef={searchRef} onFilter={() => setFilterOpen(true)} onSubmit={go} /></div>
     <div className="home-rows">{HOME_ROWS.map(row => <HomeRow key={row.key} row={row} renderCard={renderCard} />)}</div>
