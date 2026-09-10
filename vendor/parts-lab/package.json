@@ -1,0 +1,1 @@
+{"name":"tractor-parts-lab","private":true,"type":"module","description":"Schematic tractor model and maintenance location demonstration","scripts":{"export":"node scripts/export-model.mjs"}}

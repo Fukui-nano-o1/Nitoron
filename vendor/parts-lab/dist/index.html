@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1f3f5">
+  <meta name="description" content="SKP-101Wの公式資料を参照した3Dモデル。部品を選び、症状から確認箇所と説明書のページをたどる。">
+  <title>SKP-101W — PARTS LAB</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wordmark">PARTS LAB<span class="slash">/</span><span class="wordmark-sub">農機の構造と点検</span></div>
+    <label class="model-picker"><span>機種</span><select id="model-select" aria-label="機種"><option value="skp">SKP-101W</option><option value="tractor">汎用トラクター</option></select></label>
+  </header>
+  <main class="workspace">
+    <section class="viewer" aria-label="農業機械の3D表示">
+      <div class="viewer-title"><div id="model-kicker" class="eyebrow">KUBOTA / VEGETABLE TRANSPLANTER</div><h1 id="model-title">SKP-101W</h1><div id="model-subtitle">歩行型全自動野菜移植機 · 往復2条</div><div id="model-note" class="model-note">カタログ参照・外観近似モデル</div></div>
+      <div id="canvas-wrap"><div id="load-state" role="status">3Dモデルを準備しています</div></div>
+      <div id="part-tag" class="part-tag" hidden><span id="tag-number"></span><span id="tag-name"></span></div>
+      <div class="view-tools" aria-label="視点の操作">
+        <select id="view-preset" aria-label="見る方向"><option value="home">斜め</option><option value="front">正面</option><option value="back">背面</option><option value="left">左側</option><option value="right">右側</option><option value="top">上面</option><option value="bottom">底面</option><option value="fit">範囲に合わせる</option></select>
+        <button id="zoom-in" title="拡大" aria-label="拡大">＋</button>
+        <button id="zoom-out" title="縮小" aria-label="縮小">−</button>
+      </div>
+      <div class="viewer-hint" id="camera-note">1本指で回転 · 2本指で移動・拡大</div>
+      <div class="model-controls">
+        <div class="explode-head"><label id="explode-label" for="explode">分解する</label><output id="explode-value" for="explode">0<span>%</span></output></div>
+        <input id="explode" type="range" min="0" max="100" value="0" aria-label="分解の進み具合">
+        <div class="range-ends"><span>組立</span><span>分解</span></div>
+        <div class="control-actions"><button id="drag-mode" aria-pressed="false">移動する</button><button id="shell-toggle" aria-pressed="false">外装を透過</button><button id="rotate-toggle" aria-pressed="false">自動回転</button><button id="reset">元に戻す</button></div>
+      </div>
+    </section>
+    <aside class="inspector">
+      <div class="tabs" role="tablist" aria-label="表示内容"><button id="tab-parts" role="tab" aria-selected="true" aria-controls="parts-panel">部品を見る</button><button id="tab-symptoms" role="tab" aria-selected="false" aria-controls="symptoms-panel">症状から見る</button></div>
+      <section id="parts-panel" role="tabpanel" aria-labelledby="tab-parts">
+        <div class="hierarchy-nav"><button id="back-level" hidden>一つ戻る</button><nav id="assembly-path" aria-label="部品の階層"></nav></div>
+        <div class="part-detail" aria-live="polite">
+          <div id="detail-index" class="eyebrow">ASSEMBLY OVERVIEW</div>
+          <h2 id="detail-name">部品から、説明書へ。</h2>
+          <p id="detail-description">部品を選ぶと、役割と説明書の該当ページを確認できます。分解表示で位置関係を見てください。</p>
+          <a id="part-manual" class="part-manual" target="_blank" rel="noopener" hidden></a>
+          <div id="selected-actions" class="selected-actions" hidden><button id="focus-part">この部品を回転中心に</button><button id="isolate-part" aria-pressed="false">単体で見る</button></div>
+          <button id="drill-part" class="drill-button" hidden>内部を見る</button><p id="detail-limit" class="detail-limit" hidden></p>
+          <div id="part-fact" class="part-fact" hidden></div>
+        </div>
+        <section id="related-panel" class="related-panel" hidden aria-label="関連する不具合と症状"><div class="related-switch" role="group" aria-label="関連情報の切替"><button data-related-mode="faults" aria-pressed="true">不具合</button><button data-related-mode="symptoms" aria-pressed="false">症状</button></div><p id="related-note"></p><div id="related-list"></div></section>
+        <div class="list-header"><h3 id="list-title">部品群</h3><span id="parts-count"></span></div>
+        <div id="part-list" class="part-list"></div>
+
+      </section>
+      <section id="symptoms-panel" role="tabpanel" aria-labelledby="tab-symptoms" hidden>
+        <div class="symptom-intro"><div class="eyebrow">INSPECTION GUIDE</div><h2>どんな症状ですか？</h2><p id="symptom-description">苗・ほ場・機械を順に確認します。回答は確認メモに残せます。</p></div>
+        <div id="symptom-options" class="symptom-options"></div>
+        <div id="guide" class="guide" hidden aria-live="polite"><div class="eyebrow">3D点検デモ <span id="step-count"></span></div><h3 id="step-title"></h3><p id="step-text"></p><fieldset id="guide-question" hidden><legend id="question-text"></legend><div class="answer-options"><button data-answer="yes">ある</button><button data-answer="no">見当たらない</button><button data-answer="unknown">未確認</button></div><p id="answer-note"></p></fieldset><div class="step-nav"><button id="step-prev">前へ</button><div id="step-dots" aria-hidden="true"></div><button id="step-next">次へ</button></div><a id="guide-source" target="_blank" rel="noopener">メーカーの点検資料 ↗</a><div class="source-date">確認日：2026年9月9日</div><details id="inspection-note" hidden><summary>今回の確認メモ</summary><div id="inspection-results"></div><button id="copy-note">メモをコピー</button><span id="copy-status" role="status"></span></details></div>
+        <div class="photo-section"><h3>損傷写真を添える</h3><label class="photo-input">写真を選ぶ<input id="photo-input" type="file" accept="image/*"></label><div id="photo-preview" hidden><img id="photo-image" alt="選択した損傷箇所の写真"><button id="remove-photo">写真を外す</button></div><p id="photo-status">写真はこの画面で参照できます。画像の自動診断は未搭載です。</p></div>
+      </section>
+      <footer class="inspector-footer"><details><summary>このモデルの精度と出典</summary><div id="source-details"><p>外観・構造は模式表現です。全体の外形寸法を公表諸元に合わせています。個々の部品寸法・隠れた機構は未検証です。</p></div></details><a id="download-link" class="download-link" href="./skp-101w.glb" download="skp-101w.glb">3Dモデルを保存 <span>GLB ↓</span></a></footer>
+    </aside>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

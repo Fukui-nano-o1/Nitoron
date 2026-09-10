@@ -1,54 +1,80 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { newRecord, toRow, fromRow, snapshot, publicSnapshot, publicationKey, publishedDiffers, sanitizeMeta, sanitizeMachineRef, isBlankRecord } from '../src/domain.js'
-import { MACHINE_SUBJECT, WHOLE_MACHINE, resolveMachineRef, machineTargetLabel } from '../src/machine-domain.js'
+import { newRecord, toRow, fromRow, publicSnapshot, publicationKey, publishedDiffers, sanitizeMeta, sanitizeMachineRef, isBlankRecord } from '../src/domain.js'
+import { MACHINE_SUBJECT, MODEL_VERSION, ROOT_PART_ID, resolveMachineRef, resolveMachineTarget } from '../src/machine-domain.js'
 
-const repairRecord = (partId = 'engine-carburetor') => {
+const ref = partId => ({ machineId: 'skp-101w', partId, modelVersion: MODEL_VERSION })
+const repairRecord = partId => {
   const r = newRecord('trouble', '発表者')
-  r.title = 'キャブレターの詰まり'
+  r.title = '修理記録'
   r.meta.subject = MACHINE_SUBJECT
-  r.meta.machineRef = { machineId: 'skp-101w', partId, modelVersion: 'v4' }
+  r.meta.machineRef = ref(partId)
   return r
 }
 
-test('機械参照は保存→再読込→公開スナップショットの往復で一致する', () => {
-  const r = repairRecord()
-  const restored = fromRow(toRow(r, 'owner'))
-  assert.equal(restored.meta.subject, MACHINE_SUBJECT)
-  assert.deepEqual(restored.meta.machineRef, { machineId: 'skp-101w', partId: 'engine-carburetor', modelVersion: 'v4' })
-  const published = fromRow(publicSnapshot(r))
-  assert.deepEqual(published.meta.machineRef, r.meta.machineRef)
-  assert.equal(publicationKey(r), publicationKey(restored))
+test('実IDが保存→再読込→公開スナップショット→提供resolverまで一致する', () => {
+  // 全体・外装・内部・深い階層。全体は保存するpartIdが'machine'で、resolverの状態名がwhole。
+  const cases = [[ROOT_PART_ID, 'whole', 'SKP-101W'], ['bonnet', 'resolved', 'ボンネット'],
+    ['aircleaner__element', 'resolved', 'エアクリーナエレメント'], ['frontL__fasteners__a0__bolt', 'resolved', 'ボルト（形状・本数未確認）']]
+  assert.equal(ROOT_PART_ID, 'machine')
+  for (const [partId, status, name] of cases) {
+    const r = repairRecord(partId)
+    const restored = fromRow(toRow(r, 'owner'))
+    assert.deepEqual(restored.meta.machineRef, ref(partId))
+    assert.equal(restored.meta.subject, MACHINE_SUBJECT)
+    const published = fromRow(publicSnapshot(restored))
+    assert.deepEqual(published.meta.machineRef, ref(partId))
+    const resolution = resolveMachineRef(published.meta.machineRef)
+    assert.equal(resolution.status, status)
+    assert.equal(resolution.node.name, name)
+    assert.equal(publicationKey(r), publicationKey(restored))
+  }
 })
 
-test('対象部品の変更は「公開版と異なる変更」として検出される', () => {
-  const r = repairRecord()
+test('対象部品の変更は公開差分として検出される', () => {
+  const r = repairRecord('bonnet')
   const publishedSnapshot = publicSnapshot(r)
   assert.equal(publishedDiffers(r, publishedSnapshot), false)
-  r.meta.machineRef = { ...r.meta.machineRef, partId: 'wheel-left' }
+  r.meta.machineRef = ref('aircleaner__element')
   assert.equal(publishedDiffers(r, publishedSnapshot), true)
 })
 
-test('旧形式・不正な機械参照は通常記録として安全に読める', () => {
-  // 分野⑦以前の記録：キーなし → 既定値
-  const legacy = sanitizeMeta({ kind: 'presentation', summary: '旧記録' })
-  assert.equal(legacy.subject, ''); assert.equal(legacy.machineRef, null)
-  // 未知の subject は通常扱い。machineId のない参照は保存しない
+test('未知のID・版・機種は値を書き換えずに保持し、状態だけで区別する', () => {
+  // 正常な文字列形式なら、現在のカタログにないIDも読み込み時に消さない・変換しない
+  const unknowns = [
+    [{ machineId: 'skp-101w', partId: 'no-such-part', modelVersion: MODEL_VERSION }, 'unknown-part'],
+    [{ machineId: 'skp-101w', partId: 'bonnet', modelVersion: 'skp-101w@0000000' }, 'unknown-version'],
+    [{ machineId: 'other-machine', partId: 'bonnet', modelVersion: MODEL_VERSION }, 'unknown-machine'],
+  ]
+  for (const [raw, status] of unknowns) {
+    const kept = sanitizeMachineRef(raw)
+    assert.deepEqual(kept, raw)
+    const target = resolveMachineTarget({ subject: MACHINE_SUBJECT, machineRef: kept })
+    assert.equal(target.status, status)
+    assert.match(target.label, /対象部品を確認できません/)
+  }
+  assert.equal(resolveMachineTarget({ subject: MACHINE_SUBJECT, machineRef: ref('') }).status, 'unselected')
+  assert.equal(resolveMachineTarget({ subject: MACHINE_SUBJECT, machineRef: null }).status, 'unselected')
+})
+
+test('旧形式・不正な参照は通常記録として安全に読める', () => {
+  const legacy = sanitizeMeta({ kind: 'presentation', summary: '分野⑦以前の記録' })
+  assert.equal(legacy.subject, 'normal'); assert.equal(legacy.machineRef, null)
   const odd = sanitizeMeta({ subject: 'spaceship', machineRef: { partId: 'x' } })
-  assert.equal(odd.subject, ''); assert.equal(odd.machineRef, null)
+  assert.equal(odd.subject, 'normal'); assert.equal(odd.machineRef, null)
   for (const bad of [null, 'skp-101w', ['skp-101w'], { machineId: '' }, { machineId: 42 }]) assert.equal(sanitizeMachineRef(bad), null)
-  // partId・modelVersion の欠落は空文字（未選択）へ丸める
+  // 欠落した partId・modelVersion は空文字のまま。機種・版・全体IDを補完しない
   assert.deepEqual(sanitizeMachineRef({ machineId: 'skp-101w' }), { machineId: 'skp-101w', partId: '', modelVersion: '' })
 })
 
 test('通常への切替で機械参照を消さず、入力モードの判定にも影響しない', () => {
-  const r = repairRecord()
-  r.meta.subject = '' // 通常へ切替
+  const r = repairRecord('bonnet')
+  r.meta.subject = 'normal'
   const restored = fromRow(toRow(r))
-  assert.deepEqual(restored.meta.machineRef, { machineId: 'skp-101w', partId: 'engine-carburetor', modelVersion: 'v4' })
-  assert.equal(restored.meta.subject, '')
-  // 機械参照だけの記録がフリー入力から項目モードへ勝手に切り替わらない
+  assert.deepEqual(restored.meta.machineRef, ref('bonnet'))
+  assert.equal(restored.meta.subject, 'normal')
   assert.equal(restored.meta.inputMode, 'free')
+  assert.equal(resolveMachineTarget(restored.meta).status, 'none')
 })
 
 test('機械修理の選択だけでも空の記録として捨てられない', () => {
@@ -57,24 +83,14 @@ test('機械修理の選択だけでも空の記録として捨てられない',
   r.meta.subject = MACHINE_SUBJECT
   assert.equal(isBlankRecord(r), false)
   const withRef = newRecord('trouble')
-  withRef.meta.machineRef = { machineId: 'skp-101w', partId: '', modelVersion: '' }
+  withRef.meta.machineRef = ref('')
   assert.equal(isBlankRecord(withRef), false)
 })
 
-test('全体指定・部品未指定・不明ID・未知のモデル版を区別する', () => {
-  const meta = partial => ({ subject: MACHINE_SUBJECT, machineRef: { machineId: 'skp-101w', partId: '', modelVersion: '', ...partial } })
-  assert.equal(resolveMachineRef({ subject: '' }).status, 'none')
-  assert.equal(resolveMachineRef({ subject: MACHINE_SUBJECT, machineRef: null }).status, 'unselected')
-  assert.equal(resolveMachineRef(meta({})).status, 'unselected')
-  assert.equal(resolveMachineRef(meta({ partId: WHOLE_MACHINE })).status, 'whole')
-  assert.equal(resolveMachineRef({ subject: MACHINE_SUBJECT, machineRef: { machineId: 'unknown-tractor', partId: 'p1', modelVersion: 'v1' } }).status, 'unknown-machine')
-  // 部品カタログ未登録の間、具体的な部品IDは未知のモデル版として扱う（推測で部品に割り当てない）
-  assert.equal(resolveMachineRef(meta({ partId: 'engine-carburetor', modelVersion: 'v4' })).status, 'unknown-version')
-})
-
 test('対象表示はズームを見なくても対象が分かる', () => {
-  assert.equal(machineTargetLabel(resolveMachineRef({ subject: '' })), '')
-  assert.equal(machineTargetLabel(resolveMachineRef({ subject: MACHINE_SUBJECT, machineRef: { machineId: 'skp-101w', partId: WHOLE_MACHINE, modelVersion: '' } })), 'クボタ SKP-101W · 機械全体')
-  assert.equal(machineTargetLabel(resolveMachineRef({ subject: MACHINE_SUBJECT, machineRef: null })), '機種・部品未選択')
-  assert.match(machineTargetLabel(resolveMachineRef({ subject: MACHINE_SUBJECT, machineRef: { machineId: 'skp-101w', partId: 'p', modelVersion: 'v9' } })), /対象部品を確認できません/)
+  assert.equal(resolveMachineTarget({ subject: 'normal' }).label, '')
+  assert.equal(resolveMachineTarget({ subject: MACHINE_SUBJECT, machineRef: ref(ROOT_PART_ID) }).label, 'SKP-101W · 機械全体')
+  assert.equal(resolveMachineTarget({ subject: MACHINE_SUBJECT, machineRef: ref('bonnet') }).label, 'SKP-101W · ボンネット')
+  assert.equal(resolveMachineTarget({ subject: MACHINE_SUBJECT, machineRef: null }).label, '機種・部品未選択')
+  assert.equal(resolveMachineTarget({ subject: MACHINE_SUBJECT, machineRef: ref('') }).label, 'SKP-101W · 部品未選択')
 })

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>機械ホスト・手動確認用</title>
+<style>body{font:16px system-ui;margin:24px;color:#222}main{display:flex;gap:20px;flex-wrap:wrap}.surface{width:min(390px,90vw);height:390px;background:#f4f4f4}button,select{font:inherit;padding:10px;margin:6px 0}img{width:160px}output{display:block;white-space:pre-wrap;margin:16px 0}</style>
+<h1>共有3Dホストの確認用</h1>
+<p>Nitoronの入力画面ではありません。ブラウザ描画・資源切替の確認に使います。</p>
+<button id="poster">全体画像を生成</button><img id="image" alt="全体画像">
+<main><section><h2>カード側</h2><div id="card" class="surface"></div><button id="preview">内部部品のプレビュー</button><button id="release">解除</button></section>
+<section><h2>解体新書側</h2><div id="inspect" class="surface"></div><button id="open">選択ビューを開く</button><select id="scope"></select><button id="expand">この階層を分解表示</button><button id="pan">移動モード</button><button id="rotate">回転モード</button></section></main>
+<button id="dispose">全資源を破棄</button><output id="status"></output>
+<script type="module">
+import {getSharedMachineHost} from '../src/machine/engine/host.js';
+import {NODES,MACHINE_ID,MODEL_VERSION} from '../src/machine/catalog.js';
+const host=getSharedMachineHost();let request=null,lease=null;
+const $=id=>document.getElementById(id),ref=partId=>({machineId:MACHINE_ID,modelVersion:MODEL_VERSION,partId});
+const show=value=>{$('status').textContent=JSON.stringify({value,host:host.state},null,2);};
+for(const n of NODES.filter(n=>n.children.length))$('scope').add(new Option(n.name,n.id));
+const options={onError:error=>show(error.message),onRelease:reason=>show(reason)};
+$('poster').onclick=async()=>{try{$('image').src=await host.getPoster();show('poster');}catch(e){show(e.message);}};
+$('preview').onclick=async()=>{request?.cancel();request=host.acquire($('card'),options);lease=await request.ready;lease?.focus(ref('aircleaner__element'));show('preview');};
+$('release').onclick=()=>{request?.cancel();show('release');};
+$('open').onclick=async()=>{request?.cancel();request=host.acquire($('inspect'),{...options,mode:'inspect',onPick:value=>{lease?.select(value);show(value);}});lease=await request.ready;show('inspect');};
+$('expand').onclick=()=>{lease?.setScope($('scope').value,.8);show($('scope').value);};
+$('pan').onclick=()=>lease?.setDragMode(true);$('rotate').onclick=()=>lease?.setDragMode(false);
+$('dispose').onclick=()=>{host.dispose();show('disposed');};
+</script></html>
