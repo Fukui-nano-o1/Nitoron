@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { newRecord, isBlankRecord, toRow, fromRow, snapshot, matches, number, per10a, publicationProblems, publicationAdvice, publicationKey, publishedDiffers, deriveRecord, deriveNextChallenge, deriveLearning, mergeRecords, exportMarkdown, safeUrl, sanitizeMeta } from '../src/domain.js'
+import { newRecord, isBlankRecord, toRow, fromRow, snapshot, matches, number, per10a, publicationProblems, publicationAdvice, publicationKey, publishedDiffers, publicSnapshot, deriveRecord, deriveNextChallenge, deriveLearning, mergeRecords, exportMarkdown, safeUrl, sanitizeMeta } from '../src/domain.js'
 
 test('既存メモの文章・ブロック・完了状態を引き継ぐ', () => {
   const original = { id: crypto.randomUUID(), title: '既存の記録', type: 'タスク', category: '畑', date: '2026-08-20', blocks: [{ id: 'b', type: 'todo', text: '測定する', checked: true }] }
@@ -147,4 +147,21 @@ test('本人の判定は既定で空、許可された値だけを保持する',
   assert.equal(newRecord('challenge').meta.verdict, '')
   assert.equal(sanitizeMeta({ kind: 'challenge', verdict: '達成' }).verdict, '達成')
   assert.equal(sanitizeMeta({ kind: 'challenge', verdict: '証明済み' }).verdict, '')
+})
+
+test('公開用snapshotは非公開の参照元のタイトル・IDを含めず、公開中の参照元と本人の記録・書き出しには残す', () => {
+  const src = newRecord('challenge'); src.title = '私的な挑戦'
+  const derived = deriveRecord(src, 'challenge', '自分'); derived.title = '派生した挑戦'
+  assert.deepEqual(derived.meta.origin, { id: src.id, title: '私的な挑戦', public: false })
+  const pub = publicSnapshot(derived)
+  assert.deepEqual(pub.meta.origin, { id: '', title: '', public: false })
+  assert.equal(JSON.stringify(pub).includes('私的な挑戦'), false); assert.equal(JSON.stringify(pub).includes(src.id), false)
+  assert.deepEqual(derived.meta.origin, { id: src.id, title: '私的な挑戦', public: false }, '元の記録は変更しない')
+  assert.deepEqual(snapshot(derived).meta.origin, derived.meta.origin, '書き出し用のsnapshotには残す')
+  assert.deepEqual(fromRow(toRow(derived)).meta.origin, derived.meta.origin, '保存する記録には残す')
+  const publicSrc = { ...src, publication: { id: src.id, isPublic: true } }
+  const fromPublic = deriveRecord(publicSrc, 'challenge', '自分')
+  assert.deepEqual(publicSnapshot(fromPublic).meta.origin, { id: src.id, title: '私的な挑戦', public: true })
+  // 公開版との比較は公開用の内容で行い、非公開の参照元の有無だけでは差分にならない
+  assert.equal(publishedDiffers(derived, pub), false)
 })

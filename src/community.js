@@ -1,5 +1,5 @@
 import { supabase } from './supabase.js'
-import { fromRow, normalize, snapshot, publicationProblems } from './domain.js'
+import { fromRow, normalize, snapshot, publicSnapshot, publicationProblems } from './domain.js'
 import { EMPTY_FILTERS } from './search.js'
 export const PAGE_SIZE = 24
 export const FEEDBACK_KINDS = ['質問', '指摘', '提案', '試した結果']
@@ -83,7 +83,7 @@ export async function publishRecord(record, session) {
   if (!session?.user || session.user.is_anonymous || !session.user.email_confirmed_at) throw new Error('メールアドレスを確認してから公開してください。')
   const problems = publicationProblems(record)
   if (problems.length) throw new Error(problems.join('\n'))
-  const { error } = await supabase.from('nitoron_publications').upsert({ id: record.id, owner_id: session.user.id, snapshot: snapshot(record), is_public: true }).select('id').single()
+  const { error } = await supabase.from('nitoron_publications').upsert({ id: record.id, owner_id: session.user.id, snapshot: publicSnapshot(record), is_public: true }).select('id').single()
   if (error) throw new Error(message(error))
   return record.id
 }

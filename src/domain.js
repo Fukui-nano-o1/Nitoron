@@ -68,6 +68,13 @@ export function snapshot(record) {
   return { id: record.id, title: record.title, category: record.category, type: record.type, date: record.date,
     meta: record.meta ? structuredClone(record.meta) : null, blocks: structuredClone(record.blocks || []) }
 }
+// 公開用の snapshot。非公開の参照元は、自動付与されたタイトル・IDを公開内容に含めず「非公開の参照元がある」ことだけ残す。
+// 端末・クラウドの本人の記録（notes）と書き出しには元の参照元を残す（派生関係は維持）。表示側だけで隠す実装にはしない。
+export function publicSnapshot(record) {
+  const copy = snapshot(record)
+  if (copy.meta?.origin && !copy.meta.origin.public) copy.meta.origin = { id: '', title: '', public: false }
+  return copy
+}
 export const recordText = r => [r.title, r.category, r.type, ...(r.blocks || []).map(b => b.text),
   r.meta ? JSON.stringify(r.meta) : ''].join(' ')
 export const normalize = value => String(value || '').normalize('NFKC').toLocaleLowerCase().replace(/[ァ-ヶ]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60))
@@ -163,5 +170,5 @@ export function publicationAdvice(record) {
 // 公開対象の内容（snapshot）だけをキー順に依存せず比べる。同期情報や配列以外のキー順の違いでは変更扱いにしない。
 const stable = value => Array.isArray(value) ? `[${value.map(stable).join(',')}]`
   : value && typeof value === 'object' ? `{${Object.keys(value).sort().map(k => `${JSON.stringify(k)}:${stable(value[k])}`).join(',')}}` : JSON.stringify(value ?? null)
-export const publicationKey = record => stable(snapshot(fromRow(snapshot(record))))
+export const publicationKey = record => stable(publicSnapshot(fromRow(publicSnapshot(record))))
 export const publishedDiffers = (record, publishedSnapshot) => publicationKey(record) !== publicationKey(fromRow(publishedSnapshot))

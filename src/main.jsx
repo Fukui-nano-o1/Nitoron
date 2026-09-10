@@ -7,7 +7,7 @@ const Discussion = lazy(() => import('./Discussion.jsx'))
 const Account = lazy(() => import('./Account.jsx'))
 const Talks = lazy(() => import('./Talks.jsx'))
 import { supabase } from './supabase.js'
-import { newRecord, deriveRecord, deriveLearning, deriveNextChallenge, snapshot, publicationKey, fromRow, uid, today, isBlankRecord } from './domain.js'
+import { newRecord, deriveRecord, deriveLearning, deriveNextChallenge, snapshot, publicSnapshot, publicationKey, fromRow, uid, today, isBlankRecord } from './domain.js'
 import { listPublic, getPublic, getOwned, getOwnPublication, publishRecord, unpublishRecord, PAGE_SIZE } from './community.js'
 import { Dialog, Empty, ErrorNotice, download } from './ui.jsx'
 import SiteHeader, { NAV, currentTab } from './SiteHeader.jsx'
@@ -293,7 +293,7 @@ function App() {
   const publishNow = async () => {
     const record = editorRecord
     if (!record || publishing) return
-    const shown = snapshot(record), shownKey = publicationKey(shown)
+    const shown = publicSnapshot(record), shownKey = publicationKey(shown)
     setPublishing(true); setPublishResult(null)
     try {
       if (!await flush()) throw new Error('下書きのクラウド保存が完了していません。保存状態の「再試行」を押してから、もう一度公開してください。')

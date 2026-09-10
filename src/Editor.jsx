@@ -5,7 +5,7 @@ import Attachments from './Attachments.jsx'
 import PublicRecord from './PublicRecord.jsx'
 import ReportDialog from './ReportDialog.jsx'
 import Icon from './Icon.jsx'
-import { KINDS, PHASES, VERDICTS, SECTIONS, METRICS, emptyMeta, today, uid, exportMarkdown, snapshot, publicationProblems, publicationAdvice, publishedDiffers } from './domain.js'
+import { KINDS, PHASES, VERDICTS, SECTIONS, METRICS, emptyMeta, today, uid, exportMarkdown, publicSnapshot, publicationProblems, publicationAdvice, publishedDiffers } from './domain.js'
 import { Field, Dialog, ErrorNotice, download } from './ui.jsx'
 
 export const STEPS = [['basics', '基本情報'], ['content', '内容・資料'], ['review', '確認・公開']]
@@ -73,7 +73,7 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
       : <Field label="学びと次の一手" help="次に変えること・続けること・やめること。次の挑戦の仮説に引き継げます。"><textarea rows={3} maxLength={20000} value={m.learning} onChange={e => meta({ learning: e.target.value })} placeholder="次に変えること・続けること・やめること" /></Field>}
     {derivedActions}
   </section>
-  const preview = useMemo(() => ({ ...snapshot(record), publication: { id: record.id, owner: session?.user.id || null, publishedAt: publication?.row?.published_at, updatedAt: publication?.row?.updated_at || new Date().toISOString().slice(0, 10), isPublic: published } }), [record, session?.user.id, publication?.row?.updated_at, published])
+  const preview = useMemo(() => ({ ...publicSnapshot(record), publication: { id: record.id, owner: session?.user.id || null, publishedAt: publication?.row?.published_at, updatedAt: publication?.row?.updated_at || new Date().toISOString().slice(0, 10), isPublic: published } }), [record, session?.user.id, publication?.row?.updated_at, published])
   const differs = publication?.row?.snapshot ? publishedDiffers(record, publication.row.snapshot) : null
   const next = () => onStep(STEPS[index + 1][0]), prev = () => onStep(STEPS[index - 1][0])
   return <>
