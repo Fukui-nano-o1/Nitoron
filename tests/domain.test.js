@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { newRecord, isBlankRecord, toRow, fromRow, snapshot, matches, number, per10a, publicationProblems, deriveRecord, mergeRecords, exportMarkdown, safeUrl, sanitizeMeta } from '../src/domain.js'
+import { newRecord, isBlankRecord, toRow, fromRow, snapshot, matches, number, per10a, publicationProblems, publicationAdvice, publicationKey, publishedDiffers, deriveRecord, mergeRecords, exportMarkdown, safeUrl, sanitizeMeta } from '../src/domain.js'
 
 test('既存メモの文章・ブロック・完了状態を引き継ぐ', () => {
   const original = { id: crypto.randomUUID(), title: '既存の記録', type: 'タスク', category: '畑', date: '2026-08-20', blocks: [{ id: 'b', type: 'todo', text: '測定する', checked: true }] }
@@ -87,4 +87,38 @@ test('空の記録の判定は自動入力の発表者名を無視し、入力�
   const withNumbers = newRecord(); withNumbers.meta.revenue = '1000'; assert.equal(isBlankRecord(withNumbers), false)
   const withPhoto = newRecord(); withPhoto.meta.coverUrl = 'https://example.com/a.jpg'; assert.equal(isBlankRecord(withPhoto), false)
   const derived = deriveRecord({ id: 'src', title: '先行事例', meta: null }, 'challenge'); assert.equal(isBlankRecord(derived), false)
+})
+
+test('推奨項目は発表と挑戦で異なり、公開を止める問題とは別に返す', () => {
+  const r = newRecord(); r.title = 'タイトルだけ'
+  assert.deepEqual(publicationProblems(r), [])
+  const advice = publicationAdvice(r)
+  assert.ok(advice.some(a => a.includes('作物')) && advice.some(a => a.includes('地域')) && advice.some(a => a.includes('要約')) && advice.some(a => a.includes('観測')))
+  assert.ok(!advice.some(a => a.includes('目標')))
+  const c = newRecord('challenge'); c.title = '挑戦'
+  const ca = publicationAdvice(c)
+  assert.ok(ca.some(a => a.includes('目標')) && ca.some(a => a.includes('判定基準')) && !ca.some(a => a.includes('要約')))
+  Object.assign(c.meta, { target: '収量1割増', criterion: '株重を10株測る', crop: '水稲', region: '新潟' })
+  assert.deepEqual(publicationAdvice(c), [])
+  assert.deepEqual(publicationAdvice({ id: 'x', title: 'メモ', blocks: [], meta: null }), [])
+})
+test('分類・入力モードを切り替えても入力済みの内容は残り、戻せば復元される', () => {
+  const r = newRecord('challenge'); Object.assign(r.meta, { target: '目標A', criterion: '基準B', summary: '要約C', issue: '課題D', revenue: '100' })
+  r.blocks = [{ id: 'b1', type: 'text', text: '本文E' }]
+  const asPresentation = { ...r, meta: { ...r.meta, kind: 'presentation', inputMode: 'free' } }
+  const back = fromRow(toRow({ ...asPresentation, meta: { ...asPresentation.meta, kind: 'challenge', inputMode: 'sections' } }))
+  assert.equal(back.meta.target, '目標A'); assert.equal(back.meta.criterion, '基準B'); assert.equal(back.meta.summary, '要約C'); assert.equal(back.meta.issue, '課題D'); assert.equal(back.meta.revenue, '100')
+  assert.equal(back.blocks[0].text, '本文E')
+})
+test('公開版との比較は公開対象の内容だけを見て、キー順や同期情報の違いでは変更扱いにしない', () => {
+  const r = newRecord(); r.title = '発表'; Object.assign(r.meta, { crop: 'トマト', observations: [{ id: 'o1', date: '2026-08-01', fact: '事実', conditions: '', evidence: '' }] })
+  const published = snapshot(r)
+  // キー順を入れ替え、同期情報を付けた公開版
+  const reordered = JSON.parse(JSON.stringify({ meta: { ...published.meta, observations: [{ evidence: '', conditions: '', fact: '事実', date: '2026-08-01', id: 'o1' }] }, blocks: published.blocks, title: published.title, id: published.id, date: published.date, category: published.category, type: published.type }))
+  assert.equal(publishedDiffers({ ...r, pending: true, user_id: 'x' }, reordered), false)
+  assert.equal(publicationKey(r), publicationKey(fromRow(published)))
+  const edited = { ...r, title: '発表（改）' }
+  assert.equal(publishedDiffers(edited, published), true)
+  const editedMeta = { ...r, meta: { ...r.meta, crop: 'ナス' } }
+  assert.equal(publishedDiffers(editedMeta, published), true)
 })

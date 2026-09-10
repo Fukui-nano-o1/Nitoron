@@ -65,6 +65,13 @@ export async function getUserPublic(ownerId) {
   if (error) throw new Error(message(error))
   return data.map(unpack)
 }
+// 本人の公開版（snapshot つき）。「公開版と異なる変更」の比較に使う。未公開・行なしは null。
+export async function getOwnPublication(id, userId) {
+  requireClient()
+  const { data, error } = await supabase.from('nitoron_publications').select('id,is_public,updated_at,snapshot').eq('id', id).eq('owner_id', userId).maybeSingle()
+  if (error) throw new Error(message(error))
+  return data
+}
 export async function getOwned(userId) {
   requireClient()
   const { data, error } = await supabase.from('nitoron_publications').select('id,is_public,updated_at').eq('owner_id', userId)

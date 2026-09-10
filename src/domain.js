@@ -124,3 +124,24 @@ export function exportMarkdown(r) {
 export function safeUrl(value) {
   try { const url = new URL(value); return ['https:', 'http:'].includes(url.protocol) ? url.href : null } catch { return null }
 }
+
+// 公開の推奨項目。未入力でも下書き保存・公開は止めない（止める条件は publicationProblems）。
+export function publicationAdvice(record) {
+  const m = record.meta
+  if (!m) return []
+  const advice = []
+  if (m.kind === 'challenge') {
+    if (!m.target.trim()) advice.push('目標が未入力です。何をどこまで変えるかを書くと、振り返りやすくなります。')
+    if (!m.criterion.trim()) advice.push('判定基準が未入力です。何を測って何と比べるかを書くと、結果を確かめられます。')
+  }
+  if (!m.crop.trim()) advice.push('作物が未入力です。検索と比較の条件に使われます。')
+  if (!m.region.trim()) advice.push('地域が未入力です。地域で探す人に見つけてもらえます。')
+  if (m.kind !== 'challenge' && !m.summary.trim()) advice.push('要約が未入力です。読む人が最初に試したことと分かったことをつかめます。')
+  if (m.kind !== 'challenge' && !m.observations.some(o => o.fact.trim())) advice.push('観測した事実がありません。日付・条件・根拠つきの事実が1件あると根拠が伝わります。')
+  return advice
+}
+// 公開対象の内容（snapshot）だけをキー順に依存せず比べる。同期情報や配列以外のキー順の違いでは変更扱いにしない。
+const stable = value => Array.isArray(value) ? `[${value.map(stable).join(',')}]`
+  : value && typeof value === 'object' ? `{${Object.keys(value).sort().map(k => `${JSON.stringify(k)}:${stable(value[k])}`).join(',')}}` : JSON.stringify(value ?? null)
+export const publicationKey = record => stable(snapshot(fromRow(snapshot(record))))
+export const publishedDiffers = (record, publishedSnapshot) => publicationKey(record) !== publicationKey(fromRow(publishedSnapshot))

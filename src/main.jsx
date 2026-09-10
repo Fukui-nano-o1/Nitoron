@@ -2,14 +2,13 @@ import React, { useEffect, useMemo, useRef, useState, lazy, Suspense } from 'rea
 import { createRoot } from 'react-dom/client'
 import useWorkspace from './useWorkspace.js'
 const Editor = lazy(() => import('./Editor.jsx'))
-import RecordBody from './RecordBody.jsx'
 const Compare = lazy(() => import('./Compare.jsx'))
 const Discussion = lazy(() => import('./Discussion.jsx'))
 const Account = lazy(() => import('./Account.jsx'))
 const Talks = lazy(() => import('./Talks.jsx'))
 import { supabase } from './supabase.js'
-import { newRecord, deriveRecord, snapshot, publicationProblems, fromRow, uid, today, isBlankRecord } from './domain.js'
-import { listPublic, getPublic, getOwned, publishRecord, unpublishRecord, PAGE_SIZE } from './community.js'
+import { newRecord, deriveRecord, snapshot, publicationKey, fromRow, uid, today, isBlankRecord } from './domain.js'
+import { listPublic, getPublic, getOwned, getOwnPublication, publishRecord, unpublishRecord, PAGE_SIZE } from './community.js'
 import { Dialog, Empty, ErrorNotice, download } from './ui.jsx'
 import SiteHeader, { NAV, currentTab } from './SiteHeader.jsx'
 import Catalog from './Catalog.jsx'
@@ -46,11 +45,16 @@ const listKeyOf = r => r.view === 'saved' ? `saved:${r.id || ''}` : r.view
 const scrollKeyOf = r => SCROLL_VIEWS.includes(r.view) ? (['user', 'list'].includes(r.view) ? `${r.view}:${r.id}` : listKeyOf(r)) : null
 // 比較の選択はID・種別・順序だけを sessionStorage に持ち、本文は再読込のたびに取り直す。
 const COMPARE_KEY = 'nitoron:compare:v1'
+// 編集の段階（基本情報→内容・資料→確認・公開）。段階の位置は利用者・記録ごとに端末へ持ち、本文の保存とは別に管理する。
+const STEP_KEYS = ['basics', 'content', 'review']
+const stepStorageKey = (owner, id) => `nitoron:record-step:v1:${owner || 'device'}:${id}`
 // 参照の同一性を保つため固定オブジェクトにする（毎回生成するとfiltersの同一性が崩れ、一覧取得のeffectがループする）。
 const LIST_DEFAULTS = Object.freeze({ query: '', region: '', filters: EMPTY_FILTERS, sort: 'recent', page: 0 })
 function App() {
   const workspace = useWorkspace()
-  const { records, ready, session, status, error, needsLogin, put, remove, flush, retry } = workspace
+  const { records, ready, session, status, error, needsLogin, sync, put, remove, flush, retry } = workspace
+  const recordsRef = useRef(records)
+  recordsRef.current = records
   const [route, setRoute] = useState(routeFromLocation)
   const routeRef = useRef(route)
   routeRef.current = route
@@ -83,7 +87,7 @@ function App() {
   const resetSearch = () => isSearch ? goSearch({ ...LIST_DEFAULTS }, true) : patchList({ query: '', region: '', filters: { ...EMPTY_FILTERS }, page: 0 })
   const [dialog, setDialog] = useState(null), [name, setName] = useState(() => { try { return localStorage.getItem('nitoron:name') || '' } catch { return '' } })
   const [selected, setSelected] = useState([]), [toast, setToast] = useState('')
-  const [busy, setBusy] = useState(false), [actionError, setActionError] = useState('')
+  const [actionError, setActionError] = useState('')
   const [publicState, setPublicState] = useState({ records: [], count: 0, loading: true, error: '' })
   const [refresh, setRefresh] = useState(0)
   const [publicRecord, setPublicRecord] = useState(null), [recordError, setRecordError] = useState('')
@@ -103,6 +107,8 @@ function App() {
   const heart = record => { if (!session) return openAccount(); if (bookmarks.ids.includes(record.id)) setSheetRecord(record); else bookmarks.toggle(record) }
   const follows = useFollows(session, setToast, openAccount)
   const [deriving, setDeriving] = useState(false)
+  const [publishing, setPublishing] = useState(false), [publishResult, setPublishResult] = useState(null)
+  const [ownPublication, setOwnPublication] = useState({ loading: false, error: '', row: null })
 
   const scrollStore = useRef({}), pendingScroll = useRef(null), navigated = useRef(false)
   useEffect(() => {
@@ -139,6 +145,27 @@ function App() {
   const backToList = () => { if (navigated.current) history.back(); else location.hash = '/discover' }
   const backFromCompare = () => { if (navigated.current) history.back(); else location.hash = '/saved' }
   useEffect(() => { setSheetRecord(null); setPicking(false) }, [route.view, route.id, session?.user.id])
+  // 記録の段階：URLの段階指定を優先し、なければ最後に開いた段階（端末保存）へ。段階を開くたびに位置を記録する。
+  useEffect(() => {
+    if (route.view !== 'record' || !route.id || !ready) return
+    const key = stepStorageKey(session?.user.id, route.id)
+    if (STEP_KEYS.includes(route.section)) { try { localStorage.setItem(key, route.section) } catch { /* 位置は任意 */ } return }
+    let last = null
+    try { last = localStorage.getItem(key) } catch { last = null }
+    const current = recordsRef.current.find(r => r.id === route.id)
+    const step = STEP_KEYS.includes(last) ? last : current && current.title.trim() ? 'content' : 'basics'
+    history.replaceState(history.state, '', `#/record/${route.id}/${step}`); setRoute(routeFromLocation())
+  }, [route.view, route.id, route.section, ready, session?.user.id])
+  useEffect(() => { setPublishResult(null) }, [route.view, route.id])
+  // 公開版（本人の snapshot）を取得し、「公開版と異なる変更」の比較に使う。取得失敗は「変更なし」と見せない。
+  const publishedNow = route.view === 'record' && owned.some(p => p.id === route.id && p.is_public)
+  useEffect(() => {
+    if (!publishedNow || !session) { setOwnPublication({ loading: false, error: '', row: null }); return }
+    let cancelled = false
+    setOwnPublication({ loading: true, error: '', row: null })
+    getOwnPublication(route.id, session.user.id).then(row => { if (!cancelled) setOwnPublication({ loading: false, error: '', row }) }).catch(e => { if (!cancelled) setOwnPublication({ loading: false, error: e.message, row: null }) })
+    return () => { cancelled = true }
+  }, [publishedNow, route.id, session?.user.id, refresh])
   useEffect(() => { if (!SEARCH_ENABLED) return; const keys = e => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (!searchRef.current) { location.hash = '/discover'; setTimeout(() => searchRef.current?.focus(), 0) } else searchRef.current.focus() } }; window.addEventListener('keydown', keys); return () => window.removeEventListener('keydown', keys) }, [])
   useEffect(() => { if (!toast) return; const t = setTimeout(() => setToast(''), 4500); return () => clearTimeout(t) }, [toast])
   useEffect(() => {
@@ -260,16 +287,23 @@ function App() {
       await navigator.clipboard.writeText(url); setToast('公開リンクをコピーしました。')
     } catch (e) { if (e.name !== 'AbortError') { setActionError(e.message || 'リンクを共有できませんでした。'); setDialog({ type: 'share', record }) } }
   }
-  const publish = async () => {
-    setBusy(true); setActionError('')
+  // 公開：確認画面で表示した snapshot をそのまま送る。保存待ちの間に編集が入ったら、その内容は公開せず中止する。
+  const publishNow = async () => {
+    const record = editorRecord
+    if (!record || publishing) return
+    const shown = snapshot(record), shownKey = publicationKey(shown)
+    setPublishing(true); setPublishResult(null)
     try {
-      if (!await flush()) throw new Error('下書きの保存を完了してから公開してください。')
-      await publishRecord(dialog.record, session); setDialog(null); setRefresh(r => r + 1); setToast('公開しました。リンクから誰でも読めます。')
-    } catch (e) { setActionError(e.message) } finally { setBusy(false) }
+      if (!await flush()) throw new Error('下書きのクラウド保存が完了していません。保存状態の「再試行」を押してから、もう一度公開してください。')
+      const latest = recordsRef.current.find(r => r.id === record.id)
+      if (!latest || publicationKey(latest) !== shownKey) throw new Error('保存中に編集が入ったため、公開を中止しました。確認画面の内容を見直してから、もう一度「公開する」を押してください。')
+      await publishRecord(shown, session)
+      setRefresh(r => r + 1); setPublishResult({ ok: true }); setToast('公開しました。リンクから誰でも読めます。')
+    } catch (e) { setPublishResult({ ok: false, message: e.message }) } finally { setPublishing(false) }
   }
   const stopPublication = async record => {
     if (!window.confirm('公開を停止しますか？ 共有リンクからも読めなくなります。指摘は保管されます。')) return
-    try { await unpublishRecord(record.id, session.user.id); setRefresh(r => r + 1); setToast('公開を停止しました。') } catch (e) { setToast(e.message) }
+    try { await unpublishRecord(record.id, session.user.id); setRefresh(r => r + 1); setPublishResult(null); setToast('公開を停止しました。下書きと指摘は残っています。') } catch (e) { setToast(e.message) }
   }
   const deleteRecord = async record => {
     // Re-read publication state before deleting; don't rely on a stale badge.
@@ -304,12 +338,14 @@ function App() {
     <a className="skip-link" href="#content" onClick={e => { e.preventDefault(); document.getElementById('content')?.focus() }}>本文へ移動</a>
     <SiteHeader view={route.view} name={name} notify={activity.total > 0} />
     <main id="content" tabIndex={-1} className="main-content">
-      {route.view === 'record' && <div className="save-bar print-hidden"><span role="status">{draft && route.id === draft.id && !records.some(r => r.id === draft.id) ? '未保存の下書き · 書き始めると自動保存します' : status}</span></div>}
       {error && <div className="workspace-error print-hidden"><ErrorNotice retry={retry}>{error}</ErrorNotice></div>}
       {!error && needsLogin && ['mine', 'record'].includes(route.view) && <div className="workspace-error print-hidden"><div className="notice" role="status"><span>記録はこの端末に保存しています。登録・ログインするとクラウドに保存し、公開や指摘ができます。</span> <button onClick={() => setDialog({ type: 'account' })}>登録・ログイン</button></div></div>}
-      {route.view === 'record' ? ready ? editorRecord ? <Editor key={editorRecord.id} record={editorRecord} discussion={owned.some(p => p.id === editorRecord.id) && <Discussion record={{ ...editorRecord, publication: { owner: session?.user.id, isPublic: owned.find(p => p.id === editorRecord.id)?.is_public } }} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} session={session} flush={flush} onChange={record => put(record, session?.user.id || null)} onPublish={() => { setActionError(''); setDialog({ type: 'publish', record: snapshot(editorRecord) }) }} onDelete={() => deleteRecord(editorRecord)} published={owned.some(p => p.id === editorRecord.id && p.is_public)} onUnpublish={() => stopPublication(editorRecord)} onShare={() => share(editorRecord)} /> : <Empty title="この記録は見つかりません" action={<a className="secondary" href="#/mine">自分の実践へ</a>}>保存したアカウントでログインしているか確認してください。</Empty> : <p className="loading" role="status">記録を読み込み中…</p>
+      {route.view === 'record' ? ready ? editorRecord ? <Editor key={editorRecord.id} record={editorRecord} step={STEP_KEYS.includes(route.section) ? route.section : 'basics'} onStep={step => { location.hash = `/record/${editorRecord.id}/${step}` }} discussion={owned.some(p => p.id === editorRecord.id) && <Discussion record={{ ...editorRecord, publication: { owner: session?.user.id, isPublic: owned.find(p => p.id === editorRecord.id)?.is_public } }} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} session={session} flush={flush}
+          save={{ status: draft && route.id === draft.id && !records.some(r => r.id === draft.id) ? '未保存の下書き · 書き始めると自動保存します' : status, error, retry, sync, session }}
+          onChange={record => put(record, session?.user.id || null)} published={owned.some(p => p.id === editorRecord.id && p.is_public)} publication={{ ...ownPublication, retry: () => setRefresh(r => r + 1) }}
+          onPublish={publishNow} publishing={publishing} publishResult={publishResult} onDelete={() => deleteRecord(editorRecord)} onUnpublish={() => stopPublication(editorRecord)} onShare={() => share(editorRecord)} onAccount={openAccount} /> : <Empty title="この記録は見つかりません" action={<a className="secondary" href="#/mine">自分の実践へ</a>}>保存したアカウントでログインしているか確認してください。</Empty> : <p className="loading" role="status">記録を読み込み中…</p>
       : route.view === 'public' ? recordError ? <div className="catalog"><ErrorNotice retry={() => setRefresh(r => r + 1)}>{recordError}</ErrorNotice><a href="#/discover">みんなの発表へ</a></div> : publicRecord ? <PublicRecord record={publicRecord} onBack={backToList} selected={selected.some(r => keyOf(r) === keyOf(publicRecord))} onSelect={() => select(publicRecord)} saved={bookmarks.ids.includes(publicRecord.id)} onSave={() => heart(publicRecord)} onShare={() => share(publicRecord)} ready={ready}
-          onDerive={() => tryPractice(publicRecord)} deriving={deriving} session={session} onAccount={openAccount} notify={setToast}
+          onDerive={() => tryPractice(publicRecord)} deriving={deriving} session={session} onAccount={openAccount} notify={setToast} editHref={session?.user.id && session.user.id === publicRecord.publication.owner ? `#/record/${publicRecord.id}/content` : null}
           canFollow={!!publicRecord.publication.owner && session?.user.id !== publicRecord.publication.owner} following={follows.ids.includes(publicRecord.publication.owner)} onFollow={() => follows.toggle(publicRecord.publication.owner, publicRecord.meta?.author || '発表者')} discussion={<Discussion key={publicRecord.id} record={publicRecord} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} /> : <p className="loading" role="status">発表を読み込み中…</p>
       : route.view === 'talks' ? <Talks session={session} bookmarks={bookmarks} onAccount={() => setDialog({ type: 'account' })} />
       : route.view === 'compare' ? <Compare records={selectedRecords} onRemove={select} onBack={backFromCompare} />
@@ -337,12 +373,6 @@ function App() {
     {toast && <div className="toast print-hidden" role="status">{typeof toast === 'string' ? toast : <>{toast.text}<button className="toast-action" onClick={() => { const run = toast.action.run; setToast(''); run() }}>{toast.action.label}</button></>}</div>}
     {sheetRecord && session && <SaveSheet key={sheetRecord.id} record={sheetRecord} lists={lists} onClose={() => setSheetRecord(null)} onUnsave={async () => { await bookmarks.toggle(sheetRecord); setSheetRecord(null) }} />}
     {dialog?.type === 'account' && <Account session={session} name={name} onName={rename} flush={flush} onClose={() => setDialog(null)} />}
-    {dialog?.type === 'publish' && <Dialog title="公開する内容を確認" wide onClose={busy ? () => {} : () => setDialog(null)}><p className="notice">以下の本文・名前・地域・数字・写真・添付資料・資料リンクが、ログインなしで誰でも読めるようになります。個人情報や他人の未公開情報が含まれていないか確認してください。</p>
-      <div className="publish-preview"><RecordBody record={dialog.record} /></div>
-      {publicationProblems(dialog.record).map(p => <p className="validation" key={p}>{p}</p>)}
-      {actionError && <ErrorNotice>{actionError}</ErrorNotice>}
-      <div className="dialog-actions">{session?.user.email_confirmed_at && !session.user.is_anonymous ? <button className="primary" disabled={busy || publicationProblems(dialog.record).length > 0} onClick={publish}>{busy ? '公開中…' : 'この内容で公開する'}</button> : <button className="primary" onClick={() => setDialog({ type: 'account' })}>メールを登録して公開</button>}</div>
-    </Dialog>}
     {dialog?.type === 'share' && <Dialog title="公開リンク" onClose={() => setDialog(null)}><p>{actionError}</p><input aria-label="公開リンク" readOnly value={`${location.origin}${location.pathname}#/public/${dialog.record.id}`} onFocus={e => e.target.select()} /></Dialog>}
   </div>
 }

@@ -12,19 +12,24 @@ export default function useWorkspace() {
   const [error, setError] = useState('')
   const state = useRef({ records: [], pending: {}, owner: null, session: null })
   const timer = useRef(null), saving = useRef(null), generation = useRef(0), mounted = useRef(true)
+  // 保存状態の内訳：未送信件数（クラウド同期待ち）と端末保存の失敗を、文言とは別に公開する。
+  const [sync, setSync] = useState({ pending: 0, cacheFailed: false })
+  const report = useCallback(() => { const s = state.current; if (mounted.current) setSync({ pending: Object.keys(s.pending || {}).length, cacheFailed: !!s.cacheFailed }) }, [])
 
   const persist = useCallback(() => {
     const s = state.current
     try {
       localStorage.setItem(prefix + (s.owner || 'device'), JSON.stringify({ records: s.records, pending: s.pending }))
       s.cacheFailed = false
+      report()
       return true
     } catch {
       s.cacheFailed = true
+      report()
       setError('端末への一時保存に失敗しました。保存を再試行するか、バックアップを書き出してください。')
       return false
     }
-  }, [])
+  }, [report])
 
   const flush = useCallback(async () => {
     if (saving.current) return saving.current
@@ -46,6 +51,7 @@ export default function useWorkspace() {
         if (myGeneration === generation.current && mounted.current) { setStatus('クラウドに保存済み'); if (!s.cacheFailed) setError('') }
         return true
       } catch {
+        report()
         if (myGeneration === generation.current && mounted.current) {
           setStatus(s.cacheFailed ? '保存できていません' : '端末に保存・同期待ち')
           setError('クラウドに保存できませんでした。接続を確認して「再試行」を押してください。')
@@ -106,7 +112,7 @@ export default function useWorkspace() {
       if (!supabase || !loginRequired()) setError('クラウドに接続できません。記録はこの端末に保存します。')
     }
     if (token !== generation.current || !mounted.current) return
-    setRecords([...s.records]); setReady(true)
+    setRecords([...s.records]); setReady(true); report()
     if (persist() && legacy.length) { try { localStorage.setItem('nitoron:legacy-claimed', owner || 'device') } catch { /* backup remains */ } }
     if (nextSession && Object.keys(pending).length) timer.current = setTimeout(flush, 800)
   }, [flush, persist])
@@ -164,5 +170,5 @@ export default function useWorkspace() {
   }, [flush, load])
 
   const needsLogin = ready && !session && !!supabase && loginRequired()
-  return { records, ready, session, status, error, needsLogin, put, remove, flush, retry }
+  return { records, ready, session, status, error, needsLogin, sync, put, remove, flush, retry }
 }
