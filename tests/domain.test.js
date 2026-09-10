@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { newRecord, isBlankRecord, toRow, fromRow, snapshot, matches, number, per10a, publicationProblems, publicationAdvice, publicationKey, publishedDiffers, publicSnapshot, deriveRecord, deriveNextChallenge, deriveLearning, mergeRecords, exportMarkdown, safeUrl, sanitizeMeta } from '../src/domain.js'
+import { newRecord, isBlankRecord, toRow, fromRow, snapshot, matches, number, per10a, publicationProblems, publicationAdvice, publicationKey, publishedDiffers, publicSnapshot, privateOriginLeaks, legacyDerivedTitles, deriveRecord, deriveNextChallenge, deriveLearning, mergeRecords, exportMarkdown, safeUrl, sanitizeMeta } from '../src/domain.js'
 
 test('既存メモの文章・ブロック・完了状態を引き継ぐ', () => {
   const original = { id: crypto.randomUUID(), title: '既存の記録', type: 'タスク', category: '畑', date: '2026-08-20', blocks: [{ id: 'b', type: 'todo', text: '測定する', checked: true }] }
@@ -129,7 +129,7 @@ test('次の挑戦は作物・参照元・学び（次の仮説）だけを引�
   const before = JSON.stringify(prev)
   const next = deriveNextChallenge(prev, '自分')
   assert.equal(JSON.stringify(prev), before, '元記録は変更しない')
-  assert.notEqual(next.id, prev.id); assert.equal(next.meta.kind, 'challenge'); assert.equal(next.title, '排水対策の次の挑戦')
+  assert.notEqual(next.id, prev.id); assert.equal(next.meta.kind, 'challenge'); assert.equal(next.title, '次の挑戦', '非公開の参照元のタイトルは自動転記しない')
   assert.equal(next.meta.crop, 'ブロッコリー'); assert.equal(next.meta.hypothesis, '畝を高くする'); assert.deepEqual(next.meta.origin, { id: prev.id, title: '排水対策', public: false })
   for (const key of ['result', 'learning', 'target', 'criterion', 'revenue', 'hours', 'verdict']) assert.equal(next.meta[key], '', key)
   assert.deepEqual(next.meta.observations, []); assert.equal(next.meta.stage, '仮説')
@@ -149,19 +149,39 @@ test('本人の判定は既定で空、許可された値だけを保持する',
   assert.equal(sanitizeMeta({ kind: 'challenge', verdict: '証明済み' }).verdict, '')
 })
 
-test('公開用snapshotは非公開の参照元のタイトル・IDを含めず、公開中の参照元と本人の記録・書き出しには残す', () => {
-  const src = newRecord('challenge'); src.title = '私的な挑戦'
-  const derived = deriveRecord(src, 'challenge', '自分'); derived.title = '派生した挑戦'
-  assert.deepEqual(derived.meta.origin, { id: src.id, title: '私的な挑戦', public: false })
-  const pub = publicSnapshot(derived)
-  assert.deepEqual(pub.meta.origin, { id: '', title: '', public: false })
-  assert.equal(JSON.stringify(pub).includes('私的な挑戦'), false); assert.equal(JSON.stringify(pub).includes(src.id), false)
-  assert.deepEqual(derived.meta.origin, { id: src.id, title: '私的な挑戦', public: false }, '元の記録は変更しない')
-  assert.deepEqual(snapshot(derived).meta.origin, derived.meta.origin, '書き出し用のsnapshotには残す')
-  assert.deepEqual(fromRow(toRow(derived)).meta.origin, derived.meta.origin, '保存する記録には残す')
+test('非公開の参照元から派生した3経路は、生成直後の内容のまま公開してもタイトル・ID・要約に元タイトルが残らない', () => {
+  const src = newRecord('challenge'); src.title = '私的な挑戦'; Object.assign(src.meta, { crop: 'トマト', learning: '畝を高くする', verdict: '達成' })
+  const paths = { 挑戦: deriveRecord(src, 'challenge', '自分'), 次の挑戦: deriveNextChallenge(src, '自分'), 学習ノート: deriveLearning(src, '自分') }
+  assert.equal(paths.挑戦.title, '新しい挑戦'); assert.equal(paths.次の挑戦.title, '次の挑戦'); assert.equal(paths.学習ノート.title, '学習ノート')
+  assert.equal(paths.学習ノート.meta.summary, '振り返りから。本人の判定：達成')
+  for (const [name, record] of Object.entries(paths)) {
+    assert.deepEqual(record.meta.origin, { id: src.id, title: '私的な挑戦', public: false }, `${name}：本人の記録には参照元を残す`)
+    assert.deepEqual(publicationProblems(record), [], `${name}：公開を止める問題なし`)
+    const pub = JSON.stringify(publicSnapshot(record))
+    assert.equal(pub.includes('私的な挑戦'), false, `${name}：公開内容に元タイトルなし`); assert.equal(pub.includes(src.id), false, `${name}：公開内容に元IDなし`)
+    assert.deepEqual(publicSnapshot(record).meta.origin, { id: '', title: '', public: false })
+    assert.deepEqual(snapshot(record).meta.origin, record.meta.origin, `${name}：書き出し用には残す`)
+    assert.deepEqual(fromRow(toRow(record)).meta.origin, record.meta.origin, `${name}：保存する記録には残す`)
+    assert.equal(publishedDiffers(record, publicSnapshot(record)), false)
+  }
+  // 公開中の参照元は従来どおりタイトルを転記し、公開内容にも残る
   const publicSrc = { ...src, publication: { id: src.id, isPublic: true } }
-  const fromPublic = deriveRecord(publicSrc, 'challenge', '自分')
+  const fromPublic = deriveRecord(publicSrc, 'challenge', '自分'), nextPublic = deriveNextChallenge(publicSrc, '自分'), learnPublic = deriveLearning(publicSrc, '自分')
+  assert.equal(fromPublic.title, '私的な挑戦からの挑戦'); assert.equal(nextPublic.title, '私的な挑戦の次の挑戦'); assert.equal(learnPublic.title, '私的な挑戦からの学び')
   assert.deepEqual(publicSnapshot(fromPublic).meta.origin, { id: src.id, title: '私的な挑戦', public: true })
-  // 公開版との比較は公開用の内容で行い、非公開の参照元の有無だけでは差分にならない
-  assert.equal(publishedDiffers(derived, pub), false)
+  assert.equal(deriveRecord(src, 'challenge', '自分', true).title, '私的な挑戦からの挑戦', '公開状態を明示して渡せる')
+})
+test('旧仕様の下書きに残る非公開の参照元タイトルは公開を止め、自動生成値と一致するときだけ置換候補を出す', () => {
+  const src = newRecord('challenge'); src.title = '私的な挑戦'
+  const legacy = deriveRecord(src, 'challenge', '自分'); legacy.title = legacyDerivedTitles('私的な挑戦')[0]
+  assert.deepEqual(privateOriginLeaks(legacy), [{ field: 'title', auto: true, replacement: '新しい挑戦' }])
+  assert.ok(publicationProblems(legacy).some(p => p.includes('非公開の参照元')))
+  const edited = { ...legacy, title: '私的な挑戦を改良した記録' }
+  assert.deepEqual(privateOriginLeaks(edited), [{ field: 'title', auto: false, replacement: '新しい挑戦' }], '本人が編集した文章は自動置換の対象にしない')
+  const note = deriveLearning(src, '自分'); note.title = '私的な挑戦からの学び'; note.meta.summary = '「私的な挑戦」の振り返りから。本人の判定：未選択'
+  assert.deepEqual(privateOriginLeaks(note).map(l => [l.field, l.auto]), [['title', true], ['summary', true]]); assert.equal(privateOriginLeaks(note)[0].replacement, '学習ノート')
+  const clean = { ...legacy, title: '新しい挑戦' }
+  assert.deepEqual(privateOriginLeaks(clean), []); assert.deepEqual(publicationProblems(clean), [])
+  const publicOrigin = { ...legacy, meta: { ...legacy.meta, origin: { ...legacy.meta.origin, public: true } } }
+  assert.deepEqual(privateOriginLeaks(publicOrigin), [], '公開中の参照元のタイトルは制限しない')
 })

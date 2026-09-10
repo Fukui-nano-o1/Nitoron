@@ -255,17 +255,17 @@ function App() {
     if (!ready || deriving) return
     setDeriving(true)
     try {
-      const record = build(source)
-      // 参照元が公開中かどうかは、公開発表か本人の公開状態から決める（公開画面で非公開の参照先を露出させないため）。
-      if (record.meta?.origin) record.meta.origin.public = !!source.publication?.isPublic || (!source.publication && owned.some(p => p.id === source.id && p.is_public))
+      // 参照元が公開中かどうかを先に決め、非公開ならタイトル・要約に元タイトルを自動転記しない。
+      const isPublic = !!source.publication?.isPublic || (!source.publication && owned.some(p => p.id === source.id && p.is_public))
+      const record = build(source, isPublic)
       if (!put(record, session?.user.id || null)) throw new Error(`${label}を端末に保存できませんでした。空き容量を確認して、もう一度お試しください。`)
       if (session && !await flush()) throw new Error(`${label}は端末に残しましたが、クラウドに保存できませんでした。「自分の実践」で保存状態を確認してください。`)
       location.hash = `/record/${record.id}/basics`
     } catch (e) { setToast(e.message) } finally { setDeriving(false) }
   }
-  const tryPractice = source => deriveAndOpen(source, s => deriveRecord(s, 'challenge', name), '挑戦記録')
-  const learnFrom = (source, feedback) => deriveAndOpen(source, s => deriveLearning(s, name, feedback), '学習ノート')
-  const nextChallenge = source => deriveAndOpen(source, s => deriveNextChallenge(s, name), '次の挑戦')
+  const tryPractice = source => deriveAndOpen(source, (s, isPublic) => deriveRecord(s, 'challenge', name, isPublic), '挑戦記録')
+  const learnFrom = (source, feedback) => deriveAndOpen(source, (s, isPublic) => deriveLearning(s, name, feedback, isPublic), '学習ノート')
+  const nextChallenge = source => deriveAndOpen(source, (s, isPublic) => deriveNextChallenge(s, name, isPublic), '次の挑戦')
   const originHrefOf = record => { const o = record?.meta?.origin; return o ? (o.public ? `#/public/${o.id}` : records.some(r => r.id === o.id) ? `#/record/${o.id}/content` : null) : null }
   const cleanupBlankRecords = async () => {
     const blanks = records.filter(r => isBlankRecord(r) && !owned.some(p => p.id === r.id && p.is_public))

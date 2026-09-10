@@ -99,28 +99,44 @@ export function publicationProblems(record) {
   if (record.meta.start && record.meta.end && record.meta.start > record.meta.end) issues.push('期間の終了日が開始日より前です。')
   for (const [key, label] of METRICS) if (record.meta[key] !== '' && number(record.meta[key]) === null) issues.push(`${label}は0以上の数値で入力してください。`)
   if (record.meta.areaA !== '' && !(number(record.meta.areaA) > 0)) issues.push('面積は0より大きい数値で入力してください。')
+  for (const leak of privateOriginLeaks(record)) issues.push(`${leak.field === 'title' ? 'タイトル' : '要約'}に非公開の参照元のタイトル「${record.meta.origin.title}」が含まれています。公開前に書き換えてください。`)
   return issues
 }
-export function deriveRecord(source, kind, author = '') {
+// 派生記録。参照元が公開中のときだけ元タイトルを自動転記する。非公開の参照元のタイトルは、
+// タイトル・要約など公開される項目に自動で入れない（本人の記録内の origin には保持し、編集画面から戻れる）。
+export const DERIVED_TITLES = { challenge: '新しい挑戦', learning: '学習ノート', next: '次の挑戦' }
+export function deriveRecord(source, kind, author = '', isPublic = !!source.publication) {
   const record = newRecord(kind, author)
-  record.title = `${source.title || '無題'}からの${kind === 'challenge' ? '挑戦' : '学び'}`
+  record.title = isPublic ? `${source.title || '無題'}からの${kind === 'challenge' ? '挑戦' : '学び'}` : DERIVED_TITLES[kind === 'challenge' ? 'challenge' : 'learning']
   record.meta.crop = source.meta?.crop || ''
-  record.meta.origin = { id: source.id, title: source.title, public: !!source.publication }
+  record.meta.origin = { id: source.id, title: source.title, public: isPublic }
   return record
 }
+// 旧仕様の自動生成値（非公開の参照元タイトルを含む）。公開前の検査で「自動生成のまま」かどうかを判別する。
+export const legacyDerivedTitles = originTitle => [`${originTitle}からの挑戦`, `${originTitle}の次の挑戦`, `${originTitle}からの学び`]
+export const legacyDerivedSummary = (originTitle, verdict) => `「${originTitle}」の振り返りから。本人の判定：${verdict || '未選択'}`
+// 非公開の参照元タイトルが公開される項目（タイトル・要約）に残っていないか。auto=自動生成値と完全一致（本人操作で置換できる）。
+export function privateOriginLeaks(record) {
+  const m = record.meta, origin = m?.origin
+  if (!origin || origin.public || !String(origin.title || '').trim()) return []
+  const title = origin.title, leaks = []
+  if (String(record.title || '').includes(title)) leaks.push({ field: 'title', auto: legacyDerivedTitles(title).includes(record.title), replacement: DERIVED_TITLES[m.kind === 'learning' ? 'learning' : record.title === `${title}の次の挑戦` ? 'next' : 'challenge'] })
+  if (String(m.summary || '').includes(title)) leaks.push({ field: 'summary', auto: m.summary === legacyDerivedSummary(title, m.verdict), replacement: `振り返りから。本人の判定：${m.verdict || '未選択'}` })
+  return leaks
+}
 // 次の挑戦：作物・参照元・次の仮説に使う学びだけを引き継ぐ。前回の結果・観測・経営実績・判定・進捗は引き継がない。
-export function deriveNextChallenge(source, author = '') {
-  const record = deriveRecord(source, 'challenge', author)
-  record.title = `${source.title || '無題'}の次の挑戦`
+export function deriveNextChallenge(source, author = '', isPublic = !!source.publication) {
+  const record = deriveRecord(source, 'challenge', author, isPublic)
+  record.title = isPublic ? `${source.title || '無題'}の次の挑戦` : DERIVED_TITLES.next
   record.meta.hypothesis = source.meta?.learning || ''
   return record
 }
 // 学習ノート：学び・本人の判定・参照元を引き継ぐ。指摘から作る場合は引用と参照元を学びの欄に残し、観測事実には入れない。
-export function deriveLearning(source, author = '', feedback = null) {
-  const record = deriveRecord(source, 'learning', author)
+export function deriveLearning(source, author = '', feedback = null, isPublic = !!source.publication) {
+  const record = deriveRecord(source, 'learning', author, isPublic)
   if (feedback) record.meta.learning = `${feedback.author}（${String(feedback.created_at || '').slice(0, 10)}）の${feedback.kind}：\n${feedback.body}\n\n自分の学び：\n`
   else {
-    record.meta.summary = `「${source.title || '無題'}」の振り返りから。本人の判定：${source.meta?.verdict || '未選択'}`
+    record.meta.summary = isPublic ? `「${source.title || '無題'}」の振り返りから。本人の判定：${source.meta?.verdict || '未選択'}` : `振り返りから。本人の判定：${source.meta?.verdict || '未選択'}`
     record.meta.learning = source.meta?.learning || ''
   }
   return record

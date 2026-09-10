@@ -5,7 +5,7 @@ import Attachments from './Attachments.jsx'
 import PublicRecord from './PublicRecord.jsx'
 import ReportDialog from './ReportDialog.jsx'
 import Icon from './Icon.jsx'
-import { KINDS, PHASES, VERDICTS, SECTIONS, METRICS, emptyMeta, today, uid, exportMarkdown, publicSnapshot, publicationProblems, publicationAdvice, publishedDiffers } from './domain.js'
+import { KINDS, PHASES, VERDICTS, SECTIONS, METRICS, emptyMeta, today, uid, exportMarkdown, publicSnapshot, publicationProblems, publicationAdvice, publishedDiffers, privateOriginLeaks } from './domain.js'
 import { Field, Dialog, ErrorNotice, download } from './ui.jsx'
 
 export const STEPS = [['basics', '基本情報'], ['content', '内容・資料'], ['review', '確認・公開']]
@@ -40,8 +40,16 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
   const problems = publicationProblems(record), advice = publicationAdvice(record)
   const verified = !!session?.user && !session.user.is_anonymous && !!session.user.email_confirmed_at
   // 公開を止める条件：入力検査・認証・クラウド保存完了。推奨項目は別に示す。
+  // 旧仕様で自動転記された非公開の参照元タイトルは、自動生成値と完全一致するときだけ本人操作で置き換えられる。
+  // 本人が書き換えた文章は置換せず、確認画面で見直してもらう。
+  const leaks = privateOriginLeaks(record)
   const blockers = [
-    ...problems.map(text => ({ text })),
+    ...problems.map(text => {
+      const leak = leaks.find(l => text.startsWith(l.field === 'title' ? 'タイトル' : '要約') && text.includes('非公開の参照元'))
+      if (!leak) return { text }
+      return leak.auto ? { text: `${text}（自動生成のままです）`, label: `「${leak.replacement}」に置き換える`, action: () => leak.field === 'title' ? patch({ title: leak.replacement }) : meta({ summary: leak.replacement }) }
+        : { text: `${text}（本人が編集した文章のため自動では置き換えません。${leak.field === 'title' ? '基本情報' : '内容・資料'}で見直してください）`, label: leak.field === 'title' ? '基本情報へ' : '内容・資料へ', action: () => onStep(leak.field === 'title' ? 'basics' : 'content') }
+    }),
     ...(!session ? [{ text: 'ログインしていません。公開にはメールアドレスを確認したアカウントが必要です。', action: onAccount, label: '登録・ログイン' }]
       : !verified ? [{ text: 'メールアドレスの確認が済んでいません。確認してから公開できます。', action: onAccount, label: 'アカウントを確認' }] : []),
     ...(save.sync.cacheFailed ? [{ text: '端末に保存できていません。空き容量を確認して再試行してください。', action: save.retry, label: '再試行' }]
