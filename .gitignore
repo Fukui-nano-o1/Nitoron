@@ -5,3 +5,4 @@ dist/
 !.env.example
 supabase/.temp/
 supabase/.branches/
+atlas-out/
