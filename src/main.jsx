@@ -256,7 +256,8 @@ function App() {
   const list = publicMode ? publicState.records : records.filter(r => filterRecord(r, { query, region, filters }))
   const displayed = publicMode ? list : [...list].sort(sort === 'title' ? (a, b) => a.title.localeCompare(b.title, 'ja') : (a, b) => b.date.localeCompare(a.date))
   const selectedRecords = selected.map(r => r.publication ? r : records.find(x => x.id === r.id)).filter(Boolean)
-  return <div className="workspace">
+  // スマホの公開詳細は写真を最上部に置くため、サイトロゴ行をCSSで隠す（他の画面・PC・戻る動作は変えない）。
+  return <div className={`workspace${route.view === 'public' ? ' public-view' : ''}`}>
     <a className="skip-link" href="#content" onClick={e => { e.preventDefault(); document.getElementById('content')?.focus() }}>本文へ移動</a>
     <SiteHeader view={route.view} name={name} notify={activity.total > 0} />
     <main id="content" tabIndex={-1} className="main-content">

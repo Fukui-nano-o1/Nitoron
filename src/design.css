@@ -281,6 +281,7 @@ a.avatar-circle:hover{box-shadow:0 0 0 2px #fff,0 0 0 4px #222}
 .photo-counter{position:absolute;right:14px;bottom:14px;background:#0009;color:#fff;font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:16px;letter-spacing:.3px;pointer-events:none}
 .dialog.gallery .gallery-items img{max-height:80dvh}
 @media(max-width:760px){
+  .workspace.public-view .site-header{display:none}
   .listing-page{display:flex;flex-direction:column;padding-top:0}
   .listing-back{display:none}
   .listing-hero{order:-1;position:relative;margin:0 -24px 16px}
@@ -304,3 +305,5 @@ a.avatar-circle:hover{box-shadow:0 0 0 2px #fff,0 0 0 4px #222}
   .dialog.gallery .gallery-items img{background:#111;border-radius:0}
 }
 @media(max-width:420px){.listing-hero{margin-left:-20px;margin-right:-20px}}
+.more-menu .action-row:first-child{padding-top:4px}
+.more-menu>:last-child{border-bottom:0}
