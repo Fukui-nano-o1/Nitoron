@@ -23,13 +23,19 @@ export const emptyMeta = (kind = 'presentation') => ({
   start: '', end: '', coverUrl: '', summary: '', issue: '', hypothesis: '', action: '', result: '',
   interpretation: '', learning: '', conditions: '', stage: '仮説',
   target: '', deadline: '', criterion: '', verdict: '', revenue: '', cost: '', hours: '', yieldKg: '',
-  observations: [], sources: [], attachments: [], origin: null,
+  observations: [], sources: [], attachments: [], origin: null, subject: '', machineRef: null,
 })
+// 機械参照（分野⑦）。machineId のない参照は保存しない。partId '' は部品未選択、
+// 'whole' は「機械全体」の明示指定（machine-domain.js の WHOLE_MACHINE）。IDの実在確認は表示側で行う。
+export function sanitizeMachineRef(raw) {
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw) || typeof raw.machineId !== 'string' || !raw.machineId.trim()) return null
+  return { machineId: raw.machineId, partId: string(raw.partId), modelVersion: string(raw.modelVersion) }
+}
 const string = value => typeof value === 'string' ? value : typeof value === 'number' && Number.isFinite(value) ? String(value) : ''
 export const hasSectionContent = m => !!(m.summary || m.crop || m.variety || m.region || m.club || m.areaA || m.start || m.end || m.conditions || m.target || m.criterion || m.deadline || SECTIONS.some(([key]) => m[key]) || METRICS.some(([key]) => m[key]) || m.observations.length || m.sources.length)
 // 発表者名は作成時に自動で入るため、空判定では見ない。
 export const isBlankRecord = r => !String(r.title || '').trim() && !(r.blocks || []).some(b => String(b?.text || '').trim())
-  && (!r.meta || !hasSectionContent(r.meta) && !r.meta.attachments?.length && !r.meta.coverUrl && !r.meta.origin)
+  && (!r.meta || !hasSectionContent(r.meta) && !r.meta.attachments?.length && !r.meta.coverUrl && !r.meta.origin && !r.meta.subject && !r.meta.machineRef)
 export function sanitizeMeta(raw) {
   if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return null
   const m = emptyMeta(['presentation', 'challenge', 'learning', 'trouble'].includes(raw.kind) ? raw.kind : 'presentation')
@@ -41,6 +47,10 @@ export function sanitizeMeta(raw) {
   m.observations = (Array.isArray(raw.observations) ? raw.observations : []).filter(x => x && typeof x === 'object').map(o => ({ id: string(o.id) || uid(), date: string(o.date), fact: string(o.fact), conditions: string(o.conditions), evidence: string(o.evidence) }))
   m.sources = (Array.isArray(raw.sources) ? raw.sources : []).filter(x => x && typeof x === 'object').map(s => ({ id: string(s.id) || uid(), title: string(s.title), url: string(s.url), date: string(s.date) }))
   m.origin = raw.origin && typeof raw.origin === 'object' && typeof raw.origin.id === 'string' ? { id: raw.origin.id, title: string(raw.origin.title), public: raw.origin.public === true } : null
+  // 記録の対象（通常／機械修理）。kind とは別の軸で、既存記録・未知の値は通常扱い。
+  // machineRef は subject に関わらず保持し、通常へ切り替えても選択済みの対象を消さない。
+  if (m.subject !== 'machine_repair') m.subject = ''
+  m.machineRef = sanitizeMachineRef(raw.machineRef)
   // 項目入力で書かれた既存の記録は項目モードで開く。指定がなければフリー入力。
   if (m.inputMode !== 'free' && m.inputMode !== 'sections') m.inputMode = hasSectionContent(m) ? 'sections' : 'free'
   return m
