@@ -7,7 +7,7 @@ import { ErrorNotice, Empty } from './ui.jsx'
 // 件数の取得に失敗したときはエラーとして示し、「新着0件」とは表示しない。
 export default function Talks({ session, bookmarks, onAccount }) {
   const owner = session?.user.id
-  const [state, setState] = useState({ loading: true, error: '', mine: [], saved: [], savedTotal: 0, counts: {} })
+  const [state, setState] = useState({ loading: true, error: '', mine: [], saved: [], savedTotal: 0, counts: {}, first: {} })
   const [version, setVersion] = useState(0)
   useEffect(() => {
     if (!owner || !bookmarks.ready) return
@@ -23,15 +23,16 @@ export default function Talks({ session, bookmarks, onAccount }) {
         const saved = savedPage.records.filter(r => r.publication.owner !== owner)
         const items = [...mine.map(r => ({ id: r.id, since: r.publication.updatedAt })),
           ...bookmarks.rows.filter(b => !mine.some(m => m.id === b.id)).map(b => ({ id: b.id, since: b.savedAt }))]
-        const counts = items.length ? await listNewActivity(owner, items) : {}
-        if (!cancelled) setState({ loading: false, error: '', mine, saved, savedTotal: savedPage.count, counts })
+        const activity = items.length ? await listNewActivity(owner, items) : { counts: {}, first: {} }
+        if (!cancelled) setState({ loading: false, error: '', mine, saved, savedTotal: savedPage.count, counts: activity.counts, first: activity.first })
       } catch (e) { if (!cancelled) setState(s => ({ ...s, loading: false, error: e.message })) }
     })()
     return () => { cancelled = true }
   }, [owner, version, bookmarks.ready, bookmarks.error, bookmarks.ids.join(',')])
   const retry = () => { bookmarks.error ? bookmarks.retry() : setVersion(v => v + 1) }
   const row = r => <a className="talk-row" key={r.id} href={`#/public/${r.id}/discussion`}>
-    <span className="talk-main"><strong>{r.title || '無題'}</strong><small>{[r.meta?.author, r.meta?.crop].filter(Boolean).join(' · ') || '経営発表'}</small></span>
+    <span className="talk-main"><strong>{r.title || '無題'}</strong><small>{[r.meta?.author, r.meta?.crop].filter(Boolean).join(' · ') || '経営発表'}</small>
+      {state.first[r.id] && <small className="talk-preview">新着：{state.first[r.id].author}の{state.first[r.id].kind}{state.first[r.id].section && state.first[r.id].section !== '全体' ? `（${state.first[r.id].section}）` : ''}「{state.first[r.id].body}」</small>}</span>
     {state.counts[r.id] ? <span className="talk-new">新着 {state.counts[r.id]}件</span> : <span className="talk-quiet">新着なし</span>}
     <Icon name="right" size={16} />
   </a>

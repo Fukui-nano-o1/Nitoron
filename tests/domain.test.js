@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { newRecord, isBlankRecord, toRow, fromRow, snapshot, matches, number, per10a, publicationProblems, publicationAdvice, publicationKey, publishedDiffers, deriveRecord, mergeRecords, exportMarkdown, safeUrl, sanitizeMeta } from '../src/domain.js'
+import { newRecord, isBlankRecord, toRow, fromRow, snapshot, matches, number, per10a, publicationProblems, publicationAdvice, publicationKey, publishedDiffers, deriveRecord, deriveNextChallenge, deriveLearning, mergeRecords, exportMarkdown, safeUrl, sanitizeMeta } from '../src/domain.js'
 
 test('既存メモの文章・ブロック・完了状態を引き継ぐ', () => {
   const original = { id: crypto.randomUUID(), title: '既存の記録', type: 'タスク', category: '畑', date: '2026-08-20', blocks: [{ id: 'b', type: 'todo', text: '測定する', checked: true }] }
@@ -121,4 +121,30 @@ test('公開版との比較は公開対象の内容だけを見て、キー順�
   assert.equal(publishedDiffers(edited, published), true)
   const editedMeta = { ...r, meta: { ...r.meta, crop: 'ナス' } }
   assert.equal(publishedDiffers(editedMeta, published), true)
+})
+
+test('次の挑戦は作物・参照元・学び（次の仮説）だけを引き継ぎ、前回の実績・判定・進捗は引き継がない', () => {
+  const prev = newRecord('challenge'); prev.title = '排水対策'
+  Object.assign(prev.meta, { crop: 'ブロッコリー', region: '徳島', stage: '完了', verdict: '一部達成', target: '収量1割増', criterion: '株重', result: '結果R', learning: '畝を高くする', revenue: '100000', hours: '20', observations: [{ id: 'o', date: '2026-08-01', fact: '事実', conditions: '', evidence: '' }] })
+  const before = JSON.stringify(prev)
+  const next = deriveNextChallenge(prev, '自分')
+  assert.equal(JSON.stringify(prev), before, '元記録は変更しない')
+  assert.notEqual(next.id, prev.id); assert.equal(next.meta.kind, 'challenge'); assert.equal(next.title, '排水対策の次の挑戦')
+  assert.equal(next.meta.crop, 'ブロッコリー'); assert.equal(next.meta.hypothesis, '畝を高くする'); assert.deepEqual(next.meta.origin, { id: prev.id, title: '排水対策', public: false })
+  for (const key of ['result', 'learning', 'target', 'criterion', 'revenue', 'hours', 'verdict']) assert.equal(next.meta[key], '', key)
+  assert.deepEqual(next.meta.observations, []); assert.equal(next.meta.stage, '仮説')
+})
+test('学習ノートは学び・本人の判定・参照元を引き継ぎ、指摘から作る場合は引用を学びに残して観測には入れない', () => {
+  const src = newRecord('challenge'); src.title = '排水対策'; Object.assign(src.meta, { learning: '畝を高くする', verdict: '達成', observations: [{ id: 'o', date: '2026-08-01', fact: '事実', conditions: '', evidence: '' }] })
+  const note = deriveLearning(src, '自分')
+  assert.equal(note.meta.kind, 'learning'); assert.equal(note.meta.learning, '畝を高くする'); assert.ok(note.meta.summary.includes('達成')); assert.equal(note.meta.origin.id, src.id)
+  assert.deepEqual(note.meta.observations, [])
+  const fromFeedback = deriveLearning(src, '自分', { author: '質問者', kind: '指摘', body: '株数の母数は？', created_at: '2026-09-01T00:00:00Z' })
+  assert.ok(fromFeedback.meta.learning.includes('質問者（2026-09-01）の指摘：') && fromFeedback.meta.learning.includes('株数の母数は？'))
+  assert.deepEqual(fromFeedback.meta.observations, []); assert.equal(fromFeedback.meta.origin.id, src.id)
+})
+test('本人の判定は既定で空、許可された値だけを保持する', () => {
+  assert.equal(newRecord('challenge').meta.verdict, '')
+  assert.equal(sanitizeMeta({ kind: 'challenge', verdict: '達成' }).verdict, '達成')
+  assert.equal(sanitizeMeta({ kind: 'challenge', verdict: '証明済み' }).verdict, '')
 })

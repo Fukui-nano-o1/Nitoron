@@ -7,7 +7,7 @@ const Discussion = lazy(() => import('./Discussion.jsx'))
 const Account = lazy(() => import('./Account.jsx'))
 const Talks = lazy(() => import('./Talks.jsx'))
 import { supabase } from './supabase.js'
-import { newRecord, deriveRecord, snapshot, publicationKey, fromRow, uid, today, isBlankRecord } from './domain.js'
+import { newRecord, deriveRecord, deriveLearning, deriveNextChallenge, snapshot, publicationKey, fromRow, uid, today, isBlankRecord } from './domain.js'
 import { listPublic, getPublic, getOwned, getOwnPublication, publishRecord, unpublishRecord, PAGE_SIZE } from './community.js'
 import { Dialog, Empty, ErrorNotice, download } from './ui.jsx'
 import SiteHeader, { NAV, currentTab } from './SiteHeader.jsx'
@@ -224,11 +224,7 @@ function App() {
     getPublic(route.id).then(record => { if (!cancelled) setPublicRecord(record) }).catch(e => { if (!cancelled) setRecordError(e.message) })
     return () => { cancelled = true }
   }, [route.view, route.id, refresh])
-  // Opening a publication's page (or its editor with the discussion) counts as reading its feedback.
-  useEffect(() => {
-    const id = route.view === 'public' ? publicRecord?.id : route.view === 'record' ? route.id : null
-    if (id) activity.markSeen(id)
-  }, [route.view, route.id, publicRecord?.id, activityItems.map(i => i.id).join(',')])
+  // 既読は対話欄が表示され、投稿を取得した時点で Discussion から通知される（発表の上部を開いただけでは既読にしない）。
   // カードメニューの「質問・指摘を送る」から来たときは、読み込み後に対話欄まで送る。
   useEffect(() => {
     if (route.view !== 'public' || route.section !== 'discussion' || !publicRecord) return
@@ -254,17 +250,23 @@ function App() {
     else setDraft(record)
     setDialog(null); location.hash = `/record/${record.id}`
   }
-  // 「この実践を試す」：公開発表から挑戦記録を派生し、保存できたときだけ編集画面へ進む。元の発表は読むだけで変更しない。
-  const tryPractice = async source => {
+  // 派生記録（挑戦・学習ノート・次の挑戦）：新しいIDの下書きを作り、保存できたときだけ編集画面へ進む。元の記録は変更しない。
+  const deriveAndOpen = async (source, build, label = '記録') => {
     if (!ready || deriving) return
     setDeriving(true)
     try {
-      const record = deriveRecord(source, 'challenge', name)
-      if (!put(record, session?.user.id || null)) throw new Error('挑戦記録を端末に保存できませんでした。空き容量を確認して、もう一度お試しください。')
-      if (session && !await flush()) throw new Error('挑戦記録は端末に残しましたが、クラウドに保存できませんでした。「自分の実践」で保存状態を確認してください。')
-      location.hash = `/record/${record.id}`
+      const record = build(source)
+      // 参照元が公開中かどうかは、公開発表か本人の公開状態から決める（公開画面で非公開の参照先を露出させないため）。
+      if (record.meta?.origin) record.meta.origin.public = !!source.publication?.isPublic || (!source.publication && owned.some(p => p.id === source.id && p.is_public))
+      if (!put(record, session?.user.id || null)) throw new Error(`${label}を端末に保存できませんでした。空き容量を確認して、もう一度お試しください。`)
+      if (session && !await flush()) throw new Error(`${label}は端末に残しましたが、クラウドに保存できませんでした。「自分の実践」で保存状態を確認してください。`)
+      location.hash = `/record/${record.id}/basics`
     } catch (e) { setToast(e.message) } finally { setDeriving(false) }
   }
+  const tryPractice = source => deriveAndOpen(source, s => deriveRecord(s, 'challenge', name), '挑戦記録')
+  const learnFrom = (source, feedback) => deriveAndOpen(source, s => deriveLearning(s, name, feedback), '学習ノート')
+  const nextChallenge = source => deriveAndOpen(source, s => deriveNextChallenge(s, name), '次の挑戦')
+  const originHrefOf = record => { const o = record?.meta?.origin; return o ? (o.public ? `#/public/${o.id}` : records.some(r => r.id === o.id) ? `#/record/${o.id}/content` : null) : null }
   const cleanupBlankRecords = async () => {
     const blanks = records.filter(r => isBlankRecord(r) && !owned.some(p => p.id === r.id && p.is_public))
     if (!blanks.length || !window.confirm(`何も書いていない空の記録${blanks.length}件を削除しますか？ 元に戻せません。`)) return
@@ -340,13 +342,14 @@ function App() {
     <main id="content" tabIndex={-1} className="main-content">
       {error && <div className="workspace-error print-hidden"><ErrorNotice retry={retry}>{error}</ErrorNotice></div>}
       {!error && needsLogin && ['mine', 'record'].includes(route.view) && <div className="workspace-error print-hidden"><div className="notice" role="status"><span>記録はこの端末に保存しています。登録・ログインするとクラウドに保存し、公開や指摘ができます。</span> <button onClick={() => setDialog({ type: 'account' })}>登録・ログイン</button></div></div>}
-      {route.view === 'record' ? ready ? editorRecord ? <Editor key={editorRecord.id} record={editorRecord} step={STEP_KEYS.includes(route.section) ? route.section : 'basics'} onStep={step => { location.hash = `/record/${editorRecord.id}/${step}` }} discussion={owned.some(p => p.id === editorRecord.id) && <Discussion record={{ ...editorRecord, publication: { owner: session?.user.id, isPublic: owned.find(p => p.id === editorRecord.id)?.is_public } }} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} session={session} flush={flush}
+      {route.view === 'record' ? ready ? editorRecord ? <Editor key={editorRecord.id} record={editorRecord} step={STEP_KEYS.includes(route.section) ? route.section : 'basics'} onStep={step => { location.hash = `/record/${editorRecord.id}/${step}` }} discussion={owned.some(p => p.id === editorRecord.id) && <Discussion record={{ ...editorRecord, publication: { owner: session?.user.id, isPublic: owned.find(p => p.id === editorRecord.id)?.is_public } }} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} onSeen={until => activity.markSeen(editorRecord.id, until)} onLearn={item => learnFrom(editorRecord, item)} />} session={session} flush={flush}
+          name={name} originHref={originHrefOf(editorRecord)} onDeriveLearning={() => learnFrom(editorRecord)} onDeriveNext={() => nextChallenge(editorRecord)} deriving={deriving} notify={setToast}
           save={{ status: draft && route.id === draft.id && !records.some(r => r.id === draft.id) ? '未保存の下書き · 書き始めると自動保存します' : status, error, retry, sync, session }}
           onChange={record => put(record, session?.user.id || null)} published={owned.some(p => p.id === editorRecord.id && p.is_public)} publication={{ ...ownPublication, retry: () => setRefresh(r => r + 1) }}
           onPublish={publishNow} publishing={publishing} publishResult={publishResult} onDelete={() => deleteRecord(editorRecord)} onUnpublish={() => stopPublication(editorRecord)} onShare={() => share(editorRecord)} onAccount={openAccount} /> : <Empty title="この記録は見つかりません" action={<a className="secondary" href="#/mine">自分の実践へ</a>}>保存したアカウントでログインしているか確認してください。</Empty> : <p className="loading" role="status">記録を読み込み中…</p>
       : route.view === 'public' ? recordError ? <div className="catalog"><ErrorNotice retry={() => setRefresh(r => r + 1)}>{recordError}</ErrorNotice><a href="#/discover">みんなの発表へ</a></div> : publicRecord ? <PublicRecord record={publicRecord} onBack={backToList} selected={selected.some(r => keyOf(r) === keyOf(publicRecord))} onSelect={() => select(publicRecord)} saved={bookmarks.ids.includes(publicRecord.id)} onSave={() => heart(publicRecord)} onShare={() => share(publicRecord)} ready={ready}
           onDerive={() => tryPractice(publicRecord)} deriving={deriving} session={session} onAccount={openAccount} notify={setToast} editHref={session?.user.id && session.user.id === publicRecord.publication.owner ? `#/record/${publicRecord.id}/content` : null}
-          canFollow={!!publicRecord.publication.owner && session?.user.id !== publicRecord.publication.owner} following={follows.ids.includes(publicRecord.publication.owner)} onFollow={() => follows.toggle(publicRecord.publication.owner, publicRecord.meta?.author || '発表者')} discussion={<Discussion key={publicRecord.id} record={publicRecord} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} /> : <p className="loading" role="status">発表を読み込み中…</p>
+          canFollow={!!publicRecord.publication.owner && session?.user.id !== publicRecord.publication.owner} following={follows.ids.includes(publicRecord.publication.owner)} onFollow={() => follows.toggle(publicRecord.publication.owner, publicRecord.meta?.author || '発表者')} discussion={<Discussion key={publicRecord.id} record={publicRecord} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} onSeen={until => activity.markSeen(publicRecord.id, until)} onLearn={session && !session.user.is_anonymous ? item => learnFrom(publicRecord, item) : undefined} />} /> : <p className="loading" role="status">発表を読み込み中…</p>
       : route.view === 'talks' ? <Talks session={session} bookmarks={bookmarks} onAccount={() => setDialog({ type: 'account' })} />
       : route.view === 'compare' ? <Compare records={selectedRecords} onRemove={select} onBack={backFromCompare} />
       : route.view === 'list' ? <SharedList key={route.id} token={route.id} savedIds={bookmarks.ids} onSave={heart} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} />

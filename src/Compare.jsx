@@ -42,6 +42,7 @@ export default function Compare({ records, onRemove, onBack }) {
         <tr className="table-divider"><th colSpan={records.length + 1}><span className="divider-label">根拠</span></th></tr>
         <tr><th scope="row">観測した事実</th>{records.map((r, i) => { const facts = (r.meta?.observations || []).filter(o => o.fact.trim()); return <td key={i}>{facts.length ? <><strong>{facts.length}件</strong><br />{facts[0].date && `${facts[0].date}：`}{facts[0].fact.slice(0, 80)}{facts[0].fact.length > 80 ? '…' : ''}</> : <span className="unrecorded">{BLANK}</span>}</td> })}</tr>
         <tr><th scope="row">写真・資料</th>{records.map((r, i) => { const photos = imageAttachments(r).length, files = sanitizeAttachments(r.meta?.attachments).length - photos; return <td key={i}><Value>{[photos > 0 && `写真${photos}枚`, files > 0 && `資料${files}点`].filter(Boolean).join('・')}</Value></td> })}</tr>
+        <tr><th scope="row">本人の判定<small>挑戦のみ</small></th>{values.map((m, i) => <td key={i}>{m.kind === 'challenge' ? <Value>{m.verdict}</Value> : <span className="unrecorded">—</span>}</td>)}</tr>
         <tr><th scope="row">公開版の更新</th>{records.map((r, i) => <td key={i}>{r.publication?.updatedAt ? r.publication.updatedAt.slice(0, 10) : <span className="unrecorded">自分の記録（未公開または下書き）</span>}</td>)}</tr>
         <tr className="table-divider"><th colSpan={records.length + 1}><span className="divider-label">考え方と確かめたこと</span></th></tr>
         {STORY.map(([label, key]) => <tr key={key}><th scope="row">{label}</th>{values.map((m, i) => <td key={i}><Value>{m[key]}</Value></td>)}</tr>)}

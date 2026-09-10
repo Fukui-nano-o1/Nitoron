@@ -383,3 +383,26 @@ a.avatar-circle:hover{box-shadow:0 0 0 2px #fff,0 0 0 4px #222}
   .preview-frame .listing-hero{margin:0}
   .preview-frame .listing-title{padding:12px 16px 0}.preview-frame .listing-main{padding:0 16px}
 }
+
+/* 対話・実践・学習（⑥）：分類チップ、挑戦カードの補足、振り返り、補助操作、対話の該当箇所・実践記録リンク、新着要約 */
+.kind-chips{display:flex;gap:8px;flex-wrap:wrap;margin:-4px 0 18px}
+.kind-chips button{border:1px solid #ddd;border-radius:20px;padding:6px 14px;min-height:36px;font-size:.8125rem;font-weight:600;color:#444;background:#fff}
+.kind-chips button[aria-pressed=true]{background:#222;color:#fff;border-color:#222}
+.stage-chips{margin-top:-8px}
+.card-meta-line{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.6875rem;color:#6a6a6a;margin-top:4px}
+.reflection{border:1px solid #ddd;border-radius:14px;padding:18px 20px}
+.reflection.now{border-color:#222;box-shadow:0 6px 18px #0000001a}
+.reflection-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;margin:8px 0 12px}
+.reflection-grid h3{font-size:.8125rem;color:#6a6a6a;font-weight:600;margin:0 0 6px}
+.reflection-grid p{margin:0;white-space:pre-wrap;font-size:.9375rem;line-height:1.7}
+.reflection-grid .text-action{padding:0;min-height:26px;font-size:.8125rem;margin-top:4px}
+.reflection .hint.rule{background:#f7f7f7;padding:10px 12px;border-radius:6px}
+.derived-actions{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;padding-top:14px;border-top:1px solid #ebebeb}
+.derived-actions>span{font-size:.8125rem;color:#6a6a6a;width:100%}
+.derived-actions .text-action{font-size:.875rem;gap:6px}
+.jump-link{background:none;border:0;padding:0;min-height:0;color:#222;font-size:inherit;text-decoration:underline;text-underline-offset:3px;font-weight:inherit}
+.related-link{font-size:.875rem;margin:6px 0 0}
+.related-link a{font-weight:600}
+.talk-preview{display:block;color:#b86043;margin-top:2px}
+.report-form code{font-size:.75rem;word-break:break-all;background:#f7f7f7;padding:2px 6px;border-radius:4px}
+@media(max-width:760px){.reflection-grid{grid-template-columns:1fr}.reflection{padding:14px 16px}}

@@ -3,8 +3,9 @@ import BlockEditor from './BlockEditor.jsx'
 import Cover from './Cover.jsx'
 import Attachments from './Attachments.jsx'
 import PublicRecord from './PublicRecord.jsx'
+import ReportDialog from './ReportDialog.jsx'
 import Icon from './Icon.jsx'
-import { KINDS, PHASES, SECTIONS, METRICS, emptyMeta, today, uid, exportMarkdown, snapshot, publicationProblems, publicationAdvice, publishedDiffers } from './domain.js'
+import { KINDS, PHASES, VERDICTS, SECTIONS, METRICS, emptyMeta, today, uid, exportMarkdown, snapshot, publicationProblems, publicationAdvice, publishedDiffers } from './domain.js'
 import { Field, Dialog, ErrorNotice, download } from './ui.jsx'
 
 export const STEPS = [['basics', '基本情報'], ['content', '内容・資料'], ['review', '確認・公開']]
@@ -14,8 +15,8 @@ export function SaveChip({ save }) {
   return <span className={`save-chip${trouble ? ' trouble' : ''}`} role="status"><span>{save.status}</span>{trouble && <button className="quiet" onClick={save.retry}>再試行</button>}</span>
 }
 // 記録の編集。発表は「基本情報 → 内容・資料 → 確認・公開」の3段階。段階を移動しても自動保存は続く。
-export default function Editor({ record, step, onStep, onChange, session, flush, save, published, publication, onPublish, publishing, publishResult, onUnpublish, onShare, onDelete, onAccount, discussion }) {
-  const [confirmDelete, setConfirmDelete] = useState(false), [uploading, setUploading] = useState(false)
+export default function Editor({ record, step, onStep, onChange, session, flush, save, published, publication, onPublish, publishing, publishResult, onUnpublish, onShare, onDelete, onAccount, discussion, name, originHref, onDeriveLearning, onDeriveNext, deriving, notify }) {
+  const [confirmDelete, setConfirmDelete] = useState(false), [uploading, setUploading] = useState(false), [reportOpen, setReportOpen] = useState(false)
   const m = record.meta
   const patch = update => onChange({ ...record, ...update })
   const meta = update => patch({ meta: { ...m, ...update } })
@@ -47,6 +48,31 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
       : session && save.sync.pending > 0 ? [{ text: '下書きのクラウド保存が完了していません（同期待ち）。再試行して保存を完了してから公開できます。', action: save.retry, label: '再試行' }] : []),
   ]
   const ready = blockers.length === 0 && !uploading
+  // 参照元：公開中なら公開ページ、未公開でも自分の記録なら編集画面へ。第三者向けの公開画面には非公開の参照先を出さない（RecordBody側）。
+  const originLine = m.origin && <p className="source-line">参考にした記録：{originHref ? <a href={originHref}>{m.origin.title || '記録'}</a> : m.origin.title || '記録'}{m.origin && !m.origin.public && <small>（非公開の自分の記録）</small>}</p>
+  const canReport = m.kind === 'challenge' && !!m.origin?.public && !!session
+  // 補助操作：結果報告（参照元が公開中の挑戦だけ）・学習ノート・次の挑戦。公開・更新が主操作。
+  const derivedActions = <div className="derived-actions print-hidden"><span>この記録から</span>
+    {canReport && <button className="text-action" disabled={deriving} onClick={() => setReportOpen(true)}><Icon name="chat" size={16} />元の発表へ結果を報告する</button>}
+    <button className="text-action" disabled={deriving} onClick={onDeriveLearning}><Icon name="book" size={16} />学習ノートにまとめる</button>
+    <button className="text-action" disabled={deriving} onClick={onDeriveNext}><Icon name="plus" size={16} />次の挑戦を始める</button></div>
+  const facts = m.observations.filter(o => o.fact.trim()).length
+  const reflecting = ['振り返り', '完了'].includes(m.stage)
+  const excerpt = text => text ? (text.length > 160 ? `${text.slice(0, 160)}…` : text) : <span className="unrecorded">未入力</span>
+  const scrollTo = id => document.getElementById(id)?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+  // 振り返り：目標・判定基準と結果・観測を見比べて、本人が判定を選ぶ。入力欄は既存項目を再利用し、同じ項目を重複させない。
+  const reflection = m.kind === 'challenge' && <section id="reflection" className={`editor-section reflection${reflecting ? ' now' : ''}`}>
+    <div className="section-heading"><span className="section-number">LOOK</span><h2>振り返り</h2><span className="state-label">{m.stage}</span></div>
+    <div className="reflection-grid">
+      <div><h3>目標</h3><p>{excerpt(m.target)}</p><h3>確かめる方法・判定基準</h3><p>{excerpt(m.criterion)}</p><button className="text-action" onClick={() => onStep('basics')}>基本情報で編集</button></div>
+      <div><h3>結果</h3>{m.inputMode === 'sections' ? <><p>{excerpt(m.result)}</p><button className="text-action" onClick={() => scrollTo('section-result')}>04 結果で編集</button></> : <textarea className="section-input" aria-label="結果" rows={3} maxLength={20000} value={m.result} onChange={e => meta({ result: e.target.value })} placeholder="測定や記録から確認できたこと。失敗や変化なしも残す" />}
+        <h3>観測した事実</h3><p>{facts}件</p><button className="text-action" onClick={() => scrollTo('observations')}>観測を編集</button></div>
+    </div>
+    <Field label="本人の判定" help="目標・判定基準と結果・観測を見比べて選びます。進捗や観測件数から自動では決まりません。"><select value={m.verdict} onChange={e => meta({ verdict: e.target.value })}><option value="">まだ選ばない</option>{VERDICTS.map(v => <option key={v} value={v}>{v}</option>)}</select></Field>
+    {m.inputMode === 'sections' ? <><h3 className="reflection-sub">学びと次の一手</h3><p className="reflection-text">{excerpt(m.learning)}</p><button className="text-action" onClick={() => scrollTo('section-learning')}>06 学びと次の一手で編集</button></>
+      : <Field label="学びと次の一手" help="次に変えること・続けること・やめること。次の挑戦の仮説に引き継げます。"><textarea rows={3} maxLength={20000} value={m.learning} onChange={e => meta({ learning: e.target.value })} placeholder="次に変えること・続けること・やめること" /></Field>}
+    {derivedActions}
+  </section>
   const preview = useMemo(() => ({ ...snapshot(record), publication: { id: record.id, owner: session?.user.id || null, publishedAt: publication?.row?.published_at, updatedAt: publication?.row?.updated_at || new Date().toISOString().slice(0, 10), isPublic: published } }), [record, session?.user.id, publication?.row?.updated_at, published])
   const differs = publication?.row?.snapshot ? publishedDiffers(record, publication.row.snapshot) : null
   const next = () => onStep(STEPS[index + 1][0]), prev = () => onStep(STEPS[index - 1][0])
@@ -62,7 +88,7 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
           <div className="fields two">{textInput('author', '発表者名')}{textInput('club', '所属クラブ')}</div>
           <div className="fields two">{textInput('variety', '品種')}<Field label="対象面積（a）"><input type="number" min="0.01" step="any" value={m.areaA} onChange={e => meta({ areaA: e.target.value })} placeholder="10" /></Field></div>
           <div className="fields two">{textInput('start', '対象期間の開始', '', 'date')}{textInput('end', '対象期間の終了', '', 'date')}</div>
-          {m.origin && <p className="source-line">参考にした記録：{m.origin.public ? <a href={`#/public/${m.origin.id}`}>{m.origin.title}</a> : m.origin.title}</p>}
+          {originLine}
           {m.kind === 'challenge' && <section className="editor-section challenge-plan"><div className="section-heading"><span className="section-number">PLAN</span><h2>挑戦の計画</h2><span className="state-label">推奨</span></div>
             <div className="fields two"><Field label="進捗"><select value={m.stage} onChange={e => meta({ stage: e.target.value })}>{PHASES.map(p => <option key={p}>{p}</option>)}</select></Field>{textInput('deadline', '振り返る日', '', 'date')}</div>
             {textInput('target', '目標', '何を、どこまで変えるか')}{textInput('criterion', '確かめる方法・判定基準', '何を測り、何と比較するか')}
@@ -77,14 +103,15 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
         {step === 'content' && <>
           <div className="segmented input-mode-switch"><button aria-pressed={m.inputMode !== 'sections'} onClick={() => meta({ inputMode: 'free' })}>フリー入力</button><button aria-pressed={m.inputMode === 'sections'} onClick={() => meta({ inputMode: 'sections' })}>項目で分ける</button></div>
           <p className="hint">切り替えても、書いた文章・数字・添付は消えません。元に戻せば表示も戻ります。</p>
-          {m.origin && <p className="source-line">参考にした記録：{m.origin.public ? <a href={`#/public/${m.origin.id}`}>{m.origin.title}</a> : m.origin.title}</p>}
+          {originLine}
+          {m.kind === 'challenge' && m.inputMode !== 'sections' && <section className="editor-section"><Field label="仮説（未検証の見立て）" help="何を変えると、なぜ、どうなると考えたか。観測した事実とは分けて書きます。"><textarea rows={3} maxLength={20000} value={m.hypothesis} onChange={e => meta({ hypothesis: e.target.value })} placeholder="何を変えると、なぜ、どうなると考えたか" /></Field></section>}
           <section id="document-summary" className="editor-section"><Field label="要約" help="読む人が、試したことと分かったことを最初につかめるように。"><textarea rows={3} maxLength={2000} value={m.summary} onChange={e => meta({ summary: e.target.value })} placeholder="何を試し、何が分かったか。これから試す記録なら、その目的を。" /></Field></section>
           {m.inputMode !== 'sections' ? <section className="editor-section"><div className="section-heading"><h2>本文</h2></div><BlockEditor blocks={record.blocks} onChange={blocks => patch({ blocks })} /></section>
             : SECTIONS.map(([key, label, placeholder], i) => <section id={`section-${key}`} className="editor-section" key={key}>
               <div className="section-heading"><span className="section-number">{String(i + 1).padStart(2, '0')}</span><h2>{label}</h2>{key === 'hypothesis' && <span className="state-label">未検証の見立て</span>}{key === 'interpretation' && <span className="state-label">事実からの解釈</span>}</div>
               <textarea className="section-input" aria-label={label} rows={3} maxLength={20000} value={m[key]} onChange={e => meta({ [key]: e.target.value })} placeholder={placeholder} />
             </section>)}
-          <section className="editor-section"><div className="section-heading"><span className="section-number">DATA</span><h2>観測した事実</h2></div>
+          <section id="observations" className="editor-section"><div className="section-heading"><span className="section-number">DATA</span><h2>観測した事実</h2></div>
             <p className="hint">見たこと・測ったことを、日付と根拠と一緒に残す。</p>
             {m.observations.map((o, i) => <div className="observation-input" key={o.id}>
               <div className="observation-top"><span>観測 {i + 1}</span><input aria-label={`観測${i + 1}の日付`} type="date" value={o.date} onChange={e => meta({ observations: m.observations.map(x => x.id === o.id ? { ...x, date: e.target.value } : x) })} />
@@ -97,6 +124,7 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
             <div className="fields two">{METRICS.map(([key, label, unit]) => <Field key={key} label={`${label}（${unit}）`}><input type="number" min="0" step="any" value={m[key]} onChange={e => meta({ [key]: e.target.value })} placeholder="未記録" /></Field>)}</div>
             <Field label="比較するときに必要な条件"><textarea rows={2} value={m.conditions} onChange={e => meta({ conditions: e.target.value })} placeholder="土壌、天候、前作、設備、経費に含めた範囲など" /></Field>
           </section>
+          {reflection}
           <Attachments record={record} session={session} flush={flush} onChange={onChange} onBusy={setUploading} />
           <details className="details extra-content"><summary>出典・資料{m.inputMode === 'sections' ? 'と補足' : ''}</summary>
             {m.sources.map((source, i) => <div className="source-input" key={source.id}>
@@ -122,6 +150,7 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
               {published && <><a className="secondary" href={`#/public/${record.id}`}>公開版を見る</a><button className="secondary" onClick={onShare}>リンクを共有</button><button className="text-action" onClick={onUnpublish}>公開を停止</button></>}
             </div>
             <p className="hint">公開すると、本文・名前・地域・数字・写真・添付資料・資料リンクがログインなしで誰でも読めます。個人情報や他人の未公開情報が含まれていないか確認してください。</p>
+            {derivedActions}
           </section>
           <div className="preview-frame"><div className="preview-label">プレビュー：公開したときの見え方（この内容がそのまま公開されます）</div><PublicRecord record={preview} preview /></div>
           {discussion}
@@ -132,5 +161,6 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
     <div className="step-bar print-hidden">{index > 0 ? <button className="secondary" onClick={prev}><Icon name="left" size={14} />{STEPS[index - 1][1]}</button> : <span />}
       {index < STEPS.length - 1 ? <button className="primary" onClick={next}>次へ：{STEPS[index + 1][1]}<Icon name="right" size={14} /></button> : <button className="primary" disabled={!ready || publishing} onClick={onPublish}>{publishing ? '公開しています…' : published ? '公開版を更新' : '公開する'}</button>}</div>
     {deleteDialog}
+    {reportOpen && canReport && <ReportDialog record={record} origin={m.origin} session={session} name={name} published={published} notify={notify} onClose={() => setReportOpen(false)} />}
   </>
 }

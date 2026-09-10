@@ -5,6 +5,8 @@ export const textBlock = (text = '', type = 'text') => ({ id: uid(), type, text 
 export const META = 'nitoron-presentation-v1'
 export const KINDS = { presentation: '経営発表', challenge: '挑戦', learning: '学習ノート', trouble: 'トラブル', memo: 'メモ' }
 export const PHASES = ['仮説', '計画中', '実践中', '振り返り', '完了']
+// 本人の判定。初期値は空で、進捗や観測件数から自動で決めない。
+export const VERDICTS = ['達成', '一部達成', '未達', '判断できない']
 export const SECTIONS = [
   ['issue', '課題', '何が起きていて、何を変えたいか'],
   ['hypothesis', '仮説', '何を変えると、なぜ、どうなると考えたか'],
@@ -20,7 +22,7 @@ export const emptyMeta = (kind = 'presentation') => ({
   schema: 1, kind, inputMode: 'free', author: '', club: '', crop: '', variety: '', region: '', areaA: '',
   start: '', end: '', coverUrl: '', summary: '', issue: '', hypothesis: '', action: '', result: '',
   interpretation: '', learning: '', conditions: '', stage: '仮説',
-  target: '', deadline: '', criterion: '', revenue: '', cost: '', hours: '', yieldKg: '',
+  target: '', deadline: '', criterion: '', verdict: '', revenue: '', cost: '', hours: '', yieldKg: '',
   observations: [], sources: [], attachments: [], origin: null,
 })
 const string = value => typeof value === 'string' ? value : typeof value === 'number' && Number.isFinite(value) ? String(value) : ''
@@ -35,6 +37,7 @@ export function sanitizeMeta(raw) {
   m.coverUrl = safeUrl(m.coverUrl) || ''
   m.attachments = sanitizeAttachments(raw.attachments)
   if (!PHASES.includes(m.stage)) m.stage = '仮説'
+  if (!VERDICTS.includes(m.verdict)) m.verdict = ''
   m.observations = (Array.isArray(raw.observations) ? raw.observations : []).filter(x => x && typeof x === 'object').map(o => ({ id: string(o.id) || uid(), date: string(o.date), fact: string(o.fact), conditions: string(o.conditions), evidence: string(o.evidence) }))
   m.sources = (Array.isArray(raw.sources) ? raw.sources : []).filter(x => x && typeof x === 'object').map(s => ({ id: string(s.id) || uid(), title: string(s.title), url: string(s.url), date: string(s.date) }))
   m.origin = raw.origin && typeof raw.origin === 'object' && typeof raw.origin.id === 'string' ? { id: raw.origin.id, title: string(raw.origin.title), public: raw.origin.public === true } : null
@@ -98,6 +101,23 @@ export function deriveRecord(source, kind, author = '') {
   record.meta.origin = { id: source.id, title: source.title, public: !!source.publication }
   return record
 }
+// 次の挑戦：作物・参照元・次の仮説に使う学びだけを引き継ぐ。前回の結果・観測・経営実績・判定・進捗は引き継がない。
+export function deriveNextChallenge(source, author = '') {
+  const record = deriveRecord(source, 'challenge', author)
+  record.title = `${source.title || '無題'}の次の挑戦`
+  record.meta.hypothesis = source.meta?.learning || ''
+  return record
+}
+// 学習ノート：学び・本人の判定・参照元を引き継ぐ。指摘から作る場合は引用と参照元を学びの欄に残し、観測事実には入れない。
+export function deriveLearning(source, author = '', feedback = null) {
+  const record = deriveRecord(source, 'learning', author)
+  if (feedback) record.meta.learning = `${feedback.author}（${String(feedback.created_at || '').slice(0, 10)}）の${feedback.kind}：\n${feedback.body}\n\n自分の学び：\n`
+  else {
+    record.meta.summary = `「${source.title || '無題'}」の振り返りから。本人の判定：${source.meta?.verdict || '未選択'}`
+    record.meta.learning = source.meta?.learning || ''
+  }
+  return record
+}
 export function mergeRecords(remote, local, pending) {
   const map = new Map(remote.map(r => [r.id, r]))
   for (const record of local) if (pending[record.id]) map.set(record.id, record)
@@ -113,7 +133,7 @@ export function exportMarkdown(r) {
     if (m.observations.length) { lines.push('', '## 観測した事実'); for (const o of m.observations) lines.push('', `- ${o.date || '日付未記録'}: ${o.fact}`, `  条件: ${o.conditions || '未記録'} / 根拠: ${o.evidence || '未記録'}`) }
     lines.push('', '## 経営の数字', '', ...METRICS.map(([key, label, unit]) => `- ${label}: ${formatNumber(number(m[key]))}${number(m[key]) === null ? '' : unit}`))
     if (m.conditions) lines.push('', `比較時の条件: ${m.conditions}`)
-    if (m.kind === 'challenge') lines.push('', '## 挑戦の計画', `進捗: ${m.stage}`, `目標: ${m.target}`, `判定基準: ${m.criterion}`, `期限: ${m.deadline}`)
+    if (m.kind === 'challenge') lines.push('', '## 挑戦の計画', `進捗: ${m.stage}`, `目標: ${m.target}`, `判定基準: ${m.criterion}`, `期限: ${m.deadline}`, `本人の判定: ${m.verdict || '未選択'}`)
     if (m.origin) lines.push('', `参考にした発表: ${m.origin.title} (${m.origin.id})`)
     if (m.sources.length) lines.push('', '## 出典・資料', '', ...m.sources.map(s => `- ${s.title || '資料'}: ${s.url || ''} (${s.date || '日付未記録'})`))
     if (m.attachments?.length) lines.push('', '## 添付資料', '', ...m.attachments.map(a => `- ${a.name}${a.caption ? ` — ${a.caption}` : ''}`), '', '添付ファイル本体はこのMarkdownに含まれません。Nitoronの記録から開いてください。')

@@ -98,12 +98,22 @@ export async function listFeedback(id) {
   if (error) throw new Error(message(error))
   return data
 }
-export async function postFeedback(id, session, { author, kind, section, body }) {
+// related は「試した結果」に添える本人の実践記録（公開中の本人の発表だけ。DB側でも検証する）。
+export async function postFeedback(id, session, { author, kind, section, body, related = null }) {
   requireClient()
   if (!session?.user || session.user.is_anonymous || !session.user.email_confirmed_at) throw new Error('メールアドレスを確認してから投稿してください。')
   if (!author.trim() || !body.trim()) throw new Error('表示名と内容を入力してください。')
-  const { error } = await supabase.from('nitoron_feedback').insert({ publication_id: id, user_id: session.user.id, author: author.trim(), kind, section, body: body.trim() }).select('id').single()
-  if (error) throw new Error(error.code === 'P0001' ? '投稿間隔をあけて、もう一度お試しください。' : message(error))
+  const { error } = await supabase.from('nitoron_feedback').insert({ publication_id: id, user_id: session.user.id, author: author.trim(), kind, section, body: body.trim(), ...(related ? { related_publication_id: related } : {}) }).select('id').single()
+  if (error) throw new Error(error.code === 'P0001' ? '投稿間隔をあけて、もう一度お試しください。' : error.code === '42501' ? '実践記録のリンクは、自分の公開中の発表だけに付けられます。' : message(error))
+}
+// 関連する実践記録のうち、いま公開中のものだけタイトルを返す（公開停止・削除されたものは返らない）。
+export async function listRelatedPublications(ids) {
+  requireClient()
+  const unique = [...new Set(ids.filter(Boolean))]
+  if (!unique.length) return {}
+  const { data, error } = await supabase.from('nitoron_publications').select('id,title:snapshot->>title').in('id', unique).eq('is_public', true)
+  if (error) throw new Error(message(error))
+  return Object.fromEntries(data.map(row => [row.id, String(row.title || '無題')]))
 }
 export async function deleteFeedback(id) {
   requireClient()
@@ -129,16 +139,23 @@ export async function listNewActivity(userId, items) {
   if (seenError) throw new Error(message(seenError))
   for (const row of seen) if (row.seen_at > (since[row.publication_id] || '')) since[row.publication_id] = row.seen_at
   const floor = Object.values(since).sort()[0]
-  const query = table => supabase.from(table).select('publication_id,created_at').in('publication_id', ids).neq('user_id', userId).gt('created_at', floor).limit(1000)
+  const query = table => supabase.from(table).select('publication_id,created_at,author,body,kind,section').in('publication_id', ids).neq('user_id', userId).gt('created_at', floor).limit(1000)
   const [feedback, replies] = await Promise.all([query('nitoron_feedback'), query('nitoron_feedback_replies')])
   if (feedback.error || replies.error) throw new Error(message(feedback.error || replies.error))
-  const counts = {}
-  for (const row of [...feedback.data, ...replies.data]) if (row.created_at > since[row.publication_id]) counts[row.publication_id] = (counts[row.publication_id] || 0) + 1
-  return counts
+  const counts = {}, first = {}
+  const rows = [...feedback.data.map(r => ({ ...r, isReply: false })), ...replies.data.map(r => ({ ...r, isReply: true }))].sort((a, b) => a.created_at.localeCompare(b.created_at))
+  for (const row of rows) if (row.created_at > since[row.publication_id]) {
+    counts[row.publication_id] = (counts[row.publication_id] || 0) + 1
+    // 新着要約：その発表で最初に届いた未読（種類・対象・冒頭）
+    if (!first[row.publication_id]) first[row.publication_id] = { author: row.author, kind: row.isReply ? '返信' : row.kind, section: row.section || '', body: String(row.body || '').slice(0, 60), created_at: row.created_at }
+  }
+  return { counts, first }
 }
-export async function markActivitySeen(userId, publicationId) {
+// 既読は「表示した投稿の最新時刻」まで。表示後に届いた投稿は既読にならない。
+export async function markActivitySeen(userId, publicationId, seenAt) {
   requireClient()
-  const { error } = await supabase.from('nitoron_publication_seen').upsert({ user_id: userId, publication_id: publicationId, seen_at: new Date().toISOString() }, { onConflict: 'user_id,publication_id' })
+  if (!seenAt) return
+  const { error } = await supabase.from('nitoron_publication_seen').upsert({ user_id: userId, publication_id: publicationId, seen_at: seenAt }, { onConflict: 'user_id,publication_id' })
   if (error) throw new Error('新着の既読を保存できませんでした。')
 }
 export async function setBookmark(userId, id, saved) {

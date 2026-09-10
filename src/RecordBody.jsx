@@ -17,7 +17,7 @@ export default function RecordBody({ record, hideHeading = false, hideCover = fa
       </dl>
       {m.conditions && <p className="conditions-note">比較の条件：{m.conditions}</p>}
       {m.origin && <p className="source-line">参考にした記録：{m.origin.public ? <a href={`#/public/${m.origin.id}`}>{m.origin.title}</a> : m.origin.title}</p>}
-      {m.kind === 'challenge' && <div className="challenge-plan"><h2>挑戦の計画</h2><dl><dt>目標</dt><dd>{m.target || '未記録'}</dd><dt>確かめる方法・判定基準</dt><dd>{m.criterion || '未記録'}</dd><dt>振り返る日</dt><dd>{m.deadline || '未記録'}</dd></dl></div>}
+      {m.kind === 'challenge' && <div className="challenge-plan"><h2>挑戦の計画</h2><dl><dt>進捗</dt><dd>{m.stage}</dd><dt>目標</dt><dd>{m.target || '未記録'}</dd><dt>確かめる方法・判定基準</dt><dd>{m.criterion || '未記録'}</dd><dt>振り返る日</dt><dd>{m.deadline || '未記録'}</dd><dt>本人の判定</dt><dd>{m.verdict || '未選択'}</dd></dl><p className="hint">判定は、目標・判定基準と結果・観測を見比べて本人が選んだものです。観測件数から自動では決まりません。</p></div>}
       {SECTIONS.map(([key, label], i) => m[key] ? <section id={`section-${key}`} className="read-section" key={key}>
         <div className="section-heading"><span className="section-number">{String(i + 1).padStart(2, '0')}</span><h2>{label}</h2>{key === 'hypothesis' && <span className="state-label">未検証の見立て</span>}{key === 'interpretation' && <span className="state-label">事実からの解釈</span>}</div><p>{m[key]}</p>
       </section> : null)}
