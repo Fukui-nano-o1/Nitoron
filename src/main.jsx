@@ -19,6 +19,9 @@ import Profile from './Profile.jsx'
 const User = lazy(() => import('./User.jsx'))
 const ProfileEdit = lazy(() => import('./ProfileEdit.jsx'))
 import SavedList from './SavedList.jsx'
+const SharedList = lazy(() => import('./SharedList.jsx'))
+import SaveSheet from './SaveSheet.jsx'
+import useLists from './useLists.js'
 import Icon from './Icon.jsx'
 import useBookmarks from './useBookmarks.js'
 import useActivity from './useActivity.js'
@@ -33,12 +36,16 @@ const routeFromLocation = () => {
   const [path, params = ''] = location.hash.replace(/^#\/?/, '').split('?')
   const [view, id, section] = path.split('/')
   // 経営発表に一点集中する間、挑戦・学習ノートの専用ページは閉じる。
-  return { view: ['mine', 'discover', 'search', 'saved', 'record', 'public', 'compare', 'account', 'user', 'profile', 'talks'].includes(view) ? view : 'discover', id, section, params }
+  return { view: ['mine', 'discover', 'search', 'saved', 'list', 'record', 'public', 'compare', 'account', 'user', 'profile', 'talks'].includes(view) ? view : 'discover', id, section, params }
 }
 const keyOf = r => `${r.publication ? 'public' : 'mine'}:${r.id}`
 // スクロール位置を覚えておく画面。詳細（public・record）は常に先頭から表示する。
-const SCROLL_VIEWS = ['discover', 'search', 'saved', 'mine', 'talks', 'account', 'user', 'compare', 'profile']
-const scrollKeyOf = r => SCROLL_VIEWS.includes(r.view) ? (r.view === 'user' ? `user:${r.id}` : r.view) : null
+const SCROLL_VIEWS = ['discover', 'search', 'saved', 'list', 'mine', 'talks', 'account', 'user', 'compare', 'profile']
+// 保存リストは「一覧」「すべて」「各リスト」を別の画面として扱い、条件・ページ・スクロール位置をそれぞれ保持する。
+const listKeyOf = r => r.view === 'saved' ? `saved:${r.id || ''}` : r.view
+const scrollKeyOf = r => SCROLL_VIEWS.includes(r.view) ? (['user', 'list'].includes(r.view) ? `${r.view}:${r.id}` : listKeyOf(r)) : null
+// 比較の選択はID・種別・順序だけを sessionStorage に持ち、本文は再読込のたびに取り直す。
+const COMPARE_KEY = 'nitoron:compare:v1'
 // 参照の同一性を保つため固定オブジェクトにする（毎回生成するとfiltersの同一性が崩れ、一覧取得のeffectがループする）。
 const LIST_DEFAULTS = Object.freeze({ query: '', region: '', filters: EMPTY_FILTERS, sort: 'recent', page: 0 })
 function App() {
@@ -53,8 +60,9 @@ function App() {
   const isSearch = route.view === 'search'
   // filtersの参照同一性を保つためmemo化する（毎回生成すると一覧取得のeffectがループする）。
   const urlState = useMemo(() => isSearch ? listFromParams(route.params) : null, [isSearch, route.params])
-  const { query, region, filters, sort, page: publicPage } = urlState || listStates[route.view] || LIST_DEFAULTS
-  const patchList = patch => setListStates(s => ({ ...s, [route.view]: { ...(s[route.view] || LIST_DEFAULTS), ...patch } }))
+  const listKey = listKeyOf(route)
+  const { query, region, filters, sort, page: publicPage } = urlState || listStates[listKey] || LIST_DEFAULTS
+  const patchList = patch => setListStates(s => ({ ...s, [listKey]: { ...(s[listKey] || LIST_DEFAULTS), ...patch } }))
   // 検索条件の変更はURLへ書く。入力中（push=false）は履歴を増やさず置き換え、
   // 検索確定・条件適用・ページ移動（push=true）だけを履歴の区切りにする。
   const goSearch = (patch, push) => {
@@ -83,10 +91,16 @@ function App() {
   const [deviceRecords, setDeviceRecords] = useState([]), [draft, setDraft] = useState(null)
   const searchRef = useRef(null), importRef = useRef(null), nameTimer = useRef(null)
   const previousOwner = useRef(undefined)
-  const bookmarks = useBookmarks(session, setToast, () => setDialog({ type: 'account' }))
+  // 保存の通知：未保存からの保存は「リストに追加」の操作つきで知らせる。
+  const [sheetRecord, setSheetRecord] = useState(null), [picking, setPicking] = useState(false)
+  const notifySave = (text, record) => setToast(record ? { text, action: { label: 'リストに追加', run: () => setSheetRecord(record) } } : text)
+  const bookmarks = useBookmarks(session, notifySave, () => setDialog({ type: 'account' }))
+  const lists = useLists(session, bookmarks.ids, setToast)
   const activityItems = [...owned.filter(p => p.is_public).map(p => ({ id: p.id, since: p.updated_at })), ...bookmarks.rows.filter(b => !owned.some(p => p.id === b.id)).map(b => ({ id: b.id, since: b.savedAt }))]
   const activity = useActivity(session, activityItems)
   const openAccount = () => setDialog({ type: 'account' })
+  // ハートの統一動作：未ログインは案内、未保存は即保存（＋リストに追加の案内）、保存済みは保存先シート。
+  const heart = record => { if (!session) return openAccount(); if (bookmarks.ids.includes(record.id)) setSheetRecord(record); else bookmarks.toggle(record) }
   const follows = useFollows(session, setToast, openAccount)
   const [deriving, setDeriving] = useState(false)
 
@@ -123,10 +137,12 @@ function App() {
   }, [route.view, route.id, route.params])
   // 直接URLで詳細を開いたなど、アプリ内の戻り先がないときは「探す」へ戻す。
   const backToList = () => { if (navigated.current) history.back(); else location.hash = '/discover' }
+  const backFromCompare = () => { if (navigated.current) history.back(); else location.hash = '/saved' }
+  useEffect(() => { setSheetRecord(null); setPicking(false) }, [route.view, route.id, session?.user.id])
   useEffect(() => { if (!SEARCH_ENABLED) return; const keys = e => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (!searchRef.current) { location.hash = '/discover'; setTimeout(() => searchRef.current?.focus(), 0) } else searchRef.current.focus() } }; window.addEventListener('keydown', keys); return () => window.removeEventListener('keydown', keys) }, [])
   useEffect(() => { if (!toast) return; const t = setTimeout(() => setToast(''), 4500); return () => clearTimeout(t) }, [toast])
   useEffect(() => {
-    if (previousOwner.current !== undefined && previousOwner.current !== session?.user.id) { setSelected([]); setDialog(null); setName('') }
+    if (previousOwner.current !== undefined && previousOwner.current !== session?.user.id) { setSelected([]); setDialog(null); setName(''); try { sessionStorage.removeItem(COMPARE_KEY) } catch { /* 保持なし */ } }
     previousOwner.current = session?.user.id
     setOwned([]); setOwnedReady(false)
     if (!session?.user.id) return
@@ -139,14 +155,41 @@ function App() {
     if (!ready || !session) return
     try { const cached = JSON.parse(localStorage.getItem('nitoron:workspace:v1:device') || 'null'); setDeviceRecords(Array.isArray(cached?.records) ? cached.records : []) } catch { setDeviceRecords([]) }
   }, [ready, session?.user.id])
+  // 比較の復元：同じ利用者の選択だけを、公開中の発表・本人の記録から取り直す。公開停止・削除・別利用者の分は捨てる。
+  const compareHydrated = useRef(false)
+  useEffect(() => {
+    if (!ready) return
+    compareHydrated.current = false
+    let cancelled = false
+    const owner = session?.user.id || null
+    ;(async () => {
+      let saved = null
+      try { saved = JSON.parse(sessionStorage.getItem(COMPARE_KEY) || 'null') } catch { saved = null }
+      const items = saved && saved.owner === owner && Array.isArray(saved.items) ? saved.items.slice(0, 3) : []
+      const results = []
+      for (const item of items) {
+        if (item.kind === 'mine') { const r = records.find(x => x.id === item.id); if (r) results.push(snapshotWithPublication(r)) }
+        else if (item.kind === 'public') { try { results.push(snapshotWithPublication(await getPublic(item.id))) } catch { /* 公開停止・削除は除外 */ } }
+      }
+      if (cancelled) return
+      setSelected(results); compareHydrated.current = true
+    })()
+    return () => { cancelled = true }
+  }, [ready, session?.user.id])
+  useEffect(() => {
+    if (!compareHydrated.current) return
+    try { sessionStorage.setItem(COMPARE_KEY, JSON.stringify({ owner: session?.user.id || null, items: selected.map(r => ({ id: r.id, kind: r.publication ? 'public' : 'mine' })) })) } catch { /* 保持できなくても比較は使える */ }
+  }, [selected, session?.user.id])
   useEffect(() => {
     if (!['search', 'saved'].includes(route.view)) return
     if (route.view === 'saved' && !bookmarks.ready) return
     let cancelled = false
     setPublicState(s => ({ ...s, loading: true, error: '' }))
-    const timer = setTimeout(() => listPublic({ query, region, page: publicPage, filters, sort, ...(route.view === 'saved' ? { bookmarkedBy: session?.user.id || null } : {}) }).then(data => { if (!cancelled) setPublicState({ ...data, loading: false, error: '' }) }).catch(e => { if (!cancelled) setPublicState({ records: [], count: 0, loading: false, error: e.message }) }), 200)
+    // 保存リスト：一覧と「すべて」は本人の bookmark、名前付きリストは所属で絞る。
+    const scope = route.view !== 'saved' ? {} : route.id && route.id !== 'all' ? { listId: route.id } : { bookmarkedBy: session?.user.id || null }
+    const timer = setTimeout(() => listPublic({ query, region, page: publicPage, filters, sort, ...scope }).then(data => { if (!cancelled) setPublicState({ ...data, loading: false, error: '' }) }).catch(e => { if (!cancelled) setPublicState({ records: [], count: 0, loading: false, error: e.message }) }), 200)
     return () => { cancelled = true; clearTimeout(timer) }
-  }, [route.view, query, region, publicPage, refresh, filters, sort, bookmarks.ready, bookmarks.ids.join(','), session?.user.id])
+  }, [route.view, route.id, query, region, publicPage, refresh, filters, sort, bookmarks.ready, bookmarks.ids.join(','), lists.items.length, session?.user.id])
   useEffect(() => {
     if (route.view !== 'public') return
     let cancelled = false
@@ -265,32 +308,34 @@ function App() {
       {error && <div className="workspace-error print-hidden"><ErrorNotice retry={retry}>{error}</ErrorNotice></div>}
       {!error && needsLogin && ['mine', 'record'].includes(route.view) && <div className="workspace-error print-hidden"><div className="notice" role="status"><span>記録はこの端末に保存しています。登録・ログインするとクラウドに保存し、公開や指摘ができます。</span> <button onClick={() => setDialog({ type: 'account' })}>登録・ログイン</button></div></div>}
       {route.view === 'record' ? ready ? editorRecord ? <Editor key={editorRecord.id} record={editorRecord} discussion={owned.some(p => p.id === editorRecord.id) && <Discussion record={{ ...editorRecord, publication: { owner: session?.user.id, isPublic: owned.find(p => p.id === editorRecord.id)?.is_public } }} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} session={session} flush={flush} onChange={record => put(record, session?.user.id || null)} onPublish={() => { setActionError(''); setDialog({ type: 'publish', record: snapshot(editorRecord) }) }} onDelete={() => deleteRecord(editorRecord)} published={owned.some(p => p.id === editorRecord.id && p.is_public)} onUnpublish={() => stopPublication(editorRecord)} onShare={() => share(editorRecord)} /> : <Empty title="この記録は見つかりません" action={<a className="secondary" href="#/mine">自分の実践へ</a>}>保存したアカウントでログインしているか確認してください。</Empty> : <p className="loading" role="status">記録を読み込み中…</p>
-      : route.view === 'public' ? recordError ? <div className="catalog"><ErrorNotice retry={() => setRefresh(r => r + 1)}>{recordError}</ErrorNotice><a href="#/discover">みんなの発表へ</a></div> : publicRecord ? <PublicRecord record={publicRecord} onBack={backToList} selected={selected.some(r => keyOf(r) === keyOf(publicRecord))} onSelect={() => select(publicRecord)} saved={bookmarks.ids.includes(publicRecord.id)} onSave={() => bookmarks.toggle(publicRecord)} onShare={() => share(publicRecord)} ready={ready}
+      : route.view === 'public' ? recordError ? <div className="catalog"><ErrorNotice retry={() => setRefresh(r => r + 1)}>{recordError}</ErrorNotice><a href="#/discover">みんなの発表へ</a></div> : publicRecord ? <PublicRecord record={publicRecord} onBack={backToList} selected={selected.some(r => keyOf(r) === keyOf(publicRecord))} onSelect={() => select(publicRecord)} saved={bookmarks.ids.includes(publicRecord.id)} onSave={() => heart(publicRecord)} onShare={() => share(publicRecord)} ready={ready}
           onDerive={() => tryPractice(publicRecord)} deriving={deriving} session={session} onAccount={openAccount} notify={setToast}
           canFollow={!!publicRecord.publication.owner && session?.user.id !== publicRecord.publication.owner} following={follows.ids.includes(publicRecord.publication.owner)} onFollow={() => follows.toggle(publicRecord.publication.owner, publicRecord.meta?.author || '発表者')} discussion={<Discussion key={publicRecord.id} record={publicRecord} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} />} /> : <p className="loading" role="status">発表を読み込み中…</p>
       : route.view === 'talks' ? <Talks session={session} bookmarks={bookmarks} onAccount={() => setDialog({ type: 'account' })} />
-      : route.view === 'compare' ? <Compare records={selectedRecords} onRemove={select} />
+      : route.view === 'compare' ? <Compare records={selectedRecords} onRemove={select} onBack={backFromCompare} />
+      : route.view === 'list' ? <SharedList key={route.id} token={route.id} savedIds={bookmarks.ids} onSave={heart} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} />
       : route.view === 'account' ? <Profile session={session} name={name} selectedCount={selected.length} onAccount={() => setDialog({ type: 'account' })}
           savedNew={bookmarks.rows.reduce((n, b) => n + (activity.counts[b.id] || 0), 0)} mineNew={owned.reduce((n, p) => n + (activity.counts[p.id] || 0), 0)} />
-      : route.view === 'user' ? <User key={route.id} id={route.id} savedIds={bookmarks.ids} onSave={bookmarks.toggle} selectedKeys={selected.map(keyOf)} keyOf={keyOf} onSelect={select} />
+      : route.view === 'user' ? <User key={route.id} id={route.id} savedIds={bookmarks.ids} onSave={heart} selectedKeys={selected.map(keyOf)} keyOf={keyOf} onSelect={select} />
       : route.view === 'profile' ? <ProfileEdit session={session} name={name} onName={rename} onAccount={() => setDialog({ type: 'account' })} />
-      : route.view === 'discover' ? <Home savedIds={bookmarks.ids} onSave={bookmarks.toggle} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} searchRef={searchRef} />
-      : route.view === 'saved' ? <SavedList session={session} records={publicState.records} count={publicState.count} loading={publicState.loading || !bookmarks.ready}
+      : route.view === 'discover' ? <Home savedIds={bookmarks.ids} onSave={heart} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} searchRef={searchRef} />
+      : route.view === 'saved' ? <SavedList session={session} view={route.id} list={lists.lists.find(l => l.id === route.id)} lists={lists} picking={picking} onPicking={setPicking} notify={setToast} records={publicState.records} count={publicState.count} loading={publicState.loading || !bookmarks.ready}
           error={bookmarks.error ? <ErrorNotice retry={bookmarks.retry}>{bookmarks.error}</ErrorNotice> : publicState.error ? <ErrorNotice retry={() => setRefresh(r => r + 1)}>{publicState.error}</ErrorNotice> : null}
-          page={publicPage} onPage={setPublicPage} savedIds={bookmarks.ids} onSave={bookmarks.toggle} activityCounts={activity.counts} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} onAccount={() => setDialog({ type: 'account' })} />
+          page={publicPage} onPage={setPublicPage} savedIds={bookmarks.ids} onSave={heart} activityCounts={activity.counts} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} onAccount={() => setDialog({ type: 'account' })} />
       : <Catalog view={route.view} records={displayed} total={publicMode ? publicState.count : displayed.length} loading={publicMode ? publicState.loading : !ready}
           error={publicMode && publicState.error ? <ErrorNotice retry={() => setRefresh(r => r + 1)}>{publicState.error}</ErrorNotice> : null}
           query={query} onQuery={setQuery} region={region} onRegion={setRegion}
-          filters={filters} onFilters={setFilters} sort={sort} onSort={setSort} onReset={resetSearch} savedIds={bookmarks.ids} onSave={bookmarks.toggle} activityCounts={activity.counts} searchRef={searchRef} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select}
+          filters={filters} onFilters={setFilters} sort={sort} onSort={setSort} onReset={resetSearch} savedIds={bookmarks.ids} onSave={heart} activityCounts={activity.counts} searchRef={searchRef} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select}
           owned={owned} ownedReady={ownedReady} ready={ready} onCreate={() => create('presentation')}
           blankCount={publicMode ? 0 : records.filter(r => isBlankRecord(r) && !owned.some(p => p.id === r.id && p.is_public)).length} onCleanup={cleanupBlankRecords}>
         {publicMode && publicState.count > PAGE_SIZE && <div className="pagination"><button className="secondary" disabled={publicPage === 0 || publicState.loading} onClick={() => setPublicPage(p => p - 1)}>前へ</button><span>{publicPage + 1} / {Math.ceil(publicState.count / PAGE_SIZE)}</span><button className="secondary" disabled={(publicPage + 1) * PAGE_SIZE >= publicState.count || publicState.loading} onClick={() => setPublicPage(p => p + 1)}>次へ</button></div>}
         {!publicMode && <footer className="catalog-footer">{!!deviceRecords.length && <button className="quiet" onClick={() => { if (window.confirm(`端末だけに保存した${deviceRecords.length}件を、このアカウントの新しい記録として取り込みますか？`)) { for (const r of deviceRecords) put({ ...fromRow(r), id: uid() }); setDeviceRecords([]); setToast('端末の記録を取り込みました。') } }}>端末だけの記録を復元</button>}<button className="quiet" disabled={!ready} onClick={exportAll}>全記録を書き出す</button><button className="quiet" disabled={!ready} onClick={() => importRef.current.click()}>バックアップを取り込む</button><input hidden type="file" ref={importRef} accept="application/json,.json" onChange={importBackup} /></footer>}
       </Catalog>}
     </main>
-    {!!selected.length && route.view !== 'compare' && <div className="compare-tray print-hidden"><span>{selected.length}件を選択中</span><a href="#/compare">並べて比較する</a><button onClick={() => setSelected([])}>解除</button></div>}
+    {!!selected.length && route.view !== 'compare' && <div className="compare-tray print-hidden"><span>{selected.length}件を選択中</span>{selected.length >= 2 ? <a href="#/compare">並べて比較する</a> : <em className="tray-hint">あと1件選ぶと比較できます</em>}<button onClick={() => setSelected([])}>解除</button></div>}
     <nav className="mobile-nav print-hidden" aria-label="モバイルナビゲーション">{NAV.map(([id, label, icon]) => <a key={id} href={`#/${id}`} aria-current={currentTab(id, route.view) ? 'page' : undefined} aria-label={id === 'talks' && activity.total > 0 ? '対話（新着の指摘あり）' : undefined}><span className="nav-icon">{id === 'talks' && activity.total > 0 && <i className="notify-dot" aria-hidden="true" />}<Icon name={icon} size={23} /></span><span>{label}</span></a>)}</nav>
-    {toast && <div className="toast print-hidden" role="status">{toast}</div>}
+    {toast && <div className="toast print-hidden" role="status">{typeof toast === 'string' ? toast : <>{toast.text}<button className="toast-action" onClick={() => { const run = toast.action.run; setToast(''); run() }}>{toast.action.label}</button></>}</div>}
+    {sheetRecord && session && <SaveSheet key={sheetRecord.id} record={sheetRecord} lists={lists} onClose={() => setSheetRecord(null)} onUnsave={async () => { await bookmarks.toggle(sheetRecord); setSheetRecord(null) }} />}
     {dialog?.type === 'account' && <Account session={session} name={name} onName={rename} flush={flush} onClose={() => setDialog(null)} />}
     {dialog?.type === 'publish' && <Dialog title="公開する内容を確認" wide onClose={busy ? () => {} : () => setDialog(null)}><p className="notice">以下の本文・名前・地域・数字・写真・添付資料・資料リンクが、ログインなしで誰でも読めるようになります。個人情報や他人の未公開情報が含まれていないか確認してください。</p>
       <div className="publish-preview"><RecordBody record={dialog.record} /></div>

@@ -18,14 +18,15 @@ export function SearchPill({ query, onQuery, region, onRegion, active = 0, onFil
 }
 // 公開カードの操作は「本体で詳細を開く」「ハートで保存」だけに絞る。比較・質問・メモ・フォローは発表詳細の入口へ移した。
 // 自分の実践のカードは、公開ラベルと比較ボタンをそのまま残す。
-export function RecordCard({ record: r, href, selected, onSelect, publicMode, publicationLabel, saved, onSave, newCount = 0 }) {
+export function RecordCard({ record: r, href, selected, onSelect, publicMode, publicationLabel, saved, onSave, picking = false, newCount = 0 }) {
   const [index, setIndex] = useState(0)
   const photos = imageAttachments(r), evidence = r.meta?.observations?.filter(o => o.fact.trim()).length || 0
   const metric = [['hours', '作業時間', '時間'], ['yieldKg', '収穫量', 'kg'], ['revenue', '売上', '円']].find(([key]) => number(r.meta?.[key]) !== null)
   return <article className="record-card"><div className="card-visual"><a href={href} className="cover-link" tabIndex={-1} aria-hidden="true"><Cover record={r} index={Math.min(index, Math.max(0, photos.length - 1))} /></a>
     <span className="card-badge">{r.meta?.kind === 'challenge' ? r.meta.stage : KINDS[r.meta?.kind || 'memo']}</span>
     {newCount > 0 && <span className="card-badge activity">新着の指摘 {newCount}件</span>}
-    {publicMode && onSave && <button className="save-heart" aria-pressed={saved} aria-label={`${r.title || '無題'}を${saved ? '保存リストから外す' : '保存リストに追加'}`} onClick={() => onSave(r)}><Icon name="heart" size={25} fill={saved ? '#ff385c' : '#0006'} /></button>}
+    {publicMode && onSave && <button className="save-heart" aria-pressed={saved} aria-label={`${r.title || '無題'}${saved ? 'の保存先を選ぶ' : 'を保存する'}`} onClick={() => onSave(r)}><Icon name="heart" size={25} fill={saved ? '#ff385c' : '#0006'} /></button>}
+    {picking && <button className="pick-box" aria-pressed={selected} aria-label={`${r.title || '無題'}を${selected ? '比較から外す' : '比較に選ぶ'}`} onClick={() => onSelect(r)}><Icon name="check" size={16} /></button>}
     {photos.length > 1 && <><button className="photo-arrow prev" aria-label="前の写真" onClick={() => setIndex((index + photos.length - 1) % photos.length)}><Icon name="left" size={14} /></button><button className="photo-arrow next" aria-label="次の写真" onClick={() => setIndex((index + 1) % photos.length)}><Icon name="right" size={14} /></button><div className="photo-dots" aria-hidden="true">{photos.slice(0, 5).map((p, i) => <i key={p.path} className={i === Math.min(index, 4) ? 'active' : ''} />)}</div></>}
   </div><a href={href} className="card-copy"><div className="card-location"><strong>{[r.meta?.region, r.meta?.crop].filter(Boolean).join(' · ') || '自分の記録'}</strong>{evidence > 0 && <span>観測 {evidence}</span>}</div><h2>{r.title || '無題の記録'}</h2><div className="card-author">{r.meta?.author || '名前未登録'}{r.meta?.club && ` · ${r.meta.club}`}</div><div className="card-bottom">{metric ? <span><strong>{formatNumber(number(r.meta[metric[0]]))}</strong> {metric[2]}<span className="metric-caption"> / {metric[1]}</span></span> : <time dateTime={r.date}>{r.date.replaceAll('-', '.')}</time>}</div></a>
   {!publicMode && <div className="card-utility"><span>{publicationLabel}</span><button className="text-action" aria-pressed={selected} onClick={() => onSelect(r)}><Icon name={selected ? 'check' : 'plus'} size={15} />{selected ? '比較に選択済み' : '比較する'}</button></div>}</article>

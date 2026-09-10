@@ -8,10 +8,11 @@ const message = error => ['PGRST205', '42P01'].includes(error?.code)
   : '読み込み・保存ができませんでした。接続を確認して再試行してください。'
 const requireClient = () => { if (!supabase) throw new Error('クラウドに接続できません。') }
 const unpack = row => ({ ...fromRow(row.snapshot), id: row.id, publication: { id: row.id, owner: row.owner_id, publishedAt: row.published_at, updatedAt: row.updated_at, isPublic: row.is_public } })
-export async function listPublic({ query = '', region = '', page = 0, filters = EMPTY_FILTERS, sort = 'recent', bookmarkedBy, limit = PAGE_SIZE } = {}) {
+export async function listPublic({ query = '', region = '', page = 0, filters = EMPTY_FILTERS, sort = 'recent', bookmarkedBy, listId, limit = PAGE_SIZE } = {}) {
   requireClient()
   if (bookmarkedBy === null) return { records: [], count: 0 }
-  let request = supabase.from('nitoron_publications').select(bookmarkedBy ? '*,nitoron_bookmarks!inner(user_id)' : '*', { count: 'exact' }).eq('is_public', true)
+  // listId は名前付きリストの中身（本人の所属行だけがRLSで見える）。公開中の発表だけを返す。
+  let request = supabase.from('nitoron_publications').select(listId ? '*,nitoron_list_items!inner(list_id)' : bookmarkedBy ? '*,nitoron_bookmarks!inner(user_id)' : '*', { count: 'exact' }).eq('is_public', true)
   for (const term of normalize(query).split(/\s+/).filter(Boolean)) request = request.ilike('search_text', `%${term.replace(/[\\%_]/g, '\\$&')}%`)
   if (region.trim()) request = request.ilike('region_search', `%${normalize(region).trim().replace(/[\\%_]/g, '\\$&')}%`)
   if (filters.crop.trim()) request = request.ilike('crop_search', `%${normalize(filters.crop).trim().replace(/[\\%_]/g, '\\$&')}%`)
@@ -20,7 +21,8 @@ export async function listPublic({ query = '', region = '', page = 0, filters = 
   if (filters.from) request = request.gte('snapshot->>date', filters.from)
   if (filters.to) request = request.lte('snapshot->>date', filters.to)
   if (filters.numbers) request = request.eq('has_metrics', true)
-  if (bookmarkedBy) request = request.eq('nitoron_bookmarks.user_id', bookmarkedBy)
+  if (listId) request = request.eq('nitoron_list_items.list_id', listId)
+  else if (bookmarkedBy) request = request.eq('nitoron_bookmarks.user_id', bookmarkedBy)
   request = sort === 'title' ? request.order('title_search') : request.order('updated_at', { ascending: false })
   const { data, error, count } = await request.order('id').range(page * PAGE_SIZE, page * PAGE_SIZE + Math.min(limit, PAGE_SIZE) - 1)
   if (error) throw new Error(message(error))
@@ -191,4 +193,72 @@ export async function listResolutions(publicationId) {
 export async function setResolution(publicationId, feedbackId, session, status) {
   const { error } = await supabase.from('nitoron_feedback_resolutions').upsert({ publication_id: publicationId, feedback_id: feedbackId, user_id: session.user.id, status }).select('feedback_id').single()
   if (error) throw new Error('対応状況を更新できませんでした。')
+}
+
+// ---- 名前付き保存リスト ----
+const listMessage = error => ['PGRST205', '42P01', '42883'].includes(error?.code) ? '保存リストの保存先は準備中です。' : '保存リストを更新できませんでした。再試行してください。'
+export const LIST_NAME_MAX = 60
+export async function listLists(userId) {
+  requireClient()
+  const { data, error } = await supabase.from('nitoron_lists').select('id,name,is_shared,share_token,created_at,updated_at').eq('owner_id', userId).order('created_at').limit(200)
+  if (error) throw new Error(message(error))
+  return data
+}
+export async function listListItems(userId) {
+  requireClient()
+  const { data, error } = await supabase.from('nitoron_list_items').select('list_id,publication_id,added_at').eq('user_id', userId).order('added_at', { ascending: false }).limit(2000)
+  if (error) throw new Error(message(error))
+  return data
+}
+export async function createList(userId, name) {
+  requireClient()
+  const trimmed = name.trim()
+  if (!trimmed) throw new Error('リストの名前を入力してください。')
+  if (trimmed.length > LIST_NAME_MAX) throw new Error(`リストの名前は${LIST_NAME_MAX}文字以内にしてください。`)
+  const { data, error } = await supabase.from('nitoron_lists').insert({ owner_id: userId, name: trimmed }).select('id,name,is_shared,share_token,created_at,updated_at').single()
+  if (error) throw new Error(listMessage(error))
+  return data
+}
+export async function renameList(id, name) {
+  requireClient()
+  const trimmed = name.trim()
+  if (!trimmed) throw new Error('リストの名前を入力してください。')
+  if (trimmed.length > LIST_NAME_MAX) throw new Error(`リストの名前は${LIST_NAME_MAX}文字以内にしてください。`)
+  const { data, error } = await supabase.from('nitoron_lists').update({ name: trimmed }).eq('id', id).select('id,name,is_shared,share_token,created_at,updated_at').maybeSingle()
+  if (error || !data) throw new Error('リストの名前を変更できませんでした。')
+  return data
+}
+// リストの削除は所属行だけを消す（発表・bookmark は残る）。
+export async function deleteList(id) {
+  requireClient()
+  const { data, error } = await supabase.from('nitoron_lists').delete().eq('id', id).select('id').maybeSingle()
+  if (error || !data) throw new Error('リストを削除できませんでした。')
+}
+// 共有ON/OFFとトークン発行はサーバー側関数で一体に行う。ONにするたびに新しいリンクになる。
+export async function setListSharing(id, shared) {
+  requireClient()
+  const { data, error } = await supabase.rpc('nitoron_set_list_sharing', { p_list: id, p_shared: shared })
+  if (error) throw new Error(error.code === '42501' ? '自分のリストだけ共有を変更できます。' : listMessage(error))
+  return data
+}
+// bookmark と所属を1トランザクションで追加する。
+export async function addToList(listId, publicationId) {
+  requireClient()
+  const { error } = await supabase.rpc('nitoron_add_to_list', { p_list: listId, p_publication: publicationId })
+  if (error) throw new Error(error.code === '42501' ? '自分のリストにだけ追加できます。' : listMessage(error))
+}
+export async function removeFromList(listId, publicationId) {
+  requireClient()
+  const { error } = await supabase.from('nitoron_list_items').delete().eq('list_id', listId).eq('publication_id', publicationId)
+  if (error) throw new Error(listMessage(error))
+}
+// 共有リンクの閲覧。null＝無効なリンクか共有停止、items が空＝共有中だが発表なし。取得エラーは例外にする。
+export const isShareToken = value => /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(value || '')
+export async function getSharedList(token) {
+  requireClient()
+  if (!isShareToken(token)) return null
+  const { data, error } = await supabase.rpc('nitoron_shared_list', { p_token: token })
+  if (error) throw new Error(message(error))
+  if (!data) return null
+  return { id: data.id, name: data.name, updatedAt: data.updated_at, records: (data.items || []).map(unpack) }
 }

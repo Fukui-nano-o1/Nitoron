@@ -23,7 +23,7 @@ export default function useBookmarks(session, notify, onAccount) {
     const saved = !ids.includes(record.id)
     try {
       await setBookmark(owner, record.id, saved)
-      if (currentOwner.current === owner) { setState(s => ({ ...s, rows: saved ? [...s.rows.filter(r => r.id !== record.id), { id: record.id, savedAt: new Date().toISOString() }] : s.rows.filter(r => r.id !== record.id) })); notify(saved ? '保存リストに追加しました。' : '保存リストから外しました。') }
+      if (currentOwner.current === owner) { setState(s => ({ ...s, rows: saved ? [...s.rows.filter(r => r.id !== record.id), { id: record.id, savedAt: new Date().toISOString() }] : s.rows.filter(r => r.id !== record.id) })); notify(saved ? '保存しました。' : '保存から外しました。', saved ? record : undefined) }
     } catch (e) { if (currentOwner.current === owner) notify(e.message) }
     finally { pending.current.delete(key) }
   }

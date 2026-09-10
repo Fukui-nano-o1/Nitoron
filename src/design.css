@@ -307,3 +307,37 @@ a.avatar-circle:hover{box-shadow:0 0 0 2px #fff,0 0 0 4px #222}
 @media(max-width:420px){.listing-hero{margin-left:-20px;margin-right:-20px}}
 .more-menu .action-row:first-child{padding-top:4px}
 .more-menu>:last-child{border-bottom:0}
+
+/* 保存・共有・比較（④）：保存リスト一覧、保存先シート、比較の選択モード、共有ページ、比較表の補足 */
+.list-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 18px;margin-top:8px}
+.list-card{display:block;text-align:left;color:#222;text-decoration:none;min-width:0;background:none;border:0;padding:0;border-radius:0}
+.list-card strong{display:block;font-size:.9375rem;margin-top:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.list-card span{display:block;font-size:.8125rem;color:#6a6a6a;margin-top:2px}
+.list-cover{border-radius:14px;overflow:hidden;background:#f2f2f2;aspect-ratio:1;border:1px solid #ebebeb}
+.list-cover .record-cover{height:100%;aspect-ratio:auto}
+.list-cover-empty{height:100%;display:grid;place-items:center;color:#8a8a8a}
+.list-new .list-cover{border-style:dashed}
+.list-card:hover .list-cover{box-shadow:0 4px 14px #0002}
+.saved-tools{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:.875rem;color:#6a6a6a;margin:-6px 0 20px}
+.saved-tools .text-action{gap:6px;font-size:.875rem}
+.saved-tools .text-action[aria-pressed=true]{color:#d70466}
+.share-state,.shared-note{display:flex;align-items:center;gap:6px;font-size:.8125rem;color:#6a6a6a;margin:6px 0 0}
+.pick-box{position:absolute;left:10px;bottom:10px;width:34px;height:34px;min-height:34px;padding:0;border-radius:50%;background:#fffffff2;color:#bbb;display:grid;place-items:center;box-shadow:0 2px 6px #0003}
+.pick-box[aria-pressed=true]{background:#d70466;color:#fff}
+.tray-hint{font-style:normal;color:#ffffffb0;font-size:.8125rem}
+.toast-action{color:#fff;text-decoration:underline;text-underline-offset:3px;margin-left:14px;min-height:28px;padding:0;font-weight:600}
+.save-sheet-title{margin:-8px 0 8px}
+.save-sheet .action-row[aria-pressed=true] strong{color:#d70466}
+.save-sheet .action-row[aria-pressed=true] .action-icon{background:#fde7ef;color:#d70466}
+.unsave{color:#6a6a6a;gap:6px;font-size:.8125rem}
+.share-panel{margin-top:22px;padding-top:18px;border-top:1px solid #ebebeb;display:grid;gap:10px}
+.share-panel h3{font-size:.9375rem;margin:0}
+.share-panel input{font-size:.875rem}
+.share-panel .dialog-actions{justify-content:flex-start;gap:12px}
+.share-panel .dialog-actions.wrap{flex-wrap:wrap}
+.share-panel.danger .text-action{color:#b3261e}
+.comparison .condition-row td{font-size:.8125rem;color:#6a6a6a}
+.comparison .as-written{color:#8a5a00}
+.comparison th small{display:block;font-weight:400;color:#6a6a6a;font-size:.75rem;margin-top:2px}
+@media(max-width:1100px){.list-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.list-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}.saved-tools{font-size:.8125rem}}
