@@ -1,6 +1,5 @@
 import React from 'react'
 import Cover from './Cover.jsx'
-import Description from './Description.jsx'
 import { AttachmentList } from './Attachments.jsx'
 import { imageAttachments } from './attachment-domain.js'
 import { KINDS, SECTIONS, METRICS, number, formatNumber, safeUrl } from './domain.js'
@@ -12,7 +11,7 @@ export default function RecordBody({ record, hideHeading = false, hideCover = fa
     <div className="byline">{m?.author || '発表者未記録'}{m?.club && ` · ${m.club}`}<span>記録日 {record.date}</span></div></>}
     {!hideCover && (m?.coverUrl || imageAttachments(record).length > 0) && <Cover record={record} className="reading-cover" eager />}
     {m && <>
-      <Description id="document-summary" heading={m.kind === 'presentation' ? 'この発表について' : 'この記録について'} text={m.summary} className="record-about" />
+      {m.summary && <p className="record-summary" id="document-summary">{m.summary}</p>}
       <dl className="conditions-grid">
         {[['作物・品種', [m.crop, m.variety].filter(Boolean).join(' / ')], ['地域', m.region], ['対象面積', m.areaA ? `${m.areaA} a` : ''], ['対象期間', m.start || m.end ? `${m.start || '未記録'}〜${m.end || '未記録'}` : '']].map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value || '未記録'}</dd></div>)}
       </dl>

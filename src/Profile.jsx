@@ -4,7 +4,7 @@ import Icon from './Icon.jsx'
 export default function Profile({ session, name, selectedCount, savedNew = 0, mineNew = 0, onAccount }) {
   const permanent = session?.user && !session.user.is_anonymous && session.user.email_confirmed_at
   return <section className="profile-page">
-    <header><h1>アカウント</h1><p className="page-lead">自分の記録・保存リスト・比較を、ここからまとめて開けます。</p></header>
+    <h1>アカウント</h1>
     <div className="profile-card">
       <span className="avatar-circle xl" aria-hidden="true">{name?.slice(0, 1) || <Icon name="user" size={40} />}</span>
       <strong>{name || '名前未登録'}</strong>

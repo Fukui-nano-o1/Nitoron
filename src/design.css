@@ -220,16 +220,3 @@ a.avatar-circle:hover{box-shadow:0 0 0 2px #fff,0 0 0 4px #222}
 .listing-highlights small{display:block;font-size:.8125rem;color:#6a6a6a;line-height:1.7;margin-top:2px}
 .listing-mobile-action .text-action{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:760px){.listing-highlights{gap:20px;padding-bottom:26px}}
-/* 説明欄：Airbnbの「畳んだ本文＋もっと見る」を参考にした更新（2026-09-10）。文章は各記録の投稿内容 */
-.about-section{padding:30px 0;border-top:1px solid #ebebeb}
-.about-section h2{font-size:1.3rem;line-height:1.55;margin:0 0 16px}
-.about-clamp{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:6;line-clamp:6;overflow:hidden;white-space:pre-wrap;font-size:1rem;line-height:1.95;margin:0}
-.show-more{display:inline-flex;align-items:center;gap:4px;margin-top:14px;padding:0;min-height:40px;border:0;background:none;font-size:1rem;font-weight:600;color:#222;text-decoration:underline;text-underline-offset:3px;border-radius:6px}
-.show-more:hover{color:#000;background:none}
-.about-full{white-space:pre-wrap;font-size:1rem;line-height:2;margin:0;overflow-wrap:anywhere}
-.about-section.user-about{border-top:0;padding:0}
-.about-section.user-about .about-clamp{line-height:1.95}
-.publish-preview .about-section{border-top:0;padding-top:0}
-.page-lead{font-size:.875rem;color:#6a6a6a;line-height:1.7;margin:8px 0 0}
-@media(max-width:760px){.about-section{padding:26px 0}.about-section h2{font-size:1.2rem}.show-more{font-size:.9375rem}}
-@media print{.about-clamp{display:block;overflow:visible;-webkit-line-clamp:none;line-clamp:none}}
