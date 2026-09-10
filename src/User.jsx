@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Icon from './Icon.jsx'
+import Description from './Description.jsx'
 import { RecordCard } from './Catalog.jsx'
 import { getUserPublic, getProfile, getTrust } from './community.js'
 import { ErrorNotice } from './ui.jsx'
@@ -51,7 +52,7 @@ export default function User({ id, savedIds, onSave, onMenu, selectedKeys, keyOf
       </aside>
       <div className="user-main">
         <h1>{name}さんについて</h1>
-        {profile?.bio && <div className="user-about"><p>{profile.bio}</p></div>}
+        <Description text={profile?.bio} dialogTitle={`${name}さんについて`} className="user-about" />
         <h2>{name}さんの発表</h2>
         {records.length ? <div className="record-grid">{records.map(r => <RecordCard key={r.id} record={r} href={`#/public/${r.id}`} publicMode selected={selectedKeys.includes(keyOf(r))} onSelect={onSelect} saved={savedIds.includes(r.id)} onSave={onSave} onMenu={onMenu} />)}</div>
           : <p className="hint">公開中の発表はまだありません。</p>}
