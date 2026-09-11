@@ -17,13 +17,14 @@ export const REGISTRY = [
 
 // メーカー別の公式取得先（接続部）。検索サービス・取得先は交換可能にする。
 // ルートはメーカー単位の設定であり、機種ごとのURL手入力ではない。
+// 対象メーカーはクボタ・ヤンマー・イセキに限定する（2026-09-11指示）。
 export const MAKERS = [
-  { key: 'honda', names: ['ホンダ', 'honda', '本田技研'], publisher: 'Honda',
-    roots: ['https://www.honda.co.jp/tiller/', 'https://www.honda.co.jp/power/'] },
-  { key: 'kubota', names: ['クボタ', 'kubota'], publisher: 'Kubota',
+  { key: 'kubota', names: ['クボタ', '久保田', 'kubota'], publisher: 'Kubota',
     roots: ['https://agriculture.kubota.co.jp/'] },
   { key: 'yanmar', names: ['ヤンマー', 'yanmar'], publisher: 'Yanmar',
-    roots: ['https://www.yanmar.com/jp/agri/'] },
+    roots: ['https://www.yanmar.com/jp/agri/', 'https://www.yanmar.com/jp/support/manuals/agri/'] },
+  { key: 'iseki', names: ['イセキ', '井関', 'ヰセキ', 'iseki'], publisher: 'ISEKI',
+    roots: ['https://www.iseki.co.jp/'] },
 ]
 
 // 入力（メーカー名・型式）の解釈。先頭のメーカー語を分離し、残りを型式トークンとする。

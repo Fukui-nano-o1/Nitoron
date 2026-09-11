@@ -13,14 +13,37 @@ const FIXTURE = new URL('../scripts/atlas/fixtures/tk100', import.meta.url).path
 test('台帳照合：登録済みSKPは確定し、未登録・不足入力は確定しない', () => {
   assert.equal(identify('クボタ SKP-101W').status, 'registered')
   assert.equal(identify('ｸﾎﾞﾀ SKP-101W').machine?.machineId ?? identify('クボタ　skp-101w').machine?.machineId, 'skp-101w')
-  assert.equal(identify('ホンダ F220').status, 'unregistered')
-  assert.equal(identify('ホンダ F220').machineId, 'honda-f220')
   assert.equal(identify('').status, 'need-input')
+  // 対象メーカーはクボタ・ヤンマー・イセキ。別表記（井関）も同一メーカーに解決する
+  assert.equal(parseInput('ヤンマー YK450MR').maker?.key, 'yanmar')
+  assert.equal(identify('ヤンマー YK450MR').status, 'unregistered')
+  assert.equal(identify('ヤンマー YK450MR').machineId, 'yanmar-yk450mr')
+  assert.equal(parseInput('イセキ KCR60').maker?.key, 'iseki')
+  assert.equal(parseInput('井関 KCR60').maker?.key, 'iseki')
+  // 対象外メーカー（ホンダ）はメーカー未確定として扱い、勝手に対象へ組み込まない
+  assert.equal(parseInput('ホンダ F220').maker, null)
   // 未登録メーカーでも型式トークンを分離し、勝手にメーカーを確定しない
   const parsed = parseInput('テスト工業 TK-100')
   assert.equal(parsed.maker, null)
   assert.equal(parsed.modelToken, 'tk-100')
   assert.equal(normalizeModelText('ＴＫ－１００'), 'tk-100')
+})
+
+test('寸法抽出：結合形式（全長×全幅×全高）と単位の位置差を扱い、単位なしは採用しない', () => {
+  const material = (html) => ({ url: 'fixture://spec.html', sha256: 'x', body: html })
+  // ヤンマー等の諸元表にある「見出し側に単位」形式
+  const headerUnit = extractSpec([material('<th>全長×全幅×全高（mm）</th><td>1,470×550×1,130</td>')])
+  assert.deepEqual([headerUnit.lengthMm, headerUnit.widthMm, headerUnit.heightMm], [1470, 550, 1130])
+  assert.equal(headerUnit.evidence.length, 3)
+  // 数値側に単位
+  const tailUnit = extractSpec([material('機体寸法 1180×495×980mm')])
+  assert.deepEqual([tailUnit.lengthMm, tailUnit.widthMm, tailUnit.heightMm], [1180, 495, 980])
+  // どちらにも単位がなければ採用しない（勝手に補完しない）
+  const noUnit = extractSpec([material('<th>全長×全幅×全高</th><td>1470×550×1130</td>')])
+  assert.equal(noUnit.lengthMm, undefined)
+  // cmはmmへ換算
+  const cm = extractSpec([material('全長 147cm 全幅 55cm 全高 113cm')])
+  assert.deepEqual([cm.lengthMm, cm.widthMm, cm.heightMm], [1470, 550, 1130])
 })
 
 test('フィクスチャから収集→抽出→組立→GLB→検査が通る（モック・別集計）', async () => {
@@ -57,9 +80,10 @@ test('寸法根拠がなければ組み立てず、検査は当て推量メッ�
   const broken = structuredClone(assembled.machine)
   broken.parts[0].evidence = {}
   broken.parts.push({ id: 'ghost', name: '幽霊部品', slot: 'engine', positional: 'unknown', evidence: { url: 'fixture://x' } })
+  broken.nodes.push({ ...broken.nodes[1] }) // ノードIDの重複（別部品への再利用）も検出する
   const verdict = verifyMachine(broken, glb)
   assert.equal(verdict.ok, false)
-  assert.ok(verdict.problems.some(p => p.includes('根拠')) && verdict.problems.some(p => p.includes('位置不明')))
+  assert.ok(verdict.problems.some(p => p.includes('根拠')) && verdict.problems.some(p => p.includes('位置不明')) && verdict.problems.some(p => p.includes('重複')))
 })
 
 test('取得の分類：egress遮断・不正URL・内部宛先を区別して記録する', async () => {

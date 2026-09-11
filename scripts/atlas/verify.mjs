@@ -13,8 +13,15 @@ export function verifyMachine(machine, glbBuffer) {
   // 4. 寸法の妥当性（0.1m〜20m）と根拠
   for (const mm of machine.dimensionsMm) if (!(mm >= 100 && mm <= 20000)) problems.push(`寸法 ${mm}mm が妥当範囲外`)
   for (const key of ['lengthMm', 'widthMm', 'heightMm']) if (!machine.specEvidence.some(e => e.field === key)) problems.push(`寸法 ${key} の根拠がない`)
-  // 5. 階層の親が実在する
-  const ids = new Set(machine.nodes.map(n => n.id))
+  // 5. 階層の親が実在し、IDが重複しない（別部品への再利用を防ぐ）
+  const ids = new Set()
+  for (const node of machine.nodes) { if (ids.has(node.id)) problems.push(`ノードID ${node.id} が重複`); ids.add(node.id) }
   for (const node of machine.nodes) if (node.parent && !ids.has(node.parent)) problems.push(`ノード ${node.id} の親 ${node.parent} がない`)
+  const partIds = new Set()
+  for (const part of machine.parts) { if (partIds.has(part.id)) problems.push(`部品ID ${part.id} が重複`); partIds.add(part.id) }
+  // 6. GLBのメッシュ数とメッシュ対応部品数が一致する（余分・不足メッシュの検出）
+  const glbMeshNodes = (gltf.nodes || []).filter(n => n.mesh != null).length
+  const meshedParts = machine.parts.filter(p => p.slot).length
+  if (glbMeshNodes !== meshedParts) problems.push(`GLBメッシュ数 ${glbMeshNodes} と対応部品数 ${meshedParts} が不一致`)
   return { ok: problems.length === 0, problems }
 }

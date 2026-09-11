@@ -38,7 +38,7 @@ if (identified.status === 'registered') await finish('registered', { machineId: 
 if (identified.status === 'need-input') await finish('need-input', { note: '型式を読み取れない。製造番号と型式を混同していないか確認する。' })
 job.machineId = identified.machineId
 const maker = identified.parsed.maker
-if (!maker && !fixtureDir) await finish('unknown-maker', { note: `メーカーを特定できない。接続部に登録済み: ${MAKERS.map(m => m.names[0]).join('・')}` })
+if (!maker && !fixtureDir) await finish('unknown-maker', { note: `対象メーカー外か特定できない。現在の対象: ${MAKERS.map(m => m.names[0]).join('・')}` })
 
 // --- 収集 ---
 const fetcher = createFetcher({ fixtureDir })

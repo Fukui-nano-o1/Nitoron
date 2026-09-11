@@ -41,8 +41,10 @@ export function createFetcher({ fixtureDir = null, maxPages = 20, maxMillis = 12
           const denyReason = res.headers.get('x-deny-reason')
           if (denyReason) return record({ url, fetchedAt, status: 'network-blocked', denyReason, publisher: parsed.hostname, targetModel })
           if (!res.ok) return record({ url, fetchedAt, status: `http-${res.status}`, publisher: parsed.hostname, targetModel })
+          const contentType = res.headers.get('content-type') || ''
           const body = await res.text()
-          return record({ url, fetchedAt, status: 'ok', source: 'live', publisher: parsed.hostname, contentType: res.headers.get('content-type') || '', sha256: sha256(body), bytes: body.length, targetModel, body })
+          // PDFは出所（URL・ハッシュ）を記録するが、本文抽出は未対応として区別する
+          return record({ url, fetchedAt, status: 'ok', source: 'live', publisher: parsed.hostname, contentType, pdf: /pdf/i.test(contentType) || /\.pdf($|\?)/i.test(url), sha256: sha256(body), bytes: body.length, targetModel, body })
         } catch (e) {
           // 本環境ではegressポリシーの拒否がここに現れる（プロキシCONNECT 403 → fetch failed）。
           if (attempt >= retries) return record({ url, fetchedAt, status: 'network-blocked', publisher: parsed.hostname, error: String(e.cause?.message || e.message), targetModel })

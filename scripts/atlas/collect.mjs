@@ -14,7 +14,7 @@ const links = (html, base) => [...String(html).matchAll(/href="([^"#]+)"/gi)]
 // 型式トークンの照合はハイフン・空白の表記差（TK-100／TK100）を吸収する。仕様記号は落とさない。
 const compact = value => normalizeModelText(value).replace(/[\s-]+/g, '')
 
-export async function collectMaterials(fetcher, { roots, modelToken, original }) {
+export async function collectMaterials(fetcher, { roots, modelToken, original, maxDepth = 3 }) {
   const materials = [], visited = new Set()
   const queue = roots.map(url => ({ url, depth: 0 }))
   const token = compact(modelToken)
@@ -25,12 +25,12 @@ export async function collectMaterials(fetcher, { roots, modelToken, original })
     const page = await fetcher.fetchText(url, { targetModel: original })
     if (page.status !== 'ok') continue
     if (compact(page.body).includes(token)) materials.push(page)
-    if (depth >= 2) continue
+    if (depth >= maxDepth || page.pdf) continue
     for (const next of links(page.body, url)) {
       const sameHost = fetcher.kind === 'fixture' || (() => { try { return new URL(next).hostname === new URL(url).hostname } catch { return false } })()
-      // 機種トークンか資料語を含むリンクだけ辿る（探索の発散を防ぐ）
+      // 機種トークンを含むリンクは常に、それ以外は製品・仕様・取説系の語を含むリンクだけ辿る（探索の発散を防ぐ）
       const label = compact(decodeURIComponent(next))
-      if (sameHost && (label.includes(token) || /lineup|spec|manual|ownersmanual|parts|shiyou|torisetsu/.test(label))) queue.push({ url: next, depth: depth + 1 })
+      if (sameHost && (label.includes(token) || /lineup|spec|manual|ownersmanual|parts|products?|cultivator|catalog|shiyou|torisetsu/.test(label))) queue.push({ url: next, depth: depth + 1 })
     }
   }
   const failures = fetcher.provenance.filter(p => p.status !== 'ok')
