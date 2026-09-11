@@ -9,7 +9,8 @@ export function syntheticMachine({offsetM=.025}={}){
     const truth=p.map((v,k)=>v+(k===0?Math.sin(i+1)*offsetM:k===1?Math.cos(i+1)*offsetM:0));
     return {id:'synthetic-'+i,name,slot:null,evidence:{url:'fixture://synthetic'},
       positionEvidence:{url:'fixture://synthetic',page:1,figureSha256:'a'.repeat(64),
-        imageSize:[1000,800],imageXY:project(truth,camera),basis:'leader-endpoint',ocrConf:99}};
+        imageSize:[1000,800],imageXY:project(truth,camera),basis:'leader-endpoint',ocrConf:99,
+        viewRegion:{status:'assigned',id:'synthetic-known-view',method:'raster-components-v1',figureSha256:'a'.repeat(64),bounds:[0,0,1000,800]}}};
   });
   return {machineId:'fixture-only-tiller',name:'架空データ / 合成テスト専用',category:'walk-behind-tiller',dimensionsMm,parts,nodes:[]};
 }

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {cameraBasis,project,fitCamera,depthSegment,moveTowardObservation,proxyFor,splitByGaps,reconstructHypotheses} from '../scripts/atlas/experimental/reconstruct.mjs';
+import {cameraBasis,project,fitCamera,depthSegment,moveTowardObservation,proxyFor,reconstructHypotheses} from '../scripts/atlas/experimental/reconstruct.mjs';
 import {syntheticMachine} from './helpers/atlas-hypothesis-fixture.mjs';
 const dist=(a,b)=>Math.hypot(...a.map((v,i)=>v-b[i]));
 
@@ -70,11 +70,12 @@ test('different figure identities never share a camera',()=>{
   const r=reconstructHypotheses(m);assert.equal(r.views.length,2);
   assert.notEqual(r.views[0].figureKey,r.views[1].figureKey);
 });
-test('spatial gap yields tentative groups, with an unsplit control retained',()=>{
-  const points=Array.from({length:10},(_,i)=>({id:String(i),xy:[i<5?i:100+i,0]}));
-  assert.deepEqual(splitByGaps(points).map(a=>a.length),[5,5]);
-  const r=reconstructHypotheses(syntheticMachine());assert.equal(r.unsplitControl.length,1);
-  assert.ok(r.views.every(v=>v.segmentationVerified===false));
+test('missing region never falls back to fitting one camera to the entire image',()=>{
+  const m=syntheticMachine();for(const p of m.parts)delete p.positionEvidence.viewRegion;
+  const r=reconstructHypotheses(m);assert.equal(r.status,'region-assignment-required');
+  assert.equal(r.views.length,0);assert.equal(r.counts.constrainedProxies,0);
+  assert.equal(r.unsplitControl.length,1);assert.equal(r.unsplitControl[0].eligibleForReconstruction,false);
+  assert.equal(r.unsplitControl[0].updates,undefined);
 });
 test('too few anchors stop fitting rather than manufacturing five successes',()=>{
   const m=syntheticMachine();m.parts=m.parts.slice(0,4);

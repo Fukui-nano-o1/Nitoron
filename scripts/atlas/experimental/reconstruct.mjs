@@ -1,6 +1,7 @@
 // Experimental inverse-graphics proposal. No network, learned model or model-specific coordinates.
 // Image endpoints constrain a projection, NOT depth or real geometry. Never promote to documented-3d.
-export const VERSION = 'atlas-hypothesis-1';
+import { REGION_METHOD } from './figure-regions.mjs';
+export const VERSION = 'atlas-hypothesis-2-regions';
 const dot = (a, b) => a.reduce((s, v, i) => s + v * b[i], 0);
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 const finiteVector = (a, n) => Array.isArray(a) && a.length === n && a.every(Number.isFinite);
@@ -97,28 +98,21 @@ export function moveTowardObservation(observation,camera,priorWeight=.5) {
     depthSpanM:segment?segment[1]-segment[0]:0};
 }
 
-// Hypothesized view separation only. White space/marker gaps do NOT prove separate camera views.
-// Emit the unsplit control too; Claude must check segmentation against the original figure.
-export function splitByGaps(observations, depth=0) {
-  if(observations.length<8||depth>=2)return [observations];
-  let best=null;
-  for(const axis of [0,1]) {
-    const sorted=observations.slice().sort((a,b)=>a.xy[axis]-b.xy[axis]||a.id.localeCompare(b.id));
-    const span=sorted.at(-1).xy[axis]-sorted[0].xy[axis];
-    if(span<1)continue;
-    for(let i=3;i<sorted.length-4;i++) {
-      const fraction=(sorted[i+1].xy[axis]-sorted[i].xy[axis])/span;
-      if(fraction>.28&&(!best||fraction>best.fraction))best={fraction,sorted,i};
-    }
-  }
-  return best?[...splitByGaps(best.sorted.slice(0,best.i+1),depth+1),
-    ...splitByGaps(best.sorted.slice(best.i+1),depth+1)]:[observations];
+// Source image identity is kept separate from the hypothesized region identity.
+// A missing/unstable region never falls back to fitting the whole page.
+function usableRegion(e) {
+  const r=e.viewRegion,b=r?.bounds;
+  return r?.status==='assigned'&&r.method===REGION_METHOD&&r.figureSha256===e.figureSha256
+    &&typeof r.id==='string'&&r.id.length>0&&finiteVector(b,4)
+    &&b[0]>=0&&b[1]>=0&&b[2]>b[0]&&b[3]>b[1]&&b[2]<=e.imageSize[0]&&b[3]<=e.imageSize[1];
 }
 
 const distance = (a,b)=>Math.hypot(...a.map((v,i)=>v-b[i]));
 function fitGroup(group,index) {
   const base={id:`view-hypothesis-${index+1}`,figureKey:group[0].figureKey,partIds:group.map(o=>o.id),
-    segmentationVerified:false,projectionModel:'orthographic-hypothesis',count:group.length};
+    segmentationVerified:false,regionId:group[0].region?.id??null,regionBounds:group[0].region?.bounds??null,
+    projectionModel:'orthographic-hypothesis',count:group.length,
+    correspondences:group.map(o=>({id:o.id,sourceXY:o.xy,priorXY:null,fittedXY:null,heldOutErrorPx:null}))};
   if(group.length<5)return {...base,status:'insufficient-anchors',minimum:5};
   const camera=fitCamera(group);
   if(!camera)return {...base,status:'degenerate-camera'};
@@ -145,7 +139,7 @@ export function reconstructHypotheses(machine) {
     throw new Error('invalid-machine-dimensions');
   if(machine.category!=='walk-behind-tiller')throw new Error('unsupported-category');
   if(!Array.isArray(machine.parts))throw new Error('invalid-parts');
-  const ids=new Set(), observations=[], proxies=[], excluded=[];
+  const ids=new Set(), observations=[], proxies=[], excluded=[],regionUnresolved=[];
   for(const part of machine.parts.slice().sort((a,b)=>String(a.id).localeCompare(String(b.id)))) {
     if(typeof part.id!=='string'||!part.id||ids.has(part.id))throw new Error('invalid-or-duplicate-part-id');
     ids.add(part.id);
@@ -161,24 +155,34 @@ export function reconstructHypotheses(machine) {
     const p={id:part.id,name:part.name,...proxy,evidence:e};
     proxies.push(p);
     observations.push({id:part.id,xy:e.imageXY.slice(),prior:proxy.geom.position.slice(),
-      bounds:proxy.bounds,figureKey,imageSize:e.imageSize.slice()});
+      bounds:proxy.bounds,figureKey,imageSize:e.imageSize.slice(),region:usableRegion(e)?e.viewRegion:null});
+    if(!usableRegion(e))regionUnresolved.push({id:part.id,name:part.name,reason:e.viewRegion?.reason??'region-assignment-required'});
   }
-  const figureGroups=new Map();
-  for(const o of observations){if(!figureGroups.has(o.figureKey))figureGroups.set(o.figureKey,[]);figureGroups.get(o.figureKey).push(o);}
-  const views=[...figureGroups.values()].flatMap(g=>splitByGaps(g)).map(fitGroup);
-  const unsplitControl=[...figureGroups.values()].map(fitGroup);
+  const figureGroups=new Map(),regionGroups=new Map();
+  for(const o of observations){
+    if(!figureGroups.has(o.figureKey))figureGroups.set(o.figureKey,[]);figureGroups.get(o.figureKey).push(o);
+    if(o.region){const key=JSON.stringify([o.figureKey,o.region.id,o.region.bounds]);
+      if(!regionGroups.has(key))regionGroups.set(key,[]);regionGroups.get(key).push(o);
+    }
+  }
+  const views=[...regionGroups.keys()].sort().map((k,i)=>fitGroup(regionGroups.get(k),i));
+  // Negative control only. Never feed its placements to a candidate, even if its training error is low.
+  const unsplitControl=[...figureGroups.values()].map((g,i)=>{
+    const {updates,...report}=fitGroup(g.map(o=>({...o,region:null})),i);
+    return {...report,role:'mixed-view-negative-control',eligibleForReconstruction:false};
+  });
   const changes=new Map(views.flatMap(v=>(v.updates??[]).map(p=>[p.id,p])));
   const variant = field=>proxies.map(p=>({id:p.id,name:p.name,kind:'part',parent:'machine',
-    shapeBasis:'category-proxy',positionBasis:field==='prior'?'category-prior':'projection-constrained-hypothesis',
+    shapeBasis:'category-proxy',positionBasis:field==='prior'||!changes.has(p.id)?'category-prior':'projection-constrained-hypothesis',
     geom:{...p.geom,position:field==='prior'?p.geom.position:changes.get(p.id)?.[field]??p.geom.position},
     fitted:field!=='prior'&&changes.has(p.id),evidence:p.evidence}));
-  return {version:VERSION,status:changes.size?'candidates-generated':'insufficient-anchors',machineId:machine.machineId,
+  return {version:VERSION,status:changes.size?'candidates-generated':views.length?'insufficient-anchors':regionUnresolved.length?'region-assignment-required':'insufficient-anchors',machineId:machine.machineId,
     name:machine.name,dimensionsMm:machine.dimensionsMm.slice(),
     acceptance:{stageA3dPassed:false,documented3dParts:0,reason:'Only hypotheses; no independent 3D ground truth'},
     assumptions:['category shape and attachment-region priors','orthographic camera per hypothesized view',
       'image leader endpoint treated as proxy center','depth retained from prior; near/far show alternatives'],
-    counts:{sourceParts:machine.parts.length,proxyParts:proxies.length,constrainedProxies:changes.size,excluded:excluded.length},
-    views,unsplitControl,excluded,
+    counts:{sourceParts:machine.parts.length,proxyParts:proxies.length,constrainedProxies:changes.size,excluded:excluded.length,unresolvedRegions:regionUnresolved.length},
+    views,unsplitControl,excluded,regionUnresolved,
     variants:{prior:variant('prior'),fitted:variant('center'),depthNear:variant('depthNear'),depthFar:variant('depthFar')},
     nextEvidenceNeeded:['confirm view separation and endpoints on original figure',
       'confirm camera/shape/center assumptions; inspect proxy interpenetration',
