@@ -141,7 +141,7 @@ for (const f of figures) {
   const png = await readFile(f.image.previewFile || f.image.pngFile)
   viewerFigures.push({ page: f.page, width: f.image.width, height: f.image.height, sha256: f.image.sha256, dataUri: 'data:image/png;base64,' + png.toString('base64'), positions: f.positions })
 }
-const viewerHtml = buildViewerHtml({ machine: { ...assembled.machine, modelVersion }, partsReport: job.partsReport, figures: viewerFigures, glbBase64: glb.toString('base64'), job: { input, modelVersion } })
+const viewerHtml = await buildViewerHtml({ machine: { ...assembled.machine, modelVersion }, partsReport: job.partsReport, figures: viewerFigures, job: { input, modelVersion } })
 job.artifacts = {
   modelVersion, glbSha256: sha256(glb), glbBytes: glb.length,
   parts: assembled.machine.parts.length, meshedParts: assembled.machine.parts.filter(p => p.slot).length,

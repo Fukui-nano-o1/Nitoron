@@ -233,3 +233,22 @@ test('生成・検査：資料図の位置（documented-2d）は位置根拠つ�
   delete broken.parts[0].positionEvidence
   assert.ok(verifyMachine(broken, glb).problems.some(p => p.includes('位置根拠')))
 })
+
+test('ビューア：外部CDNに依存せず、2D操作スクリプトが3Dモジュールと分離されている', async () => {
+  const { buildViewerHtml } = await import('../scripts/atlas/viewer.mjs')
+  const html = await buildViewerHtml({
+    machine: { name: 'テスト工業 TK-100', machineId: 'tk-100', fidelity: 'schematic-exterior', dimensionsMm: [1180, 495, 980], massKg: 31, specEvidence: [], nodes: [{ id: 'engine', name: 'エンジン', geom: { type: 'box', size: [1, 1, 1], position: [0, 0, 0] } }] },
+    partsReport: [{ name: 'エンジン', partId: 'engine', marker: 1, evidenceLocation: '凡例', positionBasis: '推定', documented: false, meshTarget: 'engine' }],
+    figures: [], job: { input: 'テスト工業 TK-100', modelVersion: 'tk-100@x' },
+  })
+  // 依存はdata URIのimport mapのみ。外部URLのscript/linkを含まない
+  assert.ok(!/src="https?:\/\//.test(html) && !/<link[^>]+https?:\/\//.test(html))
+  assert.ok(html.includes('data:text/javascript;base64,'))
+  // 同梱Three.jsのライセンス表記（@licenseヘッダを含むソースの埋め込み＋明示表記）を保持
+  assert.ok(html.includes('MIT License'))
+  // 2D操作は3Dモジュールより前の通常スクリプトにあり、3D失敗時の案内も持つ
+  const plainAt = html.indexOf('window.nitoronActivate')
+  const moduleAt = html.indexOf('type="module"')
+  assert.ok(plainAt > -1 && moduleAt > -1 && plainAt < moduleAt)
+  assert.ok(html.includes('2D照合は上の図で操作できます'))
+})
