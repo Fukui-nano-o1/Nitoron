@@ -1,0 +1,10 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+const base=new URL('./',import.meta.url),read=p=>readFile(new URL(p,base),'utf8'),uri=s=>'data:text/javascript;base64,'+Buffer.from(s).toString('base64');
+const modules=['arched-loft','catalog','geometry','examples','cowling-recipes','cowling-bridge','exterior-ui','model','presentation','part-package','assembly'];
+const rewrite=s=>{let x=s.replaceAll("'../vendor/three.module.js'","'three'").replaceAll("'../vendor/OrbitControls.js'","'orbit'").replaceAll("'../vendor/RoundedBoxGeometry.js'","'rounded-box'");for(const m of modules)x=x.replaceAll("'./"+m+".mjs'","'"+m+"'");return x;};
+const imports={'three/core':uri(await read('vendor/three.core.js'))};imports.three=uri((await read('vendor/three.module.js')).replaceAll("'./three.core.js'","'three/core'"));
+for(const[key,file]of[['orbit','OrbitControls.js'],['rounded-box','RoundedBoxGeometry.js']])imports[key]=uri((await read('vendor/'+file)).replaceAll("'./three.module.js'","'three'"));
+for(const m of modules)imports[m]=uri(rewrite(await read('src/'+m+'.mjs')));
+const html=(await read('index.html')).replace('<!-- IMPORTMAP -->','<script type="importmap">'+JSON.stringify({imports})+'</script>').replace('<script type="module" src="./src/app.mjs"></script>','<script type="module">'+rewrite(await read('src/app.mjs'))+'</script>');
+const out=new URL('PC752N-exterior-viewer.html',base);await writeFile(out,html);console.log(JSON.stringify({file:fileURLToPath(out),bytes:Buffer.byteLength(html),externalRuntimeDependencies:0}));

@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-09-11T12:43:07.480Z",
+  "browser": "141.0.7390.37",
+  "passed": 12,
+  "checks": [
+    "file upload replaces actual geometry in BOTH views and preserves selection, cameras, guide, exploded offsets and opacity",
+    "replacement stays pending review; verified 3D count remains zero",
+    "wrong-machine file causes no geometry, metadata, selection or camera mutation",
+    "selected updated part can be downloaded with identity, revision and source declarations",
+    "undo restores original geometry without resetting active part or either camera",
+    "in-progress explosion continues to completion after a geometry exchange",
+    "display guides remain usable; manual view adjustment clears the guide selection",
+    "reload explicitly starts from baseline; local update does not silently persist",
+    "downloaded part can be restored to baseline after closing or reloading",
+    "390px touch layout supports selected-part import and undo with reduced motion",
+    "390px page has no horizontal layout overflow",
+    "desktop and mobile: no page errors and zero external runtime requests"
+  ],
+  "maximumCameraDeltaMm": 9.947598300641403e-14,
+  "cameraToleranceMm": 1e-8,
+  "externalRuntimeRequests": 0,
+  "pageErrors": [],
+  "iphonePhysical": false,
+  "documented3dParts": 0,
+  "automaticReconstruction": false
+}

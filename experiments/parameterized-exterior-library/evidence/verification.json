@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-09-11",
+  "unitTests": 33,
+  "browserNew": 14,
+  "browserRegression": 26,
+  "browserTotal": 40,
+  "baselineMeshesExactlyPreserved": 174,
+  "canonicalCowlingVertices": 126,
+  "originalDimensionsMm": [
+    324,
+    288,
+    107
+  ],
+  "variantDimensionsMm": [
+    340,
+    270,
+    125
+  ],
+  "reusableSurfaceFamilies": 1,
+  "oldSurfaceExamplesReproduced": 3,
+  "activeMachineSlotsIntegrated": 1,
+  "sourceGeometrySharedByPlacements": {
+    "placements": 2,
+    "generations": 1
+  },
+  "previousArtifactFilesUnchanged": 68,
+  "htmlBuildsCompared": 2,
+  "identicalHtml": true,
+  "htmlSHA256": "2f0b695da78040d18b30c7ab412679c6d6de6172c5321682c7b2e209d8cb6a3b",
+  "realComponentDimensionsVerified": false,
+  "automaticMachineReconstruction": false,
+  "iphonePhysical": false,
+  "nitoronMainRegressionRunHere": false
+}

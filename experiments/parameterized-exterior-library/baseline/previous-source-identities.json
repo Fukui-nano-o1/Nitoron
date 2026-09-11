@@ -1,0 +1,16 @@
+{
+  "localSourceHashes": {
+    "output/pc752n-updatable-parts/src/model.mjs": "839cf53967acf19357f3fe0e698368a146e8647407c88e757a8735935f422b60",
+    "output/pc752n-updatable-parts/src/part-package.mjs": "5336c297afe762848ffe3fe2914e72acfc27be22e33ffcfd2bcf4d9c31424668",
+    "output/pc752n-updatable-parts/src/presentation.mjs": "75cd9f9f9039bc3c2a87753999ac713a93cc2b60b3c42422be61a2e2b6c2e87a",
+    "output/pc752n-updatable-parts/src/app.mjs": "732cbf257947297004bdbef4b7ec46435ca4967f5a7fefe7a712d08501546c1f",
+    "output/pc752n-updatable-parts/src/assembly.mjs": "5270445055b29b1054469a37eb74c5905206bb2c3b87e859a1e72e371fdb11bd",
+    "output/nitoron-parts-catalog/src/geometry.mjs": "b5e7d409658f3fa477e71d483834d4e518e9e7054ff7fcd7945880bd33ee16e9",
+    "output/nitoron-parts-catalog/src/examples.mjs": "76712e36a741ef080b3a8d28d6518c2bbe76dd0bb19b36f12d8f492902346b09",
+    "output/nitoron-parts-catalog/src/app.mjs": "d5025a037d653872997fd88ee3b29e67601d1af2b2b3e9ae6fff19500797ee44",
+    "output/nitoron-parts-catalog/src/catalog.mjs": "0455a0fc3dfb343cbded09bdb9c6970c799648061d68b4e1b4686e40a4f1e395",
+    "output/nitoron-parts-catalog/src/drawing.mjs": "0fd3dbdf0bf087e8d3ee1eb555c338986625b63edff42a802eba14a8b4e15d3f"
+  },
+  "reportedMainBeforeHandoff": "1ab3105",
+  "reportedMainIndependentlyFetched": false
+}

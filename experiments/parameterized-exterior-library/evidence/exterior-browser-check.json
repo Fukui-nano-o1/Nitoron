@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-09-11T12:43:25.866Z",
+  "browser": "141.0.7390.37",
+  "passed": 14,
+  "checks": [
+    "original whole machine and saved 324 x 288 x 107 mm canopy load together",
+    "inspect button opens the bound existing part with its dimensional box",
+    "configuration adds a separate saved revision without changing the installed part",
+    "actual new shape reaches both boxes; cameras, identity, selection and whole envelope stay unchanged",
+    "undo restores original mesh exactly and does not leave a false active library binding",
+    "recipe exchange preserves guide, exploded offsets and exterior/cable/engine transparency",
+    "switching baseline and variant reuses two source shapes; temporary placements are released",
+    "download contains seven saved recipes and an explicit versioned canopy binding",
+    "reload restores the selected recipe and machine geometry from local storage",
+    "invalid cross-sections reject the entire import without changing recipes, shapes or views",
+    "outside-envelope import refuses auto-scaling and rolls back catalog plus model",
+    "storage failure is visible while export remains available",
+    "fresh 390px touch browser imports the saved version and opens its real part box",
+    "both layouts render without page errors or external requests; documented3dParts stays zero"
+  ],
+  "maxCameraDeltaMm": 5.684341886080802e-14,
+  "baselineDimensions": {
+    "length": 324,
+    "width": 288,
+    "height": 107
+  },
+  "variantDimensions": {
+    "length": 340,
+    "width": 270,
+    "height": 125
+  },
+  "sourceGeometryBuilds": 2,
+  "pageErrors": [],
+  "externalRequests": 0,
+  "iphonePhysical": false,
+  "documented3dParts": 0
+}

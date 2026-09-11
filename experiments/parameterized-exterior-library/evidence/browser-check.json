@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-09-11T12:42:50.193Z",
+  "browser": "141.0.7390.37",
+  "checks": [
+    "actual mesh envelope 1470 x 615 x 1020 mm",
+    "whole and detail boxes initialized",
+    "tap group changes detail box",
+    "double tap explodes whole; assembled dimension box unchanged",
+    "assemble returns exact original transforms",
+    "detail double tap explodes elements without single-tap drilldown",
+    "transparency cumulative: exterior then cables then engine",
+    "transparency reset",
+    "individual part box measured; leaf cannot fake further disassembly",
+    "return to group box",
+    "rotation drag does not navigate or explode",
+    "no page errors or external runtime requests",
+    "390px touch double tap",
+    "390px group tap"
+  ],
+  "passed": 14,
+  "externalRuntimeRequests": 0,
+  "pageErrors": [],
+  "modelSource": "human-authored PC752N exterior candidate",
+  "iphonePhysical": false,
+  "exactComponentDimensions": false,
+  "documented3dParts": 0
+}

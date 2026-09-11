@@ -1,0 +1,11 @@
+{
+  "name": "nitoron-exterior-library",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test-model.mjs test-updates.mjs tests/*.test.mjs",
+    "build": "node build.mjs",
+    "check:browser": "node check-browser.cjs && node check-updates.cjs && node check-exterior.cjs"
+  }
+}

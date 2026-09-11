@@ -1,0 +1,933 @@
+--- /dev/null
++++ b/CLAUDE-HANDOFF.md
+@@ -0,0 +1,37 @@
++# Claude Codeへ：共通曲面を部品庫から寸法ボックスへ
++
++2026-09-11 / コード・単一HTML・テスト・証拠画像同梱。
++
++## 目的と取り込み
++
++前回R1〜R7は完了として閉じる。今回は既存PC752Nカウリングをレシピ化し、寸法・断面違いを別版保存、寸法ボックスで交換する。v1〜v4・実測参照セット・新機種探索は再開しない。
++
++最新origin/mainと作業ツリーを確認。前回報告は `1ab3105`。Codexは今回リモートを取得していないため、これを現在の最新値と断定せず、新しい変更を保持する。
++
++ZIPを `experiments/parameterized-exterior-library/` に追加し、部品庫・寸法ボックス・部品交換の既存フォルダは上書きしない。本候補内で接続を検証する。`SHA256.json`を照合。`review.patch`は手元の前回候補との差分閲覧用で、現在mainに無条件適用しない。基点の出所は `baseline/previous-source-identities.json`。
++
++## 固定達成条件 E1〜E7
++
++|条件|必要な結果|
++|---|---|
++|E1 基点維持|旧modelとの比較で174メッシュの頂点・面・法線・姿勢一致。全体1470×615×1020mm。外観の作り直しなし。|
++|E2 共通化・別版|既存5分類維持+曲面。324×288×107から340×270×125mmを別版保存。断面比率変更あり・同版上書き拒否。共通生成で既存3曲面の再現を単体確認。|
++|E3 配置|同じ曲面を2配置して生成1回、位置/色独立。既存ID・基点形状・原点を照合。全体外寸を変える場合は拒否し自動フィットしない。共有と交換時の配列コピーは別集計。|
++|E4 操作維持|交換が両箱の実メッシュへ反映。選択・表示ガイド・視点・分解・透過を維持。カメラ許容差は既存同様1e-8mm。取り消しで元形状へ。|
++|E5 保存|レシピと適用版の保存・JSON書出し・別ブラウザ読込。取り消しで前の部品庫版に戻った後も保存。保存失敗は明示。再読込では視点等を初期化する仕様。|
++|E6 原子的失敗|不正断面・版衝突・取付先違い・外寸変更の失敗で形状/部品庫不変。出所保持、実測/規格/適合の自動認定なし、documented3dParts=0。|
++|E7 検証|単体33件、ブラウザ追加14+既存26、390px/1280px、エラー0/外部実行通信0、再ビルド一致。最新Nitoron本体test/buildは取り込み後にClaudeが実施。実機iPhoneは未確認と区別。|
++
++## 実行と判定
++
++実験内で `npm test` → `npm run build` → `npm run check:browser`。必要時のみ `ATLAS_CHROMIUM_PATH` を実在Chromiumへ指定。Three r180/MIT同梱、有料API不要。本番通信なし。
++
++ファイル入力は `file.text()` 完了後の表示を待って判定する。カメラの許容差1e-8mmと、形状配列・失敗時データの厳密比較を区別する。閾値変更・検証対象の縮小はしない。
++
++E1〜E7、実行環境とSHA、件数、変更ファイル、修正diffを一括報告。再現した問題のみ最小修正。合格後はこの工程を閉じる。通常mainプッシュは既存許可内で検証後に実施。強制プッシュ・本番DB・課金・公開デプロイは行わない。
++
++今回共通化したのは生成1種類、既存3曲面への適用を単体検証、画面接続は1部品。人手工数削減率・新機種の実寸再現・型番だけの自動生成の達成には数えない。最終利用者の入口はメーカー名・型番のまま。寸法入力は開発側の整備用。
++
++## 先行製品からの学び
++
++OnshapeのConfigurations（寸法等による形状バリエーション）とDerived（再利用・版参照）、Cadasio（形状更新後の表示手順維持）を参考に独立実装。2026-09-11に公式資料確認。出典と適用範囲は `DESIGN-REFERENCES.md`。
+--- a/DESIGN-REFERENCES.md
++++ b/DESIGN-REFERENCES.md
+@@ -1,7 +1,13 @@
+-# Design references
++# 先行製品から採用した設計
+ 
+-Checked 2026-09-11: Cadasio official feature page, https://www.cadasio.com/features and company background, https://www.cadasio.com/about .
++公式資料確認日：2026-09-11。
+ 
+-The public feature description explains importing an assembly's hierarchy and metadata, creating interactive steps, and reflecting model changes without recreating presentation work. Nitoron adopts that separation: assembly identity, geometry revisions and presentation data are different records. The implementation is independently written against the existing MIT-licensed Three.js prototype. It neither copies Cadasio code/assets nor claims parity with its CAD import/update pipeline.
++|出典|公式資料で確認した機能|今回への適用（Codexの設計判断）|
++|---|---|---|
++|[Onshape Configurations](https://cad.onshape.com/help/Content/PartStudio/configurations.htm)|部品やアセンブリ等のバリエーションをパラメータで構成。|曲面生成は1つ、断面・寸法はデータ保存。|
++|[Onshape Derived](https://cad.onshape.com/help/Content/PartStudio/derived.htm)|別の部品等を参照し、位置と参照版を指定できる。|形状と配置を分離し、版を固定して明示更新。|
++|[Cadasio Features](https://www.cadasio.com/features)|CAD形状変更を既存プロジェクトの表示ステップへ反映。|部品ID・姿勢・分解・透過・視点を形状から分け、交換時に維持。|
+ 
+-This first change implements replaceable per-part geometry and persistent-in-session viewing state. Better source geometry, CAD import, product recognition and real-world dimensional evidence remain separate future work. No commercial tool was purchased or called.
++公開機能の確認であり、内部ソース/アルゴリズムの確認ではない。同製品と同等のCAD精度・機能・処理性能を主張しない。製品独自のコード・モデル素材は使用していない。基盤は既存Three.js r180 / MIT。
++
++採用した教訓：毎機種で全てを作り直さず、生成規則・形状データ・配置・表示状態の変更箇所を分ける。部品実寸・適合・製造情報には別の根拠が必要。
+--- a/README.md
++++ b/README.md
+@@ -1,64 +1,45 @@
+-# PC752N: replaceable part geometry / 2026-09-11
++# 外装を一度定義し、寸法違いを保存して交換する
+ 
+-Codex candidate for Claude Code. Independent evolution of the dimension-box prototype in `experiments/pc752n-dimension-boxes/`, based on Nitoron main `c7faa3bbaa4338fd6ee9305bc637b9d0c44e8e5b`. See `HANDOFF.md` for integration and fixed acceptance criteria.
++2026-09-11 / Codex実装候補。PC752N寸法ボックスと共通部品庫を接続した独立試作。
+ 
+-**Purpose:** replace a part's geometry while preserving its logical identity, assembly transforms, display-guide steps, selected box, camera, exploded positions and cumulative transparency. Inspired by the publicly described Cadasio workflow; no proprietary source or assets copied. This is NOT a Cadasio CAD importer or repair procedure.
++`PC752N-exterior-viewer.html` をブラウザで開く。外部実行依存なし。版を選び「この形状に交換」、または「カバーの箱へ」。開発用欄で長さ・幅・高さ・中央のふくらみを変え、別版保存後に交換する。
+ 
+-## Run
++## 実行
+ 
+-- Node 22+: `npm test` (the original model checks plus update tests).
+-- `npm run build` creates `PC752N-exterior-viewer.html`. Open in a modern browser, or serve from a local HTTP server if the phone does not execute saved HTML.
+-- `npm run check:browser` runs original and new Playwright checks. Playwright or playwright-core and Chromium must already be available. Optional `ATLAS_CHROMIUM_PATH` selects an installed executable. `NODE_PATH` may locate an existing installation. No runtime CDN/API dependencies.
+-- `node generate-fixture.mjs` deterministically regenerates `fixtures/cowling-revision.json`.
+-
+-## Use
+-
+-The existing two dimensional boxes remain. Tap a group, then a component; double-tap a box or press its explode button. Transparency progresses exterior → cables → engine → reset. Five display-guide steps are independently defined; they are viewing aids, not manufacturer disassembly instructions.
+-
+-Expand **検証用：部品モデルの更新** below the boxes. Select an individual part and export it, or import `fixtures/cowling-revision.json`. The fixture doubles sampling of the SAME assumed orange-cowling surface (126 → 246 vertices); it does not improve factual accuracy. Import updates both boxes and offers one-step undo for the selected part. File contents cannot change hierarchy, transforms, materials or display steps.
+-
+-**Updates live only in this page session.** Closing/reloading restores the baseline. Export a part to keep its geometry and load it into the original baseline after reload. UI exports target `exterior-v1`; the programmatic `exportPart(id)` defaults to the current revision for consecutive editing, or accepts `{fromBaseline:true}` for baseline replay. This panel is a developer verification tool; end users of the eventual model-number-only product will not be asked to edit geometry files.
+-
+-## Separation of concerns
+-
+-| Module | Responsibility |
+-|---|---|
+-| `src/model.mjs` | Original assumed shape, unchanged; six groups, 174 meshes |
+-| `src/assembly.mjs` | Stable part slots, original local transforms, revisions, one-step undo and display displacement vectors |
+-| `src/presentation.mjs` | Five view steps and cumulative layer classification, independent of geometry |
+-| `src/part-package.mjs` | Bounded local JSON interchange and validation |
+-| `src/app.mjs` | Existing viewer plus atomic geometry refresh preserving both view states |
+-
+-IDs use `pc752n/<group>/<name>/<occurrence>`; old `element-xxx` aliases resolve to these baseline slots. Import never regenerates IDs or reorders parts. When later changing the factory or importing a different CAD assembly, preserve existing slots and explicitly map new source parts. Arbitrary CAD reorder matching is NOT implemented. The 174 mesh slots are display objects, not a verified manufacturer BOM.
+-
+-## Local part interchange, schemaVersion 1
+-
+-```json
+-{
+-  "schemaVersion": 1,
+-  "machine": {"maker":"Kubota","model":"PC752N","variant":"single-crawler-standard-rotary"},
+-  "partId": "pc752n/engine/orange-cowling/001",
+-  "fromRevision": "exterior-v1",
+-  "revision": "a-new-part-revision",
+-  "units": "mm",
+-  "frame": "part-local-mm-v1",
+-  "geometry": {"positions": [], "indices": []},
+-  "evidence": {"basis":"photo-estimate","sourceRefs":["S3"],"note":"Describe the origin and remaining uncertainty"}
+-}
++```sh
++npm test
++npm run build
++npm run check:browser
+ ```
+ 
+-Empty geometry above is schema illustration, not a valid mesh. Export provides valid coordinates. Positions are xyz in the ORIGINAL part-local frame before original translation/rotation/scale, not centered to a new box; indices are indexed triangles. No automatic unit conversion, fitting or recentering. The exported shape preserves its original assembled placement under the unchanged transform.
++Playwrightまたはplaywright-coreを使用。必要なら `ATLAS_CHROMIUM_PATH` と `NODE_PATH` に既存環境を指定。Codex検証はChromium 152 / SwiftShader。実機iPhoneは未確認。ファイル直接表示でのlocalStorageはブラウザ依存。JSONでも受け渡せる。
+ 
+-Limits: file 8 MiB; 100,000 vertices; 600,000 triangle indices; finite coordinates ≤100,000 mm absolute; valid indices and at least one nondegenerate triangle. Wrong model/variant/unit/frame, unknown ID, stale revision, extra keys and invalid data reject without updating current or undo geometry. This is a renderable mesh check, not watertightness, collision, material or engineering validation.
++## 構造
+ 
+-The whole assembled bounding box must keep every baseline min/max within 0.01 mm; the rubber band's known width must remain 110 mm within 0.01 mm. No shape is scaled to make a test pass. These are numerical consistency gates, **not real-world accuracy tolerances**. If future verified CAD proves baseline placement or dimensions need changing, use a separately reviewed assembly revision; this geometry-only importer intentionally rejects that change.
++- `arched-loft.mjs`: アーチ断面列をつなぐ共通曲面。X=長さ/Y=高さ/Z=幅。板厚・穴・中空構造は生成しない。
++- `catalog.mjs`, `geometry.mjs`: 既存5分類を維持して `archedLoft / arched-loft-v1` を追加。版は不変。同じ形状はGeometryPoolで共有。
++- `cowling-recipes.mjs`: 既存PC752N上部カバーから一度転記した断面列。実資料から新たに自動抽出したものではない。
++- `cowling-bridge.mjs`: 既存単一メッシュ形式への変換。部品ID・基点形状・取付座標を照合し、原点 `[-663,601,0] mm` を加える。自動フィット・取付先の推測なし。
++- `model.mjs`: 上部カバーだけを共通生成に置換。旧版は `baseline/model.mjs`。それ以外の外観は従来どおり。
++- `assembly.mjs`, `presentation.mjs`, `part-package.mjs`: 既存コードを無変更で再利用。ID・取付姿勢・分解ベクトル・表示手順を維持。
++- `exterior-ui.mjs`: 開発用の寸法違い保存・交換・JSON受け渡し。一般利用者にこの作業を要求しない。
+ 
+-Evidence declarations (`photo-estimate`, `supplier-cad`, `measured`, `verification-fixture`) never self-certify geometry: imported parts are always `pending-review`. `documented3dParts=0`, `automaticReconstruction=false`. S1/S3 references retain their original meanings in `sources.json`.
++GeometryPoolで2配置が同じ形状を参照し生成1回を確認。既存交換形式へはフレーム変換した数値配列をコピーするため、機械表示まで含めた全バッファ共有とは主張しない。InstancedMesh未使用。FPS・人手工数削減は未実測。
+ 
+-## Not included
++## 保存範囲
+ 
+-- CAD/STEP/GLB import, source-photo reconstruction, automated model-number generation or improved unseen geometry.
+-- Durable part registry, cloud persistence, Nitoron production/shared-renderer integration.
+-- Verified individual dimensions, service order, manufacturer-certified BOM, physical iPhone/GPU tests.
++保存キー `nitoron:exterior-library:v1`。全レシピと部品庫から適用した版を保存。以前の部品庫キーは書き換えない。JSONは既存版と衝突しないものをマージし、明示したbindingのみ適用。binding=nullは配置を変更しない。カメラ・分解・透過は同じ画面での交換時に維持し、再読込では初期表示へ戻る。
+ 
+-The prototype still uses two WebGL renderers. Original Three.js MIT license and attribution remain. Generated HTML is standalone; source-evidence hyperlinks only navigate on user request.
++従来の形状JSON入口からの更新はこの保存に含めない。取り消しで前の部品庫版に戻った場合はその版を追跡する。不正入力・版衝突・取付先違い・全体外寸を変える配置は拒否。保存失敗は明示しJSONを書き出せる。
++
++## 測定結果
++
++174メッシュの頂点・面・法線・姿勢は元と完全一致。カウリング126頂点、モデル寸法324×288×107mm。別版例は340×270×125mm、中央のふくらみ1.1。全体箱1470×615×1020mmを維持。
++
++共通生成1種類で既存の上部・下部・操作部の3曲面を再現できることを単体確認。画面・保存・交換は上部カバー1箇所のみ。単体33件、ブラウザ新規14+既存26=40項目。詳細は `evidence/verification.json`。
++
++## 未確認と範囲外
++
++別機種の再利用率、人手工数削減、型番だけの自動生成、部品実寸、規格適合は確認できません。`documented3dParts=0`。アーチ断面以外の任意形状や複数メッシュ部品の交換は未対応。曲面のSVG模式図は未対応（断面値はJSON保存）。Nitoron本体・共有WebGLホスト・クラウドへの接続は行っていない。
++
++元の独立試作を上書きせず、新しい実験ディレクトリで確認する。`CLAUDE-HANDOFF.md`参照。
+--- /dev/null
++++ b/baseline/dimension-box-previous-verification.json
+@@ -0,0 +1,130 @@
++{
++  "checkedAt": "2026-09-11",
++  "commit": "c7faa3bbaa4338fd6ee9305bc637b9d0c44e8e5b",
++  "files": [
++    {
++      "path": "PC752N-exterior-viewer.html",
++      "gitBlobSha": "25f9a3de26932010e428e6e8aebc7dc713f04061"
++    },
++    {
++      "path": "README.md",
++      "gitBlobSha": "1117baabb51a4f7191262843925570cdede551f0"
++    },
++    {
++      "path": "SHA256.json",
++      "gitBlobSha": "85d7582ad12cf4bda3fae1ff7d4b85094a1bf27e"
++    },
++    {
++      "path": "build.mjs",
++      "gitBlobSha": "4547083e657e9985d0a35c5b44b8913c50a83dee"
++    },
++    {
++      "path": "check-browser.cjs",
++      "gitBlobSha": "d589d8e88113b32024f758a68047c429a0773be3"
++    },
++    {
++      "path": "evidence/browser-check.json",
++      "gitBlobSha": "4691417d86b52b594d5618857878bf1dfab295fd"
++    },
++    {
++      "path": "evidence/desktop-boxes.png",
++      "gitBlobSha": "49dbd8a8e7cf802dfe6da21f3cbce5382449b10f"
++    },
++    {
++      "path": "evidence/detail-exploded.png",
++      "gitBlobSha": "93f6445916ba4af21cd921e76b2a28e77322b2fa"
++    },
++    {
++      "path": "evidence/mobile-boxes.png",
++      "gitBlobSha": "4e55f78137059761ce75c2833b0bcf301d6e6d77"
++    },
++    {
++      "path": "evidence/node-tests.txt",
++      "gitBlobSha": "098575aa0206353c1f14e576b0e9b74564b1d028"
++    },
++    {
++      "path": "evidence/transparent.png",
++      "gitBlobSha": "ed984b8c0477546cbd4dc7d0fdedafb0f97e3ebe"
++    },
++    {
++      "path": "evidence/whole-assembled.png",
++      "gitBlobSha": "a2a3889520d99e85bccd7ef2afd90c41829cc675"
++    },
++    {
++      "path": "evidence/whole-exploded.png",
++      "gitBlobSha": "15b440ae889caf280debab2e8732fbe724fea458"
++    },
++    {
++      "path": "index.html",
++      "gitBlobSha": "133db5eedce5553c764c666ee0a38dd4ba2a875b"
++    },
++    {
++      "path": "package.json",
++      "gitBlobSha": "8a722ca251aaca0e77755b4619c3144662525903"
++    },
++    {
++      "path": "sources.json",
++      "gitBlobSha": "3e9c850c942093ced07ef8441c8d6d39ba03ef2f"
++    },
++    {
++      "path": "src/app.mjs",
++      "gitBlobSha": "3a795cfbc134067329460d909161543960829536"
++    },
++    {
++      "path": "src/model.mjs",
++      "gitBlobSha": "3c7b99ac79512d3b56b1cdd8dc36005eb2062230"
++    },
++    {
++      "path": "test-model.mjs",
++      "gitBlobSha": "5ef5cd7601a84ed1a0d6112898cd1f1f9df11bd2"
++    },
++    {
++      "path": "vendor/OrbitControls.js",
++      "gitBlobSha": "43aaecf330afbdf460d834e0a7ca948432b1500f"
++    },
++    {
++      "path": "vendor/RoundedBoxGeometry.js",
++      "gitBlobSha": "4b94cd0e2034a1e1bb79b8ab97bdbe412a890cfd"
++    },
++    {
++      "path": "vendor/THREE-LICENSE.txt",
++      "gitBlobSha": "cf781430404b0ae0ba7d8dea3457a3515dd7c9b9"
++    },
++    {
++      "path": "vendor/three.core.js",
++      "gitBlobSha": "7dcd0fbcbc04b8d9a20ecb96c1ce344cb55150d5"
++    },
++    {
++      "path": "vendor/three.module.js",
++      "gitBlobSha": "477ca4dafa7af919a2b9818e01b5ae25198d4aa4"
++    }
++  ],
++  "localMatches": [
++    "PC752N-exterior-viewer.html",
++    "README.md",
++    "SHA256.json",
++    "build.mjs",
++    "check-browser.cjs",
++    "evidence/node-tests.txt",
++    "index.html",
++    "package.json",
++    "sources.json",
++    "src/app.mjs",
++    "src/model.mjs",
++    "test-model.mjs",
++    "vendor/OrbitControls.js",
++    "vendor/RoundedBoxGeometry.js",
++    "vendor/THREE-LICENSE.txt",
++    "vendor/three.core.js",
++    "vendor/three.module.js"
++  ],
++  "differentEvidence": [
++    "evidence/browser-check.json",
++    "evidence/desktop-boxes.png",
++    "evidence/detail-exploded.png",
++    "evidence/mobile-boxes.png",
++    "evidence/transparent.png",
++    "evidence/whole-assembled.png",
++    "evidence/whole-exploded.png"
++  ]
++}
+--- /dev/null
++++ b/baseline/model.mjs
+@@ -0,0 +1,111 @@
++import * as T from '../vendor/three.module.js';
++import {RoundedBoxGeometry} from '../vendor/RoundedBoxGeometry.js';
++
++// Exterior candidate, deliberately independent of atlas priors/cameras.
++// All geometry is in millimetres. Only published overall envelope / track width
++// are dimensional constraints; curved surfaces, positions and detail sizes are
++// manually authored visual estimates from the source ledger, NOT measured CAD.
++export const SPEC=Object.freeze({maker:'Kubota',model:'PC752N',variant:'standard rotary / single crawler',length:1470,width:615,height:1020,trackWidth:110,massKg:87,handlePosition:'3rd height setting; normal orientation',source:'S1'});
++export const GROUPS=[['crawler','クローラ走行部'],['engine','エンジン外装'],['belt','ベルトカバー'],['frame','フレーム・支持部'],['rotary','ロータリ・防土カバー'],['handle','ハンドル・操作部']];
++export function makeModel(){
++ const root=new T.Group();root.name='pc752n-exterior-candidate';
++ root.userData={model:SPEC.model,units:'mm',documented3dParts:0,automaticReconstruction:false,geometryBasis:'human-authored from official exterior photo; hidden shapes estimated',sources:['S1','S2','S3']};
++ const groups=Object.fromEntries(GROUPS.map(([id,label])=>{const g=new T.Group();g.name=id;g.userData={id,label,basis:'visual-estimate',dimensionVerified:false};root.add(g);return[id,g]}));
++ const mats={orange:new T.MeshStandardMaterial({color:0xf45116,roughness:.29,metalness:.16}),orangeDark:new T.MeshStandardMaterial({color:0xc72c0b,roughness:.42,metalness:.2}),black:new T.MeshStandardMaterial({color:0x222629,roughness:.52,metalness:.3}),rubber:new T.MeshStandardMaterial({color:0x14181a,roughness:.88}),silver:new T.MeshStandardMaterial({color:0xb8bcbb,roughness:.36,metalness:.65}),steel:new T.MeshStandardMaterial({color:0x626c70,roughness:.47,metalness:.7}),engine:new T.MeshStandardMaterial({color:0x8e9290,roughness:.64,metalness:.5}),yellow:new T.MeshStandardMaterial({color:0xfac127,roughness:.43}),dark:new T.MeshStandardMaterial({color:0x303c43,roughness:.5,metalness:.25})};
++ let count=0;
++ function mesh(group,geo,mat,name,pos=[0,0,0]){const m=new T.Mesh(geo,mats[mat]);m.position.set(...pos);m.name=name||`${group}-${++count}`;m.castShadow=true;m.receiveShadow=true;m.userData={group,basis:'visual-estimate',dimensionVerified:false};groups[group].add(m);return m;}
++ function box(g,n,s,p,mat='black',r=4){return mesh(g,new RoundedBoxGeometry(...s,3,Math.min(r,...s.map(x=>x/3))),mat,n,p);}
++ function rod(g,n,a,b,r=9,mat='black'){const av=new T.Vector3(...a),bv=new T.Vector3(...b),v=bv.clone().sub(av);const m=mesh(g,new T.CylinderGeometry(r,r,v.length(),16),mat,n,av.clone().add(bv).multiplyScalar(.5).toArray());m.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),v.normalize());return m;}
++ function tube(g,n,points,r=8,mat='black'){return mesh(g,new T.TubeGeometry(new T.CatmullRomCurve3(points.map(p=>new T.Vector3(...p))),80,r,10,false),mat,n);}
++ function disc(g,n,p,r,depth,mat='steel'){const m=mesh(g,new T.CylinderGeometry(r,r,depth,48),mat,n,p);m.rotation.x=Math.PI/2;return m;}
++ function plate(g,n,pts,z,depth,mat='silver',bevel=8){const s=new T.Shape();s.moveTo(...pts[0]);for(const p of pts.slice(1))s.lineTo(...p);s.closePath();const geo=new T.ExtrudeGeometry(s,{depth,bevelEnabled:bevel>0,bevelSegments:3,steps:1,bevelSize:bevel,bevelThickness:bevel,curveSegments:30});return mesh(g,geo,mat,n,[0,0,z]);}
++ function shell(g,n,sections,mat='orange'){// longitudinal loft of arched cross sections
++  const v=[],ix=[],steps=20;
++  for(const [x,bottom,top,halfwidth] of sections) for(let j=0;j<=steps;j++){const a=Math.PI*j/steps;v.push(x,bottom+(top-bottom)*Math.sin(a),halfwidth*Math.cos(a));}
++  for(let i=0;i<sections.length-1;i++)for(let j=0;j<steps;j++){let a=i*(steps+1)+j,b=a+steps+1;ix.push(a,b,a+1,a+1,b,b+1);}
++  // end faces and underside close the shell; no implied internal geometry
++  for(const i of [0,sections.length-1]){let base=i*(steps+1);for(let j=1;j<steps;j++)ix.push(base,base+j,base+j+1);}
++  for(let i=0;i<sections.length-1;i++){let a=i*(steps+1),b=a+steps+1;ix.push(a,a+steps,b,b,a+steps,b+steps);}
++  const geo=new T.BufferGeometry();geo.setAttribute('position',new T.Float32BufferAttribute(v,3));geo.setIndex(ix);geo.computeVertexNormals();return mesh(g,geo,mat,n);
++ }
++ // 1. One central triangular rubber crawler, NOT wheel or twin-track substitution.
++ const outer=new T.Shape();outer.moveTo(-475,32);outer.quadraticCurveTo(-530,48,-503,112);outer.lineTo(-392,294);outer.quadraticCurveTo(-366,330,-338,288);outer.lineTo(-202,108);outer.quadraticCurveTo(-167,32,-244,32);outer.closePath();
++ const hole=new T.Path();hole.moveTo(-465,65);hole.lineTo(-258,65);hole.quadraticCurveTo(-220,67,-238,104);hole.lineTo(-365,267);hole.lineTo(-470,99);hole.quadraticCurveTo(-486,65,-465,65);outer.holes.push(hole);
++ const band=mesh('crawler',new T.ExtrudeGeometry(outer,{depth:110,bevelEnabled:false,curveSegments:24}),'rubber','rubber-belt', [0,0,-55]);band.userData.dimensionVerified={axis:'width',mm:110,source:'S1'};
++ for(const [x,y,r] of [[-456,95,57],[-253,95,57],[-367,266,43]]){
++  disc('crawler','wheel-rim',[x,y,0],r,105,'black');for(const z of [-57,57]){disc('crawler','hub',[x,y,z],r*.48,8);disc('crawler','axle-boss',[x,y,z*1.08],13,10,'black');for(let a=0;a<5;a++){const th=a*Math.PI*2/5;disc('crawler','wheel-bolt',[x+Math.cos(th)*r*.65,y+Math.sin(th)*r*.65,z],4,10,'silver');}}
++ }
++ const perimeter=new T.CurvePath();const loop=[[-475,35],[-500,100],[-370,302],[-207,104],[-237,35],[-475,35]];
++ for(let i=1;i<loop.length;i++)perimeter.add(new T.LineCurve3(new T.Vector3(loop[i-1][0],loop[i-1][1],0),new T.Vector3(loop[i][0],loop[i][1],0)));
++ for(let i=0;i<17;i++){const t=(i+.5)/17,p=perimeter.getPointAt(t),d=perimeter.getTangentAt(t),b=box('crawler','tread-'+i,[29,22,110],p.toArray(),'rubber',3);b.rotation.z=Math.atan2(d.y,d.x);}
++ // Low contact lug deliberately establishes the declared ground plane.
++ box('crawler','ground-contact-lug',[95,20,110],[-353,10,0],'rubber',2);
++ plate('crawler','triangular-carrier',[[-445,100],[-255,100],[-367,258]],-19,38,'steel',5);
++ // 2. Engine, orange upper cowling and faceted silver casting.
++ box('engine','crankcase',[235,182,235],[-460,436,0],'engine',20);
++ const block=box('engine','inclined-cylinder',[167,180,203],[-550,527,0],'engine',12);block.rotation.z=-.28;
++ for(let i=0;i<8;i++){const f=box('engine','cooling-fin-'+i,[165,5,230],[-537-i*3,472+i*18,0],'silver',1);f.rotation.z=-.28;}
++ shell('engine','orange-cowling',[[-663,610,620,80],[-625,605,673,132],[-551,601,703,144],[-454,601,708,143],[-366,604,679,122],[-339,609,635,96]]);
++ // Black inset below the tank. Component height/volume are visual estimates.
++ shell('engine','under-cowling',[[-650,582,610,95],[-560,579,627,137],[-420,579,626,133],[-347,590,612,95]],'black');
++ mesh('engine',new T.CylinderGeometry(25,26,12,40),'black','fuel-cap',[-448,714,0]);
++ for(const z of [-118,118]){
++  box('engine','side-vent-cover',[143,95,28],[-430,565,z],'black',15);
++  for(let j=0;j<5;j++)box('engine','vent-slot',[107,6,4],[-430,535+j*14,z+Math.sign(z)*16],'rubber',1);
++ }
++ disc('engine','recoil-housing',[-540,432,-130],88,34,'black');disc('engine','recoil-disc',[-540,432,-151],50,6,'steel');
++ for(let i=0;i<14;i++){const a=i*Math.PI*2/14;rod('engine','recoil-fin',[-540+Math.cos(a)*56,432+Math.sin(a)*56,-156],[-540+Math.cos(a)*74,432+Math.sin(a)*74,-156],2.5,'black');}
++ tube('engine','starter-cord',[[-532,458,-159],[-440,551,-167],[-355,670,-112]],2,'rubber');rod('engine','starter-handle',[-377,684,-115],[-329,684,-115],9,'black');
++ // 3. Characteristic elongated belt cover, not a rectangular box.
++ const outline=[[-538,335],[-570,357],[-574,407],[-553,457],[-335,531],[-229,533],[-191,501],[-182,449],[-206,403],[-259,377]];
++ plate('belt','silver-belt-cover',outline,120,35,'silver',15);
++ plate('belt','orange-belt-inset',[[-531,414],[-514,442],[-332,501],[-253,508],[-319,462],[-502,408]],176,2,'orange',1);
++ plate('belt','dark-belt-inset',[[-530,379],[-531,403],[-494,399],[-322,453],[-250,496],[-268,452],[-346,404]],178,2,'dark',1);
++ disc('belt','cover-round-boss',[-242,452,162],57,9,'silver');disc('belt','cover-fastener',[-356,418,170],7,7,'steel');
++ // 4. Exposed chassis and black wraparound front bumper.
++ for(const z of [-135,135]){rod('frame','engine-rail',[-639,322,z],[-167,322,z],13);rod('frame','bumper-diagonal',[-624,336,z],[-678,373,z],12);rod('frame','bumper-upright',[-678,373,z],[-678,473,z],12);}
++ rod('frame','bumper-cross',[-678,473,-135],[-678,473,135],12);
++ box('frame','gearbox',[135,205,131],[-185,422,0],'steel',13);disc('frame','handle-pivot',[-154,547,0],49,146,'black');
++ box('frame','rotary-neck',[174,120,129],[-87,306,0],'orange',10);
++ rod('frame','centre-stand',[-128,263,0],[-82,55,0],11,'orange');rod('frame','stand-foot',[-91,48,-82],[-91,48,82],8,'black');
++ // 5. Rotor, bent blades and sheet-metal mud covers.
++ const rotorX=73,rotorY=188;rod('rotary','rotor-shaft',[rotorX,rotorY,-180],[rotorX,rotorY,180],14.5,'steel');
++ box('rotary','centre-chaincase',[76,225,53],[35,287,0],'orange',14);
++ for(const z of [-122,122]){
++  disc('rotary','blade-carrier',[rotorX,rotorY,z],54,10,'orange');
++  for(let j=0;j<4;j++){
++   const pts=[[25,-12],[62,-15],[98,-7],[126,20],[144,65],[122,50],[106,25],[71,12],[26,13]];
++   const b=plate('rotary','curved-blade',pts,-5,10,'black',1);b.geometry.translate(-0,0,0);b.position.set(rotorX,rotorY,z);b.rotation.z=j*Math.PI/2+(z>0?.2:.7);b.rotation.x=z>0?.14:-.14;
++  }
++ }
++ box('rotary','orange-rotor-deck',[300,24,328],[59,376,0],'orange',4);
++ for(const z of [-188,188]){
++  // flattened side sheet with folded lips, extending behind the rotor
++  const cover=plate('rotary','mudguard', [[-99,336],[-75,370],[201,344],[233,321],[226,304],[-83,307]],z-5,10,'dark',4);
++  rod('rotary','cover-edge',[-76,372,z],[202,346,z],5,'steel');
++  const rubber=plate('rotary','rubber-skirt',[[155,306],[229,303],[238,140],[208,164],[183,215]],z-4,8,'rubber',0);
++ }
++ rod('rotary','rear-crossmember',[182,392,-182],[182,392,182],11,'orange');
++ rod('rotary','depth-bar',[193,147,0],[193,497,0],11,'steel');rod('rotary','depth-bar-grip',[193,452,0],[193,500,0],13,'black');
++ // 6. Rising twin handle rails, sculpted orange console, hand controls/cables.
++ shell('handle','orange-pivot-console',[[-211,573,590,39],[-183,579,633,69],[-137,611,700,79],[-78,648,747,72],[-12,684,744,49],[14,704,723,19]]);
++ for(const sign of [-1,1]){
++  tube('handle','handle-rail',[[-161,539,sign*60],[-71,641,sign*80],[211,816,sign*166],[529,974,sign*276],[645,1006,sign*293.5]],11,'black');
++  rod('handle','hand-grip',[645,1006,sign*293.5],[780,1006,sign*293.5],14,'rubber');
++  tube('handle','lower-control-rail',[[-126,561,sign*70],[178,770,sign*145],[485,928,sign*258],[654,981,sign*288]],6,'steel');
++  box('handle','control-pod',[126,32,58],[586,977,sign*267],'dark',12);
++  tube('handle','finger-clutch',[[645,973,sign*294],[718,946,sign*294],[758,944,sign*294]],5,'black');
++  tube('handle','control-cable',[[604,988,sign*277],[463,898,sign*231],[145,769,sign*121],[-182,543,sign*80]],2.6,'rubber');
++  box('handle','orange-control-tab',[20,12,25],[600,1006,sign*264],'orange',3);
++ }
++ rod('handle','cross-brace',[370,887,-217],[370,887,217],7,'steel');
++ tube('handle','main-shift-lever',[[-147,448,89],[-152,580,164],[207,691,189],[284,700,190]],6,'steel');
++ rod('handle','main-shift-grip',[236,700,190],[289,710,190],13,'black');
++ box('handle','main-shift-orange',[45,8,16],[259,721,190],'orange',3);
++ rod('handle','rotary-shift',[-105,470,-64],[-1,584,-100],5,'steel');box('handle','yellow-shift-grip',[57,19,23],[5,590,-103],'yellow',7);
++ rod('handle','upright-control',[501,947,-259],[514,1000,-259],6,'orange');
++ // Bounded fastener detail, decorative only; no bolt part-number assertion.
++ for(const [x,y,z] of [[-615,338,148],[-304,332,148],[-226,514,154],[-83,379,173],[180,393,187]])disc('frame','visible-fastener',[x,y,z],6,7,'silver');
++ root.updateMatrixWorld(true);return {root,groups,mats};
++}
++export function measure(root){root.updateMatrixWorld(true);const b=new T.Box3().setFromObject(root);return {min:b.min.toArray(),max:b.max.toArray(),length:b.max.x-b.min.x,height:b.max.y-b.min.y,width:b.max.z-b.min.z};}
+--- /dev/null
++++ b/baseline/previous-source-identities.json
+@@ -0,0 +1,16 @@
++{
++  "localSourceHashes": {
++    "output/pc752n-updatable-parts/src/model.mjs": "839cf53967acf19357f3fe0e698368a146e8647407c88e757a8735935f422b60",
++    "output/pc752n-updatable-parts/src/part-package.mjs": "5336c297afe762848ffe3fe2914e72acfc27be22e33ffcfd2bcf4d9c31424668",
++    "output/pc752n-updatable-parts/src/presentation.mjs": "75cd9f9f9039bc3c2a87753999ac713a93cc2b60b3c42422be61a2e2b6c2e87a",
++    "output/pc752n-updatable-parts/src/app.mjs": "732cbf257947297004bdbef4b7ec46435ca4967f5a7fefe7a712d08501546c1f",
++    "output/pc752n-updatable-parts/src/assembly.mjs": "5270445055b29b1054469a37eb74c5905206bb2c3b87e859a1e72e371fdb11bd",
++    "output/nitoron-parts-catalog/src/geometry.mjs": "b5e7d409658f3fa477e71d483834d4e518e9e7054ff7fcd7945880bd33ee16e9",
++    "output/nitoron-parts-catalog/src/examples.mjs": "76712e36a741ef080b3a8d28d6518c2bbe76dd0bb19b36f12d8f492902346b09",
++    "output/nitoron-parts-catalog/src/app.mjs": "d5025a037d653872997fd88ee3b29e67601d1af2b2b3e9ae6fff19500797ee44",
++    "output/nitoron-parts-catalog/src/catalog.mjs": "0455a0fc3dfb343cbded09bdb9c6970c799648061d68b4e1b4686e40a4f1e395",
++    "output/nitoron-parts-catalog/src/drawing.mjs": "0fd3dbdf0bf087e8d3ee1eb555c338986625b63edff42a802eba14a8b4e15d3f"
++  },
++  "reportedMainBeforeHandoff": "1ab3105",
++  "reportedMainIndependentlyFetched": false
++}
+--- a/build.mjs
++++ b/build.mjs
+@@ -1,10 +1,10 @@
+ import {readFile,writeFile} from 'node:fs/promises';
+ import {fileURLToPath} from 'node:url';
+-const base=new URL('./',import.meta.url);const read=p=>readFile(new URL(p,base),'utf8');const uri=s=>'data:text/javascript;base64,'+Buffer.from(s).toString('base64');
+-const imports={};imports['three/core']=uri(await read('vendor/three.core.js'));imports.three=uri((await read('vendor/three.module.js')).replaceAll("'./three.core.js'","'three/core'"));
+-for(const [key,p] of [['orbit','vendor/OrbitControls.js'],['rounded-box','vendor/RoundedBoxGeometry.js']])imports[key]=uri((await read(p)).replaceAll("'./three.module.js'","'three'"));
+-imports.model=uri((await read('src/model.mjs')).replaceAll("'../vendor/three.module.js'","'three'").replaceAll("'../vendor/RoundedBoxGeometry.js'","'rounded-box'"));
+-for(const file of ['presentation','part-package','assembly']) imports[file]=uri((await read('src/'+file+'.mjs')).replaceAll("'../vendor/three.module.js'","'three'").replaceAll("'./model.mjs'","'model'").replaceAll("'./part-package.mjs'","'part-package'").replaceAll("'./presentation.mjs'","'presentation'"));
+-const app=(await read('src/app.mjs')).replaceAll("'../vendor/three.module.js'","'three'").replaceAll("'../vendor/OrbitControls.js'","'orbit'").replaceAll("'./model.mjs'","'model'").replaceAll("'./assembly.mjs'","'assembly'").replaceAll("'./part-package.mjs'","'part-package'").replaceAll("'./presentation.mjs'","'presentation'");
+-const html=(await read('index.html')).replace('<!-- IMPORTMAP -->','<script type="importmap">'+JSON.stringify({imports})+'</script>').replace('<script type="module" src="./src/app.mjs"></script>','<script type="module">'+app+'</script>');
++const base=new URL('./',import.meta.url),read=p=>readFile(new URL(p,base),'utf8'),uri=s=>'data:text/javascript;base64,'+Buffer.from(s).toString('base64');
++const modules=['arched-loft','catalog','geometry','examples','cowling-recipes','cowling-bridge','exterior-ui','model','presentation','part-package','assembly'];
++const rewrite=s=>{let x=s.replaceAll("'../vendor/three.module.js'","'three'").replaceAll("'../vendor/OrbitControls.js'","'orbit'").replaceAll("'../vendor/RoundedBoxGeometry.js'","'rounded-box'");for(const m of modules)x=x.replaceAll("'./"+m+".mjs'","'"+m+"'");return x;};
++const imports={'three/core':uri(await read('vendor/three.core.js'))};imports.three=uri((await read('vendor/three.module.js')).replaceAll("'./three.core.js'","'three/core'"));
++for(const[key,file]of[['orbit','OrbitControls.js'],['rounded-box','RoundedBoxGeometry.js']])imports[key]=uri((await read('vendor/'+file)).replaceAll("'./three.module.js'","'three'"));
++for(const m of modules)imports[m]=uri(rewrite(await read('src/'+m+'.mjs')));
++const html=(await read('index.html')).replace('<!-- IMPORTMAP -->','<script type="importmap">'+JSON.stringify({imports})+'</script>').replace('<script type="module" src="./src/app.mjs"></script>','<script type="module">'+rewrite(await read('src/app.mjs'))+'</script>');
+ const out=new URL('PC752N-exterior-viewer.html',base);await writeFile(out,html);console.log(JSON.stringify({file:fileURLToPath(out),bytes:Buffer.byteLength(html),externalRuntimeDependencies:0}));
+--- /dev/null
++++ b/check-exterior.cjs
+@@ -0,0 +1,42 @@
++const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),assert=require('node:assert/strict');
++let chromium;try{({chromium}=require('playwright'));}catch{({chromium}=require('playwright-core'));}
++const dir=__dirname,id='pc752n/engine/orange-cowling/001',baseline='exterior/pc752n/cowling@baseline-1',variant='exterior/pc752n/cowling@variant-1';
++const state=()=>{const a=__pc752n;return{active:a.active,step:a.displayStep,whole:a.whole.getState(),detail:a.detail.getState(),workspace:a.exterior.workspace.serialize(),shape:[...a.assembly.parts.get('pc752n/engine/orange-cowling/001').mesh.geometry.attributes.position.array]};};
++let maxCameraDelta=0;
++function preserved(a,b){
++ assert.deepEqual(a.active,b.active);assert.equal(a.step,b.step);assert.deepEqual(a.whole.box,b.whole.box);
++ for(const k of['whole','detail']){for(const j of['position','target'])for(let i=0;i<3;i++){const d=Math.abs(a[k].camera[j][i]-b[k].camera[j][i]);maxCameraDelta=Math.max(d,maxCameraDelta);assert.ok(d<1e-8,'camera changed by '+d);}assert.equal(a[k].expanded,b[k].expanded);assert.equal(a[k].fraction,b[k].fraction);assert.deepEqual(a[k].nodes,b[k].nodes);assert.deepEqual(a[k].opacityByLayer,b[k].opacityByLayer);}
++}
++(async()=>{
++ const server=http.createServer((q,r)=>{r.setHeader('content-type','text/html; charset=utf-8');r.end(fs.readFileSync(path.join(dir,'PC752N-exterior-viewer.html')));});await new Promise(r=>server.listen(0,'127.0.0.1',r));
++ const url='http://127.0.0.1:'+server.address().port,checks=[],errors=[],requests=[],evidence=path.join(dir,'evidence');fs.mkdirSync(evidence,{recursive:true});let browser;
++ const pass=x=>{checks.push(x);console.log('PASS '+x);};const watch=p=>{p.on('pageerror',e=>errors.push(e.message));p.on('request',r=>{if(!r.url().startsWith(url)&&!r.url().startsWith('data:')&&!r.url().startsWith('blob:'))requests.push(r.url());});};
++ const ready=p=>p.waitForFunction(()=>window.__pc752n?.exterior&&__modelReady);
++ try{
++  browser=await chromium.launch({headless:true,executablePath:process.env.ATLAS_CHROMIUM_PATH||undefined,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
++  const p=await browser.newPage({viewport:{width:1280,height:1000}});p.setDefaultTimeout(20000);watch(p);await p.goto(url);await ready(p);
++  assert.equal(await p.evaluate(()=>__pc752n.assembly.parts.size),174);assert.ok((await p.locator('#exterior-dimensions').textContent()).includes('324.0'));assert.equal(await p.locator('#exterior-asset').inputValue(),baseline);pass('original whole machine and saved 324 x 288 x 107 mm canopy load together');
++  await p.locator('#exterior-inspect').click();assert.equal(await p.evaluate(()=>__pc752n.active.element),id);await p.waitForFunction(()=>__pc752n.detail.renderer.info.render.triangles>0);
++  await p.locator('#detail-scene').screenshot({path:path.join(evidence,'cowling-original.png')});pass('inspect button opens the bound existing part with its dimensional box');
++  const original=await p.evaluate(state);await p.locator('#exterior-config').evaluate(e=>e.open=true);
++  for(const[k,v]of Object.entries({length:'340',width:'270',height:'125',crown:'1.1'}))await p.locator('#exterior-'+k).fill(v);
++  await p.locator('#exterior-create').click();assert.equal(await p.locator('#exterior-asset').inputValue(),variant);assert.deepEqual((await p.evaluate(state)).shape,original.shape);assert.ok((await p.locator('#exterior-status').textContent()).includes('まだ反映'));pass('configuration adds a separate saved revision without changing the installed part');
++  await p.waitForTimeout(600);const before=await p.evaluate(state);await p.locator('#exterior-apply').click();const after=await p.evaluate(state);preserved(before,after);assert.notDeepEqual(after.shape,before.shape);assert.ok(Math.abs(after.detail.measured.length-340)<.001);assert.ok(Math.abs(after.detail.measured.width-270)<.001);assert.ok(Math.abs(after.detail.measured.height-125)<.001);
++  const sameViews=await p.evaluate(()=>{const a=__pc752n,positions=o=>[...o.geometry.attributes.position.array];return JSON.stringify(positions(a.whole.object.getObjectByName('orange-cowling')))===JSON.stringify(positions(a.detail.object));});assert.equal(sameViews,true);pass('actual new shape reaches both boxes; cameras, identity, selection and whole envelope stay unchanged');
++  await p.locator('#detail-scene').scrollIntoViewIfNeeded();await p.waitForTimeout(100);await p.locator('#detail-scene').screenshot({path:path.join(evidence,'cowling-variant.png')});
++  await p.locator('details.model-update').evaluate(e=>e.open=true);await p.locator('#undo-part').click();assert.deepEqual((await p.evaluate(state)).shape,original.shape);assert.equal(await p.evaluate(()=>__pc752n.exterior.workspace.activeRef),null);pass('undo restores original mesh exactly and does not leave a false active library binding');
++  await p.locator('[data-step="power"]').click();await p.waitForFunction(()=>__pc752n.detail.getState().fraction===1);await p.waitForTimeout(600);const exploded=await p.evaluate(state);await p.locator('#exterior-apply').click();preserved(exploded,await p.evaluate(state));assert.equal(await p.evaluate(()=>__pc752n.active.transparency),3);pass('recipe exchange preserves guide, exploded offsets and exterior/cable/engine transparency');
++  await p.locator('#detail-scene').scrollIntoViewIfNeeded();await p.screenshot({path:path.join(evidence,'library-exploded-transparent.png'),fullPage:true});
++  await p.locator('#exterior-asset').selectOption(baseline);await p.locator('#exterior-apply').click();await p.locator('#exterior-asset').selectOption(variant);await p.locator('#exterior-apply').click();const stats=await p.evaluate(()=>__pc752n.exterior.workspace.stats);assert.equal(stats.geometryBuilds,2);assert.equal(stats.liveInstances,0);pass('switching baseline and variant reuses two source shapes; temporary placements are released');
++  await p.locator('#exterior-transfer').evaluate(e=>e.open=true);const event=p.waitForEvent('download');await p.locator('#exterior-export').click();const download=await event,out=path.join(evidence,'exported-exterior.json');await download.saveAs(out);const exported=JSON.parse(fs.readFileSync(out));assert.equal(exported.catalog.assets.length,7);assert.equal(exported.binding.assetRef,variant);pass('download contains seven saved recipes and an explicit versioned canopy binding');
++  await p.reload();await ready(p);assert.equal(await p.evaluate(()=>__pc752n.exterior.workspace.activeRef),variant);assert.deepEqual((await p.evaluate(state)).shape,after.shape);pass('reload restores the selected recipe and machine geometry from local storage');
++  await p.locator('#exterior-transfer').evaluate(e=>e.open=true);const stable=await p.evaluate(state),bad=structuredClone(exported);bad.catalog.assets.find(x=>x.family==='archedLoft').params.sections[1][0]=0;
++  await p.locator('#exterior-file').setInputFiles({name:'bad.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(bad))});await p.waitForFunction(()=>document.querySelector('#exterior-status').textContent.includes('読み込みません'));{const actual=await p.evaluate(state);preserved(stable,actual);assert.equal(actual.workspace,stable.workspace);assert.deepEqual(actual.shape,stable.shape);assert.deepEqual(actual.detail.box,stable.detail.box);}pass('invalid cross-sections reject the entire import without changing recipes, shapes or views');
++  const huge=structuredClone(exported),newRecipe=structuredClone(huge.catalog.assets.find(x=>x.family==='archedLoft'));newRecipe.revision='huge';newRecipe.params.sections.forEach(s=>s[0]*=10);huge.catalog.assets.push(newRecipe);huge.binding.assetRef=newRecipe.key+'@huge';await p.locator('#exterior-file').setInputFiles({name:'huge.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(huge))});await p.waitForFunction(()=>document.querySelector('#exterior-status').textContent.includes('全体外寸'));{const actual=await p.evaluate(state);preserved(stable,actual);assert.equal(actual.workspace,stable.workspace);assert.deepEqual(actual.shape,stable.shape);assert.deepEqual(actual.detail.box,stable.detail.box);}pass('outside-envelope import refuses auto-scaling and rolls back catalog plus model');
++  await p.evaluate(()=>{window._setItem=Storage.prototype.setItem;Storage.prototype.setItem=function(){throw Error('quota');};});await p.locator('#exterior-save').click();assert.ok((await p.locator('#exterior-status').textContent()).includes('端末へ保存できません'));await p.evaluate(()=>Storage.prototype.setItem=window._setItem);pass('storage failure is visible while export remains available');
++  const phone=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'reduce'});watch(phone);await phone.goto(url);await ready(phone);assert.equal(await phone.evaluate(()=>__pc752n.exterior.workspace.activeRef),null);await phone.locator('#exterior-transfer').evaluate(e=>e.open=true);await phone.locator('#exterior-file').setInputFiles(out);await phone.waitForFunction(ref=>__pc752n.exterior.workspace.activeRef===ref,variant);assert.equal(await phone.evaluate(()=>__pc752n.exterior.workspace.activeRef),variant);await phone.locator('#exterior-inspect').tap();assert.equal(await phone.evaluate(()=>__pc752n.active.element),id);await phone.waitForFunction(()=>__pc752n.detail.renderer.info.render.triangles>0);assert.equal(await phone.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);await phone.locator('#detail-scene').screenshot({path:path.join(evidence,'library-mobile-canopy.png')});await phone.screenshot({path:path.join(evidence,'library-mobile.png'),fullPage:true});pass('fresh 390px touch browser imports the saved version and opens its real part box');
++  await p.locator('[data-group="engine"]').click();await p.locator('[data-view="photo"]').click();await p.locator('#transparency').click();await p.locator('#whole-scene').scrollIntoViewIfNeeded();await p.waitForTimeout(200);await p.screenshot({path:path.join(evidence,'library-desktop.png'),fullPage:true});
++  assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);assert.equal(await p.evaluate(()=>__pc752n.documented3dParts),0);pass('both layouts render without page errors or external requests; documented3dParts stays zero');
++  const result={checkedAt:new Date().toISOString(),browser:await browser.version(),passed:checks.length,checks,maxCameraDeltaMm:maxCameraDelta,baselineDimensions:{length:324,width:288,height:107},variantDimensions:{length:340,width:270,height:125},sourceGeometryBuilds:stats.geometryBuilds,pageErrors:errors,externalRequests:requests.length,iphonePhysical:false,documented3dParts:0};fs.writeFileSync(path.join(evidence,'exterior-browser-check.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
++ }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
++})().catch(e=>{console.error(e);process.exitCode=1;});
+--- a/index.html
++++ b/index.html
+@@ -2,13 +2,20 @@
+ <style>
+ *{box-sizing:border-box}body{margin:0;color:#203139;background:#f3f4ef;font-family:system-ui,-apple-system,sans-serif}header{padding:17px 24px;background:#fff;border-bottom:1px solid #dce2df;display:flex;align-items:center;justify-content:space-between;gap:16px}header b{color:#ed542a;font-size:24px;letter-spacing:-1px}header span{font-size:12px;color:#596b6c}main{max-width:1480px;margin:auto;padding:24px}.eyebrow{color:#536866;font-size:12px;letter-spacing:.08em}h1{font-size:30px;line-height:1.3;margin:6px 0 10px}p{font-size:14px;line-height:1.65;margin:8px 0}.lead{color:#4d6264}.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:17px 0}.workspace{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;margin-top:18px}.box-panel{border-radius:16px;background:#fff;overflow:hidden;border:1px solid #d8e0d8;min-width:0}.box-head{padding:15px 18px;border-bottom:1px solid #d8e0d8}.box-head small{font-size:11px;color:#557164}.box-head h2{font-size:17px;margin:4px 0 0;min-height:24px}.scene{height:450px;position:relative;touch-action:none;background:#e9ece7}.scene canvas{display:block;width:100%;height:100%}.dim-label{position:absolute;padding:4px 8px;transform:translate(-50%,-50%);border:1px solid #a9c2af;border-radius:6px;background:#ffffffdf;font-size:11px;color:#284b3d;pointer-events:none;white-space:nowrap}.foot{padding:11px 15px;font-size:12px;color:#496456;display:flex;align-items:center;justify-content:space-between;gap:10px}.foot>div{min-width:0}.foot p{font-size:11px;margin:3px 0}.mode-status{font-size:11px}.toolbar,#box-nav{display:flex;gap:7px;flex-wrap:wrap}button,select{font:inherit;font-size:13px;border:1px solid #cbd5cf;border-radius:9px;background:#fff;color:#203139;padding:9px 12px;cursor:pointer}button[aria-pressed=true],button.primary{color:#fff;background:#234e45;border-color:#234e45}button:disabled{opacity:.4;cursor:default}button:focus-visible,select:focus-visible{outline:3px solid #ed542a;outline-offset:2px}select{max-width:100%;width:100%;margin-top:10px}.section-label{font-size:13px;margin:19px 0 8px}#box-nav button{font-size:12px}#transparency-state{font-size:12px;color:#345e4d}.steps{font-size:12px;display:flex;gap:8px;align-items:center}.steps span{padding:4px 8px;border-radius:20px;background:#e2e7df;color:#637363}.steps span.on{background:#c8decf;color:#16492e}.note{font-size:12px;color:#617572}.refs{border-top:1px solid #d7dfd7;margin-top:22px;padding-top:15px;color:#587067;font-size:12px;line-height:1.8}.refs a{color:#29645b;margin-right:14px}footer{padding:16px 24px;font-size:11px;color:#63736e}#failure{color:#9b3020;font-size:15px;padding:20px;background:#fff0e9}[hidden]{display:none!important}
+ @media(max-width:760px){header{padding:14px 16px}main{padding:18px 13px}h1{font-size:25px}.workspace{grid-template-columns:1fr;gap:16px;margin-top:15px}.scene{height:370px}.box-head{padding:12px 14px}.box-head h2{font-size:16px}button{padding:9px 10px;font-size:12px}.controls{gap:8px}.dim-label{font-size:10px;padding:3px 5px}.toolbar{gap:5px}.foot{padding:10px}.lead{font-size:13px}}
+-.model-update{margin-top:20px;padding:16px;border:1px solid #ccd9cd;border-radius:12px;background:#fff}.model-update summary{cursor:pointer;font-size:13px}.model-update p{overflow-wrap:anywhere}.file-label{display:block;border:1px solid #cbd5cf;border-radius:9px;padding:8px;font-size:12px}.file-label input{display:block;max-width:100%;margin-top:6px;font-size:12px}#revision-info{font-size:11px}#update-status{font-size:13px}#display-guide button{min-width:58px}</style>
++.model-update{margin-top:20px;padding:16px;border:1px solid #ccd9cd;border-radius:12px;background:#fff}.model-update summary{cursor:pointer;font-size:13px}.model-update p{overflow-wrap:anywhere}.file-label{display:block;border:1px solid #cbd5cf;border-radius:9px;padding:8px;font-size:12px}.file-label input{display:block;max-width:100%;margin-top:6px;font-size:12px}#revision-info{font-size:11px}#update-status{font-size:13px}#display-guide button{min-width:58px}
++.exterior-library{margin-top:20px;padding:18px;border:1px solid #cbd7cf;border-radius:14px;background:#fff}.exterior-library h2{font-size:19px;margin:0 0 8px}.exterior-library select{margin:0;max-width:430px}.exterior-library .toolbar{align-items:center}.exterior-library details{margin-top:12px}.exterior-library summary{cursor:pointer;font-size:13px}.recipe-fields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0}.recipe-fields label{font-size:12px}.recipe-fields input{width:100%;margin-top:5px;padding:9px;border:1px solid #b8cbc0;border-radius:7px;font:inherit}#exterior-status{min-height:23px;color:#285e4d;overflow-wrap:anywhere}#exterior-applied{overflow-wrap:anywhere}.exterior-library .primary{padding:10px 15px}@media(max-width:760px){.recipe-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.exterior-library{padding:13px}.exterior-library select{max-width:100%}.exterior-library .toolbar{align-items:stretch}}
++</style>
+ <header><b>nitoron</b><span>機械の解体新書 · 操作試作</span></header><main><div class="eyebrow">KUBOTA / PC752N</div><h1>機械から、部品の箱へ。</h1><p class="lead">タップで箱を選ぶ。ダブルタップで分解・組立。ドラッグで回転、ピンチで拡大。</p>
+ <div class="controls"><button id="transparency" class="primary">次：外装を透過</button><div class="steps"><span data-layer-step>1 外装</span>→<span data-layer-step>2 ケーブル</span>→<span data-layer-step>3 エンジン</span></div><span id="transparency-state">透過なし</span></div>
+ <div class="toolbar" aria-label="視点"><button data-view="photo">斜め</button><button data-view="side">左側</button><button data-view="opposite">右側</button><button data-view="front">前</button><button data-view="top">上</button></div>
+ <p class="section-label">表示ガイド</p><nav id="display-guide" class="toolbar" aria-label="表示ガイド"></nav>
+ <p class="section-label">タップして、部品グループの箱へ</p><nav id="box-nav" aria-label="箱の移動"></nav>
+ <div id="failure" hidden>3Dを開始できませんでした。寸法：全長1470 × 全幅615 × 全高1020 mm。公式資料へのリンクは下にあります。</div>
++<section class="exterior-library" aria-label="外装の部品庫"><h2>保存した外装を、機械へ。</h2><p class="note">PC752N上部カバーの形状レシピ。版を選んで交換します。寸法はモデル値・実機適合は未確認です。</p>
++<div class="toolbar"><select id="exterior-asset" aria-label="保存した外装版"></select><button id="exterior-apply" class="primary">この形状に交換</button><button id="exterior-inspect">カバーの箱へ</button></div>
++<p id="exterior-dimensions"></p><p id="exterior-applied" class="note"></p><p id="exterior-status" role="status" aria-live="polite"></p>
++<details id="exterior-config"><summary>寸法違いを作る（開発用）</summary><p class="note">既存形状を基準に、別の版を保存します。中央のふくらみ1.00は元の断面比率です。保存だけでは機械の形状を変えません。</p><div class="recipe-fields"><label>長さ mm<input id="exterior-length" type="number" min="1" max="5000" step="any"></label><label>幅 mm<input id="exterior-width" type="number" min="1" max="5000" step="any"></label><label>高さ mm<input id="exterior-height" type="number" min="1" max="5000" step="any"></label><label>中央のふくらみ<input id="exterior-crown" type="number" min="0.5" max="1.5" step="0.05" value="1"></label></div><button id="exterior-create">別版として保存</button></details>
++<details id="exterior-transfer"><summary>保存・ファイルで受け渡す</summary><p id="exterior-count" class="note"></p><p class="note">レシピと、この部品庫で選んだ取付先を保存します。視点・分解状態は再読込時に初期表示へ戻ります。別入口からの形状JSON更新はこの保存に含めません。</p><div class="toolbar"><button id="exterior-save">端末へ保存</button><button id="exterior-export">JSONを書き出す</button><label class="file-label">外装JSONを読み込む<input id="exterior-file" type="file" accept=".json,application/json"></label></div></details></section>
+ <div class="workspace"><section class="box-panel"><div class="box-head"><small>01 / 機械全体の箱</small><h2>PC752N · クローラ仕様</h2></div><div id="whole-scene" class="scene" aria-label="機械全体の3D"></div><div class="foot"><div><strong>1470 × 615 × 1020 mm</strong><p>外寸は公式値 · ハンドル3段目・正位置</p><div class="mode-status"></div></div><button data-explode="whole">自動分解</button></div></section>
+ <section class="box-panel"><div class="box-head"><small>02 / 部品グループ・部品の箱</small><h2 id="detail-title">クローラ走行部</h2><select id="elements" aria-label="部品を選ぶ"></select></div><div id="detail-scene" class="scene" aria-label="部品の3D"></div><div class="foot"><div><span id="detail-status">モデル寸法 · 個別部品の実寸は未確認</span><p class="mode-status"></p><button id="part-back" hidden>グループの箱へ戻る</button></div><button data-explode="detail">自動分解</button></div></section></div>
+ <p class="note">箱の寸法は組立状態のモデルから計算します。全体の外寸以外は主に写真を参考にした推定で、実寸確認済みの部品モデルではありません。表示ガイドと分解は構造を見るための操作で、メーカーの整備・取外し手順ではありません。</p>
+--- a/package.json
++++ b/package.json
+@@ -1 +1,11 @@
+-{"name":"nitoron-pc752n-updatable-parts","version":"0.2.0","private":true,"type":"module","scripts":{"test":"node --test test-model.mjs test-updates.mjs","build":"node build.mjs","check:browser":"node check-browser.cjs && node check-updates.cjs"}}
++{
++  "name": "nitoron-exterior-library",
++  "version": "0.3.0",
++  "private": true,
++  "type": "module",
++  "scripts": {
++    "test": "node --test test-model.mjs test-updates.mjs tests/*.test.mjs",
++    "build": "node build.mjs",
++    "check:browser": "node check-browser.cjs && node check-updates.cjs && node check-exterior.cjs"
++  }
++}
+--- a/src/app.mjs
++++ b/src/app.mjs
+@@ -1,3 +1,4 @@
++import {installExteriorUI} from './exterior-ui.mjs';
+ import * as T from '../vendor/three.module.js';
+ import {OrbitControls} from '../vendor/OrbitControls.js';
+ import {measure,SPEC,GROUPS} from './model.mjs';
+@@ -51,7 +52,7 @@
+  document.querySelector('#transparency').onclick=()=>{clearGuide();setTransparency((transparency+1)%4);};
+  function applyStep(stepId){const step=DISPLAY_STEPS.find(s=>s.id===stepId);if(!step)return;selectGroup(step.group);setTransparency(step.transparency);for(const s of stages){const wanted=step[s===whole?'wholeExploded':'detailExploded'];if(s.getState().expanded!==wanted)s.explode();s.preset(step.view);}displayStep=step.id;document.querySelectorAll('[data-step]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.step===step.id));}
+  for(const step of DISPLAY_STEPS){const b=document.createElement('button');b.dataset.step=step.id;b.textContent=step.label;b.onclick=()=>applyStep(step.id);b.setAttribute('aria-pressed','false');document.querySelector('#display-guide').append(b);}
+- function refreshGeometry(){const group=activeGroup,element=activeElement;whole.load(base.root,{preserve:true});if(element)selectElement(element,true);else selectGroup(group,true);}
++ function refreshGeometry(){const group=activeGroup,element=activeElement;whole.load(base.root,{preserve:true});if(element)selectElement(element,true);else selectGroup(group,true);window.dispatchEvent(new Event('pc752n-geometry-changed'));}
+  function applyPartPackage(data){const result=base.applyPackage(data);refreshGeometry();document.querySelector('#update-status').textContent='部品モデルを更新しました。選択・視点・分解・透過を維持しています。形状の精度は未照合です。';return result;}
+  function undoPart(id){const result=base.undo(id);refreshGeometry();document.querySelector('#update-status').textContent='ひとつ前の部品モデルへ戻しました。';return result;}
+  document.querySelector('#export-part').onclick=()=>{try{const data=base.exportPart(activeElement,{fromBaseline:true}),blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='pc752n-'+base.part(activeElement).name+'-part.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}catch(e){document.querySelector('#update-status').textContent=e.message;}};
+@@ -60,4 +61,5 @@
+ 
+  function tick(){if(!document.hidden)stages.forEach(s=>{const r=s.holder.getBoundingClientRect();s.render(r.bottom>0&&r.top<innerHeight);});requestAnimationFrame(tick);}tick();window.__modelReady=true;
+  window.__pc752n={spec:SPEC,get measured(){return measure(base.root)},assembly:base,applyPartPackage,undoPart,applyStep,get displayStep(){return displayStep},groups:GROUPS.map(x=>x[0]),documented3dParts:0,automaticReconstruction:false,whole,detail,selectGroup,selectElement,get active(){return{group:activeGroup,element:activeElement,transparency}}};
++ installExteriorUI(window.__pc752n);
+ }catch(e){document.querySelector('#failure').hidden=false;console.error(e);}
+--- /dev/null
++++ b/src/arched-loft.mjs
+@@ -0,0 +1,39 @@
++import * as T from '../vendor/three.module.js';
++
++export const LOFT_GENERATOR='arched-loft-v1';
++// A family of arched cross-sections, not a general CAD surface or a hollow cover.
++// Local axes: X length, Y height, Z width. No machine/placement IDs in this recipe.
++export function validateLoft(p){
++ if(!p||typeof p!=='object'||Array.isArray(p)||Object.keys(p).some(k=>!['sections','steps'].includes(k)))throw Error('曲面の形式が不正です');
++ if(!Number.isInteger(p.steps)||p.steps<4||p.steps>128||p.steps%2)throw Error('曲面分割数は4〜128の偶数にしてください');
++ if(!Array.isArray(p.sections)||p.sections.length<2||p.sections.length>64)throw Error('断面は2〜64個にしてください');
++ let last=-1;
++ for(const s of p.sections){
++  if(!Array.isArray(s)||s.length!==4||s.some(n=>typeof n!=='number'||!Number.isFinite(n)||n<0||n>10000))throw Error('断面は X・底面高さ・頂点高さ・半幅のmm数値です');
++  const[x,b,t,w]=s;
++  if(x<=last||t<=b||w<=0)throw Error('断面の順序・高さ・半幅が不正です');last=x;
++ }
++ if(p.sections[0][0]!==0||Math.min(...p.sections.map(s=>s[1]))!==0)throw Error('断面の原点は先頭X=0・底面の最低Y=0です');
++ return structuredClone(p);
++}
++export function loftDimensions(p){validateLoft(p);return{length:p.sections.at(-1)[0],width:2*Math.max(...p.sections.map(s=>s[3])),height:Math.max(...p.sections.map(s=>s[2]))};}
++export function makeArchedGeometry(input,offset=[0,0,0]){
++ const p=validateLoft(input);if(!Array.isArray(offset)||offset.length!==3||offset.some(x=>typeof x!=='number'||!Number.isFinite(x)||Math.abs(x)>100000))throw Error('配置の原点が不正です');
++ const v=[],ix=[],steps=p.steps;
++ for(const[x,b,t,w]of p.sections)for(let j=0;j<=steps;j++){const a=Math.PI*j/steps;v.push(x+offset[0],b+offset[1]+(t-b)*Math.sin(a),w*Math.cos(a)+offset[2]);}
++ for(let i=0;i<p.sections.length-1;i++)for(let j=0;j<steps;j++){const a=i*(steps+1)+j,b=a+steps+1;ix.push(a,b,a+1,a+1,b,b+1);}
++ for(const i of[0,p.sections.length-1]){const b=i*(steps+1);for(let j=1;j<steps;j++)ix.push(b,b+j,b+j+1);}
++ for(let i=0;i<p.sections.length-1;i++){const a=i*(steps+1),b=a+steps+1;ix.push(a,a+steps,b,b,a+steps,b+steps);}
++ const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(v,3));g.setIndex(ix);g.computeVertexNormals();
++ // Preserve unquantized coordinates for explicit rigid frame conversion later.
++ g.userData.precisePositions=v;
++ return g;
++}
++export function configuredLoft(input,{length,width,height,crown=1}){
++ const p=validateLoft(input),d=loftDimensions(p);
++ if([length,width,height].some(x=>typeof x!=='number'||!Number.isFinite(x)||x<=0||x>5000)||typeof crown!=='number'||!Number.isFinite(crown)||crown<.5||crown>1.5)throw Error('外装寸法・中央のふくらみが範囲外です');
++ const sections=p.sections.map(([x,b,t,w])=>{const weight=Math.sin(Math.PI*x/d.length);return[x*length/d.length,b*height/d.height,(b+(t-b)*(1+(crown-1)*weight))*height/d.height,w*width/d.width];});
++ // Keep the requested height while changing the longitudinal crown profile.
++ const peak=Math.max(...sections.map(s=>s[2]));for(const s of sections){s[1]*=height/peak;s[2]*=height/peak;}
++ const result={steps:p.steps,sections};validateLoft(result);return result;
++}
+--- /dev/null
++++ b/src/catalog.mjs
+@@ -0,0 +1,34 @@
++import {LOFT_GENERATOR,validateLoft} from './arched-loft.mjs';
++// Immutable part recipes. Geometry reuse is NOT evidence of machine compatibility.
++export const FAMILIES=Object.freeze({bolt:'締結 / ボルト',nut:'締結 / ナット',washer:'締結 / 座金',cable:'配線 / ケーブル',ribbedPanel:'外装 / リブ付きパネル',archedLoft:'外装 / 断面曲面'});
++export const VERSION='detail-generator-v1';
++const shapes={bolt:['diameter','length','headAcrossFlats','headHeight','pitch','threadDepth'],nut:['acrossFlats','height','bore'],washer:['outer','inner','thickness'],cable:['diameter'],ribbedPanel:['width','height','thickness','ribCount','ribHeight','ribWidth']};
++export const canonical=x=>JSON.stringify(sort(x));
++function sort(x){if(Array.isArray(x))return x.map(sort);if(x&&typeof x==='object')return Object.fromEntries(Object.keys(x).sort().map(k=>[k,sort(x[k])]));return x;}
++function fail(message){throw new Error(message);}
++function object(x,keys){if(!x||typeof x!=='object'||Array.isArray(x)||Object.keys(x).some(k=>!keys.includes(k)))fail('未対応の形式・項目です');}
++function string(x,max=200){return typeof x==='string'&&x.trim().length>0&&x.length<=max&&!/[\u0000-\u001f]/.test(x);}
++export function validateRecipe(input){
++ object(input,['key','revision','label','family','params','material','sources','units','generator']);
++ if(!string(input.key,100)||!/^[-a-zA-Z0-9/_]+$/.test(input.key)||!string(input.revision,32)||!/^[-a-zA-Z0-9.]+$/.test(input.revision)||!string(input.label))fail('部品キー・版・名称が不正です');
++ if(!Object.hasOwn(FAMILIES,input.family)||input.units!=='mm'||input.generator!==(input.family==='archedLoft'?LOFT_GENERATOR:VERSION))fail('分類・単位・生成方法が未対応です');
++ const p=input.params,keys=shapes[input.family];if(input.family==='archedLoft')validateLoft(p);else{object(p,keys);for(const k of keys)if(typeof p[k]!=='number'||!Number.isFinite(p[k])||p[k]<=0||p[k]>10000)fail('寸法は正のmm数値で指定してください');}
++ if(input.family==='bolt'&&(p.headAcrossFlats<=p.diameter||p.threadDepth>=p.diameter/4||p.pitch>=p.length||p.length/p.pitch>250))fail('ボルト寸法・ねじ数が範囲外です');
++ if(input.family==='nut'&&p.bore>=p.acrossFlats)fail('ナットの穴が外形以上です');
++ if(input.family==='washer'&&p.inner>=p.outer)fail('座金の内径が外径以上です');
++ if(input.family==='ribbedPanel'&&(!Number.isInteger(p.ribCount)||p.ribCount>100||p.ribWidth*p.ribCount>p.width))fail('リブの本数・幅が範囲外です');
++ if(!['steel','black','orange'].includes(input.material))fail('材質表示が未対応です');
++ if(!Array.isArray(input.sources)||input.sources.length>12)fail('出所の形式が不正です');
++ for(const s of input.sources){object(s,['reference','page','sha256','note']);if(!string(s.reference,1000)||typeof s.page!=='string'||s.page.length>40||typeof s.sha256!=='string'||(s.sha256&&!/^[a-f0-9]{64}$/.test(s.sha256))||!string(s.note,1200))fail('出所・該当箇所・メモが不正です');}
++ return JSON.parse(canonical(input));
++}
++export const refOf=r=>r.key+'@'+r.revision;
++export class Catalog{
++ #assets=new Map();
++ add(input){const r=validateRecipe(input),ref=refOf(r),old=this.#assets.get(ref);if(old&&canonical(old)!==canonical(r))fail('同じ部品版は上書きできません。新しい版にしてください');if(!old&&this.#assets.size>=500)fail('カタログは500版までです');this.#assets.set(ref,r);return ref;}
++ get(ref){const x=this.#assets.get(ref);if(!x)fail('部品版を確認できません');return structuredClone(x);}
++ list(){return [...this.#assets.values()].sort((a,b)=>refOf(a).localeCompare(refOf(b),'en')).map(x=>structuredClone(x));}
++ serialize(){return canonical({schemaVersion:1,assets:this.list()});}
++ static parse(raw){if(typeof raw!=='string'||new TextEncoder().encode(raw).length>1024*1024)fail('カタログは1MiB以内にしてください');let d;try{d=JSON.parse(raw);}catch{fail('JSONを読み取れません');}object(d,['schemaVersion','assets']);if(d.schemaVersion!==1||!Array.isArray(d.assets)||d.assets.length>500)fail('カタログの版・件数が不正です');const c=new Catalog();for(const a of d.assets)c.add(a);return c;}
++}
++export function saveCatalog(storage,key,catalog){try{storage.setItem(key,catalog.serialize());return {saved:true};}catch{return {saved:false,message:'端末へ保存できません。JSONを書き出してください。'};}}
+--- /dev/null
++++ b/src/cowling-bridge.mjs
+@@ -0,0 +1,77 @@
++import * as T from '../vendor/three.module.js';
++import {Catalog,validateRecipe,refOf,canonical} from './catalog.mjs';
++import {GeometryPool} from './geometry.mjs';
++import {MACHINE} from './part-package.mjs';
++import {cowlingRecipe,COWLING_SLOT,COWLING_ANCHOR} from './cowling-recipes.mjs';
++import {makeArchedGeometry} from './arched-loft.mjs';
++import {EXAMPLES} from './examples.mjs';
++
++export const WORKSPACE_KEY='nitoron:exterior-library:v1';
++export function seededCatalog(){const c=new Catalog();for(const r of EXAMPLES)c.add(r);c.add(cowlingRecipe());return c;}
++const exactly=(a,b)=>a.length===b.length&&a.every((x,i)=>x===b[i]);
++// This adapter is a single explicitly-bound PC752N slot. No category/name guessing,
++// no arbitrary matrices in imported recipes, and no scaling to make a part fit.
++export class CowlingBridge{
++ #assembly;#pool=new GeometryPool();#seq=0;#baselineChecked=false;
++ constructor(assembly){this.#assembly=assembly;}
++ #checkBaseline(){
++  if(this.#baselineChecked)return;
++  const p=this.#assembly.parts.get(COWLING_SLOT);
++  if(!p||!exactly(p.home.position,[0,0,0])||!exactly(p.home.quaternion,[0,0,0,1])||!exactly(p.home.scale,[1,1,1]))throw Error('既存カバーの取付座標が一致しません');
++  const expected=makeArchedGeometry(cowlingRecipe().params,COWLING_ANCHOR);
++  try{if(!exactly([...expected.attributes.position.array],[...p.baselineGeometry.attributes.position.array])||!exactly([...expected.index.array],[...p.baselineGeometry.index.array]))throw Error('既存カバー形状が基点と異なります。自動で上書きしません');}finally{expected.dispose();}
++  this.#baselineChecked=true;
++ }
++ packageFor(input){
++  this.#checkBaseline();const r=validateRecipe(input);if(r.family!=='archedLoft')throw Error('この取付先は断面曲面だけに対応しています');
++  const instance=this.#pool.acquire(r,{instanceId:'bridge-'+(++this.#seq),machineId:'pc752n'});
++  try{
++   const m=instance.getObjectByName('arched-shell');
++   // Exactly one mesh is expected for THIS family. Multi-mesh parts are not truncated.
++   const meshes=[];instance.traverse(o=>{if(o.isMesh)meshes.push(o);});if(meshes.length!==1||!m)throw Error('交換形式に対応しない複数メッシュです');
++   const local=m.geometry.userData.precisePositions;
++   const positions=Array.from(new Float32Array(local.map((x,i)=>x+COWLING_ANCHOR[i%3])));
++   const p=this.#assembly.part(COWLING_SLOT),revision='catalog-'+refOf(r);
++   return{schemaVersion:1,machine:{maker:MACHINE.maker,model:MACHINE.model,variant:MACHINE.variant},partId:COWLING_SLOT,fromRevision:p.revision,revision,units:'mm',frame:MACHINE.frame,geometry:{positions,indices:Array.from(m.geometry.index.array)},evidence:{basis:'photo-estimate',sourceRefs:[refOf(r),...r.sources.map(s=>s.reference)].slice(0,12),note:'部品庫の断面曲面を明示した取付座標へ移動。実機適合・寸法の実測照合なし。塗色と表示手順は配置先を維持。'}};
++  }finally{this.#pool.release(instance);}
++ }
++ get stats(){return this.#pool.stats;}
++ dispose(){this.#pool.dispose();}
++}
++
++export class ExteriorWorkspace{
++ #assembly;#bridge;#apply;#catalog;#bindings=new Map();
++ constructor(assembly,apply=p=>assembly.applyPackage(p)){this.#assembly=assembly;this.#bridge=new CowlingBridge(assembly);this.#apply=apply;this.#catalog=seededCatalog();}
++ get catalog(){return this.#catalog;}
++ get activeRef(){const p=this.#assembly.parts.get(COWLING_SLOT),b=this.#bindings.get(p?.revision);return b&&b.geometry===p.mesh.geometry?b.ref:null;}
++ get stats(){return this.#bridge.stats;}
++ #install(catalog,ref){
++  const r=catalog.get(ref);if(r.family!=='archedLoft')throw Error('取付先に使える外装版を選んでください');
++  const p=this.#bridge.packageFor(r),current=this.#assembly.parts.get(COWLING_SLOT);
++  if(current.revision===p.revision){
++   if(!exactly([...current.mesh.geometry.attributes.position.array],p.geometry.positions)||!exactly([...current.mesh.geometry.index.array],p.geometry.indices))throw Error('同じ部品版に異なる形状があります');
++  }else this.#apply(p);
++  const installed=this.#assembly.parts.get(COWLING_SLOT);
++  this.#bindings.set(p.revision,{ref,geometry:installed.mesh.geometry});
++  for(const[key,b]of this.#bindings)if(b.geometry!==installed.mesh.geometry&&b.geometry!==installed.previous?.geometry)this.#bindings.delete(key);
++ }
++ apply(ref){this.#install(this.#catalog,ref);return this.#assembly.part(COWLING_SLOT);}
++ serialize(){return canonical({schemaVersion:1,kind:'exterior-library-workspace',catalog:JSON.parse(this.#catalog.serialize()),binding:this.activeRef?{partId:COWLING_SLOT,assetRef:this.activeRef}:null});}
++ // Parse, validate catalog/version conflicts, validate target/envelope, then commit.
++ // A rejected import never replaces a live catalog or live geometry.
++ import(raw){
++  if(typeof raw!=='string'||new TextEncoder().encode(raw).length>1024*1024)throw Error('外装データは1MiB以内です');
++  let d;try{d=JSON.parse(raw);}catch{throw Error('JSONを読み取れません');}
++  if(!d||Array.isArray(d)||Object.keys(d).some(k=>!['schemaVersion','kind','catalog','binding'].includes(k))||d.schemaVersion!==1||d.kind!=='exterior-library-workspace')throw Error('外装データの形式が不正です');
++  const next=Catalog.parse(JSON.stringify(d.catalog)),merged=Catalog.parse(this.#catalog.serialize());
++  for(const r of next.list())merged.add(r);
++  if(d.binding!==null){
++   const b=d.binding;if(!b||typeof b!=='object'||Array.isArray(b)||Object.keys(b).some(k=>!['partId','assetRef'].includes(k))||b.partId!==COWLING_SLOT||typeof b.assetRef!=='string')throw Error('取付先が一致しません');
++   this.#install(merged,b.assetRef);
++  }
++  this.#catalog=merged;return{assets:merged.list().length,activeRef:this.activeRef};
++ }
++ save(storage){try{storage.setItem(WORKSPACE_KEY,this.serialize());return{saved:true};}catch{return{saved:false,message:'端末へ保存できません。JSONを書き出してください。'};}}
++ restore(storage){try{const raw=storage.getItem(WORKSPACE_KEY);if(!raw)return{restored:false};this.import(raw);return{restored:true};}catch(e){return{restored:false,error:e.message};}}
++ dispose(){this.#bridge.dispose();this.#bindings.clear();}
++}
+--- /dev/null
++++ b/src/cowling-recipes.mjs
+@@ -0,0 +1,15 @@
++import {LOFT_GENERATOR,configuredLoft} from './arched-loft.mjs';
++import {validateRecipe} from './catalog.mjs';
++// Transcribed ONCE from the existing human-authored PC752N candidate, not newly measured.
++export const COWLING_SLOT='pc752n/engine/orange-cowling/001';
++export const COWLING_ANCHOR=Object.freeze([-663,601,0]);
++export const COWLING_RECIPE=Object.freeze({
++ key:'exterior/pc752n/cowling',revision:'baseline-1',label:'PC752N 上部カバー・既存形状',family:'archedLoft',generator:LOFT_GENERATOR,units:'mm',material:'orange',
++ params:{steps:20,sections:[[0,9,19,80],[38,4,72,132],[112,0,102,144],[209,0,107,143],[297,3,78,122],[324,8,34,96]]},
++ sources:[{reference:'baseline/model.mjs / orange-cowling',page:'',sha256:'',note:'既存の公式写真参照・人手作成モデルを転記。個別寸法・裏側・板厚は未確認。メーカーCADではありません。'}]
++});
++export function cowlingRecipe(){return validateRecipe(COWLING_RECIPE);}
++export function makeCowlingVariant(base,config,revision){
++ const r=validateRecipe(base);if(r.family!=='archedLoft')throw Error('曲面レシピを選択してください');
++ return validateRecipe({...r,revision,label:'上部カバー・寸法違い '+revision,params:configuredLoft(r.params,config),sources:[...r.sources,{reference:r.key+'@'+r.revision,page:'',sha256:'',note:'開発用の寸法・断面変更。新機種・実機との適合は未確認。'}]});
++}
+--- /dev/null
++++ b/src/drawing.mjs
+@@ -0,0 +1,11 @@
++import {validateRecipe,FAMILIES,refOf} from './catalog.mjs';
++const esc=s=>String(s).replace(/[<>&"']/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&apos;'}[c]));
++export function drawingSVG(input){const r=validateRecipe(input),p=r.params;if(r.family==='archedLoft')throw Error('曲面の模式図出力は未対応です。断面値はレシピJSONで保存してください');let shape='';
++ if(r.family==='bolt')shape='<path d="M125 35 L195 35 L205 60 L195 85 L125 85 L115 60 Z"/><rect x="142" y="85" width="36" height="135"/>'+Array.from({length:12},(_,i)=>'<path d="M142 '+(96+i*10)+' l36 -6"/>').join('');
++ else if(r.family==='nut')shape='<path d="M160 35 L234 78 L234 163 L160 206 L86 163 L86 78 Z"/><circle cx="160" cy="120" r="48"/>';
++ else if(r.family==='washer')shape='<circle cx="160" cy="120" r="88"/><circle cx="160" cy="120" r="46"/>';
++ else if(r.family==='cable')shape='<path d="M60 180 C100 20 220 210 260 50"/><path d="M70 183 C110 23 230 213 270 53"/>';
++ else shape='<rect x="65" y="55" width="190" height="130"/>'+Array.from({length:Math.min(p.ribCount,20)},(_,i)=>'<rect x="'+(75+i*170/Math.min(p.ribCount,20))+'" y="45" width="5" height="150"/>').join('');
++ const fields=Object.entries(p).map(([k,v],i)=>'<text x="330" y="'+(60+i*29)+'">'+esc(k)+' = '+v+(k==='ribCount'?'':' mm')+'</text>').join('');
++ return '<svg xmlns="http://www.w3.org/2000/svg" width="720" height="440" viewBox="0 0 720 440"><rect width="720" height="440" fill="white"/><g font-family="sans-serif" fill="#213e35"><text x="30" y="28" font-size="17">'+esc(r.label)+'</text><g transform="translate(0 45)" fill="none" stroke="#326c56" stroke-width="2">'+shape+'</g><g font-size="14" transform="translate(0 30)">'+fields+'</g><text x="30" y="340">'+esc(FAMILIES[r.family])+'</text><text x="30" y="370" font-size="12">'+esc(refOf(r))+'</text><text x="30" y="400" font-size="13">再利用レシピの模式図（縮尺なし）。製造図面・規格適合・実機採用の証明ではありません。</text></g></svg>';
++}
+--- /dev/null
++++ b/src/examples.mjs
+@@ -0,0 +1,10 @@
++import {VERSION} from './catalog.mjs';
++const common={revision:'1',units:'mm',generator:VERSION,material:'steel',sources:[{reference:'Nitoron procedural demonstration',page:'',sha256:'',note:'形状再利用の検証用寸法。実機採用品・規格適合の確認なし。'}]};
++export const EXAMPLES=[
++ {...common,key:'example/bolt/d8-l30',label:'六角ボルト例：径8・首下30',family:'bolt',params:{diameter:8,length:30,headAcrossFlats:13,headHeight:5.3,pitch:1.25,threadDepth:.65}},
++ {...common,key:'example/nut/a13',label:'六角ナット例：二面幅13',family:'nut',params:{acrossFlats:13,height:6.5,bore:7}},
++ {...common,key:'example/washer/o16',label:'座金例：外径16・内径8.4',family:'washer',params:{outer:16,inner:8.4,thickness:1.6}},
++ {...common,key:'example/cable/d5',label:'ケーブル例：外径5',family:'cable',material:'black',params:{diameter:5}},
++ {...common,key:'example/panel/w60',label:'リブ付きパネル例：幅60',family:'ribbedPanel',material:'orange',params:{width:60,height:40,thickness:3,ribCount:7,ribHeight:9,ribWidth:2}},
++];
++export const ROUTES={A:[[-30,0,0],[-15,20,10],[15,26,10],[35,10,-10]],B:[[-30,0,0],[-20,-15,15],[10,-10,15],[35,10,-10]]};
+--- /dev/null
++++ b/src/exterior-ui.mjs
+@@ -0,0 +1,44 @@
++import {ExteriorWorkspace} from './cowling-bridge.mjs';
++import {refOf} from './catalog.mjs';
++import {loftDimensions} from './arched-loft.mjs';
++import {cowlingRecipe,makeCowlingVariant,COWLING_SLOT} from './cowling-recipes.mjs';
++
++export function installExteriorUI(api){
++ const w=new ExteriorWorkspace(api.assembly,p=>api.applyPartPackage(p));
++ const $=s=>document.querySelector(s),selector=$('#exterior-asset');
++ const message=s=>$('#exterior-status').textContent=s;
++ function readStorage(){return localStorage;}
++ function save(){try{return w.save(readStorage());}catch{return{saved:false,message:'端末へ保存できません。JSONを書き出してください。'};}}
++ function notify(text){const r=save();message(r.saved?text+' 端末へ保存しました。':'変更はこの画面にあります。'+r.message);}
++ function options(selected=selector.value){
++  selector.replaceChildren();for(const r of w.catalog.list().filter(x=>x.family==='archedLoft')){const o=document.createElement('option');o.value=refOf(r);o.textContent=r.label+' / '+r.revision;selector.append(o);}
++  if([...selector.options].some(o=>o.value===selected))selector.value=selected;
++  describe();
++ }
++ function describe(){
++  const r=w.catalog.get(selector.value),d=loftDimensions(r.params);
++  $('#exterior-dimensions').textContent=`保存した形状：長さ ${d.length.toFixed(1)} × 幅 ${d.width.toFixed(1)} × 高さ ${d.height.toFixed(1)} mm`;
++  for(const k of ['length','width','height'])$('#exterior-'+k).value=Number(d[k].toFixed(3));$('#exterior-crown').value='1';
++  $('#exterior-applied').textContent=w.activeRef?'取付中：'+w.activeRef:'取付中：既存形状、または形状JSONからの更新';
++  $('#exterior-count').textContent=`保存 ${w.catalog.list().length}版 / 曲面 ${w.catalog.list().filter(x=>x.family==='archedLoft').length}版`;
++ }
++ function apply(ref=selector.value){w.apply(ref);describe();notify('カバーを交換しました。視点・選択・分解・透過は維持しています。');}
++ selector.onchange=describe;
++ $('#exterior-apply').onclick=()=>{try{apply();}catch(e){message('交換しませんでした：'+e.message);}};
++ $('#exterior-inspect').onclick=()=>{api.selectGroup('engine');api.selectElement(COWLING_SLOT);$('#detail-scene').scrollIntoView({block:'center'});};
++ $('#exterior-create').onclick=()=>{
++  try{
++   const config=Object.fromEntries(['length','width','height','crown'].map(k=>[k,Number($('#exterior-'+k).value)]));
++   const refs=new Set(w.catalog.list().map(refOf));let n=1;while(refs.has(cowlingRecipe().key+'@variant-'+n))n++;
++   const r=makeCowlingVariant(cowlingRecipe(),config,'variant-'+n);w.catalog.add(r);options(refOf(r));notify('寸法違いを別版として保存しました。機械にはまだ反映していません。');
++  }catch(e){message('作成しませんでした：'+e.message);}
++ };
++ function download(text,name){const url=URL.createObjectURL(new Blob([text],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
++ $('#exterior-export').onclick=()=>download(w.serialize(),'nitoron-exterior-library.json');
++ $('#exterior-file').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>1024*1024)throw Error('1MiB以内のJSONを選んでください');w.import(await file.text());options(w.activeRef||selector.value);notify('保存レシピと取付先を読み込みました。');}catch(err){message('読み込みませんでした：'+err.message);}finally{e.target.value='';}};
++ $('#exterior-save').onclick=()=>{notify('現在の部品庫を保存しました。');describe();};
++ try{const r=w.restore(readStorage());options(w.activeRef||refOf(cowlingRecipe()));message(r.error?'保存データを復元できませんでした：'+r.error:r.restored?'保存した外装版を復元しました。':'元の形状を部品庫から再現しています。');}catch(e){options(refOf(cowlingRecipe()));message('端末の保存領域を使用できません。JSON書き出しを使えます。');}
++ window.addEventListener('pc752n-geometry-changed',()=>{if(selector.options.length)describe();});
++ api.exterior={workspace:w,apply,describe,get selectedRef(){return selector.value;}};
++ return w;
++}
+--- /dev/null
++++ b/src/geometry.mjs
+@@ -0,0 +1,35 @@
++import {makeArchedGeometry} from './arched-loft.mjs';
++import * as T from '../vendor/three.module.js';
++import {validateRecipe,canonical,refOf} from './catalog.mjs';
++const MATERIALS={steel:0xa5afb4,black:0x263139,orange:0xe97731};
++export function validateRoute(route){if(!Array.isArray(route)||route.length<2||route.length>40||route.some(p=>!Array.isArray(p)||p.length!==3||p.some(x=>typeof x!=='number'||!Number.isFinite(x)||Math.abs(x)>10000)))throw new Error('ケーブル経路は2〜40点のmm座標が必要です');for(let i=1;i<route.length;i++)if(Math.hypot(...route[i].map((x,j)=>x-route[i-1][j]))<.001)throw new Error('隣接する経路点を重ねないでください');return structuredClone(route);}
++function annulus(outer,inner,h,hex=false){const s=new T.Shape(),n=hex?6:64;for(let i=0;i<n;i++){const a=i/n*Math.PI*2;const x=outer*Math.cos(a),y=outer*Math.sin(a);i?s.lineTo(x,y):s.moveTo(x,y);}s.closePath();const hole=new T.Path();hole.absarc(0,0,inner,0,Math.PI*2,true);s.holes.push(hole);const g=new T.ExtrudeGeometry(s,{depth:h,bevelEnabled:false,curveSegments:32});g.rotateX(-Math.PI/2);return g;}
++// Explicit helical surface; visual thread profile, NOT a certified ISO thread.
++function thread(p,lod){const circum=lod==='detail'?64:16,ny=Math.ceil(p.length/p.pitch*(lod==='detail'?20:4)),v=[],ix=[];for(let j=0;j<=ny;j++){const y=j/ny*p.length;for(let i=0;i<=circum;i++){const a=i/circum*Math.PI*2,phase=((y/p.pitch-i/circum)%1+1)%1,crest=Math.max(0,1-Math.abs(phase-.5)*2);const r=p.diameter/2-p.threadDepth*(1-crest);v.push(Math.cos(a)*r,y,Math.sin(a)*r);}}
++ for(let j=0;j<ny;j++)for(let i=0;i<circum;i++){const a=j*(circum+1)+i,b=a+circum+1;ix.push(a,a+1,b,a+1,b+1,b);}const geo=new T.BufferGeometry();geo.setAttribute('position',new T.Float32BufferAttribute(v,3));geo.setIndex(ix);geo.computeVertexNormals();return geo;}
++function template(recipe,lod,route){const p=recipe.params,root=new T.Group();const material=new T.MeshStandardMaterial({color:MATERIALS[recipe.material],metalness:recipe.material==='steel'?.7:0,roughness:.4,side:T.DoubleSide});function add(name,g,pos=[0,0,0]){const m=new T.Mesh(g,material);m.name=name;m.position.set(...pos);root.add(m);return m;}
++ if(recipe.family==='archedLoft')add('arched-shell',makeArchedGeometry(p));
++ else if(recipe.family==='bolt'){add('hex-head',new T.CylinderGeometry(p.headAcrossFlats/Math.sqrt(3),p.headAcrossFlats/Math.sqrt(3),p.headHeight,6),[0,-p.headHeight/2,0]);if(lod==='detail'){add('helical-thread',thread(p,lod));add('tip',new T.CircleGeometry(p.diameter/2-p.threadDepth,32),[0,p.length,0]).rotation.x=-Math.PI/2;}else add('simplified-shank',new T.CylinderGeometry(p.diameter/2,p.diameter/2,p.length,16),[0,p.length/2,0]);}
++ else if(recipe.family==='nut')add('hex-with-bore',annulus(p.acrossFlats/Math.sqrt(3),p.bore/2,p.height,true));
++ else if(recipe.family==='washer')add('annular-washer',annulus(p.outer/2,p.inner/2,p.thickness));
++ else if(recipe.family==='cable'){const curve=new T.CatmullRomCurve3(route.map(x=>new T.Vector3(...x)));add('routed-cable',new T.TubeGeometry(curve,lod==='detail'?Math.min(512,route.length*40):Math.min(128,route.length*10),p.diameter/2,lod==='detail'?16:6,false));root.userData.pathLengthMm=curve.getLength();}
++ else if(recipe.family==='ribbedPanel'){add('base-panel',new T.BoxGeometry(p.width,p.thickness,p.height),[0,p.thickness/2,0]);const pitch=p.width/p.ribCount;for(let i=0;i<p.ribCount;i++)add('rib-'+i,new T.BoxGeometry(p.ribWidth,p.ribHeight,p.height),[-p.width/2+pitch*(i+.5),p.thickness+p.ribHeight/2,0]);}
++ root.userData={...root.userData,assetRef:refOf(recipe),family:recipe.family,lod,geometryBasis:'parameterized-visual-model',documented3dParts:0};return root;
++}
++export class GeometryPool{
++ #cache=new Map();#active=new Map();#builds=0;
++ acquire(input,{instanceId,machineId,lod='detail',route,position=[0,0,0],quaternion=[0,0,0,1]}={}){
++  const r=validateRecipe(input);if(!instanceId||typeof instanceId!=='string'||instanceId.length>150||!machineId||typeof machineId!=='string'||machineId.length>150||this.#active.has(instanceId))throw new Error('機種・取付個体IDが不正または重複しています');
++  if(!['detail','overview'].includes(lod)||!Array.isArray(position)||position.length!==3||position.some(x=>typeof x!=='number'||!Number.isFinite(x)||Math.abs(x)>10000))throw new Error('表示精度・配置が不正です');
++  if(!Array.isArray(quaternion)||quaternion.length!==4||quaternion.some(x=>typeof x!=='number'||!Number.isFinite(x))||Math.abs(Math.hypot(...quaternion)-1)>1e-6)throw new Error('回転は正規化した四元数で指定してください');
++  const points=r.family==='cable'?validateRoute(route):null;if(r.family!=='cable'&&route!==undefined)throw new Error('剛体部品に経路は指定できません');
++  const key=canonical({generator:r.generator,family:r.family,params:r.params,lod,route:points});let entry=this.#cache.get(key);
++  if(!entry){if(this.#cache.size>=64){const free=[...this.#cache].find(([,e])=>e.count===0);if(!free)throw new Error('使用中の形状が上限に達しました');this.#dispose(free[1].root);this.#cache.delete(free[0]);}entry={root:template(r,lod,points),count:0};this.#cache.set(key,entry);this.#builds++;}
++  const root=entry.root.clone(true);root.position.set(...position);root.quaternion.set(...quaternion);root.traverse(m=>{if(m.isMesh){m.material=m.material.clone();m.material.color.setHex(MATERIALS[r.material]);}});
++  root.userData={...entry.root.userData,assetRef:refOf(r),instanceId,machineId,fitStatus:'unconfirmed',documented3dParts:0};entry.count++;this.#active.set(instanceId,{key,root});return root;
++ }
++ release(root){const id=root?.userData.instanceId,e=this.#active.get(id);if(!e||e.root!==root)return false;root.traverse(m=>{if(m.isMesh)m.material.dispose();});this.#cache.get(e.key).count--;this.#active.delete(id);return true;}
++ #dispose(root){const gs=new Set(),ms=new Set();root.traverse(m=>{if(m.isMesh){gs.add(m.geometry);ms.add(m.material);}});gs.forEach(g=>g.dispose());ms.forEach(m=>m.dispose());}
++ dispose(){for(const {root} of [...this.#active.values()])this.release(root);for(const e of this.#cache.values())this.#dispose(e.root);this.#cache.clear();}
++ get stats(){return {geometryBuilds:this.#builds,cachedShapes:this.#cache.size,liveInstances:this.#active.size};}
++}
+--- a/src/model.mjs
++++ b/src/model.mjs
+@@ -1,3 +1,5 @@
++import {makeArchedGeometry} from './arched-loft.mjs';
++import {cowlingRecipe,COWLING_ANCHOR} from './cowling-recipes.mjs';
+ import * as T from '../vendor/three.module.js';
+ import {RoundedBoxGeometry} from '../vendor/RoundedBoxGeometry.js';
+ 
+@@ -45,7 +47,7 @@
+  box('engine','crankcase',[235,182,235],[-460,436,0],'engine',20);
+  const block=box('engine','inclined-cylinder',[167,180,203],[-550,527,0],'engine',12);block.rotation.z=-.28;
+  for(let i=0;i<8;i++){const f=box('engine','cooling-fin-'+i,[165,5,230],[-537-i*3,472+i*18,0],'silver',1);f.rotation.z=-.28;}
+- shell('engine','orange-cowling',[[-663,610,620,80],[-625,605,673,132],[-551,601,703,144],[-454,601,708,143],[-366,604,679,122],[-339,609,635,96]]);
++ mesh('engine',makeArchedGeometry(cowlingRecipe().params,COWLING_ANCHOR),'orange','orange-cowling');
+  // Black inset below the tank. Component height/volume are visual estimates.
+  shell('engine','under-cowling',[[-650,582,610,95],[-560,579,627,137],[-420,579,626,133],[-347,590,612,95]],'black');
+  mesh('engine',new T.CylinderGeometry(25,26,12,40),'black','fuel-cap',[-448,714,0]);
+--- /dev/null
++++ b/tests/catalog.test.mjs
+@@ -0,0 +1,13 @@
++import {test} from 'node:test';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
++import * as T from '../vendor/three.module.js';import {Catalog,refOf,saveCatalog} from '../src/catalog.mjs';import {GeometryPool} from '../src/geometry.mjs';import {EXAMPLES,ROUTES} from '../src/examples.mjs';import {drawingSVG} from '../src/drawing.mjs';
++const bolt=()=>structuredClone(EXAMPLES[0]),meshes=o=>{const a=[];o.traverse(m=>{if(m.isMesh)a.push(m);});return a;};
++function use(fn){const pool=new GeometryPool();try{return fn(pool);}finally{pool.dispose();}}
++test('same geometry is built once for 100 unique placements, with independent selection',()=>use(pool=>{const r=bolt(),parts=Array.from({length:100},(_,i)=>pool.acquire(r,{instanceId:'i'+i,machineId:i<50?'A':'B',position:[i,0,0]}));assert.equal(pool.stats.geometryBuilds,1);assert.equal(pool.stats.liveInstances,100);const head=meshes(parts[0])[0];for(const p of parts){assert.equal(meshes(p)[0].geometry,head.geometry);assert.equal(p.userData.fitStatus,'unconfirmed');}head.material.color.setHex(0xff0000);assert.notEqual(meshes(parts[1])[0].material.color.getHex(),0xff0000);parts[0].position.x=999;assert.equal(parts[1].position.x,1);}));
++test('parameter order and source label do not duplicate geometry; changed dimensions do',()=>use(pool=>{const p=bolt();pool.acquire(p,{instanceId:'a',machineId:'A'});p.params=Object.fromEntries(Object.entries(p.params).reverse());p.key='new/name';p.label='different';pool.acquire(p,{instanceId:'b',machineId:'B'});assert.equal(pool.stats.geometryBuilds,1);p.params.length=40;pool.acquire(p,{instanceId:'c',machineId:'B'});assert.equal(pool.stats.geometryBuilds,2);}));
++test('bolt model envelope follows diameter, head and under-head length; real helical surface is optional',()=>use(pool=>{const p=bolt(),fine=pool.acquire(p,{instanceId:'fine',machineId:'A'}),coarse=pool.acquire(p,{instanceId:'coarse',machineId:'A',lod:'overview'});const b=new T.Box3().setFromObject(fine);assert.ok(Math.abs(b.max.y-b.min.y-(p.params.length+p.params.headHeight))<.00001);const thread=fine.getObjectByName('helical-thread');assert.ok(thread);assert.equal(coarse.getObjectByName('helical-thread'),undefined);const a=thread.geometry.attributes.position;let lo=Infinity,hi=-Infinity;for(let i=0;i<a.count;i++){const r=Math.hypot(a.getX(i),a.getZ(i));lo=Math.min(lo,r);hi=Math.max(hi,r);}assert.ok(hi-lo>.6);assert.ok(Math.abs(hi-p.params.diameter/2)<1e-5);assert.ok(meshes(fine).reduce((s,m)=>s+m.geometry.attributes.position.count,0)>meshes(coarse).reduce((s,m)=>s+m.geometry.attributes.position.count,0));}));
++test('washer has a real bore and generated outer diameter and thickness',()=>use(pool=>{const o=pool.acquire(EXAMPLES[2],{instanceId:'w',machineId:'A'}),g=meshes(o)[0].geometry.attributes.position,b=new T.Box3().setFromObject(o);assert.ok(Math.abs(b.max.x-b.min.x-16)<1e-5);assert.ok(Math.abs(b.max.y-b.min.y-1.6)<1e-5);let min=Infinity;for(let i=0;i<g.count;i++)min=Math.min(min,Math.hypot(g.getX(i),g.getZ(i)));assert.ok(Math.abs(min-4.2)<1e-5);}));
++test('cable cross section reuses recipe, but distinct installed routes get distinct geometry',()=>use(pool=>{const r=EXAMPLES[3],a=pool.acquire(r,{instanceId:'a',machineId:'A',route:ROUTES.A}),b=pool.acquire(r,{instanceId:'b',machineId:'B',route:ROUTES.A}),c=pool.acquire(r,{instanceId:'c',machineId:'B',route:ROUTES.B});assert.equal(meshes(a)[0].geometry,meshes(b)[0].geometry);assert.notEqual(meshes(a)[0].geometry,meshes(c)[0].geometry);assert.equal(pool.stats.geometryBuilds,2);assert.throws(()=>pool.acquire(r,{instanceId:'d',machineId:'B'}),/経路/);assert.throws(()=>pool.acquire(r,{instanceId:'d',machineId:'B',route:[[0,0,0],[0,0,0]]}),/重ね/);}));
++test('recipes and drawings survive deterministic save and load; existing revisions cannot be overwritten',()=>{const c=new Catalog();EXAMPLES.forEach(x=>c.add(x));assert.equal(Catalog.parse(c.serialize()).serialize(),c.serialize());const changed=bolt();changed.params.length=40;assert.throws(()=>c.add(changed),/上書き/);changed.revision='2';c.add(changed);assert.equal(c.get(refOf(EXAMPLES[0])).params.length,30);assert.equal(c.get(refOf(changed)).params.length,40);const before=c.serialize();const copy=c.get(refOf(EXAMPLES[0]));copy.params.length=123;assert.equal(c.serialize(),before);const svg=drawingSVG(copy);assert.ok(svg.includes('製造図面'));assert.ok(svg.includes('length = 123 mm'));});
++test('invalid catalog import and fake verification flags reject; storage failure is explicit',()=>{for(const mutate of [r=>r.params.pitch=NaN,r=>r.params.length=-1,r=>r.params.other=1,r=>r.units='m',r=>r.verified=true,r=>r.family='constructor']){const c=new Catalog(),r=bolt();mutate(r);assert.throws(()=>c.add(r));assert.equal(c.list().length,0);}assert.throws(()=>Catalog.parse('{'));const c=new Catalog();c.add(bolt());const s=saveCatalog({setItem(){throw Error('full')}},'key',c);assert.equal(s.saved,false);assert.ok(s.message.includes('保存できません'));});
++test('releasing one placement keeps shared geometry alive; cache reuse remains available',()=>use(pool=>{const a=pool.acquire(bolt(),{instanceId:'a',machineId:'A'}),b=pool.acquire(bolt(),{instanceId:'b',machineId:'A'}),geo=meshes(b)[0].geometry;let disposed=0;geo.addEventListener('dispose',()=>disposed++);assert.ok(pool.release(a));assert.equal(pool.release(a),false);assert.equal(disposed,0);assert.throws(()=>pool.acquire(bolt(),{instanceId:'b',machineId:'B'}),/重複/);pool.release(b);const c=pool.acquire(bolt(),{instanceId:'c',machineId:'B'});assert.equal(meshes(c)[0].geometry,geo);assert.equal(pool.stats.geometryBuilds,1);}));
++test('all five families generate finite geometry and identical SHA across three runs',()=>{const hashes=Array.from({length:3},()=>use(pool=>{const h=createHash('sha256');for(const r of EXAMPLES){const o=pool.acquire(r,{instanceId:r.key,machineId:'A',...(r.family==='cable'?{route:ROUTES.A}:{})});for(const m of meshes(o)){assert.ok([...m.geometry.attributes.position.array].every(Number.isFinite));h.update(Buffer.from(m.geometry.attributes.position.array.buffer));}h.update(drawingSVG(r));}return h.digest('hex');}));assert.equal(new Set(hashes).size,1);});
+--- /dev/null
++++ b/tests/exterior.test.mjs
+@@ -0,0 +1,56 @@
++import {test} from 'node:test';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
++import {makeModel as original} from '../baseline/model.mjs';import {makeModel,measure} from '../src/model.mjs';
++import {createAssembly} from '../src/assembly.mjs';import {GeometryPool} from '../src/geometry.mjs';
++import {Catalog,canonical,refOf} from '../src/catalog.mjs';import {validateLoft,loftDimensions,makeArchedGeometry} from '../src/arched-loft.mjs';
++import {cowlingRecipe,makeCowlingVariant,COWLING_SLOT} from '../src/cowling-recipes.mjs';
++import {ExteriorWorkspace,CowlingBridge,WORKSPACE_KEY} from '../src/cowling-bridge.mjs';
++const variant=()=>makeCowlingVariant(cowlingRecipe(),{length:340,width:270,height:125,crown:1.1},'variant-1');
++const arrays=g=>({positions:[...g.attributes.position.array],indices:g.index?[...g.index.array]:null,normals:[...g.attributes.normal.array]});
++function finishModel(m){const gs=new Set(),ms=new Set();m.root.traverse(o=>{if(o.isMesh){gs.add(o.geometry);ms.add(o.material);}});gs.forEach(g=>g.dispose());ms.forEach(x=>x.dispose());}
++function partDigest(a){return [...a.parts].map(([id,p])=>({id,revision:p.revision,geometry:arrays(p.mesh.geometry),home:p.home}));}
++
++test('C1 all 174 original meshes remain byte-identical after moving cowling to a recipe',()=>{
++ const a=original(),b=makeModel();try{const old=[],now=[];for(const[m,list]of[[a,old],[b,now]])m.root.traverse(o=>{if(o.isMesh)list.push({name:o.name,shape:arrays(o.geometry),position:o.position.toArray(),quaternion:o.quaternion.toArray()});});assert.equal(old.length,174);assert.deepEqual(now,old);assert.deepEqual(measure(a.root),measure(b.root));}finally{finishModel(a);finishModel(b);}
++});
++test('C2 same loft generator reproduces three old curved covers from local-frame sections',()=>{
++ const model=original();try{for(const name of['orange-cowling','under-cowling','orange-pivot-console']){
++  const old=model.root.getObjectByName(name).geometry,v=old.attributes.position.array,steps=20,sections=[];
++  // Only a migration test: recover the existing authored cross-section samples.
++  for(let i=0;i<v.length;i+=(steps+1)*3)sections.push([v[i],v[i+20*3+1],v[i+10*3+1],v[i+2]]);
++  const anchor=[sections[0][0],Math.min(...sections.map(s=>s[1])),0],local=sections.map(([x,b,t,w])=>[x-anchor[0],b-anchor[1],t-anchor[1],w]);
++  const g=makeArchedGeometry({steps,sections:local},anchor);try{assert.deepEqual(arrays(g),arrays(old));}finally{g.dispose();}
++ }}finally{finishModel(model);}
++});
++test('C3 one curved definition yields independent placements with one shared geometry',()=>{
++ const pool=new GeometryPool();try{const a=pool.acquire(cowlingRecipe(),{instanceId:'A',machineId:'example-A'}),b=pool.acquire(cowlingRecipe(),{instanceId:'B',machineId:'example-B',position:[1000,25,0]});assert.equal(pool.stats.geometryBuilds,1);assert.equal(a.children[0].geometry,b.children[0].geometry);a.children[0].material.color.setHex(0xff0000);assert.notEqual(a.children[0].material.color.getHex(),b.children[0].material.color.getHex());assert.equal(b.position.x,1000);assert.equal(b.userData.fitStatus,'unconfirmed');}finally{pool.dispose();}
++});
++test('C4 configured dimensions and crown change only recipe data; old revision is immutable',()=>{
++ const r=cowlingRecipe(),old=canonical(r),v=variant(),d=loftDimensions(v.params);assert.deepEqual(d,{length:340,width:270,height:125});assert.equal(canonical(r),old);assert.notEqual(v.params.sections[2][2]/125,r.params.sections[2][2]/107);
++ const c=new Catalog();c.add(r);const bad=structuredClone(v);bad.revision=r.revision;assert.throws(()=>c.add(bad),/上書き/);c.add(v);assert.equal(Catalog.parse(c.serialize()).serialize(),c.serialize());
++});
++test('C5 adapter preserves explicit part frame and updates only one mesh, undo is exact',()=>{
++ const a=createAssembly(),w=new ExteriorWorkspace(a);try{const old=partDigest(a),home=canonical(a.snapshot().parts.map(p=>({id:p.id,home:p.home}))),offset=canonical([...a.explodeOffsets]);w.apply(refOf(cowlingRecipe()));assert.deepEqual(arrays(a.parts.get(COWLING_SLOT).mesh.geometry),old.find(x=>x.id===COWLING_SLOT).geometry);w.catalog.add(variant());w.apply(refOf(variant()));const changed=partDigest(a).filter((p,i)=>canonical(p.geometry)!==canonical(old[i].geometry));assert.equal(changed.length,1);assert.equal(changed[0].id,COWLING_SLOT);assert.equal(canonical(a.snapshot().parts.map(p=>({id:p.id,home:p.home}))),home);assert.equal(canonical([...a.explodeOffsets]),offset);assert.equal(a.snapshot().documented3dParts,0);a.undo(COWLING_SLOT);assert.deepEqual(arrays(a.parts.get(COWLING_SLOT).mesh.geometry),old.find(x=>x.id===COWLING_SLOT).geometry);assert.equal(w.activeRef,refOf(cowlingRecipe()));}finally{w.dispose();a.dispose();}
++});
++test('C6 workspace persists recipe and binding; fresh assembly replays the selected shape',()=>{
++ const a=createAssembly(),b=createAssembly(),w=new ExteriorWorkspace(a),next=new ExteriorWorkspace(b),values=new Map(),storage={setItem:(k,v)=>values.set(k,v),getItem:k=>values.get(k)};
++ try{w.catalog.add(variant());w.apply(refOf(variant()));assert.equal(w.save(storage).saved,true);assert.equal(next.restore(storage).restored,true);assert.equal(next.serialize(),w.serialize());assert.deepEqual(arrays(b.parts.get(COWLING_SLOT).mesh.geometry),arrays(a.parts.get(COWLING_SLOT).mesh.geometry));assert.equal(next.catalog.list().length,7);assert.equal(values.has(WORKSPACE_KEY),true);assert.equal(next.save({setItem(){throw Error('quota');}}).saved,false);}finally{w.dispose();next.dispose();a.dispose();b.dispose();}
++});
++test('C7 malformed or conflicting recipes and wrong/outside bindings reject atomically',()=>{
++ const a=createAssembly(),w=new ExteriorWorkspace(a);try{w.catalog.add(variant());w.apply(refOf(variant()));const state=w.serialize(),shapes=canonical(partDigest(a)),offset=canonical([...a.explodeOffsets]);
++  const mutations=[d=>d.binding.partId='another-machine',d=>d.catalog.assets.find(r=>r.family==='archedLoft').params.sections[1][0]=0,d=>d.catalog.assets[0].verified=true,d=>d.catalog.assets.find(r=>r.family==='archedLoft').label='conflict'];
++  for(const f of mutations){const d=JSON.parse(state);f(d);assert.throws(()=>w.import(JSON.stringify(d)));assert.equal(w.serialize(),state);assert.equal(canonical(partDigest(a)),shapes);}
++  const d=JSON.parse(state),huge=makeCowlingVariant(cowlingRecipe(),{length:3000,width:270,height:125,crown:1},'huge');d.catalog.assets.push(huge);d.binding.assetRef=refOf(huge);assert.throws(()=>w.import(JSON.stringify(d)),/全体外寸/);assert.equal(w.serialize(),state);assert.equal(canonical(partDigest(a)),shapes);assert.equal(canonical([...a.explodeOffsets]),offset);
++ }finally{w.dispose();a.dispose();}
++});
++test('C8 baseline mismatch and invalid cross-sections never silently fit a replacement',()=>{
++ for(const f of[p=>p.sections[0][0]=1,p=>p.steps=3,p=>p.sections[2][3]=0,p=>p.sections[2][2]=NaN,p=>p.extra=true]){const p=cowlingRecipe().params;f(p);assert.throws(()=>validateLoft(p));}
++ const a=createAssembly(),bridge=new CowlingBridge(a);try{a.parts.get(COWLING_SLOT).baselineGeometry.attributes.position.array[0]-=1;assert.throws(()=>bridge.packageFor(cowlingRecipe()),/基点/);}finally{bridge.dispose();a.dispose();}
++});
++test('C9 recipe generation and installed export are deterministic across three independent runs',()=>{
++ const sha=[];for(let i=0;i<3;i++){const a=createAssembly(),w=new ExteriorWorkspace(a);try{w.catalog.add(variant());w.apply(refOf(variant()));sha.push(createHash('sha256').update(w.serialize()).update(canonical(arrays(a.parts.get(COWLING_SLOT).mesh.geometry))).digest('hex'));}finally{w.dispose();a.dispose();}}assert.equal(new Set(sha).size,1);
++});
++
++test('C10 undo to an earlier library variant preserves that binding across export and reload',()=>{
++ const a=createAssembly(),b=createAssembly(),w=new ExteriorWorkspace(a),next=new ExteriorWorkspace(b);
++ try{const first=variant(),second=makeCowlingVariant(cowlingRecipe(),{length:320,width:260,height:115,crown:.9},'variant-2');w.catalog.add(first);w.catalog.add(second);w.apply(refOf(first));w.apply(refOf(second));a.undo(COWLING_SLOT);assert.equal(w.activeRef,refOf(first));next.import(w.serialize());assert.equal(next.activeRef,refOf(first));assert.deepEqual(arrays(a.parts.get(COWLING_SLOT).mesh.geometry),arrays(b.parts.get(COWLING_SLOT).mesh.geometry));}finally{w.dispose();next.dispose();a.dispose();b.dispose();}
++});
