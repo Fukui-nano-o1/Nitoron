@@ -1,66 +1,64 @@
-# PC752N 寸法ボックス - Codex実装候補
+# PC752N: replaceable part geometry / 2026-09-11
 
-2026-09-11。ユーザーの最新指示「全体の寸法箱／部品の寸法箱／タップ移動／ダブルタップ分解／外装→ケーブル→エンジン透過」を動かす独立試作です。
+Codex candidate for Claude Code. Independent evolution of the dimension-box prototype in `experiments/pc752n-dimension-boxes/`, based on Nitoron main `c7faa3bbaa4338fd6ee9305bc637b9d0c44e8e5b`. See `HANDOFF.md` for integration and fixed acceptance criteria.
 
-## 最初に
+**Purpose:** replace a part's geometry while preserving its logical identity, assembly transforms, display-guide steps, selected box, camera, exploded positions and cumulative transparency. Inspired by the publicly described Cadasio workflow; no proprietary source or assets copied. This is NOT a Cadasio CAD importer or repair procedure.
 
-前回PDF `Nitoron-3D-Reference-Benchmark-Plan-2026-09-11.pdf` の実測セット準備・採点器設計は保留。このZIPと新しいPDFに切り替えてください。v1-v4のカメラ比較は再開しません。GitHub mainはCodex確認時 `faefb4febf369c2d865162d104cc9b61d9c5e99c`。より新しい変更を保持し、古いSHAへ戻さないでください。
+## Run
 
-`docs/ATLAS-REFERENCE-BENCHMARK-DESIGN.md` の「PC752N（標準仕様・非クローラ）」は誤りです。メーカー公式カタログはPC752Nをクローラ仕様として記載。PC752NCのCはクロスカットロータリの区別です。外装資料と仕様を先に照合してください。
+- Node 22+: `npm test` (the original model checks plus update tests).
+- `npm run build` creates `PC752N-exterior-viewer.html`. Open in a modern browser, or serve from a local HTTP server if the phone does not execute saved HTML.
+- `npm run check:browser` runs original and new Playwright checks. Playwright or playwright-core and Chromium must already be available. Optional `ATLAS_CHROMIUM_PATH` selects an installed executable. `NODE_PATH` may locate an existing installation. No runtime CDN/API dependencies.
+- `node generate-fixture.mjs` deterministically regenerates `fixtures/cowling-revision.json`.
 
-## 動かす
+## Use
 
-Node 22以降（Codex確認はNode 24）。モデル、UI、同梱Three.jsは追加npm依存なし。
+The existing two dimensional boxes remain. Tap a group, then a component; double-tap a box or press its explode button. Transparency progresses exterior → cables → engine → reset. Five display-guide steps are independently defined; they are viewing aids, not manufacturer disassembly instructions.
 
+Expand **検証用：部品モデルの更新** below the boxes. Select an individual part and export it, or import `fixtures/cowling-revision.json`. The fixture doubles sampling of the SAME assumed orange-cowling surface (126 → 246 vertices); it does not improve factual accuracy. Import updates both boxes and offers one-step undo for the selected part. File contents cannot change hierarchy, transforms, materials or display steps.
+
+**Updates live only in this page session.** Closing/reloading restores the baseline. Export a part to keep its geometry and load it into the original baseline after reload. UI exports target `exterior-v1`; the programmatic `exportPart(id)` defaults to the current revision for consecutive editing, or accepts `{fromBaseline:true}` for baseline replay. This panel is a developer verification tool; end users of the eventual model-number-only product will not be asked to edit geometry files.
+
+## Separation of concerns
+
+| Module | Responsibility |
+|---|---|
+| `src/model.mjs` | Original assumed shape, unchanged; six groups, 174 meshes |
+| `src/assembly.mjs` | Stable part slots, original local transforms, revisions, one-step undo and display displacement vectors |
+| `src/presentation.mjs` | Five view steps and cumulative layer classification, independent of geometry |
+| `src/part-package.mjs` | Bounded local JSON interchange and validation |
+| `src/app.mjs` | Existing viewer plus atomic geometry refresh preserving both view states |
+
+IDs use `pc752n/<group>/<name>/<occurrence>`; old `element-xxx` aliases resolve to these baseline slots. Import never regenerates IDs or reorders parts. When later changing the factory or importing a different CAD assembly, preserve existing slots and explicitly map new source parts. Arbitrary CAD reorder matching is NOT implemented. The 174 mesh slots are display objects, not a verified manufacturer BOM.
+
+## Local part interchange, schemaVersion 1
+
+```json
+{
+  "schemaVersion": 1,
+  "machine": {"maker":"Kubota","model":"PC752N","variant":"single-crawler-standard-rotary"},
+  "partId": "pc752n/engine/orange-cowling/001",
+  "fromRevision": "exterior-v1",
+  "revision": "a-new-part-revision",
+  "units": "mm",
+  "frame": "part-local-mm-v1",
+  "geometry": {"positions": [], "indices": []},
+  "evidence": {"basis":"photo-estimate","sourceRefs":["S3"],"note":"Describe the origin and remaining uncertainty"}
+}
 ```
-node --test test-model.mjs
-node build.mjs
-```
 
-生成される `PC752N-exterior-viewer.html` は3D実行資産を内蔵した単一HTMLです。外部CDN不要。直接ファイル表示が許可されるブラウザ、または既存のローカルHTTPサーバーで開きます。iPhoneのファイルプレビューではJSが実行されないことがあるため、Claudeの既存プレビュー環境でURLを用意できた場合はそちらを使用。今回Codexは公開デプロイしていません。
+Empty geometry above is schema illustration, not a valid mesh. Export provides valid coordinates. Positions are xyz in the ORIGINAL part-local frame before original translation/rotation/scale, not centered to a new box; indices are indexed triangles. No automatic unit conversion, fitting or recentering. The exported shape preserves its original assembled placement under the unchanged transform.
 
-ブラウザ確認（検証環境にPlaywrightまたはplaywright-coreとChromiumがあること）：
+Limits: file 8 MiB; 100,000 vertices; 600,000 triangle indices; finite coordinates ≤100,000 mm absolute; valid indices and at least one nondegenerate triangle. Wrong model/variant/unit/frame, unknown ID, stale revision, extra keys and invalid data reject without updating current or undo geometry. This is a renderable mesh check, not watertightness, collision, material or engineering validation.
 
-```
-node check-browser.cjs
-```
+The whole assembled bounding box must keep every baseline min/max within 0.01 mm; the rubber band's known width must remain 110 mm within 0.01 mm. No shape is scaled to make a test pass. These are numerical consistency gates, **not real-world accuracy tolerances**. If future verified CAD proves baseline placement or dimensions need changing, use a separately reviewed assembly revision; this geometry-only importer intentionally rejects that change.
 
-Chromium実行ファイルを明示する環境では `ATLAS_CHROMIUM_PATH` を指定。スクリプトがローカルHTTPサーバーを起動・終了し、`evidence/browser-check.json` と画面画像を出力します。
+Evidence declarations (`photo-estimate`, `supplier-cad`, `measured`, `verification-fixture`) never self-certify geometry: imported parts are always `pending-review`. `documented3dParts=0`, `automaticReconstruction=false`. S1/S3 references retain their original meanings in `sources.json`.
 
-## 操作と数値の意味
+## Not included
 
-寸法は3D座標上のmmです。画面の表示倍率はズームで変わり、スマホ上の表示長を実物と同じ長さにする機能ではありません。
+- CAD/STEP/GLB import, source-photo reconstruction, automated model-number generation or improved unseen geometry.
+- Durable part registry, cloud persistence, Nitoron production/shared-renderer integration.
+- Verified individual dimensions, service order, manufacturer-certified BOM, physical iPhone/GPU tests.
 
-- 左（スマホでは上）：機械全体。箱は組立時の全長1470 × 幅615 × 高さ1020 mm。ハンドル3段目・正位置のカタログ値。
-- 右（下）：タップした部品グループ、または個別部品。組立時の実メッシュ包絡から寸法を計算。**モデル上の寸法であり、実物採寸済みではありません。**
-- 6グループのボタン、または全体モデルの部位をタップすると右の箱を切り替えます。右の部品をタップ、または選択欄で指定するとその部品だけの箱へ。戻るボタンあり。
-- 各3D領域をダブルタップすると、その箱の内容を分解・組立。ボタンでも同操作。内部構成がない単一メッシュの分解は無効です。分解は表示用の移動で、メーカーの分解手順ではありません。
-- 透過ボタンは外装→外装＋ケーブル→外装＋ケーブル＋エンジン→解除の4状態。未取得の内部部品は捏造しません。
-- 箱は組立時寸法を維持し、分解時の広がりを製品寸法と誤認させません。
-- タップ判定は移動7px超で取消、1回目を離してから2回目を押すまで310ms未満、距離25px未満。回転やピンチでの誤作動を検証してください。分解表示は時間基準650ms、reduced-motionでは即時切替。
-
-## 真実として主張できる範囲
-
-`src/model.mjs` はPC752Nの公式写真・カタログを人が見て書いた外観候補。カテゴリ箱の改名ではありません。クローラ、曲面カバー、ベルトカバー、ハンドル管、ロータリを個別に作成しています。ただし、**型式入力から自動生成した実証ではありません。**
-
-確認済み：公式カタログ全体寸法、クローラのゴム幅110mm。モデルの対応寸法は頂点から測定するテストで検査。
-未確認：部品全体の実寸、機種固有の背面・右側、内部形状、完全なケーブル経路、実機iPhone、現物同等の外観品質。クローラのピッチ60mm・17リンクは資料値として記録しますが、モデルのピッチ精度は合格扱いにしません。
-
-寸法値にモデルを合わせたことは独立した実物精度の検証ではありません。`documented3dParts:0`、`automaticReconstruction:false`を維持します。全体外寸一致だけで工程Aや外観受入を合格にしないでください。
-
-## 受け渡し内容と改修範囲
-
-- `src/model.mjs`: ミリメートル座標の機種固有外観候補、6グループ
-- `src/app.mjs`: 2つの箱・階層選択・透過・分解・寸法ラベル
-- `index.html`, `build.mjs`: 通常表示とオフライン単一HTML生成
-- `sources.json`: 一次資料URL・SHA・採用値・除外資料
-- `test-model.mjs`, `check-browser.cjs`: 寸法と操作の検証
-- `evidence/`: Codexの検証証拠（生成日時と未確認をJSONに記録）
-
-Nitoronへの自動接続はありません。初回は `experiments/pc752n-dimension-boxes/` 等の独立場所へ取り込み、既存データ・実ジョブ原本・旧実験を上書きしない。既存WebGL共有ホストへの接続は別途変更が必要です。この独立試作はWebGLレンダラー2個を使います。製品側の1レンダラー制約・iOS資源評価を通過済みとは扱わないでください。
-
-## 権利と出典
-
-メーカー写真・PDFは参考として閲覧しましたが、このZIPに転載していません。リンクとSHAは `sources.json` に記録。メーカー提供3Dではなく、非公式の外観検討モデルです。
-
-Three.js r180は元のNitoron同梱ライブラリを使用、MITライセンスを `vendor/THREE-LICENSE.txt` に保存。OrbitControls.jsとRoundedBoxGeometry.jsのみローカルimportへ変更。外部CDN依存は追加していません。
+The prototype still uses two WebGL renderers. Original Three.js MIT license and attribution remain. Generated HTML is standalone; source-evidence hyperlinks only navigate on user request.

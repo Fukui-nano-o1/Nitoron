@@ -1,0 +1,130 @@
+{
+  "checkedAt": "2026-09-11",
+  "commit": "c7faa3bbaa4338fd6ee9305bc637b9d0c44e8e5b",
+  "files": [
+    {
+      "path": "PC752N-exterior-viewer.html",
+      "gitBlobSha": "25f9a3de26932010e428e6e8aebc7dc713f04061"
+    },
+    {
+      "path": "README.md",
+      "gitBlobSha": "1117baabb51a4f7191262843925570cdede551f0"
+    },
+    {
+      "path": "SHA256.json",
+      "gitBlobSha": "85d7582ad12cf4bda3fae1ff7d4b85094a1bf27e"
+    },
+    {
+      "path": "build.mjs",
+      "gitBlobSha": "4547083e657e9985d0a35c5b44b8913c50a83dee"
+    },
+    {
+      "path": "check-browser.cjs",
+      "gitBlobSha": "d589d8e88113b32024f758a68047c429a0773be3"
+    },
+    {
+      "path": "evidence/browser-check.json",
+      "gitBlobSha": "4691417d86b52b594d5618857878bf1dfab295fd"
+    },
+    {
+      "path": "evidence/desktop-boxes.png",
+      "gitBlobSha": "49dbd8a8e7cf802dfe6da21f3cbce5382449b10f"
+    },
+    {
+      "path": "evidence/detail-exploded.png",
+      "gitBlobSha": "93f6445916ba4af21cd921e76b2a28e77322b2fa"
+    },
+    {
+      "path": "evidence/mobile-boxes.png",
+      "gitBlobSha": "4e55f78137059761ce75c2833b0bcf301d6e6d77"
+    },
+    {
+      "path": "evidence/node-tests.txt",
+      "gitBlobSha": "098575aa0206353c1f14e576b0e9b74564b1d028"
+    },
+    {
+      "path": "evidence/transparent.png",
+      "gitBlobSha": "ed984b8c0477546cbd4dc7d0fdedafb0f97e3ebe"
+    },
+    {
+      "path": "evidence/whole-assembled.png",
+      "gitBlobSha": "a2a3889520d99e85bccd7ef2afd90c41829cc675"
+    },
+    {
+      "path": "evidence/whole-exploded.png",
+      "gitBlobSha": "15b440ae889caf280debab2e8732fbe724fea458"
+    },
+    {
+      "path": "index.html",
+      "gitBlobSha": "133db5eedce5553c764c666ee0a38dd4ba2a875b"
+    },
+    {
+      "path": "package.json",
+      "gitBlobSha": "8a722ca251aaca0e77755b4619c3144662525903"
+    },
+    {
+      "path": "sources.json",
+      "gitBlobSha": "3e9c850c942093ced07ef8441c8d6d39ba03ef2f"
+    },
+    {
+      "path": "src/app.mjs",
+      "gitBlobSha": "3a795cfbc134067329460d909161543960829536"
+    },
+    {
+      "path": "src/model.mjs",
+      "gitBlobSha": "3c7b99ac79512d3b56b1cdd8dc36005eb2062230"
+    },
+    {
+      "path": "test-model.mjs",
+      "gitBlobSha": "5ef5cd7601a84ed1a0d6112898cd1f1f9df11bd2"
+    },
+    {
+      "path": "vendor/OrbitControls.js",
+      "gitBlobSha": "43aaecf330afbdf460d834e0a7ca948432b1500f"
+    },
+    {
+      "path": "vendor/RoundedBoxGeometry.js",
+      "gitBlobSha": "4b94cd0e2034a1e1bb79b8ab97bdbe412a890cfd"
+    },
+    {
+      "path": "vendor/THREE-LICENSE.txt",
+      "gitBlobSha": "cf781430404b0ae0ba7d8dea3457a3515dd7c9b9"
+    },
+    {
+      "path": "vendor/three.core.js",
+      "gitBlobSha": "7dcd0fbcbc04b8d9a20ecb96c1ce344cb55150d5"
+    },
+    {
+      "path": "vendor/three.module.js",
+      "gitBlobSha": "477ca4dafa7af919a2b9818e01b5ae25198d4aa4"
+    }
+  ],
+  "localMatches": [
+    "PC752N-exterior-viewer.html",
+    "README.md",
+    "SHA256.json",
+    "build.mjs",
+    "check-browser.cjs",
+    "evidence/node-tests.txt",
+    "index.html",
+    "package.json",
+    "sources.json",
+    "src/app.mjs",
+    "src/model.mjs",
+    "test-model.mjs",
+    "vendor/OrbitControls.js",
+    "vendor/RoundedBoxGeometry.js",
+    "vendor/THREE-LICENSE.txt",
+    "vendor/three.core.js",
+    "vendor/three.module.js"
+  ],
+  "differentEvidence": [
+    "evidence/browser-check.json",
+    "evidence/desktop-boxes.png",
+    "evidence/detail-exploded.png",
+    "evidence/mobile-boxes.png",
+    "evidence/transparent.png",
+    "evidence/whole-assembled.png",
+    "evidence/whole-exploded.png"
+  ]
+}

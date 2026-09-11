@@ -1,1 +1,1 @@
-{"name":"nitoron-pc752n-exterior-candidate","version":"0.1.0","private":true,"type":"module","scripts":{"test":"node --test test-model.mjs","build":"node build.mjs","check:browser":"node check-browser.cjs"}}
+{"name":"nitoron-pc752n-updatable-parts","version":"0.2.0","private":true,"type":"module","scripts":{"test":"node --test test-model.mjs test-updates.mjs","build":"node build.mjs","check:browser":"node check-browser.cjs && node check-updates.cjs"}}
