@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-11",
+  "browser": "141.0.7390.37",
+  "passed": 11,
+  "checks": [
+    "two visible bolt instances share one generated geometry set",
+    "selecting A does not color B or mutate shared geometry",
+    "overview/detail switching reuses cached geometry and shows real thread surface only in detail",
+    "same cable recipe keeps cross section while machine B changes routing",
+    "seven ribs are separate real geometry above the base panel",
+    "length variant is saved separately and survives reload without changing original",
+    "reusable recipes and annotated non-manufacturing SVG drawing can be downloaded",
+    "390px touch: exported catalog loads in a fresh browser context and remains selectable",
+    "invalid import leaves catalog and selected geometry intact",
+    "storage failure is reported instead of claiming successful save",
+    "zero external runtime requests and zero page errors"
+  ],
+  "pageErrors": [],
+  "externalRequests": 0,
+  "physicalIphone": false,
+  "realPartCompatibilityVerified": false,
+  "documented3dParts": 0
+}
