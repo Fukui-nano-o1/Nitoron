@@ -1,0 +1,12 @@
+✔ published overall envelope is measured from actual mesh vertices (255.361805ms)
+✔ one crawler with a measured 110 mm rubber band; no TS wheel substitution (104.497843ms)
+✔ every mesh belongs to one selectable assembly and no undocumented 3D claim (83.138348ms)
+✔ same code generates identical numeric geometry without randomness (250.739613ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1386.103231

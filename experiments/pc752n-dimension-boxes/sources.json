@@ -1,0 +1,76 @@
+{
+  "checkedAt": "2026-09-11",
+  "target": {
+    "maker": "Kubota",
+    "model": "PC752N",
+    "variant": "crawler; standard rotary; not PC752NC cross-cut"
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-20-2-0012-02.pdf",
+      "publisher": "Kubota",
+      "sha256": "2d164989f7bdd20ca66bbc0600cfc670fc5dc23a290c22fb3c0370e8eb5639e0",
+      "verifiedPages": [
+        1,
+        3,
+        4
+      ],
+      "facts": {
+        "PC752N_length_mm": 1470,
+        "PC752N_width_mm": 615,
+        "PC752N_height_mm": 1020,
+        "handle_setting": 3,
+        "mass_kg": 87,
+        "crawler_width_mm": 110,
+        "crawler_pitch_mm": 60,
+        "crawler_link_count": 17
+      },
+      "caution": "PDF pages are spreads. PC752N column 5; bracketed PC752NC values not used. Most close-up photos are series-shared, not exact individual dimensions."
+    },
+    {
+      "id": "S2",
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TS-552N-752N/?nav=nav_2",
+      "publisher": "Kubota",
+      "facts": [
+        "PC752N separately captioned in lineup"
+      ]
+    },
+    {
+      "id": "S3",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/e100551ad7a557d1a090d13f9bc4bfef/PC752N.jpg",
+      "publisher": "Kubota",
+      "sha256": "c5f9aa194f0c2cca171a3c68378d05fc15764d529a927fd0eae4ca7bdaec5729",
+      "facts": [
+        "single triangular crawler",
+        "orange engine cowling",
+        "elongated silver belt cover",
+        "twin rising handle rails",
+        "rear rotary with side shields"
+      ],
+      "caution": "Manufacturer-captioned PC752N image; tiny decal text does not independently establish every revision detail. Reverse-side photo not obtained."
+    }
+  ],
+  "excluded": [
+    {
+      "model": "PC750N",
+      "url": "https://jmty.jp/nagano/sale-oth/article-1eza4r",
+      "reason": "different model; not used to shape this candidate"
+    },
+    {
+      "model": "TS752N",
+      "reason": "same family but wheeled variant; no wheel substitution"
+    },
+    {
+      "type": "attachment-only listings",
+      "reason": "compatibility list does not prove a PC752N product photo"
+    }
+  ],
+  "searchResult": "Exact-model third-party multi-view listing was not confirmed in searches. This is not a claim that none exists.",
+  "knownLimits": [
+    "human-authored model-specific prototype, not automatic generation",
+    "individual dimensions/hidden geometry not verified",
+    "overall dimensions match constructed geometry, not independent accuracy validation",
+    "documented3dParts remains 0"
+  ]
+}
