@@ -10,6 +10,8 @@ const html=fs.readFileSync(path.join(root,'viewer.html'),'utf8');
 const experiment=JSON.parse(fs.readFileSync(path.join(root,'experiment.json'),'utf8'));
 const canFit=experiment.status==='candidates-generated';
 const hasPoints=experiment.views.some(v=>v.correspondences?.length);
+const priorExperiment=Boolean(experiment.priorProfile);
+let heldOutDiagramChecked=false;
 const server=http.createServer((req,res)=>{res.setHeader('content-type','text/html; charset=utf-8');res.end(req.url==='/broken'?html.replace(/<script type="importmap">[\s\S]*?<\/script>/,'<script type="importmap">{"imports":{}}</script>'):html)});
 await new Promise(r=>server.listen(0,'127.0.0.1',r));
 const browser=await chromium.launch({headless:true,executablePath:process.env.ATLAS_CHROMIUM_PATH||undefined,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
@@ -17,6 +19,27 @@ const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,
 const errors=[],external=[];page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(!r.url().startsWith('http://127.0.0.1')&&!r.url().startsWith('data:'))external.push(r.url())});
 const url='http://127.0.0.1:'+server.address().port;
 await page.goto(url);await page.waitForFunction(()=>window.__atlas3dReady===true);
+if(priorExperiment){
+  if(!(await page.locator('#heldout').isChecked()))throw Error('held-out prediction must be initial diagram mode');
+  const viewIndex=experiment.views.findIndex(v=>v.predictiveEvaluation?.status==='measured');
+  if(viewIndex>=0){
+    const view=experiment.views[viewIndex];
+    await page.locator('#view').selectOption(String(viewIndex));
+    if(!(await page.locator('#metric').textContent()).includes('残りの点の平均位置'))throw Error('prediction baseline missing');
+    const assertCoordinates=async expected=>{
+      const actual=await page.locator('#diagram > g').evaluateAll(groups=>groups.map(g=>{
+        const t=g.querySelector('text');return t?[Number(t.getAttribute('x')),Number(t.getAttribute('y'))]:null;
+      }));
+      if(actual.length!==expected.length||actual.some((p,i)=>p===null?expected[i]!==null:
+        !expected[i]||p.some((v,k)=>Math.abs(v-expected[i][k])>1e-7)))throw Error('diagram shows wrong projection coordinates');
+    };
+    const folds=new Map(view.predictiveEvaluation.folds.map(f=>[f.id,f]));
+    await assertCoordinates(view.correspondences.map(p=>folds.get(p.id)?.heldOutPredictionXY??null));
+    await page.locator('#heldout').uncheck();
+    await assertCoordinates(view.correspondences.map(p=>p.fittedXY));
+    await page.locator('#heldout').check();heldOutDiagramChecked=true;
+  }
+}
 await page.locator('#scene').screenshot({path:path.join(evidence,'fitted.png')});
 if(canFit){
 await page.getByRole('button',{name:'奥行き・遠側'}).click();
@@ -36,6 +59,6 @@ await page.goto(url+'/broken');await page.waitForFunction(()=>document.querySele
 if(hasPoints){await page.locator('#diagram circle').first().click();
 if(!(await page.locator('#selection').textContent()).includes('形状・位置は仮説'))throw Error('2D fallback failed');}
 if(external.length)throw Error('external requests');
-console.log(JSON.stringify({input:root,chromiumWebGL:true,mobile390:true,desktop1280:true,candidateModeChangesPixels:canFit,explicitStopChecked:!canFit,selectionChecked:hasPoints,externalRequests:external.length,primaryPageErrors:0,broken3dPointSelectionChecked:hasPoints},null,2));
+console.log(JSON.stringify({input:root,chromiumWebGL:true,mobile390:true,desktop1280:true,candidateModeChangesPixels:canFit,explicitStopChecked:!canFit,selectionChecked:hasPoints,heldOutDiagramChecked,externalRequests:external.length,primaryPageErrors:0,broken3dPointSelectionChecked:hasPoints},null,2));
 await browser.close();await new Promise(r=>server.close(r));
 })().catch(e=>{console.error(e);process.exit(1)});

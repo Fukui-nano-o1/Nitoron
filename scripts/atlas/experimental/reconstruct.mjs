@@ -1,6 +1,7 @@
 // Experimental inverse-graphics proposal. No network, learned model or model-specific coordinates.
 // Image endpoints constrain a projection, NOT depth or real geometry. Never promote to documented-3d.
 import { REGION_METHOD } from './figure-regions.mjs';
+import { BASE_PRIOR_PROFILE,EXPANDED_PRIOR_PROFILE,validatePriorProfile,extraPriorFor } from './prior-families.mjs';
 export const VERSION = 'atlas-hypothesis-2-regions';
 const dot = (a, b) => a.reduce((s, v, i) => s + v * b[i], 0);
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
@@ -36,8 +37,11 @@ export function project(point, camera) {
   return [camera.scale * dot(b.right, point) + camera.offset[0],
     -camera.scale * dot(b.up, point) + camera.offset[1]];
 }
-export function proxyFor(name, dimensionsMm) {
-  const p = PRIORS.find(row => row[1].test(String(name).normalize('NFKC').trim()));
+export function proxyFor(name, dimensionsMm, priorProfile=BASE_PRIOR_PROFILE) {
+  validatePriorProfile(priorProfile);
+  const extra=priorProfile===EXPANDED_PRIOR_PROFILE?extraPriorFor(name):null;
+  const p = extra?[extra.id,null,extra.shape,extra.size,extra.center]:
+    PRIORS.find(row => row[1].test(String(name).normalize('NFKC').trim()));
   if (!p) return null;
   const [L,W,H] = dimensionsMm.map(v => v/1000), dims = [L,H,W];
   const size = p[2] === 'cylinder' ? [p[3][0]*H, p[3][1]*W] : p[3].map((v,i)=>v*dims[i]);
@@ -46,6 +50,9 @@ export function proxyFor(name, dimensionsMm) {
   if (bounds.some(([a,b])=>a>b)) return null;
   const position = p[4].map((v,i)=>clamp(v*dims[i],...bounds[i]));
   return { family:p[0], shapeBasis:'category-proxy', bounds,
+    ...(extra?{priorDefinition:{profile:priorProfile,family:extra.id,provenance:extra.provenance,
+      normalizedSize:[...extra.size],normalizedCenter:[...extra.center],
+      mountingAssumption:extra.mountingAssumption,documented3d:false}}:{}),
     geom:{type:p[2],size,position,...(p[2]==='cylinder'?{axis:'z'}:{})} };
 }
 
@@ -134,7 +141,8 @@ function fitGroup(group,index) {
       fittedXY:project(updates[i].center,camera),heldOutErrorPx:heldOutErrors[i]}))};
 }
 
-export function reconstructHypotheses(machine) {
+export function reconstructHypotheses(machine,{priorProfile=BASE_PRIOR_PROFILE}={}) {
+  validatePriorProfile(priorProfile);
   if(!finiteVector(machine?.dimensionsMm,3)||machine.dimensionsMm.some(v=>v<100||v>20000))
     throw new Error('invalid-machine-dimensions');
   if(machine.category!=='walk-behind-tiller')throw new Error('unsupported-category');
@@ -143,7 +151,7 @@ export function reconstructHypotheses(machine) {
   for(const part of machine.parts.slice().sort((a,b)=>String(a.id).localeCompare(String(b.id)))) {
     if(typeof part.id!=='string'||!part.id||ids.has(part.id))throw new Error('invalid-or-duplicate-part-id');
     ids.add(part.id);
-    const proxy=proxyFor(part.name,machine.dimensionsMm),e=part.positionEvidence;
+    const proxy=proxyFor(part.name,machine.dimensionsMm,priorProfile),e=part.positionEvidence;
     if(!proxy){excluded.push({id:part.id,name:part.name,reason:'no-category-shape-prior'});continue;}
     // Do not convert a legend marker or uncertain adjacent point into a part position.
     const valid=e&&e.basis==='leader-endpoint'&&finiteVector(e.imageXY,2)&&finiteVector(e.imageSize,2)
@@ -173,10 +181,13 @@ export function reconstructHypotheses(machine) {
   });
   const changes=new Map(views.flatMap(v=>(v.updates??[]).map(p=>[p.id,p])));
   const variant = field=>proxies.map(p=>({id:p.id,name:p.name,kind:'part',parent:'machine',
+    ...(p.priorDefinition?{priorDefinition:p.priorDefinition}:{}),
     shapeBasis:'category-proxy',positionBasis:field==='prior'||!changes.has(p.id)?'category-prior':'projection-constrained-hypothesis',
     geom:{...p.geom,position:field==='prior'?p.geom.position:changes.get(p.id)?.[field]??p.geom.position},
     fitted:field!=='prior'&&changes.has(p.id),evidence:p.evidence}));
-  return {version:VERSION,status:changes.size?'candidates-generated':views.length?'insufficient-anchors':regionUnresolved.length?'region-assignment-required':'insufficient-anchors',machineId:machine.machineId,
+  return {version:priorProfile===BASE_PRIOR_PROFILE?VERSION:'atlas-hypothesis-3-priors',
+    ...(priorProfile===BASE_PRIOR_PROFILE?{}:{priorProfile}),
+    status:changes.size?'candidates-generated':views.length?'insufficient-anchors':regionUnresolved.length?'region-assignment-required':'insufficient-anchors',machineId:machine.machineId,
     name:machine.name,dimensionsMm:machine.dimensionsMm.slice(),
     acceptance:{stageA3dPassed:false,documented3dParts:0,reason:'Only hypotheses; no independent 3D ground truth'},
     assumptions:['category shape and attachment-region priors','orthographic camera per hypothesized view',
