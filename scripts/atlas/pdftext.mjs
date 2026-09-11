@@ -202,18 +202,42 @@ const decodeBytes = (bytes, font) => {
   return bytes.map(b => (b >= 32 && b <= 126 ? String.fromCharCode(b) : '')).join('')
 }
 
-// 1ページ分のコンテンツストリームからテキストを組み立てる
-function pageText(content, fonts) {
+// 1ページ分のコンテンツストリームからテキストを組み立てる。
+// 位置つき抽出（collectRuns）では、テキスト行列（Tm/Td/T*）とCTM（q/Q/cm）を追跡して
+// 各表示テキストのページ座標（PDF座標系・左下原点）を記録する。図中ラベルの位置取得に使う。
+const IDENTITY = [1, 0, 0, 1, 0, 0]
+const matMul = (a, b) => [
+  a[0] * b[0] + a[1] * b[2], a[0] * b[1] + a[1] * b[3],
+  a[2] * b[0] + a[3] * b[2], a[2] * b[1] + a[3] * b[3],
+  a[4] * b[0] + a[5] * b[2] + b[4], a[4] * b[1] + a[5] * b[3] + b[5],
+]
+
+function pageText(content, fonts, collectRuns = false) {
   let out = ''
+  const runs = []
   let font = null
   let pendingName = null
+  const stack = []
+  let ctm = IDENTITY
+  const ctmStack = []
+  let tm = IDENTITY, lm = IDENTITY
+  let leading = 0
+  let fontSize = 0
+  const emit = str => {
+    if (!str) return
+    out += str
+    if (collectRuns) {
+      const m = matMul(tm, ctm)
+      runs.push({ text: str, x: m[4], y: m[5], size: fontSize * Math.hypot(m[2], m[3]) })
+    }
+  }
   const text = latin1(content)
   for (let i = 0; i < text.length; i++) {
     const ch = text[i]
     if (ch === '%') { i = text.indexOf('\n', i); if (i < 0) break; continue }
     if (ch === '(') {
       const { bytes, end } = literalBytes(text, i + 1)
-      out += decodeBytes(bytes, font)
+      emit(decodeBytes(bytes, font))
       i = end - 1; continue
     }
     if (ch === '<' && text[i + 1] !== '<') {
@@ -222,7 +246,7 @@ function pageText(content, fonts) {
       const hex = text.slice(i + 1, close).replace(/\s+/g, '')
       const bytes = []
       for (let k = 0; k + 2 <= hex.length; k += 2) bytes.push(parseInt(hex.slice(k, k + 2), 16))
-      out += decodeBytes(bytes, font)
+      emit(decodeBytes(bytes, font))
       i = close; continue
     }
     if (ch === '/') {
@@ -231,28 +255,90 @@ function pageText(content, fonts) {
       if (m) i += m[0].length
       continue
     }
+    if (/[0-9+\-.]/.test(ch)) {
+      const m = text.slice(i, i + 32).match(/^[+-]?(?:\d+\.?\d*|\.\d+)/)
+      if (m) { stack.push(Number(m[0])); i += m[0].length - 1 }
+      continue
+    }
     if (/[A-Za-z'"*]/.test(ch)) {
-      const m = text.slice(i, i + 4).match(/^(T[fjdDm*]|TJ|Tj|'|"|BT|ET|Do|gs)/)
-      if (m) {
+      const m = text.slice(i, i + 3).match(/^(TJ|Tj|Tf|Td|TD|Tm|TL|T\*|BT|ET|Do|gs|cm|re|q|Q|'|")/)
+      const delimited = m && !/[A-Za-z0-9*]/.test(text[i + m[1].length] || ' ')
+      if (m && delimited) {
         const op = m[1]
-        if (op === 'Tf' && pendingName) font = fonts.get(pendingName) || null
-        if (op === 'Td' || op === 'TD' || op === 'T*' || op === 'Tm' || op === "'") out += '\n'
+        if (op === 'Tf') { if (pendingName) font = fonts.get(pendingName) || null; fontSize = stack.at(-1) ?? fontSize }
+        else if (op === 'BT') { tm = IDENTITY; lm = IDENTITY }
+        else if (op === 'Tm' && stack.length >= 6) { lm = tm = stack.slice(-6); out += '\n' }
+        else if ((op === 'Td' || op === 'TD') && stack.length >= 2) {
+          if (op === 'TD') leading = -stack.at(-1)
+          lm = tm = matMul([1, 0, 0, 1, stack.at(-2), stack.at(-1)], lm)
+          out += '\n'
+        }
+        else if (op === 'TL') leading = stack.at(-1) ?? leading
+        else if (op === 'T*' || op === "'") { lm = tm = matMul([1, 0, 0, 1, 0, -leading], lm); out += '\n' }
+        else if (op === 'q') ctmStack.push(ctm)
+        else if (op === 'Q') ctm = ctmStack.pop() || ctm
+        else if (op === 'cm' && stack.length >= 6) ctm = matMul(stack.slice(-6), ctm)
+        stack.length = 0
         i += op.length - 1
       } else { const skip = text.slice(i).match(/^[A-Za-z*]+/); if (skip) i += skip[0].length - 1 }
       continue
     }
+    if (ch === ']' || ch === '[') stack.length = 0
   }
-  return out.replace(/\n{3,}/g, '\n\n')
+  return { text: out.replace(/\n{3,}/g, '\n\n'), runs }
 }
 
-// 公開API：PDFバイト列 → { pages: [ページ別テキスト] } または { error }
-export function extractPdfText(buffer) {
+// 低レベルAPI：PDFを開いて（必要なら復号して）オブジェクト表を返す。図の画像抽出等で使う。
+export function openPdf(buffer) {
   if (!Buffer.isBuffer(buffer)) return { error: 'not-a-buffer' }
   if (latin1(buffer.subarray(0, 8)).indexOf('%PDF-') !== 0) return { error: 'not-a-pdf' }
   const { text, objects } = indexObjects(buffer)
-  const { crypt, error: cryptError } = setupDecryption(text, objects)
-  if (cryptError) return { error: cryptError }
+  const { crypt, error } = setupDecryption(text, objects)
+  if (error) return { error }
   expandObjectStreams(objects, crypt)
+  return { text, objects, crypt }
+}
+
+// 辞書中のキーを、直書き辞書（<<…>>）と間接参照の両対応で解決して辞書文字列を返す
+export function resolveDict(ctx, dict, key) {
+  return dictIn(dict, key) || ctx.objects.get(Number(refIn(dict, key)))?.dict || ''
+}
+
+// ページ順に {num, dict} を返す
+export function listPages(ctx) {
+  const pages = []
+  for (const obj of ctx.objects.values()) if (/\/Type\s*\/Page\b/.test(obj.dict)) pages.push(obj)
+  return pages
+}
+
+// あるページが参照する画像XObjectの一覧（復号＋解凍済みの生データつき）。
+// 対応：FlateDecode（PNG予測子はメタ情報として返す）。他フィルタは data:null で返す。
+export function pageImages(ctx, pageObj) {
+  const res = resolveDict(ctx, pageObj.dict, 'Resources')
+  const xo = resolveDict(ctx, res, 'XObject')
+  const images = []
+  for (const m of xo.matchAll(/\/([^\s/<>()[\]{}%]+)\s+(\d+)\s+\d+\s+R/g)) {
+    const obj = ctx.objects.get(Number(m[2]))
+    if (!obj || !/\/Subtype\s*\/Image/.test(obj.dict)) continue
+    const meta = {
+      name: m[1], num: obj.num,
+      width: Number(obj.dict.match(/\/Width\s+(\d+)/)?.[1]), height: Number(obj.dict.match(/\/Height\s+(\d+)/)?.[1]),
+      bitsPerComponent: Number(obj.dict.match(/\/BitsPerComponent\s+(\d+)/)?.[1] || 8),
+      colorSpace: obj.dict.match(/\/ColorSpace\s*\/?(\w+)/)?.[1] || null,
+      predictor: Number(obj.dict.match(/\/Predictor\s+(\d+)/)?.[1] || 0),
+      colors: Number(obj.dict.match(/\/Colors\s+(\d+)/)?.[1] || (/DeviceRGB/.test(obj.dict) ? 3 : 1)),
+    }
+    images.push({ ...meta, data: decodeStream(obj, ctx.crypt, ctx.objects) })
+  }
+  return images
+}
+
+// 公開API：PDFバイト列 → { pages: [ページ別テキスト] } または { error }。
+// withPositions指定時は pageRuns（ページ別の位置つきテキスト断片）と pageBoxes（MediaBox）も返す。
+export function extractPdfText(buffer, { withPositions = false } = {}) {
+  const ctx = openPdf(buffer)
+  if (ctx.error) return { error: ctx.error }
+  const { objects, crypt } = ctx
   const fontCache = new Map()
   const fontFor = ref => {
     if (fontCache.has(ref)) return fontCache.get(ref)
@@ -264,9 +350,13 @@ export function extractPdfText(buffer) {
     return parsed
   }
   const pages = []
+  const pageRuns = []
+  const pageBoxes = []
   let extractedChars = 0
   for (const obj of objects.values()) {
     if (!/\/Type\s*\/Page\b/.test(obj.dict)) continue
+    const box = obj.dict.match(/\/MediaBox\s*\[\s*([\d.+-]+)\s+([\d.+-]+)\s+([\d.+-]+)\s+([\d.+-]+)/)
+    pageBoxes.push(box ? box.slice(1, 5).map(Number) : null)
     // ページのフォント表（資源辞書は直書き・間接参照の両対応）
     const resources = dictIn(obj.dict, 'Resources') || objects.get(Number(refIn(obj.dict, 'Resources')))?.dict || ''
     const fontDict = dictIn(resources, 'Font') || objects.get(Number(refIn(resources, 'Font')))?.dict || ''
@@ -279,12 +369,13 @@ export function extractPdfText(buffer) {
     const contentRefs = obj.dict.match(/\/Contents\s*\[([^\]]*)\]/)?.[1]?.match(/(\d+)\s+\d+\s+R/g)?.map(r => r.match(/\d+/)[0])
       || (refIn(obj.dict, 'Contents') ? [refIn(obj.dict, 'Contents')] : [])
     const parts = contentRefs.map(r => decodeStream(objects.get(Number(r)), crypt, objects)).filter(Boolean)
-    if (!parts.length) { pages.push(''); continue }
-    const body = pageText(Buffer.concat(parts), fonts)
+    if (!parts.length) { pages.push(''); pageRuns.push([]); continue }
+    const { text: body, runs } = pageText(Buffer.concat(parts), fonts, withPositions)
     extractedChars += body.length
     pages.push(body)
+    pageRuns.push(runs)
   }
   if (!pages.length) return { error: 'no-pages-extracted' }
   if (!extractedChars) return { error: 'no-text-extracted' }
-  return { pages, pageCount: pages.length, extractedChars }
+  return { pages, pageCount: pages.length, extractedChars, ...(withPositions ? { pageRuns, pageBoxes } : {}) }
 }

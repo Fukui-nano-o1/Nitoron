@@ -10,10 +10,13 @@ export function verifyMachine(machine, glbBuffer) {
   for (const part of machine.parts) if (part.slot && !glbNodeNames.has(part.slot)) problems.push(`部品「${part.name}」のメッシュ ${part.slot} がGLBにない`)
   // 3. 位置不明の部品はメッシュを持たない（当て推量の強調をしない）
   for (const part of machine.parts) if (part.positional === 'unknown' && part.slot) problems.push(`位置不明の部品「${part.name}」がメッシュを持っている`)
-  // 3b. 位置の主張水準：推定配置は positionBasis を明示し、「資料照合済み（documented）」は位置根拠なしに主張できない
+  // 3b. 位置の主張水準：推定配置は positionBasis を明示し、「資料照合済み（documented系）」は位置根拠なしに主張できない
   for (const part of machine.parts) {
-    if (part.slot && part.positional === 'approx' && !part.positionBasis) problems.push(`部品「${part.name}」の推定配置に根拠区分（positionBasis）がない`)
-    if (part.positional === 'documented' && !part.positionEvidence?.url) problems.push(`部品「${part.name}」が位置根拠なしに資料照合済みを主張している`)
+    if (part.slot && !part.positionBasis) problems.push(`部品「${part.name}」の推定配置に根拠区分（positionBasis）がない`)
+    if (/^documented/.test(part.positional || '')) {
+      const pe = part.positionEvidence
+      if (!pe?.url || !Array.isArray(pe.imageXY) || !pe.figureSha256) problems.push(`部品「${part.name}」が位置根拠（図の該当座標）なしに資料照合済みを主張している`)
+    }
   }
   // 4. 寸法の妥当性（0.1m〜20m）と根拠
   for (const mm of machine.dimensionsMm) if (!(mm >= 100 && mm <= 20000)) problems.push(`寸法 ${mm}mm が妥当範囲外`)

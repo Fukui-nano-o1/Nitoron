@@ -18,9 +18,11 @@ export const REGISTRY = [
 // メーカー別の公式取得先（接続部）。検索サービス・取得先は交換可能にする。
 // ルートはメーカー単位の設定であり、機種ごとのURL手入力ではない。
 // 対象メーカーはクボタ・ヤンマー・イセキに限定する（2026-09-11指示）。
+// searches は機種横断の検索入口（{model}に型式トークンが入る）。機種専用URLの手入力ではない。
 export const MAKERS = [
   { key: 'kubota', names: ['クボタ', '久保田', 'kubota'], publisher: 'Kubota',
-    roots: ['https://agriculture.kubota.co.jp/'] },
+    roots: ['https://agriculture.kubota.co.jp/'],
+    searches: ['https://agriculture.kubota.co.jp/after-support/manual/list.html?searchType=1&q={model}'] },
   { key: 'yanmar', names: ['ヤンマー', 'yanmar'], publisher: 'Yanmar',
     roots: ['https://www.yanmar.com/jp/agri/', 'https://www.yanmar.com/jp/support/manuals/agri/'] },
   { key: 'iseki', names: ['イセキ', '井関', 'ヰセキ', 'iseki'], publisher: 'ISEKI',

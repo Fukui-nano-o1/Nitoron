@@ -24,6 +24,87 @@ const toMm = (value, unit) => { const n = Number(String(value).replaceAll(',', '
 
 const compactText = value => String(value).normalize('NFKC').toLowerCase().replace(/[\s\-・･]+/g, '')
 
+// --- 複数型式（販売型式名の列）を持つ諸元表の列対応 ---
+// 対象列との対応が確定した値だけを採用する。確定できない行は ambiguous として記録し、採用しない。
+const MODEL_TOKEN = /^[A-Za-z]{1,6}[0-9][0-9A-Za-z-]*$/
+const NUM_TOKEN = /^[0-9][0-9,.]*$/
+const EMPTY_CELL = /^[－―—-]$/
+
+// ヘッダ行「販売型式名 A [A'] B [B'] …」から列（主型式と[]内の派生型式）を読み取る
+function parseModelColumns(tokens, from) {
+  const columns = []
+  for (let i = from; i < tokens.length; i++) {
+    const t = tokens[i].normalize('NFKC')
+    const bracket = t.match(/^\[([0-9A-Za-z-]+)\]$/)
+    if (bracket && columns.length) { columns[columns.length - 1].alt = compactText(bracket[1]); continue }
+    if (MODEL_TOKEN.test(t)) { columns.push({ main: compactText(t) }); continue }
+    break
+  }
+  return columns
+}
+
+// 行の値グループ（数値＋任意の[派生値]、空欄「－」）を集める。数値以外が来たら行の終わり。
+function parseValueGroups(tokens, from) {
+  const groups = []
+  let i = from
+  for (; i < tokens.length; i++) {
+    const t = tokens[i].normalize('NFKC')
+    const bracket = t.match(/^\[([0-9][0-9,.]*)\]$/)
+    if (bracket && groups.length) { groups[groups.length - 1].alt = Number(bracket[1].replaceAll(',', '')); continue }
+    if (NUM_TOKEN.test(t)) { groups.push({ main: Number(t.replaceAll(',', '')) }); continue }
+    if (EMPTY_CELL.test(t)) { groups.push({ main: null }); continue }
+    break
+  }
+  return groups
+}
+
+// 複数型式の諸元表から、対象型式の列に対応する寸法・質量を取り出す。
+// 戻り値：{ found: {field: {value, column, excerpt}}, ambiguous: [...], columns } ／ ヘッダが無ければ null。
+export function extractColumnTable(text, targetToken) {
+  const tokens = String(text).split(/\s+/).filter(Boolean)
+  const headerAt = tokens.findIndex(t => /販売型式名|^型式名$/.test(t.normalize('NFKC')))
+  if (headerAt < 0) return null
+  // 見出しと型式が同一トークンに連結されている表（例「販売型式名FTR70(-L)FTR90」）は、
+  // 列の切れ目を確定できないため、値を採用せず「列対応不能」として返す。
+  const trailing = tokens[headerAt].normalize('NFKC').replace(/^.*販売型式名/, '')
+  if (trailing && /[A-Za-z]{2,}[0-9]/.test(trailing)) {
+    return { found: {}, ambiguous: [{ reason: 'columns-unresolvable-concatenated-header', header: tokens[headerAt].slice(0, 60) }], columns: [], targetColumn: -1, unresolvable: true }
+  }
+  const columns = parseModelColumns(tokens, headerAt + 1)
+  if (columns.length < 2) return null
+  const target = compactText(targetToken)
+  const columnIndex = columns.findIndex(c => c.main === target || c.alt === target)
+  const useAlt = columnIndex >= 0 && columns[columnIndex].alt === target
+  const FIELDS = [
+    ['lengthMm', /^全長/, /^[（(]?mm[）)]?$/i], ['widthMm', /^全幅/, /^[（(]?mm[）)]?$/i],
+    ['heightMm', /^全高/, /^[（(]?mm[）)]?$/i], ['massKg', /^機体質量|^質量|^機体重量/, /^[（(]?kg[）)]?$/i],
+  ]
+  const found = {}
+  const ambiguous = []
+  for (const [field, head, unit] of FIELDS) {
+    const rowAt = tokens.findIndex(t => head.test(t.normalize('NFKC')))
+    if (rowAt < 0) continue
+    // 見出しから数トークン以内の単位を必須にする（単位を勝手に補完しない）
+    let unitAt = -1
+    for (let i = rowAt; i < Math.min(rowAt + 10, tokens.length); i++) if (unit.test(tokens[i].normalize('NFKC'))) { unitAt = i; break }
+    if (unitAt < 0) { ambiguous.push({ field, reason: 'unit-not-found' }); continue }
+    const groups = parseValueGroups(tokens, unitAt + 1)
+    if (groups.length === 1 && groups[0].main != null) {
+      // 1値の行は全列共通
+      found[field] = { value: groups[0].main, column: '全型式共通', excerpt: `${tokens[rowAt]} ${tokens[unitAt]} ${groups[0].main}` }
+    } else if (groups.length === columns.length && columnIndex >= 0) {
+      const g = groups[columnIndex]
+      const value = useAlt ? (g.alt ?? g.main) : g.main
+      if (value != null) found[field] = { value, column: (useAlt && columns[columnIndex].alt) || columns[columnIndex].main, columnIndex, excerpt: `${tokens[rowAt]} ${tokens[unitAt]} 列${columnIndex + 1}/${columns.length}=${value}` }
+      else ambiguous.push({ field, reason: 'empty-cell-for-target' })
+    } else {
+      // 値の数が列数と一致しない：対応を確定できないため採用しない
+      ambiguous.push({ field, reason: `value-count-${groups.length}-vs-columns-${columns.length}` })
+    }
+  }
+  return { found, ambiguous, columns: columns.map(c => c.alt ? `${c.main}[${c.alt}]` : c.main), targetColumn: columnIndex }
+}
+
 // 同じ資料面に併記された別型式（例：SKP-101とSKP-101W）。値の取り違え検査のため記録する。
 // 区切り（空白・ハイフン）を保持したまま型式らしき語を切り出し、正規化して対象型式と比べる。
 const otherModelTokens = (text, token) => {
@@ -39,7 +120,7 @@ const otherModelTokens = (text, token) => {
 }
 
 export function extractSpec(materials, { modelToken = '' } = {}) {
-  const spec = { evidence: [] }
+  const spec = { evidence: [], ambiguous: [] }
   const token = compactText(modelToken)
   for (const material of materials) {
     for (const doc of documentsOf(material)) {
@@ -47,6 +128,25 @@ export function extractSpec(materials, { modelToken = '' } = {}) {
       if (material.pdf && token && !compactText(doc.text).includes(token)) continue
       const ambiguousModels = material.pdf && token ? otherModelTokens(doc.text, token) : []
       const evidenceBase = m => ({ url: material.url, sha256: material.sha256, location: doc.location, excerpt: m.replace(/\s+/g, ' ').slice(0, 80), ...(ambiguousModels.length ? { ambiguousModels } : {}) })
+      // 複数型式の列を持つ諸元表：対象列と対応が取れた値だけを採用する（先頭列の値で続行しない）
+      const table = token ? extractColumnTable(doc.text, token) : null
+      if (table) {
+        if (table.unresolvable) {
+          spec.ambiguous.push({ url: material.url, location: doc.location, ...table.ambiguous[0] })
+          continue
+        }
+        if (table.targetColumn < 0) {
+          spec.ambiguous.push({ url: material.url, location: doc.location, reason: 'target-not-in-model-columns', columns: table.columns })
+          continue
+        }
+        for (const [field, hit] of Object.entries(table.found)) {
+          if (spec[field] != null) continue
+          spec[field] = hit.value
+          spec.evidence.push({ field, url: material.url, sha256: material.sha256, location: doc.location, column: hit.column, columns: table.columns, excerpt: hit.excerpt.slice(0, 80) })
+        }
+        for (const a of table.ambiguous) spec.ambiguous.push({ ...a, url: material.url, location: doc.location })
+        continue
+      }
       const text = doc.text
       const combined = text.match(COMBINED)
       if (combined && spec.lengthMm == null) {
@@ -88,11 +188,12 @@ export function extractPartNames(materials) {
       const section = doc.text.split(/各部の?名称/)[1]
       if (!section) continue
       const window = section.slice(0, 2000)
-      // 箇条書き（HTML）と、PDFの行区切り（1行1ラベルの図注釈）を部品名候補として集める
+      // 箇条書き（・名称）と、PDF凡例の「(n) 名称」行だけを部品名候補として集める。
+      // 本文の文章行を裸のまま拾うと文片が混入するため採用しない。
       const found = [...window.matchAll(/[・•\-]\s*([ぁ-んァ-ヶー一-龠a-zA-Z0-9（）()]{2,20})/g)].map(m => m[1])
       if (material.pdf) for (const line of window.split('\n')) {
-        const name = line.trim()
-        if (/^[ぁ-んァ-ヶー一-龠a-zA-Z0-9（）()・]{2,20}$/.test(name)) found.push(name.replace(/^・/, ''))
+        const m = line.trim().match(/^[（(]\d{1,2}[）)]\s*([ぁ-んァ-ヶー一-龠a-zA-Z0-9（）()・［］\[\]、]{2,25})$/)
+        if (m) found.push(m[1])
       }
       for (const raw of found) {
         const name = raw.trim()
@@ -109,7 +210,7 @@ export function extractPartNames(materials) {
 // 機種カテゴリの推定。資料の語から選び、根拠がなければ generic（未確定）のまま。
 export function inferCategory(materials) {
   const text = materials.flatMap(m => documentsOf(m).map(d => d.text)).join(' ')
-  if (/耕うん機|耕運機|ティラー|tiller/i.test(text)) return 'walk-behind-tiller'
+  if (/耕うん機|耕運機|管理機|ティラー|tiller/i.test(text)) return 'walk-behind-tiller'
   if (/移植機|transplanter/i.test(text)) return 'walk-behind-transplanter'
   return 'generic'
 }

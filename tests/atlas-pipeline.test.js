@@ -147,3 +147,89 @@ test('取得の分類：egress遮断・不正URL・内部宛先を区別して�
   const malformed = await fetcher.fetchText('not a url')
   assert.equal(malformed.status, 'bad-url')
 })
+
+test('列対応：複数型式の諸元表は対象列の値だけを採用し、確定できなければ採用しない', async () => {
+  const { extractColumnTable } = await import('../scripts/atlas/extract.mjs')
+  const table = `付表 主要諸元 販売型式名 TS552NG [TS552NCG] TS752NG [TS752NCG] PC752N [PC752NC] 機体寸法
+    全長（ハンドル 3 段目） (mm) 1470 [1455] 1460 [1445] 1450 [1435]
+    全幅（ハンドル幅） (mm) 615
+    機体質量（重量） (kg) 74.5 [75.0] 76.5 [77.0] 87.0 [87.5] エンジン`
+  // 対象が最終列：先頭列でなく対象列の値を採用する
+  const last = extractColumnTable(table, 'pc752n')
+  assert.equal(last.targetColumn, 2)
+  assert.equal(last.found.lengthMm.value, 1450)
+  assert.equal(last.found.massKg.value, 87)
+  // []内の派生型式（クローラ仕様）を指定した場合は派生値
+  assert.equal(extractColumnTable(table, 'pc752nc').found.lengthMm.value, 1435)
+  // 1値の行は全列共通として採用する
+  assert.equal(last.found.widthMm.value, 615)
+  assert.equal(last.found.widthMm.column, '全型式共通')
+  // 対象が列に無い表からは値を採用しない
+  assert.equal(extractColumnTable(table, 'tk-100').targetColumn, -1)
+  // 見出しと型式が連結した表（列の切れ目が確定できない）は列対応不能として採用しない
+  const concat = extractColumnTable('販売型式名FTR70(-L)FTR90 全長 (mm)16301570', 'ftr70')
+  assert.equal(concat.unresolvable, true)
+  assert.equal(Object.keys(concat.found).length, 0)
+  // extractSpec経由：値の数が列数と一致しない行は採用せず ambiguous に記録する
+  const viaSpec = extractSpec([{ url: 'u', sha256: 's', pdf: true, pdfText: ['PC752N 販売型式名 TA10 TB20 PC752N 全長 (mm) 1470 1480'] }], { modelToken: 'pc752n' })
+  assert.equal(viaSpec.lengthMm, undefined)
+  assert.ok(viaSpec.ambiguous.some(a => /value-count/.test(a.reason)))
+})
+
+test('図の凡例：位置つきテキストから (n)→部品名 を対応付ける', async () => {
+  const { parseLegend, runsToLines } = await import('../scripts/atlas/pdffigure.mjs')
+  const runs = [
+    { text: '(1)', x: 28, y: 216, size: 8 }, { text: '主クラッチレバー', x: 45, y: 216, size: 8 },
+    { text: '........................', x: 111, y: 216, size: 8 }, { text: '13', x: 160, y: 216, size: 8 },
+    { text: '(2)', x: 28, y: 206, size: 8 }, { text: 'メインスイッチ', x: 45, y: 206.4, size: 8 },
+    { text: '(10)', x: 204, y: 216, size: 8 }, { text: 'トルクリミッター', x: 230, y: 216, size: 8 },
+  ]
+  assert.equal(runsToLines(runs).length, 2)
+  const legend = parseLegend(runs)
+  assert.equal(legend.get(1), '主クラッチレバー')
+  assert.equal(legend.get(2), 'メインスイッチ')
+  assert.equal(legend.get(10), 'トルクリミッター')
+})
+
+test('図画像：PNG予測子の解除とPNG書き出しが往復で一致する', async () => {
+  const { unfilterImage, encodePng, downsample2 } = await import('../scripts/atlas/pdffigure.mjs')
+  // 4x2 RGB・予測子つき（Sub/Up）
+  const w = 4, h = 2
+  const raw = Buffer.from([
+    1, 10, 20, 30, 5, 5, 5, 5, 5, 5, 5, 5, 5,      // Sub行
+    2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,          // Up行
+  ])
+  const img = unfilterImage({ data: raw, width: w, height: h, colors: 3, predictor: 15 })
+  assert.equal(img.pixels[0], 10)
+  assert.equal(img.pixels[3], 15) // Sub: 10+5
+  assert.equal(img.pixels[w * 3], 11) // Up: 10+1
+  const png = encodePng(img)
+  assert.equal(png.readUInt32BE(16), w) // IHDR幅
+  const half = downsample2({ pixels: Buffer.alloc(4 * 4 * 3, 100), w: 4, h: 4, channels: 3 })
+  assert.equal(half.w, 2)
+  assert.equal(half.pixels[0], 100)
+})
+
+test('生成・検査：資料図の位置（documented-2d）は位置根拠つきで通り、根拠なしは拒否する', async () => {
+  const positionEvidence = { url: 'https://example.com/m.pdf', page: 18, marker: 15, imageXY: [100, 200], imageSize: [2899, 2363], figureSha256: 'f'.repeat(64), basis: 'leader-endpoint' }
+  const partNames = [
+    { name: '燃料タンク', evidence: { url: 'u', location: '凡例' }, positionEvidence },
+    { name: 'マフラ', evidence: { url: 'u', location: '凡例' }, positionEvidence: { ...positionEvidence, marker: 19 } },
+  ]
+  const dimEvidence = ['lengthMm', 'widthMm', 'heightMm'].map(field => ({ field, url: 'https://example.com/m.pdf', excerpt: 'x' }))
+  const assembled = assembleMachine({ machineId: 'x', name: 'x', category: 'walk-behind-tiller', spec: { lengthMm: 1470, widthMm: 615, heightMm: 1020, evidence: dimEvidence }, partNames })
+  assert.equal(assembled.status, 'ok')
+  const tank = assembled.machine.parts.find(p => p.name === '燃料タンク')
+  assert.equal(tank.positional, 'documented-2d')
+  assert.equal(tank.slot, 'fueltank') // 3D対象（配置自体はテンプレート推定と明示）
+  assert.equal(tank.positionBasis, 'template-estimate')
+  const muffler = assembled.machine.parts.find(p => p.name === 'マフラ')
+  assert.equal(muffler.positional, 'documented-2d')
+  assert.equal(muffler.slot, null)
+  const glb = await buildGlb(assembled.machine)
+  assert.deepEqual(verifyMachine(assembled.machine, glb), { ok: true, problems: [] })
+  // 位置根拠を欠く documented-2d は検査で拒否する
+  const broken = structuredClone(assembled.machine)
+  delete broken.parts[0].positionEvidence
+  assert.ok(verifyMachine(broken, glb).problems.some(p => p.includes('位置根拠')))
+})

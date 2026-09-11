@@ -18,11 +18,20 @@ const compact = value => normalizeModelText(value).replace(/[\s-]+/g, '')
 
 export async function collectMaterials(fetcher, { roots, modelToken, original, maxDepth = 3 }) {
   const materials = [], visited = new Set()
-  const queue = roots.map(url => ({ url, depth: 0 }))
+  // 優先度つき探索：0=型式トークンを含む、1=取説の実体へ向かうリンク（notice/download等）、2=一般の製品・取説系。
+  // ナビリンクで探索が発散して予算内に実資料へ着かないことを防ぐ。
+  const queue = roots.map(url => ({ url, depth: 0, priority: 0 }))
   const token = compact(modelToken)
-  while (queue.length) {
-    const { url, depth } = queue.shift()
+  const nextItem = () => {
+    let best = -1
+    for (let i = 0; i < queue.length; i++) if (best < 0 || queue[i].priority < queue[best].priority) best = i
+    return best < 0 ? null : queue.splice(best, 1)[0]
+  }
+  for (let item = nextItem(); item; item = nextItem()) {
+    const { url, depth, priority } = item
     if (visited.has(url)) continue
+    // 対象型式のPDF資料を得た後は、一般語だけのリンク（優先度2）を追わない
+    if (priority >= 2 && materials.some(m => m.pdf)) continue
     visited.add(url)
     const page = await fetcher.fetchText(url, { targetModel: original })
     if (page.status !== 'ok') continue
@@ -38,9 +47,12 @@ export async function collectMaterials(fetcher, { roots, modelToken, original, m
     if (depth >= maxDepth) continue
     for (const next of links(page.body, url)) {
       const sameHost = fetcher.kind === 'fixture' || (() => { try { return new URL(next).hostname === new URL(url).hostname } catch { return false } })()
-      // 機種トークンを含むリンクは常に、それ以外は製品・仕様・取説系の語を含むリンクだけ辿る（探索の発散を防ぐ）
+      if (!sameHost) continue
       const label = compact(decodeURIComponent(next))
-      if (sameHost && (label.includes(token) || /lineup|spec|manual|ownersmanual|parts|products?|cultivator|catalog|shiyou|torisetsu/.test(label))) queue.push({ url: next, depth: depth + 1 })
+      const nextPriority = label.includes(token) ? 0
+        : /notice|download|hash=|\.pdf/.test(decodeURIComponent(next).toLowerCase()) ? 1
+        : /lineup|spec|manual|ownersmanual|parts|products?|cultivator|catalog|shiyou|torisetsu/.test(label) ? 2 : -1
+      if (nextPriority >= 0) queue.push({ url: next, depth: depth + 1, priority: nextPriority })
     }
   }
   const failures = fetcher.provenance.filter(p => p.status !== 'ok')

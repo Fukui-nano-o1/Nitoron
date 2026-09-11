@@ -91,7 +91,9 @@ export function createDecryptor({ V, R, O, U, UE, P, id, length, cfm, encryptMet
     try { fileKey = aesCbc('dec', 256, intermediate, Buffer.alloc(16), UE.subarray(0, 32)) } catch { return { error: 'malformed-encryption' } }
     return { decryptStream: data => aesDecryptStream(256, fileKey, data), decryptsStrings: true, mode: 'aes-256' }
   }
-  const keyBytes = V === 1 ? 5 : Math.max(5, Math.min(16, Math.floor((length || 40) / 8)))
+  // 鍵長：V4（AESV2/RC4-128）は128bit固定。/LengthはビットとCF内バイトの両表記があるため換算する。
+  const lengthBytes = length >= 40 ? Math.floor(length / 8) : length || 0
+  const keyBytes = V === 4 ? 16 : V === 1 ? 5 : Math.max(5, Math.min(16, lengthBytes || 5))
   const fileKey = legacyFileKey({ O, P, id, R, keyBytes, encryptMetadata })
   if (!validateEmptyUser({ R, U, id, fileKey })) return { error: 'password-protected' }
   const useAes = V === 4 && cfm === 'AESV2'
