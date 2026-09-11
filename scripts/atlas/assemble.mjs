@@ -27,13 +27,14 @@ export function assembleMachine({ machineId, name, category, spec, partNames }) 
   for (const part of partNames) {
     const slot = slots.find(s => s.keywords.test(part.name) && !parts.some(p => p.slot === s.id))
     if (slot) {
-      nodes.push({ id: slot.id, name: part.name, kind: 'part', parent: 'machine', geom: slot.geom(d), positional: 'approx' })
-      parts.push({ id: slot.id, name: part.name, slot: slot.id, positional: 'approx', evidence: part.evidence })
+      // 位置・形状はテンプレート比率による推定であり、資料で位置を照合した結果ではない
+      nodes.push({ id: slot.id, name: part.name, kind: 'part', parent: 'machine', geom: slot.geom(d), positional: 'approx', positionBasis: 'template-estimate' })
+      parts.push({ id: slot.id, name: part.name, slot: slot.id, positional: 'approx', positionBasis: 'template-estimate', evidence: part.evidence })
     } else {
       // 位置を確認できない部品：メッシュを持たせず、資料の該当箇所へ案内する
       parts.push({ id: `doc-${parts.length}`, name: part.name, slot: null, positional: 'unknown', evidence: part.evidence })
     }
   }
   if (parts.every(p => p.positional === 'unknown')) return { status: 'insufficient-materials', missing: ['mappable-parts'] }
-  return { status: 'ok', machine: { machineId, name, category, dimensionsMm: [spec.lengthMm, spec.widthMm, spec.heightMm], massKg: spec.massKg ?? null, fidelity: 'schematic-exterior', nodes, parts, specEvidence: spec.evidence } }
+  return { status: 'ok', machine: { machineId, name, category, dimensionsMm: [spec.lengthMm, spec.widthMm, spec.heightMm], massKg: spec.massKg ?? null, fidelity: 'schematic-exterior', placementBasis: 'template-ratio-estimate', nodes, parts, specEvidence: spec.evidence } }
 }

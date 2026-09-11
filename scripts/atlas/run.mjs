@@ -44,16 +44,27 @@ if (!maker && !fixtureDir) await finish('unknown-maker', { note: `対象メー�
 const fetcher = createFetcher({ fixtureDir })
 const roots = fixtureDir ? ['fixture://index.html'] : maker.roots
 const collected = await phase('collect', () => collectMaterials(fetcher, { roots, modelToken: identified.parsed.modelToken, original: input }))
-job.materials = collected.materials.map(({ body, ...rest }) => rest)
+job.materials = collected.materials.map(({ body, pdfText, ...rest }) => ({ ...rest, pdfPagesExtracted: pdfText ? pdfText.length : undefined }))
 job.failures = collected.failures
+job.unusablePdfs = collected.unusablePdfs
 if (!collected.materials.length) {
-  const blocked = collected.failures.filter(f => f.status === 'network-blocked').length
-  await finish(blocked && blocked >= collected.failures.length ? 'blocked-network' : 'insufficient-materials',
-    { note: blocked ? '全取得が通信段階で遮断された（実行環境のegressポリシー）。資料不足とは区別する。' : '対象型式を確認できる資料を取得できなかった。別機種の代用は表示しない。' })
+  // 失敗の内訳で終了状態を分ける：egressポリシー拒否／サイト側拒否（4xx等）／資料不足
+  const statuses = collected.failures.map(f => f.status)
+  const policy = statuses.filter(s => s === 'network-blocked').length
+  const site = collected.failures.filter(f => f.refusedBy === 'site').length
+  const status = statuses.length && policy >= statuses.length ? 'blocked-network'
+    : statuses.length && site >= statuses.length ? 'blocked-by-site'
+    : 'insufficient-materials'
+  const notes = {
+    'blocked-network': '全取得が実行環境のegressポリシーで遮断された。資料不足・サイト側拒否とは区別する。',
+    'blocked-by-site': '接続は許可されたが、取得先サイト側がHTTPエラーで拒否した（応答サーバーはfailuresに記録）。資料不足・ポリシー遮断とは区別する。',
+    'insufficient-materials': '対象型式を確認できる資料を取得できなかった。別機種の代用は表示しない。',
+  }
+  await finish(status, { note: notes[status] })
 }
 
 // --- 抽出 ---
-const spec = await phase('extract', async () => extractSpec(collected.materials))
+const spec = await phase('extract', async () => extractSpec(collected.materials, { modelToken: identified.parsed.modelToken }))
 const partNames = extractPartNames(collected.materials)
 const category = inferCategory(collected.materials)
 job.extracted = { spec, partNames: partNames.map(p => p.name), category }
@@ -68,6 +79,16 @@ const glb = await phase('glb', () => buildGlb(assembled.machine))
 // --- 検査 ---
 const verdict = await phase('verify', async () => verifyMachine(assembled.machine, glb))
 if (!verdict.ok) await finish('failed-verification', { problems: verdict.problems })
+// 部品照合表：名称の根拠（資料URL・該当箇所）と、位置・形状の主張水準（推定／未確認）を分けて記録する。
+// テンプレート推定配置は「資料照合済みの位置」として数えない。
+job.partsReport = assembled.machine.parts.map(part => ({
+  name: part.name, partId: part.id,
+  evidenceUrl: part.evidence?.url ?? null, evidenceLocation: part.evidence?.location ?? null,
+  nameBasis: part.evidence?.url ? '資料に名称の記載あり' : '根拠なし',
+  positionBasis: part.positional === 'documented' ? '資料照合済み'
+    : part.slot ? '推定（テンプレート比率配置・資料未照合）' : '未確認（メッシュなし・資料案内のみ）',
+  meshTarget: part.slot ?? null,
+}))
 job.artifacts = {
   modelVersion, glbSha256: sha256(glb), glbBytes: glb.length,
   parts: assembled.machine.parts.length, meshedParts: assembled.machine.parts.filter(p => p.slot).length,

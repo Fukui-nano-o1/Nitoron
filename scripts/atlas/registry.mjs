@@ -8,7 +8,7 @@ export const normalizeModelText = value => String(value || '')
 // 登録済み機種。SKP-101Wは既存成果物（vendor/parts-lab）をそのまま1機種として登録する。
 export const REGISTRY = [
   {
-    machineId: 'skp-101w', maker: 'クボタ', model: 'SKP-101W', name: 'クボタ SKP-101W',
+    machineId: 'skp-101w', maker: 'クボタ', makerKey: 'kubota', model: 'SKP-101W', name: 'クボタ SKP-101W',
     category: 'walk-behind-transplanter',
     aliases: ['クボタ skp-101w', 'kubota skp-101w', 'skp-101w', 'skp101w'],
     modelVersion: 'skp-101w@daf7afab', status: 'available', artifact: 'vendor/parts-lab',
@@ -44,10 +44,18 @@ export function parseInput(raw) {
 }
 
 // 台帳照合。確定（registered）／未登録（unregistered）／入力不足を区別し、推測で確定しない。
+// 型式文字列の一致だけでは確定しない：入力にメーカー語がある場合、台帳側メーカーとの一致を必須にする。
+// 対象外メーカー（ホンダ等）は、登録機種の再利用経路でも別メーカーの機種へ解決しない。
 export function identify(raw) {
   const parsed = parseInput(raw)
   if (!parsed.modelToken) return { status: 'need-input', parsed }
-  const hit = REGISTRY.find(entry => entry.aliases.some(a => normalizeModelText(a) === parsed.normalized || normalizeModelText(a) === parsed.modelToken))
+  const hit = REGISTRY.find(entry => {
+    const aliasHit = entry.aliases.some(a => normalizeModelText(a) === parsed.normalized || normalizeModelText(a) === parsed.modelToken)
+    if (!aliasHit) return false
+    if (parsed.maker) return entry.makerKey === parsed.maker.key
+    // メーカー語らしき先頭語があるのに対象メーカーへ解決できない入力は、型式一致だけで再利用しない
+    return !parsed.makerText
+  })
   if (hit) return { status: 'registered', parsed, machine: hit }
   return { status: 'unregistered', parsed, machineId: slugify(parsed) }
 }

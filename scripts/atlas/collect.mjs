@@ -1,6 +1,8 @@
 // 資料収集：メーカーのルートから機種トークンを含むリンクを辿り、仕様・取説候補を集める。
 // 見出しだけで採用せず、本文に対象型式が含まれるページだけを資料に数える。
+// PDFは取得しただけでは資料に数えない：本文テキストを抽出し、対象型式を含む場合のみ採用する。
 import { normalizeModelText } from './registry.mjs'
+import { extractPdfText } from './pdftext.mjs'
 
 const links = (html, base) => [...String(html).matchAll(/href="([^"#]+)"/gi)]
   .map(m => {
@@ -24,8 +26,16 @@ export async function collectMaterials(fetcher, { roots, modelToken, original, m
     visited.add(url)
     const page = await fetcher.fetchText(url, { targetModel: original })
     if (page.status !== 'ok') continue
+    if (page.pdf) {
+      // PDF：本文抽出に成功し、本文に対象型式があるものだけを資料に数える
+      const extracted = extractPdfText(Buffer.isBuffer(page.body) ? page.body : Buffer.from(page.body, 'latin1'))
+      if (extracted.error) { page.pdfText = null; page.pdfTextError = extracted.error; continue }
+      page.pdfText = extracted.pages
+      if (extracted.pages.some(text => compact(text).includes(token))) materials.push(page)
+      continue
+    }
     if (compact(page.body).includes(token)) materials.push(page)
-    if (depth >= maxDepth || page.pdf) continue
+    if (depth >= maxDepth) continue
     for (const next of links(page.body, url)) {
       const sameHost = fetcher.kind === 'fixture' || (() => { try { return new URL(next).hostname === new URL(url).hostname } catch { return false } })()
       // 機種トークンを含むリンクは常に、それ以外は製品・仕様・取説系の語を含むリンクだけ辿る（探索の発散を防ぐ）
@@ -34,5 +44,8 @@ export async function collectMaterials(fetcher, { roots, modelToken, original, m
     }
   }
   const failures = fetcher.provenance.filter(p => p.status !== 'ok')
-  return { materials, failures, attempted: fetcher.provenance.length }
+  // 取得はできたが本文を抽出できず根拠に使えないPDF（未対応を対応済みとしない記録）
+  const unusablePdfs = fetcher.provenance.filter(p => p.status === 'ok' && p.pdf && p.pdfTextError)
+    .map(p => ({ url: p.url, sha256: p.sha256, reason: p.pdfTextError }))
+  return { materials, failures, unusablePdfs, attempted: fetcher.provenance.length }
 }
