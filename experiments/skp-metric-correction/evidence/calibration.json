@@ -1,0 +1,19 @@
+{
+  "method": "25 deterministic bisection steps; no mesh scaling",
+  "radii": {
+    "front": 0.181762585,
+    "rear": 0.2106708497
+  },
+  "trace": {
+    "front": {
+      "targetMm": 368,
+      "bodyRadiusM": 0.181762585,
+      "measuredMm": 367.9999967865991
+    },
+    "rear": {
+      "targetMm": 457,
+      "bodyRadiusM": 0.2106708497,
+      "measuredMm": 456.9999983466013
+    }
+  }
+}

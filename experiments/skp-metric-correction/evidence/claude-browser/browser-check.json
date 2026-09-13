@@ -1,0 +1,25 @@
+{
+  "executedAt": "2026-09-13T12:18:29.104Z",
+  "browser": "141.0.7390.37",
+  "checks": [
+    "1280 WebGL ready, single canvas",
+    "1280 all three variants selectable without verified claim",
+    "1280 variant change preserves inspection camera",
+    "1280 explode and assemble controls",
+    "1280 exterior transparency controls",
+    "1280 engine variant mismatch visible",
+    "390-touch WebGL ready, single canvas",
+    "390-touch all three variants selectable without verified claim",
+    "390-touch variant change preserves inspection camera",
+    "390-touch explode and assemble controls",
+    "390-touch exterior transparency controls",
+    "390-touch engine variant mismatch visible",
+    "WebGL failure retains measured dimensions and disables 3D actions",
+    "no page errors or external runtime requests"
+  ],
+  "passed": 14,
+  "pageErrors": [],
+  "externalRuntimeRequests": 0,
+  "iphonePhysical": false,
+  "documented3dParts": 0
+}

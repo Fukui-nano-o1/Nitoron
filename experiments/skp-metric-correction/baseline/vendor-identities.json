@@ -1,0 +1,21 @@
+{
+  "verifiedAgainstMain": "76fd603ec1156f8ff9b2a670d7bb6cda0de1a927",
+  "files": {
+    "RoundedBoxGeometry.js": {
+      "gitBlob": "4b94cd0e2034a1e1bb79b8ab97bdbe412a890cfd",
+      "sha256": "c13ec51ca1dfa2a584e6e6898e5f45e754d7b8093314b3db89b726c044259531"
+    },
+    "three.module.js": {
+      "gitBlob": "477ca4dafa7af919a2b9818e01b5ae25198d4aa4",
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    "OrbitControls.js": {
+      "gitBlob": "43aaecf330afbdf460d834e0a7ca948432b1500f",
+      "sha256": "06864a0fcb647730bfbc690b6c25a121199d716a3e299a40158509cbd247c3bf"
+    },
+    "three.core.js": {
+      "gitBlob": "7dcd0fbcbc04b8d9a20ecb96c1ce344cb55150d5",
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    }
+  }
+}

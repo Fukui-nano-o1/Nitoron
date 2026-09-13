@@ -1,0 +1,10 @@
+{
+  "runsCompared": 2,
+  "sha256": [
+    "df871d08482a3fd45e86fafc7e3034a42606c801643c4c77bda98e40c7b662db",
+    "df871d08482a3fd45e86fafc7e3034a42606c801643c4c77bda98e40c7b662db"
+  ],
+  "identical": true,
+  "browserExecutionClaim": false,
+  "nodeVersion": "v24.19.0"
+}

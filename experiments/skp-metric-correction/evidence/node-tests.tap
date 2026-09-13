@@ -1,0 +1,18 @@
+✔ Baseline four source files match archived SHA-256 and Git blob identities (7.191645ms)
+✔ finish preserves a known cylinder and nested oblique rod; nominal envelope cannot alter geometry (15.54353ms)
+✔ Four wheels meet the explicitly defined circumscribed tread diameter, and smooth bodies remain round (348.596109ms)
+✔ Roundness gate rejects the distorted baseline rather than accepting a diameter-only correction (468.923977ms)
+✔ Wheel recipe edits leave all 29 other assemblies and every authored axle center exactly unchanged (737.067318ms)
+✔ All 33 assemblies and 214 detail identities, parents, and pick hierarchy are preserved (859.529631ms)
+✔ Every expandable hierarchy returns exactly to fixed metric base after explode and guide reset (272.101313ms)
+✔ Measured envelope and ground mismatches remain visible; neither geometry nor evidence claims physical verification (306.84807ms)
+✔ Measurement output is deterministic across three independently generated models and matches delivered evidence (895.953801ms)
+✔ Non-finite, non-positive and oversized wheel parameters are rejected before model creation (0.681993ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4030.805268

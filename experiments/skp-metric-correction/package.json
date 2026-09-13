@@ -1,0 +1,14 @@
+{
+  "name": "nitoron-skp-metric-candidate",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "measure": "node scripts/measure.mjs",
+    "calibrate": "node scripts/calibrate.mjs",
+    "build": "node scripts/build.mjs",
+    "check:browser": "node scripts/check-browser.cjs",
+    "check:modules": "node --experimental-vm-modules scripts/check-build.mjs"
+  }
+}

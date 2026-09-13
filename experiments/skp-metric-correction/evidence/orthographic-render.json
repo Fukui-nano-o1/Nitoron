@@ -1,0 +1,144 @@
+{
+  "schema": "static-triangle-projection/1",
+  "view": "negative-Z-to-positive-Z",
+  "projection": "orthographic-X-Y",
+  "renderer": "Node mesh triangles; average-depth painter sort",
+  "browserScreenshot": false,
+  "geometryModified": false,
+  "perspectivePhotoMatch": false,
+  "completeCatalogue99Percent": false,
+  "documented3dParts": 0,
+  "notes": [
+    "Depth sorting is approximate for intersecting triangles.",
+    "Wheel panels align only axle centers; whole panels preserve world origin.",
+    "Metrics derive from actual world-space vertices. Rear tread extents need not equal the circumcircle."
+  ],
+  "panels": [
+    {
+      "stage": "baseline",
+      "panel": "frontL",
+      "sourceTriangles": 29920,
+      "renderedTriangles": 14148,
+      "backFacingExcluded": 15772,
+      "degenerateOrSubpixelExcluded": 0,
+      "pxPerMm": 0.6,
+      "centerMm": [
+        777.1235426965031,
+        160.58506713598894,
+        -579.188481504689
+      ]
+    },
+    {
+      "stage": "baseline",
+      "panel": "rearL",
+      "sourceTriangles": 41920,
+      "renderedTriangles": 20282,
+      "backFacingExcluded": 21636,
+      "degenerateOrSubpixelExcluded": 2,
+      "pxPerMm": 0.6,
+      "centerMm": [
+        -338.1000625392321,
+        243.96066252635148,
+        -589.0052354284973
+      ]
+    },
+    {
+      "stage": "metricOnly",
+      "panel": "frontL",
+      "sourceTriangles": 29920,
+      "renderedTriangles": 14148,
+      "backFacingExcluded": 15772,
+      "degenerateOrSubpixelExcluded": 0,
+      "pxPerMm": 0.6,
+      "centerMm": [
+        770,
+        175,
+        -590
+      ]
+    },
+    {
+      "stage": "metricOnly",
+      "panel": "rearL",
+      "sourceTriangles": 41920,
+      "renderedTriangles": 20282,
+      "backFacingExcluded": 21636,
+      "degenerateOrSubpixelExcluded": 2,
+      "pxPerMm": 0.6,
+      "centerMm": [
+        -370,
+        266,
+        -600
+      ]
+    },
+    {
+      "stage": "metricWheels",
+      "panel": "frontL",
+      "sourceTriangles": 29920,
+      "renderedTriangles": 14148,
+      "backFacingExcluded": 15772,
+      "degenerateOrSubpixelExcluded": 0,
+      "pxPerMm": 0.6,
+      "centerMm": [
+        770,
+        175,
+        -590
+      ]
+    },
+    {
+      "stage": "metricWheels",
+      "panel": "rearL",
+      "sourceTriangles": 41920,
+      "renderedTriangles": 20270,
+      "backFacingExcluded": 21636,
+      "degenerateOrSubpixelExcluded": 14,
+      "pxPerMm": 0.6,
+      "centerMm": [
+        -370,
+        266,
+        -600
+      ]
+    },
+    {
+      "stage": "baseline",
+      "panel": "whole-fixed-origin",
+      "sourceTriangles": 231948,
+      "renderedTriangles": 106251,
+      "backFacingExcluded": 123864,
+      "degenerateOrSubpixelExcluded": 1833,
+      "pxPerMm": 0.18,
+      "centerMm": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "stage": "metricOnly",
+      "panel": "whole-fixed-origin",
+      "sourceTriangles": 231948,
+      "renderedTriangles": 106230,
+      "backFacingExcluded": 123864,
+      "degenerateOrSubpixelExcluded": 1854,
+      "pxPerMm": 0.18,
+      "centerMm": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "stage": "metricWheels",
+      "panel": "whole-fixed-origin",
+      "sourceTriangles": 231948,
+      "renderedTriangles": 106226,
+      "backFacingExcluded": 123864,
+      "degenerateOrSubpixelExcluded": 1858,
+      "pxPerMm": 0.18,
+      "centerMm": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

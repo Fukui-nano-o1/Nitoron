@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-12",
+  "target": "SKP-101W",
+  "source_assets_included": false,
+  "sources": [
+    {
+      "id": "MANUAL",
+      "source_url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=95e6834d0a3d99e9ea8811855ae9229d",
+      "asset_url": "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d",
+      "retrieved_at": "2026-09-11",
+      "sha256": "4111bbd383a88ccd522286e37bd0fec822e4bc8fda4a496e9de61f16e58af709",
+      "source_type": "official-manufacturer",
+      "scope": "series",
+      "model_evidence": "SKP-101-series-including-W",
+      "redistributed_in_this_package": false
+    },
+    {
+      "id": "WILLBE-GB131-PAGE",
+      "source_url": "https://willbe-corp.com/products/meikipower/gb131/",
+      "asset_url": "https://willbe-corp.com/products/meikipower/gb131/",
+      "retrieved_at": "2026-09-11",
+      "page_modified_metadata": "2026-01-09T11:16:25+00:00",
+      "sha256": "d2c7dafeeb1c0496ad39e11a7f6240428abbd3e1d23e05a2934518aeb7590a24",
+      "source_type": "official-engine-manufacturer",
+      "scope": "GB131-standard-series-not-confirmed-GB131LN-231",
+      "redistributed_in_this_package": false
+    },
+    {
+      "id": "C06",
+      "source_url": "https://willbe-corp.com/products/meikipower/gb131/",
+      "asset_url": "https://willbe-corp.com/wp/wp-content/uploads/2024/02/gb131_ln_mount.png",
+      "retrieved_at": "2026-09-11",
+      "sha256": "075a2f2fba02a95692b5df13602123748c17782049a4c2f0a510b5e51cebf01b",
+      "source_type": "official-engine-manufacturer",
+      "scope": "variant",
+      "model_evidence": "エンジンGB131系列/別仕様。SKP-101W搭載GB131LN-231との一致未確認。",
+      "redistributed_in_this_package": false
+    },
+    {
+      "id": "C07",
+      "source_url": "https://willbe-corp.com/products/meikipower/gb131/",
+      "asset_url": "https://willbe-corp.com/wp/wp-content/uploads/2024/02/gb131_ln_back.png",
+      "retrieved_at": "2026-09-11",
+      "sha256": "95c3f0fe7eb2c7c4777a13c8e8dc58b1664439aa7a37afb65e6813f17a225213",
+      "source_type": "official-engine-manufacturer",
+      "scope": "variant",
+      "model_evidence": "エンジンGB131系列/別仕様。SKP-101W搭載GB131LN-231との一致未確認。",
+      "redistributed_in_this_package": false
+    },
+    {
+      "id": "C08",
+      "source_url": "https://willbe-corp.com/products/meikipower/gb131/",
+      "asset_url": "https://willbe-corp.com/wp/wp-content/uploads/2024/02/gb131_ln_side.png",
+      "retrieved_at": "2026-09-11",
+      "sha256": "eb6f524f8253cb9a59e38d3e6bc4f3fe144fa481d90e4db752685ef4c49abde1",
+      "source_type": "official-engine-manufacturer",
+      "scope": "variant",
+      "model_evidence": "エンジンGB131系列/別仕様。SKP-101W搭載GB131LN-231との一致未確認。",
+      "redistributed_in_this_package": false
+    },
+    {
+      "id": "D01",
+      "source_url": "https://auctions.yahoo.co.jp/jp/auction/h1155340879",
+      "asset_url": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0510/users/8651dbb26fa37aef29efa7a2c144828e89a0723c/i-img1200x900-17279203171z5xlc7.jpg",
+      "retrieved_at": "2026-09-11",
+      "sha256": "277ff9791266339c2cc808571b06439dea26196f5df77d5574f002ec9f629e99",
+      "source_type": "unofficial-seller",
+      "scope": "exact",
+      "model_evidence": "出品名SKP-101W。D01の現物デカールWを確認。同一出品個体。改造・年式・製造番号は未照合。",
+      "redistributed_in_this_package": false
+    },
+    {
+      "id": "D08",
+      "source_url": "https://auctions.yahoo.co.jp/jp/auction/h1155340879",
+      "asset_url": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0510/users/8651dbb26fa37aef29efa7a2c144828e89a0723c/i-img1200x900-1727920317x3ryht7.jpg",
+      "retrieved_at": "2026-09-11",
+      "sha256": "c5daa291257928613850a2875defeaa2575ab6ee428a1ece775d9ddb858efa04",
+      "source_type": "unofficial-seller",
+      "scope": "exact",
+      "model_evidence": "出品名SKP-101W。D01の現物デカールWを確認。同一出品個体。改造・年式・製造番号は未照合。",
+      "redistributed_in_this_package": false
+    }
+  ],
+  "claims": [
+    {
+      "id": "WHEEL-FRONT",
+      "status": "confirmed-catalog-value",
+      "model": "SKP-101W",
+      "parameter": "front_wheel_diameter",
+      "value": 368,
+      "unit": "mm",
+      "source_id": "MANUAL",
+      "pdf_page": 108,
+      "printed_page": 90
+    },
+    {
+      "id": "WHEEL-REAR",
+      "status": "confirmed-catalog-value",
+      "model": "SKP-101W",
+      "parameter": "rear_wheel_diameter",
+      "value": 457,
+      "unit": "mm",
+      "source_id": "MANUAL",
+      "pdf_page": 108,
+      "printed_page": 90
+    },
+    {
+      "id": "WHOLE-SIZE",
+      "status": "confirmed-catalog-value",
+      "model": "SKP-101W",
+      "parameter": "nominal_overall_dimensions",
+      "value": {
+        "length": 2200,
+        "width": 1350,
+        "height": 1350
+      },
+      "unit": "mm",
+      "source_id": "MANUAL",
+      "pdf_page": 108,
+      "printed_page": 90,
+      "note": "公称全体外寸。全体一致だけでは部品寸法の一致を証明しない。"
+    },
+    {
+      "id": "W-ENGINE",
+      "status": "confirmed-catalog-value",
+      "model": "SKP-101W",
+      "parameter": "installed_engine_type",
+      "value": "GB131LN-231",
+      "source_id": "MANUAL",
+      "pdf_page": 108,
+      "printed_page": 90
+    },
+    {
+      "id": "W-TANK",
+      "status": "confirmed-catalog-value",
+      "model": "SKP-101W",
+      "parameter": "fuel_tank_capacity",
+      "value": 4.8,
+      "unit": "L",
+      "source_id": "MANUAL",
+      "pdf_page": 108,
+      "printed_page": 90
+    },
+    {
+      "id": "GB131-TANK",
+      "status": "confirmed-for-reference-variant",
+      "model": "GB131 standard",
+      "parameter": "fuel_tank_capacity",
+      "value": 2.5,
+      "unit": "L",
+      "source_id": "WILLBE-GB131-PAGE",
+      "applicable_to_SKP101W": false
+    },
+    {
+      "id": "GB131-SIZE",
+      "status": "confirmed-for-reference-variant",
+      "model": "GB131 standard",
+      "parameter": "nominal_engine_dimensions",
+      "value": {
+        "length": 297,
+        "width": 354.5,
+        "height": 330.5
+      },
+      "unit": "mm",
+      "source_ids": [
+        "WILLBE-GB131-PAGE",
+        "C07",
+        "C08"
+      ],
+      "applicability_to_SKP101W": "unconfirmed",
+      "machine_axis_mapping": "unconfirmed"
+    },
+    {
+      "id": "C07-THREADS",
+      "status": "confirmed-drawing-annotation",
+      "model": "GB131 L-type drawing",
+      "parameter": "threaded_hole_annotation",
+      "value": "7-M8×1.25 ねじ深15",
+      "source_id": "C07",
+      "correction": "前報告のM8×1.25×4とは不一致。機体取付穴と一括解釈しない。",
+      "applicability_to_SKP101W": "unconfirmed"
+    },
+    {
+      "id": "C06-BASE-HOLES",
+      "status": "confirmed-drawing-annotation",
+      "model": "GB131 L-type drawing",
+      "parameter": "base_hole_annotations",
+      "value": [
+        "2-9×18.5 長穴",
+        "2-φ9"
+      ],
+      "source_id": "C06",
+      "applicability_to_SKP101W": "unconfirmed"
+    }
+  ],
+  "decisions": {
+    "wheel_nominal_diameter_use": "allowed-for-local-model-correction",
+    "engine_envelope_replacement": "hold-until-suffix-231-and-axis-mapping-confirmed",
+    "engine_counterevidence": "搭載仕様の燃料タンク4.8 Lに対して公開標準系列は2.5 L。未知差分を縮小で消さない。",
+    "overall_99_percent_reproduction": "not-established",
+    "documented3dParts": 0
+  },
+  "photo_comparison": {
+    "D01": "透視・遮蔽を含む外観資料。PTO軸中心は確認できない。",
+    "D08": "後輪の接写でありエンジン軸同定には使えない。",
+    "metric_limit": "固定カメラの新旧モデル比較と写真への投影一致は別。写真の輪郭一致から実寸3D全体の99%を主張しない。"
+  }
+}

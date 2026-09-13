@@ -1,0 +1,64 @@
+--- baseline/skp-geometry.js
++++ src/skp-geometry.js
+@@ -48,10 +48,21 @@
+    for(const info of infos.values())if(info.parentId===id)boundsFor(info.detailId);
+    for(const [key,owner] of owners){const center=centers.get(key);if(!center)throw new Error('Unresolved part parent '+key);owner.children.forEach(m=>{m.geometry.translate(-center.x,-center.y,-center.z);m.geometry.computeBoundingBox();m.geometry.computeBoundingSphere();});const parent=owner.userData.parentId;owner.position.copy(center).sub(centers.get(parent)||new T.Vector3());(owners.get(parent)||g).add(owner);}
+   }
+-  root.updateMatrixWorld(true);const bounds=new T.Box3().setFromObject(root),size=bounds.getSize(new T.Vector3()),center=bounds.getCenter(new T.Vector3());
+-  const scale=new T.Vector3(dimensions[0]/size.x,dimensions[1]/size.y,dimensions[2]/size.z),matrix=new T.Matrix4().makeScale(...scale.toArray());
+-  for(const g of Object.values(parts)){g.position.sub(new T.Vector3(center.x,bounds.min.y,center.z)).multiply(scale);g.userData.base=g.position.toArray();g.userData.explode=new T.Vector3(...g.userData.explode).multiply(scale).toArray();g.traverse(o=>{if(o.userData.detailId&&!o.isMesh){o.position.multiply(scale);o.userData.base=o.position.toArray();o.userData.explode=new T.Vector3(...o.userData.detailExplode).multiply(scale).toArray();}if(o.isMesh){o.geometry.applyMatrix4(matrix);o.geometry.computeBoundingBox();o.geometry.computeBoundingSphere();}});}
+-  root.userData.envelopeCalibration='Nominal overall dimensions only. Individual part dimensions and fits are schematic.';
++  // Source parameters are metres. Nominal overall dimensions are evidence,
++  // never scale targets. Keep the authored datum (0,0,0) fixed between edits.
++  for(const g of Object.values(parts)){
++   g.userData.base=g.position.toArray();
++   g.userData.explode=[...g.userData.explode];
++   g.traverse(o=>{if(o.userData.detailId&&!o.isMesh){
++    o.userData.base=o.position.toArray();
++    o.userData.explode=[...o.userData.detailExplode];
++   }});
++  }
++  root.userData.metricPolicy={units:'m',datum:'authored-fixed-origin',
++   appliedScale:[1,1,1],nominalDimensionsXYZ:[...dimensions],
++   geometryRevision:'skp-101w-metric-candidate-1',productionModelVersion:null};
++  root.userData.envelopeCalibration='No overall fit. Nominal dimensions are references; actual geometry is measured separately.';
++  root.userData.documented3dParts=0;
+   root.updateMatrixWorld(true);return {root,parts,details};
+  }
+  return {parts,part,piece,mesh,box,softBox,cyl,ring,rod,tube,panel,bolt,mounted,hoodSurface,capsule,finish};
+--- baseline/skp-model.js
++++ src/skp-model.js
+@@ -1,8 +1,10 @@
+ import * as T from './vendor/three.module.js';
+ import {PARTS,META,MANUAL,PRODUCT,SPECS} from './skp-parts.js';
+ import {geometryKit} from './skp-geometry.js';
++import {WHEEL_BODY_RADII_M} from './wheel-spec.mjs';
+ 
+-export function createSKP(){
++export function createSKP({wheelBodyRadiiM=WHEEL_BODY_RADII_M}={}){
++ for(const key of ['front','rear'])if(!Number.isFinite(wheelBodyRadiiM[key])||wheelBodyRadiiM[key]<=0||wheelBodyRadiiM[key]>.4)throw new Error('Invalid wheel body radius');
+  const root=new T.Group();root.name='SKP_101W_reference_schematic';
+  root.userData={model:'SKP-101W',kind:'Reference-based schematic, not OEM CAD',sourceDate:META.date,sources:[MANUAL,PRODUCT,SPECS],manual: META.manualCode,notes:'Shared manual illustrations are labelled SKP-101. W product photograph is used for the wide wheel layout and spare-tray arrangement. Individual dimensions, hidden geometry and timing are not verified.'};
+  const {part,piece,mesh,box,softBox,cyl,ring,rod,tube,panel,bolt,mounted,hoodSurface,capsule,finish}=geometryKit(root,PARTS);
+@@ -41,15 +43,16 @@
+  for(const s of [-1,1]){rod(frontaxle,[0,0,s*.46],[.015,-.01,s*.56],.022,'metal');box(frontaxle,[.095,.14,.026],[0,-.015,s*.55],'ivory');for(let i=0;i<5;i++)bolt(frontaxle,[.026,.01,s*(.30+i*.038)],'x',.009);}
+  function wheel(id,x,y,z,r,width,rear,e){const g=part(id,[x,y,z],e);const profile=[[r*.52,-width*.5],[r*.85,-width*.49],[r*.96,-width*.32],[r,width*.1],[r*.94,width*.38],[r*.78,width*.51],[r*.52,width*.5]].map(p=>new T.Vector3(p[0],p[1],0));const tyreCurve=new T.CatmullRomCurve3(profile);const geo=new T.LatheGeometry(tyreCurve.getPoints(32).map(p=>new T.Vector2(p.x,p.y)),64);geo.rotateX(Math.PI/2);
+   const tire=piece(g,'tire','タイヤ',[0,.08,-.23]),rim=piece(g,'rim','ホイール',[0,0,0]),hub=piece(g,'hub','ハブ',[0,.02,.20]),bolts=piece(g,'fasteners','取付部（締結部品の模式表示）',[0,.02,.36]);
+-  mesh(tire,geo,'tire');const rimCurve=new T.CatmullRomCurve3([[r*.15,-width*.34],[r*.43,-width*.37],[r*.61,-width*.30],[r*.64,-width*.20],[r*.64,width*.20],[r*.61,width*.30],[r*.43,width*.37],[r*.15,width*.34]].map(([x,y])=>new T.Vector3(x,y,0)));const rimGeo=new T.LatheGeometry(rimCurve.getPoints(24).map(p=>new T.Vector2(p.x,p.y)),64);rimGeo.rotateX(Math.PI/2);mesh(rim,rimGeo,'ivory');
++  tire.userData.metricAudit={smoothBodyVertexCount:geo.index.count,axleLocal:[0,0,0],axleAxis:'z'};
++  mesh(tire,geo,'tire');const rimCurve=new T.CatmullRomCurve3([[r*.15,-width*.34],[r*.43,-width*.37],[r*.61,-width*.30],[r*.64,-width*.20],[r*.64,width*.20],[r*.61,width*.30],[r*.43,width*.37],[r*.15,width*.34]].map(([x,y])=>new T.Vector3(x,y,0)));const rimGeo=new T.LatheGeometry(rimCurve.getPoints(24).map(p=>new T.Vector2(p.x,p.y)),64);rimGeo.rotateX(Math.PI/2);rim.userData.metricAudit={smoothBodyVertexCount:rimGeo.index.count,axleAxis:'z'};mesh(rim,rimGeo,'ivory');
+   for(const side of [-1,1]){ring(rim,r*.52,.008,[0,0,side*width*.47],'silver');cyl(hub,r*.21,.024,[0,0,side*width*.54],'metal','z');for(let i=0;i<5;i++){const a=i*Math.PI*2/5,px=Math.sin(a)*r*.34,py=Math.cos(a)*r*.34,pz=side*width*.52;const fixing=piece(bolts,(side<0?'a':'b')+i,'締結セット '+(side<0?'A':'B')+(i+1)+'（例示）',[Math.sin(a)*.10,Math.cos(a)*.10,side*.08]);const screw=piece(fixing,'bolt','ボルト（形状・本数未確認）',[0,0,side*.065]);bolt(screw,[px,py,pz],'z',.009);cyl(screw,.005,.028,[px,py,pz-side*.017],'metal','z');const washer=piece(fixing,'washer','座金（例示）',[0,0,-side*.045]);ring(washer,.009,.0025,[px,py,pz-side*.010],'silver');}}
+   if(rear){for(let i=0;i<14;i++)for(const side of [-1,1]){const a=i*Math.PI*2/14;const m=mounted(tire,[0,0,0],-a);softBox(m,[.064,.032,width*.64],[0,r*.99,side*width*.21],'tire',[0,side*.48,0]);}}
+   else{for(let j=0;j<3;j++)ring(tire,r*.984,.003,[0,0,(j-1)*width*.19],'black');for(let i=0;i<36;i++){const a=i*Math.PI*2/36;const m=mounted(tire,[0,0,0],-a);box(m,[.009,.008,width*.82],[0,r*.99,0],'tire');}}
+  }
+- wheel('frontL',.77,.175,-.59,.173,.10,false,[.45,.025,-.52]);
+- wheel('frontR',.77,.175,.59,.173,.10,false,[.45,.025,.52]);
+- wheel('rearL',-.37,.266,-.60,.248,.14,true,[-.3,.025,-.62]);
+- wheel('rearR',-.37,.266,.60,.248,.14,true,[-.3,.025,.62]);
++ wheel('frontL',.77,.175,-.59,wheelBodyRadiiM.front,.10,false,[.45,.025,-.52]);
++ wheel('frontR',.77,.175,.59,wheelBodyRadiiM.front,.10,false,[.45,.025,.52]);
++ wheel('rearL',-.37,.266,-.60,wheelBodyRadiiM.rear,.14,true,[-.3,.025,-.62]);
++ wheel('rearR',-.37,.266,.60,wheelBodyRadiiM.rear,.14,true,[-.3,.025,.62]);
+  const trans=part('transmission',[-.20,.39,0],[-.05,.0,.5]);
+  const transCase=piece(trans,'case','ミッションケース',[0,.15,-.12]);softBox(transCase,[.28,.24,.43],[0,0,0],'metal');for(let i=0;i<5;i++)box(transCase,[.29,.015,.46],[0,-.08+i*.044,0],'black');
+  const axle=piece(trans,'axle','車軸',[0,-.08,-.23]);cyl(axle,.065,1.11,[-.10,-.1,0],'black','z');

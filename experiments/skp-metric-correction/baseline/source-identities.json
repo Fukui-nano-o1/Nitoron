@@ -1,0 +1,22 @@
+{
+  "repository": "Fukui-nano-o1/Nitoron",
+  "main": "76fd603ec1156f8ff9b2a670d7bb6cda0de1a927",
+  "files": {
+    "skp-geometry.js": {
+      "sha256": "112e200ecefcacb61578e7929d21b4d3febf80b4d15a6f894fa2f26d5d32a814",
+      "gitBlob": "a5b7d8020977b3db5f0418c37edc14b093a4e47f"
+    },
+    "skp-model.js": {
+      "sha256": "21fedfd37983b639ce16c7a7f88d64f46e154770d01ff1dbe7e8bdb333034855",
+      "gitBlob": "7527050a78b2c99155769a6786919c377f0f1cb8"
+    },
+    "skp-parts.js": {
+      "sha256": "8d4c62b1995f78afc8adb8f53456c030310ac5c8589c0b0baec7dfc20fac7e82",
+      "gitBlob": "b15bd47124684ef34ff4e8f5a671bf24490b9df8"
+    },
+    "assembly-tree.js": {
+      "sha256": "0098128bce2969dcd012add7e0d39281e4be7aaa6a3917b63a4d8dc508addc8f",
+      "gitBlob": "e58a794f25835654eb273e735cb65cdda008ccc0"
+    }
+  }
+}

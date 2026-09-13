@@ -1,0 +1,10 @@
+{
+  "method": "two local CPU executions, byte equality",
+  "equal": true,
+  "hashes": {
+    "evidence/wheels-orthographic.svg": "eb32958fa1434bb766003618d9eb67aecbdd52d4a02e7c1a8d172174837db39d",
+    "evidence/whole-orthographic.svg": "dd45ce86c11d3a788d37046cb951c2af4ee27695c26a933506a8133c4d251968",
+    "evidence/orthographic-render.json": "e338a2d337faf16ee0e5a956fd3a3cafaa9c69f4a7ec749c2584d06d22a27332"
+  },
+  "browser": false
+}

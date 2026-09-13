@@ -1,0 +1,19 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SKP-101W 寸法と形状の比較</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eef2f2;color:#162b30;font:16px/1.6 system-ui,sans-serif}main{max-width:1120px;margin:auto;padding:24px}h1{font-size:25px;margin:4px 0}p{margin:8px 0}.eyebrow{font-size:12px;letter-spacing:.07em;color:#47727a}.notice{background:#fff5da;border-left:4px solid #ce8d23;padding:12px 16px;border-radius:6px}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}button,select{font:inherit;border:1px solid #b6c8cb;border-radius:7px;background:white;padding:9px 12px;min-height:44px;color:#163039}button[aria-pressed=true]{background:#164e5a;color:white}button:disabled{opacity:.45}label{display:flex;align-items:center;gap:8px}#stage{position:relative;background:#fcfdfc;border:1px solid #bed0d0;border-radius:10px;overflow:hidden;height:460px}canvas{display:block;width:100%;height:100%;touch-action:none}#status{position:absolute;left:12px;top:10px;background:#ffffffdc;padding:5px 10px;border-radius:5px;font-size:14px;pointer-events:none}#metrics{background:white;padding:14px;border-radius:8px;margin-top:12px}#metrics p{margin:3px 0}.number{font-variant-numeric:tabular-nums}small{color:#52666a}table{width:100%;border-collapse:collapse;background:white;font-size:14px}td,th{padding:8px;border-bottom:1px solid #d6e0e0;text-align:left}details{margin-top:16px}pre{white-space:pre-wrap;font-size:11px;max-height:240px;overflow:auto}footer{font-size:12px;color:#53686b;margin-top:18px}.phone main{max-width:390px}.phone #stage{height:350px}.phone .toolbar button{font-size:14px;padding:8px}.phone h1{font-size:21px}@media(max-width:600px){main{padding:12px}h1{font-size:21px}#stage{height:350px}.toolbar button{font-size:14px;padding:8px}table{font-size:12px}}
+</style><main>
+<div class="eyebrow">NITORON / SKP-101W / 修正候補 2026-09-12</div>
+<h1>外寸で形を歪めない</h1>
+<p>旧モデル → 拡縮を外す → 車輪径を合わせる。3段階を同じ表示倍率で比較します。</p>
+<div class="notice"><strong>寸法修正の試作です。実機と99%一致したモデルではありません。</strong><br>接地・車軸接続・全体外寸に未解決の差があります。エンジンの「-231」仕様への置換は保留。</div>
+<div class="toolbar" aria-label="比較段階"><button data-stage="baseline">旧モデル</button><button data-stage="metricOnly">拡縮なし</button><button data-stage="metricWheels" aria-pressed="true">車輪径も修正</button></div>
+<div class="toolbar"><label>見る対象<select id="subject"><option value="whole">機械全体</option><option value="frontL">左前輪</option><option value="frontR">右前輪</option><option value="rearL">左後輪</option><option value="rearR">右後輪</option><option value="engine">エンジン群（未確定）</option></select></label><button id="side">側面へ戻す</button><button id="explode" aria-pressed="false">分解</button><button id="transparent" aria-pressed="false">外装を透過</button><button id="phone">スマホ幅</button></div>
+<section id="stage" aria-label="3D比較"><span id="status">3Dを準備しています…</span></section>
+<div id="metrics" aria-live="polite">寸法表を準備しています…</div>
+<p><small>ドラッグで回転、ピンチ／ホイールで拡大。赤線＝公式の公称径を外接円として表示。灰線＝旧コードの固定原点 y=0（実際の地面とは未照合）。分解は表示操作であり、修理の作業手順ではありません。</small></p>
+<details><summary>計測の定義と保留事項</summary><p>径はタイヤ全メッシュ（ラグを含む）の軸からの最大距離×2。後輪ラグの位相により上下幅と一致しません。真円性はラグを除いたタイヤ・リムの同一断面で検査します。全体外寸は実メッシュの包絡です。形状寸法は組立時の値を表示します。</p><p>車輪中心・幅・車軸を動かしていません。車輪径だけでは接地も取付互換性も成立しません。名目の長さ・幅・高さだけを一致させても、99%再現とは判定しません。</p></details>
+<details><summary>ブラウザ計測・状態（検証用）</summary><pre id="audit"></pre></details>
+<footer>模式モデル・未公開候補。Three.js r180 / MIT（同梱）。メーカー資料の画像は含みません。原本・旧モデル版は変更していません。</footer>
+</main>
+<!-- IMPORTMAP -->
+<script type="module" src="./src/viewer.mjs"></script></html>

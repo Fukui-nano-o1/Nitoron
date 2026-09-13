@@ -1,0 +1,12 @@
+{
+  "executedAt": "2026-09-13",
+  "environment": {"node": "v22.22.2", "chromium": "141.0.7390.37 (SwiftShader)", "main": "76fd603ec1156f8ff9b2a670d7bb6cda0de1a927"},
+  "verifyPackage": {"verifiedFiles": 53, "baselineAndVendorGitBlobsVerified": 8, "mainFilesGitBlobMatch": true},
+  "unitTests": {"command": "npm test", "tests": 10, "passed": 10, "failed": 0},
+  "measure": {"command": "npm run measure", "regeneratedEqualsShippedMeasurementsJson": true, "sha256Prefix": "9493ce9b722e6c60"},
+  "build": {"command": "npm run build", "runs": 3, "sha256": "df871d08482a3fd45e86fafc7e3034a42606c801643c4c77bda98e40c7b662db", "identicalToShippedHtml": true, "bytes": 2851103, "externalRuntimeDependencies": 0},
+  "browserCheck": {"command": "npm run check:browser", "checks": 14, "passed": 14, "pageErrors": 0, "externalRuntimeRequests": 0, "outputs": "evidence/claude-browser/"},
+  "independentRemeasurement": {"note": "Same three stages re-measured from the modules embedded in the shipped HTML on 2026-09-12; three runs identical; values equal measurements.json", "frontCircumscribedMm": 368.0, "rearCircumscribedMm": 457.0, "lowestYmm": {"front": -8.94, "rear": 41.44}},
+  "notVerified": ["physical iPhone", "real ground/axle datum", "GB131LN-231 engine envelope"],
+  "documented3dParts": 0
+}
