@@ -1,0 +1,12 @@
+Reproduced defect: with the cloud unreachable but the device save succeeding, the
+repair detail pill showed 「未保存」 while the page banner said 「この端末に保存」.
+The candidate mapped the workspace-level cloud error onto save.error, which the
+detail treats as "not saved". The existing Editor chip distinguishes these
+states (device saved + cloud pending vs device save failed), so the repair pill
+now follows the same rule: only a device-cache failure is 未保存; the cloud
+error is carried separately as cloudError.
+
+--- a/src/main.jsx
++++ b/src/main.jsx
+-  const repairSave = { status, error: sync.cacheFailed ? '端末に保存できません。' : error, retry, sync, session }
++  const repairSave = { status, error: sync.cacheFailed ? '端末に保存できません。' : '', cloudError: error, retry, sync, session }

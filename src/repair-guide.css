@@ -1,0 +1,62 @@
+/* Repair-specific controls stay independent of full-width editor input rules. */
+.dialog.repair-guide{width:620px;max-width:calc(100vw - 24px);max-height:90dvh;padding:0;border-radius:22px;overflow:hidden}
+.repair-guide .dialog-head{padding:20px 24px 16px;margin:0;border-bottom:1px solid var(--line);background:#fff}
+.repair-guide .dialog-head h2{font-size:1rem}
+.repair-guide-content{overflow-y:auto;max-height:calc(90dvh - 190px);padding:22px 28px 12px;overscroll-behavior:contain}
+.repair-guide-machine,.repair-guide-count{font-size:.8rem;line-height:1.5;color:var(--muted);margin:0 0 8px}
+.repair-guide-symptom{font-size:1.25rem;line-height:1.5;margin:0 0 22px;font-weight:650}
+.repair-guide-progress{display:flex;gap:12px;margin-bottom:26px}
+.repair-guide-progress span{flex:1;border-top:3px solid #e8e8e8;padding-top:8px;font-size:.75rem;color:var(--muted)}
+.repair-guide-progress span[aria-current=step]{border-color:var(--ink);color:var(--ink);font-weight:650}
+.repair-guide-page{min-height:170px}
+.repair-guide-question{font-size:1.22rem;line-height:1.5;margin:0 0 20px;font-weight:650}
+.repair-guide-question:focus{outline:0}
+.repair-guide-tools{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.repair-guide-tools button,.repair-guide-inline{border:1px solid var(--line);border-radius:10px;padding:10px 13px;font-size:.85rem;min-height:44px;background:#fff}
+.repair-guide-tools button:hover{background:var(--hover)}
+.repair-guide-inline{font-size:.8rem;line-height:1.6;text-align:left;margin:0 0 16px;width:100%}
+.repair-guide-checked{font-size:.8rem;color:var(--muted);margin:12px 0 0}
+.repair-guide-choices{border:0;margin:0 0 18px;padding:0;display:grid;gap:10px;min-width:0}
+.repair-guide-choices button{text-align:left;border:1px solid var(--line);border-radius:12px;padding:15px 16px;font-size:.95rem;min-height:54px;background:#fff;line-height:1.45}
+.repair-guide-choices button[aria-pressed=true]{border:2px solid var(--ink);padding:14px 15px;background:#f7f7f7}
+.repair-guide .field{margin-bottom:16px}
+.repair-guide .field textarea{border-radius:12px;font-size:1rem;line-height:1.6;padding:12px}
+.repair-guide-review{margin:0 0 20px;font-size:.9rem}
+.repair-guide-review>div{display:grid;grid-template-columns:42px minmax(0,1fr);gap:12px;border-bottom:1px solid var(--line);padding:12px 0}
+.repair-guide-review dt{color:var(--muted)}
+.repair-guide-review dd{margin:0;line-height:1.65;overflow-wrap:anywhere;white-space:pre-wrap}
+.repair-guide-review dd p{margin:5px 0 0;line-height:1.65}
+.repair-guide-check{display:flex;align-items:flex-start;gap:10px;line-height:1.6;font-size:.85rem;margin:18px 0;cursor:pointer}
+.repair-guide-check input[type=checkbox]{appearance:auto;box-sizing:border-box;width:20px;height:20px;min-width:20px;min-height:20px;flex:0 0 20px;margin:3px 0 0;padding:0;accent-color:var(--ink);border-radius:3px}
+.repair-guide-check span{flex:1;min-width:0}
+.repair-guide-caption{font-size:.8rem;line-height:1.65;color:var(--muted);margin:12px 0}
+.repair-guide-footer{border-top:1px solid var(--line);background:#fff;padding:14px 24px 16px}
+.repair-guide-footer-row{display:flex;gap:16px;align-items:center;justify-content:space-between}
+.repair-guide-footer .primary,.repair-guide-sheet .primary{background:var(--ink);border-color:var(--ink);color:#fff;border-radius:10px;min-height:48px;padding:12px 20px;white-space:normal;line-height:1.4}
+.repair-guide-back{font-size:.9rem;text-decoration:underline;padding:10px 0;min-width:44px;min-height:44px}
+.repair-guide-skip{font-size:.8rem;color:var(--muted);text-decoration:underline;display:block;margin:9px auto 0;min-height:34px;padding:5px}
+.dialog.repair-guide-sheet{width:540px;max-width:calc(100vw - 24px);padding:24px;border-radius:22px}
+.repair-guide-sheet p{font-size:.94rem;line-height:1.8}
+.repair-guide-sheet h3{font-size:1.05rem;line-height:1.5;margin:0 0 12px}
+.repair-guide-instruction{border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:18px;background:#f7f7f7}
+.repair-guide-instruction p:last-child{margin-bottom:0}
+.repair-guide-manual{display:flex;justify-content:space-between;gap:12px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0;font-size:.9rem;line-height:1.6;color:var(--ink)}
+.repair-guide-manual span{font-size:.75rem;color:var(--muted)}
+.repair-guide-sheet-primary{width:100%}
+.repair-guide-safety-item{padding:16px 0;border-bottom:1px solid var(--line)}
+.repair-guide-safety-item:first-of-type{padding-top:0}
+.repair-guide-saved-text{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;font-size:.9rem;line-height:1.8;border-bottom:1px solid var(--line);padding-bottom:18px}
+.repair-guide .notice.error{display:block;line-height:1.7;font-size:.85rem}
+@media(max-width:600px){
+  .dialog.repair-guide{width:calc(100vw - 16px);max-width:calc(100vw - 16px);max-height:92dvh;border-radius:20px}
+  .repair-guide .dialog-head{padding:16px 18px 12px}
+  .repair-guide-content{padding:18px 20px 10px;max-height:calc(92dvh - 190px)}
+  .repair-guide-symptom{font-size:1.16rem;margin-bottom:18px}
+  .repair-guide-progress{margin-bottom:20px}
+  .repair-guide-question{font-size:1.15rem;margin-bottom:16px}
+  .repair-guide-footer{padding:12px 18px max(12px,env(safe-area-inset-bottom))}
+  .repair-guide-footer .primary{max-width:calc(100% - 64px)}
+  .dialog.repair-guide-sheet{padding:20px;max-height:92dvh;border-radius:20px}
+  .repair-guide-manual{display:block}
+  .repair-guide-manual span{display:block;margin-top:3px}
+}

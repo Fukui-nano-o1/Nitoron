@@ -1,0 +1,15 @@
+const fs=require('fs'),path=require('path'),http=require('http');const {chromium}=require('playwright-core');
+const dist='/home/user/Nitoron/dist';const types={'.html':'text/html;charset=utf-8','.js':'text/javascript','.css':'text/css'};
+const srv=http.createServer((q,r)=>{let p=path.join(dist,decodeURIComponent(q.url.split('?')[0]));if(!p.startsWith(dist)||!fs.existsSync(p)||fs.statSync(p).isDirectory())p=path.join(dist,'index.html');r.setHeader('content-type',types[path.extname(p)]||'application/octet-stream');fs.createReadStream(p).pipe(r);});
+(async()=>{await new Promise(r=>srv.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+srv.address().port+'/';
+ const b=await chromium.launch({headless:true,executablePath:process.env.ATLAS_CHROMIUM_PATH,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});const page=await (await b.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:2})).newPage();
+ await page.goto(base+'#/repairs');await page.waitForTimeout(1500);if(await page.locator('dialog.repair-intro').count())await page.locator('dialog.repair-intro').getByRole('button',{name:'スキップ'}).click();
+ await page.getByRole('button',{name:'修理をはじめる'}).first().click();await page.waitForTimeout(2500);
+ const pill1=await page.locator('.repair-save-status').textContent();const banner=(await page.locator('.repair-global-error').innerText().catch(()=>'')).replace(/\s+/g,' ');
+ await page.locator('.repair-save-status').click();await page.waitForTimeout(300);const dlg1=(await page.locator('dialog[open]').last().innerText()).replace(/\s+/g,' ');await page.keyboard.press('Escape');await page.waitForTimeout(200);
+ await page.screenshot({path:path.join(__dirname,'evidence','390-touch-16-save-pill-fixed.png')});
+ await page.evaluate(()=>{window.__si=Storage.prototype.setItem;Storage.prototype.setItem=function(){throw new Error('quota');};});
+ await page.getByRole('button',{name:'結果を残す'}).click();await page.waitForTimeout(300);const note=page.locator('dialog.repair-note-sheet');await note.getByLabel('行ったこと').fill('x');await note.getByRole('button',{name:'内容を確認'}).click();await page.waitForTimeout(200);await note.getByRole('button',{name:'保存する'}).click();await page.waitForTimeout(800);await page.keyboard.press('Escape');await page.waitForTimeout(500);
+ const pill2=await page.locator('.repair-save-status').textContent();await page.evaluate(()=>{Storage.prototype.setItem=window.__si;});
+ const out={cloudFailureOnly:{pill:pill1,banner,dialog:dlg1.slice(0,120)},deviceSaveFailed:{pill:pill2},expected:{cloudFailureOnly:'この端末に保存',deviceSaveFailed:'未保存'},pass:pill1==='この端末に保存'&&pill2==='未保存'};
+ fs.writeFileSync(path.join(__dirname,'evidence','save-pill-check.json'),JSON.stringify(out,null,2));console.log(JSON.stringify(out));await b.close();srv.close();})().catch(e=>{console.error(e);process.exit(1);});

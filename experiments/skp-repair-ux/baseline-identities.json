@@ -1,0 +1,544 @@
+{
+  "baselineCommit": "cef74ab6c36d0b19f381b7973d0dcf6fb4a8f3e7",
+  "runtimeParentCommit": "e18e5c632d1fe930c42a7306c44336c56016f825",
+  "scope": "Files read for this candidate; not a complete repository inventory.",
+  "files": [
+    {
+      "path": "docs/NITORON-EVALUATION-AXES.md",
+      "gitBlob": "8a4d4d860568851673f49d8878603e8181bdd799",
+      "bytes": 8507
+    },
+    {
+      "path": "index.html",
+      "gitBlob": "06a2af7e4137348d271e35cb93268e5a8403b4aa",
+      "bytes": 1170
+    },
+    {
+      "path": "package-lock.json",
+      "gitBlob": "05131ca3704e4c5366822d5889d4e910de85dc7b",
+      "bytes": 30601
+    },
+    {
+      "path": "package.json",
+      "gitBlob": "5cf96e112ad3b272d9a7ab8a5335bfbe77e3d598",
+      "bytes": 460
+    },
+    {
+      "path": "src/Account.jsx",
+      "gitBlob": "e0a37447701cb4bf44e634850158445a355f11e0",
+      "bytes": 5349
+    },
+    {
+      "path": "src/Attachments.jsx",
+      "gitBlob": "3a4c981aa965a4c4fca69651da26bbb01baa1199",
+      "bytes": 4508
+    },
+    {
+      "path": "src/BlockEditor.jsx",
+      "gitBlob": "1a27f42c0c88f13c8b99f8ee4b8e9c855e9f53bc",
+      "bytes": 9966
+    },
+    {
+      "path": "src/Catalog.jsx",
+      "gitBlob": "0f005f43546d8b521919646b111defdfe10ddd7d",
+      "bytes": 9711
+    },
+    {
+      "path": "src/Compare.jsx",
+      "gitBlob": "9e259dfd7d72a3f5fa01511bc2d35c8d0e8bb826",
+      "bytes": 7194
+    },
+    {
+      "path": "src/Cover.jsx",
+      "gitBlob": "794f3556b899791334f555ae2e26917dd2cab3a9",
+      "bytes": 1172
+    },
+    {
+      "path": "src/Discussion.jsx",
+      "gitBlob": "de436cbe4562b1c4cbe8fb78ed13ec2c2000e6b3",
+      "bytes": 9761
+    },
+    {
+      "path": "src/Editor.jsx",
+      "gitBlob": "2aa329c00b47bb300280dcf3bc1ae3d1fa428424",
+      "bytes": 27125
+    },
+    {
+      "path": "src/FilterDialog.jsx",
+      "gitBlob": "e27ebdd7800a2fba3bae82669237931fc1ce9185",
+      "bytes": 2030
+    },
+    {
+      "path": "src/Home.jsx",
+      "gitBlob": "552f0748af419e1ef4a8b0830e43babfa6ab503e",
+      "bytes": 3983
+    },
+    {
+      "path": "src/Icon.jsx",
+      "gitBlob": "72e615d846fa47ea4228ea93dc741bd4975502ac",
+      "bytes": 1897
+    },
+    {
+      "path": "src/MachineCardMedia.jsx",
+      "gitBlob": "9ef8f899f9a759e7c53b3503d42ed311fc173de4",
+      "bytes": 6311
+    },
+    {
+      "path": "src/MachinePicker.jsx",
+      "gitBlob": "20c02592bfc5b468d9543323748e75385f63226f",
+      "bytes": 7953
+    },
+    {
+      "path": "src/PhotoGallery.jsx",
+      "gitBlob": "132a3748444ae617a3a74137a72625075a928234",
+      "bytes": 3038
+    },
+    {
+      "path": "src/Profile.jsx",
+      "gitBlob": "653c3573a69f1e7a8f11902c2701ad22a46beafd",
+      "bytes": 1994
+    },
+    {
+      "path": "src/ProfileEdit.jsx",
+      "gitBlob": "d67493a34e382cf44b3eb5fe9e9ff72e19187636",
+      "bytes": 3787
+    },
+    {
+      "path": "src/PublicRecord.jsx",
+      "gitBlob": "d0df558eb79b3fb10e7335bfeb84a8d30d99fecc",
+      "bytes": 11011
+    },
+    {
+      "path": "src/RecordBody.jsx",
+      "gitBlob": "696dc1864d769801219dbf966c3c448af2e5d381",
+      "bytes": 4892
+    },
+    {
+      "path": "src/RecordMemo.jsx",
+      "gitBlob": "c5a3bba19f71e17704559a5c93c10e5216b55e6d",
+      "bytes": 2375
+    },
+    {
+      "path": "src/RepairPilot.jsx",
+      "gitBlob": "84b2015ff6a14f4f815b4ade16a8a57c610818d4",
+      "bytes": 6339
+    },
+    {
+      "path": "src/ReportDialog.jsx",
+      "gitBlob": "891dc2d9ef7b328b5e2b4e64e669f032d117d097",
+      "bytes": 2938
+    },
+    {
+      "path": "src/SaveSheet.jsx",
+      "gitBlob": "1b95e73631f386114bd29a389eac758f870e3722",
+      "bytes": 2843
+    },
+    {
+      "path": "src/SavedList.jsx",
+      "gitBlob": "072f9aab6361aef9c115da3bbf348cc96bfec981",
+      "bytes": 11877
+    },
+    {
+      "path": "src/SharedList.jsx",
+      "gitBlob": "e5b2faaa3ec170554dc32e45008248ba91d3630d",
+      "bytes": 2573
+    },
+    {
+      "path": "src/SiteHeader.jsx",
+      "gitBlob": "c9089c77b611baf7d35becbf25db9ff8814dc324",
+      "bytes": 1664
+    },
+    {
+      "path": "src/Talks.jsx",
+      "gitBlob": "b1b9c3b3eb2608dffdcc759175f9f6ccbc3b6538",
+      "bytes": 4184
+    },
+    {
+      "path": "src/User.jsx",
+      "gitBlob": "e9b50c278e4759bcc0118ac14b14e39c5d5cc276",
+      "bytes": 3953
+    },
+    {
+      "path": "src/assets.js",
+      "gitBlob": "837438c21bb75e9037490175556bf14e3a9e64eb",
+      "bytes": 1745
+    },
+    {
+      "path": "src/attachment-domain.js",
+      "gitBlob": "58ce47fd2dbbf151294eff6a035b7424958f3e9d",
+      "bytes": 1631
+    },
+    {
+      "path": "src/community.js",
+      "gitBlob": "28da78932a7e96306dd444b92bc2df7aaeab046a",
+      "bytes": 20081
+    },
+    {
+      "path": "src/compare-domain.js",
+      "gitBlob": "2e5bcc731ef5dc3356bab4f08a18f55302cc4bb8",
+      "bytes": 2338
+    },
+    {
+      "path": "src/design.css",
+      "gitBlob": "bc9d2581a560e8f247cbf7d2e86e09e618d938d4",
+      "bytes": 66365
+    },
+    {
+      "path": "src/domain.js",
+      "gitBlob": "823e07745d18738f2963f61f09a5b8f4496a0e74",
+      "bytes": 17712
+    },
+    {
+      "path": "src/flags.js",
+      "gitBlob": "490216c733e557f0570da1cb59998bba7bd6672c",
+      "bytes": 134
+    },
+    {
+      "path": "src/machine/catalog.js",
+      "gitBlob": "5af599cd3e259773e75b12e3dd0bcfff71bcfc3f",
+      "bytes": 47353
+    },
+    {
+      "path": "src/machine/engine/host-core.js",
+      "gitBlob": "9cbc9cb369de04f8fe34e5d5ba26dd26e4e91920",
+      "bytes": 3661
+    },
+    {
+      "path": "src/machine/engine/host.js",
+      "gitBlob": "5f881525390626336d7ee11ab50300cb6430692a",
+      "bytes": 6794
+    },
+    {
+      "path": "src/machine/engine/scene.js",
+      "gitBlob": "4a26998e75645096df9b83f6e73fbbc9c040cf46",
+      "bytes": 8771
+    },
+    {
+      "path": "src/machine-domain.js",
+      "gitBlob": "9159c6a01069d916420f575f0f4c641164635b34",
+      "bytes": 1926
+    },
+    {
+      "path": "src/main.jsx",
+      "gitBlob": "d4db5f820d3e893b34af6198389414172329981c",
+      "bytes": 37734
+    },
+    {
+      "path": "src/press-domain.js",
+      "gitBlob": "188594cdc2b77055fcf371c9bdb0d440afee7ed8",
+      "bytes": 2111
+    },
+    {
+      "path": "src/repair-pilot.mjs",
+      "gitBlob": "2321d49c7fd449d5fa097db8a52a0ba54b799bbf",
+      "bytes": 5517
+    },
+    {
+      "path": "src/search.js",
+      "gitBlob": "32c704a5813c5d0f29eba40eaa7aed32582bcdaf",
+      "bytes": 2543
+    },
+    {
+      "path": "src/styles.css",
+      "gitBlob": "e0e9efafa1a6301a9baa1e75a61f20b6e70c5fa3",
+      "bytes": 24358
+    },
+    {
+      "path": "src/supabase.js",
+      "gitBlob": "38d878365a5c509e7ada144762a9dbc2dbb1d0cf",
+      "bytes": 1399
+    },
+    {
+      "path": "src/sync.js",
+      "gitBlob": "e26cf6fff89bac769c3498cd123c4793104621da",
+      "bytes": 634
+    },
+    {
+      "path": "src/ui.jsx",
+      "gitBlob": "64fcdfb9c45d5244b5cf5debd0bb857598bf2cc1",
+      "bytes": 1710
+    },
+    {
+      "path": "src/useActivity.js",
+      "gitBlob": "5a6a16dff462bd7f141143b84e8812ac039280fe",
+      "bytes": 1765
+    },
+    {
+      "path": "src/useAssets.js",
+      "gitBlob": "2d1a55b5a05e9146eaa34867e1b9a07b7986cffa",
+      "bytes": 1002
+    },
+    {
+      "path": "src/useBookmarks.js",
+      "gitBlob": "e7717081df07af1a0bebca853f1691499cade056",
+      "bytes": 1932
+    },
+    {
+      "path": "src/useFollows.js",
+      "gitBlob": "d1bb81e5791be319168c40df2cd248b51467f2d9",
+      "bytes": 1962
+    },
+    {
+      "path": "src/useLists.js",
+      "gitBlob": "5c3275e7547a1f4fc830e6d7d40243685691cdd0",
+      "bytes": 3351
+    },
+    {
+      "path": "src/useWorkspace.js",
+      "gitBlob": "b5d2b75b7b0e3059634a5eac8c54587938b8e9bf",
+      "bytes": 9403
+    },
+    {
+      "path": "supabase/migrations/20260907034224_nitoron_publications_and_feedback.sql",
+      "gitBlob": "1db00705f0d0c916fb843800e3740d8a436da576",
+      "bytes": 8372
+    },
+    {
+      "path": "supabase/migrations/20260908110127_nitoron_files_saved_and_dialogue.sql",
+      "gitBlob": "b15e5e2cbc976e87616c2143e3c247df826d7426",
+      "bytes": 11477
+    },
+    {
+      "path": "supabase/migrations/20260908114500_nitoron_free_input_publication.sql",
+      "gitBlob": "725cbc05573253de875b179d68186a7db9323162",
+      "bytes": 808
+    },
+    {
+      "path": "supabase/migrations/20260908150000_nitoron_activity_seen.sql",
+      "gitBlob": "cd7dea3bdc064183e69f2061cb0606e411d7d97f",
+      "bytes": 1524
+    },
+    {
+      "path": "supabase/migrations/20260908153000_nitoron_profiles.sql",
+      "gitBlob": "f4a987415dc9e14c0e50b4198ff31bc4af2fb83d",
+      "bytes": 1135
+    },
+    {
+      "path": "supabase/migrations/20260908153322_nitoron_follows_and_card_memos.sql",
+      "gitBlob": "94ff75e0f1b472556f20c79eff03ac81b4ee1db0",
+      "bytes": 3439
+    },
+    {
+      "path": "supabase/migrations/20260910120000_nitoron_saved_lists.sql",
+      "gitBlob": "b931c28e0c7753a7f55e1a31568151cc6256b108",
+      "bytes": 7875
+    },
+    {
+      "path": "supabase/migrations/20260910150000_nitoron_feedback_related.sql",
+      "gitBlob": "8b48000de0a046246f79baa2b7b64f1128a0666c",
+      "bytes": 1447
+    },
+    {
+      "path": "tests/attachments-search.test.js",
+      "gitBlob": "d077d6cbc93e4e46a850e36c25af4d9500c7539f",
+      "bytes": 2335
+    },
+    {
+      "path": "tests/compare-domain.test.js",
+      "gitBlob": "c4fc9cf25bfdad5f8a53dfe05f5109be3feefec6",
+      "bytes": 1764
+    },
+    {
+      "path": "tests/database-feedback-related.test.js",
+      "gitBlob": "cb3180996e78eed3755c0e7a1a8ba1cb79df3c98",
+      "bytes": 5930
+    },
+    {
+      "path": "tests/database-follows-memos.test.js",
+      "gitBlob": "8fd1be504529f93b55fc051ce37a746cc04258b6",
+      "bytes": 5205
+    },
+    {
+      "path": "tests/database-free-input.test.js",
+      "gitBlob": "9fa0d60238aa001ddeb3c00c72e3e3cf18eb01dd",
+      "bytes": 3065
+    },
+    {
+      "path": "tests/database-lists.test.js",
+      "gitBlob": "eabf845166584068b75da419435df369ab4a20e7",
+      "bytes": 12336
+    },
+    {
+      "path": "tests/database-machine.test.js",
+      "gitBlob": "6acae491fda6ec7a83616e74f1644bb3d5d3a218",
+      "bytes": 7196
+    },
+    {
+      "path": "tests/database-stage2.test.js",
+      "gitBlob": "14d1ad6a52f579cde3c8170bf66c4bdf62563ef6",
+      "bytes": 9650
+    },
+    {
+      "path": "tests/database.test.js",
+      "gitBlob": "a4adf39d45247114c654edd78a1b7d5e5167e133",
+      "bytes": 6920
+    },
+    {
+      "path": "tests/domain.test.js",
+      "gitBlob": "f5a056b9f08c314299478a7057e07a79581576c9",
+      "bytes": 17539
+    },
+    {
+      "path": "tests/machine-browser.html",
+      "gitBlob": "5f7db2d038916c6472065456e4650b56137ae066",
+      "bytes": 2703
+    },
+    {
+      "path": "tests/machine-domain.test.js",
+      "gitBlob": "53542a1c0b8075295e5356c43845ff5466958bac",
+      "bytes": 5441
+    },
+    {
+      "path": "tests/machine-host.test.mjs",
+      "gitBlob": "8fbc753df05d1c146413c7d4caef25689022de4f",
+      "bytes": 5886
+    },
+    {
+      "path": "tests/machine-scene.test.mjs",
+      "gitBlob": "1c2a8e05266de04d435544ab79a90575224e9e07",
+      "bytes": 8136
+    },
+    {
+      "path": "tests/press-domain.test.js",
+      "gitBlob": "c5ea26ee61fddc19e9dbb5220f0ee56f990e0806",
+      "bytes": 2232
+    },
+    {
+      "path": "tests/search-url.test.js",
+      "gitBlob": "f6b901b45ff1d814fc75e8ad8f43d3f3eb7e7a64",
+      "bytes": 1582
+    },
+    {
+      "path": "tests/sync.test.js",
+      "gitBlob": "11b096ba1c998df907b45cdeaab9b4f7235c920a",
+      "bytes": 1541
+    },
+    {
+      "path": "vendor/parts-lab/dist/app.js",
+      "gitBlob": "6d056c18a947b1c98897c44f8d61a2814520522b",
+      "bytes": 33088
+    },
+    {
+      "path": "vendor/parts-lab/dist/assembly-tree.js",
+      "gitBlob": "e58a794f25835654eb273e735cb65cdda008ccc0",
+      "bytes": 2692
+    },
+    {
+      "path": "vendor/parts-lab/dist/camera-rig.js",
+      "gitBlob": "b0b593642d3c91e322cf5a541ef8077bdc1d1cbf",
+      "bytes": 700
+    },
+    {
+      "path": "vendor/parts-lab/dist/index.html",
+      "gitBlob": "e616e3613730077840e88bbea4a463cdd31b1e22",
+      "bytes": 7289
+    },
+    {
+      "path": "vendor/parts-lab/dist/model.js",
+      "gitBlob": "69a52528982cfc8e5677cd164929aed5bf6c22d4",
+      "bytes": 16481
+    },
+    {
+      "path": "vendor/parts-lab/dist/parts.js",
+      "gitBlob": "b621990e9ee9b736918a1a70a7dd1ea1f4b3f417",
+      "bytes": 9684
+    },
+    {
+      "path": "vendor/parts-lab/dist/skp-faults.js",
+      "gitBlob": "d2132f6b40835f7b04a424464ea8f4095a5a965a",
+      "bytes": 2043
+    },
+    {
+      "path": "vendor/parts-lab/dist/skp-geometry.js",
+      "gitBlob": "a5b7d8020977b3db5f0418c37edc14b093a4e47f",
+      "bytes": 8381
+    },
+    {
+      "path": "vendor/parts-lab/dist/skp-model.js",
+      "gitBlob": "7527050a78b2c99155769a6786919c377f0f1cb8",
+      "bytes": 18055
+    },
+    {
+      "path": "vendor/parts-lab/dist/skp-parts.js",
+      "gitBlob": "b15bd47124684ef34ff4e8f5a671bf24490b9df8",
+      "bytes": 8827
+    },
+    {
+      "path": "vendor/parts-lab/dist/style.css",
+      "gitBlob": "f629dd0217d199c96156e0b9acf727d757a65a6f",
+      "bytes": 19665
+    },
+    {
+      "path": "vendor/parts-lab/dist/vendor/GLTFExporter.js",
+      "gitBlob": "f54b26a5ee136e5066c9c92774e61eead4a159fc",
+      "bytes": 86404
+    },
+    {
+      "path": "vendor/parts-lab/dist/vendor/OrbitControls.js",
+      "gitBlob": "43aaecf330afbdf460d834e0a7ca948432b1500f",
+      "bytes": 38715
+    },
+    {
+      "path": "vendor/parts-lab/dist/vendor/RoundedBoxGeometry.js",
+      "gitBlob": "4b94cd0e2034a1e1bb79b8ab97bdbe412a890cfd",
+      "bytes": 6488
+    },
+    {
+      "path": "vendor/parts-lab/dist/vendor/THREE-LICENSE.txt",
+      "gitBlob": "cf781430404b0ae0ba7d8dea3457a3515dd7c9b9",
+      "bytes": 1081
+    },
+    {
+      "path": "vendor/parts-lab/dist/vendor/three.core.js",
+      "gitBlob": "7dcd0fbcbc04b8d9a20ecb96c1ce344cb55150d5",
+      "bytes": 1403455
+    },
+    {
+      "path": "vendor/parts-lab/dist/vendor/three.module.js",
+      "gitBlob": "477ca4dafa7af919a2b9818e01b5ae25198d4aa4",
+      "bytes": 603113
+    }
+  ],
+  "changedPaths": [
+    "src/Catalog.jsx",
+    "src/Editor.jsx",
+    "src/MachineCardMedia.jsx",
+    "src/PublicRecord.jsx",
+    "src/RepairMachineView.jsx",
+    "src/RepairManagement.jsx",
+    "src/RepairPilot.jsx",
+    "src/RepairRecordInfo.jsx",
+    "src/RepairWorkspace.jsx",
+    "src/SiteHeader.jsx",
+    "src/design.css",
+    "src/machine/engine/host.js",
+    "src/machine/engine/scene.js",
+    "src/main.jsx",
+    "src/repair-animation.mjs",
+    "src/repair-guide.css",
+    "src/repair-result-draft.mjs",
+    "src/repair-transfer-session.mjs",
+    "src/repair-workspace.css",
+    "src/repair-workspace.mjs",
+    "tests/repair-animation.test.mjs",
+    "tests/repair-result-draft.test.mjs",
+    "tests/repair-transfer-session.test.js",
+    "tests/repair-workspace.test.js"
+  ],
+  "addedPaths": [
+    "src/RepairMachineView.jsx",
+    "src/RepairManagement.jsx",
+    "src/RepairRecordInfo.jsx",
+    "src/RepairWorkspace.jsx",
+    "src/repair-animation.mjs",
+    "src/repair-guide.css",
+    "src/repair-result-draft.mjs",
+    "src/repair-transfer-session.mjs",
+    "src/repair-workspace.css",
+    "src/repair-workspace.mjs",
+    "tests/repair-animation.test.mjs",
+    "tests/repair-result-draft.test.mjs",
+    "tests/repair-transfer-session.test.js",
+    "tests/repair-workspace.test.js"
+  ]
+}

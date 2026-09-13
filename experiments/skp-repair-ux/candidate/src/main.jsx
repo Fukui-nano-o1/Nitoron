@@ -236,7 +236,7 @@ function App() {
   }, [route.view, route.section, publicRecord])
   const editorRecord = records.find(r => r.id === route.id) || (draft && draft.id === route.id ? draft : undefined)
   const repairView = ['repairs', 'repair'].includes(route.view) || route.view === 'record' && isRepairRecord(editorRecord) || route.view === 'public' && isRepairRecord(publicRecord)
-  const repairSave = { status, error: sync.cacheFailed ? '端末に保存できません。' : '', cloudError: error, retry, sync, session }
+  const repairSave = { status, error: sync.cacheFailed ? '端末に保存できません。' : error, retry, sync, session }
   const openRepair = record => { if (!put(record, session?.user.id || null)) return false; location.hash = `/repair/${record.id}`; return true }
   // 一度も入力しなかった下書きは、記録ページを離れた時点で破棄する。
   useEffect(() => { setDraft(d => d && (route.view !== 'record' || route.id !== d.id) ? null : d) }, [route.view, route.id])

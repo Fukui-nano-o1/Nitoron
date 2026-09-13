@@ -1,0 +1,22 @@
+{
+  "baselineCommit": "cef74ab6c36d0b19f381b7973d0dcf6fb4a8f3e7",
+  "baselineFiles": 99,
+  "changedFiles": 24,
+  "addedFiles": 14,
+  "modifiedFiles": 10,
+  "patchChecks": [
+    {
+      "command": "git apply --check candidate.patch",
+      "exitCode": 0
+    },
+    {
+      "command": "git apply candidate.patch",
+      "exitCode": 0
+    }
+  ],
+  "appliedCandidateMatches": true,
+  "unrelatedBaselineFilesUnchanged": true,
+  "remoteWrites": false,
+  "browserExecuted": false,
+  "patchCommandNote": "Recorded with package-relative patch paths. Execution used the same candidate.patch absolute path in an isolated baseline copy; no duplicate argument was passed."
+}

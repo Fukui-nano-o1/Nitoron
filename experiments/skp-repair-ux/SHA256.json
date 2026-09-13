@@ -1,0 +1,215 @@
+{
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "BROWSER-CHECK.md",
+      "bytes": 7097,
+      "sha256": "a8bc668ca9682fbd8a17fdabf7e7ad014732de6dfdf67e115953ebae288ff767"
+    },
+    {
+      "path": "CLAUDE-HANDOFF.md",
+      "bytes": 3058,
+      "sha256": "da1f4cf3d33673611888c6b48a97344955cfc4055b52118ed487afc6363417f4"
+    },
+    {
+      "path": "Nitoron-Repair-UX-Preview.html",
+      "bytes": 1194831,
+      "sha256": "b5b07dfe46697601b0e8c350b4194a5a6fdca80fdfa39ff6cef2865c8f45d729"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2011,
+      "sha256": "c96f6e91e01f983928340ad79a585425bd2d20971abc9a207aff057658d29b3c"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 4586,
+      "sha256": "49cff30cdcebc7660540e564dd081d2f10ca4be709f7219d28a79f6014d6cff9"
+    },
+    {
+      "path": "baseline-identities.json",
+      "bytes": 15252,
+      "sha256": "c9c28623478e7bdee93d6d849626292168f0efb8843c416aa6227754bb6aaa06"
+    },
+    {
+      "path": "candidate/src/Catalog.jsx",
+      "bytes": 9869,
+      "sha256": "2241346761757ce3826aeaa93832982afef36016fbbd131a07f33dfb88c6876b"
+    },
+    {
+      "path": "candidate/src/Editor.jsx",
+      "bytes": 24470,
+      "sha256": "184b1bbe77e9e41230f454d7fd6000163ac3002a8b9fa207bb14485df7b809e6"
+    },
+    {
+      "path": "candidate/src/MachineCardMedia.jsx",
+      "bytes": 6345,
+      "sha256": "05c0a046e1f38f6e29fcb5a3bfd88908f7dec34df4b86c311d28d5f6093ee708"
+    },
+    {
+      "path": "candidate/src/PublicRecord.jsx",
+      "bytes": 11855,
+      "sha256": "26cffd6cf010b73c5f32c6e795ef687c6103d4522119d2d0dcf1765240a6139b"
+    },
+    {
+      "path": "candidate/src/RepairMachineView.jsx",
+      "bytes": 6613,
+      "sha256": "8efe7b91ffac7aa9c3c4cb2a58a6500f1167768a778d1af8a41395d50193fff0"
+    },
+    {
+      "path": "candidate/src/RepairManagement.jsx",
+      "bytes": 3717,
+      "sha256": "89aad2be0e679a22507d2997e34ef49033846ea3af1e4ba60caba33bb9b3a3c6"
+    },
+    {
+      "path": "candidate/src/RepairPilot.jsx",
+      "bytes": 14075,
+      "sha256": "06a7f8be69d31f98ee004bcf4def470d79d8ab5ff30053fb353997e71493d4b9"
+    },
+    {
+      "path": "candidate/src/RepairRecordInfo.jsx",
+      "bytes": 6085,
+      "sha256": "74f95917628a5df494c814518b3253c36016df2945484c60a9d8102897710e83"
+    },
+    {
+      "path": "candidate/src/RepairWorkspace.jsx",
+      "bytes": 15096,
+      "sha256": "229f543f80ce90847dc074de45eda7ceef334104e654468c91383c4111d01205"
+    },
+    {
+      "path": "candidate/src/SiteHeader.jsx",
+      "bytes": 1752,
+      "sha256": "48a10a988193be582d8cb13ad4cb471b4b255ebe8e235055377ad0f57edd3b86"
+    },
+    {
+      "path": "candidate/src/design.css",
+      "bytes": 66950,
+      "sha256": "e851564afc040c2313987ebbd705f616c14d67425e5994b5ab8ab47eaf1bf252"
+    },
+    {
+      "path": "candidate/src/machine/engine/host.js",
+      "bytes": 6904,
+      "sha256": "c3675ce9ccf9bfc10c41507c714942b2d569fba3d4c052fe3c7b0361a63bbd6e"
+    },
+    {
+      "path": "candidate/src/machine/engine/scene.js",
+      "bytes": 11500,
+      "sha256": "86d8ee73b83907541ee9ad2c592fce1ea1117c294f0e13c0d7aebe0ec264db8f"
+    },
+    {
+      "path": "candidate/src/main.jsx",
+      "bytes": 40388,
+      "sha256": "99fc8fa0be5ccc7de4f54e32ddee1aa45291bf0c423e86763e71ba58adf18bdc"
+    },
+    {
+      "path": "candidate/src/repair-animation.mjs",
+      "bytes": 3216,
+      "sha256": "ea55e486726bf7bd9d4d9d99c49081d2455031c59cc7faef49fa1bb50456740f"
+    },
+    {
+      "path": "candidate/src/repair-guide.css",
+      "bytes": 5507,
+      "sha256": "99f3a94ff2bc2410d7e5bb0d4e3f6c8ad9c6b28c80b8b8d5e2ba710ca8f9ba8d"
+    },
+    {
+      "path": "candidate/src/repair-result-draft.mjs",
+      "bytes": 1152,
+      "sha256": "d465a6c24bea9755413c71daf5b2d8cc0e04570c965f991eaf9302d49b0ee250"
+    },
+    {
+      "path": "candidate/src/repair-transfer-session.mjs",
+      "bytes": 1672,
+      "sha256": "9117ad0b769c9a597c05e6b0e0faf8640c0ea7ce1629df161b22b31c7d523509"
+    },
+    {
+      "path": "candidate/src/repair-workspace.css",
+      "bytes": 6993,
+      "sha256": "010e1e70eb8cdb0c60864c70abc8517d13ca4851bdb83b3a50edb92ab405ae5b"
+    },
+    {
+      "path": "candidate/src/repair-workspace.mjs",
+      "bytes": 5149,
+      "sha256": "05c0cde1d7fa22e66a4792a7b577a584b7dc1320031d18ac918cbb7981add563"
+    },
+    {
+      "path": "candidate/tests/repair-animation.test.mjs",
+      "bytes": 6970,
+      "sha256": "c85d0ad6b533ca9ebe8a153ff637dc547ca2f842fe7781ea1ca593651fad4cf8"
+    },
+    {
+      "path": "candidate/tests/repair-result-draft.test.mjs",
+      "bytes": 1179,
+      "sha256": "29f1aadcd489a19b2529a827bae798a7945a861d856748f5665ec3e743eee3fd"
+    },
+    {
+      "path": "candidate/tests/repair-transfer-session.test.js",
+      "bytes": 4434,
+      "sha256": "0fee68ce9e986bbf5ad5871c1b8f13591f8e88112360660ca80dd4f56c79b704"
+    },
+    {
+      "path": "candidate/tests/repair-workspace.test.js",
+      "bytes": 5682,
+      "sha256": "f2be4173ef7b222907ddd7326324d567342b713d26292d1aaf3d7bb4e53aeffa"
+    },
+    {
+      "path": "candidate.patch",
+      "bytes": 135049,
+      "sha256": "b835d1d8c72d2d8cab0d15b91dc18ec57e6c8903b04d9a0c6c732624d31174be"
+    },
+    {
+      "path": "evidence/build.log",
+      "bytes": 2318,
+      "sha256": "96b67e846890878b71bd19042a5db3d3ff77a8ee33a8d6a1892b707ad50aa00a"
+    },
+    {
+      "path": "evidence/package-check.json",
+      "bytes": 662,
+      "sha256": "45758d653e5c77d65c1e9467ec43b711caebf36fbc5ad96ec9bc12766d3f0600"
+    },
+    {
+      "path": "evidence/related-tests.log",
+      "bytes": 7090,
+      "sha256": "d93986e423aa9f920117b8d2f66bf953e908b124f6021ce93ba9ce82a5eb2480"
+    },
+    {
+      "path": "evidence/ssr-evidence.json",
+      "bytes": 492,
+      "sha256": "fb399795e2bc3aac092c2e08488aa7727b87d246418c7c7168e1270402ac0b3d"
+    },
+    {
+      "path": "evidence/ssr.log",
+      "bytes": 52,
+      "sha256": "14cd7ed2dff4754b930da3762dba971247113808358058891668c2e53f606615"
+    },
+    {
+      "path": "evidence/status.json",
+      "bytes": 369,
+      "sha256": "4c5f2e4809ca333acebd4b3ecb075ff5facc07483168ffe01f618b79c7ac4127"
+    },
+    {
+      "path": "preview-source/README.md",
+      "bytes": 887,
+      "sha256": "30a7d95bf6c0b672dc3219fb18eb488c957944250bedb8fe64da62359676dff0"
+    },
+    {
+      "path": "preview-source/build-preview.mjs",
+      "bytes": 3087,
+      "sha256": "61dec1f3444c7e62f77325d17bea7d4d85676de942af2935d3cc445d1a56a6c0"
+    },
+    {
+      "path": "preview-source/preview.jsx",
+      "bytes": 2274,
+      "sha256": "67b94ca63d9bfa3c75be8dab0dd5bd5cf3f77d9432589bf0445d85aa2d1a02ea"
+    },
+    {
+      "path": "preview-source/ssr-check.jsx",
+      "bytes": 3407,
+      "sha256": "33bff31699bcf69c847726983499d6a044208cd66238578cf3e59e90295a6e5f"
+    },
+    {
+      "path": "verify-package.mjs",
+      "bytes": 3131,
+      "sha256": "eb9e0b9ad463ac5d4a62c10dd4281ba823d8fbd62af66cf83fc80bf4c81e5877"
+    }
+  ]
+}

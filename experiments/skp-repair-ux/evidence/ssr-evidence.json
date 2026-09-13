@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-13",
+  "checks": 6,
+  "passed": 6,
+  "scope": "server-rendered markup only",
+  "browser": false,
+  "assertions": [
+    "repair detail excludes presentation fields",
+    "saved part and model-unavailable state render",
+    "guide initial text is collapsed behind controls",
+    "unrelated symptom does not open power-loss guide",
+    "historical observations remain readable without private origin disclosure",
+    "existing publication management remains reachable"
+  ]
+}

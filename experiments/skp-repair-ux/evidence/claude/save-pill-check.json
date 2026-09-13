@@ -1,0 +1,15 @@
+{
+  "cloudFailureOnly": {
+    "pill": "この端末に保存",
+    "banner": "この端末に保存 保存状態",
+    "dialog": "保存状態 閉じる この端末に保存 再試行記録を書き出す"
+  },
+  "deviceSaveFailed": {
+    "pill": "未保存"
+  },
+  "expected": {
+    "cloudFailureOnly": "この端末に保存",
+    "deviceSaveFailed": "未保存"
+  },
+  "pass": true
+}

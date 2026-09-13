@@ -1,0 +1,641 @@
+{
+  "runs": {
+    "1280": {
+      "checks": [
+        {
+          "name": "1280 一覧：横はみ出しなし",
+          "ok": true
+        },
+        {
+          "name": "1280 詳細：横はみ出しなし",
+          "ok": true
+        },
+        {
+          "name": "1280 案内：横はみ出しなし",
+          "ok": true
+        },
+        {
+          "name": "1280 案内ダイアログの幅が極端に細くない",
+          "ok": true,
+          "detail": {
+            "x": 330,
+            "y": 229.90625,
+            "width": 620,
+            "height": 540.1875
+          }
+        },
+        {
+          "name": "1280 結果入力：横はみ出しなし",
+          "ok": true
+        },
+        {
+          "name": "1280 記録詳細：横はみ出しなし",
+          "ok": true
+        }
+      ],
+      "errors": [],
+      "external": [
+        "ycvbjzlqrxnwalhhgzat.supabase.co"
+      ]
+    },
+    "390-touch": {
+      "checks": [
+        {
+          "name": "U1 修理入口（#/repairs）が開く",
+          "ok": true
+        },
+        {
+          "name": "U2 初回案内が表示（設定キー未設定）",
+          "ok": true
+        },
+        {
+          "name": "U2 3枚目で「はじめる」",
+          "ok": true
+        },
+        {
+          "name": "U2 再読込で初回案内を再表示しない",
+          "ok": true
+        },
+        {
+          "name": "U2 「使い方」で案内を再表示できる",
+          "ok": true
+        },
+        {
+          "name": "U1 「修理をはじめる」で修理詳細へ（#/repair/id）",
+          "ok": true,
+          "detail": "http://127.0.0.1:35719/#/repair/e8f239a9-6831-4520-b322-8b82dc4c8fdf"
+        },
+        {
+          "name": "U1 修理詳細に発表項目（作物・地域・発表者）がない",
+          "ok": true
+        },
+        {
+          "name": "U1 記録は machine_repair で機械全体を保持",
+          "ok": true,
+          "detail": {
+            "machineId": "skp-101w",
+            "modelVersion": "skp-101w@daf7afab",
+            "partId": "machine"
+          }
+        },
+        {
+          "name": "U1 通常発表の編集が開き、修理切替を要求しない",
+          "ok": true
+        },
+        {
+          "name": "U1 修理一覧に修理記録が1件（発表は混ざらない）",
+          "ok": true
+        },
+        {
+          "name": "U1 往復で記録が書き換わらない",
+          "ok": true
+        },
+        {
+          "name": "U3 案内が開く（1/3）",
+          "ok": true
+        },
+        {
+          "name": "U3 症状名が記録に保存される",
+          "ok": true,
+          "detail": "エンジンの出力が低下する"
+        },
+        {
+          "name": "U3 主画面は短い（説明本文・原典リンクは収納）",
+          "ok": true,
+          "detail": 120
+        },
+        {
+          "name": "U3 3手順の原典（印刷53/58/74＝PDF71/76/92）へ到達",
+          "ok": true,
+          "detail": [
+            "説明書を開く 印刷 p.53 ／ PDF 71 ページ",
+            "説明書を開く 印刷 p.58 ／ PDF 76 ページ",
+            "説明書を開く 印刷 p.74 ／ PDF 92 ページ"
+          ]
+        },
+        {
+          "name": "U3 「根拠」に点検候補・型式限定の注記",
+          "ok": true
+        },
+        {
+          "name": "U3 収納を閉じても案内の位置（3/3）を保持",
+          "ok": true
+        },
+        {
+          "name": "U5 案内内の3D（エアクリーナ）が開く",
+          "ok": true
+        },
+        {
+          "name": "U5 案内内3Dにcanvasがある",
+          "ok": true
+        },
+        {
+          "name": "U5 3Dから戻っても案内位置を保持",
+          "ok": true
+        },
+        {
+          "name": "U3 記録1/3 目視の質問",
+          "ok": true
+        },
+        {
+          "name": "U3 目視未選択では次へ無効",
+          "ok": true
+        },
+        {
+          "name": "U3 安全条件を確認済みなので「実施した」が押せる",
+          "ok": true
+        },
+        {
+          "name": "U3 未実施のとき結果は未確認/相談のみ",
+          "ok": true,
+          "detail": [
+            "再確認していない・判断できない",
+            "作業を進めず相談する"
+          ]
+        },
+        {
+          "name": "U3 確認画面で対象は機械全体のまま",
+          "ok": true
+        },
+        {
+          "name": "U3 確認前は追記ボタン無効",
+          "ok": true
+        },
+        {
+          "name": "U3 未確認・相談を記録（追記1回・出典3件・対象保持）",
+          "ok": true,
+          "detail": {
+            "action": "SKP-101W：エンジンの出力が低下する（2026-09-13）\n対処の実施状況：実施していない",
+            "sources": 3
+          }
+        },
+        {
+          "name": "Q2 安全条件未確認では「実施した」を選べない",
+          "ok": true
+        },
+        {
+          "name": "U4 対象部品をエアクリーナに変更して保存",
+          "ok": true
+        },
+        {
+          "name": "U4 再読込後に機種・版・部品名を復元",
+          "ok": true,
+          "detail": "エアクリーナ"
+        },
+        {
+          "name": "U4 全体→中間→部品の描画が実際に変化（3時点のハッシュが異なる）",
+          "ok": true,
+          "detail": [
+            "150ac15a58",
+            "b9caeb45ab",
+            "4cd2b20f02",
+            "3b6529ea53"
+          ]
+        },
+        {
+          "name": "U4 再生中は「もう一度」、終了後は「部品へ」",
+          "ok": true,
+          "detail": {
+            "btnDuring": "もう一度",
+            "btnAfter": "部品へ"
+          }
+        },
+        {
+          "name": "U4 途中操作で再生が止まる",
+          "ok": true
+        },
+        {
+          "name": "U4 「部品へ」で再度再生できる",
+          "ok": true
+        },
+        {
+          "name": "U4 再生・操作で保存対象が変わらない",
+          "ok": true
+        },
+        {
+          "name": "U5 案内を閉じた後、詳細のcanvasは1つで対象はエアクリーナ",
+          "ok": true,
+          "detail": {
+            "canvases": 1
+          }
+        },
+        {
+          "name": "U5 部品選択を閉じても3Dが戻り対象不変",
+          "ok": true
+        },
+        {
+          "name": "U6 保存失敗を成功表示しない（ダイアログ残存・警告）",
+          "ok": true
+        },
+        {
+          "name": "U6 失敗後も入力を保持",
+          "ok": true
+        },
+        {
+          "name": "U6 復旧後は最終案A′だけが1回追記され、既存文章・出典を保持",
+          "ok": true,
+          "detail": {
+            "addedA": 0,
+            "addedA2": 1
+          }
+        },
+        {
+          "name": "U6 再読込後も1回だけ",
+          "ok": true
+        },
+        {
+          "name": "U6 同じ案の再送は重複しない",
+          "ok": true,
+          "detail": 1
+        },
+        {
+          "name": "U7 前提：対象を機械全体へ戻した",
+          "ok": true
+        },
+        {
+          "name": "U7 案内追記の保存失敗を表示し、案内を保持",
+          "ok": true
+        },
+        {
+          "name": "U7 復旧後は最終案が1回、対象はエアクリーナ、出典3件のまま",
+          "ok": true,
+          "detail": {
+            "n6": 1,
+            "partId": "aircleaner"
+          }
+        },
+        {
+          "name": "U8 記録の詳細に機械・対象部品・出典・実施・結果",
+          "ok": true
+        },
+        {
+          "name": "U8 公開管理の入口（非公開表示・公開内容確認・削除）に到達",
+          "ok": true,
+          "detail": "公開・記録管理 閉じる 非公開 公開する内容を確認 記録を削除"
+        },
+        {
+          "name": "U9 一覧で未知機種・版・部品を確認不能として表示（SKP代用なし）",
+          "ok": true,
+          "detail": "未知mach 対象部品を確認できません 2026-09-13 › 未知ver 対象部品を確認できません 2026-09-13 › 未知part 対象部品を確認できません 2026-09-13 › クボタ SKP-101W エンジンの出力が低下する 2026-09-13 ›"
+        },
+        {
+          "name": "U9 mach：3Dを代用せず未対応を明示・参照不変",
+          "ok": true,
+          "detail": {
+            "text": "この機種の3Dは未対応です。",
+            "ref": {
+              "machineId": "yanmar-x1",
+              "partId": "machine",
+              "modelVersion": "v1"
+            },
+            "label": "対象部品を確認できません",
+            "pageErrors": []
+          }
+        },
+        {
+          "name": "U9 ver：3Dを代用せず未対応を明示・参照不変",
+          "ok": true,
+          "detail": {
+            "text": "保存されたモデルを表示できません。",
+            "ref": {
+              "machineId": "skp-101w",
+              "partId": "machine",
+              "modelVersion": "skp-101w@00000000"
+            },
+            "label": "対象部品を確認できません",
+            "pageErrors": []
+          }
+        },
+        {
+          "name": "U9 part：3Dを代用せず未対応を明示・参照不変",
+          "ok": true,
+          "detail": {
+            "text": "保存されたモデルを表示できません。",
+            "ref": {
+              "machineId": "skp-101w",
+              "partId": "no-such-part",
+              "modelVersion": "skp-101w@daf7afab"
+            },
+            "label": "対象部品を確認できません\n部品を選ぶ",
+            "pageErrors": []
+          }
+        }
+      ],
+      "errors": [],
+      "external": [
+        "ycvbjzlqrxnwalhhgzat.supabase.co"
+      ]
+    },
+    "reduced-motion": {
+      "checks": [
+        {
+          "name": "reduced-motion 途中演出なしで直ちに部品表示（再生状態にならず、描画が安定）",
+          "ok": true,
+          "detail": {
+            "btn": "部品へ",
+            "early": "0b70b3c7a0",
+            "late": "0b70b3c7a0"
+          }
+        }
+      ],
+      "errors": [],
+      "external": [
+        "ycvbjzlqrxnwalhhgzat.supabase.co"
+      ]
+    },
+    "390-noWebGL": {
+      "checks": [
+        {
+          "name": "U1 修理入口（#/repairs）が開く",
+          "ok": true
+        },
+        {
+          "name": "U2 初回案内が表示（設定キー未設定）",
+          "ok": true
+        },
+        {
+          "name": "U2 3枚目で「はじめる」",
+          "ok": true
+        },
+        {
+          "name": "U2 再読込で初回案内を再表示しない",
+          "ok": true
+        },
+        {
+          "name": "U2 「使い方」で案内を再表示できる",
+          "ok": true
+        },
+        {
+          "name": "U1 「修理をはじめる」で修理詳細へ（#/repair/id）",
+          "ok": true,
+          "detail": "http://127.0.0.1:35719/#/repair/8f74b77e-c51f-4fbd-92eb-7fb4ade14676"
+        },
+        {
+          "name": "U1 修理詳細に発表項目（作物・地域・発表者）がない",
+          "ok": true
+        },
+        {
+          "name": "U1 記録は machine_repair で機械全体を保持",
+          "ok": true,
+          "detail": {
+            "machineId": "skp-101w",
+            "modelVersion": "skp-101w@daf7afab",
+            "partId": "machine"
+          }
+        },
+        {
+          "name": "U1 通常発表の編集が開き、修理切替を要求しない",
+          "ok": true
+        },
+        {
+          "name": "U1 修理一覧に修理記録が1件（発表は混ざらない）",
+          "ok": true
+        },
+        {
+          "name": "U1 往復で記録が書き換わらない",
+          "ok": true
+        },
+        {
+          "name": "U3 案内が開く（1/3）",
+          "ok": true
+        },
+        {
+          "name": "U3 症状名が記録に保存される",
+          "ok": true,
+          "detail": "エンジンの出力が低下する"
+        },
+        {
+          "name": "U3 主画面は短い（説明本文・原典リンクは収納）",
+          "ok": true,
+          "detail": 120
+        },
+        {
+          "name": "U3 3手順の原典（印刷53/58/74＝PDF71/76/92）へ到達",
+          "ok": true,
+          "detail": [
+            "説明書を開く 印刷 p.53 ／ PDF 71 ページ",
+            "説明書を開く 印刷 p.58 ／ PDF 76 ページ",
+            "説明書を開く 印刷 p.74 ／ PDF 92 ページ"
+          ]
+        },
+        {
+          "name": "U3 「根拠」に点検候補・型式限定の注記",
+          "ok": true
+        },
+        {
+          "name": "U3 収納を閉じても案内の位置（3/3）を保持",
+          "ok": true
+        },
+        {
+          "name": "U5 案内内の3D（エアクリーナ）が開く",
+          "ok": true
+        },
+        {
+          "name": "U5 3Dから戻っても案内位置を保持",
+          "ok": true
+        },
+        {
+          "name": "U3 記録1/3 目視の質問",
+          "ok": true
+        },
+        {
+          "name": "U3 目視未選択では次へ無効",
+          "ok": true
+        },
+        {
+          "name": "U3 安全条件を確認済みなので「実施した」が押せる",
+          "ok": true
+        },
+        {
+          "name": "U3 未実施のとき結果は未確認/相談のみ",
+          "ok": true,
+          "detail": [
+            "再確認していない・判断できない",
+            "作業を進めず相談する"
+          ]
+        },
+        {
+          "name": "U3 確認画面で対象は機械全体のまま",
+          "ok": true
+        },
+        {
+          "name": "U3 確認前は追記ボタン無効",
+          "ok": true
+        },
+        {
+          "name": "U3 未確認・相談を記録（追記1回・出典3件・対象保持）",
+          "ok": true,
+          "detail": {
+            "action": "SKP-101W：エンジンの出力が低下する（2026-09-13）\n対処の実施状況：実施していない",
+            "sources": 3
+          }
+        },
+        {
+          "name": "Q2 安全条件未確認では「実施した」を選べない",
+          "ok": true
+        },
+        {
+          "name": "U4 対象部品をエアクリーナに変更して保存",
+          "ok": true
+        },
+        {
+          "name": "U4 再読込後に機種・版・部品名を復元",
+          "ok": true,
+          "detail": "エアクリーナ"
+        },
+        {
+          "name": "U4 WebGL無効：3D失敗の表示と再表示ボタン",
+          "ok": true
+        },
+        {
+          "name": "U5 案内を閉じた後、詳細のcanvasは1つで対象はエアクリーナ",
+          "ok": true,
+          "detail": {
+            "canvases": 0
+          }
+        },
+        {
+          "name": "U5 部品選択を閉じても3Dが戻り対象不変",
+          "ok": true
+        },
+        {
+          "name": "U6 保存失敗を成功表示しない（ダイアログ残存・警告）",
+          "ok": true
+        },
+        {
+          "name": "U6 失敗後も入力を保持",
+          "ok": true
+        },
+        {
+          "name": "U6 復旧後は最終案A′だけが1回追記され、既存文章・出典を保持",
+          "ok": true,
+          "detail": {
+            "addedA": 0,
+            "addedA2": 1
+          }
+        },
+        {
+          "name": "U6 再読込後も1回だけ",
+          "ok": true
+        },
+        {
+          "name": "U6 同じ案の再送は重複しない",
+          "ok": true,
+          "detail": 1
+        },
+        {
+          "name": "U7 前提：対象を機械全体へ戻した",
+          "ok": true
+        },
+        {
+          "name": "U7 案内追記の保存失敗を表示し、案内を保持",
+          "ok": true
+        },
+        {
+          "name": "U7 復旧後は最終案が1回、対象はエアクリーナ、出典3件のまま",
+          "ok": true,
+          "detail": {
+            "n6": 1,
+            "partId": "aircleaner"
+          }
+        },
+        {
+          "name": "U8 記録の詳細に機械・対象部品・出典・実施・結果",
+          "ok": true
+        },
+        {
+          "name": "U8 公開管理の入口（非公開表示・公開内容確認・削除）に到達",
+          "ok": true,
+          "detail": "公開・記録管理 閉じる 非公開 公開する内容を確認 記録を削除"
+        },
+        {
+          "name": "U9 一覧で未知機種・版・部品を確認不能として表示（SKP代用なし）",
+          "ok": true,
+          "detail": "未知mach 対象部品を確認できません 2026-09-13 › 未知ver 対象部品を確認できません 2026-09-13 › 未知part 対象部品を確認できません 2026-09-13 › クボタ SKP-101W エンジンの出力が低下する 2026-09-13 ›"
+        },
+        {
+          "name": "U9 mach：3Dを代用せず未対応を明示・参照不変",
+          "ok": true,
+          "detail": {
+            "text": "この機種の3Dは未対応です。",
+            "ref": {
+              "machineId": "yanmar-x1",
+              "partId": "machine",
+              "modelVersion": "v1"
+            },
+            "label": "対象部品を確認できません",
+            "pageErrors": []
+          }
+        },
+        {
+          "name": "U9 ver：3Dを代用せず未対応を明示・参照不変",
+          "ok": true,
+          "detail": {
+            "text": "保存されたモデルを表示できません。",
+            "ref": {
+              "machineId": "skp-101w",
+              "partId": "machine",
+              "modelVersion": "skp-101w@00000000"
+            },
+            "label": "対象部品を確認できません",
+            "pageErrors": []
+          }
+        },
+        {
+          "name": "U9 part：3Dを代用せず未対応を明示・参照不変",
+          "ok": true,
+          "detail": {
+            "text": "保存されたモデルを表示できません。",
+            "ref": {
+              "machineId": "skp-101w",
+              "partId": "no-such-part",
+              "modelVersion": "skp-101w@daf7afab"
+            },
+            "label": "対象部品を確認できません\n部品を選ぶ",
+            "pageErrors": []
+          }
+        }
+      ],
+      "errors": [],
+      "external": [
+        "ycvbjzlqrxnwalhhgzat.supabase.co"
+      ]
+    }
+  },
+  "summary": {
+    "1280": {
+      "passed": 6,
+      "failed": 0,
+      "errors": [],
+      "external": [
+        "ycvbjzlqrxnwalhhgzat.supabase.co"
+      ]
+    },
+    "390-touch": {
+      "passed": 51,
+      "failed": 0,
+      "errors": [],
+      "external": [
+        "ycvbjzlqrxnwalhhgzat.supabase.co"
+      ]
+    },
+    "reduced-motion": {
+      "passed": 1,
+      "failed": 0,
+      "errors": [],
+      "external": [
+        "ycvbjzlqrxnwalhhgzat.supabase.co"
+      ]
+    },
+    "390-noWebGL": {
+      "passed": 46,
+      "failed": 0,
+      "errors": [],
+      "external": [
+        "ycvbjzlqrxnwalhhgzat.supabase.co"
+      ]
+    }
+  },
+  "checkedAt": "2026-09-13T13:58:14.791Z",
+  "base": "main 370e838 + candidate.patch (Nitoron-Repair-UX-2026-09-13) + save-status fix in src/main.jsx, local vite build"
+}
