@@ -1,0 +1,12 @@
+✔ exact registered machine and explicit review gate transfer atomically (1.208183ms)
+✔ explicit observations, performance and reassessment never manufacture completion (1.160211ms)
+✔ append-only visible transfer preserves source history, target, observations and repeated submission (0.937997ms)
+✔ invalid input, overflow and source ID conflicts reject the whole proposed transfer (0.678818ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 94.499657

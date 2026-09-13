@@ -1,0 +1,31 @@
+{
+  "files": {
+    "CLAUDE-HANDOFF.md": "42d7feed3e46433e7c35f040daf97fd6cb813e21266a17683e067d5d2153611f",
+    "Nitoron-SKP-Repair-Bridge-2026-09-13.pdf": "7ed1d5a819c81bde4c3cb3666f5e45d27ec51709fc8b7daf3f3472e23bd6295f",
+    "README.md": "a87514146c0e9e5ea78887db22cf0b2aa53a6a2272e83b4525ec008853c380f9",
+    "baseline/src/Editor.jsx": "bbf859062aef250fcdf0c98cc2d88baf0ffb2abb85391bd704635480e0ebf5bb",
+    "baseline/src/machine/catalog.js": "7f50fb8d9452dfb9910f09555972ae93a91583a15ae2e0805a35e9d2a38d9acd",
+    "baseline/vendor/parts-lab/dist/skp-parts.js": "8d4c62b1995f78afc8adb8f53456c030310ac5c8589c0b0baec7dfc20fac7e82",
+    "baseline-payload/src_Editor.jsx.json": "fa5b6e3717ff48d5bf5afde9c122bf3320be21f47332f45b2b88b572fb370d66",
+    "baseline-payload/src_machine_catalog.js.json": "44f228bcb999ceb14987b1007e62f91ffecab21e70ee1c8b8702de6a7d66fcd4",
+    "baseline-payload/vendor_parts-lab_dist_skp-parts.js.json": "1f08a62c716f7313012b3d50a41b4e8a033a71edf79664a61b96394e67213d9b",
+    "candidate-identities.json": "a6abccb563b710c13b95a5eee34a979e0bc84e746c3ad5484c88570d5ccba4f6",
+    "evidence/current-base-review.json": "06099ec5e0aefea0a9ef9072bab17a881f41a24e67c3462e6742b8d53c347a1d",
+    "evidence/jsx-check.json": "35d47d2056852b0ea3a95ba099ef8538e4c9aff482c66cbb9f24ac1945ab56e3",
+    "evidence/metric-browser-received.json": "ded070d2fed8de561fbac29ab3f8a3084fc434f86e3212429ff42d75bc191112",
+    "evidence/node-tests.tap": "1e47ca97bda60e8c0fd531b7004be28efaa2b45e44eef5405628b565485a5fe4",
+    "evidence/patch-apply.json": "2814086fb958fa432a7e639b21dd4dc6826f15905c049ebb95f6af6989af822c",
+    "files/src/Editor.jsx": "e5cf223dbdf8162a0db291869d127d0f7228afd84737ef4034c28232a2659ee6",
+    "files/src/RepairPilot.jsx": "846986e269fc0bb47aa18e574d279feae0ead656f2f9100d8f40e5ad5bb267a2",
+    "files/src/machine/catalog.js": "7f50fb8d9452dfb9910f09555972ae93a91583a15ae2e0805a35e9d2a38d9acd",
+    "files/src/repair-pilot.mjs": "3a62bee4cdd94c3e3716c45342c598f922eed49d771d365a41c067b581ff1b5a",
+    "files/vendor/parts-lab/dist/skp-parts.js": "8d4c62b1995f78afc8adb8f53456c030310ac5c8589c0b0baec7dfc20fac7e82",
+    "package.json": "c6f51f9ae1d7378833e258b3ac31690b8e613be2d59a9b2dfa8048f398b278b2",
+    "repair-pilot.patch": "5089958f80ec0fb602a24646d2f310c308603e48eb225d0059617fc13a0286d4",
+    "scripts/check-base.mjs": "7ac5e949e7461f2c279b781d9825c210c05030756093744a872f9ef954b52b4a",
+    "scripts/check-jsx.mjs": "52f14550480e0e8bebee77df203f00321552c53beb9f323383df0b7cc1035fca",
+    "scripts/prepare-test-context.mjs": "179b0f6d3957f6732f9b5521bb0bc49d5ac17a8dcbc89cb4194f73b3a5c9be23",
+    "tests/repair-pilot.test.mjs": "efdabe3598ead171de844e7e560746e6800dcf5121bd20f8f5913deb15d8ce00",
+    "verify-package.mjs": "48ae978230513802c19fa7b10dfff78f0d30c3c475cb5023ef42dfc4fc951a04"
+  }
+}

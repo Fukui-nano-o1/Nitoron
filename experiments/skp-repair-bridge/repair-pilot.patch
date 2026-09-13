@@ -1,0 +1,166 @@
+diff --git a/src/Editor.jsx b/src/Editor.jsx
+--- a/src/Editor.jsx
++++ b/src/Editor.jsx
+@@ -8,6 +8,8 @@
+ import { KINDS, PHASES, VERDICTS, SECTIONS, METRICS, emptyMeta, today, uid, exportMarkdown, publicSnapshot, publicationProblems, publicationAdvice, publishedDiffers, privateOriginLeaks } from './domain.js'
+ import { MACHINE_SUBJECT, resolveMachineTarget } from './machine-domain.js'
+ import MachinePicker from './MachinePicker.jsx'
++import RepairPilot from './RepairPilot.jsx'
++import { isPilotMachine } from './repair-pilot.mjs'
+ import { Field, Dialog, ErrorNotice, download } from './ui.jsx'
+ 
+ export const STEPS = [['basics', '基本情報'], ['content', '内容・資料'], ['review', '確認・公開']]
+@@ -18,7 +20,7 @@
+ }
+ // 記録の編集。発表は「基本情報 → 内容・資料 → 確認・公開」の3段階。段階を移動しても自動保存は続く。
+ export default function Editor({ record, step, onStep, onChange, session, flush, save, published, publication, onPublish, publishing, publishResult, onUnpublish, onShare, onDelete, onAccount, discussion, name, originHref, onDeriveLearning, onDeriveNext, deriving, notify }) {
+-  const [confirmDelete, setConfirmDelete] = useState(false), [uploading, setUploading] = useState(false), [reportOpen, setReportOpen] = useState(false), [pickerOpen, setPickerOpen] = useState(false)
++  const [confirmDelete, setConfirmDelete] = useState(false), [uploading, setUploading] = useState(false), [reportOpen, setReportOpen] = useState(false), [pickerOpen, setPickerOpen] = useState(false), [repairOpen, setRepairOpen] = useState(false)
+   const m = record.meta
+   const patch = update => onChange({ ...record, ...update })
+   const meta = update => patch({ meta: { ...m, ...update } })
+@@ -107,6 +109,7 @@
+             <span role="status">対象：{target.label || '機種・部品未選択'}</span>
+             {['unknown-machine', 'unknown-version', 'unknown-part', 'invalid'].includes(target.status) && <small className="hint">保存済みの対象部品を確認できません。選び直すまで値は変更されません。</small>}
+             <button type="button" className="secondary" onClick={() => setPickerOpen(true)}>機種と部品を選ぶ</button>
++            {isPilotMachine(m) && <button type="button" className="secondary" onClick={() => setRepairOpen(true)}>症状から確認する</button>}
+             {target.status === 'unselected' && <small className="hint">部品を特定できない場合は「機械全体」を選べます。未選択でも下書き保存できます。</small>}
+           </div> })()}
+           <div className="fields two">{textInput('crop', '作物', '例：ブロッコリー')}{textInput('region', '地域', '都道府県・市町村')}</div>
+@@ -187,6 +190,7 @@
+       {index < STEPS.length - 1 ? <button className="primary" onClick={next}>次へ：{STEPS[index + 1][1]}<Icon name="right" size={14} /></button> : <button className="primary" disabled={!ready || publishing} onClick={onPublish}>{publishing ? '公開しています…' : published ? '公開版を更新' : '公開する'}</button>}</div>
+     {deleteDialog}
+     {reportOpen && canReport && <ReportDialog record={record} origin={m.origin} session={session} name={name} published={published} notify={notify} onClose={() => setReportOpen(false)} />}
++    {repairOpen && isPilotMachine(m) && <RepairPilot key={record.id} meta={m} onClose={() => setRepairOpen(false)} onTransfer={nextMeta => { const accepted = patch({ meta: nextMeta }); if (accepted) { setRepairOpen(false); onStep('content') } return accepted }} />}
+     {pickerOpen && <MachinePicker value={m.machineRef} onClose={() => setPickerOpen(false)} onConfirm={ref => { meta({ machineRef: ref }); setPickerOpen(false) }} />}
+   </>
+ }
+diff --git a/src/RepairPilot.jsx b/src/RepairPilot.jsx
+new file mode 100644
+--- /dev/null
++++ b/src/RepairPilot.jsx
+@@ -0,0 +1,57 @@
++import React, { useRef, useState } from 'react'
++import { Dialog, Field } from './ui.jsx'
++import MachinePicker from './MachinePicker.jsx'
++import { today } from './domain.js'
++import { resolveMachineTarget } from './machine-domain.js'
++import { POWER_GUIDE, PILOT_REF, OBSERVED, ACTION, REASSESSMENT, newRepairDraft, repairDraftText, prepareRepairTransfer } from './repair-pilot.mjs'
++
++function Choices({ label, values, value, onChange }) {
++  return <Field label={label}><select value={value} onChange={event => onChange(event.target.value)}><option value="">選んでください</option>{Object.entries(values).map(([id, name]) => <option key={id} value={id}>{name}</option>)}</select></Field>
++}
++
++// A record-connected pilot. Reading and recording do not depend on a WebGL renderer.
++export default function RepairPilot({ meta, onTransfer, onClose }) {
++  const [draft, setDraft] = useState(newRepairDraft), [reviewed, setReviewed] = useState(false)
++  const [showLocation, setShowLocation] = useState(false), [error, setError] = useState('')
++  const [date] = useState(today), submitted = useRef(false)
++  const [expectedRef] = useState(() => ({ ...meta.machineRef }))
++  const update = patch => { setDraft(previous => ({ ...previous, ...patch })); setReviewed(false); setError('') }
++  let preview = null, incomplete = ''
++  try { preview = repairDraftText(draft, date) } catch (problem) { incomplete = problem.message }
++  function transfer() {
++    if (submitted.current) return
++    try {
++      const next = prepareRepairTransfer(meta, draft, { reviewed, date, expectedRef })
++      submitted.current = true
++      if (!onTransfer(next)) throw new Error('端末への保存を確認できません。記録案を控え、記録画面の保存状態を確認してください。画面内には追記が反映されている場合があります。')
++    } catch (problem) { submitted.current = false; setError(problem.message) }
++  }
++  if (showLocation) return <MachinePicker value={PILOT_REF} readOnly onClose={() => setShowLocation(false)} />
++  return <Dialog title="症状から確認する" wide className="repair-pilot" onClose={onClose}>
++    <h3>{POWER_GUIDE.label}</h3>
++    <p>対象：SKP-101W。エアクリーナは点検候補の一つです。ここでは原因を確定しません。</p>
++    <ol className="repair-pilot-steps">{POWER_GUIDE.steps.map((step, index) => <li key={step.title}>
++      <h4>{step.title}</h4><p>{step.text}</p>
++      {index === 1 && <p>ボンネットを扱うときは、エンジン停止から30分以上経過し、やけどのおそれがないことを確認してください。扱い方は下の説明書を確認します。</p>}
++      <a href={step.source} target="_blank" rel="noopener noreferrer">説明書：印刷p.{step.page}（PDF {step.page + 18}ページ）を開く</a>
++    </li>)}</ol>
++    <p>清掃や取り外しの具体的な方法は説明書を参照してください。確認できない場合は作業を進めず、「確認できない・未確認」を選べます。</p>
++    <button type="button" className="secondary" onClick={() => setShowLocation(true)}>エアクリーナの位置を3Dで見る</button>
++    <h3>実際に確認したことを記録</h3>
++    <Choices label="ほこりやごみの詰まりが見える？" values={OBSERVED} value={draft.observed} onChange={observed => update({ observed })} />
++    <Choices label="対処を実施した？" values={ACTION} value={draft.action} onChange={action => update({ action, reassessment: '', reassessmentNote: '' })} />
++    <Field label={draft.action === 'performed' ? '実際に行ったこと（必須）' : '実施しなかった理由など（任意）'}><textarea rows={3} maxLength={1000} value={draft.actionNote} onChange={event => update({ actionNote: event.target.value })} placeholder="自分が実際に行ったことを書いてください。" /></Field>
++    <Choices label="対処後の状態" values={draft.action === 'performed' ? REASSESSMENT : { 'not-assessed': REASSESSMENT['not-assessed'], consult: REASSESSMENT.consult }} value={draft.reassessment} onChange={reassessment => update({ reassessment })} />
++    <Field label={['improved', 'unchanged'].includes(draft.reassessment) ? '何を見て、どう再確認した？（必須）' : '再確認できない点・相談したいこと（任意）'}><textarea rows={3} maxLength={1000} value={draft.reassessmentNote} onChange={event => update({ reassessmentNote: event.target.value })} /></Field>
++    <h3>記録へ追記する内容</h3>
++    <p>現在の記録対象：{resolveMachineTarget(meta).label || '未確認'}</p>
++    {preview ? <><h4>実践したこと</h4><pre style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', fontFamily: 'inherit' }}>{preview.action}</pre><h4>結果</h4><pre style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', fontFamily: 'inherit' }}>{preview.result}</pre></> : <p role="status">{incomplete}</p>}
++    <p>説明書の印刷p.53・58・74を「出典・資料」に追加します。既に同じページがあれば重複させません。</p>
++    <label className="field"><span><input type="checkbox" checked={draft.changeTarget} onChange={event => update({ changeTarget: event.target.checked })} /> 記録の対象部品を「エアクリーナ」に変更する</span><small>チェックしない場合、現在の対象部品を保持します。</small></label>
++    <p>追記すると「内容・資料」の「項目で分ける」表示へ移ります。既存の実践・結果に追記し、これまでの自由本文は補足として残します。「完了」や本人の判定は変更しません。</p>
++    <label className="field"><span><input type="checkbox" checked={reviewed} onChange={event => setReviewed(event.target.checked)} /> 上の記録案と対象部品を確認した。既存の項目へ追記する</span></label>
++    {error && <p className="notice error" role="alert">{error}</p>}
++    <div className="actions"><button type="button" className="secondary" onClick={onClose}>閉じる</button><button type="button" className="primary" disabled={!preview || !reviewed} onClick={transfer}>内容・資料の項目欄へ追記</button></div>
++    <p className="hint">実際の保存状態は、記録画面上部の保存表示で確認してください。</p>
++  </Dialog>
++}
+diff --git a/src/repair-pilot.mjs b/src/repair-pilot.mjs
+new file mode 100644
+--- /dev/null
++++ b/src/repair-pilot.mjs
+@@ -0,0 +1,62 @@
++import { MACHINE_ID, MODEL_VERSION, resolveMachineRef } from './machine/catalog.js'
++import { GUIDES, META, pageLink } from '../vendor/parts-lab/dist/skp-parts.js'
++
++// One existing documented guide, independent of Three.js and of the repair outcome.
++export const POWER_GUIDE = GUIDES.power
++export const PILOT_REF = Object.freeze({ machineId: MACHINE_ID, modelVersion: MODEL_VERSION, partId: 'aircleaner' })
++export const OBSERVED = Object.freeze({ yes: 'ほこりやごみの詰まりが見える', no: '見える範囲では詰まりが見当たらない', unknown: '確認できない・未確認' })
++export const ACTION = Object.freeze({ performed: '実施した', 'not-performed': '実施していない' })
++export const REASSESSMENT = Object.freeze({ improved: '症状が改善したと本人が確認', unchanged: '症状は変わらない', 'not-assessed': '再確認していない・判断できない', consult: '自分では進めず相談する' })
++export const newRepairDraft = () => ({ observed: '', action: '', actionNote: '', reassessment: '', reassessmentNote: '', changeTarget: false })
++
++export function isPilotMachine(meta) {
++  return meta?.subject === 'machine_repair' && meta.machineRef?.machineId === MACHINE_ID &&
++    meta.machineRef?.modelVersion === MODEL_VERSION && Boolean(resolveMachineRef(meta.machineRef).node)
++}
++function choice(map, value, label) { if (!Object.hasOwn(map, value)) throw new Error(label + 'を選んでください。'); return map[value] }
++function note(value, label) {
++  if (typeof value !== 'string' || value.length > 1000) throw new Error(label + 'は1000文字以内で入力してください。')
++  return value.trim()
++}
++export function repairDraftText(draft, date) {
++  if (!draft || typeof draft !== 'object' || typeof draft.changeTarget !== 'boolean') throw new Error('記録案が不正です。')
++  if (!/^\d{4}-\d{2}-\d{2}$/.test(date || '') || Number.isNaN(Date.parse(date + 'T00:00:00Z')) || new Date(date + 'T00:00:00Z').toISOString().slice(0, 10) !== date) throw new Error('記録日を確認してください。')
++  const observed = choice(OBSERVED, draft.observed, '目視での確認結果')
++  const action = choice(ACTION, draft.action, '対処の実施状況')
++  const reassessment = choice(REASSESSMENT, draft.reassessment, '対処後の状態')
++  const actionNote = note(draft.actionNote, '実施内容'), reassessmentNote = note(draft.reassessmentNote, '再確認の内容')
++  if (draft.action === 'performed' && !actionNote) throw new Error('実際に行ったことを入力してください。')
++  if (['improved', 'unchanged'].includes(draft.reassessment)) {
++    if (draft.action !== 'performed') throw new Error('対処後の改善・変化なしは、対処を実施した場合に選べます。')
++    if (!reassessmentNote) throw new Error('何を見て、どう再確認したかを入力してください。')
++  }
++  const heading = `SKP-101W：${POWER_GUIDE.label}（${date}）`
++  return {
++    action: [heading, '対処の実施状況：' + action, actionNote && '本人の記録：' + actionNote].filter(Boolean).join('\n'),
++    result: [heading, '目視での確認：' + observed, '対処後の状態：' + reassessment, reassessmentNote && '本人の再確認記録：' + reassessmentNote,
++      '症状の自己申告です。原因・修理完了を自動判定した記録ではありません。'].filter(Boolean).join('\n')
++  }
++}
++function append(existing, addition) {
++  if (typeof existing !== 'string') throw new Error('既存の記録形式を確認してください。')
++  // Reopening with the same choices/date must not duplicate an already transferred entry.
++  if (existing === addition || existing.startsWith(addition + '\n\n') || existing.endsWith('\n\n' + addition) || existing.includes('\n\n' + addition + '\n\n')) return existing
++  const result = existing ? existing + '\n\n' + addition : addition
++  if (result.length > 20000) throw new Error('追記すると項目の20000文字を超えます。元の記録を整理してからやり直してください。')
++  return result
++}
++export function prepareRepairTransfer(meta, draft, { reviewed = false, date, expectedRef } = {}) {
++  if (!isPilotMachine(meta)) throw new Error('この確認は、登録済みのSKP-101Wを対象にした記録で利用できます。')
++  if (!expectedRef || ['machineId', 'modelVersion', 'partId'].some(key => expectedRef[key] !== meta.machineRef[key])) throw new Error('記録の対象が変わりました。確認内容を控え、閉じてから開き直してください。')
++  if (reviewed !== true) throw new Error('追記する内容を確認してください。')
++  if (!Array.isArray(meta.sources)) throw new Error('既存の出典形式を確認してください。')
++  const text = repairDraftText(draft, date)
++  const action = append(meta.action, text.action), result = append(meta.result, text.result)
++  const sources = [...meta.sources]
++  for (const page of [53, 58, 74]) {
++    const url = pageLink(page)
++    if (!sources.some(source => source?.url === url)) sources.push({ id: `repair-power-manual-${page}`, title: `${META.manualCode} 印刷p.${page}（PDF ${page + 18}ページ）`, url, date: '' })
++  }
++  if (new Set(sources.map(source => source?.id)).size !== sources.length) throw new Error('出典IDが重複します。既存の出典を確認してください。')
++  return { ...meta, action, result, sources, inputMode: 'sections', machineRef: draft.changeTarget ? { ...PILOT_REF } : meta.machineRef }
++}

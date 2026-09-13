@@ -1,0 +1,790 @@
+{
+  "runs": {
+    "1280": {
+      "checks": [
+        {
+          "name": "P6 対象未選択では「症状から確認する」を出さない",
+          "ok": true
+        },
+        {
+          "name": "P1 SKP-101W対象選択後に「症状から確認する」が現れる",
+          "ok": true
+        },
+        {
+          "name": "項目欄「実践したこと」が見える",
+          "ok": true
+        },
+        {
+          "name": "既存文章が端末保存されている",
+          "ok": true,
+          "detail": "既存の実践メモ：畝立て後にベルトを点検した。"
+        },
+        {
+          "name": "P1 症状案内ダイアログが開く",
+          "ok": true
+        },
+        {
+          "name": "P2 症状名・エアクリーナ候補・原因未確定の文言",
+          "ok": true
+        },
+        {
+          "name": "P2 原典3ページ（印刷53/58/74＝PDF71/76/92）のリンク",
+          "ok": true,
+          "detail": [
+            [
+              "説明書：印刷p.53（PDF 71ページ）を開く",
+              "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=71"
+            ],
+            [
+              "説明書：印刷p.58（PDF 76ページ）を開く",
+              "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=76"
+            ],
+            [
+              "説明書：印刷p.74（PDF 92ページ）を開く",
+              "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=92"
+            ]
+          ]
+        },
+        {
+          "name": "P2 停止後30分・熱の注意（印刷58頁）",
+          "ok": true
+        },
+        {
+          "name": "P2 3Dの対象がエアクリーナ（閲覧専用）",
+          "ok": true,
+          "detail": "解体新書で確認 閉じる 機種：SKP-101W（クボタ・歩行型全自動野菜移植機）。モデルは外観近似・内部模式表現で、実部品寸法や整備上の分解順序を保証しません。 SKP-101W › エンジン・前部 回転 移動 分解量 機械全体を対象にする"
+        },
+        {
+          "name": "P2 3Dから戻っても入力案（目視=未確認）を保持",
+          "ok": true
+        },
+        {
+          "name": "P3 未実施のとき「改善/変化なし」を選べない",
+          "ok": true,
+          "detail": [
+            "not-assessed",
+            "consult"
+          ]
+        },
+        {
+          "name": "P3 プレビューに未実施・相談・自動判定なしの文言",
+          "ok": true
+        },
+        {
+          "name": "P4 確認チェック前は追記ボタン無効",
+          "ok": true
+        },
+        {
+          "name": "P6 閉じるだけでは記録無変更",
+          "ok": true,
+          "detail": {
+            "action": "既存の実践メモ：畝立て後にベルトを点検した。",
+            "inputMode": "free"
+          }
+        },
+        {
+          "name": "P4 追記後：ダイアログが閉じ内容・資料へ移動",
+          "ok": true,
+          "detail": "http://127.0.0.1:39597/#/record/650d3e0f-3858-4c8f-b916-645f2b77c84e/content"
+        },
+        {
+          "name": "P4 既存文章を保持し空行で追記（実践したこと）",
+          "ok": true,
+          "detail": "既存の実践メモ：畝立て後にベルトを点検した。\n\nSKP-101W：エンジンの出力が低下する（2026-09-13）\n対処の実施状況：実施していない"
+        },
+        {
+          "name": "P4 結果欄に目視・対処後の状態・自己申告文",
+          "ok": true
+        },
+        {
+          "name": "P4 出典3件追加・項目表示へ・対象部品は保持",
+          "ok": true,
+          "detail": {
+            "sources": [
+              "PH136-9151-5 印刷p.53（PDF 71ページ）",
+              "PH136-9151-5 印刷p.58（PDF 76ページ）",
+              "PH136-9151-5 印刷p.74（PDF 92ページ）"
+            ],
+            "partId": "machine"
+          }
+        },
+        {
+          "name": "P4 進捗・本人判定は不変（kind/stage/verdict）",
+          "ok": true,
+          "detail": {
+            "stage": "仮説",
+            "verdict": ""
+          }
+        },
+        {
+          "name": "P5 画面の項目欄（実践したこと・結果）に追記が見える",
+          "ok": true,
+          "detail": {
+            "a": "既存の実践メモ：畝立て後にベルトを点検した。\n\nSKP-101W：エンジンの出力が低下する（2026-09-13）\n対処",
+            "r": "SKP-101W：エンジンの出力が低下する（2026-09-13）\n目視での確認：確認できない・未確認\n対処後の状態：自"
+          }
+        },
+        {
+          "name": "P4 同じ内容の再追記は重複しない",
+          "ok": true,
+          "detail": {
+            "len": 73
+          }
+        },
+        {
+          "name": "P5 再読込後も追記と出典が保持（画面と端末保存）",
+          "ok": true,
+          "detail": {
+            "url": "http://127.0.0.1:39597/#/record/650d3e0f-3858-4c8f-b916-645f2b77c84e/content",
+            "shown": "既存の実践メモ：畝立て後にベルトを点検した。\n\nSKP-101W：エンジンの出力",
+            "sourcesShown": false
+          }
+        },
+        {
+          "name": "P5 保存失敗：ダイアログが残り、成功扱いにしない警告を表示",
+          "ok": true,
+          "detail": {
+            "err": "端末への保存を確認できません。記録案を控え、記録画面の保存状態を確認してください。画面内には追記が反映されている場合があります。"
+          }
+        },
+        {
+          "name": "P5 保存失敗：入力案（目視=見える・実施内容）を保持",
+          "ok": true
+        },
+        {
+          "name": "P5 保存失敗：記録画面の保存表示が失敗を示す",
+          "ok": true,
+          "detail": {
+            "saveWords": [
+              "保存",
+              "端末への一時保存に失敗しました。保存を再試行",
+              "この端末に保存",
+              "端末への保存を確認できません。記録案を控",
+              "え、記録画面の保存状態を確認してください。画面",
+              "実際の保存状態は、記録画面上部の保存表"
+            ]
+          }
+        },
+        {
+          "name": "P6 明示チェック時のみ対象部品がエアクリーナへ",
+          "ok": true,
+          "detail": {
+            "partId": "aircleaner"
+          }
+        }
+      ],
+      "errors": [],
+      "external": [
+        "ycvbjzlqrxnwalhhgzat.supabase.co"
+      ],
+      "saveFailureRecord": {
+        "key": "nitoron:workspace:v1:device",
+        "meta": {
+          "schema": 1,
+          "kind": "presentation",
+          "inputMode": "sections",
+          "author": "",
+          "club": "",
+          "crop": "",
+          "variety": "",
+          "region": "",
+          "areaA": "",
+          "start": "",
+          "end": "",
+          "coverUrl": "",
+          "summary": "",
+          "issue": "",
+          "hypothesis": "",
+          "action": "既存の実践メモ：畝立て後にベルトを点検した。\n\nSKP-101W：エンジンの出力が低下する（2026-09-13）\n対処の実施状況：実施していない",
+          "result": "SKP-101W：エンジンの出力が低下する（2026-09-13）\n目視での確認：確認できない・未確認\n対処後の状態：自分では進めず相談する\n症状の自己申告です。原因・修理完了を自動判定した記録ではありません。",
+          "interpretation": "",
+          "learning": "",
+          "conditions": "",
+          "stage": "仮説",
+          "target": "",
+          "deadline": "",
+          "criterion": "",
+          "verdict": "",
+          "revenue": "",
+          "cost": "",
+          "hours": "",
+          "yieldKg": "",
+          "observations": [],
+          "sources": [
+            {
+              "id": "repair-power-manual-53",
+              "title": "PH136-9151-5 印刷p.53（PDF 71ページ）",
+              "url": "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=71",
+              "date": ""
+            },
+            {
+              "id": "repair-power-manual-58",
+              "title": "PH136-9151-5 印刷p.58（PDF 76ページ）",
+              "url": "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=76",
+              "date": ""
+            },
+            {
+              "id": "repair-power-manual-74",
+              "title": "PH136-9151-5 印刷p.74（PDF 92ページ）",
+              "url": "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=92",
+              "date": ""
+            }
+          ],
+          "attachments": [],
+          "origin": null,
+          "subject": "machine_repair",
+          "machineRef": {
+            "machineId": "skp-101w",
+            "partId": "machine",
+            "modelVersion": "skp-101w@daf7afab"
+          }
+        },
+        "blocks": [
+          {
+            "id": "6f785aaa-5bad-4f32-99ec-478a3b11246a",
+            "type": "text",
+            "text": ""
+          }
+        ]
+      }
+    },
+    "390-touch": {
+      "checks": [
+        {
+          "name": "P6 対象未選択では「症状から確認する」を出さない",
+          "ok": true
+        },
+        {
+          "name": "P1 SKP-101W対象選択後に「症状から確認する」が現れる",
+          "ok": true
+        },
+        {
+          "name": "項目欄「実践したこと」が見える",
+          "ok": true
+        },
+        {
+          "name": "既存文章が端末保存されている",
+          "ok": true,
+          "detail": "既存の実践メモ：畝立て後にベルトを点検した。"
+        },
+        {
+          "name": "P1 症状案内ダイアログが開く",
+          "ok": true
+        },
+        {
+          "name": "P2 症状名・エアクリーナ候補・原因未確定の文言",
+          "ok": true
+        },
+        {
+          "name": "P2 原典3ページ（印刷53/58/74＝PDF71/76/92）のリンク",
+          "ok": true,
+          "detail": [
+            [
+              "説明書：印刷p.53（PDF 71ページ）を開く",
+              "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=71"
+            ],
+            [
+              "説明書：印刷p.58（PDF 76ページ）を開く",
+              "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=76"
+            ],
+            [
+              "説明書：印刷p.74（PDF 92ページ）を開く",
+              "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=92"
+            ]
+          ]
+        },
+        {
+          "name": "P2 停止後30分・熱の注意（印刷58頁）",
+          "ok": true
+        },
+        {
+          "name": "P2 3Dの対象がエアクリーナ（閲覧専用）",
+          "ok": true,
+          "detail": "解体新書で確認 閉じる 機種：SKP-101W（クボタ・歩行型全自動野菜移植機）。モデルは外観近似・内部模式表現で、実部品寸法や整備上の分解順序を保証しません。 SKP-101W › エンジン・前部 回転 移動 分解量 機械全体を対象にする"
+        },
+        {
+          "name": "P2 3Dから戻っても入力案（目視=未確認）を保持",
+          "ok": true
+        },
+        {
+          "name": "P3 未実施のとき「改善/変化なし」を選べない",
+          "ok": true,
+          "detail": [
+            "not-assessed",
+            "consult"
+          ]
+        },
+        {
+          "name": "P3 プレビューに未実施・相談・自動判定なしの文言",
+          "ok": true
+        },
+        {
+          "name": "P4 確認チェック前は追記ボタン無効",
+          "ok": true
+        },
+        {
+          "name": "P6 閉じるだけでは記録無変更",
+          "ok": true,
+          "detail": {
+            "action": "既存の実践メモ：畝立て後にベルトを点検した。",
+            "inputMode": "free"
+          }
+        },
+        {
+          "name": "P4 追記後：ダイアログが閉じ内容・資料へ移動",
+          "ok": true,
+          "detail": "http://127.0.0.1:39597/#/record/522558c0-693b-487d-842d-67c8a2abcd7f/content"
+        },
+        {
+          "name": "P4 既存文章を保持し空行で追記（実践したこと）",
+          "ok": true,
+          "detail": "既存の実践メモ：畝立て後にベルトを点検した。\n\nSKP-101W：エンジンの出力が低下する（2026-09-13）\n対処の実施状況：実施していない"
+        },
+        {
+          "name": "P4 結果欄に目視・対処後の状態・自己申告文",
+          "ok": true
+        },
+        {
+          "name": "P4 出典3件追加・項目表示へ・対象部品は保持",
+          "ok": true,
+          "detail": {
+            "sources": [
+              "PH136-9151-5 印刷p.53（PDF 71ページ）",
+              "PH136-9151-5 印刷p.58（PDF 76ページ）",
+              "PH136-9151-5 印刷p.74（PDF 92ページ）"
+            ],
+            "partId": "machine"
+          }
+        },
+        {
+          "name": "P4 進捗・本人判定は不変（kind/stage/verdict）",
+          "ok": true,
+          "detail": {
+            "stage": "仮説",
+            "verdict": ""
+          }
+        },
+        {
+          "name": "P5 画面の項目欄（実践したこと・結果）に追記が見える",
+          "ok": true,
+          "detail": {
+            "a": "既存の実践メモ：畝立て後にベルトを点検した。\n\nSKP-101W：エンジンの出力が低下する（2026-09-13）\n対処",
+            "r": "SKP-101W：エンジンの出力が低下する（2026-09-13）\n目視での確認：確認できない・未確認\n対処後の状態：自"
+          }
+        },
+        {
+          "name": "P4 同じ内容の再追記は重複しない",
+          "ok": true,
+          "detail": {
+            "len": 73
+          }
+        },
+        {
+          "name": "P5 再読込後も追記と出典が保持（画面と端末保存）",
+          "ok": true,
+          "detail": {
+            "url": "http://127.0.0.1:39597/#/record/522558c0-693b-487d-842d-67c8a2abcd7f/content",
+            "shown": "既存の実践メモ：畝立て後にベルトを点検した。\n\nSKP-101W：エンジンの出力",
+            "sourcesShown": false
+          }
+        },
+        {
+          "name": "P5 保存失敗：ダイアログが残り、成功扱いにしない警告を表示",
+          "ok": true,
+          "detail": {
+            "err": "端末への保存を確認できません。記録案を控え、記録画面の保存状態を確認してください。画面内には追記が反映されている場合があります。"
+          }
+        },
+        {
+          "name": "P5 保存失敗：入力案（目視=見える・実施内容）を保持",
+          "ok": true
+        },
+        {
+          "name": "P5 保存失敗：記録画面の保存表示が失敗を示す",
+          "ok": true,
+          "detail": {
+            "saveWords": [
+              "端末への一時保存に失敗しました。保存を再試行",
+              "この端末に保存",
+              "端末への保存を確認できません。記録案を控",
+              "え、記録画面の保存状態を確認してください。画面",
+              "実際の保存状態は、記録画面上部の保存表",
+              "保存"
+            ]
+          }
+        },
+        {
+          "name": "P6 明示チェック時のみ対象部品がエアクリーナへ",
+          "ok": true,
+          "detail": {
+            "partId": "aircleaner"
+          }
+        }
+      ],
+      "errors": [],
+      "external": [
+        "ycvbjzlqrxnwalhhgzat.supabase.co"
+      ],
+      "saveFailureRecord": {
+        "key": "nitoron:workspace:v1:device",
+        "meta": {
+          "schema": 1,
+          "kind": "presentation",
+          "inputMode": "sections",
+          "author": "",
+          "club": "",
+          "crop": "",
+          "variety": "",
+          "region": "",
+          "areaA": "",
+          "start": "",
+          "end": "",
+          "coverUrl": "",
+          "summary": "",
+          "issue": "",
+          "hypothesis": "",
+          "action": "既存の実践メモ：畝立て後にベルトを点検した。\n\nSKP-101W：エンジンの出力が低下する（2026-09-13）\n対処の実施状況：実施していない",
+          "result": "SKP-101W：エンジンの出力が低下する（2026-09-13）\n目視での確認：確認できない・未確認\n対処後の状態：自分では進めず相談する\n症状の自己申告です。原因・修理完了を自動判定した記録ではありません。",
+          "interpretation": "",
+          "learning": "",
+          "conditions": "",
+          "stage": "仮説",
+          "target": "",
+          "deadline": "",
+          "criterion": "",
+          "verdict": "",
+          "revenue": "",
+          "cost": "",
+          "hours": "",
+          "yieldKg": "",
+          "observations": [],
+          "sources": [
+            {
+              "id": "repair-power-manual-53",
+              "title": "PH136-9151-5 印刷p.53（PDF 71ページ）",
+              "url": "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=71",
+              "date": ""
+            },
+            {
+              "id": "repair-power-manual-58",
+              "title": "PH136-9151-5 印刷p.58（PDF 76ページ）",
+              "url": "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=76",
+              "date": ""
+            },
+            {
+              "id": "repair-power-manual-74",
+              "title": "PH136-9151-5 印刷p.74（PDF 92ページ）",
+              "url": "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=92",
+              "date": ""
+            }
+          ],
+          "attachments": [],
+          "origin": null,
+          "subject": "machine_repair",
+          "machineRef": {
+            "machineId": "skp-101w",
+            "partId": "machine",
+            "modelVersion": "skp-101w@daf7afab"
+          }
+        },
+        "blocks": [
+          {
+            "id": "b0dc0879-067a-43e7-b8f9-325bbcfc076f",
+            "type": "text",
+            "text": ""
+          }
+        ]
+      }
+    },
+    "390-noWebGL": {
+      "checks": [
+        {
+          "name": "P6 対象未選択では「症状から確認する」を出さない",
+          "ok": true
+        },
+        {
+          "name": "P1 SKP-101W対象選択後に「症状から確認する」が現れる",
+          "ok": true
+        },
+        {
+          "name": "項目欄「実践したこと」が見える",
+          "ok": true
+        },
+        {
+          "name": "既存文章が端末保存されている",
+          "ok": true,
+          "detail": "既存の実践メモ：畝立て後にベルトを点検した。"
+        },
+        {
+          "name": "P1 症状案内ダイアログが開く",
+          "ok": true
+        },
+        {
+          "name": "P2 症状名・エアクリーナ候補・原因未確定の文言",
+          "ok": true
+        },
+        {
+          "name": "P2 原典3ページ（印刷53/58/74＝PDF71/76/92）のリンク",
+          "ok": true,
+          "detail": [
+            [
+              "説明書：印刷p.53（PDF 71ページ）を開く",
+              "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=71"
+            ],
+            [
+              "説明書：印刷p.58（PDF 76ページ）を開く",
+              "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=76"
+            ],
+            [
+              "説明書：印刷p.74（PDF 92ページ）を開く",
+              "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=92"
+            ]
+          ]
+        },
+        {
+          "name": "P2 停止後30分・熱の注意（印刷58頁）",
+          "ok": true
+        },
+        {
+          "name": "P2 3Dの対象がエアクリーナ（閲覧専用）",
+          "ok": true,
+          "detail": "解体新書で確認 閉じる 機種：SKP-101W（クボタ・歩行型全自動野菜移植機）。モデルは外観近似・内部模式表現で、実部品寸法や整備上の分解順序を保証しません。 SKP-101W › エンジン・前部 3D表示を利用できません。右の一覧から選"
+        },
+        {
+          "name": "P2 3Dから戻っても入力案（目視=未確認）を保持",
+          "ok": true
+        },
+        {
+          "name": "P3 未実施のとき「改善/変化なし」を選べない",
+          "ok": true,
+          "detail": [
+            "not-assessed",
+            "consult"
+          ]
+        },
+        {
+          "name": "P3 プレビューに未実施・相談・自動判定なしの文言",
+          "ok": true
+        },
+        {
+          "name": "P4 確認チェック前は追記ボタン無効",
+          "ok": true
+        },
+        {
+          "name": "P6 閉じるだけでは記録無変更",
+          "ok": true,
+          "detail": {
+            "action": "既存の実践メモ：畝立て後にベルトを点検した。",
+            "inputMode": "free"
+          }
+        },
+        {
+          "name": "P4 追記後：ダイアログが閉じ内容・資料へ移動",
+          "ok": true,
+          "detail": "http://127.0.0.1:39597/#/record/d4ad0c70-9ef5-4648-8fd7-8a5f93c82159/content"
+        },
+        {
+          "name": "P4 既存文章を保持し空行で追記（実践したこと）",
+          "ok": true,
+          "detail": "既存の実践メモ：畝立て後にベルトを点検した。\n\nSKP-101W：エンジンの出力が低下する（2026-09-13）\n対処の実施状況：実施していない"
+        },
+        {
+          "name": "P4 結果欄に目視・対処後の状態・自己申告文",
+          "ok": true
+        },
+        {
+          "name": "P4 出典3件追加・項目表示へ・対象部品は保持",
+          "ok": true,
+          "detail": {
+            "sources": [
+              "PH136-9151-5 印刷p.53（PDF 71ページ）",
+              "PH136-9151-5 印刷p.58（PDF 76ページ）",
+              "PH136-9151-5 印刷p.74（PDF 92ページ）"
+            ],
+            "partId": "machine"
+          }
+        },
+        {
+          "name": "P4 進捗・本人判定は不変（kind/stage/verdict）",
+          "ok": true,
+          "detail": {
+            "stage": "仮説",
+            "verdict": ""
+          }
+        },
+        {
+          "name": "P5 画面の項目欄（実践したこと・結果）に追記が見える",
+          "ok": true,
+          "detail": {
+            "a": "既存の実践メモ：畝立て後にベルトを点検した。\n\nSKP-101W：エンジンの出力が低下する（2026-09-13）\n対処",
+            "r": "SKP-101W：エンジンの出力が低下する（2026-09-13）\n目視での確認：確認できない・未確認\n対処後の状態：自"
+          }
+        },
+        {
+          "name": "P4 同じ内容の再追記は重複しない",
+          "ok": true,
+          "detail": {
+            "len": 73
+          }
+        },
+        {
+          "name": "P5 再読込後も追記と出典が保持（画面と端末保存）",
+          "ok": true,
+          "detail": {
+            "url": "http://127.0.0.1:39597/#/record/d4ad0c70-9ef5-4648-8fd7-8a5f93c82159/content",
+            "shown": "既存の実践メモ：畝立て後にベルトを点検した。\n\nSKP-101W：エンジンの出力",
+            "sourcesShown": false
+          }
+        },
+        {
+          "name": "P5 保存失敗：ダイアログが残り、成功扱いにしない警告を表示",
+          "ok": true,
+          "detail": {
+            "err": "端末への保存を確認できません。記録案を控え、記録画面の保存状態を確認してください。画面内には追記が反映されている場合があります。"
+          }
+        },
+        {
+          "name": "P5 保存失敗：入力案（目視=見える・実施内容）を保持",
+          "ok": true
+        },
+        {
+          "name": "P5 保存失敗：記録画面の保存表示が失敗を示す",
+          "ok": true,
+          "detail": {
+            "saveWords": [
+              "端末への一時保存に失敗しました。保存を再試行",
+              "この端末に保存",
+              "端末への保存を確認できません。記録案を控",
+              "え、記録画面の保存状態を確認してください。画面",
+              "実際の保存状態は、記録画面上部の保存表",
+              "保存"
+            ]
+          }
+        },
+        {
+          "name": "P6 明示チェック時のみ対象部品がエアクリーナへ",
+          "ok": true,
+          "detail": {
+            "partId": "aircleaner"
+          }
+        }
+      ],
+      "errors": [
+        "console:THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+        "console:THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+        "console:THREE.WebGLRenderer: Error creating WebGL context.",
+        "console:THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+        "console:THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+        "console:THREE.WebGLRenderer: Error creating WebGL context."
+      ],
+      "external": [
+        "ycvbjzlqrxnwalhhgzat.supabase.co"
+      ],
+      "saveFailureRecord": {
+        "key": "nitoron:workspace:v1:device",
+        "meta": {
+          "schema": 1,
+          "kind": "presentation",
+          "inputMode": "sections",
+          "author": "",
+          "club": "",
+          "crop": "",
+          "variety": "",
+          "region": "",
+          "areaA": "",
+          "start": "",
+          "end": "",
+          "coverUrl": "",
+          "summary": "",
+          "issue": "",
+          "hypothesis": "",
+          "action": "既存の実践メモ：畝立て後にベルトを点検した。\n\nSKP-101W：エンジンの出力が低下する（2026-09-13）\n対処の実施状況：実施していない",
+          "result": "SKP-101W：エンジンの出力が低下する（2026-09-13）\n目視での確認：確認できない・未確認\n対処後の状態：自分では進めず相談する\n症状の自己申告です。原因・修理完了を自動判定した記録ではありません。",
+          "interpretation": "",
+          "learning": "",
+          "conditions": "",
+          "stage": "仮説",
+          "target": "",
+          "deadline": "",
+          "criterion": "",
+          "verdict": "",
+          "revenue": "",
+          "cost": "",
+          "hours": "",
+          "yieldKg": "",
+          "observations": [],
+          "sources": [
+            {
+              "id": "repair-power-manual-53",
+              "title": "PH136-9151-5 印刷p.53（PDF 71ページ）",
+              "url": "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=71",
+              "date": ""
+            },
+            {
+              "id": "repair-power-manual-58",
+              "title": "PH136-9151-5 印刷p.58（PDF 76ページ）",
+              "url": "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=76",
+              "date": ""
+            },
+            {
+              "id": "repair-power-manual-74",
+              "title": "PH136-9151-5 印刷p.74（PDF 92ページ）",
+              "url": "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=95e6834d0a3d99e9ea8811855ae9229d#page=92",
+              "date": ""
+            }
+          ],
+          "attachments": [],
+          "origin": null,
+          "subject": "machine_repair",
+          "machineRef": {
+            "machineId": "skp-101w",
+            "partId": "machine",
+            "modelVersion": "skp-101w@daf7afab"
+          }
+        },
+        "blocks": [
+          {
+            "id": "5e3b7541-2e92-4198-82d0-bfda0966d2e4",
+            "type": "text",
+            "text": ""
+          }
+        ]
+      }
+    }
+  },
+  "summary": {
+    "1280": {
+      "passed": 26,
+      "failed": 0,
+      "errors": [],
+      "external": [
+        "ycvbjzlqrxnwalhhgzat.supabase.co"
+      ]
+    },
+    "390-touch": {
+      "passed": 26,
+      "failed": 0,
+      "errors": [],
+      "external": [
+        "ycvbjzlqrxnwalhhgzat.supabase.co"
+      ]
+    },
+    "390-noWebGL": {
+      "passed": 26,
+      "failed": 0,
+      "errors": [
+        "console:THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+        "console:THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+        "console:THREE.WebGLRenderer: Error creating WebGL context.",
+        "console:THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+        "console:THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+        "console:THREE.WebGLRenderer: Error creating WebGL context."
+      ],
+      "external": [
+        "ycvbjzlqrxnwalhhgzat.supabase.co"
+      ]
+    }
+  },
+  "checkedAt": "2026-09-13T12:41:05.816Z",
+  "browser": "141.0.7390.37"
+}

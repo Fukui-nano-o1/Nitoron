@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-13",
+  "main": "96813db3fcb480d96f773c9222e02a8a06ff0677",
+  "codeUnchangedFromPreviousCandidate": true,
+  "pinnedFileGitBlobs": {
+    "src/Editor.jsx": "ea393d358021757a8692e8cf66a496e6b9142def",
+    "vendor/parts-lab/dist/skp-parts.js": "b15bd47124684ef34ff4e8f5a671bf24490b9df8",
+    "src/machine/catalog.js": "5af599cd3e259773e75b12e3dd0bcfff71bcfc3f"
+  },
+  "newDestinationsAbsent": [
+    "src/RepairPilot.jsx",
+    "src/repair-pilot.mjs"
+  ],
+  "metricPhase": "closed: accepted computationally; physical ground/axle/envelope unresolved",
+  "localBrowserEvidenceReceived": {
+    "file": "browser-check.json",
+    "executedAt": "2026-09-13T12:18:29.104Z",
+    "passed": 14,
+    "pageErrors": 0,
+    "externalRuntimeRequests": 0,
+    "iphonePhysical": false
+  },
+  "bridgePriorEvidenceReused": {
+    "unitTests": 4,
+    "jsxSyntaxFiles": 2,
+    "jsxWarnings": 0,
+    "patchAppliedToExactBaselineCopy": true
+  },
+  "bridgeBrowserExecuted": false,
+  "bridgeMainBuildExecuted": false
+}

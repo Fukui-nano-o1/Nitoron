@@ -1,0 +1,10 @@
+{
+  "scope": "temporary exact-baseline copy; actual repository unchanged",
+  "gitApplyCheck": true,
+  "gitApply": true,
+  "outputByteMatches": [
+    "src/Editor.jsx",
+    "src/RepairPilot.jsx",
+    "src/repair-pilot.mjs"
+  ]
+}

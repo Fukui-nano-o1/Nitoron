@@ -8,8 +8,6 @@ import Icon from './Icon.jsx'
 import { KINDS, PHASES, VERDICTS, SECTIONS, METRICS, emptyMeta, today, uid, exportMarkdown, publicSnapshot, publicationProblems, publicationAdvice, publishedDiffers, privateOriginLeaks } from './domain.js'
 import { MACHINE_SUBJECT, resolveMachineTarget } from './machine-domain.js'
 import MachinePicker from './MachinePicker.jsx'
-import RepairPilot from './RepairPilot.jsx'
-import { isPilotMachine } from './repair-pilot.mjs'
 import { Field, Dialog, ErrorNotice, download } from './ui.jsx'
 
 export const STEPS = [['basics', '基本情報'], ['content', '内容・資料'], ['review', '確認・公開']]
@@ -20,7 +18,7 @@ export function SaveChip({ save }) {
 }
 // 記録の編集。発表は「基本情報 → 内容・資料 → 確認・公開」の3段階。段階を移動しても自動保存は続く。
 export default function Editor({ record, step, onStep, onChange, session, flush, save, published, publication, onPublish, publishing, publishResult, onUnpublish, onShare, onDelete, onAccount, discussion, name, originHref, onDeriveLearning, onDeriveNext, deriving, notify }) {
-  const [confirmDelete, setConfirmDelete] = useState(false), [uploading, setUploading] = useState(false), [reportOpen, setReportOpen] = useState(false), [pickerOpen, setPickerOpen] = useState(false), [repairOpen, setRepairOpen] = useState(false)
+  const [confirmDelete, setConfirmDelete] = useState(false), [uploading, setUploading] = useState(false), [reportOpen, setReportOpen] = useState(false), [pickerOpen, setPickerOpen] = useState(false)
   const m = record.meta
   const patch = update => onChange({ ...record, ...update })
   const meta = update => patch({ meta: { ...m, ...update } })
@@ -109,7 +107,6 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
             <span role="status">対象：{target.label || '機種・部品未選択'}</span>
             {['unknown-machine', 'unknown-version', 'unknown-part', 'invalid'].includes(target.status) && <small className="hint">保存済みの対象部品を確認できません。選び直すまで値は変更されません。</small>}
             <button type="button" className="secondary" onClick={() => setPickerOpen(true)}>機種と部品を選ぶ</button>
-            {isPilotMachine(m) && <button type="button" className="secondary" onClick={() => setRepairOpen(true)}>症状から確認する</button>}
             {target.status === 'unselected' && <small className="hint">部品を特定できない場合は「機械全体」を選べます。未選択でも下書き保存できます。</small>}
           </div> })()}
           <div className="fields two">{textInput('crop', '作物', '例：ブロッコリー')}{textInput('region', '地域', '都道府県・市町村')}</div>
@@ -190,7 +187,6 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
       {index < STEPS.length - 1 ? <button className="primary" onClick={next}>次へ：{STEPS[index + 1][1]}<Icon name="right" size={14} /></button> : <button className="primary" disabled={!ready || publishing} onClick={onPublish}>{publishing ? '公開しています…' : published ? '公開版を更新' : '公開する'}</button>}</div>
     {deleteDialog}
     {reportOpen && canReport && <ReportDialog record={record} origin={m.origin} session={session} name={name} published={published} notify={notify} onClose={() => setReportOpen(false)} />}
-    {repairOpen && isPilotMachine(m) && <RepairPilot key={record.id} meta={m} onClose={() => setRepairOpen(false)} onTransfer={nextMeta => { const accepted = patch({ meta: nextMeta }); if (accepted) { setRepairOpen(false); onStep('content') } return accepted }} />}
     {pickerOpen && <MachinePicker value={m.machineRef} onClose={() => setPickerOpen(false)} onConfirm={ref => { meta({ machineRef: ref }); setPickerOpen(false) }} />}
   </>
 }

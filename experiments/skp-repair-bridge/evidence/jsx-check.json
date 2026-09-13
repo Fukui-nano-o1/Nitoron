@@ -1,0 +1,16 @@
+{
+  "check": "JSX syntax transform, not an application build or browser test",
+  "esbuildVersion": "0.25.9",
+  "files": [
+    {
+      "filename": "Editor.jsx",
+      "warnings": 0,
+      "bytes": 39099
+    },
+    {
+      "filename": "RepairPilot.jsx",
+      "warnings": 0,
+      "bytes": 10068
+    }
+  ]
+}

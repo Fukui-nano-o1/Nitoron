@@ -1,0 +1,1 @@
+{"name":"nitoron-repair-pilot-candidate","private":true,"type":"module","scripts":{"test":"node scripts/prepare-test-context.mjs && node --test tests/repair-pilot.test.mjs"}}

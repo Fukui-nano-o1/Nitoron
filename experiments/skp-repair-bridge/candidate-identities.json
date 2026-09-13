@@ -1,0 +1,23 @@
+{
+  "baseCommit": "76fd603ec1156f8ff9b2a670d7bb6cda0de1a927",
+  "applyOnly": [
+    {
+      "path": "src/Editor.jsx",
+      "sha256": "e5cf223dbdf8162a0db291869d127d0f7228afd84737ef4034c28232a2659ee6"
+    },
+    {
+      "path": "src/RepairPilot.jsx",
+      "sha256": "846986e269fc0bb47aa18e574d279feae0ead656f2f9100d8f40e5ad5bb267a2"
+    },
+    {
+      "path": "src/repair-pilot.mjs",
+      "sha256": "3a62bee4cdd94c3e3716c45342c598f922eed49d771d365a41c067b581ff1b5a"
+    }
+  ],
+  "readOnlyDependencies": [
+    "src/machine/catalog.js",
+    "vendor/parts-lab/dist/skp-parts.js"
+  ],
+  "verifiedAgainstCommit": "96813db3fcb480d96f773c9222e02a8a06ff0677",
+  "verifiedAgainstDate": "2026-09-13"
+}
