@@ -5,10 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/build-catalog.mjs && vite build",
+    "build": "vite build",
     "preview": "vite preview",
-    "test": "node --test tests/*.test.js",
-    "build:catalog": "node scripts/build-catalog.mjs"
+    "test": "node --test tests/*.test.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.115.0",

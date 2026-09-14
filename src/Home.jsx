@@ -4,6 +4,7 @@ import { RecordCard, SearchPill } from './Catalog.jsx'
 import FilterDialog from './FilterDialog.jsx'
 import { ErrorNotice, Empty } from './ui.jsx'
 import { EMPTY_FILTERS, paramsFromList } from './search.js'
+import CatalogRow from './CatalogCommentary.jsx'
 
 // ホームのテーマ行。作物の行はcrop条件、課題の行はキーワード（q）条件で絞り、
 // 「すべて見る」も同じ条件を検索結果ページへ引き継ぐ。新着行は条件なしの新しい順。
@@ -46,7 +47,7 @@ export default function Home({ savedIds, onSave, keyOf, selectedKeys, onSelect, 
   const renderCard = r => <RecordCard key={r.id} record={r} href={`#/public/${r.id}`} publicMode selected={selectedKeys.includes(keyOf(r))} onSelect={onSelect} saved={savedIds.includes(r.id)} onSave={onSave} />
   return <section className="catalog">
     <div className="search-area"><SearchPill query={query} onQuery={setQuery} region={region} onRegion={setRegion} searchRef={searchRef} onFilter={() => setFilterOpen(true)} onSubmit={go} /></div>
-    <div className="home-rows">{HOME_ROWS.map(row => <HomeRow key={row.key} row={row} renderCard={renderCard} />)}</div>
+    <div className="home-rows"><CatalogRow />{HOME_ROWS.map(row => <HomeRow key={row.key} row={row} renderCard={renderCard} />)}</div>
     {filterOpen && <FilterDialog filters={EMPTY_FILTERS} onApply={go} onClose={() => setFilterOpen(false)} />}
   </section>
 }

@@ -345,7 +345,7 @@ function App() {
   return <div className={`workspace${route.view === 'public' ? ' public-view' : ''}`}>
     <a className="skip-link" href="#content" onClick={e => { e.preventDefault(); document.getElementById('content')?.focus() }}>本文へ移動</a>
     <SiteHeader view={repairView ? 'repairs' : route.view} name={name} notify={activity.total > 0} />
-    <nav className="product-switch" aria-label="サービス"><a href="#/discover" aria-current={!repairView ? 'page' : undefined}>発表</a><a href="#/repairs" aria-current={repairView ? 'page' : undefined}>修理</a><a href="/catalog/">カタログ解説</a></nav>
+    <nav className="product-switch" aria-label="サービス"><a href="#/discover" aria-current={!repairView ? 'page' : undefined}>発表</a><a href="#/repairs" aria-current={repairView ? 'page' : undefined}>修理</a></nav>
     <main id="content" tabIndex={-1} className="main-content">
       {error && (repairView ? <div className="repair-global-error" role="status"><strong>{sync.cacheFailed ? '未保存' : 'この端末に保存'}</strong><details><summary>保存状態</summary><p>{error}</p><button className="text-action" onClick={retry}>再試行</button></details></div> : <div className="workspace-error print-hidden"><ErrorNotice retry={retry}>{error}</ErrorNotice></div>)}
       {!error && needsLogin && ['mine', 'record'].includes(route.view) && <div className="workspace-error print-hidden"><div className="notice" role="status"><span>記録はこの端末に保存しています。登録・ログインするとクラウドに保存し、公開や指摘ができます。</span> <button onClick={() => setDialog({ type: 'account' })}>登録・ログイン</button></div></div>}
