@@ -9,13 +9,15 @@ export default function RecordBody({ record, hideHeading = false, hideCover = fa
   return <div className="record-body">
     {!hideHeading && <><div className="record-kicker">{KINDS[m?.kind || 'memo']}{m?.kind === 'challenge' && ` / ${m.stage}`}</div>
     <h1>{record.title || '無題'}</h1>
-    <div className="byline">{m?.author || '発表者未記録'}{m?.club && ` · ${m.club}`}<span>記録日 {record.date}</span></div></>}
+    <div className="byline">{m?.author || '記録者未記録'}{m?.club && ` · ${m.club}`}<span>記録日 {record.date}</span></div></>}
     {!hideCover && (m?.coverUrl || imageAttachments(record).length > 0) && <Cover record={record} className="reading-cover" eager />}
     {m && <>
       {m.summary && <p className="record-summary" id="document-summary">{m.summary}</p>}
-      <dl className="conditions-grid">
-        {[['作物・品種', [m.crop, m.variety].filter(Boolean).join(' / ')], ['地域', m.region], ['対象面積', m.areaA ? `${m.areaA} a` : ''], ['対象期間', m.start || m.end ? `${m.start || '未記録'}〜${m.end || '未記録'}` : '']].map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value || '未記録'}</dd></div>)}
-      </dl>
+      {(() => {
+        // 入力のある条件だけ出す。カタログ解説や修理記録に「作物 未記録」を並べない。
+        const rows = [[m.kind === 'trouble' ? '分類' : '作物・品種', [m.crop, m.variety].filter(Boolean).join(' / ')], ['地域', m.region], ['対象面積', m.areaA ? `${m.areaA} a` : ''], ['対象期間', m.start || m.end ? `${m.start || '未記録'}〜${m.end || '未記録'}` : '']].filter(([, value]) => value)
+        return rows.length ? <dl className="conditions-grid">{rows.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl> : null
+      })()}
       {m.conditions && <p className="conditions-note">比較の条件：{m.conditions}</p>}
       <MachineTargetSection meta={m} />
       {m.origin && (m.origin.public ? <p className="source-line">参考にした記録：<a href={`#/public/${m.origin.id}`}>{m.origin.title}</a></p> : <p className="source-line">参考にした記録：非公開の記録（タイトル・リンクは公開されません）</p>)}

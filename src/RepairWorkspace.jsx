@@ -15,30 +15,8 @@ import RepairEntrySheet, { RepairContent } from './RepairEntry.jsx'
 import { repairHeadline, repairMachineLabel } from './repair-entry.mjs'
 import './repair-workspace.css'
 
-const TOUR_KEY = 'nitoron:repair-intro:v1'
-const INTRO = [
-  ['機械を選ぶ', '型番から開く', ['機械', '症状', '結果']],
-  ['部品を見る', 'タップで部品へ', ['全体', '分解', '部品']],
-  ['結果を残す', '次回も、ここから', ['確認', '記録', '再開']],
-]
-
-function RepairIntro({ onClose }) {
-  const [index, setIndex] = useState(0)
-  const close = () => { try { localStorage.setItem(TOUR_KEY, 'seen') } catch { /* 任意の案内設定。記録保存とは別。 */ } onClose() }
-  return <Dialog title="はじめての修理" className="repair-intro" onClose={close}>
-    <div className="repair-intro-diagram" aria-hidden="true">{INTRO[index][2].map((word, i) => <span key={word} className={i === index ? 'active' : ''}>{word}</span>)}</div>
-    <h3>{INTRO[index][0]}</h3><p>{INTRO[index][1]}</p>
-    <div className="repair-sheet-footer"><button className="quiet" onClick={close}>スキップ</button><span>{index + 1} / {INTRO.length}</span><button className="primary" onClick={() => index < 2 ? setIndex(index + 1) : close()}>{index < 2 ? '次へ' : 'はじめる'}</button></div>
-  </Dialog>
-}
-
-function useIntro() {
-  const [open, setOpen] = useState(() => { try { return localStorage.getItem(TOUR_KEY) !== 'seen' } catch { return true } })
-  return [open, setOpen]
-}
-
 export function RepairHome({ records, ready, save, onCreate }) {
-  const [query, setQuery] = useState(''), [intro, setIntro] = useIntro()
+  const [query, setQuery] = useState('')
   const pending = useRef(null), [error, setError] = useState('')
   const machines = searchRepairMachines(query)
   const repairs = records.filter(isRepairRecord).filter(r => !query.trim() || [r.title, r.meta?.issue, repairHeadline(r.meta?.repair), repairMachineLabel(r.meta?.repair), repairLookup(r.meta?.machineRef).partLabel].join(' ').normalize('NFKC').toLowerCase().includes(query.normalize('NFKC').toLowerCase()))
@@ -49,7 +27,7 @@ export function RepairHome({ records, ready, save, onCreate }) {
   // 登録のない機械：3Dなしで、修理の内容（機械・症状・確認・対処・結果）だけを記録する。
   const startFree = () => { if (!onCreate(newFreeRepairRecord(query))) setError('保存できません。もう一度お試しください。') }
   return <section className="repair-page" aria-label="機械の修理">
-    <header className="repair-page-head"><h1>機械の修理</h1><button className="text-action" onClick={() => setIntro(true)}>使い方</button></header>
+    <header className="repair-page-head"><h1>機械の修理</h1></header>
     <form className="repair-search" role="search" onSubmit={e => e.preventDefault()}><label><span className="sr-only">メーカー・型番</span><input type="search" placeholder="メーカー・型番" value={query} onChange={e => setQuery(e.target.value)} /></label><button className="repair-search-button" aria-label="機械を検索">探す</button></form>
     {error && <p className="notice error" role="alert">{error}</p>}
     <h2 className="repair-row-title">修理をはじめる</h2>
@@ -65,7 +43,6 @@ export function RepairHome({ records, ready, save, onCreate }) {
     <div className="repair-row-head"><h2>修理の記録</h2><span>{repairs.length}件</span></div>
     <div className="repair-history-list">{repairs.map(record => <a className="repair-history-row" key={record.id} href={`#/repair/${record.id}`}><div><strong>{record.title || repairLookup(record.meta.machineRef).descriptor?.name || repairMachineLabel(record.meta.repair) || '機械未確認'}</strong><span>{repairHeadline(record.meta.repair) || record.meta.issue || repairLookup(record.meta.machineRef).partLabel || '症状未記録'}</span></div><time>{record.date}</time><span aria-hidden="true">›</span></a>)}</div>
     {!repairs.length && <p className="repair-empty-label">記録はここに残ります</p>}
-    {intro && <RepairIntro onClose={() => setIntro(false)} />}
   </section>
 }
 

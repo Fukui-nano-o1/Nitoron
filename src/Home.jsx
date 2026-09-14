@@ -5,13 +5,13 @@ import FilterDialog from './FilterDialog.jsx'
 import { ErrorNotice, Empty } from './ui.jsx'
 import { EMPTY_FILTERS, paramsFromList } from './search.js'
 
-// ホームのテーマ行。作物の行はcrop条件、課題の行はキーワード（q）条件で絞り、
-// 「すべて見る」も同じ条件を検索結果ページへ引き継ぐ。新着行は条件なしの新しい順。
+// ホームの行。「すべて見る」は同じ条件を検索結果ページへ引き継ぐ。新着行は条件なしの新しい順。
 const BASE = { query: '', region: '', filters: EMPTY_FILTERS, sort: 'recent', page: 0 }
+// 行は記録の種類ごと。作物名・キーワードの固定行は置かない（発表だけを前提にしない）。
 export const HOME_ROWS = [
-  { key: 'recent', label: '新着の発表', state: BASE },
-  ...['ブロッコリー', 'トマト', '水稲'].map(crop => ({ key: `crop:${crop}`, label: crop, state: { ...BASE, filters: { ...EMPTY_FILTERS, crop } } })),
-  ...['育苗', '土づくり', '省力化'].map(word => ({ key: `q:${word}`, label: word, state: { ...BASE, query: word } })),
+  { key: 'recent', label: '新着', state: BASE },
+  { key: 'kind:trouble', label: 'カタログと修理', state: { ...BASE, filters: { ...EMPTY_FILTERS, kind: 'trouble' } } },
+  { key: 'kind:presentation', label: '経営発表', state: { ...BASE, filters: { ...EMPTY_FILTERS, kind: 'presentation' } } },
 ]
 export const searchHref = state => { const qs = paramsFromList(state); return `#/search${qs ? `?${qs}` : ''}` }
 const ROW_LIMIT = 12
@@ -35,7 +35,7 @@ function HomeRow({ row, renderCard }) {
     {state.error ? <ErrorNotice retry={() => setVersion(v => v + 1)}>{state.error}</ErrorNotice>
       : state.loading ? <div className="home-row-scroll" role="status" aria-label={`${row.label}を読み込み中`}>{[0, 1, 2, 3].map(i => <div className="card-skeleton" key={i}><div /><span /><span /></div>)}</div>
       : state.records.length ? <div className="home-row-scroll">{state.records.map(renderCard)}</div>
-      : <Empty title="最初の経営発表を掲載しよう">公開された発表がここに並びます。「自分の実践」から発表を公開できます。</Empty>}
+      : <Empty title="最初の記録を掲載しよう">公開された記録がここに並びます。「自分の実践」から公開できます。</Empty>}
   </section>
 }
 

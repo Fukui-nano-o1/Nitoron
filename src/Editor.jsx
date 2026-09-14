@@ -3,7 +3,6 @@ import BlockEditor from './BlockEditor.jsx'
 import Cover from './Cover.jsx'
 import Attachments from './Attachments.jsx'
 import PublicRecord from './PublicRecord.jsx'
-import ReportDialog from './ReportDialog.jsx'
 import Icon from './Icon.jsx'
 import { KINDS, PHASES, VERDICTS, SECTIONS, METRICS, emptyMeta, today, uid, exportMarkdown, publicSnapshot, publicationProblems, publicationAdvice, publishedDiffers, privateOriginLeaks } from './domain.js'
 import { Field, Dialog, ErrorNotice, download } from './ui.jsx'
@@ -15,8 +14,8 @@ export function SaveChip({ save }) {
   return <span className={`save-chip${trouble ? ' trouble' : ''}`} role="status"><span>{save.status}</span>{trouble && <button className="quiet" onClick={save.retry}>再試行</button>}</span>
 }
 // 記録の編集。発表は「基本情報 → 内容・資料 → 確認・公開」の3段階。段階を移動しても自動保存は続く。
-export default function Editor({ record, step, onStep, onChange, session, flush, save, published, publication, onPublish, publishing, publishResult, onUnpublish, onShare, onDelete, onAccount, discussion, name, originHref, onDeriveLearning, onDeriveNext, deriving, notify }) {
-  const [confirmDelete, setConfirmDelete] = useState(false), [uploading, setUploading] = useState(false), [reportOpen, setReportOpen] = useState(false)
+export default function Editor({ record, step, onStep, onChange, session, flush, save, published, publication, onPublish, publishing, publishResult, onUnpublish, onShare, onDelete, onAccount, discussion }) {
+  const [confirmDelete, setConfirmDelete] = useState(false), [uploading, setUploading] = useState(false)
   const m = record.meta
   const patch = update => onChange({ ...record, ...update })
   const meta = update => patch({ meta: { ...m, ...update } })
@@ -56,14 +55,8 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
       : session && save.sync.pending > 0 ? [{ text: '下書きのクラウド保存が完了していません（同期待ち）。再試行して保存を完了してから公開できます。', action: save.retry, label: '再試行' }] : []),
   ]
   const ready = blockers.length === 0 && !uploading
-  // 参照元：公開中なら公開ページ、未公開でも自分の記録なら編集画面へ。第三者向けの公開画面には非公開の参照先を出さない（RecordBody側）。
-  const originLine = m.origin && <p className="source-line">参考にした記録：{originHref ? <a href={originHref}>{m.origin.title || '記録'}</a> : m.origin.title || '記録'}{m.origin && !m.origin.public && <small>（非公開の自分の記録）</small>}</p>
-  const canReport = m.kind === 'challenge' && !!m.origin?.public && !!session
-  // 補助操作：結果報告（参照元が公開中の挑戦だけ）・学習ノート・次の挑戦。公開・更新が主操作。
-  const derivedActions = <div className="derived-actions print-hidden"><span>この記録から</span>
-    {canReport && <button className="text-action" disabled={deriving} onClick={() => setReportOpen(true)}><Icon name="chat" size={16} />元の発表へ結果を報告する</button>}
-    <button className="text-action" disabled={deriving} onClick={onDeriveLearning}><Icon name="book" size={16} />学習ノートにまとめる</button>
-    <button className="text-action" disabled={deriving} onClick={onDeriveNext}><Icon name="plus" size={16} />次の挑戦を始める</button></div>
+  // 参照元（旧仕様で作られた派生記録に残る）。公開中なら公開ページへ。第三者向けの公開画面には非公開の参照先を出さない（RecordBody側）。
+  const originLine = m.origin && <p className="source-line">参考にした記録：{m.origin.public ? <a href={`#/public/${m.origin.id}`}>{m.origin.title || '記録'}</a> : m.origin.title || '記録'}{!m.origin.public && <small>（非公開の自分の記録）</small>}</p>
   const facts = m.observations.filter(o => o.fact.trim()).length
   const reflecting = ['振り返り', '完了'].includes(m.stage)
   const excerpt = text => text ? (text.length > 160 ? `${text.slice(0, 160)}…` : text) : <span className="unrecorded">未入力</span>
@@ -79,7 +72,6 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
     <Field label="本人の判定" help="目標・判定基準と結果・観測を見比べて選びます。進捗や観測件数から自動では決まりません。"><select value={m.verdict} onChange={e => meta({ verdict: e.target.value })}><option value="">まだ選ばない</option>{VERDICTS.map(v => <option key={v} value={v}>{v}</option>)}</select></Field>
     {m.inputMode === 'sections' ? <><h3 className="reflection-sub">学びと次の一手</h3><p className="reflection-text">{excerpt(m.learning)}</p><button className="text-action" onClick={() => scrollTo('section-learning')}>06 学びと次の一手で編集</button></>
       : <Field label="学びと次の一手" help="次に変えること・続けること・やめること。次の挑戦の仮説に引き継げます。"><textarea rows={3} maxLength={20000} value={m.learning} onChange={e => meta({ learning: e.target.value })} placeholder="次に変えること・続けること・やめること" /></Field>}
-    {derivedActions}
   </section>
   const preview = useMemo(() => ({ ...publicSnapshot(record), publication: { id: record.id, owner: session?.user.id || null, publishedAt: publication?.row?.published_at, updatedAt: publication?.row?.updated_at || new Date().toISOString().slice(0, 10), isPublic: published } }), [record, session?.user.id, publication?.row?.updated_at, published])
   const differs = publication?.row?.snapshot ? publishedDiffers(record, publication.row.snapshot) : null
@@ -158,7 +150,6 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
               {published && <><a className="secondary" href={`#/public/${record.id}`}>公開版を見る</a><button className="secondary" onClick={onShare}>リンクを共有</button><button className="text-action" onClick={onUnpublish}>公開を停止</button></>}
             </div>
             <p className="hint">公開すると、本文・名前・地域・数字・写真・添付資料・資料リンクがログインなしで誰でも読めます。個人情報や他人の未公開情報が含まれていないか確認してください。</p>
-            {derivedActions}
           </section>
           <div className="preview-frame"><div className="preview-label">プレビュー：公開したときの見え方（この内容がそのまま公開されます）</div><PublicRecord record={preview} preview /></div>
           {discussion}
@@ -169,6 +160,5 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
     <div className="step-bar print-hidden">{index > 0 ? <button className="secondary" onClick={prev}><Icon name="left" size={14} />{STEPS[index - 1][1]}</button> : <span />}
       {index < STEPS.length - 1 ? <button className="primary" onClick={next}>次へ：{STEPS[index + 1][1]}<Icon name="right" size={14} /></button> : <button className="primary" disabled={!ready || publishing} onClick={onPublish}>{publishing ? '公開しています…' : published ? '公開版を更新' : '公開する'}</button>}</div>
     {deleteDialog}
-    {reportOpen && canReport && <ReportDialog record={record} origin={m.origin} session={session} name={name} published={published} notify={notify} onClose={() => setReportOpen(false)} />}
   </>
 }

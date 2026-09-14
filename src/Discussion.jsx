@@ -9,7 +9,7 @@ export function jumpToSection(section) {
   const target = (key && document.getElementById(`section-${key}`)) || document.querySelector('.record-body')
   target?.scrollIntoView({ block: 'start', behavior: 'smooth' })
 }
-export default function Discussion({ record, session, name, onAccount, onLearn, onSeen }) {
+export default function Discussion({ record, session, name, onAccount, onSeen }) {
   const [items, setItems] = useState([]), [replies, setReplies] = useState([]), [resolutions, setResolutions] = useState([]), [related, setRelated] = useState({})
   const [loading, setLoading] = useState(true), [error, setError] = useState(''), [busy, setBusy] = useState(false)
   const [author, setAuthor] = useState(name || ''), [kind, setKind] = useState('質問'), [section, setSection] = useState('全体'), [body, setBody] = useState('')
@@ -59,7 +59,7 @@ export default function Discussion({ record, session, name, onAccount, onLearn, 
           <div className="feedback-tags"><span>{item.kind}</span><button type="button" className="jump-link" onClick={() => jumpToSection(item.section)} aria-label={`${item.section}の該当箇所へ移動`}>{item.section} ↗ 該当箇所へ</button><span className={`resolution ${status === '対応済み' ? 'resolved' : ''}`}>{status}</span></div>
           <p>{item.body}</p>
           {relatedTitle && <p className="related-link"><a href={`#/public/${item.related_publication_id}`}>実践記録を見る：{relatedTitle}</a></p>}
-          <div className="feedback-actions">{isVisible && <button className="text-action" onClick={() => { if (!verified) onAccount(); else { setReplyTo(replyTo === item.id ? '' : item.id); setReplyBody('') } }}>返信する</button>}{onLearn && <button className="text-action" onClick={() => onLearn(item)}>学びに残す</button>}
+          <div className="feedback-actions">{isVisible && <button className="text-action" onClick={() => { if (!verified) onAccount(); else { setReplyTo(replyTo === item.id ? '' : item.id); setReplyBody('') } }}>返信する</button>}
             {(owner || session?.user.id === item.user_id) && <button className="text-action" disabled={busy} onClick={() => { if (window.confirm('投稿と返信を削除しますか？')) run(() => deleteFeedback(item.id)) }}>削除</button>}
             {owner && <select aria-label={`${item.author}の投稿への対応状況`} value={status} disabled={busy} onChange={e => run(() => setResolution(record.id, item.id, session, e.target.value))}>{['未対応', '検討中', '対応済み'].map(s => <option key={s}>{s}</option>)}</select>}
           </div>

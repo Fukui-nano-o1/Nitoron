@@ -31,7 +31,7 @@ export default function Talks({ session, bookmarks, onAccount }) {
   }, [owner, version, bookmarks.ready, bookmarks.error, bookmarks.ids.join(',')])
   const retry = () => { bookmarks.error ? bookmarks.retry() : setVersion(v => v + 1) }
   const row = r => <a className="talk-row" key={r.id} href={`#/public/${r.id}/discussion`}>
-    <span className="talk-main"><strong>{r.title || '無題'}</strong><small>{[r.meta?.author, r.meta?.crop].filter(Boolean).join(' · ') || '経営発表'}</small>
+    <span className="talk-main"><strong>{r.title || '無題'}</strong><small>{[r.meta?.author, r.meta?.crop].filter(Boolean).join(' · ') || '記録'}</small>
       {state.first[r.id] && <small className="talk-preview">新着：{state.first[r.id].author}の{state.first[r.id].kind}{state.first[r.id].section && state.first[r.id].section !== '全体' ? `（${state.first[r.id].section}）` : ''}「{state.first[r.id].body}」</small>}</span>
     {state.counts[r.id] ? <span className="talk-new">新着 {state.counts[r.id]}件</span> : <span className="talk-quiet">新着なし</span>}
     <Icon name="right" size={16} />
