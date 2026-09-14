@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import RecordBody from './RecordBody.jsx'
 import PhotoGallery from './PhotoGallery.jsx'
 import RecordMemo from './RecordMemo.jsx'
@@ -8,6 +8,34 @@ const RepairDetail = React.lazy(() => import('./RepairWorkspace.jsx').then(modul
 import { Dialog } from './ui.jsx'
 import { KINDS, METRICS, number } from './domain.js'
 import { imageAttachments, sanitizeAttachments } from './attachment-domain.js'
+import { listPublic } from './community.js'
+import { RecordCard } from './Catalog.jsx'
+import { EMPTY_FILTERS, discoverHref } from './search.js'
+import { sectionsOf, relatedRows } from './catalog-domain.js'
+// ページ内の飛び先。ハッシュルーティングと衝突しないよう、リンク先は書き換えずにスクロールだけする。
+const jump = id => e => { e.preventDefault(); document.getElementById(id)?.scrollIntoView({ block: 'start', behavior: 'smooth' }) }
+// 節ナビ（Airbnb の listing で写真の下に出る「写真・アメニティ・レビュー・地図」の行）。本文の h2 が3つ以上あるときだけ出す。
+function SectionNav({ record, hasDiscussion, hasRelated }) {
+  const sections = sectionsOf(record.blocks)
+  if (sections.length < 3) return null
+  const items = [...sections, ...(hasDiscussion ? [{ id: 'discussion', title: '対話' }] : []), ...(hasRelated ? [{ id: 'related', title: '関連' }] : [])]
+  return <nav className="section-nav print-hidden" aria-label="この記録の節">{items.map(s => <a key={s.id} href={`#${s.id}`} onClick={jump(s.id)}>{s.title.replace(/（.*?）/g, '')}</a>)}</nav>
+}
+// 最下部の関連カード行（Airbnb の「他の宿泊先」）。同じシリーズ→同じメーカーの順に横1段ずつ。0件の行は出さない。
+function RelatedRow({ row, excludeId }) {
+  const [records, setRecords] = useState(null)
+  const state = { query: row.query, region: '', filters: { ...EMPTY_FILTERS, kind: 'trouble' }, sort: 'recent', page: 0 }
+  useEffect(() => {
+    let cancelled = false
+    listPublic({ ...state, limit: 12 }).then(data => { if (!cancelled) setRecords(data.records.filter(r => r.id !== excludeId)) }).catch(() => { if (!cancelled) setRecords([]) })
+    return () => { cancelled = true }
+  }, [row.query, excludeId])
+  if (!records?.length) return null
+  return <section className="listing-row" aria-label={row.label}>
+    <div className="listing-row-head"><h2>{row.label}</h2><a href={discoverHref(state)}>すべて見る</a></div>
+    <div className="listing-row-scroll">{records.map(r => <RecordCard key={r.id} record={r} href={`#/public/${r.id}`} publicMode />)}</div>
+  </section>
+}
 // 記録の公開ページ。Airbnb の listing と同じ並び：戻る → 見出し → 写真 → 記録者 → 要点 → 本文。右カード（PCの右／スマホの下部固定バー）の主操作は「質問・指摘を送る」。
 // 「この実践を試す」など派生記録の入口は置かない。記録の種類（経営発表・カタログ・修理）で見出しの語を変え、発表だけを前提にしない。
 // preview: 確認画面での「公開したときの見え方」。表示だけで、保存・フォロー・対話などのデータ更新は一切起きない。
@@ -40,9 +68,12 @@ export default function PublicRecord({ record, onBack, selected, onSelect, saved
   const authorSection = <div className="author-section"><div><h2>{author}{catalog ? '' : 'さん'}の{kind}</h2><p>{[m?.club, m?.region].filter(Boolean).join(' · ') || '記録者の所属・地域は未記録'}</p>{!preview && canFollow && <button className="text-action follow-button print-hidden" aria-pressed={following} onClick={onFollow}><Icon name="user-plus" size={16} />{following ? 'フォロー中' : 'フォローする'}</button>}</div>
     {preview ? <span className="avatar-circle large" aria-hidden="true">{author.slice(0, 1)}</span> : <a className="avatar-circle large" href={`#/user/${record.publication.owner}`} aria-label={`${author}のプロフィールを表示`}>{author.slice(0, 1)}</a>}</div>
   const factsRow = <div className="record-facts">{facts.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div>
+  const related = preview ? [] : relatedRows(record)
+  const sectionNav = <SectionNav record={record} hasDiscussion={!preview && !!discussion} hasRelated={related.length > 0} />
   if (preview) return <article className="listing-page preview" aria-label="公開プレビュー">
     <header className="listing-title"><span className="listing-kind">{kind}</span><h1>{record.title}</h1><div className="listing-subtitle"><span>{subtitle}</span><span className="preview-tag">{kind}</span></div></header>
     <div className="listing-hero"><PhotoGallery record={record} /></div>
+    {sectionNav}
     <div className="listing-columns"><div className="listing-main">{authorSection}{factsRow}{highlights}<RecordBody record={record} hideHeading hideCover /></div></div>
     <div className="publication-date">公開版の更新：{String(record.publication?.updatedAt || '').slice(0, 10) || '未公開'}</div>
   </article>
@@ -52,6 +83,7 @@ export default function PublicRecord({ record, onBack, selected, onSelect, saved
     <div className="listing-hero"><PhotoGallery record={record} />
       <div className="hero-overlay print-hidden">{back}<div><button onClick={onShare} aria-label="共有"><Icon name="share" size={18} /></button><button aria-pressed={saved} onClick={onSave} aria-label={saved ? '保存リストから外す' : '保存リストに追加'}><Icon name="heart" size={18} fill={saved ? '#ff385c' : 'none'} color={saved ? '#ff385c' : undefined} /></button><button aria-haspopup="dialog" aria-label="その他の操作" onClick={() => setMoreOpen(true)}><Icon name="menu" size={18} /></button>{editHref && <a href={editHref} aria-label="編集する"><Icon name="pencil" size={18} /></a>}</div></div>
     </div>
+    {sectionNav}
     <div className="listing-columns"><div className="listing-main">{authorSection}{factsRow}{highlights}<RecordBody record={record} hideHeading hideCover /></div>
     <aside className="listing-aside print-hidden"><div className="action-card"><h2>この記録について</h2>
       <dl className="action-facts"><div><dt>種類</dt><dd>{kind}</dd></div><div><dt>記録日</dt><dd>{record.date}</dd></div><div><dt>記録者</dt><dd>{author}</dd></div></dl>
@@ -62,7 +94,9 @@ export default function PublicRecord({ record, onBack, selected, onSelect, saved
         <button className="action-row" aria-haspopup="dialog" onClick={() => setMoreOpen(true)}><span className="action-icon"><Icon name="menu" size={20} /></span><span><strong>その他</strong><small>ほかの記録との比較、自分だけのメモ。</small></span></button>
         {editHref && <a className="action-row" href={editHref}><span className="action-icon"><Icon name="pencil" size={20} /></span><span><strong>編集する</strong><small>自分の記録です。下書きを編集して公開版を更新できます。</small></span></a>}
       </div></div><button className="text-action print-button" onClick={() => window.print()}>印刷・PDFに保存</button></aside></div>
-    {discussion}<div className="publication-date">公開版の更新：{record.publication.updatedAt.slice(0, 10)}</div>
+    {discussion}
+    {related.length > 0 && <div className="listing-rows" id="related">{related.map(row => <RelatedRow key={row.key} row={row} excludeId={record.id} />)}</div>}
+    <div className="publication-date">公開版の更新：{record.publication.updatedAt.slice(0, 10)}</div>
     {moreOpen && <Dialog title="その他の操作" onClose={() => setMoreOpen(false)}><div className="action-list more-menu">
       <button className="action-row" aria-pressed={selected} onClick={onSelect}><span className="action-icon"><Icon name={selected ? 'check' : 'compare'} size={20} /></span><span><strong>{selected ? '比較から外す' : 'ほかの記録と比較する'}</strong><small>{selected ? '比較に選択中です。' : '3件まで選んで、条件と数字を並べられます。'}</small></span></button>
       <RecordMemo record={record} session={session} onAccount={accountFromMore} notify={notify} />

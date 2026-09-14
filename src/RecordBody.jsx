@@ -4,6 +4,16 @@ import { AttachmentList } from './Attachments.jsx'
 import { imageAttachments } from './attachment-domain.js'
 import { KINDS, SECTIONS, METRICS, number, formatNumber, safeUrl } from './domain.js'
 import { MachineTargetSection } from './MachinePicker.jsx'
+import { sectionId } from './catalog-domain.js'
+// 本文を h2 ごとの節に分ける（h2 が空文字のものは見出しにしない）。先頭の h2 より前は見出しなしの節。
+function bodySections(blocks) {
+  const sections = []
+  for (const b of blocks) {
+    if (b.type === 'h2' && String(b.text || '').trim()) sections.push({ heading: b, blocks: [] })
+    else { if (!sections.length) sections.push({ heading: null, blocks: [] }); sections[sections.length - 1].blocks.push(b) }
+  }
+  return sections.filter(s => s.heading || s.blocks.some(b => b.text))
+}
 export default function RecordBody({ record, hideHeading = false, hideCover = false }) {
   const m = record.meta
   return <div className="record-body">
@@ -34,12 +44,15 @@ export default function RecordBody({ record, hideHeading = false, hideCover = fa
       {!!m.sources.length && <section className="read-section"><h2>出典・資料</h2>{m.sources.map(s => <p className="source-line" key={s.id}>{safeUrl(s.url) ? <a href={safeUrl(s.url)} rel="noopener noreferrer" target="_blank">{s.title || s.url}</a> : s.title || '資料名未記録'}{s.date && <span> · {s.date}</span>}</p>)}</section>}
     </>}
     <AttachmentList attachments={m?.attachments} />
-    {!!record.blocks.filter(b => b.text).length && <section className="read-section">{m?.inputMode === 'sections' && <h2>補足</h2>}{record.blocks.map(b => {
-      if (b.type === 'divider') return <hr key={b.id} />
-      if (!b.text) return null
-      if (['h1', 'h2', 'h3'].includes(b.type)) return <h3 key={b.id}>{b.text}</h3>
-      if (b.type === 'quote') return <blockquote key={b.id}>{b.text}</blockquote>
-      return <p key={b.id} className={b.type === 'callout' ? 'notice' : ''}>{b.type === 'todo' ? (b.checked ? '☑ ' : '☐ ') : b.type === 'bullet' ? '• ' : ''}{b.text}</p>
-    })}</section>}
+    {!!record.blocks.filter(b => b.text).length && bodySections(record.blocks).map((section, i) => <section className="read-section" key={section.heading?.id || `lead-${i}`} id={section.heading ? sectionId(section.heading) : undefined}>
+      {section.heading ? <div className="section-heading"><h2>{section.heading.text}</h2></div> : m?.inputMode === 'sections' && <h2>補足</h2>}
+      {section.blocks.map(b => {
+        if (b.type === 'divider') return <hr key={b.id} />
+        if (!b.text) return null
+        if (['h1', 'h3'].includes(b.type)) return <h3 key={b.id}>{b.text}</h3>
+        if (b.type === 'quote') return <blockquote key={b.id}>{b.text}</blockquote>
+        return <p key={b.id} className={b.type === 'callout' ? 'notice' : ''}>{b.type === 'todo' ? (b.checked ? '☑ ' : '☐ ') : b.type === 'bullet' ? '• ' : ''}{b.text}</p>
+      })}
+    </section>)}
   </div>
 }

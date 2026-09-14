@@ -21,9 +21,18 @@ const blocks = [
   block('callout', `公式資料を読んで自分の言葉で書いた参考情報です。原文・図は転載せず、数値には該当頁を添えています。作業の手順・条件は記載していません。必ず取扱説明書の該当頁を確認してください。${manual.pageMap}。Nitoron は株式会社クボタと関係のない非公式サイトです。`),
   block('text', `販売型式名 ${entry.salesModel}。出典：製品ページ（${product.checkedAt}確認）、取扱説明書 ${manual.partNumber}（PDF ${manual.physicalPages}頁、${manual.checkedAt}確認）。`),
 ]
+// 節見出しは読む人向けの語に揃える（Airbnb の listing のように、節ごとに何が書いてあるかが見出しで分かるように）。
+const SECTION_TITLES = { 'エンジン': 'エンジン', '走行': '走行部', '作業部': '作業部', '操作': '操作方法', '安全': '安全に使うために', '整備（索引）': '整備と点検（索引）' }
+const isPartsList = it => /^各部の名称/.test(it.label)
+// 「部品の名称」：各部の名称の項目（図の一覧）を、本文の先頭で1部品1行にする。
+const partsItem = entry.elements.flatMap(el => el.items).find(isPartsList)
+if (partsItem) {
+  blocks.push(block('h2', '部品の名称'), block('text', `取扱説明書の各部の名称の図に載っている部品${ref(partsItem.printed)}。`))
+  for (const name of partsItem.value.split('／').map(s => s.trim()).filter(Boolean)) blocks.push(block('bullet', name))
+}
 for (const el of entry.elements) {
-  blocks.push(block('h2', el.name), block('text', el.summary))
-  for (const it of el.items) blocks.push(block('bullet', `${it.label}：${it.value}${it.source === 'product' ? `（製品ページ・${product.checkedAt}）` : ref(it.printed)}${it.note ? ` — ${it.note}` : ''}`))
+  blocks.push(block('h2', SECTION_TITLES[el.name] || el.name), block('text', el.summary))
+  for (const it of el.items.filter(it => !isPartsList(it))) blocks.push(block('bullet', `${it.label}：${it.value}${it.source === 'product' ? `（製品ページ・${product.checkedAt}）` : ref(it.printed)}${it.note ? ` — ${it.note}` : ''}`))
 }
 blocks.push(block('h2', '症状から探す（取扱説明書の索引）'))
 for (const s of entry.symptoms) { blocks.push(block('h3', `${s.symptom}${ref(s.printed)}`)); for (const c of s.checks) blocks.push(block('bullet', `${c.point}${ref(c.printed)}`)) }
