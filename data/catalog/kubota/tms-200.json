@@ -1,0 +1,476 @@
+{
+  "schema": "nitoron-catalog/1",
+  "maker": "クボタ",
+  "category": "ミニ耕うん機",
+  "series": "TMS-200",
+  "salesModel": "TMS200",
+  "productName": "Midy Smile-mini",
+  "rules": [
+    "原文と図を転載しない",
+    "数値は必ず頁を添える",
+    "原典にない手順を書かない"
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/TMS-200/",
+      "checkedAt": "2026-09-14"
+    },
+    "manual": {
+      "title": "TMS200 取扱説明書",
+      "partNumber": "LK710-6511-2",
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6547884cea64550284728eb26b0947ef",
+      "downloadUrl": "https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=6547884cea64550284728eb26b0947ef",
+      "sha256": "05186385a1a000b6442f47c5cf38ce56ab75105fd6759a94a2aa3925e254d909",
+      "physicalPages": 48,
+      "pageMap": "本文の印刷頁 = PDF頁 − 18。安全作業説明編の「安-n」= PDF頁 n+6",
+      "checkedAt": "2026-09-14"
+    }
+  },
+  "timing": {
+    "start": "2026-09-14T21:07+09:00",
+    "end": "2026-09-14T21:11+09:00",
+    "pagesRead": 24
+  },
+  "crossCheck": [
+    {
+      "field": "耕うん幅",
+      "manual": "575 mm（印刷p.28）",
+      "product": "575mm（爪軸あり仕様）",
+      "match": true
+    },
+    {
+      "field": "燃料タンク容量",
+      "manual": "0.6 L（印刷p.28）",
+      "product": "0.6L",
+      "match": true
+    },
+    {
+      "field": "最大出力",
+      "manual": "1.6 kW｛2.2 PS｝/7000 rpm（印刷p.28）",
+      "product": "TMS200(2.2PS)",
+      "match": true
+    },
+    {
+      "field": "全長・全幅・全高・質量",
+      "manual": "印刷p.28に記載",
+      "product": "製品ページに記載なし",
+      "match": null
+    }
+  ],
+  "elements": [
+    {
+      "id": "engine",
+      "name": "エンジン",
+      "summary": "空冷4ストロークの小型ガソリンエンジン1基で、車軸（ローター軸）を直接駆動する構成。始動はリコイル式で電装はエンジン停止スイッチ系のみ。",
+      "items": [
+        {
+          "label": "エンジン型式",
+          "value": "GXV50",
+          "printed": 28
+        },
+        {
+          "label": "種類",
+          "value": "空冷４ストロークガソリンエンジン（OHV）",
+          "printed": 28
+        },
+        {
+          "label": "総排気量",
+          "value": "0.0494 L｛49.4 cc｝",
+          "printed": 28
+        },
+        {
+          "label": "定格出力",
+          "value": "1.3 kW｛1.8 PS｝/4800 rpm",
+          "printed": 28
+        },
+        {
+          "label": "最大出力",
+          "value": "1.6 kW｛2.2 PS｝/7000 rpm",
+          "printed": 28
+        },
+        {
+          "label": "使用燃料",
+          "value": "自動車用無鉛ガソリン",
+          "printed": 28
+        },
+        {
+          "label": "燃料タンク容量",
+          "value": "0.6 L",
+          "printed": 28
+        },
+        {
+          "label": "始動方式",
+          "value": "リコイルスターター式",
+          "printed": 28
+        },
+        {
+          "label": "エンジンオイル",
+          "value": "クボタ純オイル スーパーG 10W-30・0.25 L",
+          "printed": 17,
+          "note": "交換の目安は初回30時間、以後50時間ごと（表の記載）。交換のやり方は印刷p.18。"
+        },
+        {
+          "label": "点火プラグ",
+          "value": "NGK C5HSB または DENSO U16FS-UB",
+          "printed": 30,
+          "note": "電極スキマの規定値は0.6〜0.7 mm（印刷p.21）。点検の手順は同頁。"
+        },
+        {
+          "label": "エアクリーナー",
+          "value": "ろ過部はウレタン（湿式）",
+          "printed": 20,
+          "note": "汚れたまま使うと出力低下の原因になると説明されている。掃除の方法は印刷p.20。"
+        }
+      ]
+    },
+    {
+      "id": "drive",
+      "name": "走行",
+      "summary": "車軸タイプ。ローター軸そのものが走行を担い、走行用の車輪は持たない。クラッチはレバーを握っている間だけ動力が伝わるデッドマン式。",
+      "items": [
+        {
+          "label": "主クラッチ形式",
+          "value": "爪クラッチ式（デッドマン式）",
+          "printed": 28
+        },
+        {
+          "label": "変速段数",
+          "value": "前進1段",
+          "printed": 28
+        },
+        {
+          "label": "車軸回転速度",
+          "value": "118 rpm",
+          "printed": 28
+        },
+        {
+          "label": "車軸の形状・寸法",
+          "value": "丸軸 φ20 mm",
+          "printed": 28
+        },
+        {
+          "label": "ミッションオイル",
+          "value": "クボタ純オイル M80B・0.4 L",
+          "printed": 17,
+          "note": "交換の目安は初回30時間、以後50時間ごと。交換のやり方は印刷p.19。"
+        },
+        {
+          "label": "クラッチ調整",
+          "value": "調整箇所はクラッチワイヤーとスプリング",
+          "printed": 22,
+          "note": "ミッションケース内から音がしたら調整する、と案内されている。調整量と手順は印刷p.22。"
+        }
+      ]
+    },
+    {
+      "id": "work",
+      "name": "作業部",
+      "summary": "ローター（耕うん爪）に左右のサイドディスクとロータリーカバーが付く。抵抗棒で耕うん深さと前進速度のバランスを取る。",
+      "items": [
+        {
+          "label": "耕幅",
+          "value": "575 mm",
+          "printed": 28
+        },
+        {
+          "label": "爪回転径",
+          "value": "260 mm",
+          "printed": 28
+        },
+        {
+          "label": "耕うん爪（タイン）",
+          "value": "LH 8本（刻印A）・RH 8本（刻印B）",
+          "printed": 30,
+          "note": "左右対称に組み付ける旨と取付けの説明は印刷p.13。"
+        },
+        {
+          "label": "抵抗棒",
+          "value": "標準位置は上の穴",
+          "printed": 14,
+          "note": "ほ場の硬さに応じて穴位置を変えて作業速度を調整する、という位置づけ（印刷p.6・14）。"
+        },
+        {
+          "label": "対応面積の目安",
+          "value": "30坪程度",
+          "source": "product",
+          "note": "製品ページの表示。取説には記載がない。"
+        }
+      ]
+    },
+    {
+      "id": "controls",
+      "name": "操作",
+      "summary": "操作系はハンドル上のクラッチレバー・スロットルレバー・停止スイッチと、エンジン側のチョークレバー・燃料コックレバーの5つ。ハンドル高さは締付ノブで3段に差し替える。",
+      "items": [
+        {
+          "label": "各部の名称（図の一覧）",
+          "value": "停止スイッチ／ハンドル締付ノブ／スロットルレバー／クラッチレバー／抵抗棒／ローター／サイドディスク／ミッションケース／バンパー／ロータリーカバー／エンジン／リコイルスターター／ハンドル／チョークレバー／ドレン／燃料コックレバー",
+          "printed": 3
+        },
+        {
+          "label": "クラッチレバー",
+          "value": "握ると《入》、放すと《切》",
+          "printed": 5
+        },
+        {
+          "label": "ハンドル締付ノブ",
+          "value": "高さ3段の差し替え式",
+          "printed": 5
+        },
+        {
+          "label": "スロットルレバー",
+          "value": "右回しで低速、左回しで高速。始動時は中間",
+          "printed": 4
+        },
+        {
+          "label": "停止スイッチ",
+          "value": "押して《停止》。押しながら回すと《運転》",
+          "printed": 4
+        },
+        {
+          "label": "チョークレバー",
+          "value": "《始動》／《運転》の2位置",
+          "printed": 5
+        },
+        {
+          "label": "燃料コックレバー",
+          "value": "《出》／《止》の2位置",
+          "printed": 4
+        },
+        {
+          "label": "ドレン",
+          "value": "気化器内の燃料を抜く口",
+          "printed": 4
+        }
+      ]
+    },
+    {
+      "id": "safety",
+      "name": "安全",
+      "summary": "安全作業説明編（安-1〜安-11）が本文とは別建てで先頭にある。作業条件はここでは要約せず、該当頁を指す。",
+      "items": [
+        {
+          "label": "安全作業のしかた・危険/警告/注意の区分",
+          "value": "安-1",
+          "printed": "安-1"
+        },
+        {
+          "label": "作業前の一般的な注意",
+          "value": "安-2〜安-3",
+          "printed": "安-2"
+        },
+        {
+          "label": "点検・整備・掃除のとき",
+          "value": "安-4",
+          "printed": "安-4",
+          "note": "給油・点検はエンジン停止・冷却後という条件がこの頁と印刷p.7・16・17にある。"
+        },
+        {
+          "label": "エンジン始動のとき",
+          "value": "安-5",
+          "printed": "安-5"
+        },
+        {
+          "label": "移動走行のとき",
+          "value": "安-6",
+          "printed": "安-6"
+        },
+        {
+          "label": "積込み・積降ろし（アユミ）",
+          "value": "安-7、印刷p.11〜12",
+          "printed": "安-7"
+        },
+        {
+          "label": "ほ場作業のとき",
+          "value": "安-8",
+          "printed": "安-8"
+        },
+        {
+          "label": "回転爪への異物",
+          "value": "安-9",
+          "printed": "安-9"
+        },
+        {
+          "label": "長期格納のとき",
+          "value": "安-10",
+          "printed": "安-10"
+        },
+        {
+          "label": "表示ラベル",
+          "value": "安-11",
+          "printed": "安-11"
+        }
+      ]
+    },
+    {
+      "id": "maintenance",
+      "name": "整備（索引）",
+      "summary": "点検は「運転前の点検表」と「定期点検整備表」の2表が軸。間隔はシーズン前／10時間ごと／50時間ごと／格納時。手順は各頁へ。",
+      "items": [
+        {
+          "label": "運転前の点検表",
+          "value": "油量・燃料・エアクリーナー・吸気口・周囲のゴミ・爪・注油・レバー・停止スイッチ",
+          "printed": 7
+        },
+        {
+          "label": "定期点検整備表",
+          "value": "エンジン関係6項目・本機関係6項目",
+          "printed": 16
+        },
+        {
+          "label": "給油・注油表",
+          "value": "燃料／エンジン／ミッション／摺動部／クラッチレバー軸の5箇所",
+          "printed": 17
+        },
+        {
+          "label": "エンジンオイル交換",
+          "value": "印刷p.18",
+          "printed": 18
+        },
+        {
+          "label": "ミッションオイル交換",
+          "value": "印刷p.19",
+          "printed": 19
+        },
+        {
+          "label": "エアクリーナー掃除",
+          "value": "印刷p.20",
+          "printed": 20
+        },
+        {
+          "label": "点火プラグ・リコイル吸気口",
+          "value": "印刷p.21",
+          "printed": 21
+        },
+        {
+          "label": "クラッチ調整",
+          "value": "印刷p.22",
+          "printed": 22
+        },
+        {
+          "label": "長期格納",
+          "value": "印刷p.23〜24",
+          "printed": 23
+        },
+        {
+          "label": "不調時の処置",
+          "value": "印刷p.25〜27",
+          "printed": 25
+        },
+        {
+          "label": "電気配線図",
+          "value": "印刷p.29",
+          "printed": 29
+        },
+        {
+          "label": "主な消耗部品一覧",
+          "value": "プラグ・オイルシール・ピン類・ワイヤー・タイン",
+          "printed": 30
+        }
+      ]
+    }
+  ],
+  "symptoms": [
+    {
+      "symptom": "エンジンが始動しない・始動困難",
+      "printed": 25,
+      "checks": [
+        {
+          "point": "燃料の有無",
+          "printed": 18
+        },
+        {
+          "point": "燃料コックレバーの位置",
+          "printed": 8
+        },
+        {
+          "point": "スロットルレバーの位置",
+          "printed": 4
+        },
+        {
+          "point": "点火プラグの湿り",
+          "printed": 21
+        },
+        {
+          "point": "点火プラグの火花・スキマ",
+          "printed": 21
+        },
+        {
+          "point": "チョークレバーの位置",
+          "printed": 5
+        },
+        {
+          "point": "停止スイッチの位置",
+          "printed": 4
+        }
+      ]
+    },
+    {
+      "symptom": "エンジンの出力不足・自然停止",
+      "printed": 26,
+      "checks": [
+        {
+          "point": "エアクリーナーの詰まり",
+          "printed": 20
+        },
+        {
+          "point": "リコイルスターター吸気口の詰まり",
+          "printed": 21
+        },
+        {
+          "point": "エンジンオイルの量・劣化",
+          "printed": 18
+        },
+        {
+          "point": "エンジンの圧縮（購入先へ相談）",
+          "printed": 26
+        },
+        {
+          "point": "冷却フィンの泥詰まり",
+          "printed": 26
+        },
+        {
+          "point": "スロットルレバー・ワイヤーの取付部",
+          "printed": 26
+        },
+        {
+          "point": "ローターの適合",
+          "printed": 26
+        }
+      ]
+    },
+    {
+      "symptom": "各部に振動が多い",
+      "printed": 27,
+      "checks": [
+        {
+          "point": "エンジン取付ボルト",
+          "printed": 27
+        },
+        {
+          "point": "ハンドル締付ノブ",
+          "printed": 5
+        },
+        {
+          "point": "ローターの取付け",
+          "printed": 27
+        }
+      ]
+    },
+    {
+      "symptom": "クラッチレバーを操作しても走行しない",
+      "printed": 27,
+      "checks": [
+        {
+          "point": "クラッチワイヤーの伸び",
+          "printed": 22
+        }
+      ]
+    }
+  ],
+  "notVerified": [
+    "実機での寸法・部品の照合",
+    "販売台数・人気の根拠",
+    "アタッチメント装着時の仕様（B仕様等の型式違い）"
+  ]
+}
