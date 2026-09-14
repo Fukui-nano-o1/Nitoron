@@ -67,8 +67,9 @@ export default function RepairMachineView({ machineRef, className = '' }) {
   const whole = () => { stop('whole'); setPicked(null); leaseRef.current?.setScope(ROOT_PART_ID, 0) }
   const interaction = () => { stop('interaction'); setPlaying(false) }
   const ready = viewer === 'ready' && !!resolved.node
-  const name = resolved.node ? (resolved.node.id === ROOT_PART_ID ? MACHINE_NAME : resolved.node.name) : 'モデル未対応'
-  const unavailable = resolved.status === 'unknown-machine' ? 'この機種の3Dは未対応です。' : '保存されたモデルを表示できません。'
+  const name = resolved.node ? (resolved.node.id === ROOT_PART_ID ? MACHINE_NAME : resolved.node.name) : machineRef ? 'モデル未対応' : '3Dなし'
+  // 機械参照のない記録（登録のない機械）は、モデルの不具合ではなく「3Dを持たない記録」。
+  const unavailable = !machineRef ? 'この記録に3Dはありません。機械・症状・確認・対処・結果は記録できます。' : resolved.status === 'unknown-machine' ? 'この機種の3Dは未対応です。' : '保存されたモデルを表示できません。'
   return <section className={`repair-machine-view ${className}`} aria-label="修理対象の3D">
     <div className="repair-machine-heading"><strong>{name}</strong>{resolved.node && resolved.node.id !== ROOT_PART_ID && <span>{MACHINE_NAME}</span>}</div>
     <div className="repair-machine-canvas" ref={container} role="group" aria-label={`${name}の3D。回転・拡大できます。`}

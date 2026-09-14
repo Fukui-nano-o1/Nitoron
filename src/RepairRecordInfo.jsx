@@ -3,6 +3,7 @@ import { SECTIONS, METRICS, number, formatNumber, safeUrl } from './domain.js'
 import { sanitizeAttachments, fileSize } from './attachment-domain.js'
 import { openAttachment } from './assets.js'
 import { repairLookup } from './repair-workspace.mjs'
+import { RepairContent } from './RepairEntry.jsx'
 
 const filled = value => value != null && String(value).trim() !== ''
 const list = value => Array.isArray(value) ? value : []
@@ -37,6 +38,7 @@ export default function RepairRecordInfo({ record }) {
       ['対象部品', m.machineRef ? target.partLabel : ''],
       ['モデル版', m.machineRef?.modelVersion],
     ]} />
+    {m.repair && <RepairContent repair={m.repair} fallbackSymptom={m.issue} compact />}
     {filled(m.summary) && <section className="read-section"><h3>要約</h3><p>{m.summary}</p></section>}
     {coverUrl && <p><a href={coverUrl} rel="noopener noreferrer" target="_blank">表紙の画像を開く</a></p>}
     <Values values={[
@@ -44,7 +46,7 @@ export default function RepairRecordInfo({ record }) {
       ['対象面積', filled(m.areaA) ? `${m.areaA} a` : ''],
       ['開始日', m.start], ['終了日', m.end], ['条件', m.conditions],
     ]} />
-    {SECTIONS.map(([key, label]) => filled(m[key]) ? <section className="read-section" key={key}>
+    {SECTIONS.filter(([key]) => !(key === 'issue' && m.repair && !filled(m.repair.symptom?.text))).map(([key, label]) => filled(m[key]) ? <section className="read-section" key={key}>
       <h3>{sectionLabels[key] || label}</h3>
       {key === 'hypothesis' && <span className="state-label">未検証の見立て</span>}
       {key === 'interpretation' && <span className="state-label">事実からの解釈</span>}

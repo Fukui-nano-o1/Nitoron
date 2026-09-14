@@ -1,4 +1,5 @@
 import { sanitizeAttachments } from './attachment-domain.js'
+import { sanitizeRepair, repairProblems, repairMarkdown } from './repair-entry.mjs'
 export const uid = () => crypto.randomUUID()
 export const today = () => new Date().toLocaleDateString('sv-SE')
 export const textBlock = (text = '', type = 'text') => ({ id: uid(), type, text })
@@ -24,6 +25,8 @@ export const emptyMeta = (kind = 'presentation') => ({
   interpretation: '', learning: '', conditions: '', stage: '仮説',
   target: '', deadline: '', criterion: '', verdict: '', revenue: '', cost: '', hours: '', yieldKg: '',
   observations: [], sources: [], attachments: [], origin: null, subject: 'normal', machineRef: null,
+  // 修理記録の内容（機械・症状・確認・対処・結果）。修理以外の記録は null。
+  repair: null,
 })
 // 機械参照（分野⑦）。契約は提供カタログ（src/machine/catalog.js）と共有：partId '' は部品未選択、
 // 'machine'（カタログのROOT_PART_ID）は機械全体の明示指定。3項目をそのまま複製し、
@@ -53,6 +56,8 @@ export function sanitizeMeta(raw) {
   // machineRef は subject に関わらず保持し、通常へ切り替えても選択済みの対象を消さない。
   if (m.subject !== 'machine_repair') m.subject = 'normal'
   m.machineRef = sanitizeMachineRef(raw.machineRef)
+  // 修理記録は常に修理の内容を持つ（旧記録は空で補う）。修理以外に混入した値は保持しない。
+  m.repair = m.subject === 'machine_repair' ? sanitizeRepair(raw.repair) : null
   // 項目入力で書かれた既存の記録は項目モードで開く。指定がなければフリー入力。
   if (m.inputMode !== 'free' && m.inputMode !== 'sections') m.inputMode = hasSectionContent(m) ? 'sections' : 'free'
   return m
@@ -111,6 +116,7 @@ export function publicationProblems(record) {
   if (record.meta.start && record.meta.end && record.meta.start > record.meta.end) issues.push('期間の終了日が開始日より前です。')
   for (const [key, label] of METRICS) if (record.meta[key] !== '' && number(record.meta[key]) === null) issues.push(`${label}は0以上の数値で入力してください。`)
   if (record.meta.areaA !== '' && !(number(record.meta.areaA) > 0)) issues.push('面積は0より大きい数値で入力してください。')
+  if (record.meta.repair) issues.push(...repairProblems(record.meta.repair))
   for (const leak of privateOriginLeaks(record)) issues.push(`${leak.field === 'title' ? 'タイトル' : '要約'}に非公開の参照元のタイトル「${record.meta.origin.title}」が含まれています。公開前に書き換えてください。`)
   return issues
 }
@@ -169,6 +175,7 @@ export function exportMarkdown(r) {
     lines.push('', '## 経営の数字', '', ...METRICS.map(([key, label, unit]) => `- ${label}: ${formatNumber(number(m[key]))}${number(m[key]) === null ? '' : unit}`))
     if (m.conditions) lines.push('', `比較時の条件: ${m.conditions}`)
     if (m.kind === 'challenge') lines.push('', '## 挑戦の計画', `進捗: ${m.stage}`, `目標: ${m.target}`, `判定基準: ${m.criterion}`, `期限: ${m.deadline}`, `本人の判定: ${m.verdict || '未選択'}`)
+    if (m.repair) lines.push(...repairMarkdown(m.repair))
     if (m.origin) lines.push('', `参考にした発表: ${m.origin.title} (${m.origin.id})`)
     if (m.sources.length) lines.push('', '## 出典・資料', '', ...m.sources.map(s => `- ${s.title || '資料'}: ${s.url || ''} (${s.date || '日付未記録'})`))
     if (m.attachments?.length) lines.push('', '## 添付資料', '', ...m.attachments.map(a => `- ${a.name}${a.caption ? ` — ${a.caption}` : ''}`), '', '添付ファイル本体はこのMarkdownに含まれません。Nitoronの記録から開いてください。')

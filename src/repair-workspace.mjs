@@ -1,4 +1,5 @@
 import { newRecord } from './domain.js'
+import { emptyRepair } from './repair-entry.mjs'
 import { MACHINE_ID, MODEL_VERSION, MACHINE_NAME, ROOT_PART_ID, resolveMachineRef } from './machine/catalog.js'
 
 export const isRepairRecord = record => record?.meta?.subject === 'machine_repair'
@@ -73,6 +74,19 @@ export function newRepairRecord(descriptor) {
   record.title = machine.name
   record.meta.subject = 'machine_repair'
   record.meta.machineRef = machineRef
+  record.meta.repair = { ...emptyRepair(), machine: { maker: machine.maker, model: machine.model, serial: '', hours: '' } }
+  return record
+}
+
+// 登録（3D）のない機械の修理記録。機械参照は持たず、メーカー・型式は本人の入力だけで表す。
+// 型番文字列から登録機種を推測して代用しない。
+export function newFreeRepairRecord(text = '') {
+  const label = String(text || '').trim().slice(0, 200)
+  const record = newRecord('trouble')
+  record.title = label || '機械の修理'
+  record.meta.subject = 'machine_repair'
+  record.meta.machineRef = null
+  record.meta.repair = { ...emptyRepair(), machine: { maker: '', model: label, serial: '', hours: '' } }
   return record
 }
 
