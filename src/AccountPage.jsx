@@ -172,7 +172,7 @@ export default function AccountPage({ section, session, name, onName, flush, own
     <Crumbs title={title} />
     <h1 className="account-title">{title}</h1>
     {key === 'personal' && <Personal session={session} name={name} onName={onName} />}
-    {key === 'login' && <div className="account-columns"><div className="account-main account-auth"><AccountAuth session={session} name={name} onName={onName} flush={flush} /></div><aside className="account-aside"><div className="account-panel"><Icon name="shield" size={28} /><h3>パスワードはありません</h3><p>メールに届く確認リンクか確認コードでログインします。メールアドレスを変えるときも同じ手順です。</p></div></aside></div>}
+    {key === 'login' && <div className="account-columns"><div className="account-main account-auth"><AccountAuth session={session} flush={flush} /></div><aside className="account-aside"><div className="account-panel"><Icon name="shield" size={28} /><h3>パスワードはありません</h3><p>メールに届く確認リンクか確認コードでログインします。メールアドレスを変えるときも同じ手順です。</p></div></aside></div>}
     {key === 'machines' && <Machines session={session} />}
     {key === 'sharing' && <Sharing session={session} owned={owned} />}
     {key === 'data' && <Data data={data} />}

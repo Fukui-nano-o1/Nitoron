@@ -3,7 +3,7 @@ import { supabase } from './supabase.js'
 import { Dialog, Field, ErrorNotice } from './ui.jsx'
 
 // ダイアログ（各画面からの「登録・ログイン」）とアカウントページ（#/account/login）で同じ本体を使う。
-export function AccountAuth({ session, name, onName, flush }) {
+export function AccountAuth({ session, flush }) {
   const [email, setEmail] = useState(''), [mode, setMode] = useState('register')
   const [token, setToken] = useState(''), [sent, setSent] = useState(false), [sentType, setSentType] = useState('email')
   const [busy, setBusy] = useState(false), [error, setError] = useState(''), [notice, setNotice] = useState('')
@@ -27,7 +27,6 @@ export function AccountAuth({ session, name, onName, flush }) {
     setNotice('メールアドレスを確認しました。'); setSent(false)
   }) }
   return <>
-    <Field label="表示名"><input maxLength={80} value={name} onChange={e => onName(e.target.value)} placeholder="発表や指摘に使う名前" /></Field>
     {permanent ? <>
       <div className="account-state"><strong>{session.user.email}</strong><p>このメールアドレスで別の端末からも記録を開けます。</p></div>
       <button className="secondary" disabled={busy} onClick={() => run(async () => {
@@ -54,6 +53,6 @@ export function AccountAuth({ session, name, onName, flush }) {
     {notice && <p className="notice" role="status">{notice}</p>}{error && <ErrorNotice>{error}</ErrorNotice>}
   </>
 }
-export default function Account({ session, name, onName, flush, onClose }) {
-  return <Dialog title="アカウントと保存" onClose={onClose}><AccountAuth session={session} name={name} onName={onName} flush={flush} /><p className="hint"><a href="#/account" onClick={onClose}>アカウントページで、個人情報・機械・公開設定も入力できます。</a></p></Dialog>
+export default function Account({ session, flush, onClose }) {
+  return <Dialog title="アカウントと保存" onClose={onClose}><AccountAuth session={session} flush={flush} /><p className="hint"><a href="#/account" onClick={onClose}>アカウントページで、個人情報・機械・公開設定も入力できます。</a></p></Dialog>
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import Icon from './Icon.jsx'
 // 下部ナビの5項目。探す・保存・対話が閲覧側、自分の実践が発表管理側。
 export const NAV = [['discover', '探す', 'search'], ['saved', '保存', 'heart'], ['mine', '自分の実践', 'book'], ['talks', '対話', 'chat'], ['account', 'アカウント', 'user']]
-export const currentTab = (id, view) => id === view || id === 'discover' && ['public', 'user', 'compare'].includes(view) || id === 'mine' && view === 'record' || id === 'account' && view === 'profile'
+export const currentTab = (id, view) => id === view || id === 'discover' && ['public', 'user', 'compare'].includes(view) || id === 'mine' && view === 'record'
 export default function SiteHeader({ view, name, notify }) {
   return <header className="site-header print-hidden"><div className="header-top">
     <a className="brand" href="#/discover" aria-label="Nitoron">nitoron</a>

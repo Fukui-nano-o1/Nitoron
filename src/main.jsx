@@ -33,15 +33,16 @@ import './styles.css'
 import './design.css'
 
 const routeFromLocation = () => {
+  if (/^#\/?profile(\/|$)/.test(location.hash)) location.hash = '/account/personal'
   // 検索結果ページの条件は「#/search?q=…」のようにハッシュ内のクエリで持ち、URLを正とする。
   const [path, params = ''] = location.hash.replace(/^#\/?/, '').split('?')
   const [view, id, section] = path.split('/')
   // 経営発表に一点集中する間、挑戦・学習ノートの専用ページは閉じる。
-  return { view: ['mine', 'discover', 'search', 'saved', 'list', 'record', 'public', 'compare', 'account', 'user', 'profile', 'talks', 'repairs', 'repair'].includes(view) ? view : 'discover', id, section, params }
+  return { view: ['mine', 'discover', 'search', 'saved', 'list', 'record', 'public', 'compare', 'account', 'user', 'talks', 'repairs', 'repair'].includes(view) ? view : 'discover', id, section, params }
 }
 const keyOf = r => `${r.publication ? 'public' : 'mine'}:${r.id}`
 // スクロール位置を覚えておく画面。詳細（public・record）は常に先頭から表示する。
-const SCROLL_VIEWS = ['discover', 'search', 'saved', 'list', 'mine', 'talks', 'account', 'user', 'compare', 'profile', 'repairs']
+const SCROLL_VIEWS = ['discover', 'search', 'saved', 'list', 'mine', 'talks', 'account', 'user', 'compare', 'repairs']
 // 保存リストは「一覧」「すべて」「各リスト」を別の画面として扱い、条件・ページ・スクロール位置をそれぞれ保持する。
 const listKeyOf = r => r.view === 'saved' ? `saved:${r.id || ''}` : r.view
 const scrollKeyOf = r => SCROLL_VIEWS.includes(r.view) ? (['user', 'list'].includes(r.view) ? `${r.view}:${r.id}` : listKeyOf(r)) : null
@@ -95,7 +96,7 @@ function App() {
   const [publicRecord, setPublicRecord] = useState(null), [recordError, setRecordError] = useState('')
   const [owned, setOwned] = useState([]), [ownedReady, setOwnedReady] = useState(false)
   const [deviceRecords, setDeviceRecords] = useState([]), [draft, setDraft] = useState(null)
-  const searchRef = useRef(null), importRef = useRef(null), nameTimer = useRef(null)
+  const searchRef = useRef(null), nameTimer = useRef(null)
   const previousOwner = useRef(undefined)
   // 保存の通知：未保存からの保存は「リストに追加」の操作つきで知らせる。
   const [sheetRecord, setSheetRecord] = useState(null), [picking, setPicking] = useState(false)
@@ -362,7 +363,7 @@ function App() {
       : route.view === 'talks' ? <Talks session={session} bookmarks={bookmarks} onAccount={() => setDialog({ type: 'account' })} />
       : route.view === 'compare' ? <Compare records={selectedRecords} onRemove={select} onBack={backFromCompare} />
       : route.view === 'list' ? <SharedList key={route.id} token={route.id} savedIds={bookmarks.ids} onSave={heart} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} />
-      : route.view === 'account' || route.view === 'profile' ? <AccountPage section={route.view === 'profile' ? 'personal' : route.id} session={session} name={name} onName={rename} flush={flush} owned={owned} selectedCount={selected.length} notify={setToast}
+      : route.view === 'account' ? <AccountPage section={route.id} session={session} name={name} onName={rename} flush={flush} owned={owned} selectedCount={selected.length} notify={setToast}
           activitySaved={bookmarks.rows.reduce((n, b) => n + (activity.counts[b.id] || 0), 0)} activityMine={owned.reduce((n, p) => n + (activity.counts[p.id] || 0), 0)}
           data={{ ready, exportAll, importBackup, deviceRecords, restoreDevice }} />
       : route.view === 'user' ? <User key={route.id} id={route.id} savedIds={bookmarks.ids} onSave={heart} selectedKeys={selected.map(keyOf)} keyOf={keyOf} onSelect={select} />
@@ -377,14 +378,13 @@ function App() {
           owned={owned} ownedReady={ownedReady} ready={ready} onCreate={() => create('presentation')}
           blankCount={publicMode ? 0 : records.filter(r => isBlankRecord(r) && !owned.some(p => p.id === r.id && p.is_public)).length} onCleanup={cleanupBlankRecords}>
         {publicMode && publicState.count > PAGE_SIZE && <div className="pagination"><button className="secondary" disabled={publicPage === 0 || publicState.loading} onClick={() => setPublicPage(p => p - 1)}>前へ</button><span>{publicPage + 1} / {Math.ceil(publicState.count / PAGE_SIZE)}</span><button className="secondary" disabled={(publicPage + 1) * PAGE_SIZE >= publicState.count || publicState.loading} onClick={() => setPublicPage(p => p + 1)}>次へ</button></div>}
-        {!publicMode && <footer className="catalog-footer">{!!deviceRecords.length && <button className="quiet" onClick={restoreDevice}>端末だけの記録を復元</button>}<button className="quiet" disabled={!ready} onClick={exportAll}>全記録を書き出す</button><button className="quiet" disabled={!ready} onClick={() => importRef.current.click()}>バックアップを取り込む</button><input hidden type="file" ref={importRef} accept="application/json,.json" onChange={importBackup} /></footer>}
       </Catalog>}
     </main>
     {!!selected.length && route.view !== 'compare' && <div className="compare-tray print-hidden"><span>{selected.length}件を選択中</span>{selected.length >= 2 ? <a href="#/compare">並べて比較する</a> : <em className="tray-hint">あと1件選ぶと比較できます</em>}<button onClick={() => setSelected([])}>解除</button></div>}
     <nav className="mobile-nav print-hidden" aria-label="モバイルナビゲーション">{NAV.map(([id, label, icon]) => repairView && id === 'mine' ? ['repairs', '修理記録', icon] : [id, label, icon]).map(([id, label, icon]) => <a key={id} href={`#/${id}`} aria-current={currentTab(id, repairView ? 'repairs' : route.view) ? 'page' : undefined} aria-label={id === 'talks' && activity.total > 0 ? '対話（新着の指摘あり）' : undefined}><span className="nav-icon">{id === 'talks' && activity.total > 0 && <i className="notify-dot" aria-hidden="true" />}<Icon name={icon} size={23} /></span><span>{label}</span></a>)}</nav>
     {toast && <div className="toast print-hidden" role="status">{typeof toast === 'string' ? toast : <>{toast.text}<button className="toast-action" onClick={() => { const run = toast.action.run; setToast(''); run() }}>{toast.action.label}</button></>}</div>}
     {sheetRecord && session && <SaveSheet key={sheetRecord.id} record={sheetRecord} lists={lists} onClose={() => setSheetRecord(null)} onUnsave={async () => { await bookmarks.toggle(sheetRecord); setSheetRecord(null) }} />}
-    {dialog?.type === 'account' && <Account session={session} name={name} onName={rename} flush={flush} onClose={() => setDialog(null)} />}
+    {dialog?.type === 'account' && <Account session={session} flush={flush} onClose={() => setDialog(null)} />}
     {dialog?.type === 'share' && <Dialog title="公開リンク" onClose={() => setDialog(null)}><p>{actionError}</p><input aria-label="公開リンク" readOnly value={`${location.origin}${location.pathname}#/public/${dialog.record.id}`} onFocus={e => e.target.select()} /></Dialog>}
   </div>
 }
