@@ -3,7 +3,7 @@ export const uid = () => crypto.randomUUID()
 export const today = () => new Date().toLocaleDateString('sv-SE')
 export const textBlock = (text = '', type = 'text') => ({ id: uid(), type, text })
 export const META = 'nitoron-presentation-v1'
-export const KINDS = { presentation: '経営発表', challenge: '挑戦', learning: '学習ノート', trouble: 'トラブル', memo: 'メモ' }
+export const KINDS = { presentation: '経営発表', challenge: '挑戦', learning: '学習ノート', trouble: 'カタログ', memo: 'メモ' }
 export const PHASES = ['仮説', '計画中', '実践中', '振り返り', '完了']
 // 本人の判定。初期値は空で、進捗や観測件数から自動で決めない。
 export const VERDICTS = ['達成', '一部達成', '未達', '判断できない']

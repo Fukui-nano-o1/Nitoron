@@ -7,7 +7,7 @@ const root = new URL('../data/catalog/', import.meta.url).pathname
 const procedure = /(外して|取り外し|緩め|ゆるめ|締め付け|締付け|注入し|抜き|洗い|浸し|絞)/
 async function entries() {
   const list = []
-  for (const maker of await readdir(root)) for (const file of await readdir(join(root, maker))) if (file.endsWith('.json') && !file.endsWith('.check.json')) list.push([`${maker}/${file}`, JSON.parse(await readFile(join(root, maker, file), 'utf8'))])
+  for (const maker of await readdir(root)) for (const file of await readdir(join(root, maker))) if (file.endsWith('.json') && !file.endsWith('.check.json') && !file.endsWith('.record.json')) list.push([`${maker}/${file}`, JSON.parse(await readFile(join(root, maker, file), 'utf8'))])
   return list
 }
 test('every catalogue entry cites its sources and keeps the three rules', async () => {
