@@ -14,7 +14,8 @@ const stableUuid = seed => { const h = createHash('sha256').update(seed).digest(
 const id = stableUuid(`nitoron-catalog:${entry.maker}:${entry.series}`)
 let n = 0
 const block = (type, text) => ({ id: `${id.slice(0, 8)}-${String(++n).padStart(3, '0')}`, type, text })
-const physical = printed => typeof printed === 'string' && printed.startsWith('安-') ? Number(printed.slice(2)) + 6 : Number(printed) + 18
+// 頁対応（印刷頁→PDF頁）は取説ごとに違うので、データの bodyOffset／safetyOffset を使う（TMS-200 は 18／6）。
+const physical = printed => typeof printed === 'string' && printed.startsWith('安-') ? Number(printed.slice(2)) + (manual.safetyOffset ?? 6) : Number(printed) + manual.bodyOffset
 const ref = printed => printed == null ? '' : `（${typeof printed === 'string' ? printed : `印刷p.${printed}`}／PDF ${physical(printed)}）`
 
 const blocks = [
