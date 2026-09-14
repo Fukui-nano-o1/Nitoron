@@ -4,19 +4,34 @@ import Icon from './Icon.jsx'
 import FilterDialog from './FilterDialog.jsx'
 import { KINDS, PHASES, number, formatNumber } from './domain.js'
 import { imageAttachments } from './attachment-domain.js'
-import { resolveMachineTarget } from './machine-domain.js'
+import { resolveMachineTarget, MACHINE_SUBJECT } from './machine-domain.js'
 import MachineCardMedia from './MachineCardMedia.jsx'
-import { countFilters, EMPTY_FILTERS } from './search.js'
+import { repairHeadline, repairMachineLabel } from './repair-entry.mjs'
+import { searchRepairMachines } from './repair-workspace.mjs'
+import { countFilters, EMPTY_FILTERS, CHIPS, activeChip, discoverHref } from './search.js'
 import { SEARCH_ENABLED } from './flags.js'
 import { Empty } from './ui.jsx'
-// 検索ピルはホームと検索結果ページで共用する。入力は呼び出し側の状態（URL由来か画面内）に従う。
-export function SearchPill({ query, onQuery, region, onRegion, active = 0, onFilter, onSubmit, searchRef }) {
+// 検索ピルは探す（#/discover）の最上部にだけ置く。2区画（機械・症状／地域）＋検索ボタン。条件は下のチップ列右端の「絞り込み」へ。
+export function SearchPill({ query, onQuery, region, onRegion, onSubmit, searchRef }) {
   return <form className="search-pill" role="search" aria-label="記録を検索" onSubmit={e => { e.preventDefault(); onSubmit() }}>
-    <label className="search-part"><span>キーワード</span><input ref={searchRef} type="search" maxLength={160} value={query} onChange={e => onQuery(e.target.value)} placeholder="機械・作物・症状から探す" /></label>
+    <label className="search-part"><span>機械・症状</span><input ref={searchRef} type="search" maxLength={160} value={query} onChange={e => onQuery(e.target.value)} placeholder="型式・症状で探す" /></label>
     <label className="region-part"><span>地域</span><input type="search" maxLength={80} value={region} onChange={e => onRegion(e.target.value)} placeholder="すべての地域" /></label>
-    <button type="button" className="search-filter-part" onClick={onFilter}><span>条件</span><strong>{active ? `${active}つの条件` : '条件を追加'}</strong></button>
     <button className="search-submit" aria-label="検索する"><Icon name="search" size={21} /></button>
   </form>
+}
+// 分類チップ列（Airbnb のカテゴリ行）。押すと URL 駆動で #/discover へ遷移し、検索語・地域・記録日・数字条件は引き継ぐ。
+// 選択中をもう一度押すと解除。右端の「絞り込み」はチップ由来の kind／crop を件数に数えない。
+export function CategoryChips({ query, region, filters, onFilter }) {
+  const current = activeChip(filters)
+  const go = (kind, crop) => { location.hash = discoverHref({ query, region, filters: { ...filters, kind, crop, stage: 'all' }, page: 0 }) }
+  const active = countFilters({ ...filters, ...(current ? { kind: 'all', crop: '' } : {}) })
+  // 絞り込みボタンは横スクロールする列の外に置く（列の中に sticky で置くと、スマホでチップがボタンの右側を通り過ぎて見えた）。
+  return <div className="category-bar">
+    <div className="category-chips" role="group" aria-label="分類で絞り込む">
+      {CHIPS.map(([label, f]) => { const pressed = current?.[0] === label; return <button key={label} aria-pressed={pressed} onClick={() => pressed ? go('all', '') : go(f.kind, f.crop)}>{label}</button> })}
+    </div>
+    <button className="filter-button" onClick={onFilter}><Icon name="filter" size={18} /><span>絞り込み{active ? ` · ${active}` : ''}</span></button>
+  </div>
 }
 // 公開カードの操作は「本体で詳細を開く」「ハートで保存」だけに絞る。比較・質問・メモ・フォローは発表詳細の入口へ移した。
 // 自分の実践のカードは、公開ラベルと比較ボタンをそのまま残す。
@@ -24,37 +39,46 @@ export function RecordCard({ record: r, href, selected, onSelect, publicMode, pu
   const [index, setIndex] = useState(0)
   const photos = imageAttachments(r), evidence = r.meta?.observations?.filter(o => o.fact.trim()).length || 0
   const metric = [['hours', '作業時間', '時間'], ['yieldKg', '収穫量', 'kg'], ['revenue', '売上', '円']].find(([key]) => number(r.meta?.[key]) !== null)
-  // 機械修理の記録は、写真の代わりに機械全体の静止画像と対象名を上部に出す（写真データ自体は残る）。
+  // 機械修理の記録は、3D登録機なら写真の代わりに機械全体の静止画像と対象名を上部に出す（写真データ自体は残る）。
+  // 3Dのない修理記録（machineRef なし）は写真か文字カバーで、機械名は本人の入力（メーカー 型式）から出す。
+  const repair = r.meta?.subject === MACHINE_SUBJECT
   const machine = resolveMachineTarget(r.meta)
-  const machineMode = machine.status !== 'none'
+  const machineMode = repair && !!r.meta.machineRef
   return <article className="record-card"><div className="card-visual">{machineMode
     ? <MachineCardMedia target={machine} machineRef={r.meta.machineRef} href={href} />
-    : <a href={href} className="cover-link" tabIndex={-1} aria-hidden="true"><Cover record={r} index={Math.min(index, Math.max(0, photos.length - 1))} /></a>}
-    <span className="card-badge">{machineMode ? '修理' : r.meta?.kind === 'challenge' ? r.meta.stage : KINDS[r.meta?.kind || 'memo']}</span>
+    : <a href={href} className="cover-link" tabIndex={-1} aria-hidden="true"><Cover record={r} label={repair ? repairMachineLabel(r.meta.repair) : ''} index={Math.min(index, Math.max(0, photos.length - 1))} /></a>}
+    <span className="card-badge">{repair ? '修理' : r.meta?.kind === 'challenge' ? r.meta.stage : KINDS[r.meta?.kind || 'memo']}</span>
     {newCount > 0 && <span className="card-badge activity">新着の指摘 {newCount}件</span>}
     {publicMode && onSave && <button className="save-heart" aria-pressed={saved} aria-label={`${r.title || '無題'}${saved ? 'の保存先を選ぶ' : 'を保存する'}`} onClick={() => onSave(r)}><Icon name="heart" size={25} fill={saved ? '#ff385c' : '#0006'} /></button>}
     {picking && <button className="pick-box" aria-pressed={selected} aria-label={`${r.title || '無題'}を${selected ? '比較から外す' : '比較に選ぶ'}`} onClick={() => onSelect(r)}><Icon name="check" size={16} /></button>}
     {!machineMode && photos.length > 1 && <><button className="photo-arrow prev" aria-label="前の写真" onClick={() => setIndex((index + photos.length - 1) % photos.length)}><Icon name="left" size={14} /></button><button className="photo-arrow next" aria-label="次の写真" onClick={() => setIndex((index + 1) % photos.length)}><Icon name="right" size={14} /></button><div className="photo-dots" aria-hidden="true">{photos.slice(0, 5).map((p, i) => <i key={p.path} className={i === Math.min(index, 4) ? 'active' : ''} />)}</div></>}
-  </div><a href={href} className="card-copy"><div className="card-location"><strong>{machineMode ? machine.label : [r.meta?.region, r.meta?.crop].filter(Boolean).join(' · ') || '自分の記録'}</strong>{evidence > 0 && <span>観測 {evidence}</span>}</div><h2>{r.title || '無題の記録'}</h2>{!machineMode && <div className="card-author">{r.meta?.author || '名前未登録'}{r.meta?.club && ` · ${r.meta.club}`}</div>}<div className="card-bottom">{metric && !machineMode ? <span><strong>{formatNumber(number(r.meta[metric[0]]))}</strong> {metric[2]}<span className="metric-caption"> / {metric[1]}</span></span> : <time dateTime={r.date}>{r.date.replaceAll('-', '.')}</time>}</div></a>
+  </div><a href={href} className="card-copy"><div className="card-location"><strong>{repair ? (machineMode ? machine.label : repairMachineLabel(r.meta.repair) || '機械未確認') : [r.meta?.region, r.meta?.crop].filter(Boolean).join(' · ') || '自分の記録'}</strong>{evidence > 0 && <span>観測 {evidence}</span>}</div><h2>{repair && !machineMode && r.title === repairMachineLabel(r.meta.repair) ? repairHeadline(r.meta.repair) || r.meta.issue || r.title : r.title || '無題の記録'}</h2>{!repair && <div className="card-author">{r.meta?.author || '名前未登録'}{r.meta?.club && ` · ${r.meta.club}`}</div>}<div className="card-bottom">{metric && !repair ? <span><strong>{formatNumber(number(r.meta[metric[0]]))}</strong> {metric[2]}<span className="metric-caption"> / {metric[1]}</span></span> : <time dateTime={r.date}>{r.date.replaceAll('-', '.')}</time>}</div></a>
   {!publicMode && r.meta?.kind === 'challenge' && (r.meta.deadline || r.meta.origin) && <div className="card-meta-line">{r.meta.deadline && <span>振り返る日 {r.meta.deadline.replaceAll('-', '.')}</span>}{r.meta.origin && <span>参考：{r.meta.origin.title || '記録'}</span>}</div>}
   {!publicMode && <div className="card-utility">{publicationLabel === '公開中' ? <a className="published-link" href={`#/record/${r.id}/review`}>公開中</a> : <span>{publicationLabel}</span>}<button className="text-action" aria-pressed={selected} onClick={() => onSelect(r)}><Icon name={selected ? 'check' : 'plus'} size={15} />{selected ? '比較に選択済み' : '比較する'}</button></div>}</article>
 }
-export default function Catalog({ view, records, total, loading, error, query, onQuery, sort, onSort, region, onRegion, filters = EMPTY_FILTERS, onFilters, onReset, searchRef, selectedKeys, keyOf, onSelect, savedIds = [], onSave, activityCounts = {}, owned = [], ownedReady, ready, onCreate, blankCount = 0, onCleanup, children }) {
+// 探す（#/discover）は URL 駆動の1つの格子：ピル → チップ列（＋絞り込み）→ 条件ありなら件数行 → 格子 → ページ送り。
+// 自分の実践（#/mine）は h1・件数・並び順・作成ボタン・分類チップ・進捗チップ・格子だけ（ピル・絞り込みは置かない）。
+export default function Catalog({ view, records, total, loading, error, query, onQuery, sort, onSort, region, onRegion, filters = EMPTY_FILTERS, onFilters, onReset, onRepair, searchRef, selectedKeys, keyOf, onSelect, savedIds = [], onSave, activityCounts = {}, owned = [], ownedReady, ready, onCreate, blankCount = 0, onCleanup, children }) {
   const [filterOpen, setFilterOpen] = useState(false)
-  const publicMode = view === 'search', active = countFilters(filters)
-  const title = view === 'search' ? 'みんなの記録' : '自分の実践'
+  const publicMode = view === 'discover', active = countFilters(filters)
   const searching = query.trim() || region.trim() || active
+  const q = query.trim()
+  // 0件からの修理導線：登録機に一致しない型式は1タップで3Dなしの記録を始め、一致するときは本人が3Dあり／なしを選ぶ（型式から登録機種を推測しない）。
+  const repairAction = q ? searchRepairMachines(q).length ? <a className="primary" href={`#/repairs/new?q=${encodeURIComponent(q)}`}>「{q}」の修理を記録する</a> : <button className="primary" disabled={!ready} onClick={() => onRepair(q)}>「{q}」の修理を記録する</button> : <a className="primary" href="#/repairs/new">修理を記録する</a>
   return <section className="catalog">
-    {SEARCH_ENABLED && <><div className="search-area"><SearchPill query={query} onQuery={onQuery} region={region} onRegion={onRegion} active={active} searchRef={searchRef} onFilter={() => setFilterOpen(true)}
+    {SEARCH_ENABLED && publicMode && <><div className="search-area"><SearchPill query={query} onQuery={onQuery} region={region} onRegion={onRegion} searchRef={searchRef}
       onSubmit={() => { document.getElementById('catalog-results')?.scrollIntoView({ block: 'start', behavior: 'smooth' }); document.getElementById('catalog-results')?.focus({ preventScroll: true }) }} /></div>
-    <div className="browse-controls"><button className="filter-button" onClick={() => setFilterOpen(true)}><Icon name="filter" size={18} /><span>絞り込み{active ? ` · ${active}` : ''}</span></button></div></>}
-    <div className="page-heading" id="catalog-results" tabIndex={-1}><div><h1>{searching ? `${title}の検索結果` : title}</h1></div><div className="result-tools"><span>{loading ? '読み込み中' : `${total}件`}</span><select aria-label="並び順" value={sort} onChange={e => onSort(e.target.value)}><option value="recent">新しい順</option><option value="title">タイトル順</option></select></div></div>
-    {view === 'mine' && <div className="workspace-links"><button className="text-action" disabled={!ready} onClick={onCreate}>新しい発表をつくる</button><a className="text-action" href="#/repairs">機械を修理する</a>{blankCount > 0 && <button className="text-action" disabled={!ready} onClick={onCleanup}>空の記録を整理（{blankCount}件）</button>}</div>}
+    <CategoryChips query={query} region={region} filters={filters} onFilter={() => setFilterOpen(true)} /></>}
+    {publicMode ? <><h1 className="sr-only">記録を探す</h1>{!!searching && <div className="discover-count" id="catalog-results" tabIndex={-1}><span>{loading ? '読み込み中' : `${total ?? 0}件`}</span><button className="text-action" onClick={onReset}>条件をクリア</button></div>}</>
+      : <div className="page-heading" id="catalog-results" tabIndex={-1}><div><h1>{searching ? '自分の実践の検索結果' : '自分の実践'}</h1></div><div className="result-tools"><span>{loading ? '読み込み中' : `${total}件`}</span><select aria-label="並び順" value={sort} onChange={e => onSort(e.target.value)}><option value="recent">新しい順</option><option value="title">タイトル順</option></select></div></div>}
+    {view === 'mine' && <div className="workspace-links"><button className="text-action" disabled={!ready} onClick={onCreate}>新しい発表をつくる</button>{blankCount > 0 && <button className="text-action" disabled={!ready} onClick={onCleanup}>空の記録を整理（{blankCount}件）</button>}</div>}
     {view === 'mine' && <div className="kind-chips" role="group" aria-label="分類で絞り込む">{[['all', 'すべて'], ['presentation', '発表'], ['challenge', '挑戦'], ['learning', '学習ノート'], ['trouble', 'カタログ']].map(([key, label]) => <button key={key} aria-pressed={filters.kind === key} onClick={() => onFilters({ ...filters, kind: key, stage: key === 'challenge' ? filters.stage : 'all' })}>{label}</button>)}</div>}
     {view === 'mine' && filters.kind === 'challenge' && <div className="kind-chips stage-chips" role="group" aria-label="進捗で絞り込む">{[['all', 'すべての進捗'], ...PHASES.map(p => [p, p])].map(([key, label]) => <button key={key} aria-pressed={filters.stage === key} onClick={() => onFilters({ ...filters, stage: key })}>{label}</button>)}</div>}
     {error}
     {loading ? <div className="loading-grid" role="status" aria-label="記録を読み込み中">{[0, 1, 2, 3, 4, 5].map(i => <div className="card-skeleton" key={i}><div /><span /><span /></div>)}</div> : records.length ? <div className="record-grid">{records.map(r => <RecordCard key={r.id} record={r} href={`#/${publicMode ? 'public' : 'record'}/${r.id}`} selected={selectedKeys.includes(keyOf(r))} onSelect={onSelect} publicMode={publicMode} saved={savedIds.includes(r.id)} onSave={onSave} newCount={publicMode ? 0 : activityCounts[r.id] || 0} publicationLabel={owned.some(p => p.id === r.id && p.is_public) ? '公開中' : ownedReady ? '自分だけ' : '公開状態未確認'} />)}</div>
-      : !error && <Empty title={searching ? '一致する記録がありません' : publicMode ? '最初の記録を掲載しよう' : 'ひとつ目の記録をつくろう'} action={searching ? <button className="secondary" onClick={onReset}>条件をクリア</button> : <button className="primary" disabled={!ready} onClick={onCreate}>記録を書き始める</button>}>{searching ? '短い単語や、別の条件で探してみてください。' : '写真や数字、気づいたことから残せます。'}</Empty>}
+      : !error && (publicMode
+        ? <Empty title={searching ? '該当する記録はありません' : '最初の記録を掲載しよう'} action={searching ? <div className="actions">{repairAction}<button className="text-action" onClick={onReset}>条件をクリア</button></div> : <a className="primary" href="#/repairs/new">修理を記録する</a>}>{searching ? '短い単語や、別の条件で探してみてください。' : '公開された記録がここに並びます。'}</Empty>
+        : <Empty title={searching ? '一致する記録がありません' : 'ひとつ目の記録をつくろう'} action={searching ? <button className="secondary" onClick={onReset}>条件をクリア</button> : <button className="primary" disabled={!ready} onClick={onCreate}>記録を書き始める</button>}>{searching ? '短い単語や、別の条件で探してみてください。' : '写真や数字、気づいたことから残せます。'}</Empty>)}
     {children}
     {filterOpen && <FilterDialog filters={filters} onApply={onFilters} onClose={() => setFilterOpen(false)} />}
   </section>

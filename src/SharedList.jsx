@@ -14,14 +14,14 @@ export default function SharedList({ token, savedIds, onSave, keyOf, selectedKey
     return () => { cancelled = true }
   }, [token, version])
   return <section className="saved-page shared-page">
-    <div className="saved-topbar print-hidden"><a className="round-button" href="#/discover" aria-label="みんなの発表へ"><Icon name="left" size={16} /></a></div>
+    <div className="saved-topbar print-hidden"><a className="round-button" href="#/discover" aria-label="探すへ"><Icon name="left" size={16} /></a></div>
     {state.loading ? <p className="loading" role="status">共有リストを読み込み中…</p>
       : state.error ? <ErrorNotice retry={() => setVersion(v => v + 1)}>{state.error}</ErrorNotice>
-      : !state.data ? <Empty title="このリンクは無効か、共有が停止されています" action={<a className="secondary" href="#/discover">発表を探す</a>}>リストの作成者が共有を停止した場合、以前のリンクは使えません。</Empty>
+      : !state.data ? <Empty title="このリンクは無効か、共有が停止されています" action={<a className="secondary" href="#/discover">記録を探す</a>}>リストの作成者が共有を停止した場合、以前のリンクは使えません。</Empty>
       : <>
-        <header className="saved-heading"><h1>{state.data.name}</h1><p className="shared-note"><Icon name="share" size={14} />共有リスト · リンクを知っている人は誰でも閲覧できます。作成者のメモや、公開停止された発表は含まれません。</p></header>
+        <header className="saved-heading"><h1>{state.data.name}</h1><p className="shared-note"><Icon name="share" size={14} />共有リスト · リンクを知っている人は誰でも閲覧できます。作成者のメモや、公開停止された記録は含まれません。</p></header>
         {state.data.records.length ? <div className="record-grid">{state.data.records.map(r => <RecordCard key={r.id} record={r} href={`#/public/${r.id}`} publicMode selected={selectedKeys.includes(keyOf(r))} onSelect={onSelect} saved={savedIds.includes(r.id)} onSave={onSave} />)}</div>
-          : <div className="saved-empty"><h2>共有中ですが、公開中の発表はまだありません</h2><p>作成者がこのリストに公開中の発表を入れると、ここに並びます。</p></div>}
+          : <div className="saved-empty"><h2>共有中ですが、公開中の記録はまだありません</h2><p>作成者がこのリストに公開中の記録を入れると、ここに並びます。</p></div>}
       </>}
   </section>
 }

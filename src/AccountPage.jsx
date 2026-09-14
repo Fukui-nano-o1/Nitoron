@@ -7,7 +7,7 @@ import { ROLES, PUBLIC_FIELDS, PRIVATE_FIELDS, emptyMachine, sanitizePublicProfi
 import { AccountAuth } from './Account.jsx'
 
 // アカウント：入口（カード一覧）と各項目のページ。Airbnb の Account／Personal info と同じ構成：
-// 見出し → 「名前, メール · プロフィールを表示」 → カード → 各ページは「行ごとに 編集／保存」と右側の説明パネル。
+// 見出し → 「名前, メール · プロフィールを表示」 → カード → 自分のページ4行（修理記録はヘッダーのピルとタブにあるので置かない） → 各ページは「行ごとに 編集／保存」と右側の説明パネル。
 export const ACCOUNT_SECTIONS = [
   ['personal', '個人情報', 'user', '名前・立場・地域・連絡先。公開と非公開を分けて入力'],
   ['login', 'ログインとセキュリティ', 'shield', 'メールの登録・確認、ログアウト'],
@@ -73,7 +73,7 @@ function Personal({ session, name, onName }) {
     {error && <ErrorNotice>{error}</ErrorNotice>}
   </div><aside className="account-aside">
     <div className="account-panel"><Icon name="globe" size={28} /><h3>他の人に見える情報</h3><p>表示名・立場・地域・所属・主な作物・自己紹介は、あなたのプロフィールと公開した記録に表示されます。</p></div>
-    <div className="account-panel"><Icon name="shield" size={28} /><h3>本人だけが読める情報</h3><p>氏名・電話番号・住所は公開ページにも発表にも出ません。修理の依頼・見積り・連絡のときだけ使います。</p></div>
+    <div className="account-panel"><Icon name="shield" size={28} /><h3>本人だけが読める情報</h3><p>氏名・電話番号・住所は公開ページにも記録にも出ません。修理の依頼・見積り・連絡のときだけ使います。</p></div>
     <div className="account-panel"><Icon name="check" size={28} /><h3>入力の状態</h3><p>{missingPublic(pub).length ? `公開情報の未入力：${missingPublic(pub).join('・')}` : '公開情報はすべて入力済みです。'}<br />{missingPrivate(priv).length ? `非公開情報の未入力：${missingPrivate(priv).join('・')}` : '非公開情報はすべて入力済みです。'}</p></div>
   </aside></div>
 }
@@ -143,11 +143,10 @@ function Hub({ session, name, onLogout, activityMine, activitySaved, selectedCou
     <div className="account-grid">{ACCOUNT_SECTIONS.map(([key, title, icon, desc]) => <a className="account-card" key={key} href={`#/account/${key}`}><Icon name={icon} size={30} /><strong>{title}</strong><span>{desc}</span></a>)}</div>
     <h2 className="account-sub">自分のページ</h2>
     <nav className="profile-menu" aria-label="自分のページ">
-      {[['mine', '自分の実践', 'book', activityMine ? `新着の指摘 ${activityMine}件` : '書いた発表と下書き', activityMine],
-        ['repairs', '修理の記録', 'wrench', '機械の修理記録', 0],
-        ['saved', '保存リスト', 'heart', activitySaved ? `新着の指摘 ${activitySaved}件` : 'ハートを付けた発表', activitySaved],
+      {[['mine', '自分の実践', 'book', activityMine ? `新着の指摘 ${activityMine}件` : '経営発表を書く・公開する', activityMine],
+        ['saved', '保存リスト', 'heart', activitySaved ? `新着の指摘 ${activitySaved}件` : 'ハートを付けた記録', activitySaved],
         ['talks', '対話', 'chat', '質問・指摘と返信', 0],
-        ['compare', '比較', 'compare', selectedCount ? `${selectedCount}件を選択中` : '発表を並べて比べる', 0]]
+        ['compare', '比較', 'compare', selectedCount ? `${selectedCount}件を選択中` : '記録を並べて比べる', 0]]
         .map(([id, label, icon, desc, alert]) => <a key={id} href={`#/${id}`}><Icon name={icon} size={24} /><span><strong>{label}</strong><small className={alert ? 'menu-new' : undefined}>{desc}</small></span>{!!alert && <i className="notify-dot static" aria-hidden="true" />}<Icon name="right" size={16} /></a>)}
     </nav>
     {permanent && <button className="text-action account-logout" onClick={onLogout}>ログアウト</button>}

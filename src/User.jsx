@@ -23,16 +23,16 @@ export default function User({ id, savedIds, onSave, selectedKeys, keyOf, onSele
   const facts = records?.reduce((n, r) => n + (r.meta?.observations?.filter(o => o.fact.trim()).length || 0), 0) || 0
   const since = records?.length ? records.map(r => r.publication.publishedAt).sort()[0]?.slice(0, 4) : ''
   return <section className="user-page">
-    <div className="listing-back print-hidden"><a href="#/discover"><Icon name="left" size={16} />発表を探す</a></div>
+    <div className="listing-back print-hidden"><a href="#/discover"><Icon name="left" size={16} />記録を探す</a></div>
     {error ? <ErrorNotice>{error}</ErrorNotice> : !records ? <p className="loading" role="status">プロフィールを読み込み中…</p> : <div className="user-columns">
       <aside className="user-aside">
         <div className="host-card">
           <div className="host-identity"><span className="avatar-circle xl" aria-hidden="true">{name.slice(0, 1)}</span><strong>{name}</strong><span>{[profile?.role, profile?.crops].filter(Boolean).join(' · ') || '発表者'}</span></div>
           <dl className="host-stats">
-            <div><dd>{records.length}</dd><dt>発表</dt></div>
+            <div><dd>{records.length}</dd><dt>記録</dt></div>
             <div><dd>{facts}</dd><dt>観測した事実</dt></div>
             {trust && trust.received > 0 && <div><dd>{trust.resolved}</dd><dt>対応した指摘</dt></div>}
-            {since && <div><dd>{since}年〜</dd><dt>発表歴</dt></div>}
+            {since && <div><dd>{since}年〜</dd><dt>記録歴</dt></div>}
           </dl>
         </div>
         {records.length > 0 && <div className="trust-card">
@@ -40,9 +40,9 @@ export default function User({ id, savedIds, onSave, selectedKeys, keyOf, onSele
           <ul>
             <li><Icon name="check" size={18} />メールアドレス（公開時に確認済み）</li>
             {trust && trust.received > 0 && <li><Icon name="check" size={18} />受けた指摘 {trust.received}件のうち {trust.resolved}件に対応済み</li>}
-            {trust && trust.contributions > 0 && <li><Icon name="check" size={18} />ほかの発表への指摘・返信 {trust.contributions}件</li>}
+            {trust && trust.contributions > 0 && <li><Icon name="check" size={18} />ほかの記録への指摘・返信 {trust.contributions}件</li>}
           </ul>
-          <p>実績はすべて公開の発表と対話から確認できます。</p>
+          <p>実績はすべて公開の記録と対話から確認できます。</p>
         </div>}
         {(region || club) && <div className="host-facts">
           {region && <div><Icon name="pin" size={20} />{region}で実践</div>}
@@ -52,9 +52,9 @@ export default function User({ id, savedIds, onSave, selectedKeys, keyOf, onSele
       <div className="user-main">
         <h1>{name}さんについて</h1>
         {profile?.bio && <div className="user-about"><p>{profile.bio}</p></div>}
-        <h2>{name}さんの発表</h2>
+        <h2>{name}さんの記録</h2>
         {records.length ? <div className="record-grid">{records.map(r => <RecordCard key={r.id} record={r} href={`#/public/${r.id}`} publicMode selected={selectedKeys.includes(keyOf(r))} onSelect={onSelect} saved={savedIds.includes(r.id)} onSave={onSave} />)}</div>
-          : <p className="hint">公開中の発表はまだありません。</p>}
+          : <p className="hint">公開中の記録はまだありません。</p>}
       </div>
     </div>}
   </section>

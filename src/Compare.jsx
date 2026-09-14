@@ -12,7 +12,7 @@ const Cell = ({ cell }) => cell.kind === 'number' ? cell.text : <span className=
 // 比較表：基本条件 → 経営の数字（列ごとの対象条件つき） → 根拠 → 考え方。単位は元データのまま、未入力は「未記載」。
 export default function Compare({ records, onRemove, onBack }) {
   const [basis, setBasis] = useState('total')
-  if (!records.length) return <Empty title="同じ問いで、記録を見比べる" action={<><a className="primary" href="#/saved">保存リストから選ぶ</a> <a className="secondary" href="#/mine">自分の実践から選ぶ</a></>}>保存リストの「比較する」や、発表詳細の「その他」から2〜3件を選ぶと、並べて読めます。</Empty>
+  if (!records.length) return <Empty title="同じ問いで、記録を見比べる" action={<><a className="primary" href="#/saved">保存リストから選ぶ</a> <a className="secondary" href="#/mine">自分の実践から選ぶ</a></>}>保存リストの「比較する」や、記録の公開ページの「その他」から2〜3件を選ぶと、並べて読めます。</Empty>
   const values = records.map(r => r.meta || {})
   const crops = new Set(values.map(m => m.crop).filter(Boolean))
   const convertible = canConvert(values)
@@ -29,7 +29,7 @@ export default function Compare({ records, onRemove, onBack }) {
         return <th scope="col" key={r.id + !!r.publication}><div className="compare-card">
           <div className="compare-visual"><a href={href} tabIndex={-1} aria-hidden="true"><Cover record={r} /></a>
             <button className="compare-remove" aria-label={`${r.title || '無題'}を比較から外す`} onClick={() => onRemove(r)}><Icon name="close" size={13} /></button></div>
-          <a className="compare-copy" href={href}><strong>{r.title || '無題'}</strong><span>{r.meta?.author || '発表者未記載'}{r.publication ? '' : ' · 自分の記録'}</span></a>
+          <a className="compare-copy" href={href}><strong>{r.title || '無題'}</strong><span>{r.meta?.author || '記録者未記載'}{r.publication ? '' : ' · 自分の記録'}</span></a>
         </div></th>
       })}</tr></thead>
       <tbody>

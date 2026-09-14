@@ -5,6 +5,8 @@ export function Dialog({ title, children, onClose, wide = false, className = '' 
   useEffect(() => {
     const dialog = ref.current, previous = document.activeElement
     dialog.showModal()
+    // autoFocus 指定の入力があればそこへ（既定では見出しの「閉じる」に焦点が当たる）。
+    dialog.querySelector('[autofocus]')?.focus()
     return () => { dialog.close(); previous?.focus?.() }
   }, [])
   return <dialog ref={ref} className={`dialog ${wide ? 'wide' : ''} ${className}`} aria-labelledby={titleId} onCancel={e => { e.preventDefault(); onClose() }} onClick={e => { if (e.target === ref.current) { const r = ref.current.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) onClose() } }}>

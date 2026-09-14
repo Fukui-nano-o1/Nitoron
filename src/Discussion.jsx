@@ -74,7 +74,7 @@ export default function Discussion({ record, session, name, onAccount, onSeen })
     {showForm && isVisible && verified && <form className="feedback-form" onSubmit={e => { e.preventDefault(); run(async () => { await postFeedback(record.id, session, { author, kind, section, body }); setBody(''); setShowForm(false) }) }}>
       <div className="fields two"><Field label="種類"><select value={kind} onChange={e => setKind(e.target.value)}>{FEEDBACK_KINDS.map(k => <option key={k}>{k}</option>)}</select></Field><Field label="対象"><select value={section} onChange={e => setSection(e.target.value)}><option>全体</option>{SECTIONS.map(([, label]) => <option key={label}>{label}</option>)}</select></Field></div>
       <Field label="表示名"><input required maxLength={80} value={author} onChange={e => setAuthor(e.target.value)} /></Field>
-      <Field label="内容" help="投稿と返信は発表と一緒に公開されます。"><textarea rows={4} required maxLength={4000} value={body} onChange={e => setBody(e.target.value)} placeholder="どの結果について、何を確かめたいですか？" /></Field><button className="primary" disabled={busy}>{busy ? '投稿中…' : '投稿する'}</button>
+      <Field label="内容" help="投稿と返信は記録と一緒に公開されます。"><textarea rows={4} required maxLength={4000} value={body} onChange={e => setBody(e.target.value)} placeholder="どの結果について、何を確かめたいですか？" /></Field><button className="primary" disabled={busy}>{busy ? '投稿中…' : '投稿する'}</button>
     </form>}
   </section>
 }

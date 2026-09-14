@@ -10,7 +10,7 @@ async function copyLink(url, notify) {
   try { await navigator.clipboard.writeText(url); notify('共有リンクをコピーしました。') } catch { notify('コピーできませんでした。リンクを選択してコピーしてください。') }
 }
 // 保存リスト：#/saved（一覧）→ #/saved/all（すべての保存）／#/saved/:listId（名前付きリスト）。
-// リストの中身は本人の bookmark に従属し、リストを削除しても発表と bookmark は残る。
+// リストの中身は本人の bookmark に従属し、リストを削除しても記録と bookmark は残る。
 export default function SavedList({ session, view, list, lists, records, count, loading, error, page, onPage, savedIds, onSave, activityCounts = {}, keyOf, selectedKeys, onSelect, picking, onPicking, onAccount, notify }) {
   const [creating, setCreating] = useState(false), [name, setName] = useState(''), [menu, setMenu] = useState(false), [busy, setBusy] = useState(false)
   const signedOut = !session
@@ -20,13 +20,13 @@ export default function SavedList({ session, view, list, lists, records, count, 
       <div className="record-grid">{records.map(card)}</div>
       {count > PAGE_SIZE && <div className="pagination"><button className="secondary" disabled={page === 0} onClick={() => onPage(page - 1)}>前へ</button><span>{page + 1} / {Math.ceil(count / PAGE_SIZE)}</span><button className="secondary" disabled={(page + 1) * PAGE_SIZE >= count} onClick={() => onPage(page + 1)}>次へ</button></div>}
     </> : empty
-  const compareBar = <div className="saved-tools print-hidden"><span>{loading ? '読み込み中' : `${count}件`} · 公開中の発表だけが表示されます</span>
+  const compareBar = <div className="saved-tools print-hidden"><span>{loading ? '読み込み中' : `${count}件`} · 公開中の記録だけが表示されます</span>
     <button className="text-action" aria-pressed={picking} onClick={() => onPicking(!picking)}><Icon name="compare" size={16} />{picking ? '選択をやめる' : '比較する（2〜3件を選ぶ）'}</button></div>
 
   if (signedOut) return <section className="saved-page">
-    <div className="saved-topbar print-hidden"><a className="round-button" href="#/discover" aria-label="みんなの発表へ戻る"><Icon name="left" size={16} /></a></div>
+    <div className="saved-topbar print-hidden"><a className="round-button" href="#/discover" aria-label="探すへ戻る"><Icon name="left" size={16} /></a></div>
     <header className="saved-heading"><h1>保存リスト</h1></header>
-    <div className="saved-empty"><h2>ログインすると保存リストを表示できます</h2><p>ハートを付けた発表を、名前付きのリストに分けて読み返せます。</p><button className="primary" onClick={onAccount}>ログイン</button></div>
+    <div className="saved-empty"><h2>ログインすると保存リストを表示できます</h2><p>ハートを付けた記録を、名前付きのリストに分けて読み返せます。</p><button className="primary" onClick={onAccount}>ログイン</button></div>
   </section>
 
   // ---- 名前付きリストの中身 ----
@@ -39,24 +39,24 @@ export default function SavedList({ session, view, list, lists, records, count, 
       <header className="saved-heading"><h1>{list.name}</h1>{list.is_shared && <p className="share-state"><Icon name="share" size={14} />共有中 · リンクを知っている人は誰でも閲覧できます</p>}</header>
       {compareBar}
       {error}
-      {grid(<div className="saved-empty"><h2>このリストは空です</h2><p>「すべての保存」の発表でハートを押すと、保存先にこのリストを選べます。</p><a className="primary" href="#/saved/all">すべての保存を見る</a></div>)}
+      {grid(<div className="saved-empty"><h2>このリストは空です</h2><p>「すべての保存」の記録でハートを押すと、保存先にこのリストを選べます。</p><a className="primary" href="#/saved/all">すべての保存を見る</a></div>)}
       {menu && <ListMenu list={list} lists={lists} notify={notify} onClose={() => setMenu(false)} />}
     </section>
   }
   // ---- すべての保存 ----
   if (view === 'all') return <section className="saved-page">
     <div className="saved-topbar print-hidden"><a className="round-button" href="#/saved" aria-label="保存リストへ戻る"><Icon name="left" size={16} /></a></div>
-    <header className="saved-heading"><h1>すべての保存</h1><p>ハートを付けた発表。保存済みの発表でもう一度ハートを押すと、リストへ振り分けられます。</p></header>
+    <header className="saved-heading"><h1>すべての保存</h1><p>ハートを付けた記録。保存済みの記録でもう一度ハートを押すと、リストへ振り分けられます。</p></header>
     {compareBar}
     {error}
-    {grid(<div className="saved-empty"><h2>まだ保存がありません</h2><p>発表を探しているときにハートを押すと、お気に入りがここに集まります。</p><a className="primary" href="#/discover">発表をさがす</a></div>)}
+    {grid(<div className="saved-empty"><h2>まだ保存がありません</h2><p>記録を探しているときにハートを押すと、お気に入りがここに集まります。</p><a className="primary" href="#/discover">記録を探す</a></div>)}
   </section>
   // ---- 一覧（すべての保存＋名前付きリスト） ----
   const coverOf = listId => records.find(r => lists.items.some(i => i.list_id === listId && i.publication_id === r.id))
   const create = async e => { e.preventDefault(); setBusy(true); try { const made = await lists.create(name); if (made) { setName(''); setCreating(false); location.hash = `/saved/${made.id}` } } finally { setBusy(false) } }
   return <section className="saved-page">
-    <div className="saved-topbar print-hidden"><a className="round-button" href="#/discover" aria-label="みんなの発表へ戻る"><Icon name="left" size={16} /></a></div>
-    <header className="saved-heading"><h1>保存リスト</h1><p>ハートで保存した発表を、名前付きのリストに分けられます。リストは非公開で作られ、共有はリストごとに選べます。</p></header>
+    <div className="saved-topbar print-hidden"><a className="round-button" href="#/discover" aria-label="探すへ戻る"><Icon name="left" size={16} /></a></div>
+    <header className="saved-heading"><h1>保存リスト</h1><p>ハートで保存した記録を、名前付きのリストに分けられます。リストは非公開で作られ、共有はリストごとに選べます。</p></header>
     {error}{lists.error && <ErrorNotice retry={lists.retry}>{lists.error}</ErrorNotice>}
     <div className="list-grid">
       <a className="list-card" href="#/saved/all"><div className="list-cover">{records[0] ? <Cover record={records[0]} /> : <div className="list-cover-empty"><Icon name="heart" size={28} /></div>}</div><strong>すべての保存</strong><span>{loading ? '読み込み中' : `${savedIds.length}件`}</span></a>
@@ -76,8 +76,8 @@ function ListMenu({ list, lists, notify, onClose }) {
   const rename = async e => { e.preventDefault(); setBusy('rename'); try { if (await lists.rename(list.id, name)) notify('名前を変更しました。') } finally { setBusy('') } }
   const share = async shared => { setBusy('share'); try { const updated = await lists.setSharing(list.id, shared); if (updated) notify(shared ? '共有を開始しました。新しいリンクを発行しました。' : '共有を停止しました。リンクからは閲覧できません。') } finally { setBusy('') } }
   const remove = async () => {
-    if (!window.confirm(`リスト「${list.name}」を削除しますか？ リストに入れた発表と「すべての保存」は残ります。`)) return
-    setBusy('delete'); try { if (await lists.remove(list.id)) { notify('リストを削除しました。発表と保存は残っています。'); onClose(); location.hash = '/saved' } } finally { setBusy('') }
+    if (!window.confirm(`リスト「${list.name}」を削除しますか？ リストに入れた記録と「すべての保存」は残ります。`)) return
+    setBusy('delete'); try { if (await lists.remove(list.id)) { notify('リストを削除しました。記録と保存は残っています。'); onClose(); location.hash = '/saved' } } finally { setBusy('') }
   }
   return <Dialog title="リストの操作" onClose={onClose}>
     <form className="filter-form" onSubmit={rename}><label className="field"><span>名前</span><input maxLength={LIST_NAME_MAX} value={name} onChange={e => setName(e.target.value)} /></label>
@@ -85,7 +85,7 @@ function ListMenu({ list, lists, notify, onClose }) {
     <section className="share-panel">
       <h3>共有</h3>
       {list.is_shared ? <>
-        <p className="hint">共有中です。<strong>リンクを知っている人は誰でも</strong>このリストの公開中の発表を閲覧できます。あなたのメモと、公開停止された発表は含まれません。</p>
+        <p className="hint">共有中です。<strong>リンクを知っている人は誰でも</strong>このリストの公開中の記録を閲覧できます。あなたのメモと、公開停止された記録は含まれません。</p>
         <input aria-label="共有リンク" readOnly value={shareUrl(list.share_token)} onFocus={e => e.target.select()} />
         <div className="dialog-actions wrap"><button className="secondary" disabled={!!busy} onClick={() => copyLink(shareUrl(list.share_token), notify)}>リンクをコピー</button><button className="secondary" disabled={!!busy} onClick={() => share(true)}>{busy === 'share' ? '更新中…' : '新しいリンクにする'}</button><button className="text-action" disabled={!!busy} onClick={() => share(false)}>共有を停止</button></div>
         <p className="hint">停止すると、このリンクは無効になります。再び共有しても以前のリンクは使えません。</p>
@@ -94,6 +94,6 @@ function ListMenu({ list, lists, notify, onClose }) {
         <div className="dialog-actions"><button className="secondary" disabled={!!busy} onClick={() => share(true)}>{busy === 'share' ? '発行中…' : '共有リンクを発行'}</button></div>
       </>}
     </section>
-    <section className="share-panel danger"><h3>削除</h3><p className="hint">リストだけを削除します。入れた発表と「すべての保存」は残ります。</p><div className="dialog-actions"><button className="text-action" disabled={!!busy} onClick={remove}>{busy === 'delete' ? '削除中…' : 'このリストを削除'}</button></div></section>
+    <section className="share-panel danger"><h3>削除</h3><p className="hint">リストだけを削除します。入れた記録と「すべての保存」は残ります。</p><div className="dialog-actions"><button className="text-action" disabled={!!busy} onClick={remove}>{busy === 'delete' ? '削除中…' : 'このリストを削除'}</button></div></section>
   </Dialog>
 }

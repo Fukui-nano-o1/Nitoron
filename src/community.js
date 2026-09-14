@@ -1,7 +1,7 @@
 import { supabase } from './supabase.js'
 import { fromRow, normalize, snapshot, publicSnapshot, publicationProblems } from './domain.js'
 import { PUBLIC_FIELDS, PRIVATE_FIELDS, sanitizePublicProfile, sanitizePrivateProfile, hasMachine } from './account-domain.js'
-import { EMPTY_FILTERS } from './search.js'
+import { EMPTY_FILTERS, MACHINE_KIND, MACHINE_KINDS } from './search.js'
 export const PAGE_SIZE = 24
 export const FEEDBACK_KINDS = ['質問', '指摘', '提案', '試した結果']
 const message = error => ['PGRST205', '42P01'].includes(error?.code)
@@ -17,7 +17,9 @@ export async function listPublic({ query = '', region = '', page = 0, filters = 
   for (const term of normalize(query).split(/\s+/).filter(Boolean)) request = request.ilike('search_text', `%${term.replace(/[\\%_]/g, '\\$&')}%`)
   if (region.trim()) request = request.ilike('region_search', `%${normalize(region).trim().replace(/[\\%_]/g, '\\$&')}%`)
   if (filters.crop.trim()) request = request.ilike('crop_search', `%${normalize(filters.crop).trim().replace(/[\\%_]/g, '\\$&')}%`)
-  if (filters.kind !== 'all') request = request.eq('snapshot->meta->>kind', filters.kind)
+  // 「機械」はカタログ解説・修理記録・整備ガイドの2分類に展開する（JSONパスの .or は使わず、既存の列指定で .in する）。
+  if (filters.kind === MACHINE_KIND) request = request.in('snapshot->meta->>kind', MACHINE_KINDS)
+  else if (filters.kind !== 'all') request = request.eq('snapshot->meta->>kind', filters.kind)
   if (filters.stage !== 'all') request = request.eq('snapshot->meta->>kind', 'challenge').eq('snapshot->meta->>stage', filters.stage)
   if (filters.from) request = request.gte('snapshot->>date', filters.from)
   if (filters.to) request = request.lte('snapshot->>date', filters.to)
@@ -33,7 +35,7 @@ export async function getPublic(id) {
   requireClient()
   const { data, error } = await supabase.from('nitoron_publications').select('*').eq('id', id).eq('is_public', true).maybeSingle()
   if (error) throw new Error(message(error))
-  if (!data) throw new Error('この発表は見つからないか、公開が停止されています。')
+  if (!data) throw new Error('この記録は見つからないか、公開が停止されています。')
   return unpack(data)
 }
 export async function getProfile(userId) {

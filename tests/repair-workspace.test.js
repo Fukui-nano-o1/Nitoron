@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { newRecord, fromRow, toRow } from '../src/domain.js'
-import { REPAIR_MACHINES, isRepairRecord, createRepairRegistry, newRepairRecord, repairLookup, searchRepairMachines } from '../src/repair-workspace.mjs'
+import { REPAIR_MACHINES, isRepairRecord, createRepairRegistry, newRepairRecord, newFreeRepairRecord, repairLookup, searchRepairMachines } from '../src/repair-workspace.mjs'
 
 // Contract fixtures only. Neither manufacturer/model is a real supported product.
 function fixture(machineId, maker, model, rootPartId, partId) {
@@ -99,4 +99,12 @@ test('既存の発表・通常トラブルは修理へ読み替えず既存保�
     assert.deepEqual(record, original)
     assert.deepEqual(fromRow(toRow(record)), original)
   }
+})
+
+test('登録機の分類は meta.crop へ写り、分類のない登録情報では空のまま（探すのチップに載せる規約）', () => {
+  assert.equal(REPAIR_MACHINES[0].category, '野菜関連機器')
+  assert.equal(newRepairRecord(REPAIR_MACHINES[0]).meta.crop, '野菜関連機器')
+  assert.equal(newRepairRecord(a).meta.crop, '')
+  assert.equal(newFreeRepairRecord('ヤンマー YT225').meta.crop, '')
+  assert.throws(() => createRepairRegistry([{ ...a, category: 7 }]), /登録情報/)
 })

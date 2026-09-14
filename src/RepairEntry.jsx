@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Dialog, Field } from './ui.jsx'
+import { MACHINE_CATEGORIES } from './search.js'
 import { REPAIR_OUTCOMES, REPAIR_MACHINE_FIELDS, REPAIR_SYMPTOM_FIELDS, REPAIR_CHECK_FIELDS, REPAIR_ACTION_FIELDS, createRepairEntryDraft, repairProblems, newCheck, newAction, hasRepairContent } from './repair-entry.mjs'
 
 const filled = value => value != null && String(value).trim() !== ''
@@ -37,6 +38,8 @@ export default function RepairEntrySheet({ record, focus = 'symptom', onSave, on
     if (!initial.symptom.text && record.meta.issue) initial.symptom.text = record.meta.issue
     return initial
   })
+  // 分類（meta.crop）：探すの分類チップに載せるための1項目。meta.repair の外に持ち、保存時に上書きする。
+  const [crop, setCrop] = useState(record.meta.crop || '')
   const [error, setError] = useState('')
   const problems = repairProblems(r)
   useEffect(() => { document.getElementById(`repair-entry-${focus}`)?.scrollIntoView({ block: 'start' }) }, [focus])
@@ -45,7 +48,7 @@ export default function RepairEntrySheet({ record, focus = 'symptom', onSave, on
   const removeRow = (group, id) => setR(prev => ({ ...prev, [group]: prev[group].filter(row => row.id !== id) }))
   const save = () => {
     try {
-      const meta = draft.current.prepare(record.meta, r)
+      const meta = { ...draft.current.prepare(record.meta, r), crop }
       if (onSave({ ...record, meta })) onClose()
       else setError('保存できません。入力はこの画面に残っています。')
     } catch (e) { setError(e.message) }
@@ -57,6 +60,7 @@ export default function RepairEntrySheet({ record, focus = 'symptom', onSave, on
     <section id="repair-entry-machine" className="repair-entry-section"><h3>機械</h3>
       <div className="fields two">{input('machine', 'maker', 'メーカー')}{input('machine', 'model', '型式')}</div>
       <div className="fields two">{input('machine', 'serial', '号機・年式')}{input('machine', 'hours', '稼働時間（h）', 'number')}</div>
+      <Field label="分類"><select value={crop} onChange={e => setCrop(e.target.value)}><option value="">選ばない</option>{MACHINE_CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}</select></Field>
     </section>
     <section id="repair-entry-symptom" className="repair-entry-section"><h3>症状</h3>
       {input('symptom', 'text', '症状（何が、どうなるか）', 'text', 3)}

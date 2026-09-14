@@ -10,6 +10,8 @@ export const REPAIR_MACHINES = Object.freeze([Object.freeze({
   machineId: MACHINE_ID, modelVersion: MODEL_VERSION, rootPartId: ROOT_PART_ID,
   maker: 'クボタ', model: MACHINE_NAME, name: `クボタ ${MACHINE_NAME}`,
   aliases: Object.freeze(['Kubota']), guideKey: 'skp-power', resolveRef: resolveMachineRef,
+  // 探すの分類チップに載せるための分類名（src/search.js の MACHINE_CATEGORIES）。meta.crop へ写す。
+  category: '野菜関連機器',
 })])
 
 const fields = ['machineId', 'modelVersion', 'rootPartId', 'maker', 'model', 'name']
@@ -19,7 +21,8 @@ function checkedDescriptor(value) {
   if (!isObject(value) || fields.some(key => typeof value[key] !== 'string' || !value[key].trim()) ||
       typeof value.resolveRef !== 'function' ||
       (value.aliases !== undefined && (!Array.isArray(value.aliases) || value.aliases.some(x => typeof x !== 'string'))) ||
-      (value.guideKey !== undefined && typeof value.guideKey !== 'string')) {
+      (value.guideKey !== undefined && typeof value.guideKey !== 'string') ||
+      (value.category !== undefined && typeof value.category !== 'string')) {
     throw new TypeError('機械の登録情報を確認できません。')
   }
   return Object.freeze({ ...value, aliases: Object.freeze([...(value.aliases || [])]) })
@@ -74,6 +77,9 @@ export function newRepairRecord(descriptor) {
   record.title = machine.name
   record.meta.subject = 'machine_repair'
   record.meta.machineRef = machineRef
+  // 保存層（toRow）は meta.crop を category にも写すので、作成時から両方を揃えて往復差を出さない。
+  record.meta.crop = machine.category || ''
+  if (machine.category) record.category = machine.category
   record.meta.repair = { ...emptyRepair(), machine: { maker: machine.maker, model: machine.model, serial: '', hours: '' } }
   return record
 }
