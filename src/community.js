@@ -1,5 +1,6 @@
 import { supabase } from './supabase.js'
 import { fromRow, normalize, snapshot, publicSnapshot, publicationProblems } from './domain.js'
+import { PUBLIC_FIELDS, PRIVATE_FIELDS, sanitizePublicProfile, sanitizePrivateProfile, hasMachine } from './account-domain.js'
 import { EMPTY_FILTERS } from './search.js'
 export const PAGE_SIZE = 24
 export const FEEDBACK_KINDS = ['質問', '指摘', '提案', '試した結果']
@@ -41,11 +42,31 @@ export async function getProfile(userId) {
   if (error) throw new Error(message(error))
   return data
 }
-export async function saveProfile(session, { display_name, region, club, bio }) {
+export async function saveProfile(session, profile) {
   requireClient()
   if (!session?.user) throw new Error('ログインしてからプロフィールを保存してください。')
-  const { error } = await supabase.from('nitoron_profiles').upsert({ user_id: session.user.id, display_name: display_name.trim(), region: region.trim(), club: club.trim(), bio: bio.trim(), updated_at: new Date().toISOString() }).select('user_id').single()
+  const p = sanitizePublicProfile(profile)
+  const row = { user_id: session.user.id, updated_at: new Date().toISOString(), machines: p.machines.filter(hasMachine) }
+  for (const [key] of PUBLIC_FIELDS) row[key] = p[key].trim()
+  const { error } = await supabase.from('nitoron_profiles').upsert(row).select('user_id').single()
   if (error) throw new Error('プロフィールを保存できませんでした。接続を確認して再試行してください。')
+}
+// 本人だけが読める項目（settings：RLS で本人以外は読めない）。公開スナップショットには絶対に載せない。
+export async function getPrivateProfile(session) {
+  requireClient()
+  if (!session?.user) return null
+  const { data, error } = await supabase.from('settings').select('full_name,phone,address').eq('user_id', session.user.id).maybeSingle()
+  if (error) throw new Error(message(error))
+  return data
+}
+export async function savePrivateProfile(session, fields) {
+  requireClient()
+  if (!session?.user) throw new Error('ログインしてから保存してください。')
+  const p = sanitizePrivateProfile(fields)
+  const row = { user_id: session.user.id, updated_at: new Date().toISOString() }
+  for (const [key] of PRIVATE_FIELDS) row[key] = p[key].trim()
+  const { error } = await supabase.from('settings').upsert(row).select('user_id').single()
+  if (error) throw new Error('連絡先を保存できませんでした。接続を確認して再試行してください。')
 }
 // 公開の対話記録から検証できる実績だけを数える。自己申告は含めない。
 export async function getTrust(userId, publicationIds) {

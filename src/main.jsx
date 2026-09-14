@@ -17,9 +17,8 @@ import SiteHeader, { NAV, currentTab } from './SiteHeader.jsx'
 import Catalog from './Catalog.jsx'
 import Home from './Home.jsx'
 import PublicRecord from './PublicRecord.jsx'
-import Profile from './Profile.jsx'
 const User = lazy(() => import('./User.jsx'))
-const ProfileEdit = lazy(() => import('./ProfileEdit.jsx'))
+const AccountPage = lazy(() => import('./AccountPage.jsx'))
 import SavedList from './SavedList.jsx'
 const SharedList = lazy(() => import('./SharedList.jsx'))
 import SaveSheet from './SaveSheet.jsx'
@@ -323,6 +322,7 @@ function App() {
       await remove(record.id); setSelected(s => s.filter(r => r.id !== record.id)); location.hash = isRepairRecord(record) ? '/repairs' : '/mine'; setToast('記録を削除しました。')
     } catch (e) { setToast(e.message); throw e }
   }
+  const restoreDevice = () => { if (window.confirm(`端末だけに保存した${deviceRecords.length}件を、このアカウントの新しい記録として取り込みますか？`)) { for (const r of deviceRecords) put({ ...fromRow(r), id: uid() }); setDeviceRecords([]); setToast('端末の記録を取り込みました。') } }
   const exportAll = () => download(`Nitoron_${today()}.json`, JSON.stringify({ format: 'nitoron-workspace', version: 1, exportedAt: new Date().toISOString(), records: records.map(snapshot) }, null, 2), 'application/json')
   const importBackup = async e => {
     const file = e.target.files?.[0]; e.target.value = ''; if (!file) return
@@ -362,10 +362,10 @@ function App() {
       : route.view === 'talks' ? <Talks session={session} bookmarks={bookmarks} onAccount={() => setDialog({ type: 'account' })} />
       : route.view === 'compare' ? <Compare records={selectedRecords} onRemove={select} onBack={backFromCompare} />
       : route.view === 'list' ? <SharedList key={route.id} token={route.id} savedIds={bookmarks.ids} onSave={heart} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} />
-      : route.view === 'account' ? <Profile session={session} name={name} selectedCount={selected.length} onAccount={() => setDialog({ type: 'account' })}
-          savedNew={bookmarks.rows.reduce((n, b) => n + (activity.counts[b.id] || 0), 0)} mineNew={owned.reduce((n, p) => n + (activity.counts[p.id] || 0), 0)} />
+      : route.view === 'account' || route.view === 'profile' ? <AccountPage section={route.view === 'profile' ? 'personal' : route.id} session={session} name={name} onName={rename} flush={flush} owned={owned} selectedCount={selected.length} notify={setToast}
+          activitySaved={bookmarks.rows.reduce((n, b) => n + (activity.counts[b.id] || 0), 0)} activityMine={owned.reduce((n, p) => n + (activity.counts[p.id] || 0), 0)}
+          data={{ ready, exportAll, importBackup, deviceRecords, restoreDevice }} />
       : route.view === 'user' ? <User key={route.id} id={route.id} savedIds={bookmarks.ids} onSave={heart} selectedKeys={selected.map(keyOf)} keyOf={keyOf} onSelect={select} />
-      : route.view === 'profile' ? <ProfileEdit session={session} name={name} onName={rename} onAccount={() => setDialog({ type: 'account' })} />
       : route.view === 'discover' ? <Home savedIds={bookmarks.ids} onSave={heart} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} searchRef={searchRef} />
       : route.view === 'saved' ? <SavedList session={session} view={route.id} list={lists.lists.find(l => l.id === route.id)} lists={lists} picking={picking} onPicking={setPicking} notify={setToast} records={publicState.records} count={publicState.count} loading={publicState.loading || !bookmarks.ready}
           error={bookmarks.error ? <ErrorNotice retry={bookmarks.retry}>{bookmarks.error}</ErrorNotice> : publicState.error ? <ErrorNotice retry={() => setRefresh(r => r + 1)}>{publicState.error}</ErrorNotice> : null}
@@ -377,7 +377,7 @@ function App() {
           owned={owned} ownedReady={ownedReady} ready={ready} onCreate={() => create('presentation')}
           blankCount={publicMode ? 0 : records.filter(r => isBlankRecord(r) && !owned.some(p => p.id === r.id && p.is_public)).length} onCleanup={cleanupBlankRecords}>
         {publicMode && publicState.count > PAGE_SIZE && <div className="pagination"><button className="secondary" disabled={publicPage === 0 || publicState.loading} onClick={() => setPublicPage(p => p - 1)}>前へ</button><span>{publicPage + 1} / {Math.ceil(publicState.count / PAGE_SIZE)}</span><button className="secondary" disabled={(publicPage + 1) * PAGE_SIZE >= publicState.count || publicState.loading} onClick={() => setPublicPage(p => p + 1)}>次へ</button></div>}
-        {!publicMode && <footer className="catalog-footer">{!!deviceRecords.length && <button className="quiet" onClick={() => { if (window.confirm(`端末だけに保存した${deviceRecords.length}件を、このアカウントの新しい記録として取り込みますか？`)) { for (const r of deviceRecords) put({ ...fromRow(r), id: uid() }); setDeviceRecords([]); setToast('端末の記録を取り込みました。') } }}>端末だけの記録を復元</button>}<button className="quiet" disabled={!ready} onClick={exportAll}>全記録を書き出す</button><button className="quiet" disabled={!ready} onClick={() => importRef.current.click()}>バックアップを取り込む</button><input hidden type="file" ref={importRef} accept="application/json,.json" onChange={importBackup} /></footer>}
+        {!publicMode && <footer className="catalog-footer">{!!deviceRecords.length && <button className="quiet" onClick={restoreDevice}>端末だけの記録を復元</button>}<button className="quiet" disabled={!ready} onClick={exportAll}>全記録を書き出す</button><button className="quiet" disabled={!ready} onClick={() => importRef.current.click()}>バックアップを取り込む</button><input hidden type="file" ref={importRef} accept="application/json,.json" onChange={importBackup} /></footer>}
       </Catalog>}
     </main>
     {!!selected.length && route.view !== 'compare' && <div className="compare-tray print-hidden"><span>{selected.length}件を選択中</span>{selected.length >= 2 ? <a href="#/compare">並べて比較する</a> : <em className="tray-hint">あと1件選ぶと比較できます</em>}<button onClick={() => setSelected([])}>解除</button></div>}

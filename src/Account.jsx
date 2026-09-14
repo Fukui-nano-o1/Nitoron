@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { supabase } from './supabase.js'
 import { Dialog, Field, ErrorNotice } from './ui.jsx'
 
-export default function Account({ session, name, onName, flush, onClose }) {
+// ダイアログ（各画面からの「登録・ログイン」）とアカウントページ（#/account/login）で同じ本体を使う。
+export function AccountAuth({ session, name, onName, flush }) {
   const [email, setEmail] = useState(''), [mode, setMode] = useState('register')
   const [token, setToken] = useState(''), [sent, setSent] = useState(false), [sentType, setSentType] = useState('email')
   const [busy, setBusy] = useState(false), [error, setError] = useState(''), [notice, setNotice] = useState('')
@@ -25,7 +26,7 @@ export default function Account({ session, name, onName, flush, onClose }) {
     if (verifyError) throw new Error('コードを確認してください。有効期限が切れた場合は送り直してください。')
     setNotice('メールアドレスを確認しました。'); setSent(false)
   }) }
-  return <Dialog title="アカウントと保存" onClose={busy ? () => {} : onClose}>
+  return <>
     <Field label="表示名"><input maxLength={80} value={name} onChange={e => onName(e.target.value)} placeholder="発表や指摘に使う名前" /></Field>
     {permanent ? <>
       <div className="account-state"><strong>{session.user.email}</strong><p>このメールアドレスで別の端末からも記録を開けます。</p></div>
@@ -51,5 +52,8 @@ export default function Account({ session, name, onName, flush, onClose }) {
       </form>}
     </>}
     {notice && <p className="notice" role="status">{notice}</p>}{error && <ErrorNotice>{error}</ErrorNotice>}
-  </Dialog>
+  </>
+}
+export default function Account({ session, name, onName, flush, onClose }) {
+  return <Dialog title="アカウントと保存" onClose={onClose}><AccountAuth session={session} name={name} onName={onName} flush={flush} /><p className="hint"><a href="#/account" onClick={onClose}>アカウントページで、個人情報・機械・公開設定も入力できます。</a></p></Dialog>
 }

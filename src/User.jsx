@@ -27,7 +27,7 @@ export default function User({ id, savedIds, onSave, selectedKeys, keyOf, onSele
     {error ? <ErrorNotice>{error}</ErrorNotice> : !records ? <p className="loading" role="status">プロフィールを読み込み中…</p> : <div className="user-columns">
       <aside className="user-aside">
         <div className="host-card">
-          <div className="host-identity"><span className="avatar-circle xl" aria-hidden="true">{name.slice(0, 1)}</span><strong>{name}</strong><span>発表者</span></div>
+          <div className="host-identity"><span className="avatar-circle xl" aria-hidden="true">{name.slice(0, 1)}</span><strong>{name}</strong><span>{[profile?.role, profile?.crops].filter(Boolean).join(' · ') || '発表者'}</span></div>
           <dl className="host-stats">
             <div><dd>{records.length}</dd><dt>発表</dt></div>
             <div><dd>{facts}</dd><dt>観測した事実</dt></div>
