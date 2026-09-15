@@ -16,6 +16,7 @@ import { Dialog, Empty, ErrorNotice, download } from './ui.jsx'
 import SiteHeader, { NAV, currentTab } from './SiteHeader.jsx'
 import Catalog from './Catalog.jsx'
 import PublicRecord from './PublicRecord.jsx'
+import ManualPage from './ManualPage.jsx'
 const User = lazy(() => import('./User.jsx'))
 const AccountPage = lazy(() => import('./AccountPage.jsx'))
 import SavedList from './SavedList.jsx'
@@ -37,9 +38,9 @@ const routeFromLocation = () => {
   if (/^#\/?search(\?|$)/.test(location.hash)) location.hash = location.hash.replace(/^#\/?search/, '/discover')
   // 探すの条件は「#/discover?q=…」のようにハッシュ内のクエリで持ち、URLを正とする。
   const [path, params = ''] = location.hash.replace(/^#\/?/, '').split('?')
-  const [view, id, section] = path.split('/')
-  // 経営発表に一点集中する間、挑戦・学習ノートの専用ページは閉じる。
-  return { view: ['mine', 'discover', 'saved', 'list', 'record', 'public', 'compare', 'account', 'user', 'talks', 'repairs', 'repair'].includes(view) ? view : 'discover', id, section, params }
+  const [view, id, section, extra] = path.split('/')
+  // 経営発表に一点集中する間、挑戦・学習ノートの専用ページは閉じる。extra は「#/public/:id/manual/:pdf」の頁番号。
+  return { view: ['mine', 'discover', 'saved', 'list', 'record', 'public', 'compare', 'account', 'user', 'talks', 'repairs', 'repair'].includes(view) ? view : 'discover', id, section, extra, params }
 }
 const keyOf = r => `${r.publication ? 'public' : 'mine'}:${r.id}`
 // スクロール位置を覚えておく画面。詳細（public・record）は常に先頭から表示する。
@@ -344,7 +345,7 @@ function App() {
           save={{ status: draft && route.id === draft.id && !records.some(r => r.id === draft.id) ? '未保存の下書き · 書き始めると自動保存します' : status, error, retry, sync, session }}
           onChange={record => put(record, session?.user.id || null)} published={owned.some(p => p.id === editorRecord.id && p.is_public)} publication={{ ...ownPublication, retry: () => setRefresh(r => r + 1) }}
           onPublish={publishNow} publishing={publishing} publishResult={publishResult} onDelete={() => deleteRecord(editorRecord)} onUnpublish={() => stopPublication(editorRecord)} onShare={() => share(editorRecord)} onAccount={openAccount} /> : <Empty title="この記録は見つかりません" action={<a className="secondary" href="#/mine">自分の実践へ</a>}>保存したアカウントでログインしているか確認してください。</Empty> : <p className="loading" role="status">記録を読み込み中…</p>
-      : route.view === 'public' ? recordError ? <div className="catalog"><ErrorNotice retry={() => setRefresh(r => r + 1)}>{recordError}</ErrorNotice><a href="#/discover">探すへ</a></div> : publicRecord ? <PublicRecord record={publicRecord} onBack={backToList} selected={selected.some(r => keyOf(r) === keyOf(publicRecord))} onSelect={() => select(publicRecord)} saved={bookmarks.ids.includes(publicRecord.id)} onSave={() => heart(publicRecord)} onShare={() => share(publicRecord)} ready={ready}
+      : route.view === 'public' ? recordError ? <div className="catalog"><ErrorNotice retry={() => setRefresh(r => r + 1)}>{recordError}</ErrorNotice><a href="#/discover">探すへ</a></div> : publicRecord ? route.section === 'manual' ? <ManualPage key={`${publicRecord.id}-${route.extra}`} record={publicRecord} pdf={route.extra} /> : <PublicRecord record={publicRecord} onBack={backToList} selected={selected.some(r => keyOf(r) === keyOf(publicRecord))} onSelect={() => select(publicRecord)} saved={bookmarks.ids.includes(publicRecord.id)} onSave={() => heart(publicRecord)} onShare={() => share(publicRecord)} ready={ready}
           session={session} onAccount={openAccount} notify={setToast} editHref={session?.user.id && session.user.id === publicRecord.publication.owner ? `#/record/${publicRecord.id}/content` : null}
           canFollow={!!publicRecord.publication.owner && session?.user.id !== publicRecord.publication.owner} following={follows.ids.includes(publicRecord.publication.owner)} onFollow={() => follows.toggle(publicRecord.publication.owner, publicRecord.meta?.author || '発表者')} discussion={<Discussion key={publicRecord.id} record={publicRecord} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} onSeen={until => activity.markSeen(publicRecord.id, until)} />} /> : <p className="loading" role="status">記録を読み込み中…</p>
       : route.view === 'talks' ? <Talks session={session} bookmarks={bookmarks} onAccount={() => setDialog({ type: 'account' })} />

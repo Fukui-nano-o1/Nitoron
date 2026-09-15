@@ -5,7 +5,7 @@ import { imageAttachments } from './attachment-domain.js'
 import { KINDS, SECTIONS, METRICS, number, formatNumber, safeUrl } from './domain.js'
 import { MachineTargetSection } from './MachinePicker.jsx'
 import Icon from './Icon.jsx'
-import { sectionId, isCatalogRecord, groupSection, searchSections, highlightParts } from './catalog-domain.js'
+import { sectionId, isCatalogRecord, groupSection, searchSections, highlightParts, citeParts, manualOffset, manualPageHref } from './catalog-domain.js'
 // 本文を h2 ごとの節に分ける（h2 が空文字のものは見出しにしない）。先頭の h2 より前は見出しなしの節。
 function bodySections(blocks) {
   const sections = []
@@ -51,11 +51,12 @@ export default function RecordBody({ record, hideHeading = false, hideCover = fa
     </section>))}
   </div>
 }
-// 1ブロックの表示。query があれば当たった語を <mark> にする。
-function renderBlock(b, query = '') {
+// 1ブロックの表示。query があれば当たった語を <mark> にする。cite（{ id, offset }）があれば頁の引用を取扱説明書の頁ページへのリンクにする。
+const highlighted = (text, query, keyBase) => query ? highlightParts(text, query).map((part, i) => part.mark ? <mark key={`${keyBase}-${i}`}>{part.text}</mark> : part.text) : text
+export function renderBlock(b, query = '', cite = null) {
   if (b.type === 'divider') return <hr key={b.id} />
   if (!b.text) return null
-  const text = query ? highlightParts(b.text, query).map((part, i) => part.mark ? <mark key={i}>{part.text}</mark> : part.text) : b.text
+  const text = cite ? citeParts(b.text, cite.offset).map((part, i) => part.pdf != null ? <a key={i} className="cite" href={manualPageHref(cite.id, part.pdf)} title={`取扱説明書 印刷p.${part.printed}（PDF ${part.pdf}頁）`}>{part.text}</a> : highlighted(part.text, query, i)) : highlighted(b.text, query, 0)
   if (['h1', 'h3'].includes(b.type)) return <h3 key={b.id}>{text}</h3>
   if (b.type === 'quote') return <blockquote key={b.id}>{text}</blockquote>
   return <p key={b.id} className={b.type === 'callout' ? 'notice' : ''}>{b.type === 'todo' ? (b.checked ? '☑ ' : '☐ ') : b.type === 'bullet' ? '• ' : ''}{text}</p>
@@ -68,13 +69,14 @@ function CatalogBody({ record }) {
   const [opened, setOpened] = useState(() => new Set())
   const found = searchSections(record.blocks, query)
   const sections = bodySections(record.blocks)
+  const cite = { id: record.id, offset: manualOffset(record.blocks) }
   const search = <div className="record-search print-hidden" role="search"><Icon name="search" size={18} /><input type="search" maxLength={160} value={query} onChange={e => setQuery(e.target.value)} placeholder="この記録の中を探す（部品名・症状・数値）" aria-label="この記録の中を探す" />{query && <button className="quiet" onClick={() => setQuery('')}>クリア</button>}</div>
   if (found) return <>
     {search}
     <p className="record-search-count" role="status">{found.length ? `「${query.trim()}」に当たる行 ${found.reduce((n, s) => n + s.total, 0)}件（${found.length}節）` : `「${query.trim()}」に当たる行はありません。型式・部品名・症状・数値で探せます。`}</p>
     {found.map(s => <section className="read-section" key={s.id} id={s.id}>
       {s.title && <div className="section-heading"><h2>{s.title}</h2><span className="state-label">{s.total}件</span></div>}
-      {s.groups.map((g, i) => <React.Fragment key={g.head?.id || i}>{g.head && renderBlock(g.head, query)}{g.rows.map(b => renderBlock(b, query))}</React.Fragment>)}
+      {s.groups.map((g, i) => <React.Fragment key={g.head?.id || i}>{g.head && renderBlock(g.head, query, cite)}{g.rows.map(b => renderBlock(b, query, cite))}</React.Fragment>)}
     </section>)}
   </>
   return <>
@@ -84,7 +86,7 @@ function CatalogBody({ record }) {
       const rows = section.blocks.filter(b => b.text && b.type !== 'divider').length
       const collapsible = !!section.heading && rows > PREVIEW_ROWS + 2 && !opened.has(id)
       let shown = 0
-      const body = section.blocks.map(b => { if (collapsible && b.text && b.type !== 'divider') { if (shown >= PREVIEW_ROWS) return null; shown++ } return renderBlock(b) })
+      const body = section.blocks.map(b => { if (collapsible && b.text && b.type !== 'divider') { if (shown >= PREVIEW_ROWS) return null; shown++ } return renderBlock(b, '', cite) })
       return <section className={`read-section${collapsible ? ' collapsed' : ''}`} key={id} id={section.heading ? id : undefined}>
         {section.heading && <div className="section-heading"><h2>{section.heading.text}</h2></div>}
         {body}

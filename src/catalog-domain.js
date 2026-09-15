@@ -41,6 +41,10 @@ const hit = (text, terms) => { const t = normalize(text); return terms.every(ter
 export function searchSections(blocks, query) {
   const terms = queryTerms(query)
   if (!terms.length) return null
+  return filterSections(blocks, text => hit(text, terms))
+}
+// 条件（行の本文で判定）に合う節・組・行だけを残す。検索と「この頁を引く行」で共用。
+function filterSections(blocks, pred) {
   const out = []
   let current = null
   for (const b of blocks || []) {
@@ -50,8 +54,8 @@ export function searchSections(blocks, query) {
   }
   for (const s of out) {
     for (const g of groupSection(s.raw)) {
-      const headHit = g.head && hit(g.head.text, terms)
-      const rows = headHit ? g.rows.filter(b => b.text && b.type !== 'divider') : g.rows.filter(b => b.text && b.type !== 'divider' && hit(b.text, terms))
+      const headHit = g.head && pred(g.head.text)
+      const rows = headHit ? g.rows.filter(b => b.text && b.type !== 'divider') : g.rows.filter(b => b.text && b.type !== 'divider' && pred(b.text))
       if (headHit || rows.length) { s.groups.push({ head: g.head, rows }); s.total += rows.length + (headHit ? 1 : 0) }
     }
     delete s.raw
@@ -69,3 +73,43 @@ export function highlightParts(text, query) {
   for (let i = 0; i < raw.length; i++) { const last = parts[parts.length - 1]; if (last && last.mark === marks[i]) last.text += raw[i]; else parts.push({ text: raw[i], mark: marks[i] }) }
   return parts
 }
+// 取扱説明書の頁の引用。本文には「（印刷p.56／PDF 62）」の形（頁数の根拠）と「やり方は印刷p.46」の形（参照）がある。
+// 印刷頁→PDF頁の差（本文の印刷頁 = PDF頁 − offset）は、記録の中の完全形の引用から求める（記録の形は変えない）。
+const CITE = /（印刷p\.(\d+)(?:〜\d+)?／PDF (\d+)）|印刷p\.(\d+)(?:〜\d+)?/g
+export function manualOffset(blocks) {
+  const counts = new Map()
+  for (const b of blocks || []) for (const m of String(b?.text || '').matchAll(CITE)) if (m[2]) { const d = Number(m[2]) - Number(m[1]); counts.set(d, (counts.get(d) || 0) + 1) }
+  let best = null
+  for (const [d, n] of counts) if (best === null || n > counts.get(best)) best = d
+  return best
+}
+// 本文を、引用の部分（printed・pdf つき）とそれ以外に分ける。参照形は offset があるときだけ pdf を持つ。
+export function citeParts(text, offset) {
+  const raw = String(text || ''), parts = []
+  let last = 0
+  for (const m of raw.matchAll(CITE)) {
+    if (m.index > last) parts.push({ text: raw.slice(last, m.index) })
+    const printed = Number(m[1] ?? m[3]), pdf = m[2] ? Number(m[2]) : offset == null ? null : printed + offset
+    parts.push({ text: m[0], printed, pdf })
+    last = m.index + m[0].length
+  }
+  if (last < raw.length || !parts.length) parts.push({ text: raw.slice(last) })
+  return parts
+}
+const citesOf = (text, offset) => citeParts(text, offset).filter(p => p.pdf != null)
+// 記録が引いた頁の一覧（印刷頁の昇順、引いた行数つき）。
+export function citedPages(blocks) {
+  const offset = manualOffset(blocks), pages = new Map()
+  for (const b of blocks || []) for (const c of new Set(citesOf(b?.text, offset).map(c => c.printed))) { const row = pages.get(c) || { printed: c, pdf: c + offset, count: 0 }; row.count++; pages.set(c, row) }
+  return [...pages.values()].sort((a, b) => a.printed - b.printed)
+}
+// 指定の印刷頁を引いている節・行だけ。
+export const sectionsCitingPage = (blocks, printed, offset = manualOffset(blocks)) => filterSections(blocks, text => citesOf(text, offset).some(c => c.printed === printed))
+export const manualPageHref = (id, pdf) => `#/public/${id}/manual/${pdf}`
+// 出典のうち取扱説明書（メーカーの案内ページ）を探し、PDF 本体の URL を組む。クボタは notice.html → download.html。
+export function manualSource(record) {
+  const s = (record?.meta?.sources || []).find(x => /\/manual\/notice\.html\?hash=/.test(x.url || '')) || (record?.meta?.sources || []).find(x => /\.pdf($|\?)/i.test(x.url || ''))
+  if (!s) return null
+  return { title: s.title || '取扱説明書', url: s.url, pdfUrl: s.url.replace('/manual/notice.html?', '/manual/download.html?') }
+}
+export const pdfPageUrl = (pdfUrl, page) => `${pdfUrl}#page=${page}`
