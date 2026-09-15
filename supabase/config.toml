@@ -1,0 +1,7 @@
+# This controls Edge Function deployment, not activation of the Auth hook.
+# The handler verifies Standard Webhooks HMAC before sending any mail.
+[functions.nitoron-private-email]
+enabled = true
+verify_jwt = false
+import_map = "./functions/nitoron-private-email/deno.json"
+entrypoint = "./functions/nitoron-private-email/index.ts"

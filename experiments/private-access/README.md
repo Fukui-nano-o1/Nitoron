@@ -24,6 +24,11 @@ replaces the existing delivery path, so approved mail also needs a delivery
 implementation and credentials. The connected tools cannot change Auth Hook
 configuration or delivery secrets. No hook is claimed to be enabled.
 
+Update 2026-09-16 JST: the signed, fixed-recipient Brevo Edge Function is deployed
+and its 7 focused tests pass. Follow [EMAIL-SETUP.md](./EMAIL-SETUP.md) to register
+the two secrets and connect it to Auth. The remaining limitation persists until
+that setup and the owner's delivery check succeed.
+
 Do not try to enforce outbound email with `banned_until` or by rejecting an
 `auth.users` token update: the inspected Auth mail path sends the message before
 updating its token columns, and MagicLink/Recover do not check the ban first.
