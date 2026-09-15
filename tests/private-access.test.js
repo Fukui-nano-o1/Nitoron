@@ -64,6 +64,17 @@ test('Hookの診断コードを表示し、送信制限や配送側401をIP拒�
   const rate=loginSendError({status:429,code:'over_email_send_rate_limit'})
   assert(!rate.message.includes('Brevo')); assert(!rate.message.includes('IP'))
 })
+test('既知の配送エラーと配送側のHTTP状態をSDK向け5xx応答と画面表示へ保持する',async()=>{
+  for(const code of ['BREVO_IP_BLOCKED','BREVO_REJECTED','RESEND_REJECTED','RESEND_TIMEOUT','RESEND_CONNECTION','RESEND_RESPONSE']) {
+    const raw={code:'unexpected_failure',message:`secret-123456（${code} / 403）`}
+    const wrap=privateAuthFetch('https://example.test',async()=>Response.json(raw,{status:500}))
+    const response=await wrap('https://example.test/auth/v1/otp',{method:'POST'}), body=await response.json()
+    const result=loginSendError({name:'AuthRetryableFetchError',status:500,message:body.message})
+    assert.match(result.message,new RegExp(code)); assert.match(result.message,/HTTP 500/)
+    assert.match(result.message,/配送 403/); assert(!result.message.includes('secret-123456'))
+    if(code !== 'BREVO_IP_BLOCKED') assert(!result.message.includes('IP'))
+  }
+})
 test('不明なエラーや例外から秘密情報・URL・メール・確認コードを表示しない', async () => {
   const sensitive='key-secret-123456 t5fki6643qty@gmail.com https://example.test?token=secret'
   const errors=[{status:400,code:sensitive,message:sensitive},{status:500,code:'unexpected_failure',message:sensitive+'（HOOK_SIGNATURE）'},new TypeError(sensitive)]
