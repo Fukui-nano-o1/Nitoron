@@ -1,6 +1,6 @@
 # Nitoron private login email setup
 
-## Current incident: Brevo source IP rejected (2026-09-16 JST)
+## Current incident and provider decision (2026-09-16 JST)
 
 The owner supplied the 04:06:34 diagnostic:
 
@@ -8,59 +8,35 @@ The owner supplied the 04:06:34 diagnostic:
 {"event":"private_login_email","code":"BREVO_IP_BLOCKED","status":502,"providerStatus":401}
 ```
 
-This confirms that this invocation passed the hook checks and Brevo explicitly
-rejected its source IP. It matches the reported new-IP notice at 04:06:35 JST.
-Supabase Edge Functions do not promise stable egress IPs. Repeated approval of
-individual IPs is not a durable fix. Do not disable the shared Brevo account's IP
-protection, change Chitose-bank, or disable the recipient-restricted Send Email hook.
+Brevo explicitly rejected this invocation's source IP after the hook checks
+passed. Supabase Edge Functions do not promise a stable egress IP; repeatedly
+approving individual addresses does not give a durable delivery guarantee.
 
-### Switch this private prototype to a separate Resend account
+A Resend option was prepared in commit `da76b741`, but the owner then reported
+that their Resend account is banned. Resend is unavailable and the option is
+withdrawn. The hook uses only Brevo again. It does not read
+`NITORON_EMAIL_PROVIDER` or `NITORON_RESEND_API_KEY`; no Resend request can occur
+even if those settings were added. Do not create another Resend account or key
+as a workaround for the ban.
 
-The hook supports an explicit server-side provider selection. Until selected it
-keeps the existing Brevo path. No Resend account, secrets, charges, or real sends
-were created by the code change.
+Chitose-bank must remain unchanged. Whether this Brevo account is actually shared
+with Chitose-bank is **not confirmed**. Do not treat that assumption as fact or
+change shared IP protection before resolving it. API and SMTP blocking have
+separate switches, but the authorized IP list is shared across the account.
+Creating a new API key alone does not establish a separate IP security policy.
 
-1. Register a Nitoron-only Resend account using **t5fki6643qty@gmail.com**.
-   In https://resend.com/api-keys create a key named `nitoron-private-login` with
-   **Sending access**. The account email must match the fixed recipient because
-   this prototype uses `Nitoron <onboarding@resend.dev>`, Resend's testing sender.
-2. In [Nitoron Edge Function Secrets](https://supabase.com/dashboard/project/ycvbjzlqrxnwalhhgzat/functions/secrets),
-   add `NITORON_RESEND_API_KEY` with that key. Then set `NITORON_EMAIL_PROVIDER`
-   to `resend`. Keep `SEND_EMAIL_HOOK_SECRET` and the existing enabled hook.
-   Enter the key directly in Supabase, never in chat, Git, or the browser bundle.
-3. Request one owner login code. `RESEND_ACCEPTED` means API acceptance only;
-   confirm inbox receipt and code verification separately. A failure remains a
-   failure: there is no automatic retry or fallback to Brevo.
+The unchanged restrictions require a valid signed magiclink for the exact owner
+ID and email; all mail is addressed to the literal owner email. The error-display
+fix that retains numeric provider status across SDK formatting remains in place.
+No live mail was sent or received in this change. Delivery is still blocked until
+the Brevo-side IP policy or the sending route is resolved.
 
-Only verified-owner magiclink events can reach either provider. All recipients,
-sender, subject and text are fixed by the handler. Resend requests use an
-idempotency key derived from the verified webhook ID; retries of one hook use the
-same key. The key contains no OTP, account ID, email address, or API secret.
-
-Unknown provider values, missing keys and invalid hook signatures fail closed.
-Resend diagnostics are `RESEND_ACCEPTED`, `RESEND_REJECTED`, `RESEND_TIMEOUT`,
-`RESEND_CONNECTION`, and `RESEND_RESPONSE`. Only fixed codes and numeric HTTP
-statuses enter diagnostics. Actual delivery is **not yet verified**.
-
-The optional `resend.dev` path is for this owner's private development only.
-A public service or other recipients require a verified sending domain and an
-explicit change of the fixed sender/recipient policy; this change does not add it.
-
-Verification: `node --test tests/private-email-hook.test.js tests/private-access.test.js`
-checks both providers, denied identities/actions/signatures, configuration failure,
-timeouts/rejections, absence of fallback, safe error output, and stable retry keys.
-The client also retains the provider HTTP status across the SDK's second error
-formatting pass. These tests mock delivery and cannot prove inbox receipt.
-
-Primary references checked 2026-09-16 JST:
+References checked 2026-09-16 JST:
 
 - https://help.brevo.com/hc/en-us/articles/5740111683858-Authorize-and-block-IP-addresses-for-API-and-SMTP-security
 - https://supabase.com/docs/guides/troubleshooting/why-supabase-edge-functions-cannot-provide-static-egress-ips-for-whitelisting-3d78b0
-- https://resend.com/docs/knowledge-base/403-error-resend-dev-domain
-- https://resend.com/docs/api-reference/emails/send-email
-- https://resend.com/docs/dashboard/api-keys/introduction
 
-## Original Brevo setup and earlier diagnosis
+## Original setup and earlier diagnosis
 
 Prepared 2026-09-16 JST. Project: `ycvbjzlqrxnwalhhgzat` only.
 The Edge Function is deployed, but connecting it to Auth and registering delivery

@@ -37,17 +37,13 @@ const HOOK_SEND_ERRORS = {
   BREVO_TIMEOUT: 'メール配送サービスの応答が時間内に届きませんでした。',
   BREVO_CONNECTION: 'メール配送サービスとの通信を完了できませんでした。',
   BREVO_RESPONSE: 'メール配送の受付を確認できませんでした。',
-  RESEND_REJECTED: 'メール配送サービスが送信を受け付けませんでした。',
-  RESEND_TIMEOUT: 'メール配送サービスの応答が時間内に届きませんでした。',
-  RESEND_CONNECTION: 'メール配送サービスとの通信を完了できませんでした。',
-  RESEND_RESPONSE: 'メール配送の受付を確認できませんでした。',
 }
 export function loginSendError(error) {
   // Provider text can contain keys, codes or URLs. Display only known codes.
   const message = typeof error?.message === 'string' ? error.message.slice(0,8192) : ''
   const retainedCode = message.match(/\[NITORON_AUTH_CODE:([a-z_]+)\]/)?.[1]
   const code = Object.hasOwn(AUTH_SEND_ERRORS, error?.code) ? error.code : Object.hasOwn(AUTH_SEND_ERRORS, retainedCode) ? retainedCode : 'AUTH_SEND_FAILED'
-  const hook = message.match(/(?:^|[\s(（])((?:HOOK_(?:CONFIG|SIGNATURE|ACCOUNT|CODE)|BREVO_IP_BLOCKED|(?:BREVO|RESEND)_(?:REJECTED|TIMEOUT|CONNECTION|RESPONSE)))(?:\s*\/\s*(?:HTTP\s+[45][0-9]{2}\s*\/\s*配送\s+)?([45][0-9]{2}))?(?=$|[\s)）])/)
+  const hook = message.match(/(?:^|[\s(（])((?:HOOK_(?:CONFIG|SIGNATURE|ACCOUNT|CODE)|BREVO_(?:IP_BLOCKED|REJECTED|TIMEOUT|CONNECTION|RESPONSE)))(?:\s*\/\s*(?:HTTP\s+[45][0-9]{2}\s*\/\s*配送\s+)?([45][0-9]{2}))?(?=$|[\s)）])/)
   const status = Number.isInteger(error?.status) && error.status >= 400 && error.status <= 599 ? error.status : null
   const network = error?.name === 'AuthRetryableFetchError' || error?.name === 'TypeError'
   const text = hook ? HOOK_SEND_ERRORS[hook[1]] : AUTH_SEND_ERRORS[code] || (status === 429 ?

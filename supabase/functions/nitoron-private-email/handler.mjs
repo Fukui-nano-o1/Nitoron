@@ -1,4 +1,4 @@
-// Nitoron's signed Send Email hook. Provider selection is server-side only.
+// Nitoron owner-only Brevo Send Email hook; Resend is not used.
 // Do not log the signed payload, OTP, API key, or provider response body.
 export const OWNER_ID = '9e4163dc-56d3-4eba-9187-6534ecc8d607'
 export const OWNER_EMAIL = 't5fki6643qty@gmail.com'
@@ -19,10 +19,7 @@ export function createEmailHandler({ Webhook, env, request = fetch, report = ent
   return async req => {
     if (req.method !== 'POST') return reply(405, 'POST required')
     const secret = env('SEND_EMAIL_HOOK_SECRET')?.trim()
-    const provider = normalize(env('NITORON_EMAIL_PROVIDER')) || 'brevo'
-    if (!['brevo', 'resend'].includes(provider)) return fail(503, 'HOOK_CONFIG', 'メール配送の設定を確認してください')
-    const useResend = provider === 'resend', prefix = useResend ? 'RESEND' : 'BREVO'
-    const apiKey = env(useResend ? 'NITORON_RESEND_API_KEY' : 'BREVO_API_KEY')?.trim()
+    const apiKey = env('BREVO_API_KEY')?.trim()
     if (!secret || !apiKey) return fail(503, 'HOOK_CONFIG', 'メール配送の設定が不足しています')
     if (Number(req.headers.get('content-length') || 0) > 65536) return reply(413, 'Request too large')
     let payload
@@ -37,34 +34,19 @@ export function createEmailHandler({ Webhook, env, request = fetch, report = ent
       data?.email_action_type !== 'magiclink') return fail(403, 'HOOK_ACCOUNT', 'このログイン要求は許可されていません')
     if (typeof data.token !== 'string' || !/^[0-9]{6,8}$/.test(data.token)) return fail(400, 'HOOK_CODE', '確認コードの形式を確認できません')
     try {
-      const subject = 'Nitoron ログイン確認コード'
-      const text = `ログイン確認コード：${data.token}\n\nNitoronの画面に入力してください。\nこのコードは他の人に教えないでください。\n心当たりがない場合は、このメールを破棄してください。`
-      const headers = { Accept: 'application/json', 'Content-Type': 'application/json' }
-      if (useResend) {
-        headers.Authorization = `Bearer ${apiKey}`
-        // A verified webhook retry keeps its key without exposing an OTP or user ID.
-        const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(req.headers.get('webhook-id')))
-        headers['Idempotency-Key'] = 'nitoron-login/' + Array.from(new Uint8Array(digest), x => x.toString(16).padStart(2, '0')).join('')
-      } else headers['api-key'] = apiKey
-      const response = await request(useResend ? 'https://api.resend.com/emails' : 'https://api.brevo.com/v3/smtp/email', {
+      const response = await request('https://api.brevo.com/v3/smtp/email', {
         method: 'POST',
-        headers,
+        headers: { 'api-key': apiKey, Accept: 'application/json', 'Content-Type': 'application/json' },
         // Complete within Supabase's five-second Auth HTTP hook budget.
         signal: AbortSignal.timeout(3500),
-        // The resend.dev sender is only for this owner's private development use.
-        // The Resend account must have the same email address as OWNER_EMAIL.
-        body: JSON.stringify(useResend ? {
-          from: 'Nitoron <onboarding@resend.dev>',
-          to: [OWNER_EMAIL], subject, text,
-        } : {
+        body: JSON.stringify({
           sender: { name: 'Nitoron', email: OWNER_EMAIL },
           to: [{ email: OWNER_EMAIL }],
-          subject, textContent: text,
+          subject: 'Nitoron ログイン確認コード',
+          textContent: `ログイン確認コード：${data.token}\n\nNitoronの画面に入力してください。\nこのコードは他の人に教えないでください。\n心当たりがない場合は、このメールを破棄してください。`,
         }),
       })
       if (!response.ok) {
-        // Do not echo Resend errors or retry/fall back to another provider.
-        if (useResend) return fail(502, 'RESEND_REJECTED', 'メール配送を受け付けませんでした', response.status)
         let providerMessage = ''
         try {
           const error = await response.json()
@@ -77,13 +59,12 @@ export function createEmailHandler({ Webhook, env, request = fetch, report = ent
           ipBlocked ? 'Brevoが送信元IPを拒否しました' : 'Brevoがメール配送を受け付けませんでした', response.status)
       }
       const result = await response.json()
-      const acceptedId = useResend ? result.id : result.messageId
-      if (typeof acceptedId !== 'string' || !acceptedId) return fail(502, `${prefix}_RESPONSE`, '配送受付を確認できません', response.status)
-      diagnostic(`${prefix}_ACCEPTED`, 200, response.status)
+      if (typeof result.messageId !== 'string' || !result.messageId) return fail(502, 'BREVO_RESPONSE', '配送受付を確認できません', response.status)
+      diagnostic('BREVO_ACCEPTED', 200, response.status)
       return reply(200)
     } catch (error) {
-      if (['TimeoutError','AbortError'].includes(error?.name)) return fail(502, `${prefix}_TIMEOUT`, 'メール配送の応答が時間内に届きませんでした')
-      return fail(502, `${prefix}_CONNECTION`, 'メール配送との通信を完了できませんでした')
+      if (['TimeoutError','AbortError'].includes(error?.name)) return fail(502, 'BREVO_TIMEOUT', 'メール配送の応答が時間内に届きませんでした')
+      return fail(502, 'BREVO_CONNECTION', 'メール配送との通信を完了できませんでした')
     }
   }
 }

@@ -65,7 +65,7 @@ test('Hookの診断コードを表示し、送信制限や配送側401をIP拒�
   assert(!rate.message.includes('Brevo')); assert(!rate.message.includes('IP'))
 })
 test('既知の配送エラーと配送側のHTTP状態をSDK向け5xx応答と画面表示へ保持する',async()=>{
-  for(const code of ['BREVO_IP_BLOCKED','BREVO_REJECTED','RESEND_REJECTED','RESEND_TIMEOUT','RESEND_CONNECTION','RESEND_RESPONSE']) {
+  for(const code of ['BREVO_IP_BLOCKED','BREVO_REJECTED','BREVO_TIMEOUT','BREVO_CONNECTION','BREVO_RESPONSE']) {
     const raw={code:'unexpected_failure',message:`secret-123456（${code} / 403）`}
     const wrap=privateAuthFetch('https://example.test',async()=>Response.json(raw,{status:500}))
     const response=await wrap('https://example.test/auth/v1/otp',{method:'POST'}), body=await response.json()
