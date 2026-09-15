@@ -51,12 +51,25 @@ function RelatedRow({ row, excludeId }) {
 // 「この実践を試す」など派生記録の入口は置かない。記録の種類（経営発表・カタログ・修理）で見出しの語を変え、発表だけを前提にしない。
 // preview: 確認画面での「公開したときの見え方」。表示だけで、保存・フォロー・対話などのデータ更新は一切起きない。
 // editHref: 所有者にだけ渡す「編集する」の遷移先。
-export default function PublicRecord({ record, onBack, selected, onSelect, saved, onSave, onShare, session, canFollow, following, onFollow, onAccount, notify, discussion, preview = false, editHref = null }) {
+export default function PublicRecord({ record, focusSection = '', onBack, selected, onSelect, saved, onSave, onShare, session, canFollow, following, onFollow, onAccount, notify, discussion, preview = false, editHref = null }) {
   const [moreOpen, setMoreOpen] = useState(false)
   // カタログ解説の記録内検索。欄は上部の固定バー（SectionNav）に、結果は本文（RecordBody）に。語が変わったら結果の先頭が固定バーの下に来るよう送る。
   const [bodyQuery, setBodyQuery] = useState('')
   const bodySearch = isCatalogRecord(record) ? { query: bodyQuery, onQuery: setBodyQuery } : null
   useEffect(() => { if (!bodyQuery.trim()) return; const el = document.getElementById('record-search-results'), bar = document.querySelector('.section-nav'); if (el && el.getBoundingClientRect().top < (bar?.getBoundingClientRect().bottom || 0)) el.scrollIntoView({ block: 'start' }) }, [bodyQuery])
+  // 「#/public/:id?sec=sec-xxx」で来たら（取扱説明書の頁ページの小見出しから）、その節を開いた状態で先頭に据え、短く光らせて焦点を示す。
+  useEffect(() => {
+    if (!focusSection) return
+    let tries = 20, timer = null
+    const attempt = () => {
+      const el = document.getElementById(focusSection)
+      if (!el) { if (--tries > 0) timer = setTimeout(attempt, 100); return }
+      el.scrollIntoView({ block: 'start' })
+      el.classList.add('is-focused'); timer = setTimeout(() => el.classList.remove('is-focused'), 1800)
+    }
+    timer = setTimeout(attempt, 60)
+    return () => clearTimeout(timer)
+  }, [focusSection, record.id])
   if (isRepairRecord(record)) return <RepairDetail key={record.id} record={record} readOnly onBack={onBack} onShare={preview ? undefined : onShare} onBookmark={preview ? undefined : onSave} bookmarked={saved} editHref={editHref} discussion={discussion} additionalMenu={preview ? null : <>{onSelect && <button aria-pressed={selected} onClick={onSelect}>{selected ? '比較から外す' : 'ほかの記録と比較'}</button>}{canFollow && <button aria-pressed={following} onClick={onFollow}>{following ? '記録者をフォロー中' : '記録者をフォロー'}</button>}<RecordMemo record={record} session={session} onAccount={onAccount} notify={notify} /></>} />
   const m = record.meta, count = m?.observations.filter(o => o.fact.trim()).length || 0
   const photos = imageAttachments(record).length, files = sanitizeAttachments(m?.attachments).length - photos
@@ -89,7 +102,7 @@ export default function PublicRecord({ record, onBack, selected, onSelect, saved
     <header className="listing-title"><span className="listing-kind">{kind}</span><h1>{record.title}</h1><div className="listing-subtitle"><span>{subtitle}</span><span className="preview-tag">{kind}</span></div></header>
     <div className="listing-hero"><PhotoGallery record={record} /></div>
     {sectionNav}
-    <div className="listing-columns"><div className="listing-main">{authorSection}{factsRow}{highlights}<RecordBody record={record} hideHeading hideCover search={bodySearch} /></div></div>
+    <div className="listing-columns"><div className="listing-main">{authorSection}{factsRow}{highlights}<RecordBody record={record} hideHeading hideCover search={bodySearch} focusSection={focusSection} /></div></div>
     <div className="publication-date">公開版の更新：{String(record.publication?.updatedAt || '').slice(0, 10) || '未公開'}</div>
   </article>
   return <article className="listing-page">
@@ -99,7 +112,7 @@ export default function PublicRecord({ record, onBack, selected, onSelect, saved
       <div className="hero-overlay print-hidden">{back}<div><button onClick={onShare} aria-label="共有"><Icon name="share" size={18} /></button><button aria-pressed={saved} onClick={onSave} aria-label={saved ? '保存リストから外す' : '保存リストに追加'}><Icon name="heart" size={18} fill={saved ? '#ff385c' : 'none'} color={saved ? '#ff385c' : undefined} /></button><button aria-haspopup="dialog" aria-label="その他の操作" onClick={() => setMoreOpen(true)}><Icon name="menu" size={18} /></button>{editHref && <a href={editHref} aria-label="編集する"><Icon name="pencil" size={18} /></a>}</div></div>
     </div>
     {sectionNav}
-    <div className="listing-columns"><div className="listing-main">{authorSection}{factsRow}{highlights}<RecordBody record={record} hideHeading hideCover search={bodySearch} /></div>
+    <div className="listing-columns"><div className="listing-main">{authorSection}{factsRow}{highlights}<RecordBody record={record} hideHeading hideCover search={bodySearch} focusSection={focusSection} /></div>
     <aside className="listing-aside print-hidden"><div className="action-card"><h2>この記録について</h2>
       <dl className="action-facts"><div><dt>種類</dt><dd>{kind}</dd></div><div><dt>記録日</dt><dd>{record.date}</dd></div><div><dt>記録者</dt><dd>{author}</dd></div></dl>
       <a className="primary" href="#discussion" onClick={toDiscussion}>質問・指摘を送る</a>

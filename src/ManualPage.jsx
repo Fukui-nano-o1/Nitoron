@@ -24,7 +24,7 @@ export default function ManualPage({ record, pdf }) {
     </div>
     <nav className="manual-pager" aria-label="前後の頁">{prev ? <a href={manualPageHref(record.id, prev.pdf)}>← 印刷p.{prev.printed}</a> : <span />}<span>この頁を引く行 {total}件</span>{next ? <a href={manualPageHref(record.id, next.pdf)}>印刷p.{next.printed} →</a> : <span />}</nav>
     {sections.length ? sections.map(s => <section className="read-section record-body" key={s.id}>
-      {s.title && <div className="section-heading"><h2><a href={`#/public/${record.id}`} onClick={e => { e.preventDefault(); location.hash = `/public/${record.id}`; setTimeout(() => document.getElementById(s.id)?.scrollIntoView({ block: 'start' }), 300) }}>{s.title}</a></h2><span className="state-label">{s.total}件</span></div>}
+      {s.title && <div className="section-heading"><h2><a href={`#/public/${record.id}?sec=${s.id}`} title="解説のこの節へ">{s.title}</a></h2><span className="state-label">{s.total}件</span><a className="section-jump" href={`#/public/${record.id}?sec=${s.id}`} aria-label={`解説の「${s.title}」へ`}><Icon name="right" size={16} /></a></div>}
       {s.groups.map((g, i) => <React.Fragment key={g.head?.id || i}>{g.head && renderBlock(g.head, '', cite)}{g.rows.map(b => renderBlock(b, '', cite))}</React.Fragment>)}
     </section>) : <p className="empty-line">この頁を引いた行はこの解説にありません。下の一覧から引いた頁を選べます。</p>}
     {!!pages.length && <section className="manual-index"><h2>この解説が引いた頁（{pages.length}頁）</h2><div className="page-chips">{pages.map(x => <a key={x.printed} className={`page-chip${x.pdf === page ? ' active' : ''}`} href={manualPageHref(record.id, x.pdf)} aria-current={x.pdf === page ? 'page' : undefined}>p.{x.printed}<small>{x.count}</small></a>)}</div></section>}

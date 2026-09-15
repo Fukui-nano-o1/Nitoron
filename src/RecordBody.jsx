@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Cover from './Cover.jsx'
 import { AttachmentList } from './Attachments.jsx'
 import { imageAttachments } from './attachment-domain.js'
@@ -15,7 +15,7 @@ function bodySections(blocks) {
   }
   return sections.filter(s => s.heading || s.blocks.some(b => b.text))
 }
-export default function RecordBody({ record, hideHeading = false, hideCover = false, search = null }) {
+export default function RecordBody({ record, hideHeading = false, hideCover = false, search = null, focusSection = '' }) {
   const m = record.meta
   return <div className="record-body">
     {!hideHeading && <><div className="record-kicker">{KINDS[m?.kind || 'memo']}{m?.kind === 'challenge' && ` / ${m.stage}`}</div>
@@ -45,7 +45,7 @@ export default function RecordBody({ record, hideHeading = false, hideCover = fa
       {!!m.sources.length && <section className="read-section"><h2>出典・資料</h2>{m.sources.map(s => <p className="source-line" key={s.id}>{safeUrl(s.url) ? <a href={safeUrl(s.url)} rel="noopener noreferrer" target="_blank">{s.title || s.url}</a> : s.title || '資料名未記録'}{s.date && <span> · {s.date}</span>}</p>)}</section>}
     </>}
     <AttachmentList attachments={m?.attachments} />
-    {!!record.blocks.filter(b => b.text).length && (isCatalogRecord(record) ? <CatalogBody record={record} search={search} /> : bodySections(record.blocks).map((section, i) => <section className="read-section" key={section.heading?.id || `lead-${i}`} id={section.heading ? sectionId(section.heading) : undefined}>
+    {!!record.blocks.filter(b => b.text).length && (isCatalogRecord(record) ? <CatalogBody record={record} search={search} focusSection={focusSection} /> : bodySections(record.blocks).map((section, i) => <section className="read-section" key={section.heading?.id || `lead-${i}`} id={section.heading ? sectionId(section.heading) : undefined}>
       {section.heading ? <div className="section-heading"><h2>{section.heading.text}</h2></div> : m?.inputMode === 'sections' && <h2>補足</h2>}
       {section.blocks.map(b => renderBlock(b))}
     </section>))}
@@ -65,10 +65,12 @@ export function renderBlock(b, query = '', cite = null) {
 // 記録内検索は部品名・症状・数値で行を絞り、当たった節だけを当たった行だけで出す。語の正規化・型式ゆらぎは全文検索と同じ。
 const PREVIEW_ROWS = 6
 // search（{ query, onQuery }）が渡されたときは検索欄を上部の固定バー（PublicRecord の節ナビ）に任せ、本文には結果だけを出す。
-function CatalogBody({ record, search = null }) {
+function CatalogBody({ record, search = null, focusSection = '' }) {
   const [own, setOwn] = useState('')
   const query = search ? search.query : own, setQuery = search ? search.onQuery : setOwn
-  const [opened, setOpened] = useState(() => new Set())
+  // 焦点を当てる節（頁ページの小見出しから来た節）は畳まずに全行を出す。
+  const [opened, setOpened] = useState(() => new Set(focusSection ? [focusSection] : []))
+  useEffect(() => { if (focusSection) setOpened(prev => prev.has(focusSection) ? prev : new Set(prev).add(focusSection)) }, [focusSection])
   const found = searchSections(record.blocks, query)
   const sections = bodySections(record.blocks)
   const cite = { id: record.id, offset: manualOffset(record.blocks) }
