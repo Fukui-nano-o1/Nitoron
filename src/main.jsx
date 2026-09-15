@@ -10,6 +10,7 @@ const Discussion = lazy(() => import('./Discussion.jsx'))
 const Account = lazy(() => import('./Account.jsx'))
 const Talks = lazy(() => import('./Talks.jsx'))
 import { supabase } from './supabase.js'
+import PrivateAccess from './PrivateAccess.jsx'
 import { newRecord, snapshot, publicSnapshot, publicationKey, fromRow, uid, today, isBlankRecord } from './domain.js'
 import { listPublic, getPublic, getOwned, getOwnPublication, publishRecord, unpublishRecord, PAGE_SIZE } from './community.js'
 import { Dialog, Empty, ErrorNotice, download } from './ui.jsx'
@@ -57,8 +58,8 @@ const STEP_KEYS = ['basics', 'content', 'review']
 const stepStorageKey = (owner, id) => `nitoron:record-step:v1:${owner || 'device'}:${id}`
 // 参照の同一性を保つため固定オブジェクトにする（毎回生成するとfiltersの同一性が崩れ、一覧取得のeffectがループする）。
 const LIST_DEFAULTS = Object.freeze({ query: '', region: '', filters: EMPTY_FILTERS, sort: 'recent', page: 0 })
-function App() {
-  const workspace = useWorkspace()
+function App({ verifiedSession }) {
+  const workspace = useWorkspace(verifiedSession)
   const { records, ready, session, status, error, needsLogin, sync, put, remove, flush, retry } = workspace
   const recordsRef = useRef(records)
   recordsRef.current = records
@@ -391,4 +392,4 @@ class ErrorBoundary extends React.Component {
   static getDerivedStateFromError() { return { error: true } }
   render() { return this.state.error ? <div className="empty"><h1>画面を表示できませんでした</h1><p>保存済みの記録は削除していません。</p><button className="primary" onClick={() => location.reload()}>再読み込み</button></div> : this.props.children }
 }
-createRoot(document.getElementById('root')).render(<ErrorBoundary><Suspense fallback={<p className="loading" role="status">画面を準備しています…</p>}><App /></Suspense></ErrorBoundary>)
+createRoot(document.getElementById('root')).render(<ErrorBoundary><PrivateAccess>{session => <Suspense fallback={<p className="loading" role="status">画面を準備しています…</p>}><App key={session.user.id} verifiedSession={session} /></Suspense>}</PrivateAccess></ErrorBoundary>)

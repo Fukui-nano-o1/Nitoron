@@ -1,0 +1,10 @@
+.private-app[hidden],.private-app[hidden] dialog,.private-app[hidden] dialog::backdrop{display:none!important}
+.private-login{min-height:100dvh;display:grid;place-items:center;padding:32px 20px;background:#fff}
+.private-login-card{width:min(100%,420px);border:1px solid #ddd;border-radius:20px;padding:36px 32px;box-shadow:0 8px 28px #00000008}
+.private-login-brand{display:block;margin-bottom:32px;color:#ff385c;font-size:26px;font-weight:700;letter-spacing:-1.5px}
+.private-login h1{font-size:1.5rem;line-height:1.4;margin:0 0 28px}
+.private-login .primary{width:100%}
+.private-login .notice{margin-top:20px;margin-bottom:0}
+.private-login p{color:#6a6a6a;font-size:.9375rem}
+.private-login .actions{display:grid;gap:8px}
+@media(max-width:480px){.private-login{align-items:start;padding:76px 24px 32px}.private-login-card{border:0;padding:0;box-shadow:none}}

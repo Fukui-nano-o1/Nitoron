@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { supabase, ensureSession, loginRequired } from './supabase.js'
+import { supabase } from './supabase.js'
+import { isPrivateUser } from './private-access.mjs'
 import { fromRow, toRow, mergeRecords, uid } from './domain.js'
 import { drainOutbox } from './sync.js'
 
 const prefix = 'nitoron:workspace:v1:'
-export default function useWorkspace() {
+export default function useWorkspace(verifiedSession) {
   const [records, setRecords] = useState([])
-  const [session, setSession] = useState(null)
+  const [session, setSession] = useState(() => isPrivateUser(verifiedSession?.user) ? verifiedSession : null)
   const [ready, setReady] = useState(false)
   const [status, setStatus] = useState('読み込み中…')
   const [error, setError] = useState('')
@@ -34,7 +35,7 @@ export default function useWorkspace() {
   const flush = useCallback(async () => {
     if (saving.current) return saving.current
     const s = state.current
-    if (!s.session || !supabase) { setStatus('この端末に保存'); return false }
+    if (!isPrivateUser(s.session?.user) || !supabase || !mounted.current) return false
     const myGeneration = generation.current
     saving.current = (async () => {
       try {
@@ -63,6 +64,7 @@ export default function useWorkspace() {
   }, [persist])
 
   const load = useCallback(async (nextSession) => {
+    if (!isPrivateUser(nextSession?.user) || !supabase) return
     const token = ++generation.current, owner = nextSession?.user.id || null
     clearTimeout(timer.current)
     setReady(false); setSession(nextSession); setError(''); setStatus('読み込み中…')
@@ -105,11 +107,6 @@ export default function useWorkspace() {
         if (!cache) for (const record of legacy) pending[record.id] = uid()
         setStatus('端末の記録を表示'); setError('クラウドの記録を取得できませんでした。再試行してください。')
       }
-    } else {
-      if (!cache) for (const record of legacy) pending[record.id] = uid()
-      setStatus('この端末に保存')
-      // ログインすれば繋がる状態はエラーではない。案内は needsLogin で行う。
-      if (!supabase || !loginRequired()) setError('クラウドに接続できません。記録はこの端末に保存します。')
     }
     if (token !== generation.current || !mounted.current) return
     setRecords([...s.records]); setReady(true); report()
@@ -119,20 +116,22 @@ export default function useWorkspace() {
 
   useEffect(() => {
     mounted.current = true
-    let booted = false
-    ensureSession().then(s => { if (mounted.current) { booted = true; load(s) } }).catch(() => { if (mounted.current) { booted = true; load(null) } })
-    const sub = supabase?.auth.onAuthStateChange((_event, s) => {
-      if (!booted || !mounted.current) return
-      if ((s?.user.id || null) !== state.current.owner) { queueMicrotask(() => { if (mounted.current) load(s) }) }
-      else { state.current.session = s; setSession(s) }
-    })
+    // Only the outer gate supplies a session, after server-side getUser checks.
+    // Never revive a raw cached or anonymous session inside the workspace.
+    load(verifiedSession)
     const onOnline = () => flush()
     const beforeUnload = event => {
       if (Object.keys(state.current.pending).length || state.current.cacheFailed) { event.preventDefault(); event.returnValue = '' }
     }
     window.addEventListener('online', onOnline); window.addEventListener('beforeunload', beforeUnload)
-    return () => { mounted.current = false; generation.current++; clearTimeout(timer.current); sub?.data.subscription.unsubscribe(); window.removeEventListener('online', onOnline); window.removeEventListener('beforeunload', beforeUnload) }
-  }, [load, flush])
+    return () => { mounted.current = false; generation.current++; clearTimeout(timer.current); window.removeEventListener('online', onOnline); window.removeEventListener('beforeunload', beforeUnload) }
+  }, [load, flush, verifiedSession?.user.id])
+  useEffect(() => {
+    if (isPrivateUser(verifiedSession?.user) && state.current.owner === verifiedSession.user.id) {
+      state.current.session = verifiedSession
+      setSession(verifiedSession)
+    }
+  }, [verifiedSession])
 
   const put = useCallback((record, expectedOwner) => {
     const s = state.current
@@ -161,14 +160,9 @@ export default function useWorkspace() {
     if (state.current.session) {
       if (Object.keys(state.current.pending).length && !await flush()) return
       await load(state.current.session)
-    } else {
-      const next = await ensureSession()
-      // Keep offline work in its own backup; do not silently attach it to an unrelated account.
-      if (next) await load(next)
-      else if (!supabase || !loginRequired()) setError('接続できませんでした。端末の記録を書き出して保管できます。')
     }
   }, [flush, load])
 
-  const needsLogin = ready && !session && !!supabase && loginRequired()
+  const needsLogin = !isPrivateUser(session?.user)
   return { records, ready, session, status, error, needsLogin, sync, put, remove, flush, retry }
 }

@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-09-15T16:28:54Z",
+  "projectId": "ycvbjzlqrxnwalhhgzat",
+  "migration": "nitoron_private_access",
+  "mode": "Live database role simulation in a rolled-back transaction; no real login email or production record created",
+  "restrictivePolicies": 11,
+  "preRequest": "nitoron_private.require_private_access",
+  "bucketPublic": false,
+  "anonymous": { "publications": 0, "preRequestDenied": true },
+  "otherExistingAccount": { "publications": 0, "preRequestDenied": true },
+  "owner": { "publicListing": 14, "preRequestAllowed": true },
+  "preservedRows": [
+    { "relation": "notes", "rows": 18, "beforeMd5": "9516536d35151f9b403c016cb102fb72", "afterMd5": "9516536d35151f9b403c016cb102fb72" },
+    { "relation": "nitoron_publications", "rows": 17, "beforeMd5": "fc6cb5ee628ed3a03a455b6d94f1582f", "afterMd5": "fc6cb5ee628ed3a03a455b6d94f1582f" }
+  ],
+  "limits": ["Direct HTTP verification timed out", "Auth outbound email hook not configured", "Vercel All Deployments protection is owner-reported"]
+}

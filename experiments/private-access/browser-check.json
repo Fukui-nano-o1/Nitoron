@@ -1,0 +1,90 @@
+{
+  "checkedAt": "2026-09-15T16:18:54.044Z",
+  "mode": "mock Auth and data only; no real email",
+  "browser": "153.0.8010.0",
+  "baseUrl": "http://127.0.0.1:4175",
+  "passed": 20,
+  "failed": 0,
+  "results": [
+    {
+      "name": "anonymous closed: /",
+      "passed": true
+    },
+    {
+      "name": "anonymous closed: #/discover",
+      "passed": true
+    },
+    {
+      "name": "anonymous closed: #/public/11111111-2222-4333-8444-555555555555",
+      "passed": true
+    },
+    {
+      "name": "anonymous closed: #/public/11111111-2222-4333-8444-555555555555/manual/71",
+      "passed": true
+    },
+    {
+      "name": "anonymous closed: #/list/mock-shared",
+      "passed": true
+    },
+    {
+      "name": "anonymous closed: #/repairs",
+      "passed": true
+    },
+    {
+      "name": "anonymous closed: #/repair/11111111-2222-4333-8444-555555555555",
+      "passed": true
+    },
+    {
+      "name": "anonymous closed: #/record/11111111-2222-4333-8444-555555555555/content",
+      "passed": true
+    },
+    {
+      "name": "anonymous closed: #/mine",
+      "passed": true
+    },
+    {
+      "name": "anonymous closed: #/saved",
+      "passed": true
+    },
+    {
+      "name": "anonymous closed: #/account",
+      "passed": true
+    },
+    {
+      "name": "anonymous closed: #/user/9e4163dc-56d3-4eba-9187-6534ecc8d607",
+      "passed": true
+    },
+    {
+      "name": "anonymous closed: #/compare",
+      "passed": true
+    },
+    {
+      "name": "anonymous closed: #/talks",
+      "passed": true
+    },
+    {
+      "name": "disallowed email sends no request",
+      "passed": true
+    },
+    {
+      "name": "allowed email OTP has create_user=false and retains route",
+      "passed": true
+    },
+    {
+      "name": "forged owner cache rejected against Auth user",
+      "passed": true
+    },
+    {
+      "name": "verified owner opens catalog",
+      "passed": true
+    },
+    {
+      "name": "same owner refresh hides native dialog and preserves its draft",
+      "passed": true
+    },
+    {
+      "name": "logout closes all content while device cache remains",
+      "passed": true
+    }
+  ]
+}

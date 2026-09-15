@@ -10,7 +10,7 @@ import { AccountAuth } from './Account.jsx'
 // 見出し → 「名前, メール · プロフィールを表示」 → カード → 自分のページ4行（修理記録はヘッダーのピルとタブにあるので置かない） → 各ページは「行ごとに 編集／保存」と右側の説明パネル。
 export const ACCOUNT_SECTIONS = [
   ['personal', '個人情報', 'user', '名前・立場・地域・連絡先。公開と非公開を分けて入力'],
-  ['login', 'ログインとセキュリティ', 'shield', 'メールの登録・確認、ログアウト'],
+  ['login', 'ログインとセキュリティ', 'shield', 'メールでログイン、ログアウト'],
   ['machines', '持っている機械', 'wrench', 'メーカー・型式・年式。修理記録の入力に使う'],
   ['sharing', '公開と共有', 'globe', '公開中の記録と、他の人に見える情報'],
   ['data', '記録のデータ', 'database', '書き出し・取り込み・端末だけの記録'],
@@ -22,7 +22,7 @@ function Crumbs({ title }) {
   return <nav className="account-crumbs" aria-label="現在地"><a href="#/account">アカウント</a><Icon name="right" size={12} /><span>{title}</span></nav>
 }
 function LoginPrompt({ text }) {
-  return <div className="account-panel account-login-prompt"><Icon name="shield" size={28} /><div><strong>ログインすると入力できます</strong><p>{text}</p></div><a className="primary" href="#/account/login">登録・ログイン</a></div>
+  return <div className="account-panel account-login-prompt"><Icon name="shield" size={28} /><div><strong>ログインすると入力できます</strong><p>{text}</p></div><a className="primary" href="#/account/login">ログイン</a></div>
 }
 
 // 1行＝1項目。押すと同じ行の中で編集し、保存で閉じる（Airbnb の Personal info と同じ）。
@@ -139,7 +139,7 @@ function Hub({ session, name, onLogout, activityMine, activitySaved, selectedCou
   return <>
     <header className="account-head"><h1>アカウント</h1>
       <p className="account-identity"><strong>{name || '名前未登録'}</strong>{permanent && <>, {session.user.email}</>}{!permanent && <>, {session ? 'この端末の仮アカウント' : '未ログイン'}</>}{session && <> · <a href={`#/user/${session.user.id}`}>プロフィールを表示</a></>}</p></header>
-    {!permanent && <div className="account-notice"><div><strong>メールを登録すると、別の端末からも記録を開けます</strong><p>{session ? 'この端末の記録はそのまま引き継がれます。' : '登録すると、クラウドに保存して公開・指摘ができます。'}</p></div><a className="primary dark" href="#/account/login">登録・ログイン</a></div>}
+    {!permanent && <div className="account-notice"><div><strong>メールを登録すると、別の端末からも記録を開けます</strong><p>{session ? 'この端末の記録はそのまま引き継がれます。' : '登録すると、クラウドに保存して公開・指摘ができます。'}</p></div><a className="primary dark" href="#/account/login">ログイン</a></div>}
     <div className="account-grid">{ACCOUNT_SECTIONS.map(([key, title, icon, desc]) => <a className="account-card" key={key} href={`#/account/${key}`}><Icon name={icon} size={30} /><strong>{title}</strong><span>{desc}</span></a>)}</div>
     <h2 className="account-sub">自分のページ</h2>
     <nav className="profile-menu" aria-label="自分のページ">
@@ -171,7 +171,7 @@ export default function AccountPage({ section, session, name, onName, flush, own
     <Crumbs title={title} />
     <h1 className="account-title">{title}</h1>
     {key === 'personal' && <Personal session={session} name={name} onName={onName} />}
-    {key === 'login' && <div className="account-columns"><div className="account-main account-auth"><AccountAuth session={session} flush={flush} /></div><aside className="account-aside"><div className="account-panel"><Icon name="shield" size={28} /><h3>パスワードはありません</h3><p>メールに届く確認リンクか確認コードでログインします。メールアドレスを変えるときも同じ手順です。</p></div></aside></div>}
+    {key === 'login' && <div className="account-columns"><div className="account-main account-auth"><AccountAuth session={session} flush={flush} /></div><aside className="account-aside"><div className="account-panel"><Icon name="shield" size={28} /><h3>パスワードはありません</h3><p>メールに届く確認リンクか確認コードでログインします。</p></div></aside></div>}
     {key === 'machines' && <Machines session={session} />}
     {key === 'sharing' && <Sharing session={session} owned={owned} />}
     {key === 'data' && <Data data={data} />}
