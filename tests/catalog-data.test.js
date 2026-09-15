@@ -38,7 +38,7 @@ test('every catalogue entry cites its sources and keeps the three rules', async 
 test('サイトが配信するフォルダに取扱説明書・カタログの PDF を置かない', async () => {
   const fs = await import('node:fs'), path = await import('node:path')
   const root = new URL('..', import.meta.url).pathname
-  const walk = dir => fs.existsSync(dir) ? fs.readdirSync(dir, { withFileTypes: true }).flatMap(d => d.isDirectory() ? walk(path.join(dir, d.name)) : [path.join(dir, d.name)]) : []
+  const walk = p => !fs.existsSync(p) ? [] : fs.statSync(p).isDirectory() ? fs.readdirSync(p, { withFileTypes: true }).flatMap(d => walk(path.join(p, d.name))) : [p]
   const served = ['public', 'src', 'data', 'index.html'].flatMap(d => walk(path.join(root, d)))
   const pdfs = served.filter(f => /\.pdf$/i.test(f) || (fs.statSync(f).size > 4 && fs.readFileSync(f).subarray(0, 5).toString('latin1') === '%PDF-'))
   assert.deepEqual(pdfs.map(f => path.relative(root, f)), [])
