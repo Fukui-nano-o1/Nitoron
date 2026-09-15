@@ -33,3 +33,15 @@ test('every catalogue entry cites its sources and keeps the three rules', async 
     for (const s of e.symptoms) { assert.ok(s.printed, name); for (const c of s.checks) assert.ok(c.point && c.printed, `${name} symptom ${s.symptom}: ${c.point}`) }
   }
 })
+
+// 原典（取扱説明書・カタログの PDF）をサイトで配信しない（守る規則1、2026-09-15 創業者決定）。配信対象のフォルダに PDF があれば失敗する。
+test('サイトが配信するフォルダに取扱説明書・カタログの PDF を置かない', async () => {
+  const fs = await import('node:fs'), path = await import('node:path')
+  const root = new URL('..', import.meta.url).pathname
+  const walk = dir => fs.existsSync(dir) ? fs.readdirSync(dir, { withFileTypes: true }).flatMap(d => d.isDirectory() ? walk(path.join(dir, d.name)) : [path.join(dir, d.name)]) : []
+  const served = ['public', 'src', 'data', 'index.html'].flatMap(d => walk(path.join(root, d)))
+  const pdfs = served.filter(f => /\.pdf$/i.test(f) || (fs.statSync(f).size > 4 && fs.readFileSync(f).subarray(0, 5).toString('latin1') === '%PDF-'))
+  assert.deepEqual(pdfs.map(f => path.relative(root, f)), [])
+  // カタログ JSON・記録 JSON に PDF や画像を埋め込まない
+  for (const f of served.filter(f => f.startsWith(path.join(root, 'data')) && f.endsWith('.json'))) assert.equal(/data:(application\/pdf|image\/)/.test(fs.readFileSync(f, 'utf8')), false, f)
+})
