@@ -45,3 +45,13 @@ test('サイトが配信するフォルダに取扱説明書・カタログの P
   // カタログ JSON・記録 JSON に PDF や画像を埋め込まない
   for (const f of served.filter(f => f.startsWith(path.join(root, 'data')) && f.endsWith('.json'))) assert.equal(/data:(application\/pdf|image\/)/.test(fs.readFileSync(f, 'utf8')), false, f)
 })
+
+// 取扱説明書の URL のハッシュは 32 桁（8 桁に切り詰めると 404。第1回・第2回で同じ誤りをした）。
+test('取扱説明書の案内ページ・ダウンロードの URL は 32 桁のハッシュを持つ', async () => {
+  const fs = await import('node:fs'), path = await import('node:path')
+  const dir = new URL('../data/catalog/kubota/', import.meta.url).pathname
+  for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.json') && !f.endsWith('.record.json'))) {
+    const m = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')).sources.manual
+    for (const key of ['noticeUrl', 'downloadUrl']) assert.match(m[key], /[?&]hash=[0-9a-f]{32}$/, `${f} ${key}`)
+  }
+})
