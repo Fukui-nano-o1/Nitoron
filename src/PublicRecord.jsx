@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import RecordBody from './RecordBody.jsx'
 import PhotoGallery from './PhotoGallery.jsx'
 import RecordMemo from './RecordMemo.jsx'
@@ -11,15 +11,26 @@ import { imageAttachments, sanitizeAttachments } from './attachment-domain.js'
 import { listPublic } from './community.js'
 import { RecordCard } from './Catalog.jsx'
 import { EMPTY_FILTERS, discoverHref } from './search.js'
-import { sectionsOf, relatedRows } from './catalog-domain.js'
+import { sectionsOf, relatedRows, isCatalogRecord } from './catalog-domain.js'
 // ページ内の飛び先。ハッシュルーティングと衝突しないよう、リンク先は書き換えずにスクロールだけする。
 const jump = id => e => { e.preventDefault(); document.getElementById(id)?.scrollIntoView({ block: 'start', behavior: 'smooth' }) }
-// 節ナビ（Airbnb の listing で写真の下に出る「写真・アメニティ・レビュー・地図」の行）。本文の h2 が3つ以上あるときだけ出す。
-function SectionNav({ record, hasDiscussion, hasRelated }) {
+// 節ナビ（Airbnb の listing で写真の下に出る「写真・アメニティ・レビュー・地図」の行）。上部に固定され、本文の h2 が3つ以上あるときに出す。
+// カタログ解説では記録内検索もこの固定バーに置く（PC は右端に入力欄、スマホは虫めがねを押すと入力行が開く）。本文の途中に置くと探さないと見つからない。
+function SectionNav({ record, hasDiscussion, hasRelated, search = null }) {
   const sections = sectionsOf(record.blocks)
-  if (sections.length < 3) return null
+  const [open, setOpen] = useState(false)
+  const inputRef = useRef(null)
+  if (sections.length < 3 && !search) return null
   const items = [...sections, ...(hasDiscussion ? [{ id: 'discussion', title: '対話' }] : []), ...(hasRelated ? [{ id: 'related', title: '関連' }] : [])]
-  return <nav className="section-nav print-hidden" aria-label="この記録の節">{items.map(s => <a key={s.id} href={`#${s.id}`} onClick={jump(s.id)}>{s.title.replace(/（.*?）/g, '')}</a>)}</nav>
+  const expanded = !!search && (open || !!search.query)
+  const toggle = () => { if (expanded) { search.onQuery(''); setOpen(false) } else { setOpen(true); setTimeout(() => inputRef.current?.focus({ preventScroll: true }), 50) } }
+  return <nav className={`section-nav print-hidden${expanded ? ' search-open' : ''}`} aria-label="この記録の節">
+    <div className="section-nav-tabs">{items.map(s => <a key={s.id} href={`#${s.id}`} onClick={jump(s.id)}>{s.title.replace(/（.*?）/g, '')}</a>)}</div>
+    {search && <>
+      <button type="button" className="nav-search-toggle" aria-expanded={expanded} aria-label={expanded ? '記録内検索を閉じる' : 'この記録の中を探す'} onClick={toggle}><Icon name={expanded ? 'close' : 'search'} size={18} /></button>
+      <form className="nav-search" role="search" onSubmit={e => { e.preventDefault(); inputRef.current?.blur() }}><Icon name="search" size={16} /><input ref={inputRef} type="search" maxLength={160} value={search.query} onChange={e => search.onQuery(e.target.value)} placeholder="この記録の中を探す（部品名・症状・数値）" aria-label="この記録の中を探す" />{search.query && <button type="button" className="quiet" onClick={() => { search.onQuery(''); inputRef.current?.focus({ preventScroll: true }) }}>クリア</button>}</form>
+    </>}
+  </nav>
 }
 // 最下部の関連カード行（Airbnb の「他の宿泊先」）。同じシリーズ→同じメーカーの順に横1段ずつ。0件の行は出さない。
 function RelatedRow({ row, excludeId }) {
@@ -42,6 +53,10 @@ function RelatedRow({ row, excludeId }) {
 // editHref: 所有者にだけ渡す「編集する」の遷移先。
 export default function PublicRecord({ record, onBack, selected, onSelect, saved, onSave, onShare, session, canFollow, following, onFollow, onAccount, notify, discussion, preview = false, editHref = null }) {
   const [moreOpen, setMoreOpen] = useState(false)
+  // カタログ解説の記録内検索。欄は上部の固定バー（SectionNav）に、結果は本文（RecordBody）に。語が変わったら結果の先頭が固定バーの下に来るよう送る。
+  const [bodyQuery, setBodyQuery] = useState('')
+  const bodySearch = isCatalogRecord(record) ? { query: bodyQuery, onQuery: setBodyQuery } : null
+  useEffect(() => { if (!bodyQuery.trim()) return; const el = document.getElementById('record-search-results'), bar = document.querySelector('.section-nav'); if (el && el.getBoundingClientRect().top < (bar?.getBoundingClientRect().bottom || 0)) el.scrollIntoView({ block: 'start' }) }, [bodyQuery])
   if (isRepairRecord(record)) return <RepairDetail key={record.id} record={record} readOnly onBack={onBack} onShare={preview ? undefined : onShare} onBookmark={preview ? undefined : onSave} bookmarked={saved} editHref={editHref} discussion={discussion} additionalMenu={preview ? null : <>{onSelect && <button aria-pressed={selected} onClick={onSelect}>{selected ? '比較から外す' : 'ほかの記録と比較'}</button>}{canFollow && <button aria-pressed={following} onClick={onFollow}>{following ? '記録者をフォロー中' : '記録者をフォロー'}</button>}<RecordMemo record={record} session={session} onAccount={onAccount} notify={notify} /></>} />
   const m = record.meta, count = m?.observations.filter(o => o.fact.trim()).length || 0
   const photos = imageAttachments(record).length, files = sanitizeAttachments(m?.attachments).length - photos
@@ -69,12 +84,12 @@ export default function PublicRecord({ record, onBack, selected, onSelect, saved
     {preview ? <span className="avatar-circle large" aria-hidden="true">{author.slice(0, 1)}</span> : <a className="avatar-circle large" href={`#/user/${record.publication.owner}`} aria-label={`${author}のプロフィールを表示`}>{author.slice(0, 1)}</a>}</div>
   const factsRow = <div className="record-facts">{facts.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div>
   const related = preview ? [] : relatedRows(record)
-  const sectionNav = <SectionNav record={record} hasDiscussion={!preview && !!discussion} hasRelated={related.length > 0} />
+  const sectionNav = <SectionNav record={record} hasDiscussion={!preview && !!discussion} hasRelated={related.length > 0} search={bodySearch} />
   if (preview) return <article className="listing-page preview" aria-label="公開プレビュー">
     <header className="listing-title"><span className="listing-kind">{kind}</span><h1>{record.title}</h1><div className="listing-subtitle"><span>{subtitle}</span><span className="preview-tag">{kind}</span></div></header>
     <div className="listing-hero"><PhotoGallery record={record} /></div>
     {sectionNav}
-    <div className="listing-columns"><div className="listing-main">{authorSection}{factsRow}{highlights}<RecordBody record={record} hideHeading hideCover /></div></div>
+    <div className="listing-columns"><div className="listing-main">{authorSection}{factsRow}{highlights}<RecordBody record={record} hideHeading hideCover search={bodySearch} /></div></div>
     <div className="publication-date">公開版の更新：{String(record.publication?.updatedAt || '').slice(0, 10) || '未公開'}</div>
   </article>
   return <article className="listing-page">
@@ -84,7 +99,7 @@ export default function PublicRecord({ record, onBack, selected, onSelect, saved
       <div className="hero-overlay print-hidden">{back}<div><button onClick={onShare} aria-label="共有"><Icon name="share" size={18} /></button><button aria-pressed={saved} onClick={onSave} aria-label={saved ? '保存リストから外す' : '保存リストに追加'}><Icon name="heart" size={18} fill={saved ? '#ff385c' : 'none'} color={saved ? '#ff385c' : undefined} /></button><button aria-haspopup="dialog" aria-label="その他の操作" onClick={() => setMoreOpen(true)}><Icon name="menu" size={18} /></button>{editHref && <a href={editHref} aria-label="編集する"><Icon name="pencil" size={18} /></a>}</div></div>
     </div>
     {sectionNav}
-    <div className="listing-columns"><div className="listing-main">{authorSection}{factsRow}{highlights}<RecordBody record={record} hideHeading hideCover /></div>
+    <div className="listing-columns"><div className="listing-main">{authorSection}{factsRow}{highlights}<RecordBody record={record} hideHeading hideCover search={bodySearch} /></div>
     <aside className="listing-aside print-hidden"><div className="action-card"><h2>この記録について</h2>
       <dl className="action-facts"><div><dt>種類</dt><dd>{kind}</dd></div><div><dt>記録日</dt><dd>{record.date}</dd></div><div><dt>記録者</dt><dd>{author}</dd></div></dl>
       <a className="primary" href="#discussion" onClick={toDiscussion}>質問・指摘を送る</a>
