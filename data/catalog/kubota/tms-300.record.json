@@ -693,7 +693,7 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/4b39fae7b05a325b8fe8110c85f2114e/card-TMS-300.jpg",
         "summary": "クボタ TMS-300（Midy Smile）の公式カタログと取扱説明書を、分野ごと・要素ごとに自分の言葉でまとめた解説。数値には頁を添え、手順は書いていない。",
         "issue": "",
         "hypothesis": "",
@@ -724,6 +724,12 @@
             "title": "クボタ 取扱説明書 KA071-6511-3（TMS300）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fc79250f8c5b804390e8da280b4cf06e",
             "date": "2026-09-15"
+          },
+          {
+            "date": "2026-09-16",
+            "id": "5b4be6c4-344-src-photo",
+            "title": "写真：クボタ TMS300",
+            "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/TMS-300/"
           }
         ],
         "attachments": [],

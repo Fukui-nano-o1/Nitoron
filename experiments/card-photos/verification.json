@@ -1,0 +1,115 @@
+{
+  "checkedAt": "2026-09-16",
+  "scope": "Nitoron existing visible cards",
+  "visibleCards": 14,
+  "cardsWithImages": 14,
+  "newImages": 11,
+  "existingImagesKept": 3,
+  "catalogCards": 10,
+  "maintenanceGuides": 4,
+  "draftCoversMatch": true,
+  "otherContentPreserved": true,
+  "existingSourcesPreserved": true,
+  "browser": {
+    "context": "Local app, database snapshots read after update; auth/API mocked; actual image bytes downloaded from source URLs",
+    "results": [
+      {
+        "width": 1280,
+        "view": "cards",
+        "loaded": 14
+      },
+      {
+        "width": 1280,
+        "view": "details",
+        "loaded": 14
+      },
+      {
+        "width": 390,
+        "view": "cards",
+        "loaded": 14
+      },
+      {
+        "width": 390,
+        "view": "details",
+        "loaded": 14
+      }
+    ]
+  },
+  "catalogTests": {
+    "passed": 9,
+    "failed": 0
+  },
+  "build": "passed",
+  "imageDownloads": [
+    {
+      "id": "de300000-0000-4000-8000-000000000104",
+      "status": 200,
+      "sha256": "184df28b42a628bf04b4b729ae61313c17365ec04a1a82ff9f89b77e4fadb2bd"
+    },
+    {
+      "id": "de300000-0000-4000-8000-000000000105",
+      "status": 200,
+      "sha256": "a84b53a6363467620a6ea49af36fd5da381575e7ab44d326b42a85070dd6f005"
+    },
+    {
+      "id": "de300000-0000-4000-8000-000000000106",
+      "status": 200,
+      "sha256": "2d352f839984ac2eabeba98f7d5dc63de77122a647fef45c197303ef8f1f3bb4"
+    },
+    {
+      "id": "de300000-0000-4000-8000-000000000107",
+      "status": 200,
+      "sha256": "5c92d84787aab7de9931b2ef0210c7460a4fb0e28d1114b574abde1de9c1c4f7"
+    },
+    {
+      "id": "ba845f4a-995a-4ab7-8c05-3efb4aad0227",
+      "status": 200,
+      "sha256": "7f77676722c2a767cc29ce2a5bedc257044979bbdea8b43e3db217cf6e3e6c8c"
+    },
+    {
+      "id": "5b4be6c4-4f1d-470c-8411-da6107264344",
+      "status": 200,
+      "sha256": "175dfc583ccb253915969a4fea80ba85dbaab8d5d19adfeebf132db77d9020e9"
+    },
+    {
+      "id": "d41e8089-3ec7-4259-8d92-bdf3c05e30e8",
+      "status": 200,
+      "sha256": "81f933d3661ff49962861351027adffa3960ce9d417a6b1140605db4745a6949"
+    },
+    {
+      "id": "cb311f16-85d8-4ba7-885b-3329415c627c",
+      "status": 200,
+      "sha256": "08c53b61f3313cf2a4a1f1bb12436f386785b679fa4cee3562ee92f3ac73211b"
+    },
+    {
+      "id": "7cd20590-8141-4a33-893f-69e7cae81b9b",
+      "status": 200,
+      "sha256": "780f956ffd0c876f1f699e9290350e07c656416108f7763adae5963b2fc21fb2"
+    },
+    {
+      "id": "a7748bfd-ac9d-41e8-8e04-e01590d07256",
+      "status": 200,
+      "sha256": "ab484952a5675c33b4a0513a1255b7f71b9d78f72d3468f5cb37960f6e150d60"
+    },
+    {
+      "id": "b4ae09e2-cfd6-4916-86b0-39fac57c9066",
+      "status": 200,
+      "sha256": "8de871053a12872acc742422cd0d7731df9f1da7b1956fa7b4fab1aed1d208a2"
+    },
+    {
+      "id": "5bb24fc7-de34-4714-8492-b2a00a145d70",
+      "status": 200,
+      "sha256": "1f50bbfa5863a05f28115f826fff05ca620fa567de4a32a9f3a7f14e0ae8ccb9"
+    },
+    {
+      "id": "5f55acdd-c334-4fcb-8cfd-4aa116dcb425",
+      "status": 200,
+      "sha256": "47afe964c899473da7cd8bd5f539b5301219f69616dc2c65f5f4b133f5e3763b"
+    },
+    {
+      "id": "9fbc248c-2e79-4c55-82b2-f843c1ec68ee",
+      "status": 200,
+      "sha256": "c3102865343677aaf692fe73d74ef52cdda4547371beea44385b6b0ea3bd2f05"
+    }
+  ]
+}

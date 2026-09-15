@@ -773,7 +773,7 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/b075b3214375be3c5f91c286b52996e5/02.jpg",
         "summary": "クボタ KP-103（歩行半自動移植機 ベジータキッド）の公式カタログと取扱説明書を、分野ごと・要素ごとに自分の言葉でまとめた解説。数値には頁を添え、手順は書いていない。",
         "issue": "",
         "hypothesis": "",
@@ -804,6 +804,12 @@
             "title": "クボタ 取扱説明書 PH580-8991-3（KP103E）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3341f6f048384ec73a7ba2e77d2db48b",
             "date": "2026-09-15"
+          },
+          {
+            "date": "2026-09-16",
+            "id": "7cd20590-b9b-src-photo",
+            "title": "写真：クボタ KP103E（葉菜類用）",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-KP-103/"
           }
         ],
         "attachments": [],

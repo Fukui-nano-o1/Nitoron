@@ -848,7 +848,7 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/3798877fb27f4538fcc0ccb008e41628/TRS5000.jpg",
         "summary": "クボタ TRS-5000-7000（Haruna smart）の公式カタログと取扱説明書を、分野ごと・要素ごとに自分の言葉でまとめた解説。数値には頁を添え、手順は書いていない。",
         "issue": "",
         "hypothesis": "",
@@ -879,6 +879,12 @@
             "title": "クボタ 取扱説明書 KA921-6521-5（TRS5000／TRS6000／TRS7000）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7ec3b3cf674f4f1d23e9d30c89426cce",
             "date": "2026-09-15"
+          },
+          {
+            "date": "2026-09-16",
+            "id": "5f55acdd-425-src-photo",
+            "title": "写真：クボタ TRS-5000-7000 Haruna smart（ミニ耕うん機）",
+            "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/TRS-5000-7000/"
           }
         ],
         "attachments": [],

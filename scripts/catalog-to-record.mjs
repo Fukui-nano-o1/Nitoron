@@ -12,6 +12,9 @@ const manual = entry.sources.manual, product = entry.sources.product
 // 同じ入力からは同じIDにする（再取込で重複しないよう、取り込む側で判断できる）
 const stableUuid = seed => { const h = createHash('sha256').update(seed).digest('hex'); return `${h.slice(0, 8)}-${h.slice(8, 12)}-4${h.slice(13, 16)}-8${h.slice(17, 20)}-${h.slice(20, 32)}` }
 const id = stableUuid(`nitoron-catalog:${entry.maker}:${entry.series}`)
+// 写真と出典の登録台帳を再生成時にも引き継ぐ。
+const photoRegistry = JSON.parse(await readFile(new URL('../data/card-photos.json', import.meta.url), 'utf8'))
+const photo = photoRegistry.entries.find(item => item.id === id)
 let n = 0
 const block = (type, text) => ({ id: `${id.slice(0, 8)}-${String(++n).padStart(3, '0')}`, type, text })
 // 頁対応（印刷頁→PDF頁）は取説ごとに違うので、データの bodyOffset／safetyOffset を使う（TMS-200 は 18／6）。
@@ -44,11 +47,13 @@ for (const v of entry.notVerified) blocks.push(block('bullet', v))
 blocks.push(block('divider', ''), block('text', `執筆 ${entry.timing.start} 〜 ${entry.timing.end || '記録中'}／読んだ頁数 ${entry.timing.pagesRead}／取扱説明書 SHA-256 ${manual.sha256.slice(0, 16)}…`))
 
 const meta = { ...emptyMeta('trouble'), inputMode: 'free',
+  coverUrl: photo?.url || '',
   author: `${entry.maker}カタログ解説（Nitoron運営・非公式）`, club: 'Nitoron / 4H Club', crop: entry.category,
   summary: `${entry.maker} ${entry.series}（${entry.productName}）の公式カタログと取扱説明書を、分野ごと・要素ごとに自分の言葉でまとめた解説。数値には頁を添え、手順は書いていない。`,
   sources: [
     { id: `${id.slice(0, 8)}-src-product`, title: `${entry.maker} 製品ページ ${entry.series} ${entry.productName}`, url: product.url, date: product.checkedAt },
     { id: `${id.slice(0, 8)}-src-manual`, title: `${entry.maker} 取扱説明書 ${manual.partNumber}（${entry.salesModel}）`, url: manual.noticeUrl, date: manual.checkedAt },
+    ...(photo ? [photo.source] : []),
   ] }
 const record = { id, title: `【カタログ解説】${entry.maker} ${entry.series} ${entry.productName}（${entry.category}）`, category: entry.category, type: 'メモ', date: (entry.timing.end || entry.timing.start).slice(0, 10), blocks, meta }
 const backup = { format: 'nitoron-workspace', version: 1, exportedAt: `${record.date}T00:00:00.000Z`, records: [record] }

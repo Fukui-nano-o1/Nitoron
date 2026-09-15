@@ -763,7 +763,7 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/878323e4778fab80c64806f66953ca4d/01_TA701N-K.jpg",
         "summary": "クボタ TA-701N（ニューベジマスター）の公式カタログと取扱説明書を、分野ごと・要素ごとに自分の言葉でまとめた解説。数値には頁を添え、手順は書いていない。",
         "issue": "",
         "hypothesis": "",
@@ -794,6 +794,12 @@
             "title": "クボタ 取扱説明書 KF082-6511-5（TA701N）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ee8fe9093fbbb687bef15a38facc44d2",
             "date": "2026-09-15"
+          },
+          {
+            "date": "2026-09-16",
+            "id": "cb311f16-27c-src-photo",
+            "title": "写真：クボタ TA701N-K",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/"
           }
         ],
         "attachments": [],

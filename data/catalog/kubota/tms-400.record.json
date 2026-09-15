@@ -778,7 +778,7 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/4f0d578351b99fe330fe92f15e1861da/card-thumb_1280_720_tms400.png",
         "summary": "クボタ TMS-400（Midy Smile-Pro）の公式カタログと取扱説明書を、分野ごと・要素ごとに自分の言葉でまとめた解説。数値には頁を添え、手順は書いていない。",
         "issue": "",
         "hypothesis": "",
@@ -809,6 +809,12 @@
             "title": "クボタ 取扱説明書 LK231-6512-3（TMS400）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4f5a97cf06cf69028997db51d8726d28",
             "date": "2026-09-15"
+          },
+          {
+            "date": "2026-09-16",
+            "id": "a7748bfd-256-src-photo",
+            "title": "写真：クボタ TMS400",
+            "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/TMS-400/"
           }
         ],
         "attachments": [],

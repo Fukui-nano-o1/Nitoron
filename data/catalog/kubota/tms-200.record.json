@@ -608,7 +608,7 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/278131f0750d370202c5e185d9243d95/linup_img01.jpg",
         "summary": "クボタ TMS-200（Midy Smile-mini）の公式カタログと取扱説明書を、分野ごと・要素ごとに自分の言葉でまとめた解説。数値には頁を添え、手順は書いていない。",
         "issue": "",
         "hypothesis": "",
@@ -639,6 +639,12 @@
             "title": "クボタ 取扱説明書 LK710-6511-2（TMS200）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6547884cea64550284728eb26b0947ef",
             "date": "2026-09-14"
+          },
+          {
+            "date": "2026-09-16",
+            "id": "ba845f4a-227-src-photo",
+            "title": "写真：クボタ TMS200",
+            "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/TMS-200/"
           }
         ],
         "attachments": [],

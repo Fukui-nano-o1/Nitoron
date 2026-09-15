@@ -718,7 +718,7 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/e5c2ba5b75d08c87cd8c53c5de179351/TRS900%20%281%29.png",
         "summary": "クボタ TRS-900（陽菜smilePro）の公式カタログと取扱説明書を、分野ごと・要素ごとに自分の言葉でまとめた解説。数値には頁を添え、手順は書いていない。",
         "issue": "",
         "hypothesis": "",
@@ -749,6 +749,12 @@
             "title": "クボタ 取扱説明書 LNK51-6511-2（TRS900）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=33bb83720ba9d2b6da87114380314af5",
             "date": "2026-09-15"
+          },
+          {
+            "date": "2026-09-16",
+            "id": "5bb24fc7-d70-src-photo",
+            "title": "写真：クボタ TRS-900 陽菜smilePro（ミニ耕うん機）",
+            "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/TRS-900/"
           }
         ],
         "attachments": [],

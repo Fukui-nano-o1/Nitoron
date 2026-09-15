@@ -728,7 +728,7 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/80d57f634882cad2332402998afbf1b3/img16%20%281%29.png",
         "summary": "クボタ TRS-300（菜ビ Smile）の公式カタログと取扱説明書を、分野ごと・要素ごとに自分の言葉でまとめた解説。数値には頁を添え、手順は書いていない。",
         "issue": "",
         "hypothesis": "",
@@ -759,6 +759,12 @@
             "title": "クボタ 取扱説明書 KA351-6511-1（TRS300）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=73f490f3f868edbcd80b5d3f7cedc403",
             "date": "2026-09-15"
+          },
+          {
+            "date": "2026-09-16",
+            "id": "d41e8089-0e8-src-photo",
+            "title": "写真：クボタ TRS-300 菜ビ Smile（ミニ耕うん機）",
+            "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/TRS-300/"
           }
         ],
         "attachments": [],

@@ -618,7 +618,7 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/de704d221aedd9e1f0c75d8465f30eeb/TME150.jpg",
         "summary": "クボタ TME-150-200（菜レント）の公式カタログと取扱説明書を、分野ごと・要素ごとに自分の言葉でまとめた解説。数値には頁を添え、手順は書いていない。",
         "issue": "",
         "hypothesis": "",
@@ -649,6 +649,12 @@
             "title": "クボタ 取扱説明書 KA081-6511-4（TME150／TME200）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=38ef4b66cb25e92abe4d594acb841471",
             "date": "2026-09-15"
+          },
+          {
+            "date": "2026-09-16",
+            "id": "b4ae09e2-066-src-photo",
+            "title": "写真：クボタ TME150",
+            "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/TME-150-200/"
           }
         ],
         "attachments": [],

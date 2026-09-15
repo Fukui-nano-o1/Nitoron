@@ -723,7 +723,7 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/5cd7e421b32098f7acbb0ab1805cc33e/ftr70-90_card%20%281%29.jpg",
         "summary": "クボタ FTR-70-90（フロント陽菜）の公式カタログと取扱説明書を、分野ごと・要素ごとに自分の言葉でまとめた解説。数値には頁を添え、手順は書いていない。",
         "issue": "",
         "hypothesis": "",
@@ -754,6 +754,12 @@
             "title": "クボタ 取扱説明書 LNK01-6511-2（FTR70／FTR90）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=bac9162b47c56fc8a4d2a519803d51b3",
             "date": "2026-09-15"
+          },
+          {
+            "date": "2026-09-16",
+            "id": "9fbc248c-8ee-src-photo",
+            "title": "写真：クボタ FTR70・90",
+            "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/FTR-70-90/"
           }
         ],
         "attachments": [],
