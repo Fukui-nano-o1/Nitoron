@@ -1,6 +1,7 @@
 import { supabase } from './supabase.js'
 import { fromRow, normalize, snapshot, publicSnapshot, publicationProblems } from './domain.js'
-import { EMPTY_FILTERS } from './search.js'
+import { EMPTY_FILTERS, rankRecords } from './search.js'
+import { expandQuery } from './synonyms.js'
 export const PAGE_SIZE = 24
 export const FEEDBACK_KINDS = ['質問', '指摘', '提案', '試した結果']
 const message = error => ['PGRST205', '42P01'].includes(error?.code)
@@ -8,25 +9,67 @@ const message = error => ['PGRST205', '42P01'].includes(error?.code)
   : '読み込み・保存ができませんでした。接続を確認して再試行してください。'
 const requireClient = () => { if (!supabase) throw new Error('クラウドに接続できません。') }
 const unpack = row => ({ ...fromRow(row.snapshot), id: row.id, publication: { id: row.id, owner: row.owner_id, publishedAt: row.published_at, updatedAt: row.updated_at, isPublic: row.is_public } })
-export async function listPublic({ query = '', region = '', page = 0, filters = EMPTY_FILTERS, sort = 'recent', bookmarkedBy, listId, limit = PAGE_SIZE } = {}) {
-  requireClient()
-  if (bookmarkedBy === null) return { records: [], count: 0 }
-  // listId は名前付きリストの中身（本人の所属行だけがRLSで見える）。公開中の発表だけを返す。
-  let request = supabase.from('nitoron_publications').select(listId ? '*,nitoron_list_items!inner(list_id)' : bookmarkedBy ? '*,nitoron_bookmarks!inner(user_id)' : '*', { count: 'exact' }).eq('is_public', true)
-  for (const term of normalize(query).split(/\s+/).filter(Boolean)) request = request.ilike('search_text', `%${term.replace(/[\\%_]/g, '\\$&')}%`)
-  if (region.trim()) request = request.ilike('region_search', `%${normalize(region).trim().replace(/[\\%_]/g, '\\$&')}%`)
-  if (filters.crop.trim()) request = request.ilike('crop_search', `%${normalize(filters.crop).trim().replace(/[\\%_]/g, '\\$&')}%`)
+// 検索語は同義語表で展開し、各語について「候補語のいずれかを含む」を AND でつなぐ（exact=true は展開なし）。
+const likeEscape = value => value.replace(/[\\%_]/g, '\\$&')
+// or= 内の値は引用符で囲む（カンマ・括弧を含む語のため）。引用符の中では \ と " をエスケープする。
+const quotedPattern = value => `"%${likeEscape(value).replace(/["\\]/g, '\\$&')}%"`
+function applyPublicFilters(request, { query, region, filters, exact }) {
+  const clauses = []
+  for (const { alternatives } of expandQuery(query, exact)) {
+    if (alternatives.length === 1) request = request.ilike('search_text', `%${likeEscape(alternatives[0])}%`)
+    else clauses.push(`or(${alternatives.map(a => `search_text.ilike.${quotedPattern(a)}`).join(',')})`)
+  }
+  if (clauses.length === 1) request = request.or(clauses[0].slice(3, -1))
+  else if (clauses.length > 1) request = request.or(`and(${clauses.join(',')})`)
+  if (region.trim()) request = request.ilike('region_search', `%${likeEscape(normalize(region).trim())}%`)
+  if (filters.crop.trim()) request = request.ilike('crop_search', `%${likeEscape(normalize(filters.crop).trim())}%`)
   if (filters.kind !== 'all') request = request.eq('snapshot->meta->>kind', filters.kind)
   if (filters.stage !== 'all') request = request.eq('snapshot->meta->>kind', 'challenge').eq('snapshot->meta->>stage', filters.stage)
   if (filters.from) request = request.gte('snapshot->>date', filters.from)
   if (filters.to) request = request.lte('snapshot->>date', filters.to)
   if (filters.numbers) request = request.eq('has_metrics', true)
+  return request
+}
+// サーバー側の検索関数（関連度順・件数・作物/地域/分類の内訳を1往復で返す）。未適用の環境では REST に切り替える。
+let searchRpcMissing = false
+const RPC_MISSING = ['PGRST202', 'PGRST203', '42883']
+async function searchViaRpc({ query, region, filters, sort, exact, page, limit }) {
+  if (searchRpcMissing) return null
+  const { data, error, status } = await supabase.rpc('nitoron_search', {
+    p_terms: expandQuery(query, exact).map(t => t.alternatives), p_region: region.trim(), p_crop: filters.crop.trim(),
+    p_kind: filters.kind === 'all' ? '' : filters.kind, p_stage: filters.stage === 'all' ? '' : filters.stage,
+    p_from: filters.from || '', p_to: filters.to || '', p_numbers: !!filters.numbers, p_sort: sort,
+    p_offset: page * PAGE_SIZE, p_limit: Math.min(limit, PAGE_SIZE),
+  })
+  // 関数がない（未適用）ときは以後 REST を使う。それ以外の失敗も REST に切り替えて検索を止めない（次回はまた関数を試す）。
+  if (error) { if (RPC_MISSING.includes(error.code) || status === 404) searchRpcMissing = true; return null }
+  if (!data || !Array.isArray(data.rows) || typeof data.count !== 'number') { searchRpcMissing = true; return null }
+  return { records: data.rows.map(unpack), count: data.count, facets: data.facets || null, ranked: sort === 'relevance' ? 'server' : null }
+}
+export const isSearchRpcAvailable = () => !searchRpcMissing
+export async function listPublic({ query = '', region = '', page = 0, filters = EMPTY_FILTERS, sort = 'recent', exact = false, bookmarkedBy, listId, limit = PAGE_SIZE } = {}) {
+  requireClient()
+  if (bookmarkedBy === null) return { records: [], count: 0, facets: null, ranked: null }
+  if (!listId && !bookmarkedBy) { const viaRpc = await searchViaRpc({ query, region, filters, sort, exact, page, limit }); if (viaRpc) return viaRpc }
+  // listId は名前付きリストの中身（本人の所属行だけがRLSで見える）。公開中の発表だけを返す。
+  let request = supabase.from('nitoron_publications').select(listId ? '*,nitoron_list_items!inner(list_id)' : bookmarkedBy ? '*,nitoron_bookmarks!inner(user_id)' : '*', { count: 'exact' }).eq('is_public', true)
+  request = applyPublicFilters(request, { query, region, filters, exact })
   if (listId) request = request.eq('nitoron_list_items.list_id', listId)
   else if (bookmarkedBy) request = request.eq('nitoron_bookmarks.user_id', bookmarkedBy)
   request = sort === 'title' ? request.order('title_search') : request.order('updated_at', { ascending: false })
   const { data, error, count } = await request.order('id').range(page * PAGE_SIZE, page * PAGE_SIZE + Math.min(limit, PAGE_SIZE) - 1)
   if (error) throw new Error(message(error))
-  return { records: data.map(unpack), count }
+  // サーバー関数がない環境の関連度順は、取得したページ内だけの並べ替え（画面でその旨を示す）。
+  const records = data.map(unpack)
+  return sort === 'relevance' && query.trim() ? { records: rankRecords(records, query, exact), count, facets: null, ranked: 'page' } : { records, count, facets: null, ranked: null }
+}
+// 件数だけを数える（絞り込みダイアログの「◯件を表示」、0件時の緩和提案）。
+export async function countPublic({ query = '', region = '', filters = EMPTY_FILTERS, exact = false } = {}) {
+  requireClient()
+  const request = applyPublicFilters(supabase.from('nitoron_publications').select('id', { count: 'exact', head: true }).eq('is_public', true), { query, region, filters, exact })
+  const { error, count } = await request
+  if (error) throw new Error(message(error))
+  return count || 0
 }
 export async function getPublic(id) {
   requireClient()

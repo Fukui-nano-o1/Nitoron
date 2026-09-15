@@ -8,7 +8,7 @@ const Account = lazy(() => import('./Account.jsx'))
 const Talks = lazy(() => import('./Talks.jsx'))
 import { supabase } from './supabase.js'
 import { newRecord, deriveRecord, deriveLearning, deriveNextChallenge, snapshot, publicSnapshot, publicationKey, fromRow, uid, today, isBlankRecord } from './domain.js'
-import { listPublic, getPublic, getOwned, getOwnPublication, publishRecord, unpublishRecord, PAGE_SIZE } from './community.js'
+import { listPublic, countPublic, getPublic, getOwned, getOwnPublication, publishRecord, unpublishRecord, PAGE_SIZE } from './community.js'
 import { Dialog, Empty, ErrorNotice, download } from './ui.jsx'
 import SiteHeader, { NAV, currentTab } from './SiteHeader.jsx'
 import Catalog from './Catalog.jsx'
@@ -25,7 +25,7 @@ import Icon from './Icon.jsx'
 import useBookmarks from './useBookmarks.js'
 import useActivity from './useActivity.js'
 import useFollows from './useFollows.js'
-import { EMPTY_FILTERS, filterRecord, listFromParams, paramsFromList } from './search.js'
+import { EMPTY_FILTERS, filterRecord, listFromParams, paramsFromList, defaultSort, rankRecords } from './search.js'
 import { SEARCH_ENABLED } from './flags.js'
 import './styles.css'
 import './design.css'
@@ -49,7 +49,7 @@ const COMPARE_KEY = 'nitoron:compare:v1'
 const STEP_KEYS = ['basics', 'content', 'review']
 const stepStorageKey = (owner, id) => `nitoron:record-step:v1:${owner || 'device'}:${id}`
 // 参照の同一性を保つため固定オブジェクトにする（毎回生成するとfiltersの同一性が崩れ、一覧取得のeffectがループする）。
-const LIST_DEFAULTS = Object.freeze({ query: '', region: '', filters: EMPTY_FILTERS, sort: 'recent', page: 0 })
+const LIST_DEFAULTS = Object.freeze({ query: '', region: '', filters: EMPTY_FILTERS, sort: 'recent', page: 0, exact: false })
 function App() {
   const workspace = useWorkspace()
   const { records, ready, session, status, error, needsLogin, sync, put, remove, flush, retry } = workspace
@@ -65,12 +65,16 @@ function App() {
   // filtersの参照同一性を保つためmemo化する（毎回生成すると一覧取得のeffectがループする）。
   const urlState = useMemo(() => isSearch ? listFromParams(route.params) : null, [isSearch, route.params])
   const listKey = listKeyOf(route)
-  const { query, region, filters, sort, page: publicPage } = urlState || listStates[listKey] || LIST_DEFAULTS
+  const { query, region, filters, sort, page: publicPage, exact = false } = urlState || listStates[listKey] || LIST_DEFAULTS
+  // URLに sort が明示されていない間は、検索語の有無に応じた既定の並び（語あり＝関連度、なし＝新しい順）に追随する。
+  const sortExplicit = isSearch && new URLSearchParams(route.params).has('sort')
   const patchList = patch => setListStates(s => ({ ...s, [listKey]: { ...(s[listKey] || LIST_DEFAULTS), ...patch } }))
   // 検索条件の変更はURLへ書く。入力中（push=false）は履歴を増やさず置き換え、
   // 検索確定・条件適用・ページ移動（push=true）だけを履歴の区切りにする。
   const goSearch = (patch, push) => {
-    const qs = paramsFromList({ ...(urlState || LIST_DEFAULTS), ...patch })
+    const next = { ...(urlState || LIST_DEFAULTS), ...patch }
+    if (!sortExplicit && !('sort' in patch)) next.sort = defaultSort(next.query)
+    const qs = paramsFromList(next)
     const target = `#/search${qs ? `?${qs}` : ''}`
     if (location.hash === target) return
     if (push) location.hash = target
@@ -80,6 +84,10 @@ function App() {
   const setRegion = value => isSearch ? goSearch({ region: value, page: 0 }, false) : patchList({ region: value, page: 0 })
   const setFilters = value => isSearch ? goSearch({ filters: value, page: 0 }, true) : patchList({ filters: value, page: 0 })
   const setSort = value => isSearch ? goSearch({ sort: value, page: 0 }, true) : patchList({ sort: value, page: 0 })
+  const setExact = value => isSearch ? goSearch({ exact: value, page: 0 }, true) : patchList({ exact: value, page: 0 })
+  // 0件時の「条件を1つ外す」：検索語・地域・条件の部分更新をまとめて適用する。
+  const relaxSearch = patch => isSearch ? goSearch({ ...patch, page: 0 }, true) : patchList({ ...patch, page: 0 })
+  const countFor = state => countPublic({ query, region, filters, exact, ...state })
   const setPublicPage = value => {
     const next = typeof value === 'function' ? value(publicPage) : value
     isSearch ? goSearch({ page: next }, true) : patchList({ page: next })
@@ -88,7 +96,7 @@ function App() {
   const [dialog, setDialog] = useState(null), [name, setName] = useState(() => { try { return localStorage.getItem('nitoron:name') || '' } catch { return '' } })
   const [selected, setSelected] = useState([]), [toast, setToast] = useState('')
   const [actionError, setActionError] = useState('')
-  const [publicState, setPublicState] = useState({ records: [], count: 0, loading: true, error: '' })
+  const [publicState, setPublicState] = useState({ records: [], count: 0, facets: null, ranked: null, loading: true, error: '' })
   const [refresh, setRefresh] = useState(0)
   const [publicRecord, setPublicRecord] = useState(null), [recordError, setRecordError] = useState('')
   const [owned, setOwned] = useState([]), [ownedReady, setOwnedReady] = useState(false)
@@ -214,9 +222,9 @@ function App() {
     setPublicState(s => ({ ...s, loading: true, error: '' }))
     // 保存リスト：一覧と「すべて」は本人の bookmark、名前付きリストは所属で絞る。
     const scope = route.view !== 'saved' ? {} : route.id && route.id !== 'all' ? { listId: route.id } : { bookmarkedBy: session?.user.id || null }
-    const timer = setTimeout(() => listPublic({ query, region, page: publicPage, filters, sort, ...scope }).then(data => { if (!cancelled) setPublicState({ ...data, loading: false, error: '' }) }).catch(e => { if (!cancelled) setPublicState({ records: [], count: 0, loading: false, error: e.message }) }), 200)
+    const timer = setTimeout(() => listPublic({ query, region, page: publicPage, filters, sort, exact, ...scope }).then(data => { if (!cancelled) setPublicState({ ...data, loading: false, error: '' }) }).catch(e => { if (!cancelled) setPublicState({ records: [], count: 0, facets: null, ranked: null, loading: false, error: e.message }) }), 200)
     return () => { cancelled = true; clearTimeout(timer) }
-  }, [route.view, route.id, query, region, publicPage, refresh, filters, sort, bookmarks.ready, bookmarks.ids.join(','), lists.items.length, session?.user.id])
+  }, [route.view, route.id, query, region, publicPage, refresh, filters, sort, exact, bookmarks.ready, bookmarks.ids.join(','), lists.items.length, session?.user.id])
   useEffect(() => {
     if (route.view !== 'public') return
     let cancelled = false
@@ -332,8 +340,9 @@ function App() {
   }
 
   const publicMode = route.view === 'search'
-  const list = publicMode ? publicState.records : records.filter(r => filterRecord(r, { query, region, filters }))
-  const displayed = publicMode ? list : [...list].sort(sort === 'title' ? (a, b) => a.title.localeCompare(b.title, 'ja') : (a, b) => b.date.localeCompare(a.date))
+  const list = publicMode ? publicState.records : records.filter(r => filterRecord(r, { query, region, filters, exact }))
+  const byDate = (a, b) => b.date.localeCompare(a.date)
+  const displayed = publicMode ? list : sort === 'relevance' && query.trim() ? rankRecords([...list].sort(byDate), query, exact) : [...list].sort(sort === 'title' ? (a, b) => a.title.localeCompare(b.title, 'ja') : byDate)
   const selectedRecords = selected.map(r => r.publication ? r : records.find(x => x.id === r.id)).filter(Boolean)
   // スマホの公開詳細は写真を最上部に置くため、サイトロゴ行をCSSで隠す（他の画面・PC・戻る動作は変えない）。
   return <div className={`workspace${route.view === 'public' ? ' public-view' : ''}`}>
@@ -364,7 +373,7 @@ function App() {
       : <Catalog view={route.view} records={displayed} total={publicMode ? publicState.count : displayed.length} loading={publicMode ? publicState.loading : !ready}
           error={publicMode && publicState.error ? <ErrorNotice retry={() => setRefresh(r => r + 1)}>{publicState.error}</ErrorNotice> : null}
           query={query} onQuery={setQuery} region={region} onRegion={setRegion}
-          filters={filters} onFilters={setFilters} sort={sort} onSort={setSort} onReset={resetSearch} savedIds={bookmarks.ids} onSave={heart} activityCounts={activity.counts} searchRef={searchRef} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select}
+          filters={filters} onFilters={setFilters} sort={sort} onSort={setSort} onReset={resetSearch} exact={exact} onExact={setExact} facets={publicMode ? publicState.facets : null} ranked={publicState.ranked} countFor={publicMode ? countFor : null} onRelax={relaxSearch} savedIds={bookmarks.ids} onSave={heart} activityCounts={activity.counts} searchRef={searchRef} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select}
           owned={owned} ownedReady={ownedReady} ready={ready} onCreate={() => create('presentation')}
           blankCount={publicMode ? 0 : records.filter(r => isBlankRecord(r) && !owned.some(p => p.id === r.id && p.is_public)).length} onCleanup={cleanupBlankRecords}>
         {publicMode && publicState.count > PAGE_SIZE && <div className="pagination"><button className="secondary" disabled={publicPage === 0 || publicState.loading} onClick={() => setPublicPage(p => p - 1)}>前へ</button><span>{publicPage + 1} / {Math.ceil(publicState.count / PAGE_SIZE)}</span><button className="secondary" disabled={(publicPage + 1) * PAGE_SIZE >= publicState.count || publicState.loading} onClick={() => setPublicPage(p => p + 1)}>次へ</button></div>}

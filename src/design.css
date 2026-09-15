@@ -406,3 +406,27 @@ a.avatar-circle:hover{box-shadow:0 0 0 2px #fff,0 0 0 4px #222}
 .talk-preview{display:block;color:#b86043;margin-top:2px}
 .report-form code{font-size:.75rem;word-break:break-all;background:#f7f7f7;padding:2px 6px;border-radius:4px}
 @media(max-width:760px){.reflection-grid{grid-template-columns:1fr}.reflection{padding:14px 16px}}
+
+/* 探す（検索の強化）：候補一覧、同義語の明示、内訳チップ、抜粋、0件時の緩和提案、記録日プリセット */
+.search-part,.region-part{position:relative}
+.suggest-list{position:absolute;left:0;top:calc(100% + 10px);z-index:30;min-width:min(360px,80vw);max-width:min(480px,90vw);background:#fff;border:1px solid #ddd;border-radius:16px;box-shadow:0 8px 28px #00000024;padding:8px;margin:0;list-style:none;max-height:min(420px,60vh);overflow:auto}
+.suggest-head{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.75rem;color:#6a6a6a;font-weight:600;padding:8px 12px 4px}
+.suggest-head .text-action{font-size:.75rem;min-height:24px;padding:0}
+.suggest-list [role=option] button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:9px 12px;border-radius:10px;font-size:.9375rem;min-height:40px;color:#222;background:none;border:0}
+.suggest-list [role=option] button:hover,.suggest-list [role=option][aria-selected=true] button{background:#f0f0f0}
+.suggest-list [role=option] svg{color:#717171;flex-shrink:0}
+.suggest-empty{padding:10px 12px;font-size:.875rem;color:#6a6a6a}
+.search-note{font-size:.875rem;color:#6a6a6a;margin:-10px 0 18px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}
+.search-note .text-action{font-size:.875rem;min-height:28px;padding:0;text-decoration:underline;text-underline-offset:3px}
+.facet-chips{margin:0 0 14px}
+.facet-chips button b{font-weight:500;color:#717171;margin-left:6px;font-size:.75rem}
+.facet-chips button[aria-pressed=true] b{color:#ddd}
+.card-snippet{font-size:.8125rem;color:#6a6a6a;line-height:1.6;margin:4px 0 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-snippet mark{background:#fff3c4;color:#222;padding:0 1px;border-radius:2px}
+.relax-list{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;margin:-30px 0 40px}
+.relax-list>span{width:100%;text-align:center;font-size:.875rem;color:#6a6a6a;margin-bottom:4px}
+.relax-list button{font-size:.875rem;min-height:40px}
+.relax-list button b{font-weight:600;margin-left:8px}
+.date-presets{margin-bottom:16px}
+.date-presets button{font-size:.8125rem;padding:6px 14px}
+@media(max-width:760px){.suggest-list{left:-14px;min-width:min(340px,calc(100vw - 40px))}.search-note{font-size:.8125rem}.card-snippet{display:none}.relax-list{margin-top:-20px}}
