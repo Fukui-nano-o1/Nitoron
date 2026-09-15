@@ -1,4 +1,5 @@
-// カタログ解説（【カタログ解説】メーカー 型式 製品名（分類））の読み取りと、詳細ページの節・関連行。
+import { normalize, queryTerms, termVariants } from './domain.js'
+// カタログ解説（【カタログ解説】メーカー 型式 製品名（分類））の読み取りと、詳細ページの節・関連行・記録内検索。
 // メーカー・型式・シリーズは記録の題名から読む（記録の形は変えない）。
 export const CATALOG_PREFIX = '【カタログ解説】'
 export const isCatalogRecord = r => r?.meta?.kind === 'trouble' && r.meta?.subject !== 'machine_repair' && String(r.title || '').startsWith(CATALOG_PREFIX)
@@ -22,4 +23,49 @@ export function relatedRows(record) {
 export const sectionId = block => `sec-${block.id}`
 export function sectionsOf(blocks) {
   return (blocks || []).filter(b => b && b.type === 'h2' && String(b.text || '').trim()).map(b => ({ id: sectionId(b), title: b.text.trim() }))
+}
+// 節の中身を h3 ごとの組にする（h3 の前の行は見出しなしの組）。折りたたみと検索の単位。
+export function groupSection(blocks) {
+  const groups = []
+  for (const b of blocks || []) {
+    if (!b || b.type === 'h2') continue
+    if (b.type === 'h3') { groups.push({ head: b, rows: [] }); continue }
+    if (!groups.length) groups.push({ head: null, rows: [] })
+    groups[groups.length - 1].rows.push(b)
+  }
+  return groups
+}
+const hit = (text, terms) => { const t = normalize(text); return terms.every(term => termVariants(term).some(v => t.includes(v))) }
+// 記録内検索：語は空白区切りの AND（全文検索と同じ正規化・型式ゆらぎ）。h3 が当たれば組ごと、行が当たれば h3 を添えて行だけ残す。
+// 戻り値は当たった節だけ。total は当たった行数（h3 の見出し行を含む）。
+export function searchSections(blocks, query) {
+  const terms = queryTerms(query)
+  if (!terms.length) return null
+  const out = []
+  let current = null
+  for (const b of blocks || []) {
+    if (b?.type === 'h2' && String(b.text || '').trim()) { current = { id: sectionId(b), title: b.text.trim(), groups: [], total: 0 }; out.push(current); continue }
+    if (!current) { current = { id: 'sec-lead', title: '', groups: [], total: 0 }; out.push(current) }
+    current.raw = current.raw || []; current.raw.push(b)
+  }
+  for (const s of out) {
+    for (const g of groupSection(s.raw)) {
+      const headHit = g.head && hit(g.head.text, terms)
+      const rows = headHit ? g.rows.filter(b => b.text && b.type !== 'divider') : g.rows.filter(b => b.text && b.type !== 'divider' && hit(b.text, terms))
+      if (headHit || rows.length) { s.groups.push({ head: g.head, rows }); s.total += rows.length + (headHit ? 1 : 0) }
+    }
+    delete s.raw
+  }
+  return out.filter(s => s.total)
+}
+// 当たった語を <mark> で示すための分割。正規化前の文字列上で、正規化後の位置を対応させる（NFKC で長さが変わる文字は稀なので、ずれた場合は強調なしで返す）。
+export function highlightParts(text, query) {
+  const terms = queryTerms(query).flatMap(termVariants).filter(Boolean)
+  const raw = String(text || ''), norm = normalize(raw)
+  if (!terms.length || norm.length !== raw.length) return [{ text: raw, mark: false }]
+  const marks = new Array(raw.length).fill(false)
+  for (const term of terms) { let i = norm.indexOf(term); while (i >= 0) { for (let k = i; k < i + term.length; k++) marks[k] = true; i = norm.indexOf(term, i + 1) } }
+  const parts = []
+  for (let i = 0; i < raw.length; i++) { const last = parts[parts.length - 1]; if (last && last.mark === marks[i]) last.text += raw[i]; else parts.push({ text: raw[i], mark: marks[i] }) }
+  return parts
 }

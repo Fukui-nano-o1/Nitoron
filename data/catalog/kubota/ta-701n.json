@@ -5,6 +5,7 @@
  "series": "TA-701N",
  "salesModel": "TA701N",
  "productName": "ニューベジマスター",
+ "aliases": ["ベジマスター"],
  "rules": [
   "原文と図を転載しない",
   "数値は必ず頁を添える",

@@ -95,9 +95,12 @@ export function publicSnapshot(record) {
 export const recordText = r => [r.title, r.category, r.type, ...(r.blocks || []).map(b => b.text),
   r.meta ? JSON.stringify(r.meta) : ''].join(' ')
 export const normalize = value => String(value || '').normalize('NFKC').toLocaleLowerCase().replace(/[ァ-ヶ]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60))
+export const queryTerms = query => normalize(query).split(/\s+/).filter(Boolean)
+// 型式の語はハイフンの有無を問わない（tms300 ↔ tms-300、ta701n ↔ ta-701n）。ほかの語はそのまま。
+export const termVariants = term => { const m = /^([a-z]{1,5})-?(\d{2,5}[a-z]{0,3})$/.exec(term); return m ? [...new Set([term, `${m[1]}${m[2]}`, `${m[1]}-${m[2]}`])] : [term] }
 export function matches(record, query) {
   const haystack = normalize(recordText(record))
-  return normalize(query).split(/\s+/).filter(Boolean).every(term => haystack.includes(term))
+  return queryTerms(query).every(term => termVariants(term).some(v => haystack.includes(v)))
 }
 export function number(value) {
   if (value == null || typeof value === 'boolean' || typeof value === 'string' && value.trim() === '') return null

@@ -1,5 +1,5 @@
 import { supabase } from './supabase.js'
-import { fromRow, normalize, snapshot, publicSnapshot, publicationProblems } from './domain.js'
+import { fromRow, normalize, snapshot, publicSnapshot, publicationProblems, queryTerms, termVariants } from './domain.js'
 import { PUBLIC_FIELDS, PRIVATE_FIELDS, sanitizePublicProfile, sanitizePrivateProfile, hasMachine } from './account-domain.js'
 import { EMPTY_FILTERS, MACHINE_KIND, MACHINE_KINDS } from './search.js'
 export const PAGE_SIZE = 24
@@ -14,7 +14,11 @@ export async function listPublic({ query = '', region = '', page = 0, filters = 
   if (bookmarkedBy === null) return { records: [], count: 0 }
   // listId は名前付きリストの中身（本人の所属行だけがRLSで見える）。公開中の発表だけを返す。
   let request = supabase.from('nitoron_publications').select(listId ? '*,nitoron_list_items!inner(list_id)' : bookmarkedBy ? '*,nitoron_bookmarks!inner(user_id)' : '*', { count: 'exact' }).eq('is_public', true)
-  for (const term of normalize(query).split(/\s+/).filter(Boolean)) request = request.ilike('search_text', `%${term.replace(/[\\%_]/g, '\\$&')}%`)
+  // 語ごとの AND。型式の語（英字+数字）はハイフンあり・なしのどちらでも当てる（or は語の中だけ、語どうしは AND のまま）。
+  for (const term of queryTerms(query)) {
+    const variants = termVariants(term).map(v => `%${v.replace(/[\\%_]/g, '\\$&')}%`)
+    request = variants.length === 1 ? request.ilike('search_text', variants[0]) : request.or(variants.map(v => `search_text.ilike.${v}`).join(','))
+  }
   if (region.trim()) request = request.ilike('region_search', `%${normalize(region).trim().replace(/[\\%_]/g, '\\$&')}%`)
   if (filters.crop.trim()) request = request.ilike('crop_search', `%${normalize(filters.crop).trim().replace(/[\\%_]/g, '\\$&')}%`)
   // 「機械」はカタログ解説・修理記録・整備ガイドの2分類に展開する（JSONパスの .or は使わず、既存の列指定で .in する）。

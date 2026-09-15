@@ -5,6 +5,7 @@
  "series": "TRS-300",
  "salesModel": "TRS300",
  "productName": "菜ビ Smile",
+ "aliases": ["ナビスマイル"],
  "rules": [
   "原文と図を転載しない",
   "数値は必ず頁を添える",

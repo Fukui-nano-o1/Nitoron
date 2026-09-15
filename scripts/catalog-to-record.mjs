@@ -20,7 +20,7 @@ const ref = printed => printed == null ? '' : `（${typeof printed === 'string' 
 
 const blocks = [
   block('callout', `公式資料を読んで自分の言葉で書いた参考情報です。原文・図は転載せず、数値には該当頁を添えています。作業の手順・条件は記載していません。必ず取扱説明書の該当頁を確認してください。${manual.pageMap}。Nitoron は株式会社クボタと関係のない非公式サイトです。`),
-  block('text', `販売型式名 ${entry.salesModel}。出典：製品ページ（${product.checkedAt}確認）、取扱説明書 ${manual.partNumber}（PDF ${manual.physicalPages}頁、${manual.checkedAt}確認）。`),
+  block('text', `販売型式名 ${entry.salesModel}${entry.aliases?.length ? `（読み・別名：${entry.aliases.join('、')}）` : ''}。出典：製品ページ（${product.checkedAt}確認）、取扱説明書 ${manual.partNumber}（PDF ${manual.physicalPages}頁、${manual.checkedAt}確認）。`),
 ]
 // 節見出しは読む人向けの語に揃える（Airbnb の listing のように、節ごとに何が書いてあるかが見出しで分かるように）。
 const SECTION_TITLES = { 'エンジン': 'エンジン', '走行': '走行部', '作業部': '作業部', '操作': '操作方法', '安全': '安全に使うために', '整備（索引）': '整備と点検（索引）' }

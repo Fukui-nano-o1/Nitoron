@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Cover from './Cover.jsx'
 import { AttachmentList } from './Attachments.jsx'
 import { imageAttachments } from './attachment-domain.js'
 import { KINDS, SECTIONS, METRICS, number, formatNumber, safeUrl } from './domain.js'
 import { MachineTargetSection } from './MachinePicker.jsx'
-import { sectionId } from './catalog-domain.js'
+import Icon from './Icon.jsx'
+import { sectionId, isCatalogRecord, groupSection, searchSections, highlightParts } from './catalog-domain.js'
 // 本文を h2 ごとの節に分ける（h2 が空文字のものは見出しにしない）。先頭の h2 より前は見出しなしの節。
 function bodySections(blocks) {
   const sections = []
@@ -44,15 +45,51 @@ export default function RecordBody({ record, hideHeading = false, hideCover = fa
       {!!m.sources.length && <section className="read-section"><h2>出典・資料</h2>{m.sources.map(s => <p className="source-line" key={s.id}>{safeUrl(s.url) ? <a href={safeUrl(s.url)} rel="noopener noreferrer" target="_blank">{s.title || s.url}</a> : s.title || '資料名未記録'}{s.date && <span> · {s.date}</span>}</p>)}</section>}
     </>}
     <AttachmentList attachments={m?.attachments} />
-    {!!record.blocks.filter(b => b.text).length && bodySections(record.blocks).map((section, i) => <section className="read-section" key={section.heading?.id || `lead-${i}`} id={section.heading ? sectionId(section.heading) : undefined}>
+    {!!record.blocks.filter(b => b.text).length && (isCatalogRecord(record) ? <CatalogBody record={record} /> : bodySections(record.blocks).map((section, i) => <section className="read-section" key={section.heading?.id || `lead-${i}`} id={section.heading ? sectionId(section.heading) : undefined}>
       {section.heading ? <div className="section-heading"><h2>{section.heading.text}</h2></div> : m?.inputMode === 'sections' && <h2>補足</h2>}
-      {section.blocks.map(b => {
-        if (b.type === 'divider') return <hr key={b.id} />
-        if (!b.text) return null
-        if (['h1', 'h3'].includes(b.type)) return <h3 key={b.id}>{b.text}</h3>
-        if (b.type === 'quote') return <blockquote key={b.id}>{b.text}</blockquote>
-        return <p key={b.id} className={b.type === 'callout' ? 'notice' : ''}>{b.type === 'todo' ? (b.checked ? '☑ ' : '☐ ') : b.type === 'bullet' ? '• ' : ''}{b.text}</p>
-      })}
-    </section>)}
+      {section.blocks.map(b => renderBlock(b))}
+    </section>))}
   </div>
+}
+// 1ブロックの表示。query があれば当たった語を <mark> にする。
+function renderBlock(b, query = '') {
+  if (b.type === 'divider') return <hr key={b.id} />
+  if (!b.text) return null
+  const text = query ? highlightParts(b.text, query).map((part, i) => part.mark ? <mark key={i}>{part.text}</mark> : part.text) : b.text
+  if (['h1', 'h3'].includes(b.type)) return <h3 key={b.id}>{text}</h3>
+  if (b.type === 'quote') return <blockquote key={b.id}>{text}</blockquote>
+  return <p key={b.id} className={b.type === 'callout' ? 'notice' : ''}>{b.type === 'todo' ? (b.checked ? '☑ ' : '☐ ') : b.type === 'bullet' ? '• ' : ''}{text}</p>
+}
+// カタログ解説の本文。文字の羅列にしない：節は先頭の数行だけ見せて「すべて表示」で開く（Airbnb の「アメニティをすべて表示」）。
+// 記録内検索は部品名・症状・数値で行を絞り、当たった節だけを当たった行だけで出す。語の正規化・型式ゆらぎは全文検索と同じ。
+const PREVIEW_ROWS = 6
+function CatalogBody({ record }) {
+  const [query, setQuery] = useState('')
+  const [opened, setOpened] = useState(() => new Set())
+  const found = searchSections(record.blocks, query)
+  const sections = bodySections(record.blocks)
+  const search = <div className="record-search print-hidden" role="search"><Icon name="search" size={18} /><input type="search" maxLength={160} value={query} onChange={e => setQuery(e.target.value)} placeholder="この記録の中を探す（部品名・症状・数値）" aria-label="この記録の中を探す" />{query && <button className="quiet" onClick={() => setQuery('')}>クリア</button>}</div>
+  if (found) return <>
+    {search}
+    <p className="record-search-count" role="status">{found.length ? `「${query.trim()}」に当たる行 ${found.reduce((n, s) => n + s.total, 0)}件（${found.length}節）` : `「${query.trim()}」に当たる行はありません。型式・部品名・症状・数値で探せます。`}</p>
+    {found.map(s => <section className="read-section" key={s.id} id={s.id}>
+      {s.title && <div className="section-heading"><h2>{s.title}</h2><span className="state-label">{s.total}件</span></div>}
+      {s.groups.map((g, i) => <React.Fragment key={g.head?.id || i}>{g.head && renderBlock(g.head, query)}{g.rows.map(b => renderBlock(b, query))}</React.Fragment>)}
+    </section>)}
+  </>
+  return <>
+    {search}
+    {sections.map((section, i) => {
+      const id = section.heading ? sectionId(section.heading) : `lead-${i}`
+      const rows = section.blocks.filter(b => b.text && b.type !== 'divider').length
+      const collapsible = !!section.heading && rows > PREVIEW_ROWS + 2 && !opened.has(id)
+      let shown = 0
+      const body = section.blocks.map(b => { if (collapsible && b.text && b.type !== 'divider') { if (shown >= PREVIEW_ROWS) return null; shown++ } return renderBlock(b) })
+      return <section className={`read-section${collapsible ? ' collapsed' : ''}`} key={id} id={section.heading ? id : undefined}>
+        {section.heading && <div className="section-heading"><h2>{section.heading.text}</h2></div>}
+        {body}
+        {collapsible && <button className="secondary show-all print-hidden" onClick={() => setOpened(prev => new Set(prev).add(id))}>すべて表示（{rows}件）</button>}
+      </section>
+    })}
+  </>
 }
