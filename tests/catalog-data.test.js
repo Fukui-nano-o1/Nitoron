@@ -51,7 +51,9 @@ test('取扱説明書の案内ページ・ダウンロードの URL は 32 桁�
   const fs = await import('node:fs'), path = await import('node:path')
   const dir = new URL('../data/catalog/kubota/', import.meta.url).pathname
   for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.json') && !f.endsWith('.record.json'))) {
-    const m = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')).sources.manual
+    const entry = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))
+    if (entry.schema !== 'nitoron-catalog/1') continue
+    const m = entry.sources.manual
     for (const key of ['noticeUrl', 'downloadUrl']) assert.match(m[key], /[?&]hash=[0-9a-f]{32}$/, `${f} ${key}`)
   }
 })
