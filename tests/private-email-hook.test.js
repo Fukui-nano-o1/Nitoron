@@ -14,15 +14,15 @@ function signed(body = event(), { timestamp = Math.floor(Date.now()/1000), badSi
     'webhook-signature': 'v1,' + (badSignature ? Buffer.alloc(32).toString('base64') : signature),
   } })
 }
-function setup({ values, response, failure } = {}) {
-  const calls = []
+function setup({ values, response, failure, report } = {}) {
+  const calls = [], diagnostics = []
   const config = values || { SEND_EMAIL_HOOK_SECRET: 'v1,whsec_' + secret, BREVO_API_KEY: 'fixture-api-key' }
-  const handler = createEmailHandler({ Webhook, env: key => config[key], request: async (...args) => {
+  const handler = createEmailHandler({ Webhook, env: key => config[key], report: report || (entry => diagnostics.push(entry)), request: async (...args) => {
     calls.push(args)
-    if (failure) throw new Error('provider secret detail must not escape')
+    if (failure) throw (failure instanceof Error ? failure : new Error('provider secret detail must not escape'))
     return response || Response.json({ messageId: 'mock-message-id' }, { status: 201 })
   } })
-  return { handler, calls }
+  return { handler, calls, diagnostics }
 }
 
 test('署名済み本人magiclinkだけ、固定宛先へ確認コードを送る',async()=>{
@@ -73,4 +73,35 @@ test('Brevo失敗・タイムアウト・不明な応答を送信成功にせず
     assert.equal(result.status,502); const text=await result.text()
     assert(!text.includes('123456')); assert(!text.includes('private provider detail')); assert(!text.includes('fixture-api-key'))
   }
+})
+test('配送側がIP拒否を明記した場合だけIP拒否と判定し、401だけでは断定しない',async()=>{
+  const cases = [
+    [401,'We have detected you are using an unrecognised IP address 2001:db8::1','BREVO_IP_BLOCKED'],
+    [401,'Key not found','BREVO_REJECTED'],
+    [400,'Invalid sender email','BREVO_REJECTED'],
+    [429,'Too many requests','BREVO_REJECTED'],
+  ]
+  for(const [status,message,code] of cases) {
+    const h=setup({response:Response.json({message},{status})}), result=await h.handler(signed())
+    assert.equal(result.status,502)
+    assert.match((await result.json()).error.message,new RegExp(code))
+    assert.deepEqual(h.diagnostics,[{event:'private_login_email',code,status:502,providerStatus:status}])
+  }
+})
+test('ログにも応答にもコード・宛先・キー・署名・配送側の生の詳細を出さない',async()=>{
+  const details=`unrecognised IP address 2001:db8::1 ${OWNER_EMAIL} 123456 fixture-api-key ${secret}`
+  const h=setup({response:Response.json({message:details,code:details},{status:401})}), result=await h.handler(signed())
+  const output=JSON.stringify(h.diagnostics)+await result.text()
+  for(const privateValue of [OWNER_EMAIL,OWNER_ID,'123456','fixture-api-key',secret,'2001:db8::1']) assert(!output.includes(privateValue))
+  const success=setup(); await success.handler(signed())
+  assert.deepEqual(success.diagnostics,[{event:'private_login_email',code:'BREVO_ACCEPTED',status:200,providerStatus:201}])
+})
+test('タイムアウトと接続失敗を区別し、ログ障害でも本人制限を維持する',async()=>{
+  const h=setup({failure:new DOMException('private detail','TimeoutError')}), result=await h.handler(signed())
+  assert.equal(result.status,502); assert.match((await result.json()).error.message,/BREVO_TIMEOUT/)
+  const loggingFailure=setup({report:()=>{throw new Error('logger failed')}})
+  assert.equal((await loggingFailure.handler(signed())).status,200)
+  const other=event(); other.user.id='other'
+  assert.equal((await loggingFailure.handler(signed(other))).status,403)
+  assert.equal(loggingFailure.calls.length,1)
 })

@@ -20,9 +20,10 @@ Function URL:
    Save `BREVO_API_KEY` with the value from step 1 and `SEND_EMAIL_HOOK_SECRET`
    with the complete `v1,whsec_...` value from step 2. Enter secrets directly in
    the dashboard, not in chat or Git. These variable names match the deployed code.
-4. Return to the hook dialog and create/enable it. Keep the Email provider enabled.
+4. Return to the hook dialog and click Create. Keep the Email provider enabled.
    Send Email Hook replaces SMTP delivery; leave the previous SMTP settings intact
-   so disabling the hook can restore the previous route if delivery fails.
+   but do not disable the hook as a delivery workaround: the previous route does
+   not enforce this hook's recipient restriction.
 5. From Nitoron, request one login email to the owner's account. Check that the code
    arrives and works. Actual delivery remains unverified until this step succeeds.
    Do not send tests to another person's address. Rejection tests use signed mocks.
@@ -41,10 +42,45 @@ with Standard Webhooks HMAC. Missing secrets, absent/invalid/expired signatures,
 wrong identity, invalid code, and provider failures all fail closed. Request bodies,
 codes, keys and provider response details are not logged or returned.
 
-`node --test tests/private-email-hook.test.js`: 7/7 passed using the actual
+`node --test tests/private-email-hook.test.js`: 10/10 passed using the actual
 Standard Webhooks verifier and independently generated HMAC fixtures. Delivery
-is mocked; no real email was sent. Deployed function v1 bundle SHA256:
+is mocked; no real email was sent. Original function v1 bundle SHA256:
 `f2f41121c34690c0546113f05424745ffbab70c6bd736203c9ac1f6b8bf89590`.
+
+## Delivery diagnosis (2026-09-16 JST)
+
+The owner reported an IP approval email, approved the address, and still did not
+receive a login code. Read-only checks confirmed the owner is email-confirmed,
+not anonymous/banned/deleted, and function v3 still contained the original code.
+No owner audit entries were returned after 2026-09-15T17:00Z. These facts do not
+identify the current delivery error. The connection cannot read Auth/Edge runtime
+logs or Brevo delivery logs; a direct HTTP probe timed out before reaching Supabase.
+
+Supabase Edge Functions do not have static or stable egress IPs. Approval of a
+single source IP therefore does not guarantee subsequent sends. Do not turn off
+Brevo's account-wide IP protections for a shared account containing Chitose-bank.
+Do not diagnose an IP block solely from an HTTP 401 response.
+
+The hook now emits only fixed diagnostic codes and numeric HTTP statuses. No
+payloads, OTPs, user identities, keys, IPs, provider text or message IDs are logged.
+Diagnostics also appear in the hook's error response, subject to Auth's presentation.
+
+| Code | Meaning |
+| --- | --- |
+| `HOOK_CONFIG` | One or both delivery secrets are missing. |
+| `HOOK_SIGNATURE` | Signature validation failed. |
+| `HOOK_ACCOUNT` | Account or login action is outside the allowlist. |
+| `HOOK_CODE` | Invalid OTP format. |
+| `BREVO_IP_BLOCKED` | Brevo explicitly described an unrecognized/unauthorized IP with HTTP 401/403. |
+| `BREVO_REJECTED` | Provider refused the request; `providerStatus` records the HTTP status. |
+| `BREVO_TIMEOUT` | The delivery request timed out. |
+| `BREVO_CONNECTION` | The request/response could not be completed. |
+| `BREVO_RESPONSE` | No provider acceptance ID was present. |
+| `BREVO_ACCEPTED` | Brevo accepted the request; this does not prove inbox delivery. |
+
+Request one owner login code, then inspect the corresponding function invocation
+and `private_login_email` log. If accepted but not received, inspect Brevo's
+transactional delivery log next. Do not remove the recipient or signature checks.
 
 References checked 2026-09-16 JST:
 
@@ -52,6 +88,8 @@ References checked 2026-09-16 JST:
 - https://supabase.com/docs/guides/functions/secrets
 - https://developers.brevo.com/docs/api-key-authentication
 - https://developers.brevo.com/docs/send-a-transactional-email
+- https://developers.brevo.com/docs/ip-security
+- https://supabase.com/docs/guides/troubleshooting/why-supabase-edge-functions-cannot-provide-static-egress-ips-for-whitelisting-3d78b0
 
 The September 14 Nitoron SMTP screenshot identified Brevo (`smtp-relay.brevo.com`).
 The current provider account and sender delivery status cannot be inspected with
