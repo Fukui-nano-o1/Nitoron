@@ -14,6 +14,7 @@ import { newRecord, snapshot, publicSnapshot, publicationKey, fromRow, uid, toda
 import { listPublic, getPublic, getOwned, getOwnPublication, publishRecord, unpublishRecord, PAGE_SIZE } from './community.js'
 import { Dialog, Empty, ErrorNotice, download } from './ui.jsx'
 import SiteHeader, { NAV, currentTab } from './SiteHeader.jsx'
+import useScrollChrome from './scroll-chrome.js'
 import Catalog from './Catalog.jsx'
 import PublicRecord from './PublicRecord.jsx'
 import ManualPage from './ManualPage.jsx'
@@ -100,6 +101,14 @@ function App() {
   const [owned, setOwned] = useState([]), [ownedReady, setOwnedReady] = useState(false)
   const [deviceRecords, setDeviceRecords] = useState([]), [draft, setDraft] = useState(null)
   const searchRef = useRef(null), nameTimer = useRef(null)
+  // ヘッダー・下部ナビの出し入れ（スクロール方向）と、畳まれた検索ピルを押して開いた状態。
+  const liveChrome = useScrollChrome()
+  const [searchOpen, setSearchOpen] = useState(false)
+  // 押して開いた検索ピルに入力している間は、入力ごとの URL 更新・一覧の読み直しで起きるスクロールの揺れでヘッダーが畳まれたり隠れたりしないよう、開いた時点の状態を保つ。
+  const frozenChrome = useRef(null)
+  if (!searchOpen) frozenChrome.current = null
+  else if (!frozenChrome.current) frozenChrome.current = liveChrome
+  const chrome = frozenChrome.current || liveChrome
   const previousOwner = useRef(undefined)
   // 保存の通知：未保存からの保存は「リストに追加」の操作つきで知らせる。
   const [sheetRecord, setSheetRecord] = useState(null), [picking, setPicking] = useState(false)
@@ -171,7 +180,7 @@ function App() {
     getOwnPublication(route.id, session.user.id).then(row => { if (!cancelled) setOwnPublication({ loading: false, error: '', row }) }).catch(e => { if (!cancelled) setOwnPublication({ loading: false, error: e.message, row: null }) })
     return () => { cancelled = true }
   }, [publishedNow, route.id, session?.user.id, refresh])
-  useEffect(() => { if (!SEARCH_ENABLED) return; const keys = e => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (!searchRef.current) { location.hash = '/discover'; setTimeout(() => searchRef.current?.focus(), 0) } else searchRef.current.focus() } }; window.addEventListener('keydown', keys); return () => window.removeEventListener('keydown', keys) }, [])
+  useEffect(() => { if (!SEARCH_ENABLED) return; const keys = e => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (!searchRef.current) { location.hash = '/discover'; setTimeout(() => searchRef.current?.focus(), 0) } else { setSearchOpen(true); setTimeout(() => searchRef.current?.focus({ preventScroll: true }), 0) } } }; window.addEventListener('keydown', keys); return () => window.removeEventListener('keydown', keys) }, [])
   useEffect(() => { if (!toast) return; const t = setTimeout(() => setToast(''), 4500); return () => clearTimeout(t) }, [toast])
   useEffect(() => {
     if (previousOwner.current !== undefined && previousOwner.current !== session?.user.id) { setSelected([]); setDialog(null); setName(''); try { sessionStorage.removeItem(COMPARE_KEY) } catch { /* 保持なし */ } }
@@ -332,9 +341,10 @@ function App() {
   const displayed = publicMode ? list : [...list].sort(sort === 'title' ? (a, b) => a.title.localeCompare(b.title, 'ja') : (a, b) => b.date.localeCompare(a.date))
   const selectedRecords = selected.map(r => r.publication ? r : records.find(x => x.id === r.id)).filter(Boolean)
   // スマホの公開詳細は写真を最上部に置くため、サイトロゴ行をCSSで隠す（他の画面・PC・戻る動作は変えない）。
-  return <div className={`workspace${route.view === 'public' ? ' public-view' : ''}`}>
+  const headerSearch = SEARCH_ENABLED && route.view === 'discover' ? { query, onQuery: setQuery, region, onRegion: setRegion, searchRef, onSubmit: () => { const el = document.getElementById('catalog-results') || document.getElementById('content'); el?.scrollIntoView({ block: 'start', behavior: 'smooth' }); el?.focus({ preventScroll: true }) } } : null
+  return <div className={`workspace${route.view === 'public' ? ' public-view' : ''}${chrome.hidden ? ' chrome-hidden' : ''}`}>
     <a className="skip-link" href="#content" onClick={e => { e.preventDefault(); document.getElementById('content')?.focus() }}>本文へ移動</a>
-    <SiteHeader view={navView} name={name} notify={activity.total > 0} />
+    <SiteHeader view={navView} name={name} notify={activity.total > 0} search={headerSearch} chrome={chrome} open={searchOpen} onOpen={setSearchOpen} />
     <main id="content" tabIndex={-1} className="main-content">
       {error && (repairView ? <div className="repair-global-error" role="status"><strong>{sync.cacheFailed ? '未保存' : 'この端末に保存'}</strong><details><summary>保存状態</summary><p>{error}</p><button className="text-action" onClick={retry}>再試行</button></details></div> : <div className="workspace-error print-hidden"><ErrorNotice retry={retry}>{error}</ErrorNotice></div>)}
       {!error && needsLogin && ['mine', 'record', 'repairs', 'repair'].includes(route.view) && <div className="workspace-error print-hidden"><div className="notice" role="status"><span>記録はこの端末に保存しています。登録・ログインするとクラウドに保存し、公開や指摘ができます。</span> <button onClick={() => setDialog({ type: 'account' })}>登録・ログイン</button></div></div>}
@@ -368,7 +378,7 @@ function App() {
       </Catalog>}
     </main>
     {!!selected.length && route.view !== 'compare' && <div className="compare-tray print-hidden"><span>{selected.length}件を選択中</span>{selected.length >= 2 ? <a href="#/compare">並べて比較する</a> : <em className="tray-hint">あと1件選ぶと比較できます</em>}<button onClick={() => setSelected([])}>解除</button></div>}
-    <nav className="mobile-nav print-hidden" aria-label="モバイルナビゲーション">{NAV.map(([id, label, icon]) => <a key={id} href={`#/${id}`} aria-current={currentTab(id, navView) ? 'page' : undefined} aria-label={id === 'talks' && activity.total > 0 ? '対話（新着の指摘あり）' : undefined}><span className="nav-icon">{id === 'talks' && activity.total > 0 && <i className="notify-dot" aria-hidden="true" />}<Icon name={icon} size={23} /></span><span>{label}</span></a>)}</nav>
+    <nav className={`mobile-nav print-hidden${chrome.hidden ? ' is-hidden' : ''}`} aria-label="モバイルナビゲーション">{NAV.map(([id, label, icon]) => <a key={id} href={`#/${id}`} aria-current={currentTab(id, navView) ? 'page' : undefined} aria-label={id === 'talks' && activity.total > 0 ? '対話（新着の指摘あり）' : undefined}><span className="nav-icon">{id === 'talks' && activity.total > 0 && <i className="notify-dot" aria-hidden="true" />}<Icon name={icon} size={23} /></span><span>{label}</span></a>)}</nav>
     {toast && <div className="toast print-hidden" role="status">{typeof toast === 'string' ? toast : <>{toast.text}<button className="toast-action" onClick={() => { const run = toast.action.run; setToast(''); run() }}>{toast.action.label}</button></>}</div>}
     {sheetRecord && session && <SaveSheet key={sheetRecord.id} record={sheetRecord} lists={lists} onClose={() => setSheetRecord(null)} onUnsave={async () => { await bookmarks.toggle(sheetRecord); setSheetRecord(null) }} />}
     {dialog?.type === 'account' && <Account session={session} flush={flush} onClose={() => setDialog(null)} />}

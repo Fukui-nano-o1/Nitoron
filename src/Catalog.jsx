@@ -11,14 +11,6 @@ import { searchRepairMachines } from './repair-workspace.mjs'
 import { countFilters, EMPTY_FILTERS, CHIPS, activeChip, discoverHref } from './search.js'
 import { SEARCH_ENABLED } from './flags.js'
 import { Empty } from './ui.jsx'
-// 検索ピルは探す（#/discover）の最上部にだけ置く。2区画（機械・症状／地域）＋検索ボタン。条件は下のチップ列右端の「絞り込み」へ。
-export function SearchPill({ query, onQuery, region, onRegion, onSubmit, searchRef }) {
-  return <form className="search-pill" role="search" aria-label="記録を検索" onSubmit={e => { e.preventDefault(); onSubmit() }}>
-    <label className="search-part"><span>機械・症状</span><input ref={searchRef} type="search" maxLength={160} value={query} onChange={e => onQuery(e.target.value)} placeholder="型式・症状で探す" /></label>
-    <label className="region-part"><span>地域</span><input type="search" maxLength={80} value={region} onChange={e => onRegion(e.target.value)} placeholder="すべての地域" /></label>
-    <button className="search-submit" aria-label="検索する"><Icon name="search" size={21} /></button>
-  </form>
-}
 // 分類チップ列（Airbnb のカテゴリ行）。押すと URL 駆動で #/discover へ遷移し、検索語・地域・記録日・数字条件は引き継ぐ。
 // 選択中をもう一度押すと解除。右端の「絞り込み」はチップ由来の kind／crop を件数に数えない。
 export function CategoryChips({ query, region, filters, onFilter }) {
@@ -56,7 +48,7 @@ export function RecordCard({ record: r, href, selected, onSelect, publicMode, pu
   {!publicMode && r.meta?.kind === 'challenge' && (r.meta.deadline || r.meta.origin) && <div className="card-meta-line">{r.meta.deadline && <span>振り返る日 {r.meta.deadline.replaceAll('-', '.')}</span>}{r.meta.origin && <span>参考：{r.meta.origin.title || '記録'}</span>}</div>}
   {!publicMode && <div className="card-utility">{publicationLabel === '公開中' ? <a className="published-link" href={`#/record/${r.id}/review`}>公開中</a> : <span>{publicationLabel}</span>}<button className="text-action" aria-pressed={selected} onClick={() => onSelect(r)}><Icon name={selected ? 'check' : 'plus'} size={15} />{selected ? '比較に選択済み' : '比較する'}</button></div>}</article>
 }
-// 探す（#/discover）は URL 駆動の1つの格子：ピル → チップ列（＋絞り込み）→ 条件ありなら件数行 → 格子 → ページ送り。
+// 探す（#/discover）は URL 駆動の1つの格子：チップ列（＋絞り込み）→ 条件ありなら件数行 → 格子 → ページ送り。検索ピルは上部ヘッダー（SiteHeader）に固定。
 // 自分の実践（#/mine）は h1・件数・並び順・作成ボタン・分類チップ・進捗チップ・格子だけ（ピル・絞り込みは置かない）。
 export default function Catalog({ view, records, total, loading, error, query, onQuery, sort, onSort, region, onRegion, filters = EMPTY_FILTERS, onFilters, onReset, onRepair, searchRef, selectedKeys, keyOf, onSelect, savedIds = [], onSave, activityCounts = {}, owned = [], ownedReady, ready, onCreate, blankCount = 0, onCleanup, children }) {
   const [filterOpen, setFilterOpen] = useState(false)
@@ -66,9 +58,7 @@ export default function Catalog({ view, records, total, loading, error, query, o
   // 0件からの修理導線：登録機に一致しない型式は1タップで3Dなしの記録を始め、一致するときは本人が3Dあり／なしを選ぶ（型式から登録機種を推測しない）。
   const repairAction = q ? searchRepairMachines(q).length ? <a className="primary" href={`#/repairs/new?q=${encodeURIComponent(q)}`}>「{q}」の修理を記録する</a> : <button className="primary" disabled={!ready} onClick={() => onRepair(q)}>「{q}」の修理を記録する</button> : <a className="primary" href="#/repairs/new">修理を記録する</a>
   return <section className="catalog">
-    {SEARCH_ENABLED && publicMode && <><div className="search-area"><SearchPill query={query} onQuery={onQuery} region={region} onRegion={onRegion} searchRef={searchRef}
-      onSubmit={() => { document.getElementById('catalog-results')?.scrollIntoView({ block: 'start', behavior: 'smooth' }); document.getElementById('catalog-results')?.focus({ preventScroll: true }) }} /></div>
-    <CategoryChips query={query} region={region} filters={filters} onFilter={() => setFilterOpen(true)} /></>}
+    {SEARCH_ENABLED && publicMode && <CategoryChips query={query} region={region} filters={filters} onFilter={() => setFilterOpen(true)} />}
     {publicMode ? <><h1 className="sr-only">記録を探す</h1>{!!searching && <div className="discover-count" id="catalog-results" tabIndex={-1}><span>{loading ? '読み込み中' : `${total ?? 0}件`}</span><button className="text-action" onClick={onReset}>条件をクリア</button></div>}</>
       : <div className="page-heading" id="catalog-results" tabIndex={-1}><div><h1>{searching ? '自分の実践の検索結果' : '自分の実践'}</h1></div><div className="result-tools"><span>{loading ? '読み込み中' : `${total}件`}</span><select aria-label="並び順" value={sort} onChange={e => onSort(e.target.value)}><option value="recent">新しい順</option><option value="title">タイトル順</option></select></div></div>}
     {view === 'mine' && <div className="workspace-links"><button className="text-action" disabled={!ready} onClick={onCreate}>新しい発表をつくる</button>{blankCount > 0 && <button className="text-action" disabled={!ready} onClick={onCleanup}>空の記録を整理（{blankCount}件）</button>}</div>}
