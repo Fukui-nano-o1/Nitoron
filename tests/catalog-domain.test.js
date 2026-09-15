@@ -49,7 +49,7 @@ test('型式の語はハイフンの有無を問わず当たり、記録内検�
 })
 
 test('頁の引用は取扱説明書の頁ページへ結び、引いた頁の一覧と「この頁を引く行」が出る', async () => {
-  const { manualOffset, citeParts, citedPages, sectionsCitingPage, manualSource, pdfPageUrl, manualPageHref } = await import('../src/catalog-domain.js')
+  const { manualOffset, citeParts, citedPages, sectionsCitingPage, manualSource, manualPageHref } = await import('../src/catalog-domain.js')
   const blocks = [
     { id: 'a', type: 'callout', text: '本文の印刷頁 = PDF頁 − 6。' }, { id: 'b', type: 'h2', text: 'エンジン' },
     { id: 'c', type: 'bullet', text: 'エンジンオイル：0.4 L（印刷p.43／PDF 49） — やり方は印刷p.46。' }, { id: 'd', type: 'bullet', text: '点火プラグ：NGK（印刷p.50／PDF 56）' },
@@ -64,7 +64,7 @@ test('頁の引用は取扱説明書の頁ページへ結び、引いた頁の�
   assert.deepEqual(sectionsCitingPage(blocks, 46).map(s => [s.id, s.groups[0].rows.map(b => b.id)]), [['sec-b', ['c']]])
   assert.deepEqual(sectionsCitingPage(blocks, 99), [])
   const record = { meta: { sources: [{ title: '製品ページ', url: 'https://example.com/p' }, { title: '取扱説明書 KA071', url: 'https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=abc' }] } }
-  assert.deepEqual(manualSource(record), { title: '取扱説明書 KA071', url: 'https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=abc', pdfUrl: 'https://agriculture.kubota.co.jp/after-support/manual/download.html?hash=abc' })
+  assert.deepEqual(manualSource(record), { title: '取扱説明書 KA071', url: 'https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=abc' })
   assert.equal(manualSource({ meta: { sources: [] } }), null)
-  assert.equal(pdfPageUrl('https://x/download.html?hash=abc', 62), 'https://x/download.html?hash=abc#page=62'); assert.equal(manualPageHref('id1', 62), '#/public/id1/manual/62')
+  assert.equal(manualPageHref('id1', 62), '#/public/id1/manual/62')
 })

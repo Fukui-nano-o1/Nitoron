@@ -106,10 +106,9 @@ export function citedPages(blocks) {
 // 指定の印刷頁を引いている節・行だけ。
 export const sectionsCitingPage = (blocks, printed, offset = manualOffset(blocks)) => filterSections(blocks, text => citesOf(text, offset).some(c => c.printed === printed))
 export const manualPageHref = (id, pdf) => `#/public/${id}/manual/${pdf}`
-// 出典のうち取扱説明書（メーカーの案内ページ）を探し、PDF 本体の URL を組む。クボタは notice.html → download.html。
+// 出典のうち取扱説明書（メーカーの案内ページ）を探す。頁ページの出典表示に使う（リンクにはしない）。
 export function manualSource(record) {
   const s = (record?.meta?.sources || []).find(x => /\/manual\/notice\.html\?hash=/.test(x.url || '')) || (record?.meta?.sources || []).find(x => /\.pdf($|\?)/i.test(x.url || ''))
   if (!s) return null
-  return { title: s.title || '取扱説明書', url: s.url, pdfUrl: s.url.replace('/manual/notice.html?', '/manual/download.html?') }
+  return { title: s.title || '取扱説明書', url: s.url }
 }
-export const pdfPageUrl = (pdfUrl, page) => `${pdfUrl}#page=${page}`

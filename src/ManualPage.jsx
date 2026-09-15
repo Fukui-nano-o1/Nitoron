@@ -1,9 +1,10 @@
 import React from 'react'
 import Icon from './Icon.jsx'
 import { renderBlock } from './RecordBody.jsx'
-import { parseCatalogTitle, manualOffset, citedPages, sectionsCitingPage, manualPageHref, manualSource, pdfPageUrl } from './catalog-domain.js'
+import { parseCatalogTitle, manualOffset, citedPages, sectionsCitingPage, manualPageHref, manualSource } from './catalog-domain.js'
 // 取扱説明書の頁ページ（#/public/:id/manual/:pdf）。本文の「（印刷p.56／PDF 62）」を押すと来る。
-// 取説の原文・図は載せない。この解説がその頁から引いた行だけをまとめ、メーカーのサイトの PDF をその頁で開く入口を置く。
+// 取説の原文・図は載せず、外部（メーカーのサイト）へも飛ばさない。この解説がその頁から引いた行だけをまとめ、
+// 次の行動（この頁を見て直した記録を書く／質問・指摘を送る）をサイト内で続ける。原典の所在は解説ページの「出典・資料」欄。
 export default function ManualPage({ record, pdf }) {
   const page = Number(pdf), p = parseCatalogTitle(record.title), offset = manualOffset(record.blocks), pages = citedPages(record.blocks), src = manualSource(record)
   const printed = Number.isInteger(page) && offset != null ? page - offset : null
@@ -17,8 +18,9 @@ export default function ManualPage({ record, pdf }) {
       <h1>{printed == null ? `PDF ${pdf}頁` : <>取扱説明書 印刷p.{printed}<small>（PDF {page}頁）</small></>}</h1>
       <p className="manual-record"><a href={`#/public/${record.id}`}>{record.title}</a></p></header>
     <div className="manual-actions">
-      {src ? <a className="primary" href={pdfPageUrl(src.pdfUrl, page)} target="_blank" rel="noopener noreferrer">{p?.maker || 'メーカー'}の取扱説明書でこの頁を開く</a> : <p className="notice">この記録には取扱説明書のリンクがありません。</p>}
-      {src && <p className="hint">メーカーのサイトの PDF（{src.title}）が新しいタブで開きます。PC のブラウザは PDF {page}頁から始まります。スマホは1頁目から開くことがあるので、その場合は {page}頁へ進んでください。原文・図はこのサイトには載せていません。</p>}
+      <a className="primary" href={`#/repairs/new?q=${encodeURIComponent(p?.model || '')}`}>この頁を見て直した記録を書く</a>
+      <a className="text-action" href={`#/public/${record.id}/discussion`}>この解説に質問・指摘を送る</a>
+      <p className="hint">頁は{src ? src.title : '取扱説明書'}の印刷頁。原文・図はこのサイトに載せていません。原典の所在は解説ページの「出典・資料」欄にあります。</p>
     </div>
     <nav className="manual-pager" aria-label="前後の頁">{prev ? <a href={manualPageHref(record.id, prev.pdf)}>← 印刷p.{prev.printed}</a> : <span />}<span>この頁を引く行 {total}件</span>{next ? <a href={manualPageHref(record.id, next.pdf)}>印刷p.{next.printed} →</a> : <span />}</nav>
     {sections.length ? sections.map(s => <section className="read-section record-body" key={s.id}>
