@@ -112,3 +112,93 @@ export function manualSource(record) {
   if (!s) return null
   return { title: s.title || '取扱説明書', url: s.url }
 }
+
+// ---- カタログ解説の詳細ページの構成（表示時に組み立てる。記録の形＝h2 ごとの本文は変えない）
+// 順序：症状から診断する → 整備の周期 → 部品と費用 → 諸元（エンジン・走行部・作業部…）→ 部品の名称 → 操作方法 → 安全 → 照合 → 未確認。
+// 転記の並べ替えではなく、症状→確認箇所→修理記録、部品→品番→記録された費用、へ読者を運ぶための構成。
+const ORDER = ['症状から探す', '整備と点検', '部品と費用', 'エンジン', '動力', '走行部', '作業部', '植付部', '部品の名称', '操作方法', '安全に使うために', '製品ページと取扱説明書の照合', '未確認']
+const SPEC_TITLES = ['エンジン', '動力', '走行部', '作業部', '植付部']
+export const PART_NUMBER = /[A-Z]{1,3}\d{2,4}-\d{4,5}(?:-\d)?|\b\d{5}-\d{5}\b/g
+const CITE_ANY = /（印刷p\.\d+(?:[〜~]\d+)?／PDF \d+）/g
+// 引用の頁と、「 — 」以降の補足（交換の目安・やり方の頁）を落とした本文。表の材料にする。
+export const stripCite = text => String(text || '').replace(CITE_ANY, '').replace(/\s+—\s.*$/, '').trim()
+const rank = s => { const key = s.kind === 'diagnosis' ? '症状から探す' : s.kind === 'schedule' ? '整備と点検' : s.kind === 'parts' ? '部品と費用' : s.title; const i = ORDER.findIndex(t => key.startsWith(t)); return i < 0 ? ORDER.length : i }
+// 「定期点検箇所一覧表：A（x）／B（y）…」を行に分ける。括弧の中が周期。
+export function scheduleRows(text) {
+  const body = stripCite(text).replace(/^[^：]*：/, '')
+  return body.split('／').map(seg => seg.trim()).filter(Boolean).map(seg => { const m = /^(.*?)（([^（）]*)）$/.exec(seg); return m ? { item: m[1].trim(), interval: m[2].trim() } : { item: seg, interval: '' } })
+}
+// 「label：value（印刷p.x／PDF y）」を行にする（諸元の表）。
+export const specRow = text => { const m = /^([^：]{1,40})：(.*)$/.exec(stripCite(text)); return m ? { label: m[1].trim(), value: m[2].trim() } : null }
+// 本文の中の品番（クボタ形式：LK161-62210、LE010-1378-0、07908-67640）を拾い、部品名と組にする。
+// 前書き（最初の h2 より前：取扱説明書の資料番号が載る）は除く。「取扱説明書 LK231-6512-3」のような資料番号も部品ではない。
+// 「スパークプラグ LE010-11970（FTR70）／LE010-12830（FTR90）」のように名前が省かれた続きの品番は、直前の名前を引き継ぐ。
+export function partRows(blocks) {
+  const rows = [], seen = new Set()
+  let inBody = false
+  for (const b of blocks || []) {
+    if (b?.type === 'h2') { inBody = true; continue }
+    if (!inBody || !b?.text || !['bullet', 'text'].includes(b.type)) continue
+    const raw = stripCite(b.text), label = (/^([^：]{1,16})：/.exec(raw)?.[1] || '').replace(/の(交換部品|品番|部品)$/, '')
+    const text = raw.replace(/^[^：]*：/, '')
+    // 「Vベルト：SB-37（LK161-62210）」「バッテリの交換部品：…」のように行の見出しが部品の種類なら名前に添える（「主な消耗部品：」のような総称は添えない）。
+    const prefix = label && !/消耗部品|付属部品|一覧|部品$/.test(label) ? label.replace(/[（）()]/g, ' ').replace(/\s+/g, ' ').trim() : ''
+    let last = ''
+    for (const seg of text.split(/[、／]/)) {
+      const m = seg.match(PART_NUMBER); if (!m || /取扱説明書|要領書/.test(seg)) continue
+      const pn = m[0]; if (seen.has(pn)) continue; seen.add(pn)
+      // 名前の前の「取扱説明書 ／ 製品ページ」（照合の行）は出どころであって部品名ではない。
+      const own = seg.slice(0, seg.indexOf(pn)).replace(/[（(]\s*$/, '').replace(/[（）()]/g, ' ').replace(/取扱説明書|製品ページ|記載なし/g, ' ').replace(/\s+/g, ' ').trim()
+      // 「Vベルト SA-46（…）／SB-49（…）」の SB-49 のような裸の型番は、直前の名前の種類（Vベルト）を引き継ぐ。
+      const bare = /^[A-Z]{1,2}-?\d{2,3}$/.test(own) && last ? `${last.split(' ')[0]} ${own}` : own
+      const name = bare ? (prefix && !bare.includes(prefix.slice(-3)) ? `${prefix} ${bare}` : bare) : last || prefix || '部品'
+      const note = seg.slice(seg.indexOf(pn) + pn.length).replace(/[（）()]/g, ' ').replace(/\s*→.*$/, '').replace(/^[。、\s]+/, '').split('。')[0].replace(/\s+/g, ' ').trim().slice(0, 30)
+      last = name
+      rows.push({ name: name.slice(0, 40), partNumber: pn, note, blockId: b.id, source: b.text })
+    }
+  }
+  return rows
+}
+// 消耗部品の行（「主な消耗部品」「消耗部品（エンジン）」など）。部品の表の下に、品番のない消耗部品も並べる。
+export const consumableBlocks = blocks => (blocks || []).filter(b => b?.type === 'bullet' && /消耗部品/.test(String(b.text || '')))
+// 表示用の節。kind：lead／diagnosis／schedule／parts／specs／list。parts は本文全体の品番から作る仮想の節（id: sec-parts）。
+export function catalogSections(blocks) {
+  const raw = []
+  for (const b of blocks || []) {
+    if (b?.type === 'h2' && String(b.text || '').trim()) raw.push({ heading: b, blocks: [] })
+    else { if (!raw.length) raw.push({ heading: null, blocks: [] }); raw[raw.length - 1].blocks.push(b) }
+  }
+  const out = raw.filter(s => s.heading || s.blocks.some(b => b?.text)).map(s => {
+    if (!s.heading) return { id: 'sec-lead', title: '', kind: 'lead', heading: null, blocks: s.blocks }
+    const title = s.heading.text.trim(), id = sectionId(s.heading)
+    if (title.startsWith('症状から探す')) return { id, title: '症状から診断する', kind: 'diagnosis', heading: s.heading, blocks: s.blocks, groups: groupSection(s.blocks).filter(g => g.head) }
+    if (title.startsWith('整備と点検')) {
+      const table = s.blocks.find(b => b.type === 'bullet' && /^[^：]*点検[^：]*一覧表：/.test(b.text))
+      const oil = s.blocks.find(b => b.type === 'bullet' && /^給油一覧表/.test(b.text))
+      return { id, title: '整備の周期', kind: 'schedule', heading: s.heading, blocks: s.blocks, rows: table ? scheduleRows(table.text) : [], table, oil, rest: s.blocks.filter(b => b !== table && b !== oil && b.type !== 'text' && b.text) }
+    }
+    if (SPEC_TITLES.some(t => title.startsWith(t))) return { id, title, kind: 'specs', heading: s.heading, blocks: s.blocks, rows: s.blocks.filter(b => b.type === 'bullet').map(b => ({ block: b, ...(specRow(b.text) || { label: '', value: stripCite(b.text) }) })), intro: s.blocks.find(b => b.type === 'text') }
+    return { id, title, kind: 'list', heading: s.heading, blocks: s.blocks }
+  })
+  // 部品と費用は品番が1つもなくても置く（消耗部品の行と、修理記録の費用が入る）。
+  if (out.some(s => s.heading)) out.push({ id: 'sec-parts', title: '部品と費用', kind: 'parts', heading: null, blocks: [], rows: partRows(blocks), consumables: consumableBlocks(blocks) })
+  return out.sort((a, b) => (a.kind === 'lead' ? -1 : b.kind === 'lead' ? 1 : rank(a) - rank(b)))
+}
+export const catalogNav = blocks => catalogSections(blocks).filter(s => s.kind !== 'lead').map(s => ({ id: s.id, title: s.title }))
+// 型式が同じ修理記録か（機械の型式を正規化し、ハイフンの有無を問わず比べる）。
+const modelKey = s => normalize(s).replace(/[-‐‑–—\s]/g, '')
+export const sameModel = (model, other) => { const a = modelKey(model), b = modelKey(other); return !!a && !!b && (a === b || b.startsWith(a) || a.startsWith(b)) }
+export const repairRecordsFor = (model, records) => (records || []).filter(r => r?.meta?.subject === 'machine_repair' && sameModel(model, r.meta?.repair?.machine?.model))
+// 修理記録の「行ったこと」から、費用の付いた行を集める（部品の表に「記録された費用」として載せる）。
+export function recordedCosts(records) {
+  const out = []
+  for (const r of records || []) {
+    for (const a of r?.meta?.repair?.actions || []) {
+      const cost = Number(String(a.cost ?? '').replace(/[,，円]/g, ''))
+      if (!Number.isFinite(cost) || cost <= 0) continue
+      out.push({ recordId: r.id, title: r.title, date: a.date || r.date, what: a.what || '', parts: a.parts || '', cost })
+    }
+  }
+  return out.sort((a, b) => String(b.date).localeCompare(String(a.date)))
+}
+export const costsForPart = (costs, row) => costs.filter(c => c.parts && (normalize(c.parts).includes(normalize(row.partNumber)) || (row.name.length >= 3 && normalize(c.parts).includes(normalize(row.name)))))

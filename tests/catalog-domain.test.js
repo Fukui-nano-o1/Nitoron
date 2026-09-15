@@ -68,3 +68,42 @@ test('頁の引用は取扱説明書の頁ページへ結び、引いた頁の�
   assert.equal(manualSource({ meta: { sources: [] } }), null)
   assert.equal(manualPageHref('id1', 62), '#/public/id1/manual/62')
 })
+
+test('詳細ページの構成：症状→整備の周期→部品と費用→諸元→名称…の順。表は本文の行から作る', async () => {
+  const { catalogSections, catalogNav, scheduleRows, specRow, partRows, sameModel, repairRecordsFor, recordedCosts, costsForPart } = await import('../src/catalog-domain.js')
+  const blocks = [
+    { id: 'i', type: 'text', text: '販売型式名 TMS400。出典：取扱説明書 LK231-6512-3（PDF 59頁）。' },
+    { id: 'h1', type: 'h2', text: '部品の名称' }, { id: 'n1', type: 'bullet', text: '主クラッチレバー' },
+    { id: 'h2', type: 'h2', text: 'エンジン' }, { id: 'e0', type: 'text', text: 'GB131 の空冷4サイクル。' }, { id: 'e1', type: 'bullet', text: 'エンジン型式：GB131（印刷p.50／PDF 54）' }, { id: 'e2', type: 'bullet', text: '燃料タンク容量：2.6 L（印刷p.50／PDF 54）' },
+    { id: 'h3', type: 'h2', text: '整備と点検（索引）' }, { id: 'm0', type: 'text', text: '一覧表が軸。' }, { id: 'm1', type: 'bullet', text: '定期点検箇所一覧表：主クラッチケーブル（初期5時間後）／エンジンオイル（初回20時間、以後50時間ごと）／点火プラグ（6か月に1回）（印刷p.39／PDF 43）' }, { id: 'm2', type: 'bullet', text: '給油一覧表：燃料2.6 L／エンジン0.5 L（印刷p.40／PDF 44）' }, { id: 'm3', type: 'bullet', text: '主クラッチケーブルの調節：印刷p.45（印刷p.45／PDF 49）' }, { id: 'm4', type: 'bullet', text: '主な消耗部品（本機）：Vベルト SB-37（LK161-62210）、スパークプラグ LE010-11970（FTR70）／LE010-12830（FTR90）（印刷p.51／PDF 55）' },
+    { id: 'h4', type: 'h2', text: '症状から探す（取扱説明書の索引）' }, { id: 's1', type: 'h3', text: 'エンジンが始動しないとき（印刷p.53／PDF 57）' }, { id: 's1a', type: 'bullet', text: '燃料の劣化（印刷p.53／PDF 57）' }, { id: 's2', type: 'h3', text: 'ハンドルのガタが多い（印刷p.53／PDF 57）' }, { id: 's2a', type: 'bullet', text: 'ノブの締め直し（印刷p.53／PDF 57）' },
+    { id: 'h5', type: 'h2', text: '未確認' }, { id: 'u1', type: 'bullet', text: '価格' },
+  ]
+  const secs = catalogSections(blocks)
+  assert.deepEqual(secs.map(s => s.kind), ['lead', 'diagnosis', 'schedule', 'parts', 'specs', 'list', 'list'])
+  assert.deepEqual(catalogNav(blocks).map(s => [s.id, s.title]), [['sec-h4', '症状から診断する'], ['sec-h3', '整備の周期'], ['sec-parts', '部品と費用'], ['sec-h2', 'エンジン'], ['sec-h1', '部品の名称'], ['sec-h5', '未確認']])
+  const diag = secs[1]; assert.equal(diag.groups.length, 2); assert.equal(diag.groups[0].head.id, 's1'); assert.deepEqual(diag.groups[1].rows.map(b => b.id), ['s2a'])
+  const sched = secs[2]
+  assert.deepEqual(sched.rows, [{ item: '主クラッチケーブル', interval: '初期5時間後' }, { item: 'エンジンオイル', interval: '初回20時間、以後50時間ごと' }, { item: '点火プラグ', interval: '6か月に1回' }])
+  assert.equal(sched.oil.id, 'm2'); assert.deepEqual(sched.rest.map(b => b.id), ['m3', 'm4'])
+  assert.deepEqual(scheduleRows('点検・給油・調節一覧表：エンジンオイル0.4 L（初期20時間）／チェンケース各0.5 L（印刷p.83／PDF 91）'), [{ item: 'エンジンオイル0.4 L', interval: '初期20時間' }, { item: 'チェンケース各0.5 L', interval: '' }])
+  // 部品：資料番号（取扱説明書 LK231-6512-3）は拾わない。名前が省かれた続きの品番は直前の名前を引き継ぐ。
+  const parts = secs[3]
+  assert.deepEqual(parts.rows.map(r => [r.name, r.partNumber, r.note]), [['Vベルト SB-37', 'LK161-62210', ''], ['スパークプラグ', 'LE010-11970', 'FTR70'], ['スパークプラグ', 'LE010-12830', 'FTR90']])
+  assert.deepEqual(parts.consumables.map(b => b.id), ['m4'])
+  assert.deepEqual(partRows([{ id: 'x', type: 'text', text: '取扱説明書 LK231-6512-3' }]), [])
+  // 諸元：「項目：値」の表。前書きは intro。
+  const specs = secs[4]; assert.deepEqual(specs.rows.map(r => [r.label, r.value]), [['エンジン型式', 'GB131'], ['燃料タンク容量', '2.6 L']]); assert.equal(specs.intro.id, 'e0')
+  assert.deepEqual(specRow('最大出力：3.0 kW｛4.2 PS｝（印刷p.50／PDF 54）'), { label: '最大出力', value: '3.0 kW｛4.2 PS｝' }); assert.equal(specRow('見出しだけ'), null)
+  // 費用：同じ型式（ハイフンの有無・仕様記号を問わない）の修理記録の「行ったこと」から、費用のある行だけ。部品名か品番が一致すれば表の行に付く。
+  assert.equal(sameModel('TMS-400', 'tms400'), true); assert.equal(sameModel('TMS-400', 'TMS-400U'), true); assert.equal(sameModel('TMS-400', 'TMS-200'), false); assert.equal(sameModel('', 'TMS-400'), false)
+  const repairs = [
+    { id: 'r1', title: 'ベルト', date: '2026-01-01', meta: { subject: 'machine_repair', repair: { machine: { model: 'TMS400' }, actions: [{ date: '2026-02-01', what: 'ベルト交換', parts: 'Vベルト SB-37', cost: '3,200' }, { what: '清掃', cost: '' }] } } },
+    { id: 'r2', title: '他機', meta: { subject: 'machine_repair', repair: { machine: { model: 'TRS-300' }, actions: [{ cost: '500' }] } } },
+    { id: 'r3', title: 'カタログ', meta: { subject: 'normal', kind: 'trouble' } },
+  ]
+  const mine = repairRecordsFor('TMS-400', repairs); assert.deepEqual(mine.map(r => r.id), ['r1'])
+  const costs = recordedCosts(mine); assert.deepEqual(costs, [{ recordId: 'r1', title: 'ベルト', date: '2026-02-01', what: 'ベルト交換', parts: 'Vベルト SB-37', cost: 3200 }])
+  assert.equal(costsForPart(costs, parts.rows[0]).length, 1); assert.equal(costsForPart(costs, parts.rows[1]).length, 0)
+  assert.deepEqual(catalogSections([]), []); assert.deepEqual(catalogNav(undefined), [])
+})

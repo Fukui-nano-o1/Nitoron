@@ -11,13 +11,13 @@ import { imageAttachments, sanitizeAttachments } from './attachment-domain.js'
 import { listPublic } from './community.js'
 import { RecordCard } from './Catalog.jsx'
 import { EMPTY_FILTERS, discoverHref } from './search.js'
-import { sectionsOf, relatedRows, isCatalogRecord } from './catalog-domain.js'
+import { sectionsOf, relatedRows, isCatalogRecord, catalogNav } from './catalog-domain.js'
 // ページ内の飛び先。ハッシュルーティングと衝突しないよう、リンク先は書き換えずにスクロールだけする。
 const jump = id => e => { e.preventDefault(); document.getElementById(id)?.scrollIntoView({ block: 'start', behavior: 'smooth' }) }
 // 節ナビ（Airbnb の listing で写真の下に出る「写真・アメニティ・レビュー・地図」の行）。上部に固定され、本文の h2 が3つ以上あるときに出す。
 // カタログ解説では記録内検索もこの固定バーに置く（PC は右端に入力欄、スマホは虫めがねを押すと入力行が開く）。本文の途中に置くと探さないと見つからない。
 function SectionNav({ record, hasDiscussion, hasRelated, search = null }) {
-  const sections = sectionsOf(record.blocks)
+  const sections = isCatalogRecord(record) ? catalogNav(record.blocks) : sectionsOf(record.blocks)
   const [open, setOpen] = useState(false)
   const inputRef = useRef(null)
   if (sections.length < 3 && !search) return null

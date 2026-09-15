@@ -10,6 +10,7 @@ import { repairHeadline, repairMachineLabel } from './repair-entry.mjs'
 import { searchRepairMachines } from './repair-workspace.mjs'
 import { countFilters, EMPTY_FILTERS, CHIPS, activeChip, discoverHref } from './search.js'
 import { SEARCH_ENABLED } from './flags.js'
+import { isCatalogRecord, parseCatalogTitle } from './catalog-domain.js'
 import { Empty } from './ui.jsx'
 // 分類チップ列（Airbnb のカテゴリ行）。押すと URL 駆動で #/discover へ遷移し、検索語・地域・記録日・数字条件は引き継ぐ。
 // 選択中をもう一度押すと解除。右端の「絞り込み」はチップ由来の kind／crop を件数に数えない。
@@ -36,15 +37,17 @@ export function RecordCard({ record: r, href, selected, onSelect, publicMode, pu
   const repair = r.meta?.subject === MACHINE_SUBJECT
   const machine = resolveMachineTarget(r.meta)
   const machineMode = repair && !!r.meta.machineRef
+  // カタログ解説はメーカー・型式・製品名で見分ける（題名の【カタログ解説】と分類の繰り返しでは並べたときに区別がつかない）。
+  const catalog = isCatalogRecord(r) ? parseCatalogTitle(r.title) : null
   return <article className="record-card"><div className="card-visual">{machineMode
     ? <MachineCardMedia target={machine} machineRef={r.meta.machineRef} href={href} />
-    : <a href={href} className="cover-link" tabIndex={-1} aria-hidden="true"><Cover record={r} label={repair ? repairMachineLabel(r.meta.repair) : ''} index={Math.min(index, Math.max(0, photos.length - 1))} /></a>}
+    : <a href={href} className="cover-link" tabIndex={-1} aria-hidden="true"><Cover record={r} label={repair ? repairMachineLabel(r.meta.repair) : catalog ? `${catalog.maker} ${catalog.model}` : ''} sub={catalog ? catalog.name || catalog.category : ''} index={Math.min(index, Math.max(0, photos.length - 1))} /></a>}
     <span className="card-badge">{repair ? '修理' : r.meta?.kind === 'challenge' ? r.meta.stage : KINDS[r.meta?.kind || 'memo']}</span>
     {newCount > 0 && <span className="card-badge activity">新着の指摘 {newCount}件</span>}
     {publicMode && onSave && <button className="save-heart" aria-pressed={saved} aria-label={`${r.title || '無題'}${saved ? 'の保存先を選ぶ' : 'を保存する'}`} onClick={() => onSave(r)}><Icon name="heart" size={25} fill={saved ? '#ff385c' : '#0006'} /></button>}
     {picking && <button className="pick-box" aria-pressed={selected} aria-label={`${r.title || '無題'}を${selected ? '比較から外す' : '比較に選ぶ'}`} onClick={() => onSelect(r)}><Icon name="check" size={16} /></button>}
     {!machineMode && photos.length > 1 && <><button className="photo-arrow prev" aria-label="前の写真" onClick={() => setIndex((index + photos.length - 1) % photos.length)}><Icon name="left" size={14} /></button><button className="photo-arrow next" aria-label="次の写真" onClick={() => setIndex((index + 1) % photos.length)}><Icon name="right" size={14} /></button><div className="photo-dots" aria-hidden="true">{photos.slice(0, 5).map((p, i) => <i key={p.path} className={i === Math.min(index, 4) ? 'active' : ''} />)}</div></>}
-  </div><a href={href} className="card-copy"><div className="card-location"><strong>{repair ? (machineMode ? machine.label : repairMachineLabel(r.meta.repair) || '機械未確認') : [r.meta?.region, r.meta?.crop].filter(Boolean).join(' · ') || '自分の記録'}</strong>{evidence > 0 && <span>観測 {evidence}</span>}</div><h2>{repair && !machineMode && r.title === repairMachineLabel(r.meta.repair) ? repairHeadline(r.meta.repair) || r.meta.issue || r.title : r.title || '無題の記録'}</h2>{!repair && <div className="card-author">{r.meta?.author || '名前未登録'}{r.meta?.club && ` · ${r.meta.club}`}</div>}<div className="card-bottom">{metric && !repair ? <span><strong>{formatNumber(number(r.meta[metric[0]]))}</strong> {metric[2]}<span className="metric-caption"> / {metric[1]}</span></span> : <time dateTime={r.date}>{r.date.replaceAll('-', '.')}</time>}</div></a>
+  </div><a href={href} className="card-copy"><div className="card-location"><strong>{repair ? (machineMode ? machine.label : repairMachineLabel(r.meta.repair) || '機械未確認') : catalog ? [catalog.maker, catalog.category].filter(Boolean).join(' · ') : [r.meta?.region, r.meta?.crop].filter(Boolean).join(' · ') || '自分の記録'}</strong>{evidence > 0 && <span>観測 {evidence}</span>}{catalog && <span>カタログ解説</span>}</div><h2>{catalog ? [catalog.model, catalog.name].filter(Boolean).join(' ') : repair && !machineMode && r.title === repairMachineLabel(r.meta.repair) ? repairHeadline(r.meta.repair) || r.meta.issue || r.title : r.title || '無題の記録'}</h2>{!repair && <div className="card-author">{r.meta?.author || '名前未登録'}{r.meta?.club && ` · ${r.meta.club}`}</div>}<div className="card-bottom">{metric && !repair ? <span><strong>{formatNumber(number(r.meta[metric[0]]))}</strong> {metric[2]}<span className="metric-caption"> / {metric[1]}</span></span> : <time dateTime={r.date}>{r.date.replaceAll('-', '.')}</time>}</div></a>
   {!publicMode && r.meta?.kind === 'challenge' && (r.meta.deadline || r.meta.origin) && <div className="card-meta-line">{r.meta.deadline && <span>振り返る日 {r.meta.deadline.replaceAll('-', '.')}</span>}{r.meta.origin && <span>参考：{r.meta.origin.title || '記録'}</span>}</div>}
   {!publicMode && <div className="card-utility">{publicationLabel === '公開中' ? <a className="published-link" href={`#/record/${r.id}/review`}>公開中</a> : <span>{publicationLabel}</span>}<button className="text-action" aria-pressed={selected} onClick={() => onSelect(r)}><Icon name={selected ? 'check' : 'plus'} size={15} />{selected ? '比較に選択済み' : '比較する'}</button></div>}</article>
 }
