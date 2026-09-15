@@ -407,26 +407,116 @@ a.avatar-circle:hover{box-shadow:0 0 0 2px #fff,0 0 0 4px #222}
 .report-form code{font-size:.75rem;word-break:break-all;background:#f7f7f7;padding:2px 6px;border-radius:4px}
 @media(max-width:760px){.reflection-grid{grid-template-columns:1fr}.reflection{padding:14px 16px}}
 
-/* 探す（検索の強化）：候補一覧、同義語の明示、内訳チップ、抜粋、0件時の緩和提案、記録日プリセット */
+/* 探す（検索の強化）：Airbnbの検索UIの見た目に寄せる。ピルの展開、候補パネル、絞り込みモーダル、チップ、抜粋、0件時の提案 */
 .search-part,.region-part{position:relative}
-.suggest-list{position:absolute;left:0;top:calc(100% + 10px);z-index:30;min-width:min(360px,80vw);max-width:min(480px,90vw);background:#fff;border:1px solid #ddd;border-radius:16px;box-shadow:0 8px 28px #00000024;padding:8px;margin:0;list-style:none;max-height:min(420px,60vh);overflow:auto}
-.suggest-head{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.75rem;color:#6a6a6a;font-weight:600;padding:8px 12px 4px}
-.suggest-head .text-action{font-size:.75rem;min-height:24px;padding:0}
-.suggest-list [role=option] button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:9px 12px;border-radius:10px;font-size:.9375rem;min-height:40px;color:#222;background:none;border:0}
+/* ピル：入力中は全体が灰色になり、入力している区画だけ白く浮く。区画の境界線は消す */
+.search-pill{transition:background .15s}
+.search-pill:focus-within{background:#ebebeb}
+.search-part,.region-part{border-radius:100px;transition:background .15s,box-shadow .15s}
+.search-pill:focus-within .region-part,.search-pill:focus-within .search-filter-part{border-left-color:transparent}
+.search-part:focus-within,.region-part:focus-within{background:#fff;box-shadow:0 6px 20px #0003;z-index:1}
+.search-pill:focus-within .search-part:not(:focus-within):hover,.search-pill:focus-within .region-part:not(:focus-within):hover{background:#ddd}
+.search-pill:not(:focus-within) .search-part:hover,.search-pill:not(:focus-within) .region-part:hover,.search-pill:not(:focus-within) .search-filter-part:hover{background:#ebebeb}
+.search-filter-part{border-radius:100px;transition:background .15s}
+.search-part input:focus-visible,.region-part input:focus-visible{outline:none}
+.search-part input::-webkit-search-cancel-button,.region-part input::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
+.search-part input::placeholder,.region-part input::placeholder{color:#6a6a6a}
+.search-pill:focus-within .search-submit{width:auto;padding:0 16px 0 14px;border-radius:32px;gap:8px}
+.search-pill:focus-within .search-submit::after{content:'検索';font-size:.9375rem;font-weight:600}
+/* 候補パネル：角丸32px・大きな影・48pxのアイコンタイル・見出しと補足 */
+.suggest-list{position:absolute;left:-8px;top:calc(100% + 14px);z-index:30;width:min(440px,90vw);background:#fff;border:0;border-radius:32px;box-shadow:0 8px 28px #00000038;padding:24px 16px 16px;margin:0;list-style:none;max-height:min(480px,62vh);overflow:auto;text-align:left}
+.suggest-head{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.8125rem;color:#222;font-weight:600;padding:0 16px 10px}
+.suggest-head:not(:first-child){padding-top:14px}
+.suggest-head .text-action{font-size:.8125rem;font-weight:500;min-height:24px;padding:0;color:#6a6a6a}
+.suggest-list [role=option] button{display:flex;align-items:center;gap:16px;width:100%;text-align:left;padding:8px 16px;border-radius:12px;font-size:.9375rem;min-height:64px;color:#222;background:none;border:0;font-weight:400}
 .suggest-list [role=option] button:hover,.suggest-list [role=option][aria-selected=true] button{background:#f0f0f0}
-.suggest-list [role=option] svg{color:#717171;flex-shrink:0}
-.suggest-empty{padding:10px 12px;font-size:.875rem;color:#6a6a6a}
-.search-note{font-size:.875rem;color:#6a6a6a;margin:-10px 0 18px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}
-.search-note .text-action{font-size:.875rem;min-height:28px;padding:0;text-decoration:underline;text-underline-offset:3px}
-.facet-chips{margin:0 0 14px}
-.facet-chips button b{font-weight:500;color:#717171;margin-left:6px;font-size:.75rem}
+.suggest-icon{width:48px;height:48px;border-radius:12px;background:#f0f0f0;border:1px solid #e6e6e6;display:grid;place-items:center;color:#222;flex-shrink:0}
+.suggest-list [role=option] button:hover .suggest-icon,.suggest-list [role=option][aria-selected=true] .suggest-icon{background:#fff}
+.suggest-text{display:grid;gap:3px;min-width:0}
+.suggest-text strong{font-weight:500;font-size:.9375rem;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.suggest-text small{font-size:.75rem;color:#6a6a6a;line-height:1.3}
+.suggest-empty{padding:10px 16px;font-size:.875rem;color:#6a6a6a}
+/* 同義語の注記と内訳チップ */
+.search-note{font-size:.875rem;color:#6a6a6a;margin:-12px 0 16px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;line-height:1.6}
+.search-note .text-action{font-size:.875rem;min-height:28px;padding:0;color:#222;text-decoration:underline;text-underline-offset:3px}
+.facet-chips{margin:0 0 12px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:2px 0;gap:8px}
+.facet-chips::-webkit-scrollbar{display:none}
+.facet-chips button{flex-shrink:0;border:1px solid #ddd;border-radius:30px;padding:0 16px;min-height:40px;font-size:.875rem;font-weight:500;color:#222;background:#fff;transition:border-color .15s,background .15s,transform .1s}
+.facet-chips button:hover{border-color:#222;background:#f7f7f7}
+.facet-chips button:active{transform:scale(.96)}
+.facet-chips button[aria-pressed=true]{background:#222;color:#fff;border-color:#222}
+.facet-chips button b{font-weight:400;color:#6a6a6a;margin-left:6px;font-size:.8125rem}
 .facet-chips button[aria-pressed=true] b{color:#ddd}
-.card-snippet{font-size:.8125rem;color:#6a6a6a;line-height:1.6;margin:4px 0 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.card-snippet mark{background:#fff3c4;color:#222;padding:0 1px;border-radius:2px}
-.relax-list{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;margin:-30px 0 40px}
-.relax-list>span{width:100%;text-align:center;font-size:.875rem;color:#6a6a6a;margin-bottom:4px}
-.relax-list button{font-size:.875rem;min-height:40px}
-.relax-list button b{font-weight:600;margin-left:8px}
-.date-presets{margin-bottom:16px}
-.date-presets button{font-size:.8125rem;padding:6px 14px}
-@media(max-width:760px){.suggest-list{left:-14px;min-width:min(340px,calc(100vw - 40px))}.search-note{font-size:.8125rem}.card-snippet{display:none}.relax-list{margin-top:-20px}}
+.facet-chips+.facet-chips{margin-top:-2px}
+.facet-chips+.record-grid,.facet-chips+.loading-grid{margin-top:20px}
+/* 抜粋 */
+.card-snippet{font-size:.8125rem;color:#6a6a6a;line-height:1.6;margin:2px 0 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-snippet mark{background:#fff0b3;color:#222;padding:0 2px;border-radius:3px}
+/* 0件の提案 */
+.relax-list{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:-40px 0 48px;max-width:720px}
+.relax-list>span{width:100%;font-size:.875rem;color:#6a6a6a;margin-bottom:2px}
+.relax-list button{font-size:.875rem;min-height:44px;border:1px solid #ddd;border-radius:30px;padding:0 18px;font-weight:500;background:#fff;color:#222;transition:border-color .15s,background .15s}
+.relax-list button:hover{border-color:#222;background:#f7f7f7}
+.relax-list button b{font-weight:600;margin-left:10px}
+/* 絞り込みモーダル：中央の題名と×、区切り線、トグルスイッチ、下部固定の「すべてクリア」と黒い表示ボタン */
+.filter-dialog{padding:0;width:780px;border-radius:12px;box-shadow:0 8px 28px #0004}
+.filter-dialog .dialog-head{position:sticky;top:0;z-index:2;background:#fff;margin:0;padding:0 24px;min-height:64px;justify-content:center;align-items:center;border-bottom:1px solid #ebebeb}
+.filter-dialog .dialog-head h2{font-size:1rem;font-weight:600;margin:0}
+.filter-dialog .close-x{position:absolute;left:16px;top:16px;width:32px;height:32px;min-height:32px;border-radius:50%;display:grid;place-items:center;padding:0;color:#222;background:none;border:0}
+.filter-dialog .close-x:hover{background:#f7f7f7}
+.filter-dialog .filter-form{padding:8px 24px 0;margin:0}
+.filter-dialog .filter-form section{padding:28px 0;border-bottom:1px solid #ebebeb}
+.filter-dialog .filter-form section:first-of-type{padding-top:20px}
+.filter-dialog .filter-form section:last-of-type{border-bottom:0}
+.filter-dialog .filter-form h3{font-size:1.125rem;font-weight:600;margin:0 0 18px}
+.filter-dialog .choice-grid{gap:10px}
+.filter-dialog .choice-grid button{min-height:40px;padding:0 18px;font-size:.875rem;font-weight:500;color:#222;transition:border-color .15s,background .15s}
+.filter-dialog .choice-grid button:hover{border-color:#222;background:#f7f7f7}
+.filter-dialog .choice-grid button[aria-pressed=true]{background:#222;color:#fff;border-color:#222}
+.filter-dialog .date-presets{margin-bottom:18px}
+.filter-dialog .field{margin:0}
+.filter-dialog .field>span{font-size:.875rem;font-weight:500}
+.filter-dialog .field input{border:1px solid #b0b0b0;border-radius:8px;min-height:52px;padding:12px 14px;font-size:1rem}
+.filter-dialog .field input:hover{border-color:#222}
+.filter-dialog .field input:focus-visible{outline:2px solid #222;outline-offset:0;border-color:#222}
+.filter-dialog .fields.two{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}
+.filter-dialog .fields.two .field{margin-top:12px}
+.filter-switch{padding-top:0}
+.filter-switch strong{font-size:1rem}
+.filter-switch input{appearance:none;-webkit-appearance:none;width:48px;height:32px;min-height:32px;border-radius:32px;background:#b0b0b0;position:relative;cursor:pointer;margin:0;transition:background .2s;border:0}
+.filter-switch input::before{content:'';position:absolute;top:2px;left:2px;width:28px;height:28px;border-radius:50%;background:#fff;box-shadow:0 2px 4px #0003;transition:transform .2s}
+.filter-switch input:checked{background:#222}
+.filter-switch input:checked::before{transform:translateX(16px)}
+.filter-switch input:focus-visible{outline:2px solid #222;outline-offset:3px}
+.filter-dialog .filter-footer{position:sticky;bottom:0;margin:0 -24px;padding:16px 24px;border-top:1px solid #ebebeb;background:#fff;z-index:2}
+.filter-dialog .filter-footer .text-action{font-size:1rem;font-weight:600;color:#222}
+.filter-dialog .filter-footer .primary{background:#222;color:#fff;border-radius:8px;min-height:48px;padding:0 24px;font-size:1rem;font-weight:600;transition:background .15s,transform .1s}
+.filter-dialog .filter-footer .primary:hover{background:#000}
+.filter-dialog .filter-footer .primary:active{transform:scale(.98)}
+.filter-dialog .filter-footer .primary:disabled{background:#ddd;color:#fff}
+.filter-dialog .validation{margin:10px 0 0}
+@media(max-width:760px){
+  .search-pill:focus-within .search-submit{width:42px;padding:0;border-radius:50%}.search-pill:focus-within .search-submit::after{content:none}
+  /* スマホ：ピルの「条件」区画をスライダーの丸ボタンにして、別行の絞り込みボタンは出さない */
+  .search-filter-part{display:grid;place-items:center;flex:0 0 auto;width:38px;height:38px;min-height:38px;padding:0;margin:0 6px 0 4px;border:1px solid #ddd;border-left:1px solid #ddd;border-radius:50%;background:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23222' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M4 7h7m4 0h5M4 17h3m4 0h9'/%3E%3Ccircle cx='13' cy='7' r='2'/%3E%3Ccircle cx='9' cy='17' r='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:18px}
+  .search-filter-part>span,.search-filter-part>strong{display:none}
+  .search-pill:focus-within .search-filter-part{border-color:transparent;background-color:#ebebeb}
+  .search-pill{padding:0 6px 0 2px}
+  .search-part{padding:9px 10px 9px 14px;flex:1.25}
+  .region-part{padding:9px 6px 9px 12px;flex:1}
+  .search-part input,.region-part input{text-overflow:ellipsis}
+  .search-area{padding:12px 0 16px}
+  .browse-controls{display:none}
+  .suggest-list{left:-14px;width:calc(100vw - 36px);border-radius:24px;padding:16px 8px 8px;top:calc(100% + 12px)}
+  .suggest-list [role=option] button{min-height:56px;gap:12px}
+  .suggest-icon{width:40px;height:40px;border-radius:10px}
+  .search-note{font-size:.8125rem;margin-top:-6px}
+  .card-snippet{display:none}
+  .relax-list{margin-top:-24px}
+  .relax-list button{min-height:40px;font-size:.8125rem;padding:0 14px}
+  .filter-dialog{width:100%;max-width:100%;max-height:100dvh;height:100dvh;border-radius:0;margin:0}
+  .filter-dialog .filter-form{padding:0 24px}
+  .filter-dialog .filter-form section{padding:24px 0}
+  .filter-dialog .fields.two{grid-template-columns:1fr}
+  .filter-dialog .filter-footer{bottom:0;padding:14px 24px}
+}

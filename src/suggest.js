@@ -37,4 +37,6 @@ export function suggestRegions(input, { regions = [] } = {}) {
   return unique([...suggestPrefectures(n), ...unique(regions).filter(x => normalize(x).includes(n))]).slice(0, 8).map(value => ({ kind: 'region', value }))
 }
 export const SUGGEST_LABELS = { recent: '最近の検索', crop: '作物', issue: '課題', synonym: '関連する語', region: '地域' }
+export const SUGGEST_HINTS = { recent: '前に探した語', crop: '作物で探す', issue: '課題で探す', synonym: '関連する語で探す', region: '地域で絞る' }
+export const SUGGEST_ICONS = { recent: 'clock', crop: 'sprout', issue: 'search', synonym: 'search', region: 'pin' }
 export const synonymCanonicals = () => SYNONYM_GROUPS.map(g => g[0])

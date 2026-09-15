@@ -19,7 +19,7 @@ export default function FilterDialog({ filters, onApply, onClose, countFor = nul
   const today = new Date()
   const presetOn = key => { const p = datePreset(key, today); return draft.from === p.from && draft.to === p.to }
   const submitLabel = !countFor || count.n === null && !count.loading ? 'この条件で表示' : count.loading ? '件数を確認中…' : count.n === 0 ? '該当なし（0件）' : `${count.n}件を表示`
-  return <Dialog title="絞り込み" onClose={onClose}><form className="filter-form" onSubmit={e => { e.preventDefault(); if (!invalidDates) { onApply(draft); onClose() } }}>
+  return <Dialog title="絞り込み" onClose={onClose} className="filter-dialog" closeIcon><form className="filter-form" onSubmit={e => { e.preventDefault(); if (!invalidDates) { onApply(draft); onClose() } }}>
     <section><h3>分類</h3><div className="choice-grid">{[['all', 'すべて'], ...Object.entries(KINDS)].map(([value, label]) => <button key={value} type="button" aria-pressed={draft.kind === value} onClick={() => patch({ kind: value })}>{label}</button>)}</div></section>
     <section><Field label="作物"><input value={draft.crop} maxLength={80} placeholder="例：ブロッコリー" onChange={e => patch({ crop: e.target.value })} /></Field></section>
     <section><h3>記録日</h3><div className="choice-grid date-presets">{DATE_PRESETS.map(([key, label]) => <button key={key} type="button" aria-pressed={presetOn(key)} onClick={() => patch(datePreset(key, today))}>{label}</button>)}</div><div className="fields two"><Field label="開始日"><input type="date" value={draft.from} onChange={e => patch({ from: e.target.value })} /></Field><Field label="終了日"><input type="date" value={draft.to} onChange={e => patch({ to: e.target.value })} /></Field></div>{invalidDates && <p className="validation">終了日は開始日以降にしてください。</p>}</section>

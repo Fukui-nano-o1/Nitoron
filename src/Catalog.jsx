@@ -6,7 +6,7 @@ import { KINDS, PHASES, number, formatNumber } from './domain.js'
 import { imageAttachments } from './attachment-domain.js'
 import { countFilters, EMPTY_FILTERS, SORTS, snippet, relaxations } from './search.js'
 import { expandQuery } from './synonyms.js'
-import { readRecent, rememberSearch, clearRecent, suggestKeywords, suggestRegions, SUGGEST_LABELS } from './suggest.js'
+import { readRecent, rememberSearch, clearRecent, suggestKeywords, suggestRegions, SUGGEST_LABELS, SUGGEST_HINTS, SUGGEST_ICONS } from './suggest.js'
 import { SEARCH_ENABLED } from './flags.js'
 import { Empty } from './ui.jsx'
 // 候補の一覧（キーワード・地域で共用）。マウス操作は onMouseDown で入力のフォーカスを保つ。
@@ -19,7 +19,7 @@ function SuggestList({ id, items, cursor, onPick, onClear, emptyText }) {
       const head = item.kind !== lastKind ? item.kind : null; lastKind = item.kind
       return <React.Fragment key={`${item.kind}:${item.value}`}>
         {head && <li className="suggest-head" role="presentation">{SUGGEST_LABELS[head]}{head === 'recent' && onClear && <button type="button" className="text-action" onMouseDown={e => e.preventDefault()} onClick={onClear}>履歴を消す</button>}</li>}
-        <li role="option" id={`${id}-${i}`} aria-selected={cursor === i}><button type="button" tabIndex={-1} onMouseDown={e => e.preventDefault()} onClick={() => onPick(item)}><Icon name={item.kind === 'recent' ? 'clock' : 'search'} size={15} />{item.value}</button></li>
+        <li role="option" id={`${id}-${i}`} aria-selected={cursor === i}><button type="button" tabIndex={-1} onMouseDown={e => e.preventDefault()} onClick={() => onPick(item)}><span className="suggest-icon"><Icon name={SUGGEST_ICONS[item.kind] || 'search'} size={22} /></span><span className="suggest-text"><strong>{item.value}</strong><small>{SUGGEST_HINTS[item.kind]}</small></span></button></li>
       </React.Fragment>
     })}
   </ul>

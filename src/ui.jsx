@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useId } from 'react'
-export function Dialog({ title, children, onClose, wide = false, className = '' }) {
+import Icon from './Icon.jsx'
+export function Dialog({ title, children, onClose, wide = false, className = '', closeIcon = false }) {
   const ref = useRef(null)
   const titleId = useId()
   useEffect(() => {
@@ -8,7 +9,7 @@ export function Dialog({ title, children, onClose, wide = false, className = '' 
     return () => { dialog.close(); previous?.focus?.() }
   }, [])
   return <dialog ref={ref} className={`dialog ${wide ? 'wide' : ''} ${className}`} aria-labelledby={titleId} onCancel={e => { e.preventDefault(); onClose() }} onClick={e => { if (e.target === ref.current) { const r = ref.current.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) onClose() } }}>
-    <div className="dialog-head"><h2 id={titleId}>{title}</h2><button className="quiet" onClick={onClose} aria-label="閉じる">閉じる</button></div>{children}
+    <div className="dialog-head"><h2 id={titleId}>{title}</h2>{closeIcon ? <button className="quiet close-x" onClick={onClose} aria-label="閉じる"><Icon name="close" size={16} /></button> : <button className="quiet" onClick={onClose} aria-label="閉じる">閉じる</button>}</div>{children}
   </dialog>
 }
 export function Field({ label, help, children }) {
