@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-09-15T16:18:54.044Z",
+  "checkedAt": "2026-09-15T17:48:17.354Z",
   "mode": "mock Auth and data only; no real email",
   "browser": "153.0.8010.0",
   "baseUrl": "http://127.0.0.1:4175",
-  "passed": 20,
+  "passed": 24,
   "failed": 0,
   "results": [
     {
@@ -68,6 +68,22 @@
     },
     {
       "name": "allowed email OTP has create_user=false and retains route",
+      "passed": true
+    },
+    {
+      "name": "OTP failure shown without another send: over_email_send_rate_limit",
+      "passed": true
+    },
+    {
+      "name": "OTP failure shown without another send: otp_disabled",
+      "passed": true
+    },
+    {
+      "name": "OTP failure shown without another send: hook_timeout",
+      "passed": true
+    },
+    {
+      "name": "OTP failure shown without another send: BREVO_IP_BLOCKED",
       "passed": true
     },
     {

@@ -35,7 +35,7 @@ if (devServer) await new Promise((resolve, reject) => {
   devServer.stderr.on('data', data => process.stderr.write(data))
 })
 const browser = await chromium.launch({ headless: true, executablePath: process.env.CHROMIUM_PATH || '/tmp/chromium', args: ['--no-sandbox'] })
-async function setup({ cached = null, serverUser = owner, width = 390 } = {}) {
+async function setup({ cached = null, serverUser = owner, width = 390, otpError = null } = {}) {
   const context = await browser.newContext({ viewport: { width, height: 844 } })
   const tracking = { rest: [], auth: [], unexpected: [], errors: [], holdUser: false, release: null }
   await context.addInitScript(({ cached, key }) => {
@@ -46,10 +46,11 @@ async function setup({ cached = null, serverUser = owner, width = 390 } = {}) {
     const request = route.request(), url = new URL(request.url())
     if (url.origin === new URL(BASE).origin) return route.continue()
     if (url.hostname !== AUTH_HOST) { tracking.unexpected.push(url.origin); return route.abort() }
-    const headers = { 'content-type': 'application/json', 'access-control-allow-origin': new URL(BASE).origin, 'access-control-allow-headers': '*', 'access-control-expose-headers': 'content-range', 'content-range': '0-0/1' }
+    const headers = { 'content-type': 'application/json', 'access-control-allow-origin': new URL(BASE).origin, 'access-control-allow-headers': '*', 'access-control-expose-headers': 'content-range,x-supabase-api-version', 'x-supabase-api-version': '2024-01-01', 'content-range': '0-0/1' }
     if (request.method() === 'OPTIONS') return route.fulfill({ status: 200, headers, body: '{}' })
     if (url.pathname.startsWith('/auth/v1/')) {
       tracking.auth.push({ path: url.pathname, body: request.postDataJSON() })
+      if (url.pathname.endsWith('/otp') && otpError) return route.fulfill({ status: otpError.status, headers, body: JSON.stringify({ code: otpError.code, message: otpError.message }) })
       if (url.pathname.endsWith('/user')) {
         if (tracking.holdUser) await new Promise(resolve => { tracking.release = resolve })
         return route.fulfill({ status: serverUser ? 200 : 401, headers, body: JSON.stringify(serverUser || { code: 'bad_jwt', message: 'Mock expired session' }) })
@@ -98,6 +99,26 @@ try {
   })
   assert.deepEqual(anon.tracking.errors, []); assert.deepEqual(anon.tracking.unexpected, [])
   await anon.context.close()
+  for(const error of [
+    {status:429,code:'over_email_send_rate_limit',message:'Too many requests',expected:'over_email_send_rate_limit'},
+    {status:400,code:'otp_disabled',message:'OTP disabled',expected:'otp_disabled'},
+    {status:500,code:'hook_timeout',message:'Hook timed out',expected:'hook_timeout'},
+    {status:500,code:'unexpected_failure',message:'Private upstream details（BREVO_IP_BLOCKED / 401）',expected:'BREVO_IP_BLOCKED'},
+  ]) await check(`OTP failure shown without another send: ${error.expected}`, async()=>{
+    const h=await setup({otpError:error})
+    await h.page.goto(BASE+'/#/discover')
+    await h.page.getByLabel('メールアドレス',{exact:true}).fill(owner.email)
+    await h.page.getByRole('button',{name:'ログインメールを送る',exact:true}).click()
+    const alert=h.page.getByRole('alert'); await alert.waitFor()
+    const message=await alert.innerText()
+    assert(message.includes(error.expected)); assert(message.includes(`HTTP ${error.status}`))
+    assert(!message.includes('Private upstream details'))
+    assert.equal(h.tracking.auth.filter(x=>x.path.endsWith('/otp')).length,1)
+    assert.equal(h.tracking.rest.length,0)
+    assert.equal(await h.page.getByLabel('メールの確認コード',{exact:true}).count(),0)
+    assert.deepEqual(h.tracking.errors,[]); assert.deepEqual(h.tracking.unexpected,[])
+    await h.context.close()
+  })
   const forged = await setup({ cached: session(), serverUser: { ...owner, id: '99999999-9999-4999-8999-999999999999', email: 'other@example.test' } })
   await check('forged owner cache rejected against Auth user', async () => {
     await forged.page.goto(BASE + '/#/public/' + ID)

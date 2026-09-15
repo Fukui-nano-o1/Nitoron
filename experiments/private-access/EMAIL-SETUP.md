@@ -82,6 +82,30 @@ Request one owner login code, then inspect the corresponding function invocation
 and `private_login_email` log. If accepted but not received, inspect Brevo's
 transactional delivery log next. Do not remove the recipient or signature checks.
 
+## Browser error visibility follow-up (2026-09-16 JST)
+
+The owner's 02:39/02:40 screenshots show a generic send error and Edge logs whose
+newest displayed entry is 02:14:29, despite a reported request at 02:38. This does
+not prove whether the request reached the hook; log refresh/filter/ingestion and
+Auth rejection before hook execution remain distinct possibilities.
+
+Code inspection found `sendPrivateLogin` discarded every Auth error and displayed
+the same retry message. The prior hook-only change did not fix this. The browser
+now displays an allowlisted diagnostic code plus HTTP status, without echoing raw
+provider messages, keys, OTPs, URLs or identities. No automatic resend is added.
+
+The installed auth-js also drops `code` for 5xx responses while keeping status and
+message. A narrow fetch wrapper preserves known codes in the error message only
+for POST /auth/v1/otp on the configured Supabase origin. Request payload, headers,
+target, status and authorization are unchanged; other responses are passed through.
+
+The browser verification now checks four actual SDK-to-UI failures: Auth 429,
+OTP disabled, hook timeout, and explicit Brevo IP rejection. All 24 browser checks
+pass with mocked Auth/data and no real emails. The user's real 02:38 failure is
+not yet identified. Use a newly built deployment's Visit link and share the code
+displayed after a single send; if there is only an unknown 5xx code, inspect the
+corresponding Auth log as well as the function's Invocations tab.
+
 References checked 2026-09-16 JST:
 
 - https://supabase.com/docs/guides/auth/auth-hooks/send-email-hook
@@ -90,6 +114,8 @@ References checked 2026-09-16 JST:
 - https://developers.brevo.com/docs/send-a-transactional-email
 - https://developers.brevo.com/docs/ip-security
 - https://supabase.com/docs/guides/troubleshooting/why-supabase-edge-functions-cannot-provide-static-egress-ips-for-whitelisting-3d78b0
+- https://supabase.com/docs/guides/auth/debugging/error-codes
+- https://supabase.com/docs/guides/auth/rate-limits
 
 The September 14 Nitoron SMTP screenshot identified Brevo (`smtp-relay.brevo.com`).
 The current provider account and sender delivery status cannot be inspected with

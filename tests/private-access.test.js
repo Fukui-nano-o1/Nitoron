@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { PRIVATE_USER_ID, isPrivateEmail, isPrivateUser, sendPrivateLogin, verifyPrivateLogin, watchPrivateAccess } from '../src/private-access.mjs'
+import { PRIVATE_USER_ID, isPrivateEmail, isPrivateUser, sendPrivateLogin, verifyPrivateLogin, watchPrivateAccess, loginSendError, privateAuthFetch } from '../src/private-access.mjs'
 
 const owner = { id: PRIVATE_USER_ID, email: 't5fki6643qty@gmail.com', is_anonymous: false, email_confirmed_at: '2026-09-15T00:00:00Z' }
 const ownerSession = { access_token: 'fixture-token', user: owner }
@@ -43,6 +43,47 @@ test('送信と再送は許可先のみ・新規登録禁止、コード確認�
   assert.deepEqual(sent, Array(2).fill({ email: owner.email, options: { shouldCreateUser: false, emailRedirectTo: 'https://example.test/#/public/one' } }))
   await verifyPrivateLogin(auth, owner.email, ' 123456 ')
   assert.deepEqual(verified, [{ email: owner.email, token: '123456', type: 'email' }])
+})
+
+test('Hookに到達しない認証エラーもコードとHTTP状態を表示し、自動再送しない', async () => {
+  for(const code of ['over_email_send_rate_limit','over_request_rate_limit','otp_disabled','email_address_not_authorized','hook_timeout']) {
+    let calls=0
+    const status=code.startsWith('over_') ? 429 : 500
+    await assert.rejects(sendPrivateLogin({signInWithOtp:async()=>{calls++;return {error:{code,status,message:'sensitive raw error'}}}},owner.email,'https://example.test'), error=>{
+      assert.match(error.message,new RegExp(code)); assert.match(error.message,new RegExp(`HTTP ${status}`))
+      assert(!error.message.includes('sensitive raw error')); return true
+    })
+    assert.equal(calls,1)
+  }
+})
+test('Hookの診断コードを表示し、送信制限や配送側401をIP拒否と誤認しない', () => {
+  const ip=loginSendError({status:500,code:'unexpected_failure',message:'Brevoが送信元IPを拒否しました（BREVO_IP_BLOCKED / 401）'})
+  assert.match(ip.message,/BREVO_IP_BLOCKED/); assert.match(ip.message,/HTTP 500/); assert.match(ip.message,/配送 401/)
+  const other=loginSendError({status:500,code:'unexpected_failure',message:'BREVO_REJECTED / 401'})
+  assert.match(other.message,/BREVO_REJECTED/); assert(!other.message.includes('IP拒否'))
+  const rate=loginSendError({status:429,code:'over_email_send_rate_limit'})
+  assert(!rate.message.includes('Brevo')); assert(!rate.message.includes('IP'))
+})
+test('不明なエラーや例外から秘密情報・URL・メール・確認コードを表示しない', async () => {
+  const sensitive='key-secret-123456 t5fki6643qty@gmail.com https://example.test?token=secret'
+  const errors=[{status:400,code:sensitive,message:sensitive},{status:500,code:'unexpected_failure',message:sensitive+'（HOOK_SIGNATURE）'},new TypeError(sensitive)]
+  for(const original of errors) {
+    await assert.rejects(sendPrivateLogin({signInWithOtp:async()=>{throw original}},owner.email,'https://example.test'), error=>{
+      for(const value of ['key-secret','123456','gmail.com','https://']) assert(!error.message.includes(value))
+      return true
+    })
+  }
+})
+test('認証ライブラリが5xxのcodeを省く場合もOTPエラーだけを保持し、他の応答・送信内容は変えない', async()=>{
+  const body={code:'hook_timeout',message:'secret raw value'}, calls=[]
+  const wrap=privateAuthFetch('https://example.test',async(...args)=>{calls.push(args);return Response.json(body,{status:500})})
+  const options={method:'POST',headers:{apikey:'fixture-key'},body:'fixture-request'}
+  const response=await wrap('https://example.test/auth/v1/otp',options), data=await response.json()
+  const displayed=loginSendError({name:'AuthRetryableFetchError',status:response.status,message:data.message})
+  assert.match(displayed.message,/hook_timeout/); assert.match(displayed.message,/HTTP 500/)
+  assert(!JSON.stringify(data).includes('secret raw value')); assert.equal(calls.length,1)
+  assert.equal(calls[0][1],options)
+  for(const url of ['https://example.test/rest/v1/private','https://other.test/auth/v1/otp']) assert.deepEqual(await (await wrap(url,options)).json(),body)
 })
 
 test('キャッシュが本人を名乗ってもgetUser完了前には一度も開かない', async () => {
