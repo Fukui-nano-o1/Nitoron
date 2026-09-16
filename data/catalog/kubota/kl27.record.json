@@ -59,6 +59,16 @@
           "id": "259ff054-010",
           "type": "text",
           "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "259ff054-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "259ff054-012",
+          "type": "text",
+          "text": "掲載写真：KL27の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
         }
       ],
       "meta": {
@@ -73,7 +83,7 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "",
+        "coverUrl": "https://www.noukinavi.com/html/upload/save_image/00200100001/4062/0_detail.jpg",
         "summary": "27馬力の旧型トラクタ。公式販売年度検索のKL27は1999年〜2003年の販売。KL27の取扱説明書を参照できます。",
         "issue": "",
         "hypothesis": "",
@@ -109,6 +119,12 @@
             "id": "259ff054-src-manual",
             "title": "取扱説明書 KL27",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c2626d850c80ea07e7511bbae4c76f4b",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "259ff054-src-photo",
+            "title": "写真：ノウキナビ クボタ KL27（中古実機）",
+            "url": "https://www.noukinavi.com/shop_use/products/detail/4062",
             "date": "2026-09-16"
           }
         ],

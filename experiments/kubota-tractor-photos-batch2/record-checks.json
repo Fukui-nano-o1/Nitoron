@@ -4,8 +4,8 @@
   "duplicateCount": 0,
   "checks": [
     {
-      "model": "GL23",
-      "id": "8b3015c8-1e6c-4b93-8940-a0678975dd30",
+      "model": "KL23",
+      "id": "bae731f6-771c-464d-8a2f-c4fa9db239d3",
       "duplicate": false,
       "roundTrip": true,
       "searchable": true,
@@ -13,8 +13,8 @@
       "photo": true
     },
     {
-      "model": "GL32",
-      "id": "104fd350-6d78-4977-81b9-e9c5d3ce460a",
+      "model": "KL25",
+      "id": "07a4533c-88ca-4451-817e-fa00eeaea77d",
       "duplicate": false,
       "roundTrip": true,
       "searchable": true,
@@ -22,8 +22,8 @@
       "photo": true
     },
     {
-      "model": "KL21",
-      "id": "761988ef-dd88-430a-8aaf-ac3134c9a138",
+      "model": "KL30",
+      "id": "3b44565b-e902-43dd-8d12-25fdbeab025d",
       "duplicate": false,
       "roundTrip": true,
       "searchable": true,
@@ -31,8 +31,8 @@
       "photo": true
     },
     {
-      "model": "KL27",
-      "id": "259ff054-3131-44fb-8a49-2b190faa2838",
+      "model": "KL36",
+      "id": "83a04806-d6cd-4723-888a-4cd070bd48b8",
       "duplicate": false,
       "roundTrip": true,
       "searchable": true,
@@ -40,8 +40,8 @@
       "photo": true
     },
     {
-      "model": "KL33",
-      "id": "b471b2be-8bb5-4ead-892d-a95dc3111d07",
+      "model": "KL43",
+      "id": "081b57dd-7672-4fa6-8e52-6f3d4b79476d",
       "duplicate": false,
       "roundTrip": true,
       "searchable": true,
@@ -49,8 +49,8 @@
       "photo": true
     },
     {
-      "model": "KT24",
-      "id": "34d5dfa0-e9d9-4c17-8377-405ae4496673",
+      "model": "KT20",
+      "id": "ad0847cb-1422-4ea6-8495-d0085f0634eb",
       "duplicate": false,
       "roundTrip": true,
       "searchable": true,
@@ -58,8 +58,8 @@
       "photo": true
     },
     {
-      "model": "GB14",
-      "id": "5be0c623-cfe9-4fef-81c6-c6cf14d831e4",
+      "model": "KT22",
+      "id": "cb655ab0-e404-4f27-8850-e3d2153a0a56",
       "duplicate": false,
       "roundTrip": true,
       "searchable": true,
@@ -67,8 +67,8 @@
       "photo": true
     },
     {
-      "model": "GT21",
-      "id": "22f332e7-7596-4480-8c65-e2369e59ccc2",
+      "model": "KT27",
+      "id": "c65a466a-a379-4642-85a6-9ee879762757",
       "duplicate": false,
       "roundTrip": true,
       "searchable": true,
@@ -76,8 +76,8 @@
       "photo": true
     },
     {
-      "model": "FT25",
-      "id": "c10a1feb-d5cb-4ace-8196-43494a046254",
+      "model": "GB16",
+      "id": "f9bd39ec-32fa-4415-876e-1ed727853f01",
       "duplicate": false,
       "roundTrip": true,
       "searchable": true,
@@ -85,8 +85,8 @@
       "photo": true
     },
     {
-      "model": "MZ65",
-      "id": "92717297-efc9-4115-865c-48cbce3d1726",
+      "model": "GT19",
+      "id": "a6ba7c89-027a-4f05-87ce-6d56d64b4142",
       "duplicate": false,
       "roundTrip": true,
       "searchable": true,

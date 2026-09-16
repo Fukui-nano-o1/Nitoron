@@ -4,71 +4,71 @@
   "exportedAt": "2026-09-16T00:00:00.000Z",
   "records": [
     {
-      "id": "34d5dfa0-e9d9-4c17-8377-405ae4496673",
-      "title": "【カタログ解説】クボタ KT24 旧型モデル（トラクタ）",
+      "id": "cb655ab0-e404-4f27-8850-e3d2153a0a56",
+      "title": "【カタログ解説】クボタ KT22 旧型モデル（トラクタ）",
       "category": "トラクタ",
       "type": "メモ",
       "date": "2026-09-16",
       "blocks": [
         {
-          "id": "34d5dfa0-001",
+          "id": "cb655ab0-001",
           "type": "h2",
           "text": "製品の概要"
         },
         {
-          "id": "34d5dfa0-002",
+          "id": "cb655ab0-002",
           "type": "text",
-          "text": "24馬力の旧型トラクタ。公式販売年度検索のKT24は2002年〜2005年の販売。KT24の取扱説明書を参照できます。"
+          "text": "22馬力の旧型トラクタ。公式販売年度検索のKT22は2002年〜2005年の販売。KT22の取扱説明書を参照できます。"
         },
         {
-          "id": "34d5dfa0-003",
+          "id": "cb655ab0-003",
           "type": "bullet",
-          "text": "馬力：24馬力（公式取扱説明書検索）"
+          "text": "馬力：22馬力（公式取扱説明書検索）"
         },
         {
-          "id": "34d5dfa0-004",
+          "id": "cb655ab0-004",
           "type": "bullet",
-          "text": "販売期間：2002年〜2005年（公式販売年度検索・KT24）"
+          "text": "販売期間：2002年〜2005年（公式販売年度検索・KT22）"
         },
         {
-          "id": "34d5dfa0-005",
+          "id": "cb655ab0-005",
           "type": "h2",
           "text": "対象の型式"
         },
         {
-          "id": "34d5dfa0-006",
+          "id": "cb655ab0-006",
           "type": "text",
-          "text": "KT24"
+          "text": "KT22"
         },
         {
-          "id": "34d5dfa0-007",
+          "id": "cb655ab0-007",
           "type": "h2",
           "text": "取扱説明書"
         },
         {
-          "id": "34d5dfa0-008",
+          "id": "cb655ab0-008",
           "type": "text",
-          "text": "KT24の公式取扱説明書は、出典の案内ページから確認できます。"
+          "text": "KT22の公式取扱説明書は、出典の案内ページから確認できます。"
         },
         {
-          "id": "34d5dfa0-009",
+          "id": "cb655ab0-009",
           "type": "h2",
           "text": "確認した範囲"
         },
         {
-          "id": "34d5dfa0-010",
+          "id": "cb655ab0-010",
           "type": "text",
           "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
         },
         {
-          "id": "34d5dfa0-011",
+          "id": "cb655ab0-011",
           "type": "h2",
           "text": "写真について"
         },
         {
-          "id": "34d5dfa0-012",
+          "id": "cb655ab0-012",
           "type": "text",
-          "text": "掲載写真：KT24の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+          "text": "掲載写真：KT22の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
         }
       ],
       "meta": {
@@ -83,8 +83,8 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "https://www.noukinavi.com/html/upload/save_image/00200100001/7192/0_detail.jpg",
-        "summary": "24馬力の旧型トラクタ。公式販売年度検索のKT24は2002年〜2005年の販売。KT24の取扱説明書を参照できます。",
+        "coverUrl": "https://www.noukinavi.com/html/upload/save_image/00200100001/2031/0_detail.jpg",
+        "summary": "22馬力の旧型トラクタ。公式販売年度検索のKT22は2002年〜2005年の販売。KT22の取扱説明書を参照できます。",
         "issue": "",
         "hypothesis": "",
         "action": "",
@@ -104,27 +104,27 @@
         "observations": [],
         "sources": [
           {
-            "id": "34d5dfa0-src-manual-index",
-            "title": "クボタ 取扱説明書検索 KT24（完全一致）",
-            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT24&searchType=3",
+            "id": "cb655ab0-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KT22（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT22&searchType=3",
             "date": "2026-09-16"
           },
           {
-            "id": "34d5dfa0-src-sales-index",
-            "title": "クボタ 販売年度検索 KT24",
-            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT24",
+            "id": "cb655ab0-src-sales-index",
+            "title": "クボタ 販売年度検索 KT22",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT22",
             "date": "2026-09-16"
           },
           {
-            "id": "34d5dfa0-src-manual",
-            "title": "取扱説明書 KT24",
-            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4f16c818875d9fcb6867c7bdc89be7eb",
+            "id": "cb655ab0-src-manual",
+            "title": "取扱説明書 KT22",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=390e982518a50e280d8e2b535462ec1f",
             "date": "2026-09-16"
           },
           {
-            "id": "34d5dfa0-src-photo",
-            "title": "写真：ノウキナビ クボタ KT24（中古実機）",
-            "url": "https://www.noukinavi.com/shop_use/products/detail/7192",
+            "id": "cb655ab0-src-photo",
+            "title": "写真：ノウキナビ クボタ KT22（中古実機）",
+            "url": "https://www.noukinavi.com/shop_use/products/detail/2031",
             "date": "2026-09-16"
           }
         ],

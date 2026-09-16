@@ -1,0 +1,53 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KT22",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "KT22"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "22馬力の旧型トラクタ。公式販売年度検索のKT22は2002年〜2005年の販売。KT22の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT22&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "2ea0301a68e69d67f3b5412170c2bad375a0200da66c0d4df5c5ffbaf6660064",
+      "result": {
+        "model": "KT22",
+        "category": "トラクタ",
+        "horsepower": "22馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT22",
+      "checkedAt": "2026-09-16",
+      "sha256": "c0046899dda2b79bd73bf61f9d4ca30f5a5ab8cb537c6c7d1d7d82cd07a45a6c",
+      "result": {
+        "model": "KT22",
+        "startYear": 2002,
+        "endYear": 2005
+      }
+    },
+    "manuals": [
+      {
+        "title": "KT22",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=390e982518a50e280d8e2b535462ec1f",
+        "checkedAt": "2026-09-16",
+        "sha256": "cf79add67d05e8ed1c74caebc6c09151fe308bb4c149c15d5e6ce2bbd8aa10c9"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KT22"
+}

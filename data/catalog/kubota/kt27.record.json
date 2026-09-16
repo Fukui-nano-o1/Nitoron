@@ -4,71 +4,71 @@
   "exportedAt": "2026-09-16T00:00:00.000Z",
   "records": [
     {
-      "id": "34d5dfa0-e9d9-4c17-8377-405ae4496673",
-      "title": "【カタログ解説】クボタ KT24 旧型モデル（トラクタ）",
+      "id": "c65a466a-a379-4642-85a6-9ee879762757",
+      "title": "【カタログ解説】クボタ KT27 旧型モデル（トラクタ）",
       "category": "トラクタ",
       "type": "メモ",
       "date": "2026-09-16",
       "blocks": [
         {
-          "id": "34d5dfa0-001",
+          "id": "c65a466a-001",
           "type": "h2",
           "text": "製品の概要"
         },
         {
-          "id": "34d5dfa0-002",
+          "id": "c65a466a-002",
           "type": "text",
-          "text": "24馬力の旧型トラクタ。公式販売年度検索のKT24は2002年〜2005年の販売。KT24の取扱説明書を参照できます。"
+          "text": "27馬力の旧型トラクタ。公式販売年度検索のKT27は2002年〜2005年の販売。KT27の取扱説明書を参照できます。"
         },
         {
-          "id": "34d5dfa0-003",
+          "id": "c65a466a-003",
           "type": "bullet",
-          "text": "馬力：24馬力（公式取扱説明書検索）"
+          "text": "馬力：27馬力（公式取扱説明書検索）"
         },
         {
-          "id": "34d5dfa0-004",
+          "id": "c65a466a-004",
           "type": "bullet",
-          "text": "販売期間：2002年〜2005年（公式販売年度検索・KT24）"
+          "text": "販売期間：2002年〜2005年（公式販売年度検索・KT27）"
         },
         {
-          "id": "34d5dfa0-005",
+          "id": "c65a466a-005",
           "type": "h2",
           "text": "対象の型式"
         },
         {
-          "id": "34d5dfa0-006",
+          "id": "c65a466a-006",
           "type": "text",
-          "text": "KT24"
+          "text": "KT27"
         },
         {
-          "id": "34d5dfa0-007",
+          "id": "c65a466a-007",
           "type": "h2",
           "text": "取扱説明書"
         },
         {
-          "id": "34d5dfa0-008",
+          "id": "c65a466a-008",
           "type": "text",
-          "text": "KT24の公式取扱説明書は、出典の案内ページから確認できます。"
+          "text": "KT27の公式取扱説明書は、出典の案内ページから確認できます。"
         },
         {
-          "id": "34d5dfa0-009",
+          "id": "c65a466a-009",
           "type": "h2",
           "text": "確認した範囲"
         },
         {
-          "id": "34d5dfa0-010",
+          "id": "c65a466a-010",
           "type": "text",
           "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
         },
         {
-          "id": "34d5dfa0-011",
+          "id": "c65a466a-011",
           "type": "h2",
           "text": "写真について"
         },
         {
-          "id": "34d5dfa0-012",
+          "id": "c65a466a-012",
           "type": "text",
-          "text": "掲載写真：KT24の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+          "text": "掲載写真：KT27の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
         }
       ],
       "meta": {
@@ -83,8 +83,8 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "https://www.noukinavi.com/html/upload/save_image/00200100001/7192/0_detail.jpg",
-        "summary": "24馬力の旧型トラクタ。公式販売年度検索のKT24は2002年〜2005年の販売。KT24の取扱説明書を参照できます。",
+        "coverUrl": "https://chuko-noki.com/new/wp/wp-content/uploads/KT27-12228-37-%E6%8A%9C%E7%B2%8B%E7%94%A8.jpg",
+        "summary": "27馬力の旧型トラクタ。公式販売年度検索のKT27は2002年〜2005年の販売。KT27の取扱説明書を参照できます。",
         "issue": "",
         "hypothesis": "",
         "action": "",
@@ -104,27 +104,27 @@
         "observations": [],
         "sources": [
           {
-            "id": "34d5dfa0-src-manual-index",
-            "title": "クボタ 取扱説明書検索 KT24（完全一致）",
-            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT24&searchType=3",
+            "id": "c65a466a-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KT27（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT27&searchType=3",
             "date": "2026-09-16"
           },
           {
-            "id": "34d5dfa0-src-sales-index",
-            "title": "クボタ 販売年度検索 KT24",
-            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT24",
+            "id": "c65a466a-src-sales-index",
+            "title": "クボタ 販売年度検索 KT27",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT27",
             "date": "2026-09-16"
           },
           {
-            "id": "34d5dfa0-src-manual",
-            "title": "取扱説明書 KT24",
-            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4f16c818875d9fcb6867c7bdc89be7eb",
+            "id": "c65a466a-src-manual",
+            "title": "取扱説明書 KT27",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a5e0ff62be0b08456fc7f1e88812af3d",
             "date": "2026-09-16"
           },
           {
-            "id": "34d5dfa0-src-photo",
-            "title": "写真：ノウキナビ クボタ KT24（中古実機）",
-            "url": "https://www.noukinavi.com/shop_use/products/detail/7192",
+            "id": "c65a466a-src-photo",
+            "title": "写真：スペース（中古農機具販売） クボタ KT27（中古実機）",
+            "url": "https://chuko-noki.com/31488/",
             "date": "2026-09-16"
           }
         ],

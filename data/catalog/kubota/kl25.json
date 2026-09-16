@@ -1,0 +1,53 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KL25",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "KL25"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "25馬力の旧型トラクタ。公式販売年度検索のKL25は1999年〜2003年の販売。KL25の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL25&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "be6997f3ea18cef4de474cf5e627fe4047667787e927bd8c9005c02473a76e54",
+      "result": {
+        "model": "KL25",
+        "category": "トラクタ",
+        "horsepower": "25馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL25",
+      "checkedAt": "2026-09-16",
+      "sha256": "0e310948704c1c3e436d48423411eedc9eeeb7d2bf473330df1a5706849c3604",
+      "result": {
+        "model": "KL25",
+        "startYear": 1999,
+        "endYear": 2003
+      }
+    },
+    "manuals": [
+      {
+        "title": "KL25",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43fa7f58b7eac7ac872209342e62e8f1",
+        "checkedAt": "2026-09-16",
+        "sha256": "aae8771f1dc73ea089e8d01d87a7247e3a99480a0b9448d8975f966c1c95cff7"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KL25"
+}

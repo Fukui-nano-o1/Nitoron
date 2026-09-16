@@ -1,4 +1,4 @@
-// 旧型機は公式の取説検索・販売年度検索で確認する。現行製品ページや写真を流用しない。
+// 旧型機の諸元は公式検索で確認し、基本型式を照合した中古実機写真だけを添える。
 import { emptyMeta } from '../src/domain.js'
 
 const modelKey = value => String(value || '').normalize('NFKC').toUpperCase().replace(/[-‐‑–—\s]/g, '')
@@ -6,7 +6,7 @@ const official = value => {
   try { const url = new URL(value); return url.protocol === 'https:' && url.hostname === 'agriculture.kubota.co.jp' ? url : null } catch { return null }
 }
 
-export function validateHistoricalOverview(entry, photo) {
+export function validateHistoricalOverview(entry, photo, expectedId) {
   const fail = message => { throw new Error(`${entry.series || 'catalog'}: ${message}`) }
   if (entry.schema !== 'nitoron-catalog/2' || entry.coverage !== 'historical-overview') fail('旧型製品の概要形式が必要です')
   if (entry.maker !== 'クボタ' || entry.category !== 'トラクタ') fail('クボタのトラクタが対象です')
@@ -26,11 +26,17 @@ export function validateHistoricalOverview(entry, photo) {
   if (entry.sources.manuals?.length !== 1) fail('対象型式の取扱説明書が必要です')
   const document = entry.sources.manuals[0], notice = official(document.url)
   if (document.title !== entry.series || notice?.pathname !== '/after-support/manual/notice.html' || !/^[a-f0-9]{32}$/.test(notice.searchParams.get('hash') || '') || document.checkedAt !== entry.checkedAt) fail('対象型式と取扱説明書の案内先が一致しません')
-  if (photo || entry.photoModel || entry.symptoms?.length || entry.machineRef) fail('この概要には未確認の写真・修理案内・3Dを付けません')
+  if (entry.symptoms?.length || entry.machineRef) fail('この概要には未確認の修理案内・3Dを付けません')
+  if (photo || entry.photoModel) {
+    if (!photo || !expectedId || photo.id !== expectedId || photo.model !== entry.series || entry.photoModel !== entry.series || photo.kind !== 'used-machine-photo') fail('写真と基本型式が一致しません')
+    let image, source
+    try { image = new URL(photo.url); source = new URL(photo.source.url) } catch { fail('写真と掲載元のURLが必要です') }
+    if (image.protocol !== 'https:' || source.protocol !== 'https:' || image.hostname !== source.hostname || !photo.source.title?.trim() || photo.source.date !== entry.checkedAt) fail('写真の掲載元・出典・確認日が一致しません')
+  }
 }
 
-export function buildHistoricalOverview(entry, id) {
-  validateHistoricalOverview(entry)
+export function buildHistoricalOverview(entry, id, photo) {
+  validateHistoricalOverview(entry, photo, id)
   let n = 0
   const block = (type, text) => ({ id: `${id.slice(0, 8)}-${String(++n).padStart(3, '0')}`, type, text })
   const manual = entry.sources.manualIndex, sales = entry.sources.salesIndex
@@ -42,17 +48,19 @@ export function buildHistoricalOverview(entry, id) {
     block('h2', '取扱説明書'), block('text', `${entry.series}の公式取扱説明書は、出典の案内ページから確認できます。`),
     block('h2', '確認した範囲'), block('text', `${entry.checkedAt}に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。`),
   ]
+  if (photo) blocks.push(block('h2', '写真について'), block('text', `掲載写真：${entry.photoModel}の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。`))
   const source = (key, title, url) => ({ id: `${id.slice(0, 8)}-src-${key}`, title, url, date: entry.checkedAt })
   return {
     id, title: `【カタログ解説】${entry.maker} ${entry.series} ${entry.productName}（${entry.category}）`,
     category: entry.category, type: 'メモ', date: entry.checkedAt, blocks,
     meta: { ...emptyMeta('trouble'), inputMode: 'free',
       author: `${entry.maker}カタログ解説（Nitoron運営・非公式）`, club: 'Nitoron / 4H Club', crop: entry.category,
-      summary: entry.summary, coverUrl: '',
+      summary: entry.summary, coverUrl: photo?.url || '',
       sources: [
         source('manual-index', `クボタ 取扱説明書検索 ${entry.series}（完全一致）`, manual.url),
         source('sales-index', `クボタ 販売年度検索 ${entry.series}`, sales.url),
         source('manual', `取扱説明書 ${entry.series}`, entry.sources.manuals[0].url),
+        ...(photo ? [photo.source] : []),
       ],
     },
   }

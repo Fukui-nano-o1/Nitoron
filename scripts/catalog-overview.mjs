@@ -9,7 +9,7 @@ export const catalogId = (maker, series) => {
 }
 
 export function validateOverview(entry, photo) {
-  if (entry.coverage === 'historical-overview') return validateHistoricalOverview(entry, photo)
+  if (entry.coverage === 'historical-overview') return validateHistoricalOverview(entry, photo, catalogId(entry.maker, entry.series))
   const fail = message => { throw new Error(`${entry.series || 'catalog'}: ${message}`) }
   if (entry.schema !== 'nitoron-catalog/2' || entry.coverage !== 'product-overview') fail('製品概要の形式が必要です')
   for (const key of ['maker', 'series', 'productName', 'category', 'summary', 'checkedAt', 'photoModel']) if (!entry[key]?.trim()) fail(`${key} がありません`)
@@ -47,7 +47,7 @@ export function validateOverview(entry, photo) {
 export function buildOverview(entry, photo) {
   validateOverview(entry, photo)
   const id = catalogId(entry.maker, entry.series)
-  if (entry.coverage === 'historical-overview') return buildHistoricalOverview(entry, id)
+  if (entry.coverage === 'historical-overview') return buildHistoricalOverview(entry, id, photo)
   let n = 0
   const block = (type, text) => ({ id: `${id.slice(0, 8)}-${String(++n).padStart(3, '0')}`, type, text })
   const blocks = [block('h2', '製品の概要'), block('text', entry.summary),

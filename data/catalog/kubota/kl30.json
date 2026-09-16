@@ -1,0 +1,53 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KL30",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "KL30"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "30馬力の旧型トラクタ。公式販売年度検索のKL30は1999年〜2003年の販売。KL30の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL30&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "42b412bd0eab756e18f1befaccc457183d120e3ef681d8e9126ae3472d504b18",
+      "result": {
+        "model": "KL30",
+        "category": "トラクタ",
+        "horsepower": "30馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL30",
+      "checkedAt": "2026-09-16",
+      "sha256": "84fd11c63a2c294b611e983c502b82e4f1eb508014df8d1ca97e98ff719a95e9",
+      "result": {
+        "model": "KL30",
+        "startYear": 1999,
+        "endYear": 2003
+      }
+    },
+    "manuals": [
+      {
+        "title": "KL30",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b86e8d03fe992d1b0e19656875ee557c",
+        "checkedAt": "2026-09-16",
+        "sha256": "8395eeb457fb657c0b2def721382dbcad8922b3156e80fb882c3e29bc6b85f42"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KL30"
+}

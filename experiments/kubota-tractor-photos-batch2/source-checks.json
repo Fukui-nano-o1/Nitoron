@@ -1,0 +1,175 @@
+{
+  "checkedAt": "2026-09-16",
+  "entries": [
+    {
+      "model": "KL23",
+      "path": "data/catalog/kubota/kl23.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL23&searchType=3",
+      "manualIndexSha256": "9fcd0ec1a4770f4edba1e89a6b0652c2f1a519bd992827a27b3e3666c5040095",
+      "horsepower": "23馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL23",
+      "salesSha256": "00eeac35a2c22e12af6377e6c8914ec3c8f1ceaa971fe74405c347314a7826e8",
+      "salesResult": {
+        "model": "KL23",
+        "startYear": 1999,
+        "endYear": 2003
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6e7b33fdea3adc80ebd648fffb665bb8",
+      "manualStatus": 200,
+      "manualSha256": "c522e1f4d7949128c7da5159b9281b9088d61368215634a4ac71deeac6bc16cf"
+    },
+    {
+      "model": "KL25",
+      "path": "data/catalog/kubota/kl25.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL25&searchType=3",
+      "manualIndexSha256": "be6997f3ea18cef4de474cf5e627fe4047667787e927bd8c9005c02473a76e54",
+      "horsepower": "25馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL25",
+      "salesSha256": "0e310948704c1c3e436d48423411eedc9eeeb7d2bf473330df1a5706849c3604",
+      "salesResult": {
+        "model": "KL25",
+        "startYear": 1999,
+        "endYear": 2003
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43fa7f58b7eac7ac872209342e62e8f1",
+      "manualStatus": 200,
+      "manualSha256": "aae8771f1dc73ea089e8d01d87a7247e3a99480a0b9448d8975f966c1c95cff7"
+    },
+    {
+      "model": "KL30",
+      "path": "data/catalog/kubota/kl30.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL30&searchType=3",
+      "manualIndexSha256": "42b412bd0eab756e18f1befaccc457183d120e3ef681d8e9126ae3472d504b18",
+      "horsepower": "30馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL30",
+      "salesSha256": "84fd11c63a2c294b611e983c502b82e4f1eb508014df8d1ca97e98ff719a95e9",
+      "salesResult": {
+        "model": "KL30",
+        "startYear": 1999,
+        "endYear": 2003
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b86e8d03fe992d1b0e19656875ee557c",
+      "manualStatus": 200,
+      "manualSha256": "8395eeb457fb657c0b2def721382dbcad8922b3156e80fb882c3e29bc6b85f42"
+    },
+    {
+      "model": "KL36",
+      "path": "data/catalog/kubota/kl36.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL36&searchType=3",
+      "manualIndexSha256": "153384db06dd664d17041aac9dec53b1d8484d1ac9425db2b589320493829085",
+      "horsepower": "36馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL36",
+      "salesSha256": "4396187a59f6f4f822d40888c328755bb799e943b779623edc5a87a7b669de21",
+      "salesResult": {
+        "model": "KL36",
+        "startYear": 2000,
+        "endYear": 2004
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0a113ef6b61820daa5611c870ed8d5ee",
+      "manualStatus": 200,
+      "manualSha256": "57eac35cfd30da941604ca67bb93dcc8e367b669fabed32741f1c2f9d0840aa9"
+    },
+    {
+      "model": "KL43",
+      "path": "data/catalog/kubota/kl43.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL43&searchType=3",
+      "manualIndexSha256": "a17466a7738c6f5cdcca0f013f4dcbd7a26e4db50d3dfd946d87a5bacf331272",
+      "horsepower": "43馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL43",
+      "salesSha256": "609308a6fc077932096c6225f3dbfaa8fc07f8a61fab0636ace49858c73a327a",
+      "salesResult": {
+        "model": "KL43",
+        "startYear": 2000,
+        "endYear": 2004
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7634ea65a4e6d9041cfd3f7de18e334a",
+      "manualStatus": 200,
+      "manualSha256": "901d27b0ca811b793952983d107033ff3fa101db8464f2b1d542fc33c9978ceb"
+    },
+    {
+      "model": "KT20",
+      "path": "data/catalog/kubota/kt20.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT20&searchType=3",
+      "manualIndexSha256": "3f95508511667137843ff42f6af13cf561aeaff2d8f2b20255e1cc6e55ceb20b",
+      "horsepower": "20馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT20",
+      "salesSha256": "7d46a344a72c73bff58da30829768a3f11d009388a6bd082ae7bd6b3efba22f0",
+      "salesResult": {
+        "model": "KT20",
+        "startYear": 2002,
+        "endYear": 2005
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cd89fef7ffdd490db800357f47722b20",
+      "manualStatus": 200,
+      "manualSha256": "3bd2698aa01ba52eb8a52430d291e421a76d67ee1abb457fd163387b197ff76e"
+    },
+    {
+      "model": "KT22",
+      "path": "data/catalog/kubota/kt22.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT22&searchType=3",
+      "manualIndexSha256": "2ea0301a68e69d67f3b5412170c2bad375a0200da66c0d4df5c5ffbaf6660064",
+      "horsepower": "22馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT22",
+      "salesSha256": "c0046899dda2b79bd73bf61f9d4ca30f5a5ab8cb537c6c7d1d7d82cd07a45a6c",
+      "salesResult": {
+        "model": "KT22",
+        "startYear": 2002,
+        "endYear": 2005
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=390e982518a50e280d8e2b535462ec1f",
+      "manualStatus": 200,
+      "manualSha256": "cf79add67d05e8ed1c74caebc6c09151fe308bb4c149c15d5e6ce2bbd8aa10c9"
+    },
+    {
+      "model": "KT27",
+      "path": "data/catalog/kubota/kt27.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT27&searchType=3",
+      "manualIndexSha256": "ad863492bc8dbc1b00b28305e370b372737c7134ac2cafaacad19f25cb1b4ce0",
+      "horsepower": "27馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT27",
+      "salesSha256": "b388a14dc747206b4c712435ccb7d9327c3cb6e0d745b0ded5655ef6eab0d46a",
+      "salesResult": {
+        "model": "KT27",
+        "startYear": 2002,
+        "endYear": 2005
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a5e0ff62be0b08456fc7f1e88812af3d",
+      "manualStatus": 200,
+      "manualSha256": "3b931bb260e100190e31d0535309bf96cee53c9fe91b7c320eb11684669c3d13"
+    },
+    {
+      "model": "GB16",
+      "path": "data/catalog/kubota/gb16.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=GB16&searchType=3",
+      "manualIndexSha256": "7eac2c0d2da22784f62ebc2cd5614f3a3d8d040cd90dedea66e20eebe5e178cc",
+      "horsepower": "16馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=GB16",
+      "salesSha256": "b7830590aecf554a778fa7ba78fce1ffc4f072b76e20d3fea180430560d22101",
+      "salesResult": {
+        "model": "GB16",
+        "startYear": 1996,
+        "endYear": 2000
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d9fc5b73a8d78fad3d6dffe419384e70",
+      "manualStatus": 200,
+      "manualSha256": "e7dbe5a71add733b63cd14c3090770bb7e5db7ea38f4b54624930cc7b04c4e02"
+    },
+    {
+      "model": "GT19",
+      "path": "data/catalog/kubota/gt19.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=GT19&searchType=3",
+      "manualIndexSha256": "86ade9411d3dee2ddc7f74a2fe79a2419fd2e18bbfb1b8706f6473c856fe27b3",
+      "horsepower": "19馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=GT19",
+      "salesSha256": "5b50164e0f7a178bc87f2f65fcf6df4f0daaaa901c3e856d618506cd8785e78b",
+      "salesResult": {
+        "model": "GT19",
+        "startYear": 1997,
+        "endYear": 2002
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d64a340bcb633f536d56e51874281454",
+      "manualStatus": 200,
+      "manualSha256": "6336e372373e658a6e2fb9fe970fe56784fa5390ba85d4f71e4caa87f2f7dcc0"
+    }
+  ]
+}

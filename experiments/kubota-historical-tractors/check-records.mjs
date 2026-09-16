@@ -6,7 +6,9 @@ import { isCatalogRecord, parseCatalogTitle } from '../../src/catalog-domain.js'
 
 const root = new URL('../../', import.meta.url)
 const read = async path => JSON.parse(await readFile(new URL(path, root), 'utf8'))
-const manifest = await read('experiments/kubota-historical-tractors/source-checks.json')
+const manifestPath = process.argv[2] || 'experiments/kubota-historical-tractors/source-checks.json'
+const manifest = await read(manifestPath)
+const photos = (await read('data/card-photos.json')).entries
 assert.equal(manifest.entries.length, 10)
 const models = manifest.entries.map(entry => entry.model)
 assert.equal(new Set(models).size, 10)
@@ -31,7 +33,8 @@ for (const item of manifest.entries) {
   assert.equal(entry.series, item.model)
   assert.equal(existingModels.has(normalizeModel(item.model)), false, `既存の型式: ${item.model}`)
   const record = (await read(item.path.replace(/\.json$/, '.record.json'))).records[0]
-  assert.deepEqual(record, buildOverview(entry))
+  const photo = photos.find(photo => photo.id === record.id)
+  assert.deepEqual(record, buildOverview(entry, photo))
   assert.equal(record.id, catalogId(entry.maker, entry.series))
   assert.equal(existingRecords.some(other => other.id === record.id || other.title === record.title), false)
   // シリーズ内の対象型式や別名にも候補が含まれていないか照合する。
@@ -43,11 +46,11 @@ for (const item of manifest.entries) {
   assert.deepEqual(publicSnapshot(roundTrip), publicSnapshot(record))
   assert.equal(matches(roundTrip, item.model), true)
   assert.equal(matches(roundTrip, item.model.replace(/([A-Z]+)(\d)/, '$1-$2')), true)
-  assert.equal(record.meta.sources.length, 3)
-  assert.equal(record.meta.coverUrl, '')
-  checks.push({ model: item.model, id: record.id, duplicate: false, roundTrip: true, searchable: true, sources: 3 })
+  assert.equal(record.meta.sources.length, photo ? 4 : 3)
+  assert.equal(record.meta.coverUrl, photo?.url || '')
+  checks.push({ model: item.model, id: record.id, duplicate: false, roundTrip: true, searchable: true, sources: record.meta.sources.length, photo: !!photo })
 }
 assert.equal(new Set(checks.map(check => check.id)).size, 10)
 const result = { checkedAt: manifest.checkedAt, additions: checks.length, duplicateCount: 0, checks }
-await writeFile(new URL('record-checks.json', import.meta.url), JSON.stringify(result, null, 2) + '\n')
+await writeFile(new URL(manifestPath.replace(/source-checks\.json$/, 'record-checks.json'), root), JSON.stringify(result, null, 2) + '\n')
 console.log(JSON.stringify(result, null, 2))

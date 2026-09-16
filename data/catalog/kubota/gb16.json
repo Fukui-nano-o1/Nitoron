@@ -1,0 +1,53 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "GB16",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "GB16"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "16馬力の旧型トラクタ。公式販売年度検索のGB16は1996年〜2000年の販売。GB16の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=GB16&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "7eac2c0d2da22784f62ebc2cd5614f3a3d8d040cd90dedea66e20eebe5e178cc",
+      "result": {
+        "model": "GB16",
+        "category": "トラクタ",
+        "horsepower": "16馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=GB16",
+      "checkedAt": "2026-09-16",
+      "sha256": "b7830590aecf554a778fa7ba78fce1ffc4f072b76e20d3fea180430560d22101",
+      "result": {
+        "model": "GB16",
+        "startYear": 1996,
+        "endYear": 2000
+      }
+    },
+    "manuals": [
+      {
+        "title": "GB16",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d9fc5b73a8d78fad3d6dffe419384e70",
+        "checkedAt": "2026-09-16",
+        "sha256": "e7dbe5a71add733b63cd14c3090770bb7e5db7ea38f4b54624930cc7b04c4e02"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "GB16"
+}

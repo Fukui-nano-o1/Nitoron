@@ -1,0 +1,53 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "GT19",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "GT19"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "19馬力の旧型トラクタ。公式販売年度検索のGT19は1997年〜2002年の販売。GT19の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=GT19&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "86ade9411d3dee2ddc7f74a2fe79a2419fd2e18bbfb1b8706f6473c856fe27b3",
+      "result": {
+        "model": "GT19",
+        "category": "トラクタ",
+        "horsepower": "19馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=GT19",
+      "checkedAt": "2026-09-16",
+      "sha256": "5b50164e0f7a178bc87f2f65fcf6df4f0daaaa901c3e856d618506cd8785e78b",
+      "result": {
+        "model": "GT19",
+        "startYear": 1997,
+        "endYear": 2002
+      }
+    },
+    "manuals": [
+      {
+        "title": "GT19",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d64a340bcb633f536d56e51874281454",
+        "checkedAt": "2026-09-16",
+        "sha256": "6336e372373e658a6e2fb9fe970fe56784fa5390ba85d4f71e4caa87f2f7dcc0"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "GT19"
+}

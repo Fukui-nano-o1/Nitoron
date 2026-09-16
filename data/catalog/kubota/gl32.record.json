@@ -59,6 +59,16 @@
           "id": "104fd350-010",
           "type": "text",
           "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "104fd350-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "104fd350-012",
+          "type": "text",
+          "text": "掲載写真：GL32の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
         }
       ],
       "meta": {
@@ -73,7 +83,7 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "",
+        "coverUrl": "https://fukujishoukai.jp/_img/ja/article/304/img00/",
         "summary": "32馬力の旧型トラクタ。公式販売年度検索のGL-32は1990年〜1993年の販売。GL32の取扱説明書を参照できます。",
         "issue": "",
         "hypothesis": "",
@@ -109,6 +119,12 @@
             "id": "104fd350-src-manual",
             "title": "取扱説明書 GL32",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=598b3e71ec378bd83e0a727608b5db01",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "104fd350-src-photo",
+            "title": "写真：福治商会 クボタ GL32（中古実機）",
+            "url": "https://fukujishoukai.jp/item/tractor/20230502-304/",
             "date": "2026-09-16"
           }
         ],

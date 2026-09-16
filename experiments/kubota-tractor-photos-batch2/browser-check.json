@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-09-16",
+  "context": "Local Nitoron app; proposed publication snapshots; Auth/API mocked; Actual image bytes fetched over HTTPS from all 20 source URLs rendered via browser routes. Direct image requests in this Chromium environment timed out; source HTTP/dimensions are verified separately in photo-checks.json. No production login or email sent.",
+  "agentBrowser": "CLI 0.38.0 daemon could not start; used Playwright with the same Chromium for verification",
+  "browser": "153.0.8010.0",
+  "downloadedImagesRendered": 20,
+  "results": [
+    {
+      "width": 1280,
+      "view": "cards",
+      "loaded": 20,
+      "objectFit": "contain"
+    },
+    {
+      "width": 1280,
+      "view": "details",
+      "loaded": 20,
+      "sourceLinks": 20,
+      "usedPhotoNotes": 20,
+      "galleryVerified": true
+    },
+    {
+      "width": 390,
+      "view": "cards",
+      "loaded": 20,
+      "objectFit": "contain"
+    },
+    {
+      "width": 390,
+      "view": "details",
+      "loaded": 20,
+      "sourceLinks": 20,
+      "usedPhotoNotes": 20,
+      "galleryVerified": true
+    }
+  ],
+  "pageErrors": []
+}

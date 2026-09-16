@@ -1,0 +1,53 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KT20",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "KT20"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "20馬力の旧型トラクタ。公式販売年度検索のKT20は2002年〜2005年の販売。KT20の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT20&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "3f95508511667137843ff42f6af13cf561aeaff2d8f2b20255e1cc6e55ceb20b",
+      "result": {
+        "model": "KT20",
+        "category": "トラクタ",
+        "horsepower": "20馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT20",
+      "checkedAt": "2026-09-16",
+      "sha256": "7d46a344a72c73bff58da30829768a3f11d009388a6bd082ae7bd6b3efba22f0",
+      "result": {
+        "model": "KT20",
+        "startYear": 2002,
+        "endYear": 2005
+      }
+    },
+    "manuals": [
+      {
+        "title": "KT20",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cd89fef7ffdd490db800357f47722b20",
+        "checkedAt": "2026-09-16",
+        "sha256": "3bd2698aa01ba52eb8a52430d291e421a76d67ee1abb457fd163387b197ff76e"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KT20"
+}

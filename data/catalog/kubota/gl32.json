@@ -45,8 +45,9 @@
     "salesIndex": "matching-model-and-sales-period-confirmed",
     "manualNotice": "HTTP 200",
     "manualBody": "not-reviewed",
-    "photo": "not-added",
+    "photo": "matched-to-used-machine-listing",
     "repairGuide": "not-added",
     "threeD": "not-added"
-  }
+  },
+  "photoModel": "GL32"
 }

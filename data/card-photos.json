@@ -1312,6 +1312,246 @@
         "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1_1_1_1_1",
         "date": "2026-09-16"
       }
+    },
+    {
+      "id": "8b3015c8-1e6c-4b93-8940-a0678975dd30",
+      "model": "GL23",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukinavi.com/html/upload/save_image/00200100001/5037/0_detail.jpg",
+      "source": {
+        "id": "8b3015c8-src-photo",
+        "title": "写真：ノウキナビ クボタ GL23（中古実機）",
+        "url": "https://www.noukinavi.com/shop_use/products/detail/5037",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "104fd350-6d78-4977-81b9-e9c5d3ce460a",
+      "model": "GL32",
+      "kind": "used-machine-photo",
+      "url": "https://fukujishoukai.jp/_img/ja/article/304/img00/",
+      "source": {
+        "id": "104fd350-src-photo",
+        "title": "写真：福治商会 クボタ GL32（中古実機）",
+        "url": "https://fukujishoukai.jp/item/tractor/20230502-304/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "761988ef-dd88-430a-8aaf-ac3134c9a138",
+      "model": "KL21",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukinavi.com/html/upload/save_image/00200100001/2830/0_detail.jpg",
+      "source": {
+        "id": "761988ef-src-photo",
+        "title": "写真：ノウキナビ クボタ KL21（中古実機）",
+        "url": "https://www.noukinavi.com/shop_use/products/detail/2830",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "259ff054-3131-44fb-8a49-2b190faa2838",
+      "model": "KL27",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukinavi.com/html/upload/save_image/00200100001/4062/0_detail.jpg",
+      "source": {
+        "id": "259ff054-src-photo",
+        "title": "写真：ノウキナビ クボタ KL27（中古実機）",
+        "url": "https://www.noukinavi.com/shop_use/products/detail/4062",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "b471b2be-8bb5-4ead-892d-a95dc3111d07",
+      "model": "KL33",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukinavi.com/html/upload/save_image/00200100001/7120/0_detail.jpg",
+      "source": {
+        "id": "b471b2be-src-photo",
+        "title": "写真：ノウキナビ クボタ KL33（中古実機）",
+        "url": "https://www.noukinavi.com/shop_use/products/detail/7120",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "34d5dfa0-e9d9-4c17-8377-405ae4496673",
+      "model": "KT24",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukinavi.com/html/upload/save_image/00200100001/7192/0_detail.jpg",
+      "source": {
+        "id": "34d5dfa0-src-photo",
+        "title": "写真：ノウキナビ クボタ KT24（中古実機）",
+        "url": "https://www.noukinavi.com/shop_use/products/detail/7192",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "5be0c623-cfe9-4fef-81c6-c6cf14d831e4",
+      "model": "GB14",
+      "kind": "used-machine-photo",
+      "url": "https://chuko-noki.com/new/wp/wp-content/uploads/DSCN4586.jpg",
+      "source": {
+        "id": "5be0c623-src-photo",
+        "title": "写真：スペース（中古農機具販売） クボタ GB14（中古実機）",
+        "url": "https://chuko-noki.com/12367/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "22f332e7-7596-4480-8c65-e2369e59ccc2",
+      "model": "GT21",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukinavi.com/html/upload/save_image/00200100001/3222/0_detail.jpg",
+      "source": {
+        "id": "22f332e7-src-photo",
+        "title": "写真：ノウキナビ クボタ GT21（中古実機）",
+        "url": "https://www.noukinavi.com/shop_use/products/detail/3222",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "c10a1feb-d5cb-4ace-8196-43494a046254",
+      "model": "FT25",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukinavi.com/html/upload/save_image/00200100001/4057/0_detail.jpg",
+      "source": {
+        "id": "c10a1feb-src-photo",
+        "title": "写真：ノウキナビ クボタ FT25（中古実機）",
+        "url": "https://www.noukinavi.com/shop_use/products/detail/4057",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "92717297-efc9-4115-865c-48cbce3d1726",
+      "model": "MZ65",
+      "kind": "used-machine-photo",
+      "url": "https://ummkt.com/image/item/itm0028242/632.jpg",
+      "source": {
+        "id": "92717297-src-photo",
+        "title": "写真：UMM中古農機市場 クボタ MZ65（中古実機）",
+        "url": "https://ummkt.com/market/detail.php?id=itm0028242",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "bae731f6-771c-464d-8a2f-c4fa9db239d3",
+      "model": "KL23",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukinavi.com/html/upload/save_image/00200100001/4388/0_detail.jpg",
+      "source": {
+        "id": "bae731f6-src-photo",
+        "title": "写真：ノウキナビ クボタ KL23（中古実機）",
+        "url": "https://www.noukinavi.com/shop_use/products/detail/4388",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "07a4533c-88ca-4451-817e-fa00eeaea77d",
+      "model": "KL25",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukinavi.com/html/upload/save_image/0327184657_64216611b1a81.jpg",
+      "source": {
+        "id": "07a4533c-src-photo",
+        "title": "写真：ノウキナビ クボタ KL25（中古実機）",
+        "url": "https://www.noukinavi.com/shop_use/products/detail/24216",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "3b44565b-e902-43dd-8d12-25fdbeab025d",
+      "model": "KL30",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukinavi.com/html/upload/save_image/00200100001/7030/0_detail.jpg",
+      "source": {
+        "id": "3b44565b-src-photo",
+        "title": "写真：ノウキナビ クボタ KL30（中古実機）",
+        "url": "https://www.noukinavi.com/shop_use/products/detail/7030",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "83a04806-d6cd-4723-888a-4cd070bd48b8",
+      "model": "KL36",
+      "kind": "used-machine-photo",
+      "url": "https://chuko-noki.com/new/wp/wp-content/uploads/old_tractor_032_000.jpg",
+      "source": {
+        "id": "83a04806-src-photo",
+        "title": "写真：スペース（中古農機具販売） クボタ KL36（中古実機）",
+        "url": "https://chuko-noki.com/3680/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "081b57dd-7672-4fa6-8e52-6f3d4b79476d",
+      "model": "KL43",
+      "kind": "used-machine-photo",
+      "url": "https://nouki-ichiba.net/cdn/shop/products/04171731_607a9cfe8c07f.jpg?v=1683063087&width=1946",
+      "source": {
+        "id": "081b57dd-src-photo",
+        "title": "写真：農キング クボタ KL43（中古実機）",
+        "url": "https://nouki-ichiba.net/products/02943",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "ad0847cb-1422-4ea6-8495-d0085f0634eb",
+      "model": "KT20",
+      "kind": "used-machine-photo",
+      "url": "https://sun-jp.co.jp/system/photo/fa-00004905-1.jpg",
+      "source": {
+        "id": "ad0847cb-src-photo",
+        "title": "写真：サンセレクトジャパン クボタ KT20（中古実機）",
+        "url": "https://sun-jp.co.jp/jp/fa_list/detail.php?no=4905",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "cb655ab0-e404-4f27-8850-e3d2153a0a56",
+      "model": "KT22",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukinavi.com/html/upload/save_image/00200100001/2031/0_detail.jpg",
+      "source": {
+        "id": "cb655ab0-src-photo",
+        "title": "写真：ノウキナビ クボタ KT22（中古実機）",
+        "url": "https://www.noukinavi.com/shop_use/products/detail/2031",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "c65a466a-a379-4642-85a6-9ee879762757",
+      "model": "KT27",
+      "kind": "used-machine-photo",
+      "url": "https://chuko-noki.com/new/wp/wp-content/uploads/KT27-12228-37-%E6%8A%9C%E7%B2%8B%E7%94%A8.jpg",
+      "source": {
+        "id": "c65a466a-src-photo",
+        "title": "写真：スペース（中古農機具販売） クボタ KT27（中古実機）",
+        "url": "https://chuko-noki.com/31488/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "f9bd39ec-32fa-4415-876e-1ed727853f01",
+      "model": "GB16",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukinavi.com/html/upload/save_image/0625105411_6a3c8a43b52bb.jpg",
+      "source": {
+        "id": "f9bd39ec-src-photo",
+        "title": "写真：ノウキナビ クボタ GB16（中古実機）",
+        "url": "https://www.noukinavi.com/shop_use/products/detail/27514",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "a6ba7c89-027a-4f05-87ce-6d56d64b4142",
+      "model": "GT19",
+      "kind": "used-machine-photo",
+      "url": "https://fukujishoukai.jp/_img/ja/article/320/img00/",
+      "source": {
+        "id": "a6ba7c89-src-photo",
+        "title": "写真：福治商会 クボタ GT19（中古実機）",
+        "url": "https://fukujishoukai.jp/item/tractor/20240210-320/",
+        "date": "2026-09-16"
+      }
     }
   ]
 }

@@ -1,0 +1,53 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KT27",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "KT27"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "27馬力の旧型トラクタ。公式販売年度検索のKT27は2002年〜2005年の販売。KT27の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT27&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "ad863492bc8dbc1b00b28305e370b372737c7134ac2cafaacad19f25cb1b4ce0",
+      "result": {
+        "model": "KT27",
+        "category": "トラクタ",
+        "horsepower": "27馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT27",
+      "checkedAt": "2026-09-16",
+      "sha256": "b388a14dc747206b4c712435ccb7d9327c3cb6e0d745b0ded5655ef6eab0d46a",
+      "result": {
+        "model": "KT27",
+        "startYear": 2002,
+        "endYear": 2005
+      }
+    },
+    "manuals": [
+      {
+        "title": "KT27",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a5e0ff62be0b08456fc7f1e88812af3d",
+        "checkedAt": "2026-09-16",
+        "sha256": "3b931bb260e100190e31d0535309bf96cee53c9fe91b7c320eb11684669c3d13"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KT27"
+}

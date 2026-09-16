@@ -59,6 +59,16 @@
           "id": "92717297-010",
           "type": "text",
           "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "92717297-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "92717297-012",
+          "type": "text",
+          "text": "掲載写真：MZ65の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
         }
       ],
       "meta": {
@@ -73,7 +83,7 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "",
+        "coverUrl": "https://ummkt.com/image/item/itm0028242/632.jpg",
         "summary": "65馬力の旧型トラクタ。公式販売年度検索のMZ65は2006年〜2009年の販売。MZ65の取扱説明書を参照できます。",
         "issue": "",
         "hypothesis": "",
@@ -109,6 +119,12 @@
             "id": "92717297-src-manual",
             "title": "取扱説明書 MZ65",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=effc299a1addb07e7089f9b269c31f2f",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "92717297-src-photo",
+            "title": "写真：UMM中古農機市場 クボタ MZ65（中古実機）",
+            "url": "https://ummkt.com/market/detail.php?id=itm0028242",
             "date": "2026-09-16"
           }
         ],

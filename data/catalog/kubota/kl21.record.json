@@ -59,6 +59,16 @@
           "id": "761988ef-010",
           "type": "text",
           "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "761988ef-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "761988ef-012",
+          "type": "text",
+          "text": "掲載写真：KL21の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
         }
       ],
       "meta": {
@@ -73,7 +83,7 @@
         "areaA": "",
         "start": "",
         "end": "",
-        "coverUrl": "",
+        "coverUrl": "https://www.noukinavi.com/html/upload/save_image/00200100001/2830/0_detail.jpg",
         "summary": "21馬力の旧型トラクタ。公式販売年度検索のKL21は1999年〜2003年の販売。KL21の取扱説明書を参照できます。",
         "issue": "",
         "hypothesis": "",
@@ -109,6 +119,12 @@
             "id": "761988ef-src-manual",
             "title": "取扱説明書 KL21",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1aa48fc4880bb0c9b8a3bf979d3b917e",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "761988ef-src-photo",
+            "title": "写真：ノウキナビ クボタ KL21（中古実機）",
+            "url": "https://www.noukinavi.com/shop_use/products/detail/2830",
             "date": "2026-09-16"
           }
         ],

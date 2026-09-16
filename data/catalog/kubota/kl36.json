@@ -1,0 +1,53 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KL36",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "KL36"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "36馬力の旧型トラクタ。公式販売年度検索のKL36は2000年〜2004年の販売。KL36の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL36&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "153384db06dd664d17041aac9dec53b1d8484d1ac9425db2b589320493829085",
+      "result": {
+        "model": "KL36",
+        "category": "トラクタ",
+        "horsepower": "36馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL36",
+      "checkedAt": "2026-09-16",
+      "sha256": "4396187a59f6f4f822d40888c328755bb799e943b779623edc5a87a7b669de21",
+      "result": {
+        "model": "KL36",
+        "startYear": 2000,
+        "endYear": 2004
+      }
+    },
+    "manuals": [
+      {
+        "title": "KL36",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0a113ef6b61820daa5611c870ed8d5ee",
+        "checkedAt": "2026-09-16",
+        "sha256": "57eac35cfd30da941604ca67bb93dcc8e367b669fabed32741f1c2f9d0840aa9"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KL36"
+}

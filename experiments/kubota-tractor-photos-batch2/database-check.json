@@ -1,0 +1,57 @@
+{
+  "checkedAt": "2026-09-16",
+  "projectId": "ycvbjzlqrxnwalhhgzat",
+  "operation": "10 insertions and 10 existing-card photograph updates; atomic guarded transaction",
+  "before": {
+    "duplicateNewModels": [],
+    "existingNewNoteIds": 0,
+    "existingNewPublicationIds": 0,
+    "notes": 145,
+    "oldExactMatches": 10,
+    "owners": [
+      "de300000-0000-4000-8000-000000000012"
+    ],
+    "publications": 144,
+    "tractorCards": 52,
+    "untouchedNotesHash": "a132b883e8fe92c960b1de783366e66b",
+    "untouchedPublicationsHash": "215302899ca3fbfb499ea8844344d1f9"
+  },
+  "after": {
+    "notes": 155,
+    "addedNotes": 10,
+    "photoCards": 20,
+    "publications": 154,
+    "tractorCards": 62,
+    "modelOccurrences": {
+      "FT25": 1,
+      "GB14": 1,
+      "GB16": 1,
+      "GL23": 1,
+      "GL32": 1,
+      "GT19": 1,
+      "GT21": 1,
+      "KL21": 1,
+      "KL23": 1,
+      "KL25": 1,
+      "KL27": 1,
+      "KL30": 1,
+      "KL33": 1,
+      "KL36": 1,
+      "KL43": 1,
+      "KT20": 1,
+      "KT22": 1,
+      "KT24": 1,
+      "KT27": 1,
+      "MZ65": 1
+    },
+    "exactSavedRecords": 20,
+    "untouchedNotesHash": "a132b883e8fe92c960b1de783366e66b",
+    "untouchedPublicationsHash": "215302899ca3fbfb499ea8844344d1f9"
+  },
+  "existingBodyAndSourcesPreserved": true,
+  "existingOwnershipDatesAndPublicFlagsPreserved": true,
+  "unrelatedRowsUnchanged": true,
+  "duplicateModels": 0,
+  "catalogTestsPassed": 9,
+  "buildExitCode": 0
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KL23",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "KL23"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "23馬力の旧型トラクタ。公式販売年度検索のKL23は1999年〜2003年の販売。KL23の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL23&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "9fcd0ec1a4770f4edba1e89a6b0652c2f1a519bd992827a27b3e3666c5040095",
+      "result": {
+        "model": "KL23",
+        "category": "トラクタ",
+        "horsepower": "23馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL23",
+      "checkedAt": "2026-09-16",
+      "sha256": "00eeac35a2c22e12af6377e6c8914ec3c8f1ceaa971fe74405c347314a7826e8",
+      "result": {
+        "model": "KL23",
+        "startYear": 1999,
+        "endYear": 2003
+      }
+    },
+    "manuals": [
+      {
+        "title": "KL23",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6e7b33fdea3adc80ebd648fffb665bb8",
+        "checkedAt": "2026-09-16",
+        "sha256": "c522e1f4d7949128c7da5159b9281b9088d61368215634a4ac71deeac6bc16cf"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KL23"
+}
