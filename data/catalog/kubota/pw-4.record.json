@@ -1,0 +1,132 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "882ce641-541d-4f2d-8b66-a905222cc7fe",
+      "title": "【カタログ解説】クボタ PW4 PASWEL 田植機（田植機）",
+      "category": "田植機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "882ce641-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "882ce641-002",
+          "type": "text",
+          "text": "4条植えの田植機。クランク式とロータリ式の植付け仕様があります。"
+        },
+        {
+          "id": "882ce641-003",
+          "type": "bullet",
+          "text": "条数：4条植"
+        },
+        {
+          "id": "882ce641-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "882ce641-005",
+          "type": "text",
+          "text": "PW4C / PW4R"
+        },
+        {
+          "id": "882ce641-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "882ce641-007",
+          "type": "text",
+          "text": "掲載写真：PW4（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "田植機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/e980667ff3dd825e8ff5a6a4473ecb4f/paswel_card.jpg",
+        "summary": "4条植えの田植機。クランク式とロータリ式の植付け仕様があります。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "882ce641-src-product",
+            "title": "クボタ 製品ページ PW4",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/PW-4/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "882ce641-src-catalog",
+            "title": "クボタ 製品カタログ PASWEL 田植機",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/PW-4/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "882ce641-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（PW4）",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/PW-4/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "882ce641-src-manual-1",
+            "title": "取扱説明書 PW4",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e655c7716a4b3ea67f48c6322fc42ed6",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "882ce641-src-manual-2",
+            "title": "取扱説明書 PW4C-F",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1714726c817af50457d810aae9d27a2e",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "882ce641-src-manual-3",
+            "title": "取扱説明書 PW4R-F",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fcdf25d6e191893e705819b177cddea0",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "882ce641-src-photo",
+            "title": "写真：クボタ PASWEL 田植機",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/PW-4/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

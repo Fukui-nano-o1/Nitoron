@@ -1,0 +1,119 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "21edc773-0c1a-46cc-80ca-18185a20db7e",
+      "title": "【カタログ解説】クボタ KS-H1000DS フレコン出荷計量機（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "21edc773-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "21edc773-002",
+          "type": "text",
+          "text": "玄米などのフレコン出荷用計量機。1000kgの計量に対応する受注生産品です。"
+        },
+        {
+          "id": "21edc773-003",
+          "type": "bullet",
+          "text": "計量対象：1000kgフレコン"
+        },
+        {
+          "id": "21edc773-004",
+          "type": "bullet",
+          "text": "販売状況：受注生産"
+        },
+        {
+          "id": "21edc773-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "21edc773-006",
+          "type": "text",
+          "text": "KS-H1000DS"
+        },
+        {
+          "id": "21edc773-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "21edc773-008",
+          "type": "text",
+          "text": "掲載写真：KS-H1000DS（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/346ba0c3a20ee358f7e897f40baae007/ks-h1000ds_card.jpg",
+        "summary": "玄米などのフレコン出荷用計量機。1000kgの計量に対応する受注生産品です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "21edc773-src-product",
+            "title": "クボタ 製品ページ KS-H1000DS",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H1000DS/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "21edc773-src-catalog",
+            "title": "クボタ 製品カタログ フレコン出荷計量機",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H1000DS/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "21edc773-src-manual-index",
+            "title": "取扱説明書検索（型式で探す）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "21edc773-src-photo",
+            "title": "写真：クボタ フレコン出荷計量機",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H1000DS/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

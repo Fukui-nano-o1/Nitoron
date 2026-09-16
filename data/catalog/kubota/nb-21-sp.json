@@ -1,0 +1,55 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "NB21SP",
+  "productName": "グッドパートナー スペシャル",
+  "summary": "21馬力のトラクタ。NB21スペシャルの在庫限りの製品です。",
+  "category": "トラクタ",
+  "models": [
+    "NB21SP(PC)"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "NB21SP（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "21馬力",
+      "source": "product"
+    },
+    {
+      "label": "販売状況",
+      "value": "在庫限り",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-SP/",
+      "checkedAt": "2026-09-16",
+      "sha256": "d7c537c478af29fc95dbeda0fb58b62bcdf672ec9b1cb339a56f3c36837d4982"
+    },
+    "catalog": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NB21SP）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-SP/?nav=manual",
+      "sha256": "cca864cf72983ad89f6fdad866ff96d56e6f2a2cb178f5aa75d1231af4eac5d3"
+    },
+    "manuals": [
+      {
+        "title": "NB21",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4e0d67e54ad6626e957d15b08ae128a6"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

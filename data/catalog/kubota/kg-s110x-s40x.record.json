@@ -1,0 +1,114 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "e8403f46-190b-4d62-8b8c-f8447c63bf8e",
+      "title": "【カタログ解説】クボタ KG-S40X3-110X 色彩選別機 選別王（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "e8403f46-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "e8403f46-002",
+          "type": "text",
+          "text": "米の色彩選別を行う選別王シリーズ。処理量や玄米・白米への対応が型式によって異なります。"
+        },
+        {
+          "id": "e8403f46-003",
+          "type": "bullet",
+          "text": "用途：米の色彩選別"
+        },
+        {
+          "id": "e8403f46-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "e8403f46-005",
+          "type": "text",
+          "text": "KG-S40X3 / KG-S40X3W / KG-S55X / KG-S110X-L / KG-S110X-R"
+        },
+        {
+          "id": "e8403f46-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "e8403f46-007",
+          "type": "text",
+          "text": "掲載写真：KG-S40X3-110X（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/99842cb8ee4195ef64213d4aa2a57328/kg-s110x_new.jpg",
+        "summary": "米の色彩選別を行う選別王シリーズ。処理量や玄米・白米への対応が型式によって異なります。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "e8403f46-src-product",
+            "title": "クボタ 製品ページ KG-S40X3-110X",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/KG-S110X-S40X/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e8403f46-src-catalog",
+            "title": "クボタ 製品カタログ 色彩選別機 選別王",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/KG-S110X-S40X/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e8403f46-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（KG-S40X3-110X）",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/KG-S110X-S40X/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e8403f46-src-photo",
+            "title": "写真：クボタ 色彩選別機 選別王",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/KG-S110X-S40X/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

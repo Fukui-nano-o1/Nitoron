@@ -1,0 +1,102 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "376a8741-686f-46b5-823d-ee2a07b06d13",
+      "title": "【カタログ解説】クボタ 複合施設 育苗・乾燥調製・精米施設（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "376a8741-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "376a8741-002",
+          "type": "text",
+          "text": "育苗・乾燥調製・精米の設備を、一つの建物にまとめる施設です。"
+        },
+        {
+          "id": "376a8741-003",
+          "type": "bullet",
+          "text": "工程：育苗・乾燥調製・精米"
+        },
+        {
+          "id": "376a8741-004",
+          "type": "h2",
+          "text": "施設の構成"
+        },
+        {
+          "id": "376a8741-005",
+          "type": "text",
+          "text": "育苗・乾燥調製・精米の設備を、施設の計画に合わせて構成します。"
+        },
+        {
+          "id": "376a8741-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "376a8741-007",
+          "type": "text",
+          "text": "掲載写真：複合施設（公式シリーズ掲載例）。施設の構成は計画によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/84e8d3bc4f8b3e54dcc484c969477e5a/complex_card.jpg",
+        "summary": "育苗・乾燥調製・精米の設備を、一つの建物にまとめる施設です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "376a8741-src-product",
+            "title": "クボタ 製品ページ 複合施設",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/complex/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "376a8741-src-photo",
+            "title": "写真：クボタ 育苗・乾燥調製・精米施設",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/complex/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

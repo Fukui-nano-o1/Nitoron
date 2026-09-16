@@ -1,0 +1,126 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "21166be1-688b-48dc-8d86-8ed5f2d0aeca",
+      "title": "【カタログ解説】クボタ KCX-15-31 低温米びつ お米番（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "21166be1-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "21166be1-002",
+          "type": "text",
+          "text": "白米を低温で保管する米びつ。収納量15kgと31kgの2型式があります。"
+        },
+        {
+          "id": "21166be1-003",
+          "type": "bullet",
+          "text": "白米収納量：KCX-15：15kg／KCX-31：31kg"
+        },
+        {
+          "id": "21166be1-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "21166be1-005",
+          "type": "text",
+          "text": "KCX-15 / KCX-31"
+        },
+        {
+          "id": "21166be1-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "21166be1-007",
+          "type": "text",
+          "text": "掲載写真：KCX-15-31（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/cac8df39b4dbb3a0fdf50af7a9b06015/storage-KCX-15-31_card.jpg",
+        "summary": "白米を低温で保管する米びつ。収納量15kgと31kgの2型式があります。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "21166be1-src-product",
+            "title": "クボタ 製品ページ KCX-15-31",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/storage-KCX-15-31/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "21166be1-src-catalog",
+            "title": "クボタ 製品カタログ 低温米びつ お米番",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/storage-KCX-15-31/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "21166be1-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（KCX-15-31）",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/storage-KCX-15-31/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "21166be1-src-manual-1",
+            "title": "取扱説明書 KCX-15",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ccb0989662211f61edae2e26d58ea92f",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "21166be1-src-manual-2",
+            "title": "取扱説明書 KCX-31",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2823f4797102ce1a1aec05359cc16dd9",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "21166be1-src-photo",
+            "title": "写真：クボタ 低温米びつ お米番",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/storage-KCX-15-31/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

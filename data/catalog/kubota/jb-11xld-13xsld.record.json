@@ -1,0 +1,137 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "6bc7bd5c-29d5-42b1-853a-b1e8adbb07ab",
+      "title": "【カタログ解説】クボタ JB13XSLDSLH130 Bull Star EXTRA ローダ専用機（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "6bc7bd5c-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "6bc7bd5c-002",
+          "type": "text",
+          "text": "13.5馬力のローダ専用トラクタ。在庫限りの製品です。"
+        },
+        {
+          "id": "6bc7bd5c-003",
+          "type": "bullet",
+          "text": "馬力：13.5馬力"
+        },
+        {
+          "id": "6bc7bd5c-004",
+          "type": "bullet",
+          "text": "販売状況：在庫限り"
+        },
+        {
+          "id": "6bc7bd5c-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "6bc7bd5c-006",
+          "type": "text",
+          "text": "JB13XSLDSLH130"
+        },
+        {
+          "id": "6bc7bd5c-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "6bc7bd5c-008",
+          "type": "text",
+          "text": "掲載写真：JB13XSLDSLH130（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/8a3b81fea2ead5861cc4a59b9b3c48a0/JB-11XLD-13XSLD_card.jpg",
+        "summary": "13.5馬力のローダ専用トラクタ。在庫限りの製品です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "6bc7bd5c-src-product",
+            "title": "クボタ 製品ページ JB13XSLDSLH130",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11XLD-13XSLD/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6bc7bd5c-src-catalog",
+            "title": "クボタ 製品カタログ Bull Star EXTRA ローダ専用機",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11XLD-13XSLD/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6bc7bd5c-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（JB13XSLDSLH130）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11XLD-13XSLD/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6bc7bd5c-src-manual-1",
+            "title": "取扱説明書 SLH131",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cb16b8498f74ba6b6a6873518624168c",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6bc7bd5c-src-manual-2",
+            "title": "取扱説明書 JB11X",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e5f6ad6ce374177eef023bf5d0c018b6",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6bc7bd5c-src-manual-3",
+            "title": "取扱説明書 JB13X",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fde9264cf376fffe2ee4ddf4a988880d",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6bc7bd5c-src-photo",
+            "title": "写真：クボタ Bull Star EXTRA ローダ専用機",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11XLD-13XSLD/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

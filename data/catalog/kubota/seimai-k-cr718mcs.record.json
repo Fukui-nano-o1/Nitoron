@@ -1,0 +1,126 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "0b6716ca-01b2-4c56-805f-43d8d0a9cb58",
+      "title": "【カタログ解説】クボタ K-CR718MCS クリーン精米屋 もみすり仕様（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "0b6716ca-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "0b6716ca-002",
+          "type": "text",
+          "text": "もみからも精米できる、もみすり機能付きのクリーン精米屋です。"
+        },
+        {
+          "id": "0b6716ca-003",
+          "type": "bullet",
+          "text": "仕様：もみすり機能付き"
+        },
+        {
+          "id": "0b6716ca-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "0b6716ca-005",
+          "type": "text",
+          "text": "K-CR718MCS"
+        },
+        {
+          "id": "0b6716ca-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "0b6716ca-007",
+          "type": "text",
+          "text": "掲載写真：K-CR718MCS（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/1fa2223de3299e949d7f021a1d12454c/seimai-K-CR718MCS_card.jpg",
+        "summary": "もみからも精米できる、もみすり機能付きのクリーン精米屋です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "0b6716ca-src-product",
+            "title": "クボタ 製品ページ K-CR718MCS",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR718MCS/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0b6716ca-src-catalog",
+            "title": "クボタ 製品カタログ クリーン精米屋 もみすり仕様",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR718MCS/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0b6716ca-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（K-CR718MCS）",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR718MCS/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0b6716ca-src-manual-1",
+            "title": "取扱説明書 K-CR718MCS（本冊子）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=5e9f92a01c986bafcabbafd145520b13",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0b6716ca-src-manual-2",
+            "title": "取扱説明書 K-CR718MCS（設定マニュアル）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=da4f21d00b1992e0b25f463b722dcc6a",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0b6716ca-src-photo",
+            "title": "写真：クボタ クリーン精米屋 もみすり仕様",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR718MCS/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

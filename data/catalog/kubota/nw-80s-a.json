@@ -1,0 +1,51 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "NW80SA",
+  "productName": "Agri Robo 田植機",
+  "summary": "8条植えのアグリロボ田植機。有人仕様と無人仕様があります。",
+  "category": "田植機",
+  "models": [
+    "NW80SA"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "NW80SA（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "条数",
+      "value": "8条植",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-80S-A/",
+      "checkedAt": "2026-09-16",
+      "sha256": "e8615992ceba23400682a47460155dd6409ce8b67fe3de45ba4c4bbb7200241c"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-80S-A/?nav=catalog",
+      "documents": [
+        {
+          "title": "NW80SA カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0032-01.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/NW-80S-A/",
+      "sha256": "1d2069792d5530798bbd7c7c0783e2bc50ae8eed125a2006ed68784f5eca252a"
+    },
+    "manualIndex": {
+      "title": "取扱説明書検索（型式で探す）",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manuals": []
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

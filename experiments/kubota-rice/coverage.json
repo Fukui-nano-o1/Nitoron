@@ -1,0 +1,849 @@
+{
+  "checkedAt": "2026-09-16",
+  "scope": "クボタ公式の稲作関連機器・田植機・稲対応の収穫機、およびトラクタ一覧。製品シリーズ単位。施設3件を含む。",
+  "newCards": 65,
+  "existingCards": 6,
+  "coveredListings": 71,
+  "excluded": [
+    {
+      "url": "https://agriculture.kubota.co.jp/product/combine/KRH-450/",
+      "reason": "公式一覧で麦・大豆・そば用に分類された収穫機"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/combine/ERH-450/",
+      "reason": "公式一覧で麦・大豆・そば用に分類された収穫機"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/combine/SC-250/",
+      "reason": "公式一覧で麦・大豆・そば用に分類された収穫機"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/",
+      "reason": "製品一覧への特集リンク"
+    }
+  ],
+  "additions": [
+    {
+      "key": "rice_equipment-KG-S110X-S40X",
+      "id": "e8403f46-190b-4d62-8b8c-f8447c63bf8e",
+      "path": "data/catalog/kubota/kg-s110x-s40x.json",
+      "series": "KG-S40X3-110X",
+      "category": "稲作関連機器",
+      "models": [
+        "KG-S40X3",
+        "KG-S40X3W",
+        "KG-S55X",
+        "KG-S110X-L",
+        "KG-S110X-R"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/KG-S110X-S40X/"
+    },
+    {
+      "key": "rice_equipment-senbetsu-KG-SO7X",
+      "id": "e2f68bd4-97c0-4b9f-8595-562965df432c",
+      "path": "data/catalog/kubota/senbetsu-kg-so7x.json",
+      "series": "KG-S07X",
+      "category": "稲作関連機器",
+      "models": [
+        "KG-S07X"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/senbetsu-KG-SO7X/"
+    },
+    {
+      "key": "rice_equipment-watering-WATARAS",
+      "id": "2ca72a4a-742c-423c-8d6f-2aa876de65db",
+      "path": "data/catalog/kubota/watering-wataras.json",
+      "series": "WATARAS",
+      "category": "稲作関連機器",
+      "models": [
+        "WT01-AS-A",
+        "WT01-AD-A",
+        "WT01-AS-A（LTE）",
+        "WT01-AD-A（LTE）"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/watering-WATARAS/"
+    },
+    {
+      "key": "rice_equipment-seimai-K-CR515CS-1015CS",
+      "id": "ee778779-bdfe-4f8b-8061-9685330842b8",
+      "path": "data/catalog/kubota/seimai-k-cr515cs-1015cs.json",
+      "series": "K-CR515CS-1015CS",
+      "category": "稲作関連機器",
+      "models": [
+        "K-CR515CS",
+        "K-CR1015CS"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR515CS-1015CS/"
+    },
+    {
+      "key": "rice_equipment-seimai-K-CR718MCS",
+      "id": "0b6716ca-01b2-4c56-805f-43d8d0a9cb58",
+      "path": "data/catalog/kubota/seimai-k-cr718mcs.json",
+      "series": "K-CR718MCS",
+      "category": "稲作関連機器",
+      "models": [
+        "K-CR718MCS"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR718MCS/"
+    },
+    {
+      "key": "rice_equipment-seimai-VM-30C-30NB",
+      "id": "3738f87b-8f2f-4840-8710-de1dbfbabfd1",
+      "path": "data/catalog/kubota/seimai-vm-30c-30nb.json",
+      "series": "VM-30CN-30CPN",
+      "category": "稲作関連機器",
+      "models": [
+        "VM-30CN",
+        "VM-30CPN"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-VM-30C-30NB/"
+    },
+    {
+      "key": "rice_equipment-storage-KCX-15-31",
+      "id": "21166be1-688b-48dc-8d86-8ed5f2d0aeca",
+      "path": "data/catalog/kubota/storage-kcx-15-31.json",
+      "series": "KCX-15-31",
+      "category": "稲作関連機器",
+      "models": [
+        "KCX-15",
+        "KCX-31"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/storage-KCX-15-31/"
+    },
+    {
+      "key": "rice_equipment-hashu-SR-auto",
+      "id": "6bbd4cf6-6780-4c26-89f3-297be1376d44",
+      "path": "data/catalog/kubota/hashu-sr-auto.json",
+      "series": "SR-95KJ-1000H",
+      "category": "稲作関連機器",
+      "models": [
+        "SR-95KJ",
+        "SR-285K",
+        "SR-125KWD",
+        "SR-285KRW",
+        "SR-450KWD",
+        "SR-1205",
+        "SR-2005",
+        "SR-2805",
+        "SR-4500",
+        "SR-6200",
+        "SR-1000H"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-auto/"
+    },
+    {
+      "key": "rice_equipment-hashu-SR-hand",
+      "id": "b3ba57de-2ca7-44eb-820a-db02b8ce8b94",
+      "path": "data/catalog/kubota/hashu-sr-hand.json",
+      "series": "SR-21E",
+      "category": "稲作関連機器",
+      "models": [
+        "SR-21E"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-hand/"
+    },
+    {
+      "key": "rice_equipment-hashu-SA45-86",
+      "id": "1f163c70-2880-4c1e-83c1-964b813c8c64",
+      "path": "data/catalog/kubota/hashu-sa45-86.json",
+      "series": "SA-45-86",
+      "category": "稲作関連機器",
+      "models": [
+        "SA-45",
+        "SA-86"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SA45-86/"
+    },
+    {
+      "key": "rice_equipment-tetsuko-TC40",
+      "id": "5707d6e8-45d2-4b13-8372-60332c704e13",
+      "path": "data/catalog/kubota/tetsuko-tc40.json",
+      "series": "TC40",
+      "category": "稲作関連機器",
+      "models": [
+        "TC40"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/tetsuko-TC40/"
+    },
+    {
+      "key": "rice_equipment-rice-center",
+      "id": "a8b61a1c-8743-4a06-828f-1c1e3371b72f",
+      "path": "data/catalog/kubota/rice-center.json",
+      "series": "ライスセンター",
+      "category": "稲作関連機器",
+      "models": [],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/rice-center/"
+    },
+    {
+      "key": "rice_equipment-plant",
+      "id": "1ca64d41-c644-4d04-8f22-9360d350bcce",
+      "path": "data/catalog/kubota/plant.json",
+      "series": "育苗施設",
+      "category": "稲作関連機器",
+      "models": [],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/plant/"
+    },
+    {
+      "key": "rice_equipment-complex",
+      "id": "376a8741-686f-46b5-823d-ee2a07b06d13",
+      "path": "data/catalog/kubota/complex.json",
+      "series": "複合施設",
+      "category": "稲作関連機器",
+      "models": [],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/complex/"
+    },
+    {
+      "key": "rice_equipment-keiryou-KS-H880",
+      "id": "0f4bf5be-9099-4d2d-80d7-773352cf746b",
+      "path": "data/catalog/kubota/keiryou-ks-h880.json",
+      "series": "KS-H880-U-H8000-U",
+      "category": "稲作関連機器",
+      "models": [
+        "KS-H880-U",
+        "KS-H8000-U"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H880/"
+    },
+    {
+      "key": "rice_equipment-keiryou-KS-H8000",
+      "id": "729d7a13-9ebb-4970-81e2-4d2f5063d73a",
+      "path": "data/catalog/kubota/keiryou-ks-h8000.json",
+      "series": "KS-H8000-U-L",
+      "category": "稲作関連機器",
+      "models": [
+        "KS-H8000-U-L"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H8000/"
+    },
+    {
+      "key": "rice_equipment-keiryou-KS-H1000DS",
+      "id": "21edc773-0c1a-46cc-80ca-18185a20db7e",
+      "path": "data/catalog/kubota/keiryou-ks-h1000ds.json",
+      "series": "KS-H1000DS",
+      "category": "稲作関連機器",
+      "models": [
+        "KS-H1000DS"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H1000DS/"
+    },
+    {
+      "key": "rice_equipment-keiryou-KS-H30DS",
+      "id": "f4c24281-b318-4a13-8811-bb0cf9f44f34",
+      "path": "data/catalog/kubota/keiryou-ks-h30ds.json",
+      "series": "KS-H30DS",
+      "category": "稲作関連機器",
+      "models": [
+        "KS-H30DS"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H30DS/"
+    },
+    {
+      "key": "taueki-NW-8-10S-A",
+      "id": "03e6bdd2-69af-4700-8dde-f50edc3ccdf3",
+      "path": "data/catalog/kubota/nw-8-10s-a.json",
+      "series": "NW10SA",
+      "category": "田植機",
+      "models": [
+        "NW10SA"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/taueki/NW-8-10S-A/"
+    },
+    {
+      "key": "taueki-NW-10S",
+      "id": "88bdd856-667e-4bda-871b-c43077b0b36e",
+      "path": "data/catalog/kubota/nw-10s.json",
+      "series": "NW10S",
+      "category": "田植機",
+      "models": [
+        "NW10S"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/taueki/NW-10S/"
+    },
+    {
+      "key": "taueki-NW-80S-A",
+      "id": "d1600cc2-f25b-4ce2-8a2e-5b0f81e06248",
+      "path": "data/catalog/kubota/nw-80s-a.json",
+      "series": "NW80SA",
+      "category": "田植機",
+      "models": [
+        "NW80SA"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/taueki/NW-80S-A/"
+    },
+    {
+      "key": "taueki-NW-60-80S",
+      "id": "dbfb068b-4595-42af-8524-0959f3e70f37",
+      "path": "data/catalog/kubota/nw-60-80s.json",
+      "series": "NW60S-80S",
+      "category": "田植機",
+      "models": [
+        "NW60S",
+        "NW80S"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/taueki/NW-60-80S/"
+    },
+    {
+      "key": "taueki-NW-50N-80N",
+      "id": "fadfa7ca-bb19-43c8-8f7f-dd9b0e87a1e5",
+      "path": "data/catalog/kubota/nw-50n-80n.json",
+      "series": "NW50N-80N",
+      "category": "田植機",
+      "models": [
+        "NW50N",
+        "NW60N",
+        "NW80N"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/taueki/NW-50N-80N/"
+    },
+    {
+      "key": "taueki-WD-6-8",
+      "id": "ff7904cc-aa7f-4ebe-8c2d-acc5fe9de4f7",
+      "path": "data/catalog/kubota/wd-6-8.json",
+      "series": "WD6-8",
+      "category": "田植機",
+      "models": [
+        "WD6",
+        "WD8"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/taueki/WD-6-8/"
+    },
+    {
+      "key": "taueki-PW-4",
+      "id": "882ce641-541d-4f2d-8b66-a905222cc7fe",
+      "path": "data/catalog/kubota/pw-4.json",
+      "series": "PW4",
+      "category": "田植機",
+      "models": [
+        "PW4C",
+        "PW4R"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/taueki/PW-4/"
+    },
+    {
+      "key": "taueki-JP-200-400",
+      "id": "870bdaf5-f27c-4de6-8042-5e111483bcc0",
+      "path": "data/catalog/kubota/jp-200-400.json",
+      "series": "JP200-400",
+      "category": "田植機",
+      "models": [
+        "JP200",
+        "JP400"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/taueki/JP-200-400/"
+    },
+    {
+      "key": "taueki-NDS-SY",
+      "id": "d1e33667-d7d0-495b-8f23-4597a3d81057",
+      "path": "data/catalog/kubota/nds-sy.json",
+      "series": "NDS-SY",
+      "category": "田植機",
+      "models": [
+        "NDS-600F",
+        "NDS-800F",
+        "SY6-NDS",
+        "SY8-NDS"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/taueki/NDS-SY/"
+    },
+    {
+      "key": "taueki-SSY-6-8",
+      "id": "e8dbd4bf-1bf1-493a-84f5-74a44e4a0c34",
+      "path": "data/catalog/kubota/ssy-6-8.json",
+      "series": "SSY6-8",
+      "category": "田植機",
+      "models": [
+        "SSY6",
+        "SSY8"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/taueki/SSY-6-8/"
+    },
+    {
+      "key": "taueki-HSY-CS",
+      "id": "d82cdd6e-12c2-4783-8aed-e3a0b117905c",
+      "path": "data/catalog/kubota/hsy-cs.json",
+      "series": "HSY-CS",
+      "category": "田植機",
+      "models": [
+        "HSY",
+        "CS-100",
+        "CS-30",
+        "CS-10M-AW",
+        "CS-10M-EP4"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/taueki/HSY-CS/"
+    },
+    {
+      "key": "combine-DR-7130",
+      "id": "203a73a9-e48f-4979-8d8d-1c529e1eef4b",
+      "path": "data/catalog/kubota/dr-7130.json",
+      "series": "DR7130",
+      "category": "コンバイン",
+      "models": [
+        "DR7130"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/combine/DR-7130/"
+    },
+    {
+      "key": "combine-DR-6130-A",
+      "id": "0cf94321-1475-44db-883b-89bb7f050891",
+      "path": "data/catalog/kubota/dr-6130-a.json",
+      "series": "DR6130A",
+      "category": "コンバイン",
+      "models": [
+        "DR6130A"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/combine/DR-6130-A/"
+    },
+    {
+      "key": "combine-DR-575-6130",
+      "id": "a838e2c0-d5b9-4021-8a5f-db046f439d6a",
+      "path": "data/catalog/kubota/dr-575-6130.json",
+      "series": "DR575-6130",
+      "category": "コンバイン",
+      "models": [
+        "DR575",
+        "DR595",
+        "DR6115",
+        "DR6130"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/combine/DR-575-6130/"
+    },
+    {
+      "key": "combine-WRN-6100",
+      "id": "650d8e0e-5e91-41a8-8b1d-fb63f8fe9825",
+      "path": "data/catalog/kubota/wrn-6100.json",
+      "series": "WRN6100",
+      "category": "コンバイン",
+      "models": [
+        "WRN6100"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/combine/WRN-6100/"
+    },
+    {
+      "key": "combine-WRN-575",
+      "id": "01a39268-771a-46ac-83af-61c299b2f2a4",
+      "path": "data/catalog/kubota/wrn-575.json",
+      "series": "WRN575",
+      "category": "コンバイン",
+      "models": [
+        "WRN575"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/combine/WRN-575/"
+    },
+    {
+      "key": "combine-DR-472",
+      "id": "219b1789-8030-4303-87ca-8ec24304d798",
+      "path": "data/catalog/kubota/dr-472.json",
+      "series": "DR472",
+      "category": "コンバイン",
+      "models": [
+        "DR472"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/combine/DR-472/"
+    },
+    {
+      "key": "combine-R-462",
+      "id": "f65eb2ba-3209-4808-81b7-75ccf32d0f93",
+      "path": "data/catalog/kubota/r-462.json",
+      "series": "R462",
+      "category": "コンバイン",
+      "models": [
+        "R462"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/combine/R-462/"
+    },
+    {
+      "key": "combine-KR-334-448",
+      "id": "cd0803f6-f075-4010-85f8-0cdad4c0c67b",
+      "path": "data/catalog/kubota/kr-334-448.json",
+      "series": "KR334-448",
+      "category": "コンバイン",
+      "models": [
+        "KR334",
+        "KR338",
+        "KR438",
+        "KR448"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/combine/KR-334-448/"
+    },
+    {
+      "key": "combine-ER-448-NL",
+      "id": "2fc1d523-4416-476a-88db-a60860ed01a3",
+      "path": "data/catalog/kubota/er-448-nl.json",
+      "series": "ER448NL",
+      "category": "コンバイン",
+      "models": [
+        "ER448NL"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/combine/ER-448-NL/"
+    },
+    {
+      "key": "combine-R325",
+      "id": "ad3cb374-fb34-400f-8bc7-cba2e328ba5a",
+      "path": "data/catalog/kubota/r325.json",
+      "series": "R325",
+      "category": "コンバイン",
+      "models": [
+        "R325"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/combine/R325/"
+    },
+    {
+      "key": "combine-DRH-1200A",
+      "id": "4ee9f213-2078-4137-8975-ca8fc67d8664",
+      "path": "data/catalog/kubota/drh-1200a.json",
+      "series": "DRH1200A",
+      "category": "コンバイン",
+      "models": [
+        "DRH1200A-A",
+        "DRH1200A-OP"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/combine/DRH-1200A/"
+    },
+    {
+      "key": "combine-DRH-1200",
+      "id": "3b4ee449-4c15-4ac1-8c17-462460009941",
+      "path": "data/catalog/kubota/drh-1200.json",
+      "series": "DRH1200",
+      "category": "コンバイン",
+      "models": [
+        "DRH1200"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/combine/DRH-1200/"
+    },
+    {
+      "key": "combine-binder",
+      "id": "af7c3249-324c-4129-808d-fbb877297a0e",
+      "path": "data/catalog/kubota/binder.json",
+      "series": "RJ250-550",
+      "category": "コンバイン",
+      "models": [
+        "RJ250",
+        "RJ350",
+        "RJ550"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/combine/binder/"
+    },
+    {
+      "key": "combine-harvester",
+      "id": "cc0cd310-0dd2-44d7-8a5f-6cef7950a83c",
+      "path": "data/catalog/kubota/harvester.json",
+      "series": "HS5000-7000",
+      "category": "コンバイン",
+      "models": [
+        "HS5000",
+        "HS6000",
+        "HS7000"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/combine/harvester/"
+    },
+    {
+      "key": "tractor-M7-134-174",
+      "id": "78f5a064-c4fe-43ef-84b1-0981883f1f66",
+      "path": "data/catalog/kubota/m7-134-174.json",
+      "series": "M7-134-174",
+      "category": "トラクタ",
+      "models": [
+        "M7-134",
+        "M7-154",
+        "M7-174"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/M7-134-174/"
+    },
+    {
+      "key": "tractor-M-100GEP-135GEP",
+      "id": "fcecb503-a5ce-48fa-8e53-2727cb61d9de",
+      "path": "data/catalog/kubota/m-100gep-135gep.json",
+      "series": "M100GEP-135GEP",
+      "category": "トラクタ",
+      "models": [
+        "M100GEP",
+        "M110GEP(PC)",
+        "M115GEP",
+        "M125GEP(PC)",
+        "M135GEP(PC)"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/M-100GEP-135GEP/"
+    },
+    {
+      "key": "tractor-M-1060W",
+      "id": "b9c13325-80e1-4618-8c20-caf1ae17aaab",
+      "path": "data/catalog/kubota/m-1060w.json",
+      "series": "M1060W",
+      "category": "トラクタ",
+      "models": [
+        "M1060W"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/M-1060W/"
+    },
+    {
+      "key": "tractor-MR-800-1050",
+      "id": "26e64677-443c-42e6-8ed5-a7c7d68e8109",
+      "path": "data/catalog/kubota/mr-800-1050.json",
+      "series": "MR800-1050",
+      "category": "トラクタ",
+      "models": [
+        "MR800(H)(PC)",
+        "MR900(H)(PC)",
+        "MR1000(H)(PC)",
+        "MR1050H(PC)"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050/"
+    },
+    {
+      "key": "tractor-M-860W-1010W",
+      "id": "5c28c627-3a8f-4705-8b0e-848663ebe006",
+      "path": "data/catalog/kubota/m-860w-1010w.json",
+      "series": "M860W-1010W-SE",
+      "category": "トラクタ",
+      "models": [
+        "M860W-SE",
+        "M1010W-SE"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/M-860W-1010W/"
+    },
+    {
+      "key": "tractor-MR-800-1050-A2H",
+      "id": "a72c33e6-bb45-4d04-8c75-21827d944a19",
+      "path": "data/catalog/kubota/mr-800-1050-a2h.json",
+      "series": "MR800A2H-1050A2H",
+      "category": "トラクタ",
+      "models": [
+        "MR800A2H",
+        "MR1000A2H",
+        "MR1050A2H"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050-A2H/"
+    },
+    {
+      "key": "tractor-MR-1000-AH",
+      "id": "57264e8e-0c26-46e2-83d8-8e1d222401c8",
+      "path": "data/catalog/kubota/mr-1000-ah.json",
+      "series": "MR1000AH",
+      "category": "トラクタ",
+      "models": [
+        "MR1000AH"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/MR-1000-AH/"
+    },
+    {
+      "key": "tractor-M720W",
+      "id": "bd6c7e4f-6bfc-40bf-8c9b-c4374b7655e9",
+      "path": "data/catalog/kubota/m720w.json",
+      "series": "M720W",
+      "category": "トラクタ",
+      "models": [
+        "M720W"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/M720W/"
+    },
+    {
+      "key": "tractor-MR-600-700",
+      "id": "55d2290a-80dd-46e0-8238-681eaa33c5d4",
+      "path": "data/catalog/kubota/mr-600-700.json",
+      "series": "MR600-700",
+      "category": "トラクタ",
+      "models": [
+        "MR600H",
+        "MR650H",
+        "MR700H",
+        "MR650H(PC)",
+        "MR700H(PC)"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/MR-600-700/"
+    },
+    {
+      "key": "tractor-MR-70-SP",
+      "id": "48e8d61d-85a0-4ffc-8987-7fe34b6fe531",
+      "path": "data/catalog/kubota/mr-70-sp.json",
+      "series": "MR70",
+      "category": "トラクタ",
+      "models": [
+        "MR70",
+        "MR70(PC)"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/MR-70-SP/"
+    },
+    {
+      "key": "tractor-SL-38-54-SP",
+      "id": "0f564a69-9d7e-4c89-88eb-1c98197641fd",
+      "path": "data/catalog/kubota/sl-38-54-sp.json",
+      "series": "SL38HSP-54HSP",
+      "category": "トラクタ",
+      "models": [
+        "SL38HSP",
+        "SL45HSP",
+        "SL54HSP(PC)"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/SL-38-54-SP/"
+    },
+    {
+      "key": "tractor-SL-280-350-SP",
+      "id": "58ce2891-9e24-4331-82ff-c00df8419393",
+      "path": "data/catalog/kubota/sl-280-350-sp.json",
+      "series": "SL280-350-SPF",
+      "category": "トラクタ",
+      "models": [
+        "SL280SPF(PC)",
+        "SL350(H)SPF(PC)"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/SL-280-350-SP/"
+    },
+    {
+      "key": "tractor-SL-24",
+      "id": "526d0ef0-bae5-43c3-8bc8-436fba5225c8",
+      "path": "data/catalog/kubota/sl-24.json",
+      "series": "SL24",
+      "category": "トラクタ",
+      "models": [
+        "SL24"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/SL-24/"
+    },
+    {
+      "key": "tractor-ST-25-31",
+      "id": "ab917f8b-a32a-4f2d-8eb2-79451659a5f1",
+      "path": "data/catalog/kubota/st-25-31.json",
+      "series": "ST25-31",
+      "category": "トラクタ",
+      "models": [
+        "ST25(PC)",
+        "ST31(PC)"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/ST-25-31/"
+    },
+    {
+      "key": "tractor-JB-115-195",
+      "id": "e1b8badd-bec5-4bd3-8e4b-22ec97666e25",
+      "path": "data/catalog/kubota/jb-115-195.json",
+      "series": "JB115-195",
+      "category": "トラクタ",
+      "models": [
+        "JB115",
+        "JB135",
+        "JB155",
+        "JB195(PC)"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/JB-115-195/"
+    },
+    {
+      "key": "tractor-NB-17-23",
+      "id": "1bd5e2b8-d8eb-45dc-83e1-cb3ad87a5273",
+      "path": "data/catalog/kubota/nb-17-23.json",
+      "series": "NB17-23",
+      "category": "トラクタ",
+      "models": [
+        "NB17",
+        "NB19(PC)",
+        "NB21(PC)",
+        "NB23(PC)"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/NB-17-23/"
+    },
+    {
+      "key": "tractor-NB-21-GS",
+      "id": "2d3699e9-71b5-43a0-8e42-85506c5be079",
+      "path": "data/catalog/kubota/nb-21-gs.json",
+      "series": "NB21GS",
+      "category": "トラクタ",
+      "models": [
+        "NB21GS"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/NB-21-GS/"
+    },
+    {
+      "key": "tractor-NB-21-SP",
+      "id": "b5b5a301-1363-4b34-8245-d6fed9e30909",
+      "path": "data/catalog/kubota/nb-21-sp.json",
+      "series": "NB21SP",
+      "category": "トラクタ",
+      "models": [
+        "NB21SP(PC)"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/NB-21-SP/"
+    },
+    {
+      "key": "tractor-JB-11-19",
+      "id": "0acce27e-fd78-46b1-8052-fec04c9bf253",
+      "path": "data/catalog/kubota/jb-11-19.json",
+      "series": "JB11X-19X",
+      "category": "トラクタ",
+      "models": [
+        "JB11X",
+        "JB13XSP(PC)",
+        "JB15X(PC)",
+        "JB15XSPN",
+        "JB17X-PC",
+        "JB18XSP",
+        "JB19X(PC)"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/JB-11-19/"
+    },
+    {
+      "key": "tractor-JB-11XLD-13XSLD",
+      "id": "6bc7bd5c-29d5-42b1-853a-b1e8adbb07ab",
+      "path": "data/catalog/kubota/jb-11xld-13xsld.json",
+      "series": "JB13XSLDSLH130",
+      "category": "トラクタ",
+      "models": [
+        "JB13XSLDSLH130"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/JB-11XLD-13XSLD/"
+    },
+    {
+      "key": "tractor-JB-13X-N",
+      "id": "8cb96126-b6e3-4652-8b36-fc4e319bdba8",
+      "path": "data/catalog/kubota/jb-13x-n.json",
+      "series": "JB13XN",
+      "category": "トラクタ",
+      "models": [
+        "JB13XN(M)"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/"
+    },
+    {
+      "key": "tractor-NR-17-23",
+      "id": "f2634e03-1e48-4712-8cf2-3a8ec8ca43f8",
+      "path": "data/catalog/kubota/nr-17-23.json",
+      "series": "NR17-23",
+      "category": "トラクタ",
+      "models": [
+        "NR17",
+        "NR23"
+      ],
+      "source": "https://agriculture.kubota.co.jp/product/tractor/NR-17-23/"
+    }
+  ],
+  "existing": [
+    {
+      "path": "data/catalog/kubota/nw-50s.json",
+      "series": "NW-50S",
+      "source": "https://agriculture.kubota.co.jp/product/taueki/NW-50S/"
+    },
+    {
+      "path": "data/catalog/kubota/aw-4-5.json",
+      "series": "AW-4-5",
+      "source": "https://agriculture.kubota.co.jp/product/taueki/AW-4-5/"
+    },
+    {
+      "path": "data/catalog/kubota/kr-217-323.json",
+      "series": "KR-217-323",
+      "source": "https://agriculture.kubota.co.jp/product/combine/KR-217-323/"
+    },
+    {
+      "path": "data/catalog/kubota/er-211-213.json",
+      "series": "ER-211-213",
+      "source": "https://agriculture.kubota.co.jp/product/combine/ER-211-213/"
+    },
+    {
+      "path": "data/catalog/kubota/sl-280-600.json",
+      "series": "SL-280-600",
+      "source": "https://agriculture.kubota.co.jp/product/tractor/SL-280-600/"
+    },
+    {
+      "path": "data/catalog/kubota/nb-195-245.json",
+      "series": "NB-195-245",
+      "source": "https://agriculture.kubota.co.jp/product/tractor/NB-195-245/"
+    }
+  ]
+}

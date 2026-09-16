@@ -1,0 +1,126 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "5c28c627-3a8f-4705-8b0e-848663ebe006",
+      "title": "【カタログ解説】クボタ M860W-1010W-SE WORLD Special Edition（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "5c28c627-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "5c28c627-002",
+          "type": "text",
+          "text": "86馬力と101馬力のトラクタ。ワールドのスペシャルエディションです。"
+        },
+        {
+          "id": "5c28c627-003",
+          "type": "bullet",
+          "text": "馬力：86/101馬力"
+        },
+        {
+          "id": "5c28c627-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "5c28c627-005",
+          "type": "text",
+          "text": "M860W-SE / M1010W-SE"
+        },
+        {
+          "id": "5c28c627-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "5c28c627-007",
+          "type": "text",
+          "text": "掲載写真：M860W-1010W-SE（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/82c395e47f153ca35a0bf8843d73de69/world_se_card.jpg",
+        "summary": "86馬力と101馬力のトラクタ。ワールドのスペシャルエディションです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "5c28c627-src-product",
+            "title": "クボタ 製品ページ M860W-1010W-SE",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M-860W-1010W/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5c28c627-src-catalog",
+            "title": "クボタ 製品カタログ WORLD Special Edition",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M-860W-1010W/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5c28c627-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（M860W-1010W-SE）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M-860W-1010W/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5c28c627-src-manual-1",
+            "title": "取扱説明書 M860W-SE",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=70222949cc0db89ab32c9969754d4758",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5c28c627-src-manual-2",
+            "title": "取扱説明書 M1010W-SE",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7e7e69ea3384874304911625ac34321c",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5c28c627-src-photo",
+            "title": "写真：クボタ WORLD Special Edition",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M-860W-1010W/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

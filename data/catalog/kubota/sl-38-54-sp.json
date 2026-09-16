@@ -1,0 +1,95 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "SL38HSP-54HSP",
+  "productName": "Slugger マニュアルシフト仕様スペシャル",
+  "summary": "38〜54馬力のトラクタ。マニュアルシフト仕様のスラッガーです。",
+  "category": "トラクタ",
+  "models": [
+    "SL38HSP",
+    "SL45HSP",
+    "SL54HSP(PC)"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "SL38HSP-54HSP（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "38〜54馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-38-54-SP/",
+      "checkedAt": "2026-09-16",
+      "sha256": "ecd16386e8ee12873c9718fdd80877a5592444e2e5a0601ac8210c450aa7d286"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-38-54-SP/?nav=catalog",
+      "documents": [
+        {
+          "title": "Sluggerマニュアルシフト仕様スペシャル",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0044-02n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/SL-38-54-SP/",
+      "sha256": "9ad53f4fb3f14e9f6c644c33b1fcd4517c699b6ef0f9521222728bc2b13c1352"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（SL38HSP-54HSP）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-38-54-SP/?nav=manual",
+      "sha256": "e446254f12c96baa78edb8f55cdb5b22e2d90e03f66d172e8cd6802403f62f21"
+    },
+    "manuals": [
+      {
+        "title": "SL38",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8038da89e49ac5eabb489cfc6cea9fc1"
+      },
+      {
+        "title": "SL38H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d860edd1dd83b36f02ce52bde626c653"
+      },
+      {
+        "title": "SL45",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=06b1338ba02add2b5d2da67663b19ebe"
+      },
+      {
+        "title": "SL45-8F",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=aebf7782a3d445f43cf30ee2c0d84dee"
+      },
+      {
+        "title": "SL45H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=325995af77a0e8b06d1204a171010b3a"
+      },
+      {
+        "title": "SL45H-8F",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=296472c9542ad4d4788d543508116cbc"
+      },
+      {
+        "title": "SL45H-C",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fb2e203234df6dee15934e448ee88971"
+      },
+      {
+        "title": "SL54H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2cad8fa47bbef282badbb8de5374b894"
+      },
+      {
+        "title": "SL54H-C",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c5866e93cab1776890fe343c9e7063fb"
+      },
+      {
+        "title": "SL54H-WT",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7b1ce3d73b70f1a7246e7b76a35fb552"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

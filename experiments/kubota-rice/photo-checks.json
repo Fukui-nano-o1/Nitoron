@@ -1,0 +1,522 @@
+[
+  {
+    "key": "combine-DR-472",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/638d84b93517eb09fad2acfbbb703187/DR-472-GS-Q_card.jpg",
+    "sha256": "e379a93ad408e3e17ca15d360e9f4fd3c307b6e33f4b6d7be4dd7b3fdef5ff5e",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "combine-DR-575-6130",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/608551d1e76c67771c410b0399639188/dionith_card%20%282%29.jpg",
+    "sha256": "524af8f111683e9f1662c4cc19789b6ee3d756fa3428960320b3c126ac74bf4c",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "combine-DR-6130-A",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/4c1a9d5278accd4e35c9b48c29f2c487/adr6130a_card.jpg",
+    "sha256": "b6618dee48c1d6882ce2bdb1ac2ea53ce4543be9288506646eb320f689ba4b70",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "combine-DR-7130",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/be0c9f21645ef099fbbb75da026afba2/DR7130_card.jpg",
+    "sha256": "e68734dc1c81e49e7b05edad82b9bf8fe644371ef80488cbbf10bcb46f74f5fc",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "combine-DRH-1200",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/2f0d6073db2317909680efe70437159d/DRH-1200_card.jpg",
+    "sha256": "2c039491983ede4916c4d1295c7f74aa2543ff6931c1a8354872f9c1b8987d34",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "combine-DRH-1200A",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/04263c060dc7238c9d048e0ea57b9468/DRH-1200A_card.jpg",
+    "sha256": "7866cdecbe371414d2183ec7a427863232f0bff60d1d7afe9c8c344a7cee770b",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "combine-ER-448-NL",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/ed964baadd00fdcd7f3ad263dcdd305e/ER-448-NL-thumb.jpg",
+    "sha256": "b39dd6e4d149d61c867be43cf452e30385f935f9c5ebab18d5b8c7b7ff26a139",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "combine-KR-334-448",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/7a5e1755addc607353261ada7105557a/KR334-448_card.jpg",
+    "sha256": "c4b0e7486c7d4fbbed58e7112a709dbf2d82f67cea959410a5ffe95d889a264b",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "combine-R-462",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/9e78158f61248631709c86d282c8a09b/R462_card.jpg",
+    "sha256": "d3204c91e5777dd4e42a61e9d784c198e2d91017a420d9f5f48d5abedd43e5e2",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "combine-R325",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/f915195207386e5a49ea81afec968bb1/130th_r325_card.jpg",
+    "sha256": "2faeb86c52b3a164ecdd66a27ab8c01b34c5133e3c3025f245d99e3e89e93c2c",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "combine-WRN-575",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/37b34f9cd90c644e640656c9f90f2b39/230519_WRN-575_card.jpg",
+    "sha256": "75941fe03bc59f2133f123e16cbdcd2b21b008ec148e50e30972d362cdb1a7ea",
+    "width": 1342,
+    "height": 756,
+    "format": "JPEG"
+  },
+  {
+    "key": "combine-WRN-6100",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/04fc19b3f92f0cc3ae11cabd23064f06/wrn6100_card.jpg",
+    "sha256": "88bbbcede1950420b55554fedb5bbf1a252183fb007a575c86d675426d3c3f6a",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "combine-binder",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/49a982718a5448a6a6c311db72b28485/binderRJ_card.jpg",
+    "sha256": "616954399bc1ed0e97b21a3587577f6047b4033f3619f37f4190fb4c2b7c4c73",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "combine-harvester",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/3252c507cdc19fc20da94ab9e4296af5/newHSseries_card.jpg",
+    "sha256": "33f4212252df73787bc72e6d39226f2e1cd71e7fffd5642fe52fc1fdf3f795e9",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-KG-S110X-S40X",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/99842cb8ee4195ef64213d4aa2a57328/kg-s110x_new.jpg",
+    "sha256": "4797c4b5f88cfca4afe62d380b21259e6a6bf49113914fce84782252551540ec",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-complex",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/84e8d3bc4f8b3e54dcc484c969477e5a/complex_card.jpg",
+    "sha256": "d9fc4ed49c43e785bb42e7d932c6789ae6b012063b9a49fba23740af9b9f4fe0",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-hashu-SA45-86",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/d668addd80978b900f0d58063745664f/hashu-SA45-86_card%20%281%29.jpg",
+    "sha256": "be4c5c00404ba96bcdf615fafd204d80e374f95a32ff0646430df362103e5354",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-hashu-SR-auto",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/1280663fe242c5a82ad04c2a9a58d1e3/hashu-SR-auto_card%20%281%29.jpg",
+    "sha256": "352ada4de6ed73607e0e6bde9f3ce7044cc271f8bbff7cafd651de167a7ab6a0",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-hashu-SR-hand",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/8db4e20f1932c877ea80986e9d372342/hashu-SR-hand_card%20%281%29.jpg",
+    "sha256": "6e160054019c1e25f0cf07f95a2eccc47172b8f9b24cf02ba5facea758cc40f2",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-keiryou-KS-H1000DS",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/346ba0c3a20ee358f7e897f40baae007/ks-h1000ds_card.jpg",
+    "sha256": "ed881b2f069daef323c552ca0b6d343f4b105ebc6e2424738b29bc71b26bf248",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-keiryou-KS-H30DS",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/3108eb8bf05ca1bb25e33b371cb43677/ks-h30ds_card.jpg",
+    "sha256": "66fd63ca0f997c33661fc02bc2659a73e4f385e6019f4a89c978ffa9b44b2a3f",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-keiryou-KS-H8000",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/843ce9e8e3b6d6680b772d9e74fd7d79/mini_ton_card.jpg",
+    "sha256": "17d6503933af18115683b95d9f28881d1fa0977f4695f555058acbfeab969a82",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-keiryou-KS-H880",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/644f9ea9951702c36a9ed5923c24f964/super_tonfukuro_card.jpg",
+    "sha256": "5394b27d72c0cbf8c7dd69d53aa0d4199256dcce199c72f95fba1d646b9a705b",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-plant",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/4d7aa9f6729f50b4cedcae2c0dded759/230606_plant_card.jpg",
+    "sha256": "be72de4bfdff08d2d34d83679e3075f5fc6e0dae50668221c05d155aae274774",
+    "width": 1342,
+    "height": 756,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-rice-center",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/505b98afad22657c6616b851b2cf761d/rice_center_card%20%282%29.jpg",
+    "sha256": "a136eadf64ce2619236ab8170687a08dc4513b96022c238f6d515c301a3a806c",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-seimai-K-CR515CS-1015CS",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/14189d253091d06f11f1cfd3ab248d5f/seimai-K-CR515CS-1015CS_card.jpg",
+    "sha256": "5483ad7b60bc8060b6c9de1be51c26522140b3466878056a64861491913554d6",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-seimai-K-CR718MCS",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/1fa2223de3299e949d7f021a1d12454c/seimai-K-CR718MCS_card.jpg",
+    "sha256": "ea2426d73005887e3144fe9dc5ab4611357c99e7665b36386d403991c1d39a2e",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-seimai-VM-30C-30NB",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/9825d4657c9fe9531f03df05aa0bb064/%E7%B1%B3%E4%BC%AF%E6%A5%BD%28VM-30C%29.jpg",
+    "sha256": "7294d48711d30faa9f0276985a30917e327d1dfb8e7684af6950f00b2f37ba09",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-senbetsu-KG-SO7X",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/9051bd8c5153a21fdeca5e94910763c9/senbetsu-KG-SO7X_cardnew.jpg",
+    "sha256": "bc2391cbf06571a38d0bbeda4f87f13084d9d5c2d3d00346b2195c7f3953240b",
+    "width": 1312,
+    "height": 737,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-storage-KCX-15-31",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/cac8df39b4dbb3a0fdf50af7a9b06015/storage-KCX-15-31_card.jpg",
+    "sha256": "e9d0708fda1f539db42afe96ff5f65a0a7116354fef030558809813aa072a14e",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-tetsuko-TC40",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/6f04bb57d5c9913c6dd50bd586f1b6ee/tetsuko-TC40_card%20%281%29.jpg",
+    "sha256": "61993b9eb9c667cd93027d77413acb38b828fd706860afa025c1e427c48061df",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "rice_equipment-watering-WATARAS",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/3638a71c861d01d513dc27eea3e9a56d/watering-WATARAS_card.jpg",
+    "sha256": "59f5da609f6f2aa7a505f7a0399da9087f441619afd3e9483c4290277d070479",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "taueki-HSY-CS",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/f728d271c83974ee6b03fe128f602f6d/attachment_hsy_cs_card.jpg",
+    "sha256": "752caaa35ff0211431d8a8682cefa94ba626d26e1caf9de2dbfbea4f7bc5ba1b",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "taueki-JP-200-400",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/0fec51a5636a472b00c11cc2819c7a95/JP-200-400_card%20%281%29.jpg",
+    "sha256": "8fac63cfd0c93fe892ee8d338deaa4989f32753e459ad76cd09ea225842e1810",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "taueki-NDS-SY",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/96e1a3b1128f1c5c1c77fe1f3837fe05/NDS_card-thumb_1280_720.png",
+    "sha256": "1051c94bdd72d795fb96e115e49a64441f2095308925046b11b4639625a0e186",
+    "width": 1280,
+    "height": 720,
+    "format": "PNG"
+  },
+  {
+    "key": "taueki-NW-10S",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/0c6cc4edf76905bafd1fe54a575f8bab/nw10s_card.jpg",
+    "sha256": "661f15e2b6243904a645b39b70b9dec12787641234f7f38bc8fbc68d7d28d9ed",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "taueki-NW-50N-80N",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/089c2b531f86d645d9497591ae209cf6/NW-N_card-thumb_1280_720.png",
+    "sha256": "7ea186cb321969b74a7a1748064072b7a51976ef4688d9286b319f2ac3dab469",
+    "width": 1280,
+    "height": 720,
+    "format": "PNG"
+  },
+  {
+    "key": "taueki-NW-60-80S",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/464b18f1f597a154ddc379818498f2f4/card-thumb.jpg",
+    "sha256": "edf5057ba9dbbf09141d13936e25930b786f86ccdc3374fc12338c16b9f57ce9",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "taueki-NW-8-10S-A",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/2cb74beba0a0b0160a91ed9f84a8fa8b/nw8sa_card%20%281%29.jpg",
+    "sha256": "e4b33b7c81fec926609a40f64f4e4baceee0a147739bd66fd0c398e30fb88da8",
+    "width": 1317,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "taueki-NW-80S-A",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/155183f4da3f8a14aa5646ad8324fc3c/card-thumb.jpg",
+    "sha256": "f8aaf0456b5a5fcad510a01127a68d2b368936aa80141f5349113d7b3f282ffb",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "taueki-PW-4",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/e980667ff3dd825e8ff5a6a4473ecb4f/paswel_card.jpg",
+    "sha256": "04aec6de7fb2c410fec5b74daae121f9e7b6659469a13624404110db9db47d56",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "taueki-SSY-6-8",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/3202947bd2035e78ab6d456368f02c74/ssy_card.jpg",
+    "sha256": "20b1daf1ccce3a3f04e2635b33eb7e079049be55fcfddf908bb6e4920ef03e7d",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "taueki-WD-6-8",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/26c63b939214d7143b22485d2e58248a/WD-6-8_card.jpg",
+    "sha256": "c6aff67e6d15de48386580dd4a25d88b726fc19fc8c1847bb8d1db45e861bd65",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-JB-11-19",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/73eb4cb3f9ea9dc3cfaf48267178568d/JB-11-19_card.jpg",
+    "sha256": "6b939b9c5dc2ab467d4c304dbf11d85dfdf5030fdc1ebf03063356486051da9c",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-JB-115-195",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/885b374f0faa8cdebc959267a2558e6f/JB-115-195_card-thumb.jpg",
+    "sha256": "5363b5ceff2f83c1618a2139b04afb446268940381af0cd1c8b0db782400fa3f",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-JB-11XLD-13XSLD",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/8a3b81fea2ead5861cc4a59b9b3c48a0/JB-11XLD-13XSLD_card.jpg",
+    "sha256": "16fa63dac04cd927db7dc0351eb5aed237e3349c08e39c969d49d8a26dd309ba",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-JB-13X-N",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/3c4282c444a05b26bc0799af98ec511c/bullstar-extra_card.jpg",
+    "sha256": "30efb3f6d89e8bd192716c1ee82390f16c48f3ee4565e64e621d527526d5db26",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-M-100GEP-135GEP",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/8bec0dc970db8c6e6664208f31d1a3cf/M-100GEP-135GEP_card.jpg",
+    "sha256": "989b4d93bf10c05791594a888ba322ff224d6484d9971348ff86ce4da985bc21",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-M-1060W",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/da3d21455c08fc911a42b26662a48e92/m1060w_card.jpg",
+    "sha256": "cf2676697ea6de45268c3d24af7c465a3b8c525c00e5e893d3478bccf8ba261c",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-M-860W-1010W",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/82c395e47f153ca35a0bf8843d73de69/world_se_card.jpg",
+    "sha256": "975e0ed523b1b8c6a4932b0a6440cf062ffe24736678977f941fad423f4a51eb",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-M7-134-174",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/79e4a7e023bc93dba6870f8ec6db60ac/test_M7-134-174_card.jpg",
+    "sha256": "008ee7c071bb22b30450c30f45d1a1195c8d5a940e256a5d2fd66841b785d319",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-M720W",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/bc065a7c76d8356f4b15357bbc7f77a0/m720w_card.jpg",
+    "sha256": "298e60deca2b8e9612cd8ff933fd4cdd496d038c18523687651c5e52faad0a70",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-MR-1000-AH",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/f77d89104860913cef764b8858800447/agrirobo_mr1000ah_card%20%281%29.jpg",
+    "sha256": "98f3c9b1f9ed42861035f741205e917ff0aa28f384d8033b0f65cc5fe7423703",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-MR-600-700",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/2bb356203853f564f96396cc97ea7bf0/MR-600-700_card.jpg",
+    "sha256": "c1822225e7b7e9614f093c541eb91d518961b21511f147f6ba84261da0ea088e",
+    "width": 1342,
+    "height": 756,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-MR-70-SP",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/b032b32c142b00c5e30bad2164bc3174/mr70sp_card%20%281%29.jpg",
+    "sha256": "aae6d7674caf7cb8e7efe9d8531b21343ee3a135eff6f3b2ff0e3cb2830fd374",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-MR-800-1050",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/78f6adad1fefeab27a075f5f32e55b10/MR-800-1050_card.jpg",
+    "sha256": "9436fed66cff60445bacdc90736a02d244c99a18f41b9138cf9aee1716f40533",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-MR-800-1050-A2H",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/85d47a705d9802bf6207380f5cc712eb/card-thumb.png",
+    "sha256": "c064867db508b729c67f5c103c3a8b866b28ac1db2caaba1fced5fe22495dc36",
+    "width": 1280,
+    "height": 720,
+    "format": "PNG"
+  },
+  {
+    "key": "tractor-NB-17-23",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/0caab2a07739e17c8915aadb61344fb3/granova_card.jpg",
+    "sha256": "30a35f3b1bdc49fb4728209bff51cf24f975527605f38a7530a087f8b0ab492d",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-NB-21-GS",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/cb548909819a9bb855bdce056edc43a0/nb21gs_card.jpg",
+    "sha256": "49a153e528b9388e0e1b6b212be3b783c9bcf2fac5f7297b9e5564768dd4659a",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-NB-21-SP",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/9c00f7452db4c7b0228443320c87d080/nb21sp_card.jpg",
+    "sha256": "3a4fd054134211e1a6a0dac37fe7ee7aa5e032da4dcc68194b6a6be335052f35",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-NR-17-23",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/5bd61f08bb20858465964998dfd1a711/card.jpg",
+    "sha256": "f8a230c886352dc40f94388c48f5c143b32ee4375e8cc81c0975b33fe82b33a2",
+    "width": 1342,
+    "height": 756,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-SL-24",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/1defa713ddbe12e6e1270c79ff52cf36/slugger24_card.jpg",
+    "sha256": "88dc08d9dc154dd05a2292a42db4f8971a8fe16baedacd608c4074b32b3ab0bf",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-SL-280-350-SP",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/6abaad7577c3fc2186896d59c63fd99d/SL-35-SP_card.jpg",
+    "sha256": "d038e9bdb8644a26df54e935f5de896ef85bf0c2595186a55a9bd9feb2ac3ef6",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-SL-38-54-SP",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/58f0a2cc1dbe97efe0e1b8f5a0de4283/sl38-54_pre_card.jpg",
+    "sha256": "4f36d08cd5f2933cca83f1fe453160f3da8d946cc0c76f2a7e4bc4794ab48440",
+    "width": 1312,
+    "height": 738,
+    "format": "JPEG"
+  },
+  {
+    "key": "tractor-ST-25-31",
+    "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/b8e5bc402fc37508c64d1d110584cf3a/card-thumb.jpg",
+    "sha256": "15a0edd82833c5af56e5739ebc8813fc624b69d4299eb6b9c7dc7ec9ce544f72",
+    "width": 1280,
+    "height": 720,
+    "format": "JPEG"
+  }
+]

@@ -1,0 +1,126 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "e2f68bd4-97c0-4b9f-8595-562965df432c",
+      "title": "【カタログ解説】クボタ KG-S07X 小型色彩選別機 選別王子Ⅱ（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "e2f68bd4-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "e2f68bd4-002",
+          "type": "text",
+          "text": "直売向けの小型色彩選別機。米の選別に使う機器です。"
+        },
+        {
+          "id": "e2f68bd4-003",
+          "type": "bullet",
+          "text": "用途：米の色彩選別"
+        },
+        {
+          "id": "e2f68bd4-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "e2f68bd4-005",
+          "type": "text",
+          "text": "KG-S07X"
+        },
+        {
+          "id": "e2f68bd4-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "e2f68bd4-007",
+          "type": "text",
+          "text": "掲載写真：KG-S07X（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/9051bd8c5153a21fdeca5e94910763c9/senbetsu-KG-SO7X_cardnew.jpg",
+        "summary": "直売向けの小型色彩選別機。米の選別に使う機器です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "e2f68bd4-src-product",
+            "title": "クボタ 製品ページ KG-S07X",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/senbetsu-KG-SO7X/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e2f68bd4-src-catalog",
+            "title": "クボタ 製品カタログ 小型色彩選別機 選別王子Ⅱ",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/senbetsu-KG-SO7X/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e2f68bd4-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（KG-S07X）",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/senbetsu-KG-SO7X/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e2f68bd4-src-manual-1",
+            "title": "取扱説明書 KG-S07X",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=5807a685d1a9ab3b599035bc566ce2b9",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e2f68bd4-src-manual-2",
+            "title": "取扱説明書 昇降機ユニット KG-VE72（KG-S07X用）取扱説明書",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b7ee6f5f9aa5cd17ca1aea43ce848496",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e2f68bd4-src-photo",
+            "title": "写真：クボタ 小型色彩選別機 選別王子Ⅱ",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/senbetsu-KG-SO7X/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

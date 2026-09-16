@@ -1,0 +1,1494 @@
+[
+  {
+    "key": "rice_equipment-KG-S110X-S40X",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/KG-S110X-S40X/",
+    "status": 200,
+    "sha256": "aa3cb8b86e0db5d2e74047273b22ea75fec296c1b5241876b00995d6bbc76ce1",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/KG-S110X-S40X/?nav=catalog",
+      "documents": [
+        {
+          "title": "クボタ色彩選別機 総合カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/8-10-2-0034-09.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/KG-S110X-S40X/",
+      "sha256": "2b0e9b288fa0d7990941691f99e263504f98c1712bb7f1e3e5079e30d5515ea6"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（KG-S40X3-110X）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/KG-S110X-S40X/?nav=manual",
+      "sha256": "54fed24b1f7a6a57700f5beccdcba66d00da20c23ec4c5f200fcc221209cbf45"
+    },
+    "manualLinks": 12
+  },
+  {
+    "key": "rice_equipment-senbetsu-KG-SO7X",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/senbetsu-KG-SO7X/",
+    "status": 200,
+    "sha256": "3fa3684a997bf60f92a00b8d4f1270e9f625cf9f74e95b395303e5178384ea0c",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/senbetsu-KG-SO7X/?nav=catalog",
+      "documents": [
+        {
+          "title": "クボタ色彩選別機 総合カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/8-10-2-0034-09.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/senbetsu-KG-SO7X/",
+      "sha256": "20d2c8de10208d53880e9cf97dbd575085655214042e0f3e692cad165fcf2118"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（KG-S07X）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/senbetsu-KG-SO7X/?nav=manual",
+      "sha256": "89a4c3b173c9e8474fa587046063e7d54931822ee6cb7a7ba8b43f21f969970b"
+    },
+    "manualLinks": 2
+  },
+  {
+    "key": "rice_equipment-watering-WATARAS",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/watering-WATARAS/",
+    "status": 200,
+    "sha256": "8d783b802a6a2d323d49a00edbbca2e8275322b16c28a3a48ea6505bcf5aeb55",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/watering-WATARAS/?nav=catalog",
+      "documents": [
+        {
+          "title": "ほ場水管理システムWATARAS",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-00-2-0017-07.pdf"
+        },
+        {
+          "title": "KSAS-WATARAS連携",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-00-3-0030-02.pdf"
+        },
+        {
+          "title": "ほ場水管理システムWATARASリーフレット",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-00-3-0038-01 (1).pdf"
+        },
+        {
+          "title": "WATARAS バルブカバー リーフレット",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/wataras-valve-cover.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/watering-WATARAS/",
+      "sha256": "0856dfd7f8b4f185f0ac9013209631eb4c3a652a7c1a82c9bc94bd908a7c511c"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（WATARAS）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/watering-WATARAS/?nav=manual",
+      "sha256": "2504ed9bfad06f482decf87e3f04f3897821fd03ff3fd6412e95e9b73a35c314"
+    },
+    "manualLinks": 8
+  },
+  {
+    "key": "rice_equipment-seimai-K-CR515CS-1015CS",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR515CS-1015CS/",
+    "status": 200,
+    "sha256": "dac872e17aa2580858d8d399fbb14bb3dd731c4423f968063b77b8ca549225ac",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR515CS-1015CS/?nav=catalog",
+      "documents": [
+        {
+          "title": "クリーン精米屋K-CR515CS(標準仕様)・K-CR1015CS(高速仕様)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/8-10-2-0021-05 クリーン精米屋K-CR515CS_K-CR1015CS.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR515CS-1015CS/",
+      "sha256": "58a9d2211aa488da6813bb3255fe2736d4197c4b29f364ee62490160072db396"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（K-CR515CS-1015CS）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR515CS-1015CS/?nav=manual",
+      "sha256": "e0d5a7c8c7e4be3017ba8618603b59f422493f8ab81bf94da20a546bb72c1198"
+    },
+    "manualLinks": 7
+  },
+  {
+    "key": "rice_equipment-seimai-K-CR718MCS",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR718MCS/",
+    "status": 200,
+    "sha256": "5f48d5ec8d5410a76174d66a388be1568d437304d70839e17a14be8bbbedc1ac",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR718MCS/?nav=catalog",
+      "documents": [
+        {
+          "title": "クリーン精米屋K-CR718MCS(もみすり仕様)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/8-10-2-0030-02.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR718MCS/",
+      "sha256": "fe95b2b8da0206a97e04530e446362eceefa87cb8ae95acbf7fabe58db36b769"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（K-CR718MCS）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR718MCS/?nav=manual",
+      "sha256": "cf8e63f4a002530bbbedb133e7507b379f1b208840f2760eed11ca5ccda1269b"
+    },
+    "manualLinks": 2
+  },
+  {
+    "key": "rice_equipment-seimai-VM-30C-30NB",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-VM-30C-30NB/",
+    "status": 200,
+    "sha256": "fe0100d323cc59aef17e72a0764b6aac7b4beff2466089f8e4636113d1078c23",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-VM-30C-30NB/?nav=catalog",
+      "documents": [
+        {
+          "title": "米伯楽SUPER VM-30C",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/8-10-2-0015-07.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-VM-30C-30NB/",
+      "sha256": "cc310f5ab851b7a019dc11e8d483255ff60dfc9ec0b5786057fd9a7649eaa42d"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（VM-30CN-30CPN）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-VM-30C-30NB/?nav=manual",
+      "sha256": "3fb300bfbd9fa77aa90430711718c38692b8d8a365ecf759a41ef78473396774"
+    },
+    "manualLinks": 4
+  },
+  {
+    "key": "rice_equipment-storage-KCX-15-31",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/storage-KCX-15-31/",
+    "status": 200,
+    "sha256": "e9facaca8f1d859ad933a7448b82ec993d5c3372130b388ef0a72fd314fed5af",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/storage-KCX-15-31/?nav=catalog",
+      "documents": [
+        {
+          "title": "お米番KCX-31・KCX-15",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/E250033_8-10-3-0005-06_クボタお米番カタログOL (1).pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/storage-KCX-15-31/",
+      "sha256": "b607791a182c5b441f27c98fb028be4dcff649c69518ebae5a87161c5b3916d9"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（KCX-15-31）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/storage-KCX-15-31/?nav=manual",
+      "sha256": "4a1671cb93a65538653581ecafb96ec9052ab6f4402dde75d1c54831043c1821"
+    },
+    "manualLinks": 2
+  },
+  {
+    "key": "rice_equipment-hashu-SR-auto",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-auto/",
+    "status": 200,
+    "sha256": "e9be3dcbd2dcbfb0ff0d087ae81b269c06f5c8cce3b7d61ab229d85425c147d6",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-auto/?nav=catalog",
+      "documents": [
+        {
+          "title": "水稲用播種機SRシリーズ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-00-2-0013-09.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-auto/",
+      "sha256": "a27ed1fea3392581c957af19327d70511292ad0f98fcf1069dd4e63bd45aa39f"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（SR-95KJ-1000H）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-auto/?nav=manual",
+      "sha256": "418b4ecb1f85782c491cf70ed8736626f98011d69dc13f509ceda47f0fe18b70"
+    },
+    "manualLinks": 28
+  },
+  {
+    "key": "rice_equipment-hashu-SR-hand",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-hand/",
+    "status": 200,
+    "sha256": "c9f459cd6954e265ef030494cc079e416bdcaec0ebc60b1475ba261b2727e783",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-hand/?nav=catalog",
+      "documents": [
+        {
+          "title": "水稲用播種機SRシリーズ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-00-2-0013-09.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-hand/",
+      "sha256": "695bb278ce8997c6749c733bd1d8f68f67c53fda2d4e509e37b9cbb54de0758b"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（SR-21E）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-hand/?nav=manual",
+      "sha256": "fa4e23869ddc9e7c8c5c1a18b3181a0789596a5a01735982b62aa438b1931b9e"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "rice_equipment-hashu-SA45-86",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SA45-86/",
+    "status": 200,
+    "sha256": "bf85ff4503dd6c83b786ec1ac983ab7f7dd1e515b3d9341802b1d677306db371",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SA45-86/?nav=catalog",
+      "documents": [
+        {
+          "title": "水稲用播種機SRシリーズ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-00-2-0013-09.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SA45-86/",
+      "sha256": "40fa5deed87a26d13218eab8ab810afaed13d3de91fc03a01c5fa5388aba0aab"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（SA-45-86）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SA45-86/?nav=manual",
+      "sha256": "dc95d83aaffe4f8c836cd8a8ce7fb4ef8f25af425215c455e0b54058023969e3"
+    },
+    "manualLinks": 2
+  },
+  {
+    "key": "rice_equipment-tetsuko-TC40",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/tetsuko-TC40/",
+    "status": 200,
+    "sha256": "f3225e56183fcd875fbd913fd793ccb25d5638477f785cc313a74ab694debfb7",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/tetsuko-TC40/?nav=catalog",
+      "documents": [
+        {
+          "title": "鉄コちゃんTC40",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-10-3-0007-04.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/tetsuko-TC40/",
+      "sha256": "fbe791748a1b53fed50ffdd813cf42481c83d91d50fd25545963ba709577cab8"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（TC40）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/tetsuko-TC40/?nav=manual",
+      "sha256": "e8ba9e22622471ffd2252a4e135538c326b94e6b2b2e8b38ea15868e92127c89"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "rice_equipment-rice-center",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/rice-center/",
+    "status": 200,
+    "sha256": "6d0fdb1018fbed73b2bbb8e4c01543524bd1becb09299813f95efbb7749bb56d",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/9-20-3-0012-03.pdf",
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/rice-center/"
+    },
+    "manualIndex": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualLinks": 0
+  },
+  {
+    "key": "rice_equipment-plant",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/plant/",
+    "status": 200,
+    "sha256": "b961cd25761c0bf3b997dbb0b1e9b971ece9de108e29666aab09dad04ec49ddc",
+    "catalog": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualIndex": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualLinks": 0
+  },
+  {
+    "key": "rice_equipment-complex",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/complex/",
+    "status": 200,
+    "sha256": "a152e521cecd40dd2d8fb3de044278b9a93119c54dbd936d319ea4f3aa488e82",
+    "catalog": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualIndex": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualLinks": 0
+  },
+  {
+    "key": "rice_equipment-keiryou-KS-H880",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H880/",
+    "status": 200,
+    "sha256": "e2b463700cf112ce48c64d1a580a6a89c79cdffc64f7634a513a98b1e81847b6",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H880/?nav=catalog",
+      "documents": [
+        {
+          "title": "スーパートン福郎KS-H880U・KS-H8000-U",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/9-20-3-0005-09.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H880/",
+      "sha256": "263b71fdaa0e440143763a2bf7767658a65242d604e9f208b7d5965bccf563e1"
+    },
+    "manualIndex": {
+      "title": "取扱説明書検索（型式で探す）",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manualLinks": 0
+  },
+  {
+    "key": "rice_equipment-keiryou-KS-H8000",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H8000/",
+    "status": 200,
+    "sha256": "5e78e4d60210e74655a1d44841060b90e59b6d03ce9371b2bfc70aaa460b648c",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H8000/?nav=catalog",
+      "documents": [
+        {
+          "title": "スーパートン福郎KS-H8000-U-Lミニトン",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/9-20-3-0011-02.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H8000/",
+      "sha256": "72e4b418f5f9f0ed143dda27dd8d233bb9c8b256477be06c0f966eb13ad548c1"
+    },
+    "manualIndex": {
+      "title": "取扱説明書検索（型式で探す）",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manualLinks": 0
+  },
+  {
+    "key": "rice_equipment-keiryou-KS-H1000DS",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H1000DS/",
+    "status": 200,
+    "sha256": "8ed8a4849eedae745ca655a6c5e00e08b742646495358beb8dab5e5ed75c30b6",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H1000DS/?nav=catalog",
+      "documents": [
+        {
+          "title": "KS-H1000DS",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/9-2108-1.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H1000DS/",
+      "sha256": "2a0893e6debcc0cbf485a4949d05662372ea8e1d1cd187551a92a15c906a2cbe"
+    },
+    "manualIndex": {
+      "title": "取扱説明書検索（型式で探す）",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manualLinks": 0
+  },
+  {
+    "key": "rice_equipment-keiryou-KS-H30DS",
+    "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H30DS/",
+    "status": 200,
+    "sha256": "18b4268168869f200c835f21fcd3c324b450e4f1464b5856067b47aafd205273",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H30DS/?nav=catalog",
+      "documents": [
+        {
+          "title": "KS-H30DS",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/9-2105-1.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H30DS/",
+      "sha256": "bc6d26d2d840d2e9307ca40f730157939433cf22ee5dce8f294ffb888afb1384"
+    },
+    "manualIndex": {
+      "title": "取扱説明書検索（型式で探す）",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manualLinks": 0
+  },
+  {
+    "key": "taueki-NW-8-10S-A",
+    "url": "https://agriculture.kubota.co.jp/product/taueki/NW-8-10S-A/",
+    "status": 200,
+    "sha256": "7118a78fabd51b0f46bd5e1c1088f993126bde248c17011147085e04279b949f",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-8-10S-A/?nav=catalog",
+      "documents": [
+        {
+          "title": "Agri Robo NW10SA",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0030-01.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/NW-8-10S-A/",
+      "sha256": "00e36df9abad4989bd6ae5beffdfff526c83a308ea36352845e124cfcef3760c"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NW10SA）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-8-10S-A/?nav=manual",
+      "sha256": "511a141a56b4ecdbe52b7361febea9e17b0576d0c5cd7f05c75f04c94089d6b1"
+    },
+    "manualLinks": 3
+  },
+  {
+    "key": "taueki-NW-10S",
+    "url": "https://agriculture.kubota.co.jp/product/taueki/NW-10S/",
+    "status": 200,
+    "sha256": "c359151db6e21fe82413fef104b68cc6e2653f6888c652a6c922170e3eba98d9",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-10S/?nav=catalog",
+      "documents": [
+        {
+          "title": "NW10S(10条植)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0026-01.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/NW-10S/",
+      "sha256": "ec772d5be42f77e2bf9f6bfa0108db04b9fd44fe773c2896b1778b8a8dc3f89f"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NW10S）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-10S/?nav=manual",
+      "sha256": "ed3d405b2f842149843e252b3cec0d78d1a2571a93e9b0aa628febff09db8202"
+    },
+    "manualLinks": 2
+  },
+  {
+    "key": "taueki-NW-80S-A",
+    "url": "https://agriculture.kubota.co.jp/product/taueki/NW-80S-A/",
+    "status": 200,
+    "sha256": "e8615992ceba23400682a47460155dd6409ce8b67fe3de45ba4c4bbb7200241c",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-80S-A/?nav=catalog",
+      "documents": [
+        {
+          "title": "NW80SA カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0032-01.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/NW-80S-A/",
+      "sha256": "1d2069792d5530798bbd7c7c0783e2bc50ae8eed125a2006ed68784f5eca252a"
+    },
+    "manualIndex": {
+      "title": "取扱説明書検索（型式で探す）",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manualLinks": 0
+  },
+  {
+    "key": "taueki-NW-60-80S",
+    "url": "https://agriculture.kubota.co.jp/product/taueki/NW-60-80S/",
+    "status": 200,
+    "sha256": "7a4c2fd4a1a68647a482c839e2533b5a3dec911adbedf1660ebd3e0ca2947e38",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-60-80S/?nav=catalog",
+      "documents": [
+        {
+          "title": "NW60S/80S カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0031-03.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/NW-60-80S/",
+      "sha256": "1c05e2efce01b6fa29a30acbc5a700c5e18eac428ec5e15e3127eefe2fca1244"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NW60S-80S）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-60-80S/?nav=manual",
+      "sha256": "6194ed222b3ec85c9223e7bd75fc48de4d6f00ae2950b57daead5358e2bfd9ab"
+    },
+    "manualLinks": 2
+  },
+  {
+    "key": "taueki-NW-50N-80N",
+    "url": "https://agriculture.kubota.co.jp/product/taueki/NW-50N-80N/",
+    "status": 200,
+    "sha256": "0383fc1a12e4b1862a08b44def8db1f88d5516ae3e84d5c17f72f31a3428d9bb",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-50N-80N/?nav=catalog",
+      "documents": [
+        {
+          "title": "NW50N/NW60N/NW80Nカタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0035-02.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/NW-50N-80N/",
+      "sha256": "550fd34921e177fc98061566347badb8e0a9eb6853f57aa66e5432087dcff60b"
+    },
+    "manualIndex": {
+      "title": "取扱説明書検索（型式で探す）",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manualLinks": 0
+  },
+  {
+    "key": "taueki-WD-6-8",
+    "url": "https://agriculture.kubota.co.jp/product/taueki/WD-6-8/",
+    "status": 200,
+    "sha256": "ceff253dbcb1ee1a3f9eedce107a18701444b42488769080a4adfb044f0b2916",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/WD-6-8/?nav=catalog",
+      "documents": [
+        {
+          "title": "WORLD WD6(6条植)・WD8(8条植)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0029-03new.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/WD-6-8/",
+      "sha256": "25c7f57ca1ea26bef04cff89fd12d0767248ba5e2cca28dec9bdd78fcbd02b20"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（WD6-8）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/WD-6-8/?nav=manual",
+      "sha256": "b0f911e72493a274ea0d4e02c5bf97aa32b61b610b535512c58ef8d2db00c266"
+    },
+    "manualLinks": 2
+  },
+  {
+    "key": "taueki-PW-4",
+    "url": "https://agriculture.kubota.co.jp/product/taueki/PW-4/",
+    "status": 200,
+    "sha256": "61e55b4fc71fa3325a7081b939895a7625773d9666173cf8b74f40e8145723bf",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/PW-4/?nav=catalog",
+      "documents": [
+        {
+          "title": "PASWEL PW4C(クランク式4条植)・PW4R(ロータリ式4条植)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0023-05n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/PW-4/",
+      "sha256": "6d68484f67a5dd65318fc7ec8cf4b2ce89afc4069dd1494dae0b198f9ee1bacf"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（PW4）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/PW-4/?nav=manual",
+      "sha256": "9b70aa7372fb7f19a35a73f76786d20acac435ae5a7ed614ebfa63fb71690fe2"
+    },
+    "manualLinks": 3
+  },
+  {
+    "key": "taueki-JP-200-400",
+    "url": "https://agriculture.kubota.co.jp/product/taueki/JP-200-400/",
+    "status": 200,
+    "sha256": "97e5073181a00526aaf4c7c4e5994d4f72ca0152648d7f2ba589d668dfe30213",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/JP-200-400/?nav=catalog",
+      "documents": [
+        {
+          "title": "JoyWalk JP200(2輪2条植)・JP400(2輪4条植)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-10-2-0002-01n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/JP-200-400/",
+      "sha256": "3edcf85f17e9a496657cc2c92bcd82fd46deee5b834dc53fdb84a082a153e4d1"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（JP200-400）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/JP-200-400/?nav=manual",
+      "sha256": "2349a64b79320f0b25e0cfd9844318753138e9cec3a43ec42f837026200fb46e"
+    },
+    "manualLinks": 2
+  },
+  {
+    "key": "taueki-NDS-SY",
+    "url": "https://agriculture.kubota.co.jp/product/taueki/NDS-SY/",
+    "status": 200,
+    "sha256": "f998c3ece4728dcca0df29ca55464d5f9e8c56c429ecfc2b08b8d993a4140fa9",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NDS-SY/?nav=catalog",
+      "documents": [
+        {
+          "title": "クボタ堪水直播機 NDS-600F/NDS-800Fカタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-00-2-0009-01.pdf"
+        },
+        {
+          "title": "鉄コーティング直播機 鉄まきちゃん NDS-60・65(6条植)NDS-80・85(8条植)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-00-2-0001-12.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/NDS-SY/",
+      "sha256": "fc6460cf9e1e2d6c803a3ae94c8b211f84bddae47385c070b8f19c39813028cc"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NDS-SY）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NDS-SY/?nav=manual",
+      "sha256": "e098f5bc7bd26f9e8e802bd0bce5f69679fefe1da43d2881357ea26b0a81431b"
+    },
+    "manualLinks": 4
+  },
+  {
+    "key": "taueki-SSY-6-8",
+    "url": "https://agriculture.kubota.co.jp/product/taueki/SSY-6-8/",
+    "status": 200,
+    "sha256": "a9b2fce4ab8d82125c6470022833b3ee9def7d6abda33835cfd7c33ce8c375bf",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/SSY-6-8/?nav=catalog",
+      "documents": [
+        {
+          "title": "田植同時作業アタッチメントHSY series・CS series・SSY series",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-00-2-0008-03n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/SSY-6-8/",
+      "sha256": "d4f0f8d033506bfec642ac4d269b61dcd63d74d67314c63283afab1290cd82e7"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（SSY6-8）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/SSY-6-8/?nav=manual",
+      "sha256": "1c1cda02994dff7cdb9beeea363f0d560d4ea5ab9f9d72e045b889f76215fe32"
+    },
+    "manualLinks": 2
+  },
+  {
+    "key": "taueki-HSY-CS",
+    "url": "https://agriculture.kubota.co.jp/product/taueki/HSY-CS/",
+    "status": 200,
+    "sha256": "c018f7c91a9e6f32577f512d854e62c15071f067157c2f9d71a5e00d1ae48ea7",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/HSY-CS/?nav=catalog",
+      "documents": [
+        {
+          "title": "田植同時作業アタッチメントHSY series・CS series・SSY series",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-00-2-0008-03n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/HSY-CS/",
+      "sha256": "fdaba5f0b8a597e52dbbc381bcabbeafd6e4ef853d190ebcf250dafb52c9b027"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（HSY-CS）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/HSY-CS/?nav=manual",
+      "sha256": "a3b937acd607ff1d846b8b1aec09638495e663a2fd9cc5672b768ce04797b375"
+    },
+    "manualLinks": 16
+  },
+  {
+    "key": "combine-DR-7130",
+    "url": "https://agriculture.kubota.co.jp/product/combine/DR-7130/",
+    "status": 200,
+    "sha256": "3f3220b8c95770f8b19bfe1a1b5a5333b35846ac698d8dc8aac2c9a68732ae00",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-7130/?nav=catalog",
+      "documents": [
+        {
+          "title": "DIONITH DR7130(7条刈)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0028-03.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/DR-7130/",
+      "sha256": "ee210745c5e399fb797e9826af5af0c67c5229124b05af6627587614d27a0853"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（DR7130）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-7130/?nav=manual",
+      "sha256": "4caa5f746d9b5237572e99e91e8c1f0b35c8eac550b47dfb5c14004b9d1cdd47"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "combine-DR-6130-A",
+    "url": "https://agriculture.kubota.co.jp/product/combine/DR-6130-A/",
+    "status": 200,
+    "sha256": "49a3e05e2df6b40dffc8e533edf575c2d5e1a602babb643a806c68a9f6c617fe",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-6130-A/?nav=catalog",
+      "documents": [
+        {
+          "title": "Agri Robo DR6130A(6条刈)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0024-05.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/DR-6130-A/",
+      "sha256": "9d31d26f1b07b698b619a4bfbabd4aa4a2b7a139854d8649bf099f9c2af9091c"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（DR6130A）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-6130-A/?nav=manual",
+      "sha256": "f32f0dc5015e2d9b56307db22b3f31253c86f1a0784293e2016f975b2131027d"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "combine-DR-575-6130",
+    "url": "https://agriculture.kubota.co.jp/product/combine/DR-575-6130/",
+    "status": 200,
+    "sha256": "aa845d08a284ee7692ff20ceaf17531c00148d1ebbcf4da497540105db514d7e",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-575-6130/?nav=catalog",
+      "documents": [
+        {
+          "title": "ディオニス DR595GS・DR6130GS 新製品速報",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-1-0028-01.pdf"
+        },
+        {
+          "title": "DR575/595/595GS/6115/6130/6130GSカタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0034-05.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/DR-575-6130/",
+      "sha256": "05f0cef4827bab3bc0a1a8773bfe2e0b9b9fcd3117539eed71362d65b5354ff1"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（DR575-6130）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-575-6130/?nav=manual",
+      "sha256": "def6516ccc783978f3ab4c99475a520dad5ceb8c4e432ea1f4e9447137fe085b"
+    },
+    "manualLinks": 5
+  },
+  {
+    "key": "combine-WRN-6100",
+    "url": "https://agriculture.kubota.co.jp/product/combine/WRN-6100/",
+    "status": 200,
+    "sha256": "9753c82206a7cb729bbe809a4770365bc1a703d5a448cbc12ff23c168547355e",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/WRN-6100/?nav=catalog",
+      "documents": [
+        {
+          "title": "WORLD WRN6100",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0025-07.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/WRN-6100/",
+      "sha256": "12d567834a5b46dc3d19792a87419a4073f273b729164ebb1821ae375a2e1971"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（WRN6100）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/WRN-6100/?nav=manual",
+      "sha256": "e2c910d2af890fc9267317dfc7abfcbd749a0213efc67017c7099967b35a6561"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "combine-WRN-575",
+    "url": "https://agriculture.kubota.co.jp/product/combine/WRN-575/",
+    "status": 200,
+    "sha256": "79b5902052541b667aacf8b08500dcf9313a41b208991600547a2dcb29bf746b",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/WRN-575/?nav=catalog",
+      "documents": [
+        {
+          "title": "WORLD WRN575(5条刈)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0029-04.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/WRN-575/",
+      "sha256": "8f2835914fb95471bea28d0f5d8042352659016ff030963d934216dd51c47f86"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（WRN575）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/WRN-575/?nav=manual",
+      "sha256": "e44d9e65df8bcb4876032eb8d1de9f79ded4f38b924328eb3430b88a7018fd10"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "combine-DR-472",
+    "url": "https://agriculture.kubota.co.jp/product/combine/DR-472/",
+    "status": 200,
+    "sha256": "83a36198d0aa0588778bd6dc574693018afc6c768d215774fea8eac1f8d92051",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-472/?nav=catalog",
+      "documents": [
+        {
+          "title": "DR472・DR472GSカタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0032-03.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/DR-472/",
+      "sha256": "a04a7c1f3fd0cadc6efc17d57d3b47d6807284520edb8005e8a61539b15312c5"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（DR472）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-472/?nav=manual",
+      "sha256": "7a94890da75886653d6d7b38305002d107aa8e5b27087539dd86cbe3b627d19a"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "combine-R-462",
+    "url": "https://agriculture.kubota.co.jp/product/combine/R-462/",
+    "status": 200,
+    "sha256": "c10a2cb988bdd5f45fd081d86f6ad9741ff06f231f389de962ea45847495a976",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/R-462/?nav=catalog",
+      "documents": [
+        {
+          "title": "自脱コンバインR462 カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0031-04.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/R-462/",
+      "sha256": "04395f8ace26b3375f8405cd06e81597dc552884a77fc40fdae3e99ddb410686"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（R462）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/R-462/?nav=manual",
+      "sha256": "00ecb4143c645036127327042731e85ed2c9887e8eb1a711da5005b549bf9ead"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "combine-KR-334-448",
+    "url": "https://agriculture.kubota.co.jp/product/combine/KR-334-448/",
+    "status": 200,
+    "sha256": "f9d37cf0e3c91c2c59e0ef959c12a32f446b03ab78c7d8310e9008a59cc3d27a",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/KR-334-448/?nav=catalog",
+      "documents": [
+        {
+          "title": "カルスターKR334/338/438/448 カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0030-04n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/KR-334-448/",
+      "sha256": "4b66c9a103f61f5969f0904c6490cff610d87702bbb43855f1310edee213dc7f"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（KR334-448）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/KR-334-448/?nav=manual",
+      "sha256": "e9225aaa474071946a846c4cf82a740fd08a9d2397eea8be800822c77f5a316d"
+    },
+    "manualLinks": 4
+  },
+  {
+    "key": "combine-ER-448-NL",
+    "url": "https://agriculture.kubota.co.jp/product/combine/ER-448-NL/",
+    "status": 200,
+    "sha256": "d2451b4357f73430f783e3bcceb7635671acab42c4e137eb1673a4e37efaae39",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/ER-448-NL/?nav=catalog",
+      "documents": [
+        {
+          "title": "ER448N Limited カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0033-02.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/ER-448-NL/",
+      "sha256": "4e295706bbaac07e4685a26514ee0fe7292c3644065b846217d243487f727422"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（ER448NL）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/ER-448-NL/?nav=manual",
+      "sha256": "b4b9fd8716c811bb616509fd8903466b93895f545212556aefb29127a9ab39c7"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "combine-R325",
+    "url": "https://agriculture.kubota.co.jp/product/combine/R325/",
+    "status": 200,
+    "sha256": "e518266b10bf037cc3177d9b8dcfd944c59b60a9039efe4ab02459338d1fc5b7",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/R325/?nav=catalog",
+      "documents": [
+        {
+          "title": "R325(3条刈) クボタ創業130周年アニバーサリー機",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-3-0021-02n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/R325/",
+      "sha256": "0a3de79808745ca58054e8e6db53a9afd3977075eafef66d571d8489734b6c0f"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（R325）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/R325/?nav=manual",
+      "sha256": "edc5bb64b70beb48d15cd5c11867b8c90b30d18dfe91f80aca3e7ae0544bd055"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "combine-DRH-1200A",
+    "url": "https://agriculture.kubota.co.jp/product/combine/DRH-1200A/",
+    "status": 200,
+    "sha256": "a66914bf9113c4e8c46a5fd840d69a8904a84e6c49532a4d95e90701e69b0239",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/DRH-1200A/?nav=catalog",
+      "documents": [
+        {
+          "title": "DRH1200・DRH1200A カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-20-2-0009-03n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/DRH-1200A/",
+      "sha256": "dbbf5b6f37c1c6319efe94cf06d7213a756fb11215b24a2f71df4dde07cbfe4a"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（DRH1200A）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/DRH-1200A/?nav=manual",
+      "sha256": "8050eb328019a3d1f22b0c183b827709e0870a6b0f9b43945b19aa4b7b9db7be"
+    },
+    "manualLinks": 2
+  },
+  {
+    "key": "combine-DRH-1200",
+    "url": "https://agriculture.kubota.co.jp/product/combine/DRH-1200/",
+    "status": 200,
+    "sha256": "7ed387533a51448375696957bdae56f923cb142f453fe5c5eb9a84cb132867c8",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/DRH-1200/?nav=catalog",
+      "documents": [
+        {
+          "title": "DRH1200・DRH1200A カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-20-2-0009-03n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/DRH-1200/",
+      "sha256": "712629a891b89b8233cb53c4f44cf4ca6c171708d8fdb25771d49b5b68f0b683"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（DRH1200）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/DRH-1200/?nav=manual",
+      "sha256": "a00091f588636eef1527e1f5679f12d8d7ad653418d04de2d3393102c7bf3c10"
+    },
+    "manualLinks": 2
+  },
+  {
+    "key": "combine-binder",
+    "url": "https://agriculture.kubota.co.jp/product/combine/binder/",
+    "status": 200,
+    "sha256": "443e0827d94e0859cbed45dda17f9a2ba20d627e1a4b1b91c910d917141624bb",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/binder/?nav=catalog",
+      "documents": [
+        {
+          "title": "クボタバインダーRJ250(1輪1条刈)・RJ350(2輪1条刈)・RJ550(2輪2条刈) クボタハーベスタHS5000・6000・HS7000",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/4-10-2-0002-03n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/binder/",
+      "sha256": "57038ca58f02281abbfe5aa5e039fee7acf15c7302a6587e73804107e64bd9b2"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（RJ250-550）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/binder/?nav=manual",
+      "sha256": "a13c27c87e0bfa883524b51d6edb3bf4314638e16ff0a2cacde2348e4849c9c1"
+    },
+    "manualLinks": 3
+  },
+  {
+    "key": "combine-harvester",
+    "url": "https://agriculture.kubota.co.jp/product/combine/harvester/",
+    "status": 200,
+    "sha256": "533d072bb7e1a75cabdf3f5e280d9940da00ac57788947e4f02bbac69a4a5dc0",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/harvester/?nav=catalog",
+      "documents": [
+        {
+          "title": "クボタバインダーRJ250(1輪1条刈)・RJ350(2輪1条刈)・RJ550(2輪2条刈) クボタハーベスタHS5000・6000・HS7000",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/4-10-2-0002-03n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/harvester/",
+      "sha256": "7b4f475afa1f701f48ebc4a2f08b6ec29bc974a5f543c6e9ba4695d1017b4990"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（HS5000-7000）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/harvester/?nav=manual",
+      "sha256": "238e3a8e62dbda78c9e259553eefcbcb387f0941a98fa881be7f0e447a0bad7a"
+    },
+    "manualLinks": 3
+  },
+  {
+    "key": "tractor-M7-134-174",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/M7-134-174/",
+    "status": 200,
+    "sha256": "213cf45fcfdacdf96339efd8b5ccd8634d151e1a8c0340fdebcf5585c4a5db63",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M7-134-174/?nav=catalog",
+      "documents": [
+        {
+          "title": "M7 M7-134M7-154M7-174 カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0036-02.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/M7-134-174/",
+      "sha256": "d595d2d16dc394fa60b66b41257ce8cbd3281f654e18456b77324c36d07a56df"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（M7-134-174）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M7-134-174/?nav=manual",
+      "sha256": "bee886eb637436fbf52368af865889283fee2db2c819e49b45eda23f01192f98"
+    },
+    "manualLinks": 3
+  },
+  {
+    "key": "tractor-M-100GEP-135GEP",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/M-100GEP-135GEP/",
+    "status": 200,
+    "sha256": "51cb90d0f8caed4c2d33c38b9d081f8b7093966766e417366068a925b800dba0",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M-100GEP-135GEP/?nav=catalog",
+      "documents": [
+        {
+          "title": "GENEST PLUS M100GEP・M110GEP(PC)・M115GEP・M125GEP(PC)・M135GEP(PC)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0037-02n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/M-100GEP-135GEP/",
+      "sha256": "95a7ee9b2e89cb7c8b9f66406e2adbb6cf86c58f450b9a6b415741b65ac492bb"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（M100GEP-135GEP）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M-100GEP-135GEP/?nav=manual",
+      "sha256": "a2e37fdead07eccea14cfe955bbc60de819f11dcf524aded247c3810309f065f"
+    },
+    "manualLinks": 7
+  },
+  {
+    "key": "tractor-M-1060W",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/M-1060W/",
+    "status": 200,
+    "sha256": "f7556f7aa7e0eef1b2e4e38004e3a1f51349ac39401ed5f429ac1450333d708e",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M-1060W/?nav=catalog",
+      "documents": [
+        {
+          "title": "WORLD M1060W",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0019-02.pdf"
+        },
+        {
+          "title": "WORLD series M720W・M860W-SE・M1010W-SE・M1060W",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0027-06.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/M-1060W/",
+      "sha256": "da74e7d2920e18a1df8e94bdba3703cd03ebce5f74f4f69488c436809f076d81"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（M1060W）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M-1060W/?nav=manual",
+      "sha256": "3c5719fb069426bb526d915946e64f33fc9860499efa9eb44703693f74843de2"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "tractor-MR-800-1050",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050/",
+    "status": 200,
+    "sha256": "ad6136aa113943fc356db890604a665c281debe3616d6f4336e5e4969d3a121d",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050/?nav=catalog",
+      "documents": [
+        {
+          "title": "REXIA MR800(H)(PC)・MR900(H)(PC)・MR1000(H)(PC)・MR1050H(PC)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0038-03n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050/",
+      "sha256": "0aaaaa62bfedbeaa0d2fd4e139b45a5ad2edbb69530d73560c53d4be36ac6b8c"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（MR800-1050）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050/?nav=manual",
+      "sha256": "9ba4e97f0f9ad7a01e19b13f390585d792b5b8947289a3ab8a4e069f8708fd2d"
+    },
+    "manualLinks": 17
+  },
+  {
+    "key": "tractor-M-860W-1010W",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/M-860W-1010W/",
+    "status": 200,
+    "sha256": "b874d29d5f7626ebef848ca62d5cf11f2f2615cb857e110e1d1d87841e388052",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M-860W-1010W/?nav=catalog",
+      "documents": [
+        {
+          "title": "WORLD Special Edition M860W-SE・M1010W-SE",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0025-01.pdf"
+        },
+        {
+          "title": "WORLD series M720W・M860W-SE・M1010W-SE・M1060W",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0027-06.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/M-860W-1010W/",
+      "sha256": "b6d2c7bc96a357019db8d30c0427e77ed450d9ab1184a6ecf0107e9574cf8e96"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（M860W-1010W-SE）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M-860W-1010W/?nav=manual",
+      "sha256": "ebd319c68d9ca65593a944ec13e45e05e437130614888a9d82de6f2b0a838b0b"
+    },
+    "manualLinks": 2
+  },
+  {
+    "key": "tractor-MR-800-1050-A2H",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050-A2H/",
+    "status": 200,
+    "sha256": "8fcfa06394b76bb894032c94c2cfa731fc46972d3c2f4fa61a6ecb9b12c26d4b",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050-A2H/?nav=catalog",
+      "documents": [
+        {
+          "title": "Agri Robo MR｜MR800A2H・MR1000A2H・MR1050A2H​",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-1-0025-01.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050-A2H/",
+      "sha256": "16002d4c12e7a89ad26a8a1d23d1f7c93674c66f6f7aef8ff7cd4da90ce14790"
+    },
+    "manualIndex": {
+      "title": "取扱説明書検索（型式で探す）",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manualLinks": 0
+  },
+  {
+    "key": "tractor-MR-1000-AH",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/MR-1000-AH/",
+    "status": 200,
+    "sha256": "ebe7a6583fc640e047948927b39e654b1d3274b21cec6056fcd8a30197ccfc4d",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-1000-AH/?nav=catalog",
+      "documents": [
+        {
+          "title": "アグリロボトラクタ MR1000AH",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0035-02n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/MR-1000-AH/",
+      "sha256": "d28275e07ab16edebe46465f52dafb623dfcc17e1d733e597511962f255003a2"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（MR1000AH）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-1000-AH/?nav=manual",
+      "sha256": "56e57a42ac05da70a19b0414256c76dd696f44a49d47197a8ec7abd8b36d7dfe"
+    },
+    "manualLinks": 5
+  },
+  {
+    "key": "tractor-M720W",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/M720W/",
+    "status": 200,
+    "sha256": "4d6d11135f97d933365f6635383f6f1f64c6397ce7c5fb940d275927d7b40902",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M720W/?nav=catalog",
+      "documents": [
+        {
+          "title": "WORLD M720W",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0023-01.pdf"
+        },
+        {
+          "title": "WORLD series M720W・M860W-SE・M1010W-SE・M1060W",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0027-06.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/M720W/",
+      "sha256": "6190c003938ad8ae9bfa46812f85f2a22394aa5523466c30afaa71b5c1d14d9d"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（M720W）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M720W/?nav=manual",
+      "sha256": "812975c3e4fe69b1d500159b664f980dcd7adf120edcfe4c59b9d0e6c6bc9401"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "tractor-MR-600-700",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/MR-600-700/",
+    "status": 200,
+    "sha256": "c123209c7eccffdf50615ca65c6ae050bca9914efc0f0b7a6a81d154553f0fdf",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-600-700/?nav=catalog",
+      "documents": [
+        {
+          "title": "レクシアMR600H/650H/700H 総合カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0034-07n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/MR-600-700/",
+      "sha256": "9674bf5f74e65f5dd932f6a77d776892f9acbce0923bf5ff0c64d4ee4cff63ca"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（MR600-700）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-600-700/?nav=manual",
+      "sha256": "9e179eb67c692001a555998dcb18a42c1b451df7fcc69e83f0fbe4bc489ebba5"
+    },
+    "manualLinks": 6
+  },
+  {
+    "key": "tractor-MR-70-SP",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/MR-70-SP/",
+    "status": 200,
+    "sha256": "9ee13b4350b74b64d2a021064dafc6f69cf95a1af1f373d03b0699d0da1379b7",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-70-SP/?nav=catalog",
+      "documents": [
+        {
+          "title": "MR70 Special MR70・MR70-PCスペシャル機",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0032-02.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/MR-70-SP/",
+      "sha256": "76b4c3d9ef516d6b414a7f00b847a951f9522dffd9c3faa2dbd48833f031256c"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（MR70）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-70-SP/?nav=manual",
+      "sha256": "14f471e0405091d254c11cf96523d80a8220330afca0c441d7a44c39dce3b40d"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "tractor-SL-38-54-SP",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/SL-38-54-SP/",
+    "status": 200,
+    "sha256": "ecd16386e8ee12873c9718fdd80877a5592444e2e5a0601ac8210c450aa7d286",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-38-54-SP/?nav=catalog",
+      "documents": [
+        {
+          "title": "Sluggerマニュアルシフト仕様スペシャル",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0044-02n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/SL-38-54-SP/",
+      "sha256": "9ad53f4fb3f14e9f6c644c33b1fcd4517c699b6ef0f9521222728bc2b13c1352"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（SL38HSP-54HSP）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-38-54-SP/?nav=manual",
+      "sha256": "e446254f12c96baa78edb8f55cdb5b22e2d90e03f66d172e8cd6802403f62f21"
+    },
+    "manualLinks": 10
+  },
+  {
+    "key": "tractor-SL-280-350-SP",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-350-SP/",
+    "status": 200,
+    "sha256": "e268da116b78ec98f05628bef06aaab13185f225dd271052ea3f0051d7763449",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-350-SP/?nav=catalog",
+      "documents": [
+        {
+          "title": "スラッガーSL280SPF(PC) SL350(H)SPF(PC)カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0047-01n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/SL-280-350-SP/",
+      "sha256": "93e7e7d0d6332157e46114edfb0d5bda60ca14a087943026af51d9d6597ad93b"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（SL280-350-SPF）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-350-SP/?nav=manual",
+      "sha256": "e0c644ed25febab1fe119b43a6a9d5bc9163c22ae0df8791d55a796b5ec5f65e"
+    },
+    "manualLinks": 2
+  },
+  {
+    "key": "tractor-SL-24",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/SL-24/",
+    "status": 200,
+    "sha256": "650f9b4aded1ac376665810ca1ccc1d36f601979cfb4603a2e981640ed70e5b2",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-24/?nav=catalog",
+      "documents": [
+        {
+          "title": "Slugger24馬力 SL24(H)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0031-03new.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/SL-24/",
+      "sha256": "c5fb6efd988f068f9df38b6e1087c95ebacf161f32de123a00908a6007d0292b"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（SL24）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-24/?nav=manual",
+      "sha256": "856fdd1be8d62370d36d1981808a8128f9d9f3c40a6b508e9ccf236cb9ac2e16"
+    },
+    "manualLinks": 2
+  },
+  {
+    "key": "tractor-ST-25-31",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/ST-25-31/",
+    "status": 200,
+    "sha256": "573af629ded68a206ab31de8734a8b4b740b4fa1f595e03d369436fc1a5bf42c",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/ST-25-31/?nav=catalog",
+      "documents": [
+        {
+          "title": "テラストST25/ST31 マニュアルシフト仕様カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0049-02n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/ST-25-31/",
+      "sha256": "cd698752a54d9d9f57f7e6857885ab3e7ba5a2bc8b2bc8eb2b9a57d3b0e27d49"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（ST25-31）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/ST-25-31/?nav=manual",
+      "sha256": "9ec72266d0faee2569c01e2f6ffab11c8877d2d2c1dbb39c016b7f71388645b6"
+    },
+    "manualLinks": 2
+  },
+  {
+    "key": "tractor-JB-115-195",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/JB-115-195/",
+    "status": 200,
+    "sha256": "9214e64ec0a42fc5c98075e565fefa32961c05d73824759cfcac1b39277b763c",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-115-195/?nav=catalog",
+      "documents": [
+        {
+          "title": "JB115・JB135・JB155・JB195カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0050-01.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/JB-115-195/",
+      "sha256": "a9983af02efa0c56186b5875b75bc4e2107d9248d2626118a0714930abf69505"
+    },
+    "manualIndex": {
+      "title": "取扱説明書検索（型式で探す）",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manualLinks": 0
+  },
+  {
+    "key": "tractor-NB-17-23",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/NB-17-23/",
+    "status": 200,
+    "sha256": "55ed65c347d77db1a8540d95a17ff3337e05159cd208b593813b21224b2f30c1",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-17-23/?nav=catalog",
+      "documents": [
+        {
+          "title": "GRANOVA NB17・19(-PC)・21(-PC)・23(-PC)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0023-04.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/NB-17-23/",
+      "sha256": "99c8f4f8ffc8bb86fd93463064873c594f45b4ddd5e4ce8d6f9b3f7720f4d131"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NB17-23）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-17-23/?nav=manual",
+      "sha256": "d9f6c7e160048d0455d3742507eeb52c839090969a644edd21a98f9a1eaeb643"
+    },
+    "manualLinks": 6
+  },
+  {
+    "key": "tractor-NB-21-GS",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-GS/",
+    "status": 200,
+    "sha256": "98e2f8092f2aff391707e407797ca68f37470b69c05d970a56fcd2715a3fcace",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-GS/?nav=catalog",
+      "documents": [
+        {
+          "title": "NB21-GS",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-10-2-0003-05.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/NB-21-GS/",
+      "sha256": "9e3cbef22821ea9cb648b1756d8ec866eb591119c8b3c6834d9183136c8c6340"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NB21GS）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-GS/?nav=manual",
+      "sha256": "edadce6463906dfda85302717a3ccb1c078cd71c0074630c950b815363d8039c"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "tractor-NB-21-SP",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-SP/",
+    "status": 200,
+    "sha256": "d7c537c478af29fc95dbeda0fb58b62bcdf672ec9b1cb339a56f3c36837d4982",
+    "catalog": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NB21SP）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-SP/?nav=manual",
+      "sha256": "cca864cf72983ad89f6fdad866ff96d56e6f2a2cb178f5aa75d1231af4eac5d3"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "tractor-JB-11-19",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11-19/",
+    "status": 200,
+    "sha256": "0cec77f7bb0fd5795b9edf9cbbdebe45f9f3d7b75fcbb31553e0e6b75ac79571",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11-19/?nav=catalog",
+      "documents": [
+        {
+          "title": "ブルスターエクストラ総合冊子 JB11X/JB13XSP/JB15X/JB15XSPN/JB17X/JB18XSP/JB19X",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0046-01n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/JB-11-19/",
+      "sha256": "98a5b26c2f8430637085a40410a4c4345d411d1a791a22ed1b06625fb2263899"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（JB11X-19X）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11-19/?nav=manual",
+      "sha256": "c7967bc53b2d55b17c4734320a048383a6f6d56c713355ed15c7fa4ac9486ee2"
+    },
+    "manualLinks": 7
+  },
+  {
+    "key": "tractor-JB-11XLD-13XSLD",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11XLD-13XSLD/",
+    "status": 200,
+    "sha256": "bb3adf37299693eda1ff1c2b9426c600f0d675b189fd9aae2a21ac2ea2c93424",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11XLD-13XSLD/?nav=catalog",
+      "documents": [
+        {
+          "title": "ブルスター エクストラ ショベルローダ JB11XLDJSLH130・JB13XSLDSLH130",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0011-03.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/JB-11XLD-13XSLD/",
+      "sha256": "6bbf8c1bda9e720de6cce1e6af19a5bdd8cd336d167b7ff52975ee990cbeb8a0"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（JB13XSLDSLH130）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11XLD-13XSLD/?nav=manual",
+      "sha256": "6806f14d802a35e022b2fea84bf23acfc0330f4601a4c27125f59ee42818695d"
+    },
+    "manualLinks": 3
+  },
+  {
+    "key": "tractor-JB-13X-N",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/",
+    "status": 200,
+    "sha256": "91378488d18419ab24ac5b7b55f78df582faa049a63d8104c88b2a29a6eea122",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/?nav=catalog",
+      "documents": [
+        {
+          "title": "Bull Star EXTRA 超幅狭仕様 JB13XN(M) 白ネギ機械化一貫体系",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-10-2-0005-03.pdf"
+        },
+        {
+          "title": "Bull Star EXTRA 超幅狭仕様 JB13XN",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0032-03.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/",
+      "sha256": "162da36212a0d14e294eeabd55514987195a6d84afd1a47467db7b097add57fe"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（JB13XN）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/?nav=manual",
+      "sha256": "c9cf2dbbf47bd0fe77d95d560fdab164d9948a4bc60413f79348670490554dee"
+    },
+    "manualLinks": 1
+  },
+  {
+    "key": "tractor-NR-17-23",
+    "url": "https://agriculture.kubota.co.jp/product/tractor/NR-17-23/",
+    "status": 200,
+    "sha256": "dd86fa4000db763b6f547195ff1cbd89204eb221c79aae02099002d4f402d2ce",
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NR-17-23/?nav=catalog",
+      "documents": [
+        {
+          "title": "乗用管理機NR17(17PS)NR23(22.5PS)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-10-2-0009-03.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/NR-17-23/",
+      "sha256": "305097b150ae8bc5e44a8710ff698564243848bd293952bed2bc2e8df7acc621"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NR17-23）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NR-17-23/?nav=manual",
+      "sha256": "66d7996d7a6c7d4572fa1dffc0e8d0373860279a193a1bd520327d32da321cff"
+    },
+    "manualLinks": 2
+  }
+]

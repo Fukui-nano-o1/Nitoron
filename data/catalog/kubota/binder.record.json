@@ -1,0 +1,137 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "af7c3249-324c-4129-808d-fbb877297a0e",
+      "title": "【カタログ解説】クボタ RJ250-550 バインダー（コンバイン）",
+      "category": "コンバイン",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "af7c3249-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "af7c3249-002",
+          "type": "text",
+          "text": "稲を刈り取り、束ねる機械。1条刈りと2条刈りがあります。"
+        },
+        {
+          "id": "af7c3249-003",
+          "type": "bullet",
+          "text": "条数：1・2条刈"
+        },
+        {
+          "id": "af7c3249-004",
+          "type": "bullet",
+          "text": "用途：稲の刈取り・結束"
+        },
+        {
+          "id": "af7c3249-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "af7c3249-006",
+          "type": "text",
+          "text": "RJ250 / RJ350 / RJ550"
+        },
+        {
+          "id": "af7c3249-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "af7c3249-008",
+          "type": "text",
+          "text": "掲載写真：RJ250-550（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "コンバイン",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/49a982718a5448a6a6c311db72b28485/binderRJ_card.jpg",
+        "summary": "稲を刈り取り、束ねる機械。1条刈りと2条刈りがあります。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "af7c3249-src-product",
+            "title": "クボタ 製品ページ RJ250-550",
+            "url": "https://agriculture.kubota.co.jp/product/combine/binder/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "af7c3249-src-catalog",
+            "title": "クボタ 製品カタログ バインダー",
+            "url": "https://agriculture.kubota.co.jp/product/combine/binder/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "af7c3249-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（RJ250-550）",
+            "url": "https://agriculture.kubota.co.jp/product/combine/binder/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "af7c3249-src-manual-1",
+            "title": "取扱説明書 RJ250",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f18a6d1cde4b205199de8729a6637b42",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "af7c3249-src-manual-2",
+            "title": "取扱説明書 RJ350",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9597353e41e6957b5e7aa79214fcb256",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "af7c3249-src-manual-3",
+            "title": "取扱説明書 RJ550",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a2cc63e065705fe938a4dda49092966f",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "af7c3249-src-photo",
+            "title": "写真：クボタ バインダー",
+            "url": "https://agriculture.kubota.co.jp/product/combine/binder/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

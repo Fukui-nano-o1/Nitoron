@@ -1,0 +1,67 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "NR17-23",
+  "productName": "NAVI RIDER 乗用管理機",
+  "summary": "野菜の管理作業向けの乗用管理機。17馬力と22.5馬力の型式があります。",
+  "category": "トラクタ",
+  "models": [
+    "NR17",
+    "NR23"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "NR17-23（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "17/22.5馬力",
+      "source": "product"
+    },
+    {
+      "label": "用途",
+      "value": "野菜などの管理作業",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NR-17-23/",
+      "checkedAt": "2026-09-16",
+      "sha256": "dd86fa4000db763b6f547195ff1cbd89204eb221c79aae02099002d4f402d2ce"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NR-17-23/?nav=catalog",
+      "documents": [
+        {
+          "title": "乗用管理機NR17(17PS)NR23(22.5PS)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-10-2-0009-03.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/NR-17-23/",
+      "sha256": "305097b150ae8bc5e44a8710ff698564243848bd293952bed2bc2e8df7acc621"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NR17-23）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NR-17-23/?nav=manual",
+      "sha256": "66d7996d7a6c7d4572fa1dffc0e8d0373860279a193a1bd520327d32da321cff"
+    },
+    "manuals": [
+      {
+        "title": "NR17F",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9e740b84bb48a64dde25061566299467"
+      },
+      {
+        "title": "NR23F",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=532b81fa223a1b1ec74139a5b8151d12"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "1f163c70-2880-4c1e-83c1-964b813c8c64",
+      "title": "【カタログ解説】クボタ SA-45-86 脱芒機（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "1f163c70-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "1f163c70-002",
+          "type": "text",
+          "text": "種籾の芒を処理する、播種前の準備機器。在庫限りの製品です。"
+        },
+        {
+          "id": "1f163c70-003",
+          "type": "bullet",
+          "text": "用途：種籾の脱芒"
+        },
+        {
+          "id": "1f163c70-004",
+          "type": "bullet",
+          "text": "販売状況：在庫限り"
+        },
+        {
+          "id": "1f163c70-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "1f163c70-006",
+          "type": "text",
+          "text": "SA-45 / SA-86"
+        },
+        {
+          "id": "1f163c70-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "1f163c70-008",
+          "type": "text",
+          "text": "掲載写真：SA-45-86（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/d668addd80978b900f0d58063745664f/hashu-SA45-86_card%20%281%29.jpg",
+        "summary": "種籾の芒を処理する、播種前の準備機器。在庫限りの製品です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "1f163c70-src-product",
+            "title": "クボタ 製品ページ SA-45-86",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SA45-86/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "1f163c70-src-catalog",
+            "title": "クボタ 製品カタログ 脱芒機",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SA45-86/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "1f163c70-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（SA-45-86）",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SA45-86/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "1f163c70-src-manual-1",
+            "title": "取扱説明書 SA-45",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=5bce843dd76db8c939d5323dd3e54ec9",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "1f163c70-src-manual-2",
+            "title": "取扱説明書 SA-86",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=139f0874f2ded2e41b0393c4ac5644f7",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "1f163c70-src-photo",
+            "title": "写真：クボタ 脱芒機",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SA45-86/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

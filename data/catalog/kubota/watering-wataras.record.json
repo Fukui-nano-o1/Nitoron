@@ -1,0 +1,119 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "2ca72a4a-742c-423c-8d6f-2aa876de65db",
+      "title": "【カタログ解説】クボタ WATARAS ほ場水管理システム（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "2ca72a4a-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "2ca72a4a-002",
+          "type": "text",
+          "text": "スマートフォンやパソコンから、ほ場の水管理を行うシステム。給水・排水用の機器があります。"
+        },
+        {
+          "id": "2ca72a4a-003",
+          "type": "bullet",
+          "text": "用途：ほ場の給水・排水管理"
+        },
+        {
+          "id": "2ca72a4a-004",
+          "type": "bullet",
+          "text": "製品提供：クボタケミックス"
+        },
+        {
+          "id": "2ca72a4a-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "2ca72a4a-006",
+          "type": "text",
+          "text": "WT01-AS-A / WT01-AD-A / WT01-AS-A（LTE） / WT01-AD-A（LTE）"
+        },
+        {
+          "id": "2ca72a4a-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "2ca72a4a-008",
+          "type": "text",
+          "text": "掲載写真：WATARAS（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/3638a71c861d01d513dc27eea3e9a56d/watering-WATARAS_card.jpg",
+        "summary": "スマートフォンやパソコンから、ほ場の水管理を行うシステム。給水・排水用の機器があります。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "2ca72a4a-src-product",
+            "title": "クボタ 製品ページ WATARAS",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/watering-WATARAS/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "2ca72a4a-src-catalog",
+            "title": "クボタ 製品カタログ ほ場水管理システム",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/watering-WATARAS/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "2ca72a4a-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（WATARAS）",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/watering-WATARAS/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "2ca72a4a-src-photo",
+            "title": "写真：クボタ ほ場水管理システム",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/watering-WATARAS/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

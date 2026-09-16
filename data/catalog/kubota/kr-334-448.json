@@ -1,0 +1,77 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "KR334-448",
+  "productName": "KALSTAR",
+  "summary": "3条刈り・4条刈りのコンバイン。34〜48馬力の型式があります。",
+  "category": "コンバイン",
+  "models": [
+    "KR334",
+    "KR338",
+    "KR438",
+    "KR448"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "KR334-448（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "34〜48馬力",
+      "source": "product"
+    },
+    {
+      "label": "条数",
+      "value": "3・4条刈",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/KR-334-448/",
+      "checkedAt": "2026-09-16",
+      "sha256": "f9d37cf0e3c91c2c59e0ef959c12a32f446b03ab78c7d8310e9008a59cc3d27a"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/KR-334-448/?nav=catalog",
+      "documents": [
+        {
+          "title": "カルスターKR334/338/438/448 カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0030-04n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/KR-334-448/",
+      "sha256": "4b66c9a103f61f5969f0904c6490cff610d87702bbb43855f1310edee213dc7f"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（KR334-448）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/KR-334-448/?nav=manual",
+      "sha256": "e9225aaa474071946a846c4cf82a740fd08a9d2397eea8be800822c77f5a316d"
+    },
+    "manuals": [
+      {
+        "title": "KR334",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e8542a04d734d0cae36d648b3f519e5c"
+      },
+      {
+        "title": "KR338",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d8847be3f7cc1b14e9173908bebb2106"
+      },
+      {
+        "title": "KR438",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=aaaccd2766ec67aecbe26459bb828d81"
+      },
+      {
+        "title": "KR448",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f9beb1e831faf6aaec2a5cecaf1af293"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

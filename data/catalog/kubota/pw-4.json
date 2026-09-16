@@ -1,0 +1,66 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "PW4",
+  "productName": "PASWEL 田植機",
+  "summary": "4条植えの田植機。クランク式とロータリ式の植付け仕様があります。",
+  "category": "田植機",
+  "models": [
+    "PW4C",
+    "PW4R"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "PW4（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "条数",
+      "value": "4条植",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/PW-4/",
+      "checkedAt": "2026-09-16",
+      "sha256": "61e55b4fc71fa3325a7081b939895a7625773d9666173cf8b74f40e8145723bf"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/PW-4/?nav=catalog",
+      "documents": [
+        {
+          "title": "PASWEL PW4C(クランク式4条植)・PW4R(ロータリ式4条植)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0023-05n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/PW-4/",
+      "sha256": "6d68484f67a5dd65318fc7ec8cf4b2ce89afc4069dd1494dae0b198f9ee1bacf"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（PW4）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/PW-4/?nav=manual",
+      "sha256": "9b70aa7372fb7f19a35a73f76786d20acac435ae5a7ed614ebfa63fb71690fe2"
+    },
+    "manuals": [
+      {
+        "title": "PW4",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e655c7716a4b3ea67f48c6322fc42ed6"
+      },
+      {
+        "title": "PW4C-F",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1714726c817af50457d810aae9d27a2e"
+      },
+      {
+        "title": "PW4R-F",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fcdf25d6e191893e705819b177cddea0"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

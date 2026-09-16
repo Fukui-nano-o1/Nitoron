@@ -1,0 +1,62 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "R462",
+  "productName": "コンバイン",
+  "summary": "62馬力・4条刈りのコンバインです。",
+  "category": "コンバイン",
+  "models": [
+    "R462"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "R462（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "62馬力",
+      "source": "product"
+    },
+    {
+      "label": "条数",
+      "value": "4条刈",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/R-462/",
+      "checkedAt": "2026-09-16",
+      "sha256": "c10a2cb988bdd5f45fd081d86f6ad9741ff06f231f389de962ea45847495a976"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/R-462/?nav=catalog",
+      "documents": [
+        {
+          "title": "自脱コンバインR462 カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0031-04.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/R-462/",
+      "sha256": "04395f8ace26b3375f8405cd06e81597dc552884a77fc40fdae3e99ddb410686"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（R462）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/R-462/?nav=manual",
+      "sha256": "00ecb4143c645036127327042731e85ed2c9887e8eb1a711da5005b549bf9ead"
+    },
+    "manuals": [
+      {
+        "title": "R462",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=258e130476290221f597c56d351224b6"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

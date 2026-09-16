@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-09-16",
+  "project": "ycvbjzlqrxnwalhhgzat",
+  "before": {
+    "existing_planned_notes": 0,
+    "existing_planned_publications": 0,
+    "note_count": 37,
+    "publication_count": 36,
+    "untouched_notes_hash": "b4d4518e8b2a648ddf04074e7dc57865",
+    "untouched_publications_hash": "2c8b69a2e379be31a99056686731f424"
+  },
+  "after": {
+    "kubota_catalog_count": 94,
+    "note_count": 102,
+    "publication_count": 101,
+    "untouched_notes_hash": "b4d4518e8b2a648ddf04074e7dc57865",
+    "untouched_publications_hash": "2c8b69a2e379be31a99056686731f424"
+  },
+  "readback": [
+    {
+      "checked": 24,
+      "matched": 24
+    },
+    {
+      "checked": 24,
+      "matched": 24
+    },
+    {
+      "checked": 17,
+      "matched": 17
+    }
+  ],
+  "existingRowsUnchanged": true
+}

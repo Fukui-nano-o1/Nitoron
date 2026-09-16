@@ -1,0 +1,114 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "26e64677-443c-42e6-8ed5-a7c7d68e8109",
+      "title": "【カタログ解説】クボタ MR800-1050 REXIA（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "26e64677-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "26e64677-002",
+          "type": "text",
+          "text": "80〜105馬力のトラクタ。レクシアのシリーズです。"
+        },
+        {
+          "id": "26e64677-003",
+          "type": "bullet",
+          "text": "馬力：80〜105馬力"
+        },
+        {
+          "id": "26e64677-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "26e64677-005",
+          "type": "text",
+          "text": "MR800(H)(PC) / MR900(H)(PC) / MR1000(H)(PC) / MR1050H(PC)"
+        },
+        {
+          "id": "26e64677-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "26e64677-007",
+          "type": "text",
+          "text": "掲載写真：MR800-1050（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/78f6adad1fefeab27a075f5f32e55b10/MR-800-1050_card.jpg",
+        "summary": "80〜105馬力のトラクタ。レクシアのシリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "26e64677-src-product",
+            "title": "クボタ 製品ページ MR800-1050",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "26e64677-src-catalog",
+            "title": "クボタ 製品カタログ REXIA",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "26e64677-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（MR800-1050）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "26e64677-src-photo",
+            "title": "写真：クボタ REXIA",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

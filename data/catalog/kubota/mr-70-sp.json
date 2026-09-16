@@ -1,0 +1,58 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "MR70",
+  "productName": "Special トラクタ",
+  "summary": "70馬力のトラクタ。MR70スペシャルのシリーズです。",
+  "category": "トラクタ",
+  "models": [
+    "MR70",
+    "MR70(PC)"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "MR70（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "70馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-70-SP/",
+      "checkedAt": "2026-09-16",
+      "sha256": "9ee13b4350b74b64d2a021064dafc6f69cf95a1af1f373d03b0699d0da1379b7"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-70-SP/?nav=catalog",
+      "documents": [
+        {
+          "title": "MR70 Special MR70・MR70-PCスペシャル機",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0032-02.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/MR-70-SP/",
+      "sha256": "76b4c3d9ef516d6b414a7f00b847a951f9522dffd9c3faa2dbd48833f031256c"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（MR70）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-70-SP/?nav=manual",
+      "sha256": "14f471e0405091d254c11cf96523d80a8220330afca0c441d7a44c39dce3b40d"
+    },
+    "manuals": [
+      {
+        "title": "MR70 130周年スペシャル",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=28e209b61a52482a0ae1cb9f5959c792"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "SR-95KJ-1000H",
+  "productName": "ニューきんぱ播種機",
+  "summary": "育苗箱への播種に使うSRシリーズ。作業規模に合わせた機種を選べます。",
+  "category": "稲作関連機器",
+  "models": [
+    "SR-95KJ",
+    "SR-285K",
+    "SR-125KWD",
+    "SR-285KRW",
+    "SR-450KWD",
+    "SR-1205",
+    "SR-2005",
+    "SR-2805",
+    "SR-4500",
+    "SR-6200",
+    "SR-1000H"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "SR-95KJ-1000H（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "用途",
+      "value": "育苗箱への播種",
+      "source": "product"
+    },
+    {
+      "label": "販売状況",
+      "value": "SR-95KJのみ在庫限り",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-auto/",
+      "checkedAt": "2026-09-16",
+      "sha256": "e9be3dcbd2dcbfb0ff0d087ae81b269c06f5c8cce3b7d61ab229d85425c147d6"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-auto/?nav=catalog",
+      "documents": [
+        {
+          "title": "水稲用播種機SRシリーズ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-00-2-0013-09.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-auto/",
+      "sha256": "a27ed1fea3392581c957af19327d70511292ad0f98fcf1069dd4e63bd45aa39f"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（SR-95KJ-1000H）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-auto/?nav=manual",
+      "sha256": "418b4ecb1f85782c491cf70ed8736626f98011d69dc13f509ceda47f0fe18b70"
+    },
+    "manuals": [
+      {
+        "title": "SR-95KJ",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ccbd8ca962b80445df1f7f38c57759f0"
+      },
+      {
+        "title": "SR-125KWJ",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=243facb29564e7b448834a7c9d901201"
+      },
+      {
+        "title": "SR-125KWD",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=be6c7b094f88532b6c6b35bbcd525ee8"
+      },
+      {
+        "title": "SR-140KWJ（かん水装置付き）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d5e2c0adad503c91f91df240d0cd4e49"
+      },
+      {
+        "title": "SR-285KW（かん水装置付き）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=04ad5632029cbfbed8e136e5f6f7ddfa"
+      },
+      {
+        "title": "SR-285K（かん水装置なし）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4cb811134b9d39fc3104bd06ce75abad"
+      },
+      {
+        "title": "SR-285KRW（かん水装置付き）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d6288499d0083cc34e60a077b7c4b3e1"
+      },
+      {
+        "title": "SR-285KR（かん水装置なし）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2d3acd3e240c61820625fff66a19938f"
+      },
+      {
+        "title": "SR-1205",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=758a06618c69880a6cee5314ee42d52f"
+      },
+      {
+        "title": "SR-2005（かん水装置付き）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ce6c92303f38d297e263c7180f03d402"
+      },
+      {
+        "title": "SR-2005-O（かん水装置なし）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=635440afdfc39fe37995fed127d7df4f"
+      },
+      {
+        "title": "SR-2805（かん水装置付き）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f6c79f4af478638c39b206ec30ab166b"
+      },
+      {
+        "title": "SR-2805-O（かん水装置なし）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c2ba1bc54b239208cb37b901c0d3b363"
+      },
+      {
+        "title": "SR-4500",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=bbaa9d6a1445eac881750bea6053f564"
+      },
+      {
+        "title": "SR-450KWD",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0233f3bb964cf325a30f8b1c2ed2da93"
+      },
+      {
+        "title": "SR-6200",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=26505e0494662534f633586941b77d0c"
+      },
+      {
+        "title": "SR-1000H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3147da8ab4a0437c15ef51a5cc7f2dc4"
+      },
+      {
+        "title": "コーナープレス SR-CP2",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=321cf86b4c9f5ddd04881a44067c2a5a"
+      },
+      {
+        "title": "回転ブラシ完備 SS-KB13",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=75e33da9b103b7b91dcd8da0abe1354b"
+      },
+      {
+        "title": "回転ブラシ完備 SS-KB23",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=17f98ddf040204eda0af36a108cbdea4"
+      },
+      {
+        "title": "薬剤ポンプ SS-DP125",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4de81d9105c85bca6e6e4666e6dd536a"
+      },
+      {
+        "title": "薬剤ポンプ SS-DP160",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8e065119c74efe3a47aec8796964cf8b"
+      },
+      {
+        "title": "薬剤ポンプ SS-DP280",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8cff9bf6694dccfc3b6a613d05d51d16"
+      },
+      {
+        "title": "薬剤ポンプ SS-DP380",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e113bb92c69391dd39e2488f9f588382"
+      },
+      {
+        "title": "薬剤ポンプ SS-DP285",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dd17e652cd2a08fdb8bf7f68e2ad3814"
+      },
+      {
+        "title": "育苗機器 ミニバケット SV-102",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8e68c3c7bf14ad0bcaba52babfa470bd"
+      },
+      {
+        "title": "自動ハコツミ DS-U10E",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f1748d6b0fd9d439f71450117eba2725"
+      },
+      {
+        "title": "自動ハコツミ DS-U700B",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6412fef87392ae8c987b0ecc79da1902"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "DR575-6130",
+  "productName": "DIONITH",
+  "summary": "5条刈り・6条刈りのコンバイン。75〜130馬力の型式があります。",
+  "category": "コンバイン",
+  "models": [
+    "DR575",
+    "DR595",
+    "DR6115",
+    "DR6130"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "DR575-6130（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "75〜130馬力",
+      "source": "product"
+    },
+    {
+      "label": "条数",
+      "value": "5・6条刈",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-575-6130/",
+      "checkedAt": "2026-09-16",
+      "sha256": "aa845d08a284ee7692ff20ceaf17531c00148d1ebbcf4da497540105db514d7e"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-575-6130/?nav=catalog",
+      "documents": [
+        {
+          "title": "ディオニス DR595GS・DR6130GS 新製品速報",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-1-0028-01.pdf"
+        },
+        {
+          "title": "DR575/595/595GS/6115/6130/6130GSカタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0034-05.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/DR-575-6130/",
+      "sha256": "05f0cef4827bab3bc0a1a8773bfe2e0b9b9fcd3117539eed71362d65b5354ff1"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（DR575-6130）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-575-6130/?nav=manual",
+      "sha256": "def6516ccc783978f3ab4c99475a520dad5ceb8c4e432ea1f4e9447137fe085b"
+    },
+    "manuals": [
+      {
+        "title": "DR6130",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7ef605fc8dba5425d6965fbd4c8fbe1f"
+      },
+      {
+        "title": "DR6130 130周年アニバーサリー機",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a8f15eda80c50adb0e71943adc8015cf"
+      },
+      {
+        "title": "DR6115",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f2217062e9a397a1dca429e7d70bc6ca"
+      },
+      {
+        "title": "DR595",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8d5e957f297893487bd98fa830fa6413"
+      },
+      {
+        "title": "DR575",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a5e00132373a7031000fd987a3c9f87b"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "2fc1d523-4416-476a-88db-a60860ed01a3",
+      "title": "【カタログ解説】クボタ ER448NL ER448N Limited（コンバイン）",
+      "category": "コンバイン",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "2fc1d523-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "2fc1d523-002",
+          "type": "text",
+          "text": "48馬力・4条刈りのコンバイン。リミテッド仕様です。"
+        },
+        {
+          "id": "2fc1d523-003",
+          "type": "bullet",
+          "text": "馬力：48馬力"
+        },
+        {
+          "id": "2fc1d523-004",
+          "type": "bullet",
+          "text": "条数：4条刈"
+        },
+        {
+          "id": "2fc1d523-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "2fc1d523-006",
+          "type": "text",
+          "text": "ER448NL"
+        },
+        {
+          "id": "2fc1d523-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "2fc1d523-008",
+          "type": "text",
+          "text": "掲載写真：ER448NL（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "コンバイン",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/ed964baadd00fdcd7f3ad263dcdd305e/ER-448-NL-thumb.jpg",
+        "summary": "48馬力・4条刈りのコンバイン。リミテッド仕様です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "2fc1d523-src-product",
+            "title": "クボタ 製品ページ ER448NL",
+            "url": "https://agriculture.kubota.co.jp/product/combine/ER-448-NL/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "2fc1d523-src-catalog",
+            "title": "クボタ 製品カタログ ER448N Limited",
+            "url": "https://agriculture.kubota.co.jp/product/combine/ER-448-NL/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "2fc1d523-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（ER448NL）",
+            "url": "https://agriculture.kubota.co.jp/product/combine/ER-448-NL/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "2fc1d523-src-manual-1",
+            "title": "取扱説明書 ER448N Limited",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=690bb330e5e7e3e07867fafc4d32ec82",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "2fc1d523-src-photo",
+            "title": "写真：クボタ ER448N Limited",
+            "url": "https://agriculture.kubota.co.jp/product/combine/ER-448-NL/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

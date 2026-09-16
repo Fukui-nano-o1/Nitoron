@@ -1,0 +1,114 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "d1600cc2-f25b-4ce2-8a2e-5b0f81e06248",
+      "title": "【カタログ解説】クボタ NW80SA Agri Robo 田植機（田植機）",
+      "category": "田植機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "d1600cc2-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "d1600cc2-002",
+          "type": "text",
+          "text": "8条植えのアグリロボ田植機。有人仕様と無人仕様があります。"
+        },
+        {
+          "id": "d1600cc2-003",
+          "type": "bullet",
+          "text": "条数：8条植"
+        },
+        {
+          "id": "d1600cc2-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "d1600cc2-005",
+          "type": "text",
+          "text": "NW80SA"
+        },
+        {
+          "id": "d1600cc2-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "d1600cc2-007",
+          "type": "text",
+          "text": "掲載写真：NW80SA（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "田植機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/155183f4da3f8a14aa5646ad8324fc3c/card-thumb.jpg",
+        "summary": "8条植えのアグリロボ田植機。有人仕様と無人仕様があります。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "d1600cc2-src-product",
+            "title": "クボタ 製品ページ NW80SA",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-80S-A/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d1600cc2-src-catalog",
+            "title": "クボタ 製品カタログ Agri Robo 田植機",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-80S-A/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d1600cc2-src-manual-index",
+            "title": "取扱説明書検索（型式で探す）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d1600cc2-src-photo",
+            "title": "写真：クボタ Agri Robo 田植機",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-80S-A/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

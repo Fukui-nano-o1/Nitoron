@@ -1,0 +1,124 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "a72c33e6-bb45-4d04-8c75-21827d944a19",
+      "title": "【カタログ解説】クボタ MR800A2H-1050A2H アグリロボトラクタ MRシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "a72c33e6-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "a72c33e6-002",
+          "type": "text",
+          "text": "80〜105馬力のアグリロボトラクタ。2027年4月発売予定のシリーズです。"
+        },
+        {
+          "id": "a72c33e6-003",
+          "type": "bullet",
+          "text": "馬力：80〜105馬力"
+        },
+        {
+          "id": "a72c33e6-004",
+          "type": "bullet",
+          "text": "仕様：80馬力は有人仕様のみ"
+        },
+        {
+          "id": "a72c33e6-005",
+          "type": "bullet",
+          "text": "発売予定：2027年4月"
+        },
+        {
+          "id": "a72c33e6-006",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "a72c33e6-007",
+          "type": "text",
+          "text": "MR800A2H / MR1000A2H / MR1050A2H"
+        },
+        {
+          "id": "a72c33e6-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "a72c33e6-009",
+          "type": "text",
+          "text": "掲載写真：MR800A2H-1050A2H（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/85d47a705d9802bf6207380f5cc712eb/card-thumb.png",
+        "summary": "80〜105馬力のアグリロボトラクタ。2027年4月発売予定のシリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "a72c33e6-src-product",
+            "title": "クボタ 製品ページ MR800A2H-1050A2H",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050-A2H/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "a72c33e6-src-catalog",
+            "title": "クボタ 製品カタログ アグリロボトラクタ MRシリーズ",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050-A2H/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "a72c33e6-src-manual-index",
+            "title": "取扱説明書検索（型式で探す）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "a72c33e6-src-photo",
+            "title": "写真：クボタ アグリロボトラクタ MRシリーズ",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050-A2H/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

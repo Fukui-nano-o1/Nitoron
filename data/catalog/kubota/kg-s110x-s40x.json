@@ -1,0 +1,105 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "KG-S40X3-110X",
+  "productName": "色彩選別機 選別王",
+  "summary": "米の色彩選別を行う選別王シリーズ。処理量や玄米・白米への対応が型式によって異なります。",
+  "category": "稲作関連機器",
+  "models": [
+    "KG-S40X3",
+    "KG-S40X3W",
+    "KG-S55X",
+    "KG-S110X-L",
+    "KG-S110X-R"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "KG-S40X3-110X（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "用途",
+      "value": "米の色彩選別",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/KG-S110X-S40X/",
+      "checkedAt": "2026-09-16",
+      "sha256": "aa3cb8b86e0db5d2e74047273b22ea75fec296c1b5241876b00995d6bbc76ce1"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/KG-S110X-S40X/?nav=catalog",
+      "documents": [
+        {
+          "title": "クボタ色彩選別機 総合カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/8-10-2-0034-09.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/KG-S110X-S40X/",
+      "sha256": "2b0e9b288fa0d7990941691f99e263504f98c1712bb7f1e3e5079e30d5515ea6"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（KG-S40X3-110X）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/KG-S110X-S40X/?nav=manual",
+      "sha256": "54fed24b1f7a6a57700f5beccdcba66d00da20c23ec4c5f200fcc221209cbf45"
+    },
+    "manuals": [
+      {
+        "title": "KG-S110X 取扱説明書",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d840cc5d906c3e9c84374c8919d2074e"
+      },
+      {
+        "title": "KG-S110X 詳細設定説明書",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=959a557f5f6beb411fd954f3f34b21c3"
+      },
+      {
+        "title": "KG-S55X 取扱説明書",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c82836ed448c41094025b4a872c5341e"
+      },
+      {
+        "title": "KG-S55X 詳細設定説明書",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=36072923bfc3cf47745d704feb489480"
+      },
+      {
+        "title": "KG-S40X3 取扱説明書",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=adf8d7f8c53c8688e63a02bfb3055497"
+      },
+      {
+        "title": "KG-S40X3 詳細設定説明書",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43e04dd08bb1305428b0c9c8d8a2660a"
+      },
+      {
+        "title": "KG-S40X3W 取扱説明書",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d464b5ac99e74462f321c06ccacc4bff"
+      },
+      {
+        "title": "KG-S40X3W 詳細設定説明書",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=abec16f483abb4f1810ca029aadf8446"
+      },
+      {
+        "title": "KSASポート子機 KPH-WSAJ1 取扱説明書／設置要領書",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d8700cbd38cc9f30cecb34f0c195b137"
+      },
+      {
+        "title": "KSASポート子機基板 KPH-WSBJ1 取扱説明書／設置要領書",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b4d168b48157c623fbd095b4a565b5bb"
+      },
+      {
+        "title": "KSASポート親機 KPH-GWAJ1 取扱説明書／設置要領書",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4a08142c38dbe374195d41c04562d9f8"
+      },
+      {
+        "title": "KSASポート親機 KPH-GWK4G 取扱説明書／設置要領書",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d2dc6368837861b42020ee72b0896182"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "d82cdd6e-12c2-4783-8aed-e3a0b117905c",
+      "title": "【カタログ解説】クボタ HSY-CS 箱まきちゃん・こまきちゃん（田植機）",
+      "category": "田植機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "d82cdd6e-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "d82cdd6e-002",
+          "type": "text",
+          "text": "田植機に装着する殺虫殺菌剤・除草剤の散布機。装着先は型式によって異なります。"
+        },
+        {
+          "id": "d82cdd6e-003",
+          "type": "bullet",
+          "text": "条数：4・5・6・8・10条植"
+        },
+        {
+          "id": "d82cdd6e-004",
+          "type": "bullet",
+          "text": "機器の区分：田植機用の散布装置"
+        },
+        {
+          "id": "d82cdd6e-005",
+          "type": "bullet",
+          "text": "装着先の例：CS-100：NW／CS-30：WP・ZP・EP／CS-10M-AW：AW・ZP-L／CS-10M-EP4：EP4"
+        },
+        {
+          "id": "d82cdd6e-006",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "d82cdd6e-007",
+          "type": "text",
+          "text": "HSY / CS-100 / CS-30 / CS-10M-AW / CS-10M-EP4"
+        },
+        {
+          "id": "d82cdd6e-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "d82cdd6e-009",
+          "type": "text",
+          "text": "掲載写真：HSY-CS（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "田植機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/f728d271c83974ee6b03fe128f602f6d/attachment_hsy_cs_card.jpg",
+        "summary": "田植機に装着する殺虫殺菌剤・除草剤の散布機。装着先は型式によって異なります。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "d82cdd6e-src-product",
+            "title": "クボタ 製品ページ HSY-CS",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/HSY-CS/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d82cdd6e-src-catalog",
+            "title": "クボタ 製品カタログ 箱まきちゃん・こまきちゃん",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/HSY-CS/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d82cdd6e-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（HSY-CS）",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/HSY-CS/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d82cdd6e-src-photo",
+            "title": "写真：クボタ 箱まきちゃん・こまきちゃん",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/HSY-CS/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

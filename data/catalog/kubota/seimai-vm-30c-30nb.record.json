@@ -1,0 +1,138 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "3738f87b-8f2f-4840-8710-de1dbfbabfd1",
+      "title": "【カタログ解説】クボタ VM-30CN-30CPN 米伯楽（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "3738f87b-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "3738f87b-002",
+          "type": "text",
+          "text": "たて型の精米機。仕上がりの白度を選べる米伯楽シリーズです。"
+        },
+        {
+          "id": "3738f87b-003",
+          "type": "bullet",
+          "text": "白度調整：16段階"
+        },
+        {
+          "id": "3738f87b-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "3738f87b-005",
+          "type": "text",
+          "text": "VM-30CN / VM-30CPN"
+        },
+        {
+          "id": "3738f87b-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "3738f87b-007",
+          "type": "text",
+          "text": "掲載写真：VM-30CN-30CPN（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/9825d4657c9fe9531f03df05aa0bb064/%E7%B1%B3%E4%BC%AF%E6%A5%BD%28VM-30C%29.jpg",
+        "summary": "たて型の精米機。仕上がりの白度を選べる米伯楽シリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "3738f87b-src-product",
+            "title": "クボタ 製品ページ VM-30CN-30CPN",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-VM-30C-30NB/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "3738f87b-src-catalog",
+            "title": "クボタ 製品カタログ 米伯楽",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-VM-30C-30NB/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "3738f87b-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（VM-30CN-30CPN）",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-VM-30C-30NB/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "3738f87b-src-manual-1",
+            "title": "取扱説明書 VM-30",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4a1590df1d5968d41b855005bb8b67bf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "3738f87b-src-manual-2",
+            "title": "取扱説明書 VM-30C",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0d7363894acdee742caf7fe4e97c4d49",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "3738f87b-src-manual-3",
+            "title": "取扱説明書 KG-VE7-FM 取扱説明書",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9cf742e94f29f454ac42ff68f37d5cc4",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "3738f87b-src-manual-4",
+            "title": "取扱説明書 IM-SN（石抜機ユニット）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ffc58105bf6f8a91aba0fa2d99e6f106",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "3738f87b-src-photo",
+            "title": "写真：クボタ 米伯楽",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-VM-30C-30NB/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

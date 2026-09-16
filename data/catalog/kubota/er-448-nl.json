@@ -1,0 +1,62 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "ER448NL",
+  "productName": "ER448N Limited",
+  "summary": "48馬力・4条刈りのコンバイン。リミテッド仕様です。",
+  "category": "コンバイン",
+  "models": [
+    "ER448NL"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "ER448NL（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "48馬力",
+      "source": "product"
+    },
+    {
+      "label": "条数",
+      "value": "4条刈",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/ER-448-NL/",
+      "checkedAt": "2026-09-16",
+      "sha256": "d2451b4357f73430f783e3bcceb7635671acab42c4e137eb1673a4e37efaae39"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/ER-448-NL/?nav=catalog",
+      "documents": [
+        {
+          "title": "ER448N Limited カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0033-02.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/ER-448-NL/",
+      "sha256": "4e295706bbaac07e4685a26514ee0fe7292c3644065b846217d243487f727422"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（ER448NL）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/ER-448-NL/?nav=manual",
+      "sha256": "b4b9fd8716c811bb616509fd8903466b93895f545212556aefb29127a9ab39c7"
+    },
+    "manuals": [
+      {
+        "title": "ER448N Limited",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=690bb330e5e7e3e07867fafc4d32ec82"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

@@ -1,0 +1,464 @@
+{
+  "records": 65,
+  "roundTrip": true,
+  "deterministic": true,
+  "searchAllListedModels": true,
+  "facilityContractChecked": true,
+  "results": [
+    {
+      "id": "e8403f46-190b-4d62-8b8c-f8447c63bf8e",
+      "key": "rice_equipment-KG-S110X-S40X",
+      "models": 5,
+      "sources": 4,
+      "blocks": 7
+    },
+    {
+      "id": "e2f68bd4-97c0-4b9f-8595-562965df432c",
+      "key": "rice_equipment-senbetsu-KG-SO7X",
+      "models": 1,
+      "sources": 6,
+      "blocks": 7
+    },
+    {
+      "id": "2ca72a4a-742c-423c-8d6f-2aa876de65db",
+      "key": "rice_equipment-watering-WATARAS",
+      "models": 4,
+      "sources": 4,
+      "blocks": 8
+    },
+    {
+      "id": "ee778779-bdfe-4f8b-8061-9685330842b8",
+      "key": "rice_equipment-seimai-K-CR515CS-1015CS",
+      "models": 2,
+      "sources": 4,
+      "blocks": 7
+    },
+    {
+      "id": "0b6716ca-01b2-4c56-805f-43d8d0a9cb58",
+      "key": "rice_equipment-seimai-K-CR718MCS",
+      "models": 1,
+      "sources": 6,
+      "blocks": 7
+    },
+    {
+      "id": "3738f87b-8f2f-4840-8710-de1dbfbabfd1",
+      "key": "rice_equipment-seimai-VM-30C-30NB",
+      "models": 2,
+      "sources": 8,
+      "blocks": 7
+    },
+    {
+      "id": "21166be1-688b-48dc-8d86-8ed5f2d0aeca",
+      "key": "rice_equipment-storage-KCX-15-31",
+      "models": 2,
+      "sources": 6,
+      "blocks": 7
+    },
+    {
+      "id": "6bbd4cf6-6780-4c26-89f3-297be1376d44",
+      "key": "rice_equipment-hashu-SR-auto",
+      "models": 11,
+      "sources": 4,
+      "blocks": 8
+    },
+    {
+      "id": "b3ba57de-2ca7-44eb-820a-db02b8ce8b94",
+      "key": "rice_equipment-hashu-SR-hand",
+      "models": 1,
+      "sources": 5,
+      "blocks": 9
+    },
+    {
+      "id": "1f163c70-2880-4c1e-83c1-964b813c8c64",
+      "key": "rice_equipment-hashu-SA45-86",
+      "models": 2,
+      "sources": 6,
+      "blocks": 8
+    },
+    {
+      "id": "5707d6e8-45d2-4b13-8372-60332c704e13",
+      "key": "rice_equipment-tetsuko-TC40",
+      "models": 1,
+      "sources": 5,
+      "blocks": 9
+    },
+    {
+      "id": "a8b61a1c-8743-4a06-828f-1c1e3371b72f",
+      "key": "rice_equipment-rice-center",
+      "models": 0,
+      "sources": 3,
+      "blocks": 7
+    },
+    {
+      "id": "1ca64d41-c644-4d04-8f22-9360d350bcce",
+      "key": "rice_equipment-plant",
+      "models": 0,
+      "sources": 2,
+      "blocks": 7
+    },
+    {
+      "id": "376a8741-686f-46b5-823d-ee2a07b06d13",
+      "key": "rice_equipment-complex",
+      "models": 0,
+      "sources": 2,
+      "blocks": 7
+    },
+    {
+      "id": "0f4bf5be-9099-4d2d-80d7-773352cf746b",
+      "key": "rice_equipment-keiryou-KS-H880",
+      "models": 2,
+      "sources": 4,
+      "blocks": 7
+    },
+    {
+      "id": "729d7a13-9ebb-4970-81e2-4d2f5063d73a",
+      "key": "rice_equipment-keiryou-KS-H8000",
+      "models": 1,
+      "sources": 4,
+      "blocks": 7
+    },
+    {
+      "id": "21edc773-0c1a-46cc-80ca-18185a20db7e",
+      "key": "rice_equipment-keiryou-KS-H1000DS",
+      "models": 1,
+      "sources": 4,
+      "blocks": 8
+    },
+    {
+      "id": "f4c24281-b318-4a13-8811-bb0cf9f44f34",
+      "key": "rice_equipment-keiryou-KS-H30DS",
+      "models": 1,
+      "sources": 4,
+      "blocks": 8
+    },
+    {
+      "id": "03e6bdd2-69af-4700-8dde-f50edc3ccdf3",
+      "key": "taueki-NW-8-10S-A",
+      "models": 1,
+      "sources": 7,
+      "blocks": 7
+    },
+    {
+      "id": "88bdd856-667e-4bda-871b-c43077b0b36e",
+      "key": "taueki-NW-10S",
+      "models": 1,
+      "sources": 6,
+      "blocks": 7
+    },
+    {
+      "id": "d1600cc2-f25b-4ce2-8a2e-5b0f81e06248",
+      "key": "taueki-NW-80S-A",
+      "models": 1,
+      "sources": 4,
+      "blocks": 7
+    },
+    {
+      "id": "dbfb068b-4595-42af-8524-0959f3e70f37",
+      "key": "taueki-NW-60-80S",
+      "models": 2,
+      "sources": 6,
+      "blocks": 7
+    },
+    {
+      "id": "fadfa7ca-bb19-43c8-8f7f-dd9b0e87a1e5",
+      "key": "taueki-NW-50N-80N",
+      "models": 3,
+      "sources": 4,
+      "blocks": 7
+    },
+    {
+      "id": "ff7904cc-aa7f-4ebe-8c2d-acc5fe9de4f7",
+      "key": "taueki-WD-6-8",
+      "models": 2,
+      "sources": 6,
+      "blocks": 7
+    },
+    {
+      "id": "882ce641-541d-4f2d-8b66-a905222cc7fe",
+      "key": "taueki-PW-4",
+      "models": 2,
+      "sources": 7,
+      "blocks": 7
+    },
+    {
+      "id": "870bdaf5-f27c-4de6-8042-5e111483bcc0",
+      "key": "taueki-JP-200-400",
+      "models": 2,
+      "sources": 6,
+      "blocks": 7
+    },
+    {
+      "id": "d1e33667-d7d0-495b-8f23-4597a3d81057",
+      "key": "taueki-NDS-SY",
+      "models": 4,
+      "sources": 8,
+      "blocks": 8
+    },
+    {
+      "id": "e8dbd4bf-1bf1-493a-84f5-74a44e4a0c34",
+      "key": "taueki-SSY-6-8",
+      "models": 2,
+      "sources": 6,
+      "blocks": 8
+    },
+    {
+      "id": "d82cdd6e-12c2-4783-8aed-e3a0b117905c",
+      "key": "taueki-HSY-CS",
+      "models": 5,
+      "sources": 4,
+      "blocks": 9
+    },
+    {
+      "id": "203a73a9-e48f-4979-8d8d-1c529e1eef4b",
+      "key": "combine-DR-7130",
+      "models": 1,
+      "sources": 5,
+      "blocks": 8
+    },
+    {
+      "id": "0cf94321-1475-44db-883b-89bb7f050891",
+      "key": "combine-DR-6130-A",
+      "models": 1,
+      "sources": 5,
+      "blocks": 8
+    },
+    {
+      "id": "a838e2c0-d5b9-4021-8a5f-db046f439d6a",
+      "key": "combine-DR-575-6130",
+      "models": 4,
+      "sources": 4,
+      "blocks": 8
+    },
+    {
+      "id": "650d8e0e-5e91-41a8-8b1d-fb63f8fe9825",
+      "key": "combine-WRN-6100",
+      "models": 1,
+      "sources": 5,
+      "blocks": 8
+    },
+    {
+      "id": "01a39268-771a-46ac-83af-61c299b2f2a4",
+      "key": "combine-WRN-575",
+      "models": 1,
+      "sources": 5,
+      "blocks": 8
+    },
+    {
+      "id": "219b1789-8030-4303-87ca-8ec24304d798",
+      "key": "combine-DR-472",
+      "models": 1,
+      "sources": 5,
+      "blocks": 8
+    },
+    {
+      "id": "f65eb2ba-3209-4808-81b7-75ccf32d0f93",
+      "key": "combine-R-462",
+      "models": 1,
+      "sources": 5,
+      "blocks": 8
+    },
+    {
+      "id": "cd0803f6-f075-4010-85f8-0cdad4c0c67b",
+      "key": "combine-KR-334-448",
+      "models": 4,
+      "sources": 8,
+      "blocks": 8
+    },
+    {
+      "id": "2fc1d523-4416-476a-88db-a60860ed01a3",
+      "key": "combine-ER-448-NL",
+      "models": 1,
+      "sources": 5,
+      "blocks": 8
+    },
+    {
+      "id": "ad3cb374-fb34-400f-8bc7-cba2e328ba5a",
+      "key": "combine-R325",
+      "models": 1,
+      "sources": 5,
+      "blocks": 8
+    },
+    {
+      "id": "4ee9f213-2078-4137-8975-ca8fc67d8664",
+      "key": "combine-DRH-1200A",
+      "models": 2,
+      "sources": 6,
+      "blocks": 7
+    },
+    {
+      "id": "3b4ee449-4c15-4ac1-8c17-462460009941",
+      "key": "combine-DRH-1200",
+      "models": 1,
+      "sources": 6,
+      "blocks": 7
+    },
+    {
+      "id": "af7c3249-324c-4129-808d-fbb877297a0e",
+      "key": "combine-binder",
+      "models": 3,
+      "sources": 7,
+      "blocks": 8
+    },
+    {
+      "id": "cc0cd310-0dd2-44d7-8a5f-6cef7950a83c",
+      "key": "combine-harvester",
+      "models": 3,
+      "sources": 7,
+      "blocks": 8
+    },
+    {
+      "id": "78f5a064-c4fe-43ef-84b1-0981883f1f66",
+      "key": "tractor-M7-134-174",
+      "models": 3,
+      "sources": 7,
+      "blocks": 7
+    },
+    {
+      "id": "fcecb503-a5ce-48fa-8e53-2727cb61d9de",
+      "key": "tractor-M-100GEP-135GEP",
+      "models": 5,
+      "sources": 4,
+      "blocks": 7
+    },
+    {
+      "id": "b9c13325-80e1-4618-8c20-caf1ae17aaab",
+      "key": "tractor-M-1060W",
+      "models": 1,
+      "sources": 5,
+      "blocks": 7
+    },
+    {
+      "id": "26e64677-443c-42e6-8ed5-a7c7d68e8109",
+      "key": "tractor-MR-800-1050",
+      "models": 4,
+      "sources": 4,
+      "blocks": 7
+    },
+    {
+      "id": "5c28c627-3a8f-4705-8b0e-848663ebe006",
+      "key": "tractor-M-860W-1010W",
+      "models": 2,
+      "sources": 6,
+      "blocks": 7
+    },
+    {
+      "id": "a72c33e6-bb45-4d04-8c75-21827d944a19",
+      "key": "tractor-MR-800-1050-A2H",
+      "models": 3,
+      "sources": 4,
+      "blocks": 9
+    },
+    {
+      "id": "57264e8e-0c26-46e2-83d8-8e1d222401c8",
+      "key": "tractor-MR-1000-AH",
+      "models": 1,
+      "sources": 4,
+      "blocks": 7
+    },
+    {
+      "id": "bd6c7e4f-6bfc-40bf-8c9b-c4374b7655e9",
+      "key": "tractor-M720W",
+      "models": 1,
+      "sources": 5,
+      "blocks": 7
+    },
+    {
+      "id": "55d2290a-80dd-46e0-8238-681eaa33c5d4",
+      "key": "tractor-MR-600-700",
+      "models": 5,
+      "sources": 4,
+      "blocks": 7
+    },
+    {
+      "id": "48e8d61d-85a0-4ffc-8987-7fe34b6fe531",
+      "key": "tractor-MR-70-SP",
+      "models": 2,
+      "sources": 5,
+      "blocks": 7
+    },
+    {
+      "id": "0f564a69-9d7e-4c89-88eb-1c98197641fd",
+      "key": "tractor-SL-38-54-SP",
+      "models": 3,
+      "sources": 4,
+      "blocks": 7
+    },
+    {
+      "id": "58ce2891-9e24-4331-82ff-c00df8419393",
+      "key": "tractor-SL-280-350-SP",
+      "models": 2,
+      "sources": 6,
+      "blocks": 7
+    },
+    {
+      "id": "526d0ef0-bae5-43c3-8bc8-436fba5225c8",
+      "key": "tractor-SL-24",
+      "models": 1,
+      "sources": 6,
+      "blocks": 7
+    },
+    {
+      "id": "ab917f8b-a32a-4f2d-8eb2-79451659a5f1",
+      "key": "tractor-ST-25-31",
+      "models": 2,
+      "sources": 6,
+      "blocks": 7
+    },
+    {
+      "id": "e1b8badd-bec5-4bd3-8e4b-22ec97666e25",
+      "key": "tractor-JB-115-195",
+      "models": 4,
+      "sources": 4,
+      "blocks": 7
+    },
+    {
+      "id": "1bd5e2b8-d8eb-45dc-83e1-cb3ad87a5273",
+      "key": "tractor-NB-17-23",
+      "models": 4,
+      "sources": 4,
+      "blocks": 8
+    },
+    {
+      "id": "2d3699e9-71b5-43a0-8e42-85506c5be079",
+      "key": "tractor-NB-21-GS",
+      "models": 1,
+      "sources": 5,
+      "blocks": 8
+    },
+    {
+      "id": "b5b5a301-1363-4b34-8245-d6fed9e30909",
+      "key": "tractor-NB-21-SP",
+      "models": 1,
+      "sources": 4,
+      "blocks": 8
+    },
+    {
+      "id": "0acce27e-fd78-46b1-8052-fec04c9bf253",
+      "key": "tractor-JB-11-19",
+      "models": 7,
+      "sources": 4,
+      "blocks": 8
+    },
+    {
+      "id": "6bc7bd5c-29d5-42b1-853a-b1e8adbb07ab",
+      "key": "tractor-JB-11XLD-13XSLD",
+      "models": 1,
+      "sources": 7,
+      "blocks": 8
+    },
+    {
+      "id": "8cb96126-b6e3-4652-8b36-fc4e319bdba8",
+      "key": "tractor-JB-13X-N",
+      "models": 1,
+      "sources": 5,
+      "blocks": 8
+    },
+    {
+      "id": "f2634e03-1e48-4712-8cf2-3a8ec8ca43f8",
+      "key": "tractor-NR-17-23",
+      "models": 2,
+      "sources": 6,
+      "blocks": 8
+    }
+  ]
+}

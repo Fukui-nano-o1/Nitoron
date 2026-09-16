@@ -1,0 +1,126 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "ab917f8b-a32a-4f2d-8eb2-79451659a5f1",
+      "title": "【カタログ解説】クボタ ST25-31 TERAST（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "ab917f8b-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "ab917f8b-002",
+          "type": "text",
+          "text": "25馬力・31馬力のトラクタ。テラストのシリーズです。"
+        },
+        {
+          "id": "ab917f8b-003",
+          "type": "bullet",
+          "text": "馬力：25/31馬力"
+        },
+        {
+          "id": "ab917f8b-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "ab917f8b-005",
+          "type": "text",
+          "text": "ST25(PC) / ST31(PC)"
+        },
+        {
+          "id": "ab917f8b-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "ab917f8b-007",
+          "type": "text",
+          "text": "掲載写真：ST25-31（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/b8e5bc402fc37508c64d1d110584cf3a/card-thumb.jpg",
+        "summary": "25馬力・31馬力のトラクタ。テラストのシリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "ab917f8b-src-product",
+            "title": "クボタ 製品ページ ST25-31",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/ST-25-31/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ab917f8b-src-catalog",
+            "title": "クボタ 製品カタログ TERAST",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/ST-25-31/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ab917f8b-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（ST25-31）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/ST-25-31/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ab917f8b-src-manual-1",
+            "title": "取扱説明書 ST25",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=243be2818a23c980ad664f30f48e5d19",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ab917f8b-src-manual-2",
+            "title": "取扱説明書 ST31",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1c66f4627f1b9679f8db47d1287d7e98",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ab917f8b-src-photo",
+            "title": "写真：クボタ TERAST",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/ST-25-31/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

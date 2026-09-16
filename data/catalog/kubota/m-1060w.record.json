@@ -1,0 +1,120 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "b9c13325-80e1-4618-8c20-caf1ae17aaab",
+      "title": "【カタログ解説】クボタ M1060W WORLD（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "b9c13325-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "b9c13325-002",
+          "type": "text",
+          "text": "106馬力のワールドトラクタです。"
+        },
+        {
+          "id": "b9c13325-003",
+          "type": "bullet",
+          "text": "馬力：106馬力"
+        },
+        {
+          "id": "b9c13325-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "b9c13325-005",
+          "type": "text",
+          "text": "M1060W"
+        },
+        {
+          "id": "b9c13325-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "b9c13325-007",
+          "type": "text",
+          "text": "掲載写真：M1060W（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/da3d21455c08fc911a42b26662a48e92/m1060w_card.jpg",
+        "summary": "106馬力のワールドトラクタです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "b9c13325-src-product",
+            "title": "クボタ 製品ページ M1060W",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M-1060W/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b9c13325-src-catalog",
+            "title": "クボタ 製品カタログ WORLD",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M-1060W/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b9c13325-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（M1060W）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M-1060W/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b9c13325-src-manual-1",
+            "title": "取扱説明書 M1060W",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c8ba76c279269b1c6bc8a07e38e78fa4",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b9c13325-src-photo",
+            "title": "写真：クボタ WORLD",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M-1060W/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

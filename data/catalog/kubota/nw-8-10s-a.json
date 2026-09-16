@@ -1,0 +1,65 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "NW10SA",
+  "productName": "Agri Robo 田植機",
+  "summary": "10条植えのアグリロボ田植機。自動運転に対応するシリーズです。",
+  "category": "田植機",
+  "models": [
+    "NW10SA"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "NW10SA（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "条数",
+      "value": "10条植",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-8-10S-A/",
+      "checkedAt": "2026-09-16",
+      "sha256": "7118a78fabd51b0f46bd5e1c1088f993126bde248c17011147085e04279b949f"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-8-10S-A/?nav=catalog",
+      "documents": [
+        {
+          "title": "Agri Robo NW10SA",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0030-01.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/NW-8-10S-A/",
+      "sha256": "00e36df9abad4989bd6ae5beffdfff526c83a308ea36352845e124cfcef3760c"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NW10SA）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-8-10S-A/?nav=manual",
+      "sha256": "511a141a56b4ecdbe52b7361febea9e17b0576d0c5cd7f05c75f04c94089d6b1"
+    },
+    "manuals": [
+      {
+        "title": "NW8SA",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=571d3a9420bfd9219f65b643d0003bf4"
+      },
+      {
+        "title": "NW8SA取扱説明書の追加・改訂資料",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=83cdcec08fbf90370fcf53bdd56604ff"
+      },
+      {
+        "title": "NW10SA",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3bbfdde8842a5c44a0323518eec97cbe"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

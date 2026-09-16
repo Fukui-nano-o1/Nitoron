@@ -1,0 +1,81 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "NDS-SY",
+  "productName": "湛水直播機",
+  "summary": "田植機に装着する水稲用の直播装置。6条播・8条播に対応します。",
+  "category": "田植機",
+  "models": [
+    "NDS-600F",
+    "NDS-800F",
+    "SY6-NDS",
+    "SY8-NDS"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "NDS-SY（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "条数",
+      "value": "6・8条播",
+      "source": "product"
+    },
+    {
+      "label": "機器の区分",
+      "value": "田植機用の直播装置",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NDS-SY/",
+      "checkedAt": "2026-09-16",
+      "sha256": "f998c3ece4728dcca0df29ca55464d5f9e8c56c429ecfc2b08b8d993a4140fa9"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NDS-SY/?nav=catalog",
+      "documents": [
+        {
+          "title": "クボタ堪水直播機 NDS-600F/NDS-800Fカタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-00-2-0009-01.pdf"
+        },
+        {
+          "title": "鉄コーティング直播機 鉄まきちゃん NDS-60・65(6条植)NDS-80・85(8条植)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-00-2-0001-12.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/NDS-SY/",
+      "sha256": "fc6460cf9e1e2d6c803a3ae94c8b211f84bddae47385c070b8f19c39813028cc"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NDS-SY）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NDS-SY/?nav=manual",
+      "sha256": "e098f5bc7bd26f9e8e802bd0bce5f69679fefe1da43d2881357ea26b0a81431b"
+    },
+    "manuals": [
+      {
+        "title": "NDS-600F",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f81dee42585b3814de199b2e88757f5c"
+      },
+      {
+        "title": "NDS-800F",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=11bcd3c1d43688891ed23f5677a174ea"
+      },
+      {
+        "title": "SY6-NDS",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=426f990b332ef8193a61cc90516c1245"
+      },
+      {
+        "title": "SY8-NDS",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=228bbc2f87caeb21bb7f6949fddcb91d"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

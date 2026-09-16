@@ -1,0 +1,67 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "TC40",
+  "productName": "自動鉄コーティングマシン 鉄コちゃん",
+  "summary": "水稲直播用の種籾を鉄コーティングする機器。専用ミキサと組み合わせて使います。",
+  "category": "稲作関連機器",
+  "models": [
+    "TC40"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "TC40（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "用途",
+      "value": "水稲直播用の種籾処理",
+      "source": "product"
+    },
+    {
+      "label": "組み合わせ",
+      "value": "専用ミキサKNGM-3M7TC（別売）",
+      "source": "product"
+    },
+    {
+      "label": "販売状況",
+      "value": "在庫限り",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/tetsuko-TC40/",
+      "checkedAt": "2026-09-16",
+      "sha256": "f3225e56183fcd875fbd913fd793ccb25d5638477f785cc313a74ab694debfb7"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/tetsuko-TC40/?nav=catalog",
+      "documents": [
+        {
+          "title": "鉄コちゃんTC40",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-10-3-0007-04.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/tetsuko-TC40/",
+      "sha256": "fbe791748a1b53fed50ffdd813cf42481c83d91d50fd25545963ba709577cab8"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（TC40）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/tetsuko-TC40/?nav=manual",
+      "sha256": "e8ba9e22622471ffd2252a4e135538c326b94e6b2b2e8b38ea15868e92127c89"
+    },
+    "manuals": [
+      {
+        "title": "鉄コちゃん TC40",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=75455e062929d32a333868084286bb68"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "K-CR515CS-1015CS",
+  "productName": "クリーン精米屋 標準・高速仕様",
+  "summary": "コイン式の精米機。標準仕様と高速仕様から選べます。",
+  "category": "稲作関連機器",
+  "models": [
+    "K-CR515CS",
+    "K-CR1015CS"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "K-CR515CS-1015CS（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "仕様",
+      "value": "K-CR515CS：標準／K-CR1015CS：高速",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR515CS-1015CS/",
+      "checkedAt": "2026-09-16",
+      "sha256": "dac872e17aa2580858d8d399fbb14bb3dd731c4423f968063b77b8ca549225ac"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR515CS-1015CS/?nav=catalog",
+      "documents": [
+        {
+          "title": "クリーン精米屋K-CR515CS(標準仕様)・K-CR1015CS(高速仕様)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/8-10-2-0021-05 クリーン精米屋K-CR515CS_K-CR1015CS.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR515CS-1015CS/",
+      "sha256": "58a9d2211aa488da6813bb3255fe2736d4197c4b29f364ee62490160072db396"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（K-CR515CS-1015CS）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR515CS-1015CS/?nav=manual",
+      "sha256": "e0d5a7c8c7e4be3017ba8618603b59f422493f8ab81bf94da20a546bb72c1198"
+    },
+    "manuals": [
+      {
+        "title": "K-CR515CS（本冊子）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4ffce04d92a4d6cb21c1494cdfcd6dc1"
+      },
+      {
+        "title": "K-CR515CS（設定マニュアル）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4b26dc4663ccf960c8538d595d0a1d3a"
+      },
+      {
+        "title": "K-CR515CS-ID",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=74306eef5860833e2e47ff169a73b45b"
+      },
+      {
+        "title": "K-CR1015CS(本冊子）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=45645a27c4f1adc8a7a835976064a86d"
+      },
+      {
+        "title": "K-CR1015CS（設定マニュアル）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=af1b5754061ebbd4412adfb34c8d3534"
+      },
+      {
+        "title": "K-CR1015CS-ID",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=185c29dc24325934ee377cfda20e414c"
+      },
+      {
+        "title": "金銭識別機 FDVT451/BVE21S4",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=95c9d994f8d75d4d60f8bb8f25902339"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

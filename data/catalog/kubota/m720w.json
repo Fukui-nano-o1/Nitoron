@@ -1,0 +1,61 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "M720W",
+  "productName": "WORLD",
+  "summary": "72馬力のワールドトラクタです。",
+  "category": "トラクタ",
+  "models": [
+    "M720W"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "M720W（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "72馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M720W/",
+      "checkedAt": "2026-09-16",
+      "sha256": "4d6d11135f97d933365f6635383f6f1f64c6397ce7c5fb940d275927d7b40902"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M720W/?nav=catalog",
+      "documents": [
+        {
+          "title": "WORLD M720W",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0023-01.pdf"
+        },
+        {
+          "title": "WORLD series M720W・M860W-SE・M1010W-SE・M1060W",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0027-06.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/M720W/",
+      "sha256": "6190c003938ad8ae9bfa46812f85f2a22394aa5523466c30afaa71b5c1d14d9d"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（M720W）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M720W/?nav=manual",
+      "sha256": "812975c3e4fe69b1d500159b664f980dcd7adf120edcfe4c59b9d0e6c6bc9401"
+    },
+    "manuals": [
+      {
+        "title": "M720W",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=242c100dc94f871b6d7215b868a875f8"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

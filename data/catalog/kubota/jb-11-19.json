@@ -1,0 +1,92 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "JB11X-19X",
+  "productName": "Bull Star EXTRA",
+  "summary": "10.5〜19馬力の小型トラクタ。ブルスターエクストラの在庫限りのシリーズです。",
+  "category": "トラクタ",
+  "models": [
+    "JB11X",
+    "JB13XSP(PC)",
+    "JB15X(PC)",
+    "JB15XSPN",
+    "JB17X-PC",
+    "JB18XSP",
+    "JB19X(PC)"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "JB11X-19X（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "10.5〜19馬力",
+      "source": "product"
+    },
+    {
+      "label": "販売状況",
+      "value": "在庫限り",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11-19/",
+      "checkedAt": "2026-09-16",
+      "sha256": "0cec77f7bb0fd5795b9edf9cbbdebe45f9f3d7b75fcbb31553e0e6b75ac79571"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11-19/?nav=catalog",
+      "documents": [
+        {
+          "title": "ブルスターエクストラ総合冊子 JB11X/JB13XSP/JB15X/JB15XSPN/JB17X/JB18XSP/JB19X",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0046-01n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/JB-11-19/",
+      "sha256": "98a5b26c2f8430637085a40410a4c4345d411d1a791a22ed1b06625fb2263899"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（JB11X-19X）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11-19/?nav=manual",
+      "sha256": "c7967bc53b2d55b17c4734320a048383a6f6d56c713355ed15c7fa4ac9486ee2"
+    },
+    "manuals": [
+      {
+        "title": "JB11X",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e5f6ad6ce374177eef023bf5d0c018b6"
+      },
+      {
+        "title": "JB13XSP",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=069d3bb002acd8d7dd095917f9efe4cb"
+      },
+      {
+        "title": "JB15X",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a9a1d5317a33ae8cef33961c34144f84"
+      },
+      {
+        "title": "JB15XSPN",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=daca41214b39c5dc66674d09081940f0"
+      },
+      {
+        "title": "JB17X",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dbe272bab69f8e13f14b405e038deb64"
+      },
+      {
+        "title": "JB18XSP",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=08c5433a60135c32e34f46a71175850c"
+      },
+      {
+        "title": "JB19X",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3435c378bb76d4357324dd7e69f3cd18"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

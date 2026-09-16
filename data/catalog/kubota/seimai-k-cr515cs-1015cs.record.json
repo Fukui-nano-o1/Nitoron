@@ -1,0 +1,114 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "ee778779-bdfe-4f8b-8061-9685330842b8",
+      "title": "【カタログ解説】クボタ K-CR515CS-1015CS クリーン精米屋 標準・高速仕様（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "ee778779-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "ee778779-002",
+          "type": "text",
+          "text": "コイン式の精米機。標準仕様と高速仕様から選べます。"
+        },
+        {
+          "id": "ee778779-003",
+          "type": "bullet",
+          "text": "仕様：K-CR515CS：標準／K-CR1015CS：高速"
+        },
+        {
+          "id": "ee778779-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "ee778779-005",
+          "type": "text",
+          "text": "K-CR515CS / K-CR1015CS"
+        },
+        {
+          "id": "ee778779-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "ee778779-007",
+          "type": "text",
+          "text": "掲載写真：K-CR515CS-1015CS（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/14189d253091d06f11f1cfd3ab248d5f/seimai-K-CR515CS-1015CS_card.jpg",
+        "summary": "コイン式の精米機。標準仕様と高速仕様から選べます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "ee778779-src-product",
+            "title": "クボタ 製品ページ K-CR515CS-1015CS",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR515CS-1015CS/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ee778779-src-catalog",
+            "title": "クボタ 製品カタログ クリーン精米屋 標準・高速仕様",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR515CS-1015CS/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ee778779-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（K-CR515CS-1015CS）",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR515CS-1015CS/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ee778779-src-photo",
+            "title": "写真：クボタ クリーン精米屋 標準・高速仕様",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR515CS-1015CS/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

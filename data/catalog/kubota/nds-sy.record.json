@@ -1,0 +1,143 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "d1e33667-d7d0-495b-8f23-4597a3d81057",
+      "title": "【カタログ解説】クボタ NDS-SY 湛水直播機（田植機）",
+      "category": "田植機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "d1e33667-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "d1e33667-002",
+          "type": "text",
+          "text": "田植機に装着する水稲用の直播装置。6条播・8条播に対応します。"
+        },
+        {
+          "id": "d1e33667-003",
+          "type": "bullet",
+          "text": "条数：6・8条播"
+        },
+        {
+          "id": "d1e33667-004",
+          "type": "bullet",
+          "text": "機器の区分：田植機用の直播装置"
+        },
+        {
+          "id": "d1e33667-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "d1e33667-006",
+          "type": "text",
+          "text": "NDS-600F / NDS-800F / SY6-NDS / SY8-NDS"
+        },
+        {
+          "id": "d1e33667-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "d1e33667-008",
+          "type": "text",
+          "text": "掲載写真：NDS-SY（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "田植機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/96e1a3b1128f1c5c1c77fe1f3837fe05/NDS_card-thumb_1280_720.png",
+        "summary": "田植機に装着する水稲用の直播装置。6条播・8条播に対応します。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "d1e33667-src-product",
+            "title": "クボタ 製品ページ NDS-SY",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NDS-SY/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d1e33667-src-catalog",
+            "title": "クボタ 製品カタログ 湛水直播機",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NDS-SY/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d1e33667-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（NDS-SY）",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NDS-SY/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d1e33667-src-manual-1",
+            "title": "取扱説明書 NDS-600F",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f81dee42585b3814de199b2e88757f5c",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d1e33667-src-manual-2",
+            "title": "取扱説明書 NDS-800F",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=11bcd3c1d43688891ed23f5677a174ea",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d1e33667-src-manual-3",
+            "title": "取扱説明書 SY6-NDS",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=426f990b332ef8193a61cc90516c1245",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d1e33667-src-manual-4",
+            "title": "取扱説明書 SY8-NDS",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=228bbc2f87caeb21bb7f6949fddcb91d",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d1e33667-src-photo",
+            "title": "写真：クボタ 湛水直播機",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NDS-SY/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

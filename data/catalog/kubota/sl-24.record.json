@@ -1,0 +1,126 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "526d0ef0-bae5-43c3-8bc8-436fba5225c8",
+      "title": "【カタログ解説】クボタ SL24 Slugger グッドパートナー（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "526d0ef0-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "526d0ef0-002",
+          "type": "text",
+          "text": "24馬力のトラクタ。スラッガーのグッドパートナーシリーズです。"
+        },
+        {
+          "id": "526d0ef0-003",
+          "type": "bullet",
+          "text": "馬力：24馬力"
+        },
+        {
+          "id": "526d0ef0-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "526d0ef0-005",
+          "type": "text",
+          "text": "SL24"
+        },
+        {
+          "id": "526d0ef0-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "526d0ef0-007",
+          "type": "text",
+          "text": "掲載写真：SL24（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/1defa713ddbe12e6e1270c79ff52cf36/slugger24_card.jpg",
+        "summary": "24馬力のトラクタ。スラッガーのグッドパートナーシリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "526d0ef0-src-product",
+            "title": "クボタ 製品ページ SL24",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/SL-24/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "526d0ef0-src-catalog",
+            "title": "クボタ 製品カタログ Slugger グッドパートナー",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/SL-24/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "526d0ef0-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（SL24）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/SL-24/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "526d0ef0-src-manual-1",
+            "title": "取扱説明書 SL24",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=519c84155964659375821f7ca576f095",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "526d0ef0-src-manual-2",
+            "title": "取扱説明書 SL24H",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c3395dd46c34fa7fd8d729d8cf88b7a8",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "526d0ef0-src-photo",
+            "title": "写真：クボタ Slugger グッドパートナー",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/SL-24/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

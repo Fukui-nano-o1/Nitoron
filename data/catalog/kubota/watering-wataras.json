@@ -1,0 +1,105 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "WATARAS",
+  "productName": "ほ場水管理システム",
+  "summary": "スマートフォンやパソコンから、ほ場の水管理を行うシステム。給水・排水用の機器があります。",
+  "category": "稲作関連機器",
+  "models": [
+    "WT01-AS-A",
+    "WT01-AD-A",
+    "WT01-AS-A（LTE）",
+    "WT01-AD-A（LTE）"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "WATARAS（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "用途",
+      "value": "ほ場の給水・排水管理",
+      "source": "product"
+    },
+    {
+      "label": "製品提供",
+      "value": "クボタケミックス",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/watering-WATARAS/",
+      "checkedAt": "2026-09-16",
+      "sha256": "8d783b802a6a2d323d49a00edbbca2e8275322b16c28a3a48ea6505bcf5aeb55"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/watering-WATARAS/?nav=catalog",
+      "documents": [
+        {
+          "title": "ほ場水管理システムWATARAS",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-00-2-0017-07.pdf"
+        },
+        {
+          "title": "KSAS-WATARAS連携",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-00-3-0030-02.pdf"
+        },
+        {
+          "title": "ほ場水管理システムWATARASリーフレット",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-00-3-0038-01 (1).pdf"
+        },
+        {
+          "title": "WATARAS バルブカバー リーフレット",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/wataras-valve-cover.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/watering-WATARAS/",
+      "sha256": "0856dfd7f8b4f185f0ac9013209631eb4c3a652a7c1a82c9bc94bd908a7c511c"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（WATARAS）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/watering-WATARAS/?nav=manual",
+      "sha256": "2504ed9bfad06f482decf87e3f04f3897821fd03ff3fd6412e95e9b73a35c314"
+    },
+    "manuals": [
+      {
+        "title": "WATARAS 使用の手引き（簡易版）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9407c826d8e3c07ad37cb2d13d1cb641"
+      },
+      {
+        "title": "WATARAS 取扱説明書（電動アクチュエータ・水位水温計）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6be93f7a96fed60c477d30ae1de032fd"
+      },
+      {
+        "title": "WATARAS 取扱説明書（通信中継機）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ba3e9b6a519cfddc560b5d53210df1bd"
+      },
+      {
+        "title": "WATARAS 再設置の手順と注意事項について",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=234833147b97bb6aed53a8f4f1c7a7d8"
+      },
+      {
+        "title": "WATARAS 農閑期 取扱上の注意点",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=55a988dfb00a914717b3000a3374694c"
+      },
+      {
+        "title": "WATARAS 水位水温計コネクタの接続・取り外し方法",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=82ca5dd156cc926b2992f73c2896f761"
+      },
+      {
+        "title": "WATARAS スマホ・PC操作マニュアル",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=31c97cbb941d3e92d0e6f9925e9bc4d7"
+      },
+      {
+        "title": "WATARAS バルブカバー取付要領・取扱説明書",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4f5a9bf135f285358a4a74b08f8121f8"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

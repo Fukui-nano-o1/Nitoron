@@ -1,0 +1,66 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "M860W-1010W-SE",
+  "productName": "WORLD Special Edition",
+  "summary": "86馬力と101馬力のトラクタ。ワールドのスペシャルエディションです。",
+  "category": "トラクタ",
+  "models": [
+    "M860W-SE",
+    "M1010W-SE"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "M860W-1010W-SE（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "86/101馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M-860W-1010W/",
+      "checkedAt": "2026-09-16",
+      "sha256": "b874d29d5f7626ebef848ca62d5cf11f2f2615cb857e110e1d1d87841e388052"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M-860W-1010W/?nav=catalog",
+      "documents": [
+        {
+          "title": "WORLD Special Edition M860W-SE・M1010W-SE",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0025-01.pdf"
+        },
+        {
+          "title": "WORLD series M720W・M860W-SE・M1010W-SE・M1060W",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0027-06.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/M-860W-1010W/",
+      "sha256": "b6d2c7bc96a357019db8d30c0427e77ed450d9ab1184a6ecf0107e9574cf8e96"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（M860W-1010W-SE）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M-860W-1010W/?nav=manual",
+      "sha256": "ebd319c68d9ca65593a944ec13e45e05e437130614888a9d82de6f2b0a838b0b"
+    },
+    "manuals": [
+      {
+        "title": "M860W-SE",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=70222949cc0db89ab32c9969754d4758"
+      },
+      {
+        "title": "M1010W-SE",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7e7e69ea3384874304911625ac34321c"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

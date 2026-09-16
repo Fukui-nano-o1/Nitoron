@@ -1,0 +1,131 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "HSY-CS",
+  "productName": "箱まきちゃん・こまきちゃん",
+  "summary": "田植機に装着する殺虫殺菌剤・除草剤の散布機。装着先は型式によって異なります。",
+  "category": "田植機",
+  "models": [
+    "HSY",
+    "CS-100",
+    "CS-30",
+    "CS-10M-AW",
+    "CS-10M-EP4"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "HSY-CS（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "条数",
+      "value": "4・5・6・8・10条植",
+      "source": "product"
+    },
+    {
+      "label": "機器の区分",
+      "value": "田植機用の散布装置",
+      "source": "product"
+    },
+    {
+      "label": "装着先の例",
+      "value": "CS-100：NW／CS-30：WP・ZP・EP／CS-10M-AW：AW・ZP-L／CS-10M-EP4：EP4",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/HSY-CS/",
+      "checkedAt": "2026-09-16",
+      "sha256": "c018f7c91a9e6f32577f512d854e62c15071f067157c2f9d71a5e00d1ae48ea7"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/HSY-CS/?nav=catalog",
+      "documents": [
+        {
+          "title": "田植同時作業アタッチメントHSY series・CS series・SSY series",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-00-2-0008-03n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/HSY-CS/",
+      "sha256": "fdaba5f0b8a597e52dbbc381bcabbeafd6e4ef853d190ebcf250dafb52c9b027"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（HSY-CS）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/HSY-CS/?nav=manual",
+      "sha256": "a3b937acd607ff1d846b8b1aec09638495e663a2fd9cc5672b768ce04797b375"
+    },
+    "manuals": [
+      {
+        "title": "HSY40L",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0d8080853a54f8985276b0130266a657"
+      },
+      {
+        "title": "HSY50L",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cff02a74da64d145a4aed3a577a106ab"
+      },
+      {
+        "title": "HSY55",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2da6cc4a5d3a7ee43c1b3af99267ed17"
+      },
+      {
+        "title": "HSY65",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cf88118aa2ba88de549d08038ae76606"
+      },
+      {
+        "title": "HSY85",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=310cc7ca5a76a446f85c1a0d641ba96d"
+      },
+      {
+        "title": "HSY60C",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=14678db82874f1456031fcc05a3afaf6"
+      },
+      {
+        "title": "HSY80C",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a22d33b4a00c165507a61f3bed4b5149"
+      },
+      {
+        "title": "HSY100",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e1021d43911ca2c1845910d84f40aeae"
+      },
+      {
+        "title": "HSY4",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=22c5a901070d1c2ad33e821d071ae97e"
+      },
+      {
+        "title": "HSY5",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=300d1539c3b6aa1793b5678b857732cf"
+      },
+      {
+        "title": "HSY6",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7ae11af20803185120e83d3ce4fb4ed7"
+      },
+      {
+        "title": "HSY8",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8a057268a74a5f1201285aa667585e15"
+      },
+      {
+        "title": "CS-30",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cae82d4350cc23aca7fc9ae38dab38ab"
+      },
+      {
+        "title": "CS-100",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ba304f3809ed31d0ad97b5a2b5df2a39"
+      },
+      {
+        "title": "CS-10M",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=da4fb5c6e93e74d3df8527599fa62642"
+      },
+      {
+        "title": "こまきちゃんmini CS-10M-AW",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8dc5983b8c4ef1d8fcd5f325f9a65511"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

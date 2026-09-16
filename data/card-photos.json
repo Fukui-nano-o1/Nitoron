@@ -332,6 +332,656 @@
         "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-onion-OPK-4-KP-2TE-4T/",
         "date": "2026-09-16"
       }
+    },
+    {
+      "id": "e8403f46-190b-4d62-8b8c-f8447c63bf8e",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/99842cb8ee4195ef64213d4aa2a57328/kg-s110x_new.jpg",
+      "source": {
+        "id": "e8403f46-src-photo",
+        "title": "写真：クボタ 色彩選別機 選別王",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/KG-S110X-S40X/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "e2f68bd4-97c0-4b9f-8595-562965df432c",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/9051bd8c5153a21fdeca5e94910763c9/senbetsu-KG-SO7X_cardnew.jpg",
+      "source": {
+        "id": "e2f68bd4-src-photo",
+        "title": "写真：クボタ 小型色彩選別機 選別王子Ⅱ",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/senbetsu-KG-SO7X/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "2ca72a4a-742c-423c-8d6f-2aa876de65db",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/3638a71c861d01d513dc27eea3e9a56d/watering-WATARAS_card.jpg",
+      "source": {
+        "id": "2ca72a4a-src-photo",
+        "title": "写真：クボタ ほ場水管理システム",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/watering-WATARAS/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "ee778779-bdfe-4f8b-8061-9685330842b8",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/14189d253091d06f11f1cfd3ab248d5f/seimai-K-CR515CS-1015CS_card.jpg",
+      "source": {
+        "id": "ee778779-src-photo",
+        "title": "写真：クボタ クリーン精米屋 標準・高速仕様",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR515CS-1015CS/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "0b6716ca-01b2-4c56-805f-43d8d0a9cb58",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/1fa2223de3299e949d7f021a1d12454c/seimai-K-CR718MCS_card.jpg",
+      "source": {
+        "id": "0b6716ca-src-photo",
+        "title": "写真：クボタ クリーン精米屋 もみすり仕様",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR718MCS/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "3738f87b-8f2f-4840-8710-de1dbfbabfd1",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/9825d4657c9fe9531f03df05aa0bb064/%E7%B1%B3%E4%BC%AF%E6%A5%BD%28VM-30C%29.jpg",
+      "source": {
+        "id": "3738f87b-src-photo",
+        "title": "写真：クボタ 米伯楽",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-VM-30C-30NB/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "21166be1-688b-48dc-8d86-8ed5f2d0aeca",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/cac8df39b4dbb3a0fdf50af7a9b06015/storage-KCX-15-31_card.jpg",
+      "source": {
+        "id": "21166be1-src-photo",
+        "title": "写真：クボタ 低温米びつ お米番",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/storage-KCX-15-31/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "6bbd4cf6-6780-4c26-89f3-297be1376d44",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/1280663fe242c5a82ad04c2a9a58d1e3/hashu-SR-auto_card%20%281%29.jpg",
+      "source": {
+        "id": "6bbd4cf6-src-photo",
+        "title": "写真：クボタ ニューきんぱ播種機",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-auto/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "b3ba57de-2ca7-44eb-820a-db02b8ce8b94",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/8db4e20f1932c877ea80986e9d372342/hashu-SR-hand_card%20%281%29.jpg",
+      "source": {
+        "id": "b3ba57de-src-photo",
+        "title": "写真：クボタ 手動ばらまき機",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-hand/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "1f163c70-2880-4c1e-83c1-964b813c8c64",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/d668addd80978b900f0d58063745664f/hashu-SA45-86_card%20%281%29.jpg",
+      "source": {
+        "id": "1f163c70-src-photo",
+        "title": "写真：クボタ 脱芒機",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SA45-86/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "5707d6e8-45d2-4b13-8372-60332c704e13",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/6f04bb57d5c9913c6dd50bd586f1b6ee/tetsuko-TC40_card%20%281%29.jpg",
+      "source": {
+        "id": "5707d6e8-src-photo",
+        "title": "写真：クボタ 自動鉄コーティングマシン 鉄コちゃん",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/tetsuko-TC40/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "a8b61a1c-8743-4a06-828f-1c1e3371b72f",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/505b98afad22657c6616b851b2cf761d/rice_center_card%20%282%29.jpg",
+      "source": {
+        "id": "a8b61a1c-src-photo",
+        "title": "写真：クボタ 乾燥・調製施設",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/rice-center/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "1ca64d41-c644-4d04-8f22-9360d350bcce",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/4d7aa9f6729f50b4cedcae2c0dded759/230606_plant_card.jpg",
+      "source": {
+        "id": "1ca64d41-src-photo",
+        "title": "写真：クボタ 種籾処理・播種・育苗設備",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/plant/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "376a8741-686f-46b5-823d-ee2a07b06d13",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/84e8d3bc4f8b3e54dcc484c969477e5a/complex_card.jpg",
+      "source": {
+        "id": "376a8741-src-photo",
+        "title": "写真：クボタ 育苗・乾燥調製・精米施設",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/complex/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "0f4bf5be-9099-4d2d-80d7-773352cf746b",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/644f9ea9951702c36a9ed5923c24f964/super_tonfukuro_card.jpg",
+      "source": {
+        "id": "0f4bf5be-src-photo",
+        "title": "写真：クボタ フレコン計量機 スーパートン福郎",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H880/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "729d7a13-9ebb-4970-81e2-4d2f5063d73a",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/843ce9e8e3b6d6680b772d9e74fd7d79/mini_ton_card.jpg",
+      "source": {
+        "id": "729d7a13-src-photo",
+        "title": "写真：クボタ フレコン計量機 ミニトン",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H8000/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "21edc773-0c1a-46cc-80ca-18185a20db7e",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/346ba0c3a20ee358f7e897f40baae007/ks-h1000ds_card.jpg",
+      "source": {
+        "id": "21edc773-src-photo",
+        "title": "写真：クボタ フレコン出荷計量機",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H1000DS/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "f4c24281-b318-4a13-8811-bb0cf9f44f34",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/3108eb8bf05ca1bb25e33b371cb43677/ks-h30ds_card.jpg",
+      "source": {
+        "id": "f4c24281-src-photo",
+        "title": "写真：クボタ 個袋出荷計量機",
+        "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H30DS/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "03e6bdd2-69af-4700-8dde-f50edc3ccdf3",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/2cb74beba0a0b0160a91ed9f84a8fa8b/nw8sa_card%20%281%29.jpg",
+      "source": {
+        "id": "03e6bdd2-src-photo",
+        "title": "写真：クボタ Agri Robo 田植機",
+        "url": "https://agriculture.kubota.co.jp/product/taueki/NW-8-10S-A/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "88bdd856-667e-4bda-871b-c43077b0b36e",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/0c6cc4edf76905bafd1fe54a575f8bab/nw10s_card.jpg",
+      "source": {
+        "id": "88bdd856-src-photo",
+        "title": "写真：クボタ NAVIWEL スペシャルクラス",
+        "url": "https://agriculture.kubota.co.jp/product/taueki/NW-10S/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "d1600cc2-f25b-4ce2-8a2e-5b0f81e06248",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/155183f4da3f8a14aa5646ad8324fc3c/card-thumb.jpg",
+      "source": {
+        "id": "d1600cc2-src-photo",
+        "title": "写真：クボタ Agri Robo 田植機",
+        "url": "https://agriculture.kubota.co.jp/product/taueki/NW-80S-A/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "dbfb068b-4595-42af-8524-0959f3e70f37",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/464b18f1f597a154ddc379818498f2f4/card-thumb.jpg",
+      "source": {
+        "id": "dbfb068b-src-photo",
+        "title": "写真：クボタ NAVIWEL スペシャルクラス",
+        "url": "https://agriculture.kubota.co.jp/product/taueki/NW-60-80S/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "fadfa7ca-bb19-43c8-8f7f-dd9b0e87a1e5",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/089c2b531f86d645d9497591ae209cf6/NW-N_card-thumb_1280_720.png",
+      "source": {
+        "id": "fadfa7ca-src-photo",
+        "title": "写真：クボタ NAVIWEL 標準クラス",
+        "url": "https://agriculture.kubota.co.jp/product/taueki/NW-50N-80N/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "ff7904cc-aa7f-4ebe-8c2d-acc5fe9de4f7",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/26c63b939214d7143b22485d2e58248a/WD-6-8_card.jpg",
+      "source": {
+        "id": "ff7904cc-src-photo",
+        "title": "写真：クボタ WORLD 田植機",
+        "url": "https://agriculture.kubota.co.jp/product/taueki/WD-6-8/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "882ce641-541d-4f2d-8b66-a905222cc7fe",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/e980667ff3dd825e8ff5a6a4473ecb4f/paswel_card.jpg",
+      "source": {
+        "id": "882ce641-src-photo",
+        "title": "写真：クボタ PASWEL 田植機",
+        "url": "https://agriculture.kubota.co.jp/product/taueki/PW-4/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "870bdaf5-f27c-4de6-8042-5e111483bcc0",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/0fec51a5636a472b00c11cc2819c7a95/JP-200-400_card%20%281%29.jpg",
+      "source": {
+        "id": "870bdaf5-src-photo",
+        "title": "写真：クボタ Joy Walk 歩行田植機",
+        "url": "https://agriculture.kubota.co.jp/product/taueki/JP-200-400/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "d1e33667-d7d0-495b-8f23-4597a3d81057",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/96e1a3b1128f1c5c1c77fe1f3837fe05/NDS_card-thumb_1280_720.png",
+      "source": {
+        "id": "d1e33667-src-photo",
+        "title": "写真：クボタ 湛水直播機",
+        "url": "https://agriculture.kubota.co.jp/product/taueki/NDS-SY/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "e8dbd4bf-1bf1-493a-84f5-74a44e4a0c34",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/3202947bd2035e78ab6d456368f02c74/ssy_card.jpg",
+      "source": {
+        "id": "e8dbd4bf-src-photo",
+        "title": "写真：クボタ 移植同時側条施薬機",
+        "url": "https://agriculture.kubota.co.jp/product/taueki/SSY-6-8/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "d82cdd6e-12c2-4783-8aed-e3a0b117905c",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/f728d271c83974ee6b03fe128f602f6d/attachment_hsy_cs_card.jpg",
+      "source": {
+        "id": "d82cdd6e-src-photo",
+        "title": "写真：クボタ 箱まきちゃん・こまきちゃん",
+        "url": "https://agriculture.kubota.co.jp/product/taueki/HSY-CS/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "203a73a9-e48f-4979-8d8d-1c529e1eef4b",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/be0c9f21645ef099fbbb75da026afba2/DR7130_card.jpg",
+      "source": {
+        "id": "203a73a9-src-photo",
+        "title": "写真：クボタ DIONITH",
+        "url": "https://agriculture.kubota.co.jp/product/combine/DR-7130/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "0cf94321-1475-44db-883b-89bb7f050891",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/4c1a9d5278accd4e35c9b48c29f2c487/adr6130a_card.jpg",
+      "source": {
+        "id": "0cf94321-src-photo",
+        "title": "写真：クボタ Agri Robo コンバイン",
+        "url": "https://agriculture.kubota.co.jp/product/combine/DR-6130-A/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "a838e2c0-d5b9-4021-8a5f-db046f439d6a",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/608551d1e76c67771c410b0399639188/dionith_card%20%282%29.jpg",
+      "source": {
+        "id": "a838e2c0-src-photo",
+        "title": "写真：クボタ DIONITH",
+        "url": "https://agriculture.kubota.co.jp/product/combine/DR-575-6130/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "650d8e0e-5e91-41a8-8b1d-fb63f8fe9825",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/04fc19b3f92f0cc3ae11cabd23064f06/wrn6100_card.jpg",
+      "source": {
+        "id": "650d8e0e-src-photo",
+        "title": "写真：クボタ WORLD コンバイン",
+        "url": "https://agriculture.kubota.co.jp/product/combine/WRN-6100/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "01a39268-771a-46ac-83af-61c299b2f2a4",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/37b34f9cd90c644e640656c9f90f2b39/230519_WRN-575_card.jpg",
+      "source": {
+        "id": "01a39268-src-photo",
+        "title": "写真：クボタ WORLD コンバイン",
+        "url": "https://agriculture.kubota.co.jp/product/combine/WRN-575/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "219b1789-8030-4303-87ca-8ec24304d798",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/638d84b93517eb09fad2acfbbb703187/DR-472-GS-Q_card.jpg",
+      "source": {
+        "id": "219b1789-src-photo",
+        "title": "写真：クボタ DIONITH",
+        "url": "https://agriculture.kubota.co.jp/product/combine/DR-472/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "f65eb2ba-3209-4808-81b7-75ccf32d0f93",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/9e78158f61248631709c86d282c8a09b/R462_card.jpg",
+      "source": {
+        "id": "f65eb2ba-src-photo",
+        "title": "写真：クボタ コンバイン",
+        "url": "https://agriculture.kubota.co.jp/product/combine/R-462/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "cd0803f6-f075-4010-85f8-0cdad4c0c67b",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/7a5e1755addc607353261ada7105557a/KR334-448_card.jpg",
+      "source": {
+        "id": "cd0803f6-src-photo",
+        "title": "写真：クボタ KALSTAR",
+        "url": "https://agriculture.kubota.co.jp/product/combine/KR-334-448/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "2fc1d523-4416-476a-88db-a60860ed01a3",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/ed964baadd00fdcd7f3ad263dcdd305e/ER-448-NL-thumb.jpg",
+      "source": {
+        "id": "2fc1d523-src-photo",
+        "title": "写真：クボタ ER448N Limited",
+        "url": "https://agriculture.kubota.co.jp/product/combine/ER-448-NL/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "ad3cb374-fb34-400f-8bc7-cba2e328ba5a",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/f915195207386e5a49ea81afec968bb1/130th_r325_card.jpg",
+      "source": {
+        "id": "ad3cb374-src-photo",
+        "title": "写真：クボタ スペシャル コンバイン",
+        "url": "https://agriculture.kubota.co.jp/product/combine/R325/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "4ee9f213-2078-4137-8975-ca8fc67d8664",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/04263c060dc7238c9d048e0ea57b9468/DRH-1200A_card.jpg",
+      "source": {
+        "id": "4ee9f213-src-photo",
+        "title": "写真：クボタ 汎用コンバイン",
+        "url": "https://agriculture.kubota.co.jp/product/combine/DRH-1200A/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "3b4ee449-4c15-4ac1-8c17-462460009941",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/2f0d6073db2317909680efe70437159d/DRH-1200_card.jpg",
+      "source": {
+        "id": "3b4ee449-src-photo",
+        "title": "写真：クボタ 汎用コンバイン",
+        "url": "https://agriculture.kubota.co.jp/product/combine/DRH-1200/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "af7c3249-324c-4129-808d-fbb877297a0e",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/49a982718a5448a6a6c311db72b28485/binderRJ_card.jpg",
+      "source": {
+        "id": "af7c3249-src-photo",
+        "title": "写真：クボタ バインダー",
+        "url": "https://agriculture.kubota.co.jp/product/combine/binder/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "cc0cd310-0dd2-44d7-8a5f-6cef7950a83c",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/3252c507cdc19fc20da94ab9e4296af5/newHSseries_card.jpg",
+      "source": {
+        "id": "cc0cd310-src-photo",
+        "title": "写真：クボタ ハーベスタ",
+        "url": "https://agriculture.kubota.co.jp/product/combine/harvester/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "78f5a064-c4fe-43ef-84b1-0981883f1f66",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/79e4a7e023bc93dba6870f8ec6db60ac/test_M7-134-174_card.jpg",
+      "source": {
+        "id": "78f5a064-src-photo",
+        "title": "写真：クボタ M7",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/M7-134-174/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "fcecb503-a5ce-48fa-8e53-2727cb61d9de",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/8bec0dc970db8c6e6664208f31d1a3cf/M-100GEP-135GEP_card.jpg",
+      "source": {
+        "id": "fcecb503-src-photo",
+        "title": "写真：クボタ GENEST PLUS",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/M-100GEP-135GEP/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "b9c13325-80e1-4618-8c20-caf1ae17aaab",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/da3d21455c08fc911a42b26662a48e92/m1060w_card.jpg",
+      "source": {
+        "id": "b9c13325-src-photo",
+        "title": "写真：クボタ WORLD",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/M-1060W/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "26e64677-443c-42e6-8ed5-a7c7d68e8109",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/78f6adad1fefeab27a075f5f32e55b10/MR-800-1050_card.jpg",
+      "source": {
+        "id": "26e64677-src-photo",
+        "title": "写真：クボタ REXIA",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "5c28c627-3a8f-4705-8b0e-848663ebe006",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/82c395e47f153ca35a0bf8843d73de69/world_se_card.jpg",
+      "source": {
+        "id": "5c28c627-src-photo",
+        "title": "写真：クボタ WORLD Special Edition",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/M-860W-1010W/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "a72c33e6-bb45-4d04-8c75-21827d944a19",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/85d47a705d9802bf6207380f5cc712eb/card-thumb.png",
+      "source": {
+        "id": "a72c33e6-src-photo",
+        "title": "写真：クボタ アグリロボトラクタ MRシリーズ",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050-A2H/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "57264e8e-0c26-46e2-83d8-8e1d222401c8",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/f77d89104860913cef764b8858800447/agrirobo_mr1000ah_card%20%281%29.jpg",
+      "source": {
+        "id": "57264e8e-src-photo",
+        "title": "写真：クボタ Agri Robo トラクタ",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/MR-1000-AH/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "bd6c7e4f-6bfc-40bf-8c9b-c4374b7655e9",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/bc065a7c76d8356f4b15357bbc7f77a0/m720w_card.jpg",
+      "source": {
+        "id": "bd6c7e4f-src-photo",
+        "title": "写真：クボタ WORLD",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/M720W/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "55d2290a-80dd-46e0-8238-681eaa33c5d4",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/2bb356203853f564f96396cc97ea7bf0/MR-600-700_card.jpg",
+      "source": {
+        "id": "55d2290a-src-photo",
+        "title": "写真：クボタ REXIA",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/MR-600-700/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "48e8d61d-85a0-4ffc-8987-7fe34b6fe531",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/b032b32c142b00c5e30bad2164bc3174/mr70sp_card%20%281%29.jpg",
+      "source": {
+        "id": "48e8d61d-src-photo",
+        "title": "写真：クボタ Special トラクタ",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/MR-70-SP/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "0f564a69-9d7e-4c89-88eb-1c98197641fd",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/58f0a2cc1dbe97efe0e1b8f5a0de4283/sl38-54_pre_card.jpg",
+      "source": {
+        "id": "0f564a69-src-photo",
+        "title": "写真：クボタ Slugger マニュアルシフト仕様スペシャル",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/SL-38-54-SP/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "58ce2891-9e24-4331-82ff-c00df8419393",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/6abaad7577c3fc2186896d59c63fd99d/SL-35-SP_card.jpg",
+      "source": {
+        "id": "58ce2891-src-photo",
+        "title": "写真：クボタ Slugger Uシフト・Uシャトル仕様スペシャル",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-350-SP/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "526d0ef0-bae5-43c3-8bc8-436fba5225c8",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/1defa713ddbe12e6e1270c79ff52cf36/slugger24_card.jpg",
+      "source": {
+        "id": "526d0ef0-src-photo",
+        "title": "写真：クボタ Slugger グッドパートナー",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/SL-24/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "ab917f8b-a32a-4f2d-8eb2-79451659a5f1",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/b8e5bc402fc37508c64d1d110584cf3a/card-thumb.jpg",
+      "source": {
+        "id": "ab917f8b-src-photo",
+        "title": "写真：クボタ TERAST",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/ST-25-31/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "e1b8badd-bec5-4bd3-8e4b-22ec97666e25",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/885b374f0faa8cdebc959267a2558e6f/JB-115-195_card-thumb.jpg",
+      "source": {
+        "id": "e1b8badd-src-photo",
+        "title": "写真：クボタ JBシリーズ",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/JB-115-195/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "1bd5e2b8-d8eb-45dc-83e1-cb3ad87a5273",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/0caab2a07739e17c8915aadb61344fb3/granova_card.jpg",
+      "source": {
+        "id": "1bd5e2b8-src-photo",
+        "title": "写真：クボタ GRANOVA",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/NB-17-23/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "2d3699e9-71b5-43a0-8e42-85506c5be079",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/cb548909819a9bb855bdce056edc43a0/nb21gs_card.jpg",
+      "source": {
+        "id": "2d3699e9-src-photo",
+        "title": "写真：クボタ 直進アシスト付きトラクタ",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-GS/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "b5b5a301-1363-4b34-8245-d6fed9e30909",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/9c00f7452db4c7b0228443320c87d080/nb21sp_card.jpg",
+      "source": {
+        "id": "b5b5a301-src-photo",
+        "title": "写真：クボタ グッドパートナー スペシャル",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-SP/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "0acce27e-fd78-46b1-8052-fec04c9bf253",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/73eb4cb3f9ea9dc3cfaf48267178568d/JB-11-19_card.jpg",
+      "source": {
+        "id": "0acce27e-src-photo",
+        "title": "写真：クボタ Bull Star EXTRA",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11-19/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "6bc7bd5c-29d5-42b1-853a-b1e8adbb07ab",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/8a3b81fea2ead5861cc4a59b9b3c48a0/JB-11XLD-13XSLD_card.jpg",
+      "source": {
+        "id": "6bc7bd5c-src-photo",
+        "title": "写真：クボタ Bull Star EXTRA ローダ専用機",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11XLD-13XSLD/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "8cb96126-b6e3-4652-8b36-fc4e319bdba8",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/3c4282c444a05b26bc0799af98ec511c/bullstar-extra_card.jpg",
+      "source": {
+        "id": "8cb96126-src-photo",
+        "title": "写真：クボタ Bull Star EXTRA 超幅狭仕様",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "f2634e03-1e48-4712-8cf2-3a8ec8ca43f8",
+      "url": "https://agriculture.kubota.co.jp/img_sys/productCardImage/5bd61f08bb20858465964998dfd1a711/card.jpg",
+      "source": {
+        "id": "f2634e03-src-photo",
+        "title": "写真：クボタ NAVI RIDER 乗用管理機",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/NR-17-23/",
+        "date": "2026-09-16"
+      }
     }
   ]
 }

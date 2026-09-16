@@ -1,0 +1,125 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "650d8e0e-5e91-41a8-8b1d-fb63f8fe9825",
+      "title": "【カタログ解説】クボタ WRN6100 WORLD コンバイン（コンバイン）",
+      "category": "コンバイン",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "650d8e0e-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "650d8e0e-002",
+          "type": "text",
+          "text": "100馬力・6条刈りのコンバインです。"
+        },
+        {
+          "id": "650d8e0e-003",
+          "type": "bullet",
+          "text": "馬力：100馬力"
+        },
+        {
+          "id": "650d8e0e-004",
+          "type": "bullet",
+          "text": "条数：6条刈"
+        },
+        {
+          "id": "650d8e0e-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "650d8e0e-006",
+          "type": "text",
+          "text": "WRN6100"
+        },
+        {
+          "id": "650d8e0e-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "650d8e0e-008",
+          "type": "text",
+          "text": "掲載写真：WRN6100（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "コンバイン",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/04fc19b3f92f0cc3ae11cabd23064f06/wrn6100_card.jpg",
+        "summary": "100馬力・6条刈りのコンバインです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "650d8e0e-src-product",
+            "title": "クボタ 製品ページ WRN6100",
+            "url": "https://agriculture.kubota.co.jp/product/combine/WRN-6100/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "650d8e0e-src-catalog",
+            "title": "クボタ 製品カタログ WORLD コンバイン",
+            "url": "https://agriculture.kubota.co.jp/product/combine/WRN-6100/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "650d8e0e-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（WRN6100）",
+            "url": "https://agriculture.kubota.co.jp/product/combine/WRN-6100/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "650d8e0e-src-manual-1",
+            "title": "取扱説明書 WORLD WRN6100",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dda04f9d634145a9c68d5dfe53b21272",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "650d8e0e-src-photo",
+            "title": "写真：クボタ WORLD コンバイン",
+            "url": "https://agriculture.kubota.co.jp/product/combine/WRN-6100/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

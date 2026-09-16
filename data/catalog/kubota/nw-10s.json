@@ -1,0 +1,61 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "NW10S",
+  "productName": "NAVIWEL スペシャルクラス",
+  "summary": "10条植えのナビウェル。植付けや施肥を支援する機能を備えたシリーズです。",
+  "category": "田植機",
+  "models": [
+    "NW10S"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "NW10S（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "条数",
+      "value": "10条植",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-10S/",
+      "checkedAt": "2026-09-16",
+      "sha256": "c359151db6e21fe82413fef104b68cc6e2653f6888c652a6c922170e3eba98d9"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-10S/?nav=catalog",
+      "documents": [
+        {
+          "title": "NW10S(10条植)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0026-01.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/NW-10S/",
+      "sha256": "ec772d5be42f77e2bf9f6bfa0108db04b9fd44fe773c2896b1778b8a8dc3f89f"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NW10S）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-10S/?nav=manual",
+      "sha256": "ed3d405b2f842149843e252b3cec0d78d1a2571a93e9b0aa628febff09db8202"
+    },
+    "manuals": [
+      {
+        "title": "NW10S",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c5cc17e395d3049b03e0f1ccebb02b4d"
+      },
+      {
+        "title": "NW10S-8",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6786f3c62fbf9021694f6e51cc07fe3c"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

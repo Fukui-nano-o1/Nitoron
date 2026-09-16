@@ -1,0 +1,62 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "DRH1200A",
+  "productName": "汎用コンバイン",
+  "summary": "120馬力の汎用コンバイン。稲・麦・大豆の収穫に対応し、有人仕様と無人仕様があります。",
+  "category": "コンバイン",
+  "models": [
+    "DRH1200A-A",
+    "DRH1200A-OP"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "DRH1200A（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "120馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/DRH-1200A/",
+      "checkedAt": "2026-09-16",
+      "sha256": "a66914bf9113c4e8c46a5fd840d69a8904a84e6c49532a4d95e90701e69b0239"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/DRH-1200A/?nav=catalog",
+      "documents": [
+        {
+          "title": "DRH1200・DRH1200A カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-20-2-0009-03n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/DRH-1200A/",
+      "sha256": "dbbf5b6f37c1c6319efe94cf06d7213a756fb11215b24a2f71df4dde07cbfe4a"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（DRH1200A）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/DRH-1200A/?nav=manual",
+      "sha256": "8050eb328019a3d1f22b0c183b827709e0870a6b0f9b43945b19aa4b7b9db7be"
+    },
+    "manuals": [
+      {
+        "title": "DRH1200A-A",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cd3bbc2d7ca1bbdc055acf58609e6c24"
+      },
+      {
+        "title": "DRH1200A-OP",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2e3d2c4f33a7a1f58bc6c81cacd21e9c"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "0cf94321-1475-44db-883b-89bb7f050891",
+      "title": "【カタログ解説】クボタ DR6130A Agri Robo コンバイン（コンバイン）",
+      "category": "コンバイン",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "0cf94321-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "0cf94321-002",
+          "type": "text",
+          "text": "130馬力・6条刈りのアグリロボコンバインです。"
+        },
+        {
+          "id": "0cf94321-003",
+          "type": "bullet",
+          "text": "馬力：130馬力"
+        },
+        {
+          "id": "0cf94321-004",
+          "type": "bullet",
+          "text": "条数：6条刈"
+        },
+        {
+          "id": "0cf94321-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "0cf94321-006",
+          "type": "text",
+          "text": "DR6130A"
+        },
+        {
+          "id": "0cf94321-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "0cf94321-008",
+          "type": "text",
+          "text": "掲載写真：DR6130A（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "コンバイン",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/4c1a9d5278accd4e35c9b48c29f2c487/adr6130a_card.jpg",
+        "summary": "130馬力・6条刈りのアグリロボコンバインです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "0cf94321-src-product",
+            "title": "クボタ 製品ページ DR6130A",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-6130-A/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0cf94321-src-catalog",
+            "title": "クボタ 製品カタログ Agri Robo コンバイン",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-6130-A/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0cf94321-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（DR6130A）",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-6130-A/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0cf94321-src-manual-1",
+            "title": "取扱説明書 Agri Robo DR6130A 自動運転アシスト編",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c74d97b01eae257e44aa9d5bade97baf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0cf94321-src-photo",
+            "title": "写真：クボタ Agri Robo コンバイン",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-6130-A/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

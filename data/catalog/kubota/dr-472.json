@@ -1,0 +1,62 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "DR472",
+  "productName": "DIONITH",
+  "summary": "72馬力・4条刈りのコンバインです。",
+  "category": "コンバイン",
+  "models": [
+    "DR472"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "DR472（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "72馬力",
+      "source": "product"
+    },
+    {
+      "label": "条数",
+      "value": "4条刈",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-472/",
+      "checkedAt": "2026-09-16",
+      "sha256": "83a36198d0aa0588778bd6dc574693018afc6c768d215774fea8eac1f8d92051"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-472/?nav=catalog",
+      "documents": [
+        {
+          "title": "DR472・DR472GSカタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0032-03.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/DR-472/",
+      "sha256": "a04a7c1f3fd0cadc6efc17d57d3b47d6807284520edb8005e8a61539b15312c5"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（DR472）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-472/?nav=manual",
+      "sha256": "7a94890da75886653d6d7b38305002d107aa8e5b27087539dd86cbe3b627d19a"
+    },
+    "manuals": [
+      {
+        "title": "DR472",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2b24d495052a8ce66358eb576b8912c8"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

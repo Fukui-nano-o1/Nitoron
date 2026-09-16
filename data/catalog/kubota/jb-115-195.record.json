@@ -1,0 +1,114 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "e1b8badd-bec5-4bd3-8e4b-22ec97666e25",
+      "title": "【カタログ解説】クボタ JB115-195 JBシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "e1b8badd-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "e1b8badd-002",
+          "type": "text",
+          "text": "10.5〜19馬力の小型トラクタ。JB115・JB135・JB155・JB195をそろえています。"
+        },
+        {
+          "id": "e1b8badd-003",
+          "type": "bullet",
+          "text": "馬力：10.5~19馬力"
+        },
+        {
+          "id": "e1b8badd-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "e1b8badd-005",
+          "type": "text",
+          "text": "JB115 / JB135 / JB155 / JB195(PC)"
+        },
+        {
+          "id": "e1b8badd-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "e1b8badd-007",
+          "type": "text",
+          "text": "掲載写真：JB115-195（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/885b374f0faa8cdebc959267a2558e6f/JB-115-195_card-thumb.jpg",
+        "summary": "10.5〜19馬力の小型トラクタ。JB115・JB135・JB155・JB195をそろえています。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "e1b8badd-src-product",
+            "title": "クボタ 製品ページ JB115-195",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/JB-115-195/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e1b8badd-src-catalog",
+            "title": "クボタ 製品カタログ JBシリーズ",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/JB-115-195/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e1b8badd-src-manual-index",
+            "title": "取扱説明書検索（型式で探す）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e1b8badd-src-photo",
+            "title": "写真：クボタ JBシリーズ",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/JB-115-195/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "JB115-195",
+  "productName": "JBシリーズ",
+  "summary": "10.5〜19馬力の小型トラクタ。JB115・JB135・JB155・JB195をそろえています。",
+  "category": "トラクタ",
+  "models": [
+    "JB115",
+    "JB135",
+    "JB155",
+    "JB195(PC)"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "JB115-195（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "10.5~19馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-115-195/",
+      "checkedAt": "2026-09-16",
+      "sha256": "9214e64ec0a42fc5c98075e565fefa32961c05d73824759cfcac1b39277b763c"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-115-195/?nav=catalog",
+      "documents": [
+        {
+          "title": "JB115・JB135・JB155・JB195カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0050-01.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/JB-115-195/",
+      "sha256": "a9983af02efa0c56186b5875b75bc4e2107d9248d2626118a0714930abf69505"
+    },
+    "manualIndex": {
+      "title": "取扱説明書検索（型式で探す）",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manuals": []
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

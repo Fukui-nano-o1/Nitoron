@@ -1,0 +1,61 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "SL24",
+  "productName": "Slugger グッドパートナー",
+  "summary": "24馬力のトラクタ。スラッガーのグッドパートナーシリーズです。",
+  "category": "トラクタ",
+  "models": [
+    "SL24"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "SL24（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "24馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-24/",
+      "checkedAt": "2026-09-16",
+      "sha256": "650f9b4aded1ac376665810ca1ccc1d36f601979cfb4603a2e981640ed70e5b2"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-24/?nav=catalog",
+      "documents": [
+        {
+          "title": "Slugger24馬力 SL24(H)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0031-03new.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/SL-24/",
+      "sha256": "c5fb6efd988f068f9df38b6e1087c95ebacf161f32de123a00908a6007d0292b"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（SL24）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-24/?nav=manual",
+      "sha256": "856fdd1be8d62370d36d1981808a8128f9d9f3c40a6b508e9ccf236cb9ac2e16"
+    },
+    "manuals": [
+      {
+        "title": "SL24",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=519c84155964659375821f7ca576f095"
+      },
+      {
+        "title": "SL24H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c3395dd46c34fa7fd8d729d8cf88b7a8"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

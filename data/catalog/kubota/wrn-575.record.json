@@ -1,0 +1,125 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "01a39268-771a-46ac-83af-61c299b2f2a4",
+      "title": "【カタログ解説】クボタ WRN575 WORLD コンバイン（コンバイン）",
+      "category": "コンバイン",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "01a39268-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "01a39268-002",
+          "type": "text",
+          "text": "75馬力・5条刈りのコンバインです。"
+        },
+        {
+          "id": "01a39268-003",
+          "type": "bullet",
+          "text": "馬力：75馬力"
+        },
+        {
+          "id": "01a39268-004",
+          "type": "bullet",
+          "text": "条数：5条刈"
+        },
+        {
+          "id": "01a39268-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "01a39268-006",
+          "type": "text",
+          "text": "WRN575"
+        },
+        {
+          "id": "01a39268-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "01a39268-008",
+          "type": "text",
+          "text": "掲載写真：WRN575（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "コンバイン",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/37b34f9cd90c644e640656c9f90f2b39/230519_WRN-575_card.jpg",
+        "summary": "75馬力・5条刈りのコンバインです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "01a39268-src-product",
+            "title": "クボタ 製品ページ WRN575",
+            "url": "https://agriculture.kubota.co.jp/product/combine/WRN-575/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "01a39268-src-catalog",
+            "title": "クボタ 製品カタログ WORLD コンバイン",
+            "url": "https://agriculture.kubota.co.jp/product/combine/WRN-575/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "01a39268-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（WRN575）",
+            "url": "https://agriculture.kubota.co.jp/product/combine/WRN-575/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "01a39268-src-manual-1",
+            "title": "取扱説明書 WRN575",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=42fe880812925e520249e808937738d2",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "01a39268-src-photo",
+            "title": "写真：クボタ WORLD コンバイン",
+            "url": "https://agriculture.kubota.co.jp/product/combine/WRN-575/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

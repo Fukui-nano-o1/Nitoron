@@ -1,0 +1,114 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "fcecb503-a5ce-48fa-8e53-2727cb61d9de",
+      "title": "【カタログ解説】クボタ M100GEP-135GEP GENEST PLUS（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "fcecb503-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "fcecb503-002",
+          "type": "text",
+          "text": "100〜135馬力のトラクタ。ジェネストプラスのシリーズです。"
+        },
+        {
+          "id": "fcecb503-003",
+          "type": "bullet",
+          "text": "馬力：100〜135馬力"
+        },
+        {
+          "id": "fcecb503-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "fcecb503-005",
+          "type": "text",
+          "text": "M100GEP / M110GEP(PC) / M115GEP / M125GEP(PC) / M135GEP(PC)"
+        },
+        {
+          "id": "fcecb503-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "fcecb503-007",
+          "type": "text",
+          "text": "掲載写真：M100GEP-135GEP（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/8bec0dc970db8c6e6664208f31d1a3cf/M-100GEP-135GEP_card.jpg",
+        "summary": "100〜135馬力のトラクタ。ジェネストプラスのシリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "fcecb503-src-product",
+            "title": "クボタ 製品ページ M100GEP-135GEP",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M-100GEP-135GEP/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "fcecb503-src-catalog",
+            "title": "クボタ 製品カタログ GENEST PLUS",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M-100GEP-135GEP/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "fcecb503-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（M100GEP-135GEP）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M-100GEP-135GEP/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "fcecb503-src-photo",
+            "title": "写真：クボタ GENEST PLUS",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M-100GEP-135GEP/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

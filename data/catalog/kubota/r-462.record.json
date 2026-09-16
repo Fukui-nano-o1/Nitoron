@@ -1,0 +1,125 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "f65eb2ba-3209-4808-81b7-75ccf32d0f93",
+      "title": "【カタログ解説】クボタ R462 コンバイン（コンバイン）",
+      "category": "コンバイン",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "f65eb2ba-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "f65eb2ba-002",
+          "type": "text",
+          "text": "62馬力・4条刈りのコンバインです。"
+        },
+        {
+          "id": "f65eb2ba-003",
+          "type": "bullet",
+          "text": "馬力：62馬力"
+        },
+        {
+          "id": "f65eb2ba-004",
+          "type": "bullet",
+          "text": "条数：4条刈"
+        },
+        {
+          "id": "f65eb2ba-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "f65eb2ba-006",
+          "type": "text",
+          "text": "R462"
+        },
+        {
+          "id": "f65eb2ba-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "f65eb2ba-008",
+          "type": "text",
+          "text": "掲載写真：R462（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "コンバイン",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/9e78158f61248631709c86d282c8a09b/R462_card.jpg",
+        "summary": "62馬力・4条刈りのコンバインです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "f65eb2ba-src-product",
+            "title": "クボタ 製品ページ R462",
+            "url": "https://agriculture.kubota.co.jp/product/combine/R-462/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f65eb2ba-src-catalog",
+            "title": "クボタ 製品カタログ コンバイン",
+            "url": "https://agriculture.kubota.co.jp/product/combine/R-462/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f65eb2ba-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（R462）",
+            "url": "https://agriculture.kubota.co.jp/product/combine/R-462/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f65eb2ba-src-manual-1",
+            "title": "取扱説明書 R462",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=258e130476290221f597c56d351224b6",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f65eb2ba-src-photo",
+            "title": "写真：クボタ コンバイン",
+            "url": "https://agriculture.kubota.co.jp/product/combine/R-462/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

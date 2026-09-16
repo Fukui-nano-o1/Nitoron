@@ -1,0 +1,85 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "M100GEP-135GEP",
+  "productName": "GENEST PLUS",
+  "summary": "100〜135馬力のトラクタ。ジェネストプラスのシリーズです。",
+  "category": "トラクタ",
+  "models": [
+    "M100GEP",
+    "M110GEP(PC)",
+    "M115GEP",
+    "M125GEP(PC)",
+    "M135GEP(PC)"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "M100GEP-135GEP（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "100〜135馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M-100GEP-135GEP/",
+      "checkedAt": "2026-09-16",
+      "sha256": "51cb90d0f8caed4c2d33c38b9d081f8b7093966766e417366068a925b800dba0"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M-100GEP-135GEP/?nav=catalog",
+      "documents": [
+        {
+          "title": "GENEST PLUS M100GEP・M110GEP(PC)・M115GEP・M125GEP(PC)・M135GEP(PC)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0037-02n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/M-100GEP-135GEP/",
+      "sha256": "95a7ee9b2e89cb7c8b9f66406e2adbb6cf86c58f450b9a6b415741b65ac492bb"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（M100GEP-135GEP）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M-100GEP-135GEP/?nav=manual",
+      "sha256": "a2e37fdead07eccea14cfe955bbc60de819f11dcf524aded247c3810309f065f"
+    },
+    "manuals": [
+      {
+        "title": "M100GEP",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4175a4b46a45813fccf4bd34c779d817"
+      },
+      {
+        "title": "M110GEP",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1be883eec3231f9fe43c35bd1b4b3bb5"
+      },
+      {
+        "title": "M115GEP",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1bf50aaf147b3b0ddd26a820d2ed394d"
+      },
+      {
+        "title": "M125GEP",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=27b587bbe83aecf9a98c8fe6ab48cacc"
+      },
+      {
+        "title": "M135GEP",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b085c4fa543afe32970749f5e2bcdc6a"
+      },
+      {
+        "title": "M125GEP-N幅狭仕様 取扱説明書",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b85d65c39e12a5515c19fd72b6f48199"
+      },
+      {
+        "title": "M135GEP-Y酪農仕様 取扱説明書",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=39539f630a3b94d3ed61ea9d04c9bb05"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

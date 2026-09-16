@@ -1,0 +1,125 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "219b1789-8030-4303-87ca-8ec24304d798",
+      "title": "【カタログ解説】クボタ DR472 DIONITH（コンバイン）",
+      "category": "コンバイン",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "219b1789-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "219b1789-002",
+          "type": "text",
+          "text": "72馬力・4条刈りのコンバインです。"
+        },
+        {
+          "id": "219b1789-003",
+          "type": "bullet",
+          "text": "馬力：72馬力"
+        },
+        {
+          "id": "219b1789-004",
+          "type": "bullet",
+          "text": "条数：4条刈"
+        },
+        {
+          "id": "219b1789-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "219b1789-006",
+          "type": "text",
+          "text": "DR472"
+        },
+        {
+          "id": "219b1789-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "219b1789-008",
+          "type": "text",
+          "text": "掲載写真：DR472（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "コンバイン",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/638d84b93517eb09fad2acfbbb703187/DR-472-GS-Q_card.jpg",
+        "summary": "72馬力・4条刈りのコンバインです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "219b1789-src-product",
+            "title": "クボタ 製品ページ DR472",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-472/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "219b1789-src-catalog",
+            "title": "クボタ 製品カタログ DIONITH",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-472/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "219b1789-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（DR472）",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-472/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "219b1789-src-manual-1",
+            "title": "取扱説明書 DR472",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2b24d495052a8ce66358eb576b8912c8",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "219b1789-src-photo",
+            "title": "写真：クボタ DIONITH",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-472/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

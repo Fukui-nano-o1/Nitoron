@@ -1,0 +1,120 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "bd6c7e4f-6bfc-40bf-8c9b-c4374b7655e9",
+      "title": "【カタログ解説】クボタ M720W WORLD（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "bd6c7e4f-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "bd6c7e4f-002",
+          "type": "text",
+          "text": "72馬力のワールドトラクタです。"
+        },
+        {
+          "id": "bd6c7e4f-003",
+          "type": "bullet",
+          "text": "馬力：72馬力"
+        },
+        {
+          "id": "bd6c7e4f-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "bd6c7e4f-005",
+          "type": "text",
+          "text": "M720W"
+        },
+        {
+          "id": "bd6c7e4f-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "bd6c7e4f-007",
+          "type": "text",
+          "text": "掲載写真：M720W（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/bc065a7c76d8356f4b15357bbc7f77a0/m720w_card.jpg",
+        "summary": "72馬力のワールドトラクタです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "bd6c7e4f-src-product",
+            "title": "クボタ 製品ページ M720W",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M720W/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "bd6c7e4f-src-catalog",
+            "title": "クボタ 製品カタログ WORLD",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M720W/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "bd6c7e4f-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（M720W）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M720W/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "bd6c7e4f-src-manual-1",
+            "title": "取扱説明書 M720W",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=242c100dc94f871b6d7215b868a875f8",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "bd6c7e4f-src-photo",
+            "title": "写真：クボタ WORLD",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M720W/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "JP200-400",
+  "productName": "Joy Walk 歩行田植機",
+  "summary": "歩いて操作する2輪の田植機。2条植えと4条植えがあります。",
+  "category": "田植機",
+  "models": [
+    "JP200",
+    "JP400"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "JP200-400（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "条数",
+      "value": "2輪2条植・2輪4条植",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/JP-200-400/",
+      "checkedAt": "2026-09-16",
+      "sha256": "97e5073181a00526aaf4c7c4e5994d4f72ca0152648d7f2ba589d668dfe30213"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/JP-200-400/?nav=catalog",
+      "documents": [
+        {
+          "title": "JoyWalk JP200(2輪2条植)・JP400(2輪4条植)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-10-2-0002-01n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/JP-200-400/",
+      "sha256": "3edcf85f17e9a496657cc2c92bcd82fd46deee5b834dc53fdb84a082a153e4d1"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（JP200-400）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/JP-200-400/?nav=manual",
+      "sha256": "2349a64b79320f0b25e0cfd9844318753138e9cec3a43ec42f837026200fb46e"
+    },
+    "manuals": [
+      {
+        "title": "JP200-W",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=07845cd9aefa6cde3f8926d25138a3a2"
+      },
+      {
+        "title": "JP400",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e761813f83dfc86fa1c6e0da5510c3b8"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

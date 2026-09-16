@@ -1,0 +1,126 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "870bdaf5-f27c-4de6-8042-5e111483bcc0",
+      "title": "【カタログ解説】クボタ JP200-400 Joy Walk 歩行田植機（田植機）",
+      "category": "田植機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "870bdaf5-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "870bdaf5-002",
+          "type": "text",
+          "text": "歩いて操作する2輪の田植機。2条植えと4条植えがあります。"
+        },
+        {
+          "id": "870bdaf5-003",
+          "type": "bullet",
+          "text": "条数：2輪2条植・2輪4条植"
+        },
+        {
+          "id": "870bdaf5-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "870bdaf5-005",
+          "type": "text",
+          "text": "JP200 / JP400"
+        },
+        {
+          "id": "870bdaf5-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "870bdaf5-007",
+          "type": "text",
+          "text": "掲載写真：JP200-400（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "田植機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/0fec51a5636a472b00c11cc2819c7a95/JP-200-400_card%20%281%29.jpg",
+        "summary": "歩いて操作する2輪の田植機。2条植えと4条植えがあります。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "870bdaf5-src-product",
+            "title": "クボタ 製品ページ JP200-400",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/JP-200-400/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "870bdaf5-src-catalog",
+            "title": "クボタ 製品カタログ Joy Walk 歩行田植機",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/JP-200-400/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "870bdaf5-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（JP200-400）",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/JP-200-400/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "870bdaf5-src-manual-1",
+            "title": "取扱説明書 JP200-W",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=07845cd9aefa6cde3f8926d25138a3a2",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "870bdaf5-src-manual-2",
+            "title": "取扱説明書 JP400",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e761813f83dfc86fa1c6e0da5510c3b8",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "870bdaf5-src-photo",
+            "title": "写真：クボタ Joy Walk 歩行田植機",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/JP-200-400/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

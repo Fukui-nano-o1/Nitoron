@@ -1,0 +1,114 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "729d7a13-9ebb-4970-81e2-4d2f5063d73a",
+      "title": "【カタログ解説】クボタ KS-H8000-U-L フレコン計量機 ミニトン（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "729d7a13-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "729d7a13-002",
+          "type": "text",
+          "text": "軒下高3mの建物にも設置できる、背の低いフレコン計量機ユニットです。"
+        },
+        {
+          "id": "729d7a13-003",
+          "type": "bullet",
+          "text": "設置の目安：軒下高3m"
+        },
+        {
+          "id": "729d7a13-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "729d7a13-005",
+          "type": "text",
+          "text": "KS-H8000-U-L"
+        },
+        {
+          "id": "729d7a13-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "729d7a13-007",
+          "type": "text",
+          "text": "掲載写真：KS-H8000-U-L（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/843ce9e8e3b6d6680b772d9e74fd7d79/mini_ton_card.jpg",
+        "summary": "軒下高3mの建物にも設置できる、背の低いフレコン計量機ユニットです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "729d7a13-src-product",
+            "title": "クボタ 製品ページ KS-H8000-U-L",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H8000/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "729d7a13-src-catalog",
+            "title": "クボタ 製品カタログ フレコン計量機 ミニトン",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H8000/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "729d7a13-src-manual-index",
+            "title": "取扱説明書検索（型式で探す）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "729d7a13-src-photo",
+            "title": "写真：クボタ フレコン計量機 ミニトン",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H8000/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

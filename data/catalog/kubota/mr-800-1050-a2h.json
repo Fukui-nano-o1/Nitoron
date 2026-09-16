@@ -1,0 +1,63 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "MR800A2H-1050A2H",
+  "productName": "アグリロボトラクタ MRシリーズ",
+  "summary": "80〜105馬力のアグリロボトラクタ。2027年4月発売予定のシリーズです。",
+  "category": "トラクタ",
+  "models": [
+    "MR800A2H",
+    "MR1000A2H",
+    "MR1050A2H"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "MR800A2H-1050A2H（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "80〜105馬力",
+      "source": "product"
+    },
+    {
+      "label": "仕様",
+      "value": "80馬力は有人仕様のみ",
+      "source": "product"
+    },
+    {
+      "label": "発売予定",
+      "value": "2027年4月",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050-A2H/",
+      "checkedAt": "2026-09-16",
+      "sha256": "8fcfa06394b76bb894032c94c2cfa731fc46972d3c2f4fa61a6ecb9b12c26d4b"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050-A2H/?nav=catalog",
+      "documents": [
+        {
+          "title": "Agri Robo MR｜MR800A2H・MR1000A2H・MR1050A2H​",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-1-0025-01.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050-A2H/",
+      "sha256": "16002d4c12e7a89ad26a8a1d23d1f7c93674c66f6f7aef8ff7cd4da90ce14790"
+    },
+    "manualIndex": {
+      "title": "取扱説明書検索（型式で探す）",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manuals": []
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "0f4bf5be-9099-4d2d-80d7-773352cf746b",
+      "title": "【カタログ解説】クボタ KS-H880-U-H8000-U フレコン計量機 スーパートン福郎（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "0f4bf5be-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "0f4bf5be-002",
+          "type": "text",
+          "text": "玄米などをフレコンへ充填・計量する機器。タンクや昇降機と組み合わせます。"
+        },
+        {
+          "id": "0f4bf5be-003",
+          "type": "bullet",
+          "text": "用途：フレコンへの充填・計量"
+        },
+        {
+          "id": "0f4bf5be-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "0f4bf5be-005",
+          "type": "text",
+          "text": "KS-H880-U / KS-H8000-U"
+        },
+        {
+          "id": "0f4bf5be-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "0f4bf5be-007",
+          "type": "text",
+          "text": "掲載写真：KS-H880-U-H8000-U（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/644f9ea9951702c36a9ed5923c24f964/super_tonfukuro_card.jpg",
+        "summary": "玄米などをフレコンへ充填・計量する機器。タンクや昇降機と組み合わせます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "0f4bf5be-src-product",
+            "title": "クボタ 製品ページ KS-H880-U-H8000-U",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H880/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0f4bf5be-src-catalog",
+            "title": "クボタ 製品カタログ フレコン計量機 スーパートン福郎",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H880/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0f4bf5be-src-manual-index",
+            "title": "取扱説明書検索（型式で探す）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0f4bf5be-src-photo",
+            "title": "写真：クボタ フレコン計量機 スーパートン福郎",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H880/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

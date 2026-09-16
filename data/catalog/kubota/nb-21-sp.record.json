@@ -1,0 +1,119 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "b5b5a301-1363-4b34-8245-d6fed9e30909",
+      "title": "【カタログ解説】クボタ NB21SP グッドパートナー スペシャル（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "b5b5a301-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "b5b5a301-002",
+          "type": "text",
+          "text": "21馬力のトラクタ。NB21スペシャルの在庫限りの製品です。"
+        },
+        {
+          "id": "b5b5a301-003",
+          "type": "bullet",
+          "text": "馬力：21馬力"
+        },
+        {
+          "id": "b5b5a301-004",
+          "type": "bullet",
+          "text": "販売状況：在庫限り"
+        },
+        {
+          "id": "b5b5a301-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "b5b5a301-006",
+          "type": "text",
+          "text": "NB21SP(PC)"
+        },
+        {
+          "id": "b5b5a301-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "b5b5a301-008",
+          "type": "text",
+          "text": "掲載写真：NB21SP（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/9c00f7452db4c7b0228443320c87d080/nb21sp_card.jpg",
+        "summary": "21馬力のトラクタ。NB21スペシャルの在庫限りの製品です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "b5b5a301-src-product",
+            "title": "クボタ 製品ページ NB21SP",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-SP/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b5b5a301-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（NB21SP）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-SP/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b5b5a301-src-manual-1",
+            "title": "取扱説明書 NB21",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4e0d67e54ad6626e957d15b08ae128a6",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b5b5a301-src-photo",
+            "title": "写真：クボタ グッドパートナー スペシャル",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-SP/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

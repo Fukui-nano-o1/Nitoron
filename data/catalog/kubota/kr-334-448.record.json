@@ -1,0 +1,143 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "cd0803f6-f075-4010-85f8-0cdad4c0c67b",
+      "title": "【カタログ解説】クボタ KR334-448 KALSTAR（コンバイン）",
+      "category": "コンバイン",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "cd0803f6-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "cd0803f6-002",
+          "type": "text",
+          "text": "3条刈り・4条刈りのコンバイン。34〜48馬力の型式があります。"
+        },
+        {
+          "id": "cd0803f6-003",
+          "type": "bullet",
+          "text": "馬力：34〜48馬力"
+        },
+        {
+          "id": "cd0803f6-004",
+          "type": "bullet",
+          "text": "条数：3・4条刈"
+        },
+        {
+          "id": "cd0803f6-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "cd0803f6-006",
+          "type": "text",
+          "text": "KR334 / KR338 / KR438 / KR448"
+        },
+        {
+          "id": "cd0803f6-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "cd0803f6-008",
+          "type": "text",
+          "text": "掲載写真：KR334-448（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "コンバイン",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/7a5e1755addc607353261ada7105557a/KR334-448_card.jpg",
+        "summary": "3条刈り・4条刈りのコンバイン。34〜48馬力の型式があります。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "cd0803f6-src-product",
+            "title": "クボタ 製品ページ KR334-448",
+            "url": "https://agriculture.kubota.co.jp/product/combine/KR-334-448/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "cd0803f6-src-catalog",
+            "title": "クボタ 製品カタログ KALSTAR",
+            "url": "https://agriculture.kubota.co.jp/product/combine/KR-334-448/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "cd0803f6-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（KR334-448）",
+            "url": "https://agriculture.kubota.co.jp/product/combine/KR-334-448/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "cd0803f6-src-manual-1",
+            "title": "取扱説明書 KR334",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e8542a04d734d0cae36d648b3f519e5c",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "cd0803f6-src-manual-2",
+            "title": "取扱説明書 KR338",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d8847be3f7cc1b14e9173908bebb2106",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "cd0803f6-src-manual-3",
+            "title": "取扱説明書 KR438",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=aaaccd2766ec67aecbe26459bb828d81",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "cd0803f6-src-manual-4",
+            "title": "取扱説明書 KR448",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f9beb1e831faf6aaec2a5cecaf1af293",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "cd0803f6-src-photo",
+            "title": "写真：クボタ KALSTAR",
+            "url": "https://agriculture.kubota.co.jp/product/combine/KR-334-448/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

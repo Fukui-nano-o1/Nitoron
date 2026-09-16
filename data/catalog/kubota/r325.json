@@ -1,0 +1,62 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "R325",
+  "productName": "スペシャル コンバイン",
+  "summary": "25馬力・3条刈りのコンバインです。",
+  "category": "コンバイン",
+  "models": [
+    "R325"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "R325（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "25馬力",
+      "source": "product"
+    },
+    {
+      "label": "条数",
+      "value": "3条刈",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/R325/",
+      "checkedAt": "2026-09-16",
+      "sha256": "e518266b10bf037cc3177d9b8dcfd944c59b60a9039efe4ab02459338d1fc5b7"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/R325/?nav=catalog",
+      "documents": [
+        {
+          "title": "R325(3条刈) クボタ創業130周年アニバーサリー機",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-3-0021-02n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/R325/",
+      "sha256": "0a3de79808745ca58054e8e6db53a9afd3977075eafef66d571d8489734b6c0f"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（R325）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/R325/?nav=manual",
+      "sha256": "edc5bb64b70beb48d15cd5c11867b8c90b30d18dfe91f80aca3e7ae0544bd055"
+    },
+    "manuals": [
+      {
+        "title": "R325",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=98986c005e5def2da341b4e0627d4712"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "03e6bdd2-69af-4700-8dde-f50edc3ccdf3",
+      "title": "【カタログ解説】クボタ NW10SA Agri Robo 田植機（田植機）",
+      "category": "田植機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "03e6bdd2-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "03e6bdd2-002",
+          "type": "text",
+          "text": "10条植えのアグリロボ田植機。自動運転に対応するシリーズです。"
+        },
+        {
+          "id": "03e6bdd2-003",
+          "type": "bullet",
+          "text": "条数：10条植"
+        },
+        {
+          "id": "03e6bdd2-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "03e6bdd2-005",
+          "type": "text",
+          "text": "NW10SA"
+        },
+        {
+          "id": "03e6bdd2-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "03e6bdd2-007",
+          "type": "text",
+          "text": "掲載写真：NW10SA（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "田植機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/2cb74beba0a0b0160a91ed9f84a8fa8b/nw8sa_card%20%281%29.jpg",
+        "summary": "10条植えのアグリロボ田植機。自動運転に対応するシリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "03e6bdd2-src-product",
+            "title": "クボタ 製品ページ NW10SA",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-8-10S-A/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "03e6bdd2-src-catalog",
+            "title": "クボタ 製品カタログ Agri Robo 田植機",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-8-10S-A/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "03e6bdd2-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（NW10SA）",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-8-10S-A/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "03e6bdd2-src-manual-1",
+            "title": "取扱説明書 NW8SA",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=571d3a9420bfd9219f65b643d0003bf4",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "03e6bdd2-src-manual-2",
+            "title": "取扱説明書 NW8SA取扱説明書の追加・改訂資料",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=83cdcec08fbf90370fcf53bdd56604ff",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "03e6bdd2-src-manual-3",
+            "title": "取扱説明書 NW10SA",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3bbfdde8842a5c44a0323518eec97cbe",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "03e6bdd2-src-photo",
+            "title": "写真：クボタ Agri Robo 田植機",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-8-10S-A/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

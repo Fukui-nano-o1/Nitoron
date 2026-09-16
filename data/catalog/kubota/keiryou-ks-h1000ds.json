@@ -1,0 +1,56 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "KS-H1000DS",
+  "productName": "フレコン出荷計量機",
+  "summary": "玄米などのフレコン出荷用計量機。1000kgの計量に対応する受注生産品です。",
+  "category": "稲作関連機器",
+  "models": [
+    "KS-H1000DS"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "KS-H1000DS（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "計量対象",
+      "value": "1000kgフレコン",
+      "source": "product"
+    },
+    {
+      "label": "販売状況",
+      "value": "受注生産",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H1000DS/",
+      "checkedAt": "2026-09-16",
+      "sha256": "8ed8a4849eedae745ca655a6c5e00e08b742646495358beb8dab5e5ed75c30b6"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H1000DS/?nav=catalog",
+      "documents": [
+        {
+          "title": "KS-H1000DS",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/9-2108-1.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H1000DS/",
+      "sha256": "2a0893e6debcc0cbf485a4949d05662372ea8e1d1cd187551a92a15c906a2cbe"
+    },
+    "manualIndex": {
+      "title": "取扱説明書検索（型式で探す）",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manuals": []
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "1bd5e2b8-d8eb-45dc-83e1-cb3ad87a5273",
+      "title": "【カタログ解説】クボタ NB17-23 GRANOVA（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "1bd5e2b8-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "1bd5e2b8-002",
+          "type": "text",
+          "text": "17〜22.5馬力のトラクタ。グラノバの在庫限りのシリーズです。"
+        },
+        {
+          "id": "1bd5e2b8-003",
+          "type": "bullet",
+          "text": "馬力：17〜22.5馬力"
+        },
+        {
+          "id": "1bd5e2b8-004",
+          "type": "bullet",
+          "text": "販売状況：在庫限り"
+        },
+        {
+          "id": "1bd5e2b8-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "1bd5e2b8-006",
+          "type": "text",
+          "text": "NB17 / NB19(PC) / NB21(PC) / NB23(PC)"
+        },
+        {
+          "id": "1bd5e2b8-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "1bd5e2b8-008",
+          "type": "text",
+          "text": "掲載写真：NB17-23（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/0caab2a07739e17c8915aadb61344fb3/granova_card.jpg",
+        "summary": "17〜22.5馬力のトラクタ。グラノバの在庫限りのシリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "1bd5e2b8-src-product",
+            "title": "クボタ 製品ページ NB17-23",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/NB-17-23/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "1bd5e2b8-src-catalog",
+            "title": "クボタ 製品カタログ GRANOVA",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/NB-17-23/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "1bd5e2b8-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（NB17-23）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/NB-17-23/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "1bd5e2b8-src-photo",
+            "title": "写真：クボタ GRANOVA",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/NB-17-23/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

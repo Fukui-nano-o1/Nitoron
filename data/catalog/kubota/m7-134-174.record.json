@@ -1,0 +1,132 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "78f5a064-c4fe-43ef-84b1-0981883f1f66",
+      "title": "【カタログ解説】クボタ M7-134-174 M7（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "78f5a064-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "78f5a064-002",
+          "type": "text",
+          "text": "130〜170馬力のトラクタ。M7-134・M7-154・M7-174をそろえるシリーズです。"
+        },
+        {
+          "id": "78f5a064-003",
+          "type": "bullet",
+          "text": "馬力：130〜170馬力"
+        },
+        {
+          "id": "78f5a064-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "78f5a064-005",
+          "type": "text",
+          "text": "M7-134 / M7-154 / M7-174"
+        },
+        {
+          "id": "78f5a064-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "78f5a064-007",
+          "type": "text",
+          "text": "掲載写真：M7-134-174（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/79e4a7e023bc93dba6870f8ec6db60ac/test_M7-134-174_card.jpg",
+        "summary": "130〜170馬力のトラクタ。M7-134・M7-154・M7-174をそろえるシリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "78f5a064-src-product",
+            "title": "クボタ 製品ページ M7-134-174",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M7-134-174/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "78f5a064-src-catalog",
+            "title": "クボタ 製品カタログ M7",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M7-134-174/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "78f5a064-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（M7-134-174）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M7-134-174/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "78f5a064-src-manual-1",
+            "title": "取扱説明書 M7-134",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9e406957d45fcb6c6f38c2ada7bace91",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "78f5a064-src-manual-2",
+            "title": "取扱説明書 M7-154",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=56e6a93212e4482d99c84a639d254b67",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "78f5a064-src-manual-3",
+            "title": "取扱説明書 M7-174",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=afa299a4d1d8c52e75dd8a24c3ce534f",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "78f5a064-src-photo",
+            "title": "写真：クボタ M7",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/M7-134-174/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "dbfb068b-4595-42af-8524-0959f3e70f37",
+      "title": "【カタログ解説】クボタ NW60S-80S NAVIWEL スペシャルクラス（田植機）",
+      "category": "田植機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "dbfb068b-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "dbfb068b-002",
+          "type": "text",
+          "text": "6条植え・8条植えのナビウェル。田植え作業を支援する機能を備えたシリーズです。"
+        },
+        {
+          "id": "dbfb068b-003",
+          "type": "bullet",
+          "text": "条数：6・8条植"
+        },
+        {
+          "id": "dbfb068b-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "dbfb068b-005",
+          "type": "text",
+          "text": "NW60S / NW80S"
+        },
+        {
+          "id": "dbfb068b-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "dbfb068b-007",
+          "type": "text",
+          "text": "掲載写真：NW60S-80S（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "田植機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/464b18f1f597a154ddc379818498f2f4/card-thumb.jpg",
+        "summary": "6条植え・8条植えのナビウェル。田植え作業を支援する機能を備えたシリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "dbfb068b-src-product",
+            "title": "クボタ 製品ページ NW60S-80S",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-60-80S/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "dbfb068b-src-catalog",
+            "title": "クボタ 製品カタログ NAVIWEL スペシャルクラス",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-60-80S/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "dbfb068b-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（NW60S-80S）",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-60-80S/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "dbfb068b-src-manual-1",
+            "title": "取扱説明書 NW60S",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=63154d5661f774fb7d2d11701d466aa2",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "dbfb068b-src-manual-2",
+            "title": "取扱説明書 NW80S",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e593c562359c3c2e42a22b808d3383e7",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "dbfb068b-src-photo",
+            "title": "写真：クボタ NAVIWEL スペシャルクラス",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-60-80S/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

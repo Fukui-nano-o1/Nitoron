@@ -1,0 +1,130 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "5707d6e8-45d2-4b13-8372-60332c704e13",
+      "title": "【カタログ解説】クボタ TC40 自動鉄コーティングマシン 鉄コちゃん（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "5707d6e8-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "5707d6e8-002",
+          "type": "text",
+          "text": "水稲直播用の種籾を鉄コーティングする機器。専用ミキサと組み合わせて使います。"
+        },
+        {
+          "id": "5707d6e8-003",
+          "type": "bullet",
+          "text": "用途：水稲直播用の種籾処理"
+        },
+        {
+          "id": "5707d6e8-004",
+          "type": "bullet",
+          "text": "組み合わせ：専用ミキサKNGM-3M7TC（別売）"
+        },
+        {
+          "id": "5707d6e8-005",
+          "type": "bullet",
+          "text": "販売状況：在庫限り"
+        },
+        {
+          "id": "5707d6e8-006",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "5707d6e8-007",
+          "type": "text",
+          "text": "TC40"
+        },
+        {
+          "id": "5707d6e8-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "5707d6e8-009",
+          "type": "text",
+          "text": "掲載写真：TC40（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/6f04bb57d5c9913c6dd50bd586f1b6ee/tetsuko-TC40_card%20%281%29.jpg",
+        "summary": "水稲直播用の種籾を鉄コーティングする機器。専用ミキサと組み合わせて使います。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "5707d6e8-src-product",
+            "title": "クボタ 製品ページ TC40",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/tetsuko-TC40/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5707d6e8-src-catalog",
+            "title": "クボタ 製品カタログ 自動鉄コーティングマシン 鉄コちゃん",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/tetsuko-TC40/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5707d6e8-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（TC40）",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/tetsuko-TC40/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5707d6e8-src-manual-1",
+            "title": "取扱説明書 鉄コちゃん TC40",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=75455e062929d32a333868084286bb68",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5707d6e8-src-photo",
+            "title": "写真：クボタ 自動鉄コーティングマシン 鉄コちゃん",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/tetsuko-TC40/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

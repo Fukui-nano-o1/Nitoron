@@ -1,0 +1,62 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "WRN6100",
+  "productName": "WORLD コンバイン",
+  "summary": "100馬力・6条刈りのコンバインです。",
+  "category": "コンバイン",
+  "models": [
+    "WRN6100"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "WRN6100（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "100馬力",
+      "source": "product"
+    },
+    {
+      "label": "条数",
+      "value": "6条刈",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/WRN-6100/",
+      "checkedAt": "2026-09-16",
+      "sha256": "9753c82206a7cb729bbe809a4770365bc1a703d5a448cbc12ff23c168547355e"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/WRN-6100/?nav=catalog",
+      "documents": [
+        {
+          "title": "WORLD WRN6100",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0025-07.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/WRN-6100/",
+      "sha256": "12d567834a5b46dc3d19792a87419a4073f273b729164ebb1821ae375a2e1971"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（WRN6100）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/WRN-6100/?nav=manual",
+      "sha256": "e2c910d2af890fc9267317dfc7abfcbd749a0213efc67017c7099967b35a6561"
+    },
+    "manuals": [
+      {
+        "title": "WORLD WRN6100",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dda04f9d634145a9c68d5dfe53b21272"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

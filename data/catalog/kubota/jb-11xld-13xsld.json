@@ -1,0 +1,70 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "JB13XSLDSLH130",
+  "productName": "Bull Star EXTRA ローダ専用機",
+  "summary": "13.5馬力のローダ専用トラクタ。在庫限りの製品です。",
+  "category": "トラクタ",
+  "models": [
+    "JB13XSLDSLH130"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "JB13XSLDSLH130（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "13.5馬力",
+      "source": "product"
+    },
+    {
+      "label": "販売状況",
+      "value": "在庫限り",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11XLD-13XSLD/",
+      "checkedAt": "2026-09-16",
+      "sha256": "bb3adf37299693eda1ff1c2b9426c600f0d675b189fd9aae2a21ac2ea2c93424"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11XLD-13XSLD/?nav=catalog",
+      "documents": [
+        {
+          "title": "ブルスター エクストラ ショベルローダ JB11XLDJSLH130・JB13XSLDSLH130",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0011-03.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/JB-11XLD-13XSLD/",
+      "sha256": "6bbf8c1bda9e720de6cce1e6af19a5bdd8cd336d167b7ff52975ee990cbeb8a0"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（JB13XSLDSLH130）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11XLD-13XSLD/?nav=manual",
+      "sha256": "6806f14d802a35e022b2fea84bf23acfc0330f4601a4c27125f59ee42818695d"
+    },
+    "manuals": [
+      {
+        "title": "SLH131",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cb16b8498f74ba6b6a6873518624168c"
+      },
+      {
+        "title": "JB11X",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e5f6ad6ce374177eef023bf5d0c018b6"
+      },
+      {
+        "title": "JB13X",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fde9264cf376fffe2ee4ddf4a988880d"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

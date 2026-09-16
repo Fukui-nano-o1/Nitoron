@@ -1,0 +1,108 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "a8b61a1c-8743-4a06-828f-1c1e3371b72f",
+      "title": "【カタログ解説】クボタ ライスセンター 乾燥・調製施設（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "a8b61a1c-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "a8b61a1c-002",
+          "type": "text",
+          "text": "収穫後の乾燥・調製から出荷までをつなぐ施設。処理量に合わせて設備を組み合わせます。"
+        },
+        {
+          "id": "a8b61a1c-003",
+          "type": "bullet",
+          "text": "工程：乾燥・調製・出荷"
+        },
+        {
+          "id": "a8b61a1c-004",
+          "type": "h2",
+          "text": "施設の構成"
+        },
+        {
+          "id": "a8b61a1c-005",
+          "type": "text",
+          "text": "処理量や運用に合わせ、乾燥機・調製機器・搬送設備などを組み合わせます。"
+        },
+        {
+          "id": "a8b61a1c-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "a8b61a1c-007",
+          "type": "text",
+          "text": "掲載写真：ライスセンター（公式シリーズ掲載例）。施設の構成は計画によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/505b98afad22657c6616b851b2cf761d/rice_center_card%20%282%29.jpg",
+        "summary": "収穫後の乾燥・調製から出荷までをつなぐ施設。処理量に合わせて設備を組み合わせます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "a8b61a1c-src-product",
+            "title": "クボタ 製品ページ ライスセンター",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/rice-center/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "a8b61a1c-src-catalog",
+            "title": "クボタ 製品カタログ 乾燥・調製施設",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/9-20-3-0012-03.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "a8b61a1c-src-photo",
+            "title": "写真：クボタ 乾燥・調製施設",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/rice-center/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

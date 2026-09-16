@@ -1,0 +1,119 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "a838e2c0-d5b9-4021-8a5f-db046f439d6a",
+      "title": "【カタログ解説】クボタ DR575-6130 DIONITH（コンバイン）",
+      "category": "コンバイン",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "a838e2c0-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "a838e2c0-002",
+          "type": "text",
+          "text": "5条刈り・6条刈りのコンバイン。75〜130馬力の型式があります。"
+        },
+        {
+          "id": "a838e2c0-003",
+          "type": "bullet",
+          "text": "馬力：75〜130馬力"
+        },
+        {
+          "id": "a838e2c0-004",
+          "type": "bullet",
+          "text": "条数：5・6条刈"
+        },
+        {
+          "id": "a838e2c0-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "a838e2c0-006",
+          "type": "text",
+          "text": "DR575 / DR595 / DR6115 / DR6130"
+        },
+        {
+          "id": "a838e2c0-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "a838e2c0-008",
+          "type": "text",
+          "text": "掲載写真：DR575-6130（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "コンバイン",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/608551d1e76c67771c410b0399639188/dionith_card%20%282%29.jpg",
+        "summary": "5条刈り・6条刈りのコンバイン。75〜130馬力の型式があります。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "a838e2c0-src-product",
+            "title": "クボタ 製品ページ DR575-6130",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-575-6130/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "a838e2c0-src-catalog",
+            "title": "クボタ 製品カタログ DIONITH",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-575-6130/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "a838e2c0-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（DR575-6130）",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-575-6130/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "a838e2c0-src-photo",
+            "title": "写真：クボタ DIONITH",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-575-6130/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

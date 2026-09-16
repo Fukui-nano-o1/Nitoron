@@ -12,11 +12,16 @@ export function validateOverview(entry, photo) {
   if (entry.schema !== 'nitoron-catalog/2' || entry.coverage !== 'product-overview') fail('製品概要の形式が必要です')
   for (const key of ['maker', 'series', 'productName', 'category', 'summary', 'checkedAt', 'photoModel']) if (!entry[key]?.trim()) fail(`${key} がありません`)
   if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.checkedAt)) fail('確認日の形式が違います')
-  if (!entry.models?.length || entry.models.some(model => !model.trim()) || new Set(entry.models).size !== entry.models.length) fail('型式が空または重複しています')
+  if (entry.modelPolicy === 'project-specific') {
+    if (!Array.isArray(entry.models) || entry.models.length || !entry.configurationNote?.trim()) fail('施設は型式を作らず、構成を記載します')
+  } else {
+    if (entry.modelPolicy || !entry.models?.length || entry.models.some(model => !model.trim()) || new Set(entry.models).size !== entry.models.length) fail('型式が空または重複しています')
+  }
   const official = url => { try { const u = new URL(url); return u.protocol === 'https:' && u.hostname === 'agriculture.kubota.co.jp' } catch { return false } }
   if (!official(entry.sources?.product?.url) || !entry.sources.product.url.includes('/product/')) fail('公式製品ページが必要です')
-  if (!official(entry.sources?.catalog?.url)) fail('公式カタログの参照先が必要です')
-  if (!official(entry.sources?.manualIndex?.url)) fail('取扱説明書の参照先が必要です')
+  const notListed = ref => ref?.availability === 'not-listed' && !ref.url && ref.checkedAt === entry.checkedAt
+  if (!official(entry.sources?.catalog?.url) && !notListed(entry.sources?.catalog)) fail('公式カタログの参照先または未掲載の確認が必要です')
+  if (!official(entry.sources?.manualIndex?.url) && !(entry.modelPolicy === 'project-specific' && notListed(entry.sources?.manualIndex))) fail('取扱説明書の参照先が必要です')
   for (const manual of entry.sources.manuals || []) if (!manual.title || !official(manual.url) || !/[?&]hash=[a-f0-9]{32}$/.test(manual.url)) fail('取扱説明書の型式またはURLが不正です')
   if (!entry.facts?.length || entry.facts.some(f => !f.label || !f.value || f.source !== 'product')) fail('各項目に製品ページの根拠が必要です')
   if (entry.symptoms?.length || entry.machineRef) fail('製品概要には未確認の修理案内・3Dを付けません')
@@ -30,8 +35,9 @@ export function buildOverview(entry, photo) {
   const block = (type, text) => ({ id: `${id.slice(0, 8)}-${String(++n).padStart(3, '0')}`, type, text })
   const blocks = [block('h2', '製品の概要'), block('text', entry.summary),
     ...entry.facts.map(f => block('bullet', `${f.label}：${f.value}`)),
-    block('h2', '対象の型式'), block('text', entry.models.join(' / ')),
-    block('h2', '写真について'), block('text', `掲載写真：${entry.photoModel}。装備は型式・仕様によって異なります。`),
+    block('h2', entry.modelPolicy === 'project-specific' ? '施設の構成' : '対象の型式'),
+    block('text', entry.modelPolicy === 'project-specific' ? entry.configurationNote : entry.models.join(' / ')),
+    block('h2', '写真について'), block('text', `掲載写真：${entry.photoModel}。${entry.modelPolicy === 'project-specific' ? '施設の構成は計画によって異なります。' : '装備は型式・仕様によって異なります。'}`),
   ]
   const source = (key, title, url) => ({ id: `${id.slice(0, 8)}-src-${key}`, title, url, date: entry.checkedAt })
   const meta = { ...emptyMeta('trouble'), inputMode: 'free',
@@ -39,9 +45,9 @@ export function buildOverview(entry, photo) {
     summary: entry.summary, coverUrl: photo.url,
     sources: [
       source('product', `${entry.maker} 製品ページ ${entry.series}`, entry.sources.product.url),
-      source('catalog', `${entry.maker} 製品カタログ ${entry.productName}`, entry.sources.catalog.url),
-      source('manual-index', entry.sources.manualIndex.title, entry.sources.manualIndex.url),
-      ...((entry.sources.manuals || []).length <= 4 ? entry.sources.manuals : []).map((m, i) => source(`manual-${i + 1}`, `取扱説明書 ${m.title}`, m.url)),
+      ...(entry.sources.catalog.url ? [source('catalog', `${entry.maker} 製品カタログ ${entry.productName}`, entry.sources.catalog.url)] : []),
+      ...(entry.sources.manualIndex.url ? [source('manual-index', entry.sources.manualIndex.title, entry.sources.manualIndex.url)] : []),
+      ...((entry.sources.manuals || []).length <= 4 ? (entry.sources.manuals || []) : []).map((m, i) => source(`manual-${i + 1}`, `取扱説明書 ${m.title}`, m.url)),
       photo.source,
     ] }
   return { id, title: `【カタログ解説】${entry.maker} ${entry.series} ${entry.productName}（${entry.category}）`,

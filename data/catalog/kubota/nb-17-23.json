@@ -1,0 +1,85 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "NB17-23",
+  "productName": "GRANOVA",
+  "summary": "17〜22.5馬力のトラクタ。グラノバの在庫限りのシリーズです。",
+  "category": "トラクタ",
+  "models": [
+    "NB17",
+    "NB19(PC)",
+    "NB21(PC)",
+    "NB23(PC)"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "NB17-23（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "17〜22.5馬力",
+      "source": "product"
+    },
+    {
+      "label": "販売状況",
+      "value": "在庫限り",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-17-23/",
+      "checkedAt": "2026-09-16",
+      "sha256": "55ed65c347d77db1a8540d95a17ff3337e05159cd208b593813b21224b2f30c1"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-17-23/?nav=catalog",
+      "documents": [
+        {
+          "title": "GRANOVA NB17・19(-PC)・21(-PC)・23(-PC)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0023-04.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/NB-17-23/",
+      "sha256": "99c8f4f8ffc8bb86fd93463064873c594f45b4ddd5e4ce8d6f9b3f7720f4d131"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NB17-23）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-17-23/?nav=manual",
+      "sha256": "d9f6c7e160048d0455d3742507eeb52c839090969a644edd21a98f9a1eaeb643"
+    },
+    "manuals": [
+      {
+        "title": "NB17",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=792c7b5aae4a79e78aaeda80516ae2ac"
+      },
+      {
+        "title": "NB19",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=79a49b3e3762632813f9e35f4ba53d6c"
+      },
+      {
+        "title": "NB19-GS-H(直進アシスト機能編)",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f52378e14237225a6f6c7d802dc6abbd"
+      },
+      {
+        "title": "NB21",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4e0d67e54ad6626e957d15b08ae128a6"
+      },
+      {
+        "title": "NB23",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=359f38463d487e9e29bd20e24f0c050a"
+      },
+      {
+        "title": "NB23F-GS-H(直進アシスト機能編)",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ad3019b856147c17e82a5bead782d2a8"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

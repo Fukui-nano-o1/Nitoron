@@ -1,0 +1,61 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "K-CR718MCS",
+  "productName": "クリーン精米屋 もみすり仕様",
+  "summary": "もみからも精米できる、もみすり機能付きのクリーン精米屋です。",
+  "category": "稲作関連機器",
+  "models": [
+    "K-CR718MCS"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "K-CR718MCS（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "仕様",
+      "value": "もみすり機能付き",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR718MCS/",
+      "checkedAt": "2026-09-16",
+      "sha256": "5f48d5ec8d5410a76174d66a388be1568d437304d70839e17a14be8bbbedc1ac"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR718MCS/?nav=catalog",
+      "documents": [
+        {
+          "title": "クリーン精米屋K-CR718MCS(もみすり仕様)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/8-10-2-0030-02.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR718MCS/",
+      "sha256": "fe95b2b8da0206a97e04530e446362eceefa87cb8ae95acbf7fabe58db36b769"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（K-CR718MCS）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/seimai-K-CR718MCS/?nav=manual",
+      "sha256": "cf8e63f4a002530bbbedb133e7507b379f1b208840f2760eed11ca5ccda1269b"
+    },
+    "manuals": [
+      {
+        "title": "K-CR718MCS（本冊子）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=5e9f92a01c986bafcabbafd145520b13"
+      },
+      {
+        "title": "K-CR718MCS（設定マニュアル）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=da4f21d00b1992e0b25f463b722dcc6a"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

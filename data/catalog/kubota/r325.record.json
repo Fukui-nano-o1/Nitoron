@@ -1,0 +1,125 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "ad3cb374-fb34-400f-8bc7-cba2e328ba5a",
+      "title": "【カタログ解説】クボタ R325 スペシャル コンバイン（コンバイン）",
+      "category": "コンバイン",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "ad3cb374-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "ad3cb374-002",
+          "type": "text",
+          "text": "25馬力・3条刈りのコンバインです。"
+        },
+        {
+          "id": "ad3cb374-003",
+          "type": "bullet",
+          "text": "馬力：25馬力"
+        },
+        {
+          "id": "ad3cb374-004",
+          "type": "bullet",
+          "text": "条数：3条刈"
+        },
+        {
+          "id": "ad3cb374-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "ad3cb374-006",
+          "type": "text",
+          "text": "R325"
+        },
+        {
+          "id": "ad3cb374-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "ad3cb374-008",
+          "type": "text",
+          "text": "掲載写真：R325（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "コンバイン",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/f915195207386e5a49ea81afec968bb1/130th_r325_card.jpg",
+        "summary": "25馬力・3条刈りのコンバインです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "ad3cb374-src-product",
+            "title": "クボタ 製品ページ R325",
+            "url": "https://agriculture.kubota.co.jp/product/combine/R325/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ad3cb374-src-catalog",
+            "title": "クボタ 製品カタログ スペシャル コンバイン",
+            "url": "https://agriculture.kubota.co.jp/product/combine/R325/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ad3cb374-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（R325）",
+            "url": "https://agriculture.kubota.co.jp/product/combine/R325/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ad3cb374-src-manual-1",
+            "title": "取扱説明書 R325",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=98986c005e5def2da341b4e0627d4712",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ad3cb374-src-photo",
+            "title": "写真：クボタ スペシャル コンバイン",
+            "url": "https://agriculture.kubota.co.jp/product/combine/R325/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

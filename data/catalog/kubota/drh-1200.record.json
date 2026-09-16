@@ -1,0 +1,126 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "3b4ee449-4c15-4ac1-8c17-462460009941",
+      "title": "【カタログ解説】クボタ DRH1200 汎用コンバイン（コンバイン）",
+      "category": "コンバイン",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "3b4ee449-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "3b4ee449-002",
+          "type": "text",
+          "text": "120馬力の汎用コンバイン。稲・麦・大豆の収穫に対応します。"
+        },
+        {
+          "id": "3b4ee449-003",
+          "type": "bullet",
+          "text": "馬力：120馬力"
+        },
+        {
+          "id": "3b4ee449-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "3b4ee449-005",
+          "type": "text",
+          "text": "DRH1200"
+        },
+        {
+          "id": "3b4ee449-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "3b4ee449-007",
+          "type": "text",
+          "text": "掲載写真：DRH1200（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "コンバイン",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/2f0d6073db2317909680efe70437159d/DRH-1200_card.jpg",
+        "summary": "120馬力の汎用コンバイン。稲・麦・大豆の収穫に対応します。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "3b4ee449-src-product",
+            "title": "クボタ 製品ページ DRH1200",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DRH-1200/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "3b4ee449-src-catalog",
+            "title": "クボタ 製品カタログ 汎用コンバイン",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DRH-1200/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "3b4ee449-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（DRH1200）",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DRH-1200/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "3b4ee449-src-manual-1",
+            "title": "取扱説明書 DRH1200",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=685ac8cadc1be5ac98da9556bc1c8d9e",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "3b4ee449-src-manual-2",
+            "title": "取扱説明書 CHD1200",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9d068c869fd3e03fc606ec297fcd00be",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "3b4ee449-src-photo",
+            "title": "写真：クボタ 汎用コンバイン",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DRH-1200/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

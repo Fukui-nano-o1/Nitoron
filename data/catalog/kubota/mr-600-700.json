@@ -1,0 +1,81 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "MR600-700",
+  "productName": "REXIA",
+  "summary": "60〜70馬力のトラクタ。レクシアのシリーズです。",
+  "category": "トラクタ",
+  "models": [
+    "MR600H",
+    "MR650H",
+    "MR700H",
+    "MR650H(PC)",
+    "MR700H(PC)"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "MR600-700（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "60〜70馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-600-700/",
+      "checkedAt": "2026-09-16",
+      "sha256": "c123209c7eccffdf50615ca65c6ae050bca9914efc0f0b7a6a81d154553f0fdf"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-600-700/?nav=catalog",
+      "documents": [
+        {
+          "title": "レクシアMR600H/650H/700H 総合カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0034-07n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/MR-600-700/",
+      "sha256": "9674bf5f74e65f5dd932f6a77d776892f9acbce0923bf5ff0c64d4ee4cff63ca"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（MR600-700）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-600-700/?nav=manual",
+      "sha256": "9e179eb67c692001a555998dcb18a42c1b451df7fcc69e83f0fbe4bc489ebba5"
+    },
+    "manuals": [
+      {
+        "title": "MR600H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c70daf247944fe3add32218f914c75a6"
+      },
+      {
+        "title": "MR600HGS：～10139",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a928731e103dfc64c0027fa84709689e"
+      },
+      {
+        "title": "MR650H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=01e9565cecc4e989123f9620c1d09c09"
+      },
+      {
+        "title": "MR650HGS：～10425",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7d2a383e54274888b4b73b97e1aaa491"
+      },
+      {
+        "title": "MR700H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8edd72158ccd2a879f79cb2538568fdc"
+      },
+      {
+        "title": "MR700HGS：～11056",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9308b0d6e5898366a4a986bc33f3d3e7"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

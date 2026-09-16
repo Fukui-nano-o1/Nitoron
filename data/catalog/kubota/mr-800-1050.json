@@ -1,0 +1,124 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "MR800-1050",
+  "productName": "REXIA",
+  "summary": "80〜105馬力のトラクタ。レクシアのシリーズです。",
+  "category": "トラクタ",
+  "models": [
+    "MR800(H)(PC)",
+    "MR900(H)(PC)",
+    "MR1000(H)(PC)",
+    "MR1050H(PC)"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "MR800-1050（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "80〜105馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050/",
+      "checkedAt": "2026-09-16",
+      "sha256": "ad6136aa113943fc356db890604a665c281debe3616d6f4336e5e4969d3a121d"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050/?nav=catalog",
+      "documents": [
+        {
+          "title": "REXIA MR800(H)(PC)・MR900(H)(PC)・MR1000(H)(PC)・MR1050H(PC)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0038-03n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050/",
+      "sha256": "0aaaaa62bfedbeaa0d2fd4e139b45a5ad2edbb69530d73560c53d4be36ac6b8c"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（MR800-1050）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050/?nav=manual",
+      "sha256": "9ba4e97f0f9ad7a01e19b13f390585d792b5b8947289a3ab8a4e069f8708fd2d"
+    },
+    "manuals": [
+      {
+        "title": "MR800",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d10ec7c16cbe9de8fbb1c42787c3ec26"
+      },
+      {
+        "title": "MR800H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4f87658ef0de194413056248a00ce009"
+      },
+      {
+        "title": "MR800H-PC",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=33ebd5b07dc7e407752fe773eed20635"
+      },
+      {
+        "title": "MR800HGS［直進アシスト機能編］",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=5fc7c9bd1fcb12799f02da8adfa4954f"
+      },
+      {
+        "title": "MR900",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0e55666a4ad822e0e34299df3591d979"
+      },
+      {
+        "title": "MR900H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c73dfe6c630edb4c1692db67c510f65c"
+      },
+      {
+        "title": "MR900H-PC",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=bcc0d400288793e8bdcd7c19a8ac0c2b"
+      },
+      {
+        "title": "MR900HGS［直進アシスト機能編］",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d6525aa8638c1d8d4da535fbb1a5fc80"
+      },
+      {
+        "title": "MR1000-AT",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=996009f2374006606f4c0b0fda878af1"
+      },
+      {
+        "title": "MR1000H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dfd7468ac613286cdbb40872c8ef3b06"
+      },
+      {
+        "title": "MR1000H-PC",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f3f1b7fc5a8779a9e618e1f23a7b7860"
+      },
+      {
+        "title": "MR1000HGS［直進アシスト機能編］",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9b8f0779badbad3b46d6718ee95a68ff"
+      },
+      {
+        "title": "MR1050H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1ee3dfcd8a0645a25a35977997223d22"
+      },
+      {
+        "title": "MR1050H-AT",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2a50e9c2d6b89b95bcb416d6857f8b45"
+      },
+      {
+        "title": "MR1050H-PC",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f9be311e65d81a9ad8150a60844bb94c"
+      },
+      {
+        "title": "MR1050H-PCAT",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dc960c46c38bd16e953d97cdeefdbc68"
+      },
+      {
+        "title": "MR1050HGS［直進アシスト機能編］",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d90e5b6628b4291225cba0bdc643c295"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

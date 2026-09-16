@@ -1,0 +1,119 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "6bbd4cf6-6780-4c26-89f3-297be1376d44",
+      "title": "【カタログ解説】クボタ SR-95KJ-1000H ニューきんぱ播種機（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "6bbd4cf6-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "6bbd4cf6-002",
+          "type": "text",
+          "text": "育苗箱への播種に使うSRシリーズ。作業規模に合わせた機種を選べます。"
+        },
+        {
+          "id": "6bbd4cf6-003",
+          "type": "bullet",
+          "text": "用途：育苗箱への播種"
+        },
+        {
+          "id": "6bbd4cf6-004",
+          "type": "bullet",
+          "text": "販売状況：SR-95KJのみ在庫限り"
+        },
+        {
+          "id": "6bbd4cf6-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "6bbd4cf6-006",
+          "type": "text",
+          "text": "SR-95KJ / SR-285K / SR-125KWD / SR-285KRW / SR-450KWD / SR-1205 / SR-2005 / SR-2805 / SR-4500 / SR-6200 / SR-1000H"
+        },
+        {
+          "id": "6bbd4cf6-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "6bbd4cf6-008",
+          "type": "text",
+          "text": "掲載写真：SR-95KJ-1000H（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/1280663fe242c5a82ad04c2a9a58d1e3/hashu-SR-auto_card%20%281%29.jpg",
+        "summary": "育苗箱への播種に使うSRシリーズ。作業規模に合わせた機種を選べます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "6bbd4cf6-src-product",
+            "title": "クボタ 製品ページ SR-95KJ-1000H",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-auto/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6bbd4cf6-src-catalog",
+            "title": "クボタ 製品カタログ ニューきんぱ播種機",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-auto/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6bbd4cf6-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（SR-95KJ-1000H）",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-auto/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6bbd4cf6-src-photo",
+            "title": "写真：クボタ ニューきんぱ播種機",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-auto/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

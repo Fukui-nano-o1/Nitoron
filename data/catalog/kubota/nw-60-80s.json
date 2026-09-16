@@ -1,0 +1,62 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "NW60S-80S",
+  "productName": "NAVIWEL スペシャルクラス",
+  "summary": "6条植え・8条植えのナビウェル。田植え作業を支援する機能を備えたシリーズです。",
+  "category": "田植機",
+  "models": [
+    "NW60S",
+    "NW80S"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "NW60S-80S（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "条数",
+      "value": "6・8条植",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-60-80S/",
+      "checkedAt": "2026-09-16",
+      "sha256": "7a4c2fd4a1a68647a482c839e2533b5a3dec911adbedf1660ebd3e0ca2947e38"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-60-80S/?nav=catalog",
+      "documents": [
+        {
+          "title": "NW60S/80S カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0031-03.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/NW-60-80S/",
+      "sha256": "1c05e2efce01b6fa29a30acbc5a700c5e18eac428ec5e15e3127eefe2fca1244"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NW60S-80S）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/NW-60-80S/?nav=manual",
+      "sha256": "6194ed222b3ec85c9223e7bd75fc48de4d6f00ae2950b57daead5358e2bfd9ab"
+    },
+    "manuals": [
+      {
+        "title": "NW60S",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=63154d5661f774fb7d2d11701d466aa2"
+      },
+      {
+        "title": "NW80S",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e593c562359c3c2e42a22b808d3383e7"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "ff7904cc-aa7f-4ebe-8c2d-acc5fe9de4f7",
+      "title": "【カタログ解説】クボタ WD6-8 WORLD 田植機（田植機）",
+      "category": "田植機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "ff7904cc-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "ff7904cc-002",
+          "type": "text",
+          "text": "6条植え・8条植えの田植機。ディーゼルエンジンを搭載しています。"
+        },
+        {
+          "id": "ff7904cc-003",
+          "type": "bullet",
+          "text": "条数：6・8条植"
+        },
+        {
+          "id": "ff7904cc-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "ff7904cc-005",
+          "type": "text",
+          "text": "WD6 / WD8"
+        },
+        {
+          "id": "ff7904cc-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "ff7904cc-007",
+          "type": "text",
+          "text": "掲載写真：WD6-8（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "田植機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/26c63b939214d7143b22485d2e58248a/WD-6-8_card.jpg",
+        "summary": "6条植え・8条植えの田植機。ディーゼルエンジンを搭載しています。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "ff7904cc-src-product",
+            "title": "クボタ 製品ページ WD6-8",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/WD-6-8/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ff7904cc-src-catalog",
+            "title": "クボタ 製品カタログ WORLD 田植機",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/WD-6-8/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ff7904cc-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（WD6-8）",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/WD-6-8/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ff7904cc-src-manual-1",
+            "title": "取扱説明書 WD6",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=217c0e01c1828e7279051f1b6675745d",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ff7904cc-src-manual-2",
+            "title": "取扱説明書 WD8",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9824f9c1543628a85bb51d2dd6fcf8a3",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ff7904cc-src-photo",
+            "title": "写真：クボタ WORLD 田植機",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/WD-6-8/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

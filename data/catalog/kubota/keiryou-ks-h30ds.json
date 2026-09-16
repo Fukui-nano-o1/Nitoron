@@ -1,0 +1,56 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "KS-H30DS",
+  "productName": "個袋出荷計量機",
+  "summary": "玄米などの個袋出荷用計量機。30kgの計量に対応する受注生産品です。",
+  "category": "稲作関連機器",
+  "models": [
+    "KS-H30DS"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "KS-H30DS（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "計量対象",
+      "value": "30kg個袋",
+      "source": "product"
+    },
+    {
+      "label": "販売状況",
+      "value": "受注生産",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H30DS/",
+      "checkedAt": "2026-09-16",
+      "sha256": "18b4268168869f200c835f21fcd3c324b450e4f1464b5856067b47aafd205273"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H30DS/?nav=catalog",
+      "documents": [
+        {
+          "title": "KS-H30DS",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/9-2105-1.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H30DS/",
+      "sha256": "bc6d26d2d840d2e9307ca40f730157939433cf22ee5dce8f294ffb888afb1384"
+    },
+    "manualIndex": {
+      "title": "取扱説明書検索（型式で探す）",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manuals": []
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

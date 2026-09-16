@@ -1,0 +1,44 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "育苗施設",
+  "productName": "種籾処理・播種・育苗設備",
+  "summary": "種籾の前処理から播種、出芽、緑化、硬化までをつなぐ育苗施設です。",
+  "category": "稲作関連機器",
+  "models": [],
+  "checkedAt": "2026-09-16",
+  "photoModel": "育苗施設（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "工程",
+      "value": "種籾前処理・播種・出芽・緑化・硬化",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/plant/",
+      "checkedAt": "2026-09-16",
+      "sha256": "b961cd25761c0bf3b997dbb0b1e9b971ece9de108e29666aab09dad04ec49ddc"
+    },
+    "catalog": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualIndex": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manuals": []
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "modelPolicy": "project-specific",
+  "configurationNote": "種籾前処理・播種・出芽・緑化・硬化の各設備を、育苗計画に合わせて組み合わせます。"
+}

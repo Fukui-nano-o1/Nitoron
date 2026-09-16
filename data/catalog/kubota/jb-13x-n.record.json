@@ -1,0 +1,125 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "8cb96126-b6e3-4652-8b36-fc4e319bdba8",
+      "title": "【カタログ解説】クボタ JB13XN Bull Star EXTRA 超幅狭仕様（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "8cb96126-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "8cb96126-002",
+          "type": "text",
+          "text": "13.5馬力の超幅狭仕様トラクタ。うね間の管理作業に使う在庫限りの製品です。"
+        },
+        {
+          "id": "8cb96126-003",
+          "type": "bullet",
+          "text": "馬力：13.5馬力"
+        },
+        {
+          "id": "8cb96126-004",
+          "type": "bullet",
+          "text": "販売状況：在庫限り"
+        },
+        {
+          "id": "8cb96126-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "8cb96126-006",
+          "type": "text",
+          "text": "JB13XN(M)"
+        },
+        {
+          "id": "8cb96126-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "8cb96126-008",
+          "type": "text",
+          "text": "掲載写真：JB13XN（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/3c4282c444a05b26bc0799af98ec511c/bullstar-extra_card.jpg",
+        "summary": "13.5馬力の超幅狭仕様トラクタ。うね間の管理作業に使う在庫限りの製品です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "8cb96126-src-product",
+            "title": "クボタ 製品ページ JB13XN",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "8cb96126-src-catalog",
+            "title": "クボタ 製品カタログ Bull Star EXTRA 超幅狭仕様",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "8cb96126-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（JB13XN）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "8cb96126-src-manual-1",
+            "title": "取扱説明書 JB13X",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fde9264cf376fffe2ee4ddf4a988880d",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "8cb96126-src-photo",
+            "title": "写真：クボタ Bull Star EXTRA 超幅狭仕様",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

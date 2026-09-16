@@ -1,0 +1,62 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "ST25-31",
+  "productName": "TERAST",
+  "summary": "25馬力・31馬力のトラクタ。テラストのシリーズです。",
+  "category": "トラクタ",
+  "models": [
+    "ST25(PC)",
+    "ST31(PC)"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "ST25-31（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "25/31馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/ST-25-31/",
+      "checkedAt": "2026-09-16",
+      "sha256": "573af629ded68a206ab31de8734a8b4b740b4fa1f595e03d369436fc1a5bf42c"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/ST-25-31/?nav=catalog",
+      "documents": [
+        {
+          "title": "テラストST25/ST31 マニュアルシフト仕様カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0049-02n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/ST-25-31/",
+      "sha256": "cd698752a54d9d9f57f7e6857885ab3e7ba5a2bc8b2bc8eb2b9a57d3b0e27d49"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（ST25-31）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/ST-25-31/?nav=manual",
+      "sha256": "9ec72266d0faee2569c01e2f6ffab11c8877d2d2c1dbb39c016b7f71388645b6"
+    },
+    "manuals": [
+      {
+        "title": "ST25",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=243be2818a23c980ad664f30f48e5d19"
+      },
+      {
+        "title": "ST31",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1c66f4627f1b9679f8db47d1287d7e98"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

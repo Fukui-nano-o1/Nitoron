@@ -1,0 +1,66 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "JB13XN",
+  "productName": "Bull Star EXTRA 超幅狭仕様",
+  "summary": "13.5馬力の超幅狭仕様トラクタ。うね間の管理作業に使う在庫限りの製品です。",
+  "category": "トラクタ",
+  "models": [
+    "JB13XN(M)"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "JB13XN（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "13.5馬力",
+      "source": "product"
+    },
+    {
+      "label": "販売状況",
+      "value": "在庫限り",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/",
+      "checkedAt": "2026-09-16",
+      "sha256": "91378488d18419ab24ac5b7b55f78df582faa049a63d8104c88b2a29a6eea122"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/?nav=catalog",
+      "documents": [
+        {
+          "title": "Bull Star EXTRA 超幅狭仕様 JB13XN(M) 白ネギ機械化一貫体系",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-10-2-0005-03.pdf"
+        },
+        {
+          "title": "Bull Star EXTRA 超幅狭仕様 JB13XN",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0032-03.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/",
+      "sha256": "162da36212a0d14e294eeabd55514987195a6d84afd1a47467db7b097add57fe"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（JB13XN）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/?nav=manual",
+      "sha256": "c9cf2dbbf47bd0fe77d95d560fdab164d9948a4bc60413f79348670490554dee"
+    },
+    "manuals": [
+      {
+        "title": "JB13X",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fde9264cf376fffe2ee4ddf4a988880d"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

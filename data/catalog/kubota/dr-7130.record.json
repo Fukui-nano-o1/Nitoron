@@ -1,0 +1,125 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "203a73a9-e48f-4979-8d8d-1c529e1eef4b",
+      "title": "【カタログ解説】クボタ DR7130 DIONITH（コンバイン）",
+      "category": "コンバイン",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "203a73a9-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "203a73a9-002",
+          "type": "text",
+          "text": "130馬力・7条刈りの自脱型コンバインです。"
+        },
+        {
+          "id": "203a73a9-003",
+          "type": "bullet",
+          "text": "馬力：130馬力"
+        },
+        {
+          "id": "203a73a9-004",
+          "type": "bullet",
+          "text": "条数：7条刈"
+        },
+        {
+          "id": "203a73a9-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "203a73a9-006",
+          "type": "text",
+          "text": "DR7130"
+        },
+        {
+          "id": "203a73a9-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "203a73a9-008",
+          "type": "text",
+          "text": "掲載写真：DR7130（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "コンバイン",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/be0c9f21645ef099fbbb75da026afba2/DR7130_card.jpg",
+        "summary": "130馬力・7条刈りの自脱型コンバインです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "203a73a9-src-product",
+            "title": "クボタ 製品ページ DR7130",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-7130/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "203a73a9-src-catalog",
+            "title": "クボタ 製品カタログ DIONITH",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-7130/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "203a73a9-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（DR7130）",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-7130/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "203a73a9-src-manual-1",
+            "title": "取扱説明書 DR7130",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2b346a0aa375a07f5a90a344a61416c4",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "203a73a9-src-photo",
+            "title": "写真：クボタ DIONITH",
+            "url": "https://agriculture.kubota.co.jp/product/combine/DR-7130/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

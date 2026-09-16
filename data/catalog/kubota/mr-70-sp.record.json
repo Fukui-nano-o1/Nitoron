@@ -1,0 +1,120 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "48e8d61d-85a0-4ffc-8987-7fe34b6fe531",
+      "title": "【カタログ解説】クボタ MR70 Special トラクタ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "48e8d61d-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "48e8d61d-002",
+          "type": "text",
+          "text": "70馬力のトラクタ。MR70スペシャルのシリーズです。"
+        },
+        {
+          "id": "48e8d61d-003",
+          "type": "bullet",
+          "text": "馬力：70馬力"
+        },
+        {
+          "id": "48e8d61d-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "48e8d61d-005",
+          "type": "text",
+          "text": "MR70 / MR70(PC)"
+        },
+        {
+          "id": "48e8d61d-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "48e8d61d-007",
+          "type": "text",
+          "text": "掲載写真：MR70（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/b032b32c142b00c5e30bad2164bc3174/mr70sp_card%20%281%29.jpg",
+        "summary": "70馬力のトラクタ。MR70スペシャルのシリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "48e8d61d-src-product",
+            "title": "クボタ 製品ページ MR70",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/MR-70-SP/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "48e8d61d-src-catalog",
+            "title": "クボタ 製品カタログ Special トラクタ",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/MR-70-SP/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "48e8d61d-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（MR70）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/MR-70-SP/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "48e8d61d-src-manual-1",
+            "title": "取扱説明書 MR70 130周年スペシャル",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=28e209b61a52482a0ae1cb9f5959c792",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "48e8d61d-src-photo",
+            "title": "写真：クボタ Special トラクタ",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/MR-70-SP/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

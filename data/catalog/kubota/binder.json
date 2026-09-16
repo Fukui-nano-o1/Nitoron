@@ -1,0 +1,72 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "RJ250-550",
+  "productName": "バインダー",
+  "summary": "稲を刈り取り、束ねる機械。1条刈りと2条刈りがあります。",
+  "category": "コンバイン",
+  "models": [
+    "RJ250",
+    "RJ350",
+    "RJ550"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "RJ250-550（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "条数",
+      "value": "1・2条刈",
+      "source": "product"
+    },
+    {
+      "label": "用途",
+      "value": "稲の刈取り・結束",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/binder/",
+      "checkedAt": "2026-09-16",
+      "sha256": "443e0827d94e0859cbed45dda17f9a2ba20d627e1a4b1b91c910d917141624bb"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/binder/?nav=catalog",
+      "documents": [
+        {
+          "title": "クボタバインダーRJ250(1輪1条刈)・RJ350(2輪1条刈)・RJ550(2輪2条刈) クボタハーベスタHS5000・6000・HS7000",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/4-10-2-0002-03n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/binder/",
+      "sha256": "57038ca58f02281abbfe5aa5e039fee7acf15c7302a6587e73804107e64bd9b2"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（RJ250-550）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/binder/?nav=manual",
+      "sha256": "a13c27c87e0bfa883524b51d6edb3bf4314638e16ff0a2cacde2348e4849c9c1"
+    },
+    "manuals": [
+      {
+        "title": "RJ250",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f18a6d1cde4b205199de8729a6637b42"
+      },
+      {
+        "title": "RJ350",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9597353e41e6957b5e7aa79214fcb256"
+      },
+      {
+        "title": "RJ550",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a2cc63e065705fe938a4dda49092966f"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

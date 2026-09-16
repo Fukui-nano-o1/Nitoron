@@ -1,0 +1,130 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "b3ba57de-2ca7-44eb-820a-db02b8ce8b94",
+      "title": "【カタログ解説】クボタ SR-21E 手動ばらまき機（稲作関連機器）",
+      "category": "稲作関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "b3ba57de-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "b3ba57de-002",
+          "type": "text",
+          "text": "手回しハンドルで播種・覆土を行う小型機。在庫限りの製品です。"
+        },
+        {
+          "id": "b3ba57de-003",
+          "type": "bullet",
+          "text": "方式：手動ハンドル"
+        },
+        {
+          "id": "b3ba57de-004",
+          "type": "bullet",
+          "text": "用途：播種・覆土"
+        },
+        {
+          "id": "b3ba57de-005",
+          "type": "bullet",
+          "text": "販売状況：在庫限り"
+        },
+        {
+          "id": "b3ba57de-006",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "b3ba57de-007",
+          "type": "text",
+          "text": "SR-21E"
+        },
+        {
+          "id": "b3ba57de-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "b3ba57de-009",
+          "type": "text",
+          "text": "掲載写真：SR-21E（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "稲作関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/8db4e20f1932c877ea80986e9d372342/hashu-SR-hand_card%20%281%29.jpg",
+        "summary": "手回しハンドルで播種・覆土を行う小型機。在庫限りの製品です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "b3ba57de-src-product",
+            "title": "クボタ 製品ページ SR-21E",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-hand/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b3ba57de-src-catalog",
+            "title": "クボタ 製品カタログ 手動ばらまき機",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-hand/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b3ba57de-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（SR-21E）",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-hand/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b3ba57de-src-manual-1",
+            "title": "取扱説明書 SR-21E",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=38651c4450f87348fcbe1f992746a954",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b3ba57de-src-photo",
+            "title": "写真：クボタ 手動ばらまき機",
+            "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-hand/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

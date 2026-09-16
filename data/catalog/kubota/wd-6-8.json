@@ -1,0 +1,62 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "WD6-8",
+  "productName": "WORLD 田植機",
+  "summary": "6条植え・8条植えの田植機。ディーゼルエンジンを搭載しています。",
+  "category": "田植機",
+  "models": [
+    "WD6",
+    "WD8"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "WD6-8（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "条数",
+      "value": "6・8条植",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/WD-6-8/",
+      "checkedAt": "2026-09-16",
+      "sha256": "ceff253dbcb1ee1a3f9eedce107a18701444b42488769080a4adfb044f0b2916"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/WD-6-8/?nav=catalog",
+      "documents": [
+        {
+          "title": "WORLD WD6(6条植)・WD8(8条植)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0029-03new.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/WD-6-8/",
+      "sha256": "25c7f57ca1ea26bef04cff89fd12d0767248ba5e2cca28dec9bdd78fcbd02b20"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（WD6-8）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/WD-6-8/?nav=manual",
+      "sha256": "b0f911e72493a274ea0d4e02c5bf97aa32b61b610b535512c58ef8d2db00c266"
+    },
+    "manuals": [
+      {
+        "title": "WD6",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=217c0e01c1828e7279051f1b6675745d"
+      },
+      {
+        "title": "WD8",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9824f9c1543628a85bb51d2dd6fcf8a3"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "NB21GS",
+  "productName": "直進アシスト付きトラクタ",
+  "summary": "21馬力のトラクタ。直進アシスト機能を備えた在庫限りの製品です。",
+  "category": "トラクタ",
+  "models": [
+    "NB21GS"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "NB21GS（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "21馬力",
+      "source": "product"
+    },
+    {
+      "label": "販売状況",
+      "value": "在庫限り",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-GS/",
+      "checkedAt": "2026-09-16",
+      "sha256": "98e2f8092f2aff391707e407797ca68f37470b69c05d970a56fcd2715a3fcace"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-GS/?nav=catalog",
+      "documents": [
+        {
+          "title": "NB21-GS",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-10-2-0003-05.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/NB-21-GS/",
+      "sha256": "9e3cbef22821ea9cb648b1756d8ec866eb591119c8b3c6834d9183136c8c6340"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（NB21GS）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-GS/?nav=manual",
+      "sha256": "edadce6463906dfda85302717a3ccb1c078cd71c0074630c950b815363d8039c"
+    },
+    "manuals": [
+      {
+        "title": "NB21-GS",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cd0dce8fca267bf1fb86cf43e18d5598"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

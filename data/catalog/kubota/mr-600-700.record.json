@@ -1,0 +1,114 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "55d2290a-80dd-46e0-8238-681eaa33c5d4",
+      "title": "【カタログ解説】クボタ MR600-700 REXIA（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "55d2290a-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "55d2290a-002",
+          "type": "text",
+          "text": "60〜70馬力のトラクタ。レクシアのシリーズです。"
+        },
+        {
+          "id": "55d2290a-003",
+          "type": "bullet",
+          "text": "馬力：60〜70馬力"
+        },
+        {
+          "id": "55d2290a-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "55d2290a-005",
+          "type": "text",
+          "text": "MR600H / MR650H / MR700H / MR650H(PC) / MR700H(PC)"
+        },
+        {
+          "id": "55d2290a-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "55d2290a-007",
+          "type": "text",
+          "text": "掲載写真：MR600-700（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/2bb356203853f564f96396cc97ea7bf0/MR-600-700_card.jpg",
+        "summary": "60〜70馬力のトラクタ。レクシアのシリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "55d2290a-src-product",
+            "title": "クボタ 製品ページ MR600-700",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/MR-600-700/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "55d2290a-src-catalog",
+            "title": "クボタ 製品カタログ REXIA",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/MR-600-700/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "55d2290a-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（MR600-700）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/MR-600-700/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "55d2290a-src-photo",
+            "title": "写真：クボタ REXIA",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/MR-600-700/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

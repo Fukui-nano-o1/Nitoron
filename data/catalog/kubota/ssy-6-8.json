@@ -1,0 +1,67 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "SSY6-8",
+  "productName": "移植同時側条施薬機",
+  "summary": "田植えと同時に施薬する装着機器。6条用と8条用があります。",
+  "category": "田植機",
+  "models": [
+    "SSY6",
+    "SSY8"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "SSY6-8（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "条数",
+      "value": "6条用・8条用",
+      "source": "product"
+    },
+    {
+      "label": "機器の区分",
+      "value": "田植機用の施薬装置",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/SSY-6-8/",
+      "checkedAt": "2026-09-16",
+      "sha256": "a9b2fce4ab8d82125c6470022833b3ee9def7d6abda33835cfd7c33ce8c375bf"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/SSY-6-8/?nav=catalog",
+      "documents": [
+        {
+          "title": "田植同時作業アタッチメントHSY series・CS series・SSY series",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-00-2-0008-03n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/SSY-6-8/",
+      "sha256": "d4f0f8d033506bfec642ac4d269b61dcd63d74d67314c63283afab1290cd82e7"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（SSY6-8）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/SSY-6-8/?nav=manual",
+      "sha256": "1c1cda02994dff7cdb9beeea363f0d560d4ea5ab9f9d72e045b889f76215fe32"
+    },
+    "manuals": [
+      {
+        "title": "殺虫殺菌剤施薬機（田植機用）SSY6",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=40173ea48d9567f1f393b20c855bb40b"
+      },
+      {
+        "title": "殺虫殺菌剤施薬機（田植機用）SSY8",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8bd39eae38511daad6152e84545e504d"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

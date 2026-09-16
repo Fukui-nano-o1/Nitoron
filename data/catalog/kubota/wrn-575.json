@@ -1,0 +1,62 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "WRN575",
+  "productName": "WORLD コンバイン",
+  "summary": "75馬力・5条刈りのコンバインです。",
+  "category": "コンバイン",
+  "models": [
+    "WRN575"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "WRN575（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "75馬力",
+      "source": "product"
+    },
+    {
+      "label": "条数",
+      "value": "5条刈",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/WRN-575/",
+      "checkedAt": "2026-09-16",
+      "sha256": "79b5902052541b667aacf8b08500dcf9313a41b208991600547a2dcb29bf746b"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/WRN-575/?nav=catalog",
+      "documents": [
+        {
+          "title": "WORLD WRN575(5条刈)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0029-04.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/WRN-575/",
+      "sha256": "8f2835914fb95471bea28d0f5d8042352659016ff030963d934216dd51c47f86"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（WRN575）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/WRN-575/?nav=manual",
+      "sha256": "e44d9e65df8bcb4876032eb8d1de9f79ded4f38b924328eb3430b88a7018fd10"
+    },
+    "manuals": [
+      {
+        "title": "WRN575",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=42fe880812925e520249e808937738d2"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

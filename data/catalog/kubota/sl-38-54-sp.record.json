@@ -1,0 +1,114 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "0f564a69-9d7e-4c89-88eb-1c98197641fd",
+      "title": "【カタログ解説】クボタ SL38HSP-54HSP Slugger マニュアルシフト仕様スペシャル（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "0f564a69-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "0f564a69-002",
+          "type": "text",
+          "text": "38〜54馬力のトラクタ。マニュアルシフト仕様のスラッガーです。"
+        },
+        {
+          "id": "0f564a69-003",
+          "type": "bullet",
+          "text": "馬力：38〜54馬力"
+        },
+        {
+          "id": "0f564a69-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "0f564a69-005",
+          "type": "text",
+          "text": "SL38HSP / SL45HSP / SL54HSP(PC)"
+        },
+        {
+          "id": "0f564a69-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "0f564a69-007",
+          "type": "text",
+          "text": "掲載写真：SL38HSP-54HSP（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/58f0a2cc1dbe97efe0e1b8f5a0de4283/sl38-54_pre_card.jpg",
+        "summary": "38〜54馬力のトラクタ。マニュアルシフト仕様のスラッガーです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "0f564a69-src-product",
+            "title": "クボタ 製品ページ SL38HSP-54HSP",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/SL-38-54-SP/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0f564a69-src-catalog",
+            "title": "クボタ 製品カタログ Slugger マニュアルシフト仕様スペシャル",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/SL-38-54-SP/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0f564a69-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（SL38HSP-54HSP）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/SL-38-54-SP/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0f564a69-src-photo",
+            "title": "写真：クボタ Slugger マニュアルシフト仕様スペシャル",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/SL-38-54-SP/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "0acce27e-fd78-46b1-8052-fec04c9bf253",
+      "title": "【カタログ解説】クボタ JB11X-19X Bull Star EXTRA（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "0acce27e-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "0acce27e-002",
+          "type": "text",
+          "text": "10.5〜19馬力の小型トラクタ。ブルスターエクストラの在庫限りのシリーズです。"
+        },
+        {
+          "id": "0acce27e-003",
+          "type": "bullet",
+          "text": "馬力：10.5〜19馬力"
+        },
+        {
+          "id": "0acce27e-004",
+          "type": "bullet",
+          "text": "販売状況：在庫限り"
+        },
+        {
+          "id": "0acce27e-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "0acce27e-006",
+          "type": "text",
+          "text": "JB11X / JB13XSP(PC) / JB15X(PC) / JB15XSPN / JB17X-PC / JB18XSP / JB19X(PC)"
+        },
+        {
+          "id": "0acce27e-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "0acce27e-008",
+          "type": "text",
+          "text": "掲載写真：JB11X-19X（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/73eb4cb3f9ea9dc3cfaf48267178568d/JB-11-19_card.jpg",
+        "summary": "10.5〜19馬力の小型トラクタ。ブルスターエクストラの在庫限りのシリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "0acce27e-src-product",
+            "title": "クボタ 製品ページ JB11X-19X",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11-19/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0acce27e-src-catalog",
+            "title": "クボタ 製品カタログ Bull Star EXTRA",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11-19/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0acce27e-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（JB11X-19X）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11-19/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0acce27e-src-photo",
+            "title": "写真：クボタ Bull Star EXTRA",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11-19/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

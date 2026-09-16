@@ -1,0 +1,67 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "M7-134-174",
+  "productName": "M7",
+  "summary": "130〜170馬力のトラクタ。M7-134・M7-154・M7-174をそろえるシリーズです。",
+  "category": "トラクタ",
+  "models": [
+    "M7-134",
+    "M7-154",
+    "M7-174"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "M7-134-174（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "130〜170馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M7-134-174/",
+      "checkedAt": "2026-09-16",
+      "sha256": "213cf45fcfdacdf96339efd8b5ccd8634d151e1a8c0340fdebcf5585c4a5db63"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M7-134-174/?nav=catalog",
+      "documents": [
+        {
+          "title": "M7 M7-134M7-154M7-174 カタログ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0036-02.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/M7-134-174/",
+      "sha256": "d595d2d16dc394fa60b66b41257ce8cbd3281f654e18456b77324c36d07a56df"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（M7-134-174）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M7-134-174/?nav=manual",
+      "sha256": "bee886eb637436fbf52368af865889283fee2db2c819e49b45eda23f01192f98"
+    },
+    "manuals": [
+      {
+        "title": "M7-134",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9e406957d45fcb6c6f38c2ada7bace91"
+      },
+      {
+        "title": "M7-154",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=56e6a93212e4482d99c84a639d254b67"
+      },
+      {
+        "title": "M7-174",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=afa299a4d1d8c52e75dd8a24c3ce534f"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

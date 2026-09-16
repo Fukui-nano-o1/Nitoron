@@ -1,0 +1,72 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "HS5000-7000",
+  "productName": "ハーベスタ",
+  "summary": "刈り取った稲の脱こくに使う機械。5馬力・6馬力・7馬力の型式があります。",
+  "category": "コンバイン",
+  "models": [
+    "HS5000",
+    "HS6000",
+    "HS7000"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "HS5000-7000（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "5・6・7馬力",
+      "source": "product"
+    },
+    {
+      "label": "用途",
+      "value": "脱こく",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/harvester/",
+      "checkedAt": "2026-09-16",
+      "sha256": "533d072bb7e1a75cabdf3f5e280d9940da00ac57788947e4f02bbac69a4a5dc0"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/harvester/?nav=catalog",
+      "documents": [
+        {
+          "title": "クボタバインダーRJ250(1輪1条刈)・RJ350(2輪1条刈)・RJ550(2輪2条刈) クボタハーベスタHS5000・6000・HS7000",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/4-10-2-0002-03n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/harvester/",
+      "sha256": "7b4f475afa1f701f48ebc4a2f08b6ec29bc974a5f543c6e9ba4695d1017b4990"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（HS5000-7000）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/harvester/?nav=manual",
+      "sha256": "238e3a8e62dbda78c9e259553eefcbcb387f0941a98fa881be7f0e447a0bad7a"
+    },
+    "manuals": [
+      {
+        "title": "HS5000",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=5e388103a391daabe3de1d76a6739ccd"
+      },
+      {
+        "title": "HS6000",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=11b921ef080f7736089c757404650e40"
+      },
+      {
+        "title": "HS7000",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6e2713a6efee97bacb63e52c54f0ada0"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

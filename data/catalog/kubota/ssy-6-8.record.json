@@ -1,0 +1,131 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "e8dbd4bf-1bf1-493a-84f5-74a44e4a0c34",
+      "title": "【カタログ解説】クボタ SSY6-8 移植同時側条施薬機（田植機）",
+      "category": "田植機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "e8dbd4bf-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "e8dbd4bf-002",
+          "type": "text",
+          "text": "田植えと同時に施薬する装着機器。6条用と8条用があります。"
+        },
+        {
+          "id": "e8dbd4bf-003",
+          "type": "bullet",
+          "text": "条数：6条用・8条用"
+        },
+        {
+          "id": "e8dbd4bf-004",
+          "type": "bullet",
+          "text": "機器の区分：田植機用の施薬装置"
+        },
+        {
+          "id": "e8dbd4bf-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "e8dbd4bf-006",
+          "type": "text",
+          "text": "SSY6 / SSY8"
+        },
+        {
+          "id": "e8dbd4bf-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "e8dbd4bf-008",
+          "type": "text",
+          "text": "掲載写真：SSY6-8（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "田植機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/3202947bd2035e78ab6d456368f02c74/ssy_card.jpg",
+        "summary": "田植えと同時に施薬する装着機器。6条用と8条用があります。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "e8dbd4bf-src-product",
+            "title": "クボタ 製品ページ SSY6-8",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/SSY-6-8/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e8dbd4bf-src-catalog",
+            "title": "クボタ 製品カタログ 移植同時側条施薬機",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/SSY-6-8/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e8dbd4bf-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（SSY6-8）",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/SSY-6-8/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e8dbd4bf-src-manual-1",
+            "title": "取扱説明書 殺虫殺菌剤施薬機（田植機用）SSY6",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=40173ea48d9567f1f393b20c855bb40b",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e8dbd4bf-src-manual-2",
+            "title": "取扱説明書 殺虫殺菌剤施薬機（田植機用）SSY8",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8bd39eae38511daad6152e84545e504d",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "e8dbd4bf-src-photo",
+            "title": "写真：クボタ 移植同時側条施薬機",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/SSY-6-8/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

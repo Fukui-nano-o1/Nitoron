@@ -1,0 +1,73 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "MR1000AH",
+  "productName": "Agri Robo トラクタ",
+  "summary": "100馬力のアグリロボトラクタです。",
+  "category": "トラクタ",
+  "models": [
+    "MR1000AH"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "MR1000AH（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "100馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-1000-AH/",
+      "checkedAt": "2026-09-16",
+      "sha256": "ebe7a6583fc640e047948927b39e654b1d3274b21cec6056fcd8a30197ccfc4d"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-1000-AH/?nav=catalog",
+      "documents": [
+        {
+          "title": "アグリロボトラクタ MR1000AH",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-30-2-0035-02n.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/MR-1000-AH/",
+      "sha256": "d28275e07ab16edebe46465f52dafb623dfcc17e1d733e597511962f255003a2"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（MR1000AH）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-1000-AH/?nav=manual",
+      "sha256": "56e57a42ac05da70a19b0414256c76dd696f44a49d47197a8ec7abd8b36d7dfe"
+    },
+    "manuals": [
+      {
+        "title": "MR1000AH-A",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4476b929e30dd0c4e8bdbcc82c6ba23a"
+      },
+      {
+        "title": "MR1000AH-A自動運転編",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=535ab76633d94208236a2e829ea6d888"
+      },
+      {
+        "title": "MR1000AH-OP",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7bb060764a818184ebb1cc0d43d382aa"
+      },
+      {
+        "title": "MR1000AH-OP自動運転編",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f29b38f160f87ae86df31cee1982066f"
+      },
+      {
+        "title": "MR1000AH-PC-OP",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=50905d7b2216bfeccb5b41016357176b"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

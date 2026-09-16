@@ -1,0 +1,126 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "88bdd856-667e-4bda-871b-c43077b0b36e",
+      "title": "【カタログ解説】クボタ NW10S NAVIWEL スペシャルクラス（田植機）",
+      "category": "田植機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "88bdd856-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "88bdd856-002",
+          "type": "text",
+          "text": "10条植えのナビウェル。植付けや施肥を支援する機能を備えたシリーズです。"
+        },
+        {
+          "id": "88bdd856-003",
+          "type": "bullet",
+          "text": "条数：10条植"
+        },
+        {
+          "id": "88bdd856-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "88bdd856-005",
+          "type": "text",
+          "text": "NW10S"
+        },
+        {
+          "id": "88bdd856-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "88bdd856-007",
+          "type": "text",
+          "text": "掲載写真：NW10S（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "田植機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/0c6cc4edf76905bafd1fe54a575f8bab/nw10s_card.jpg",
+        "summary": "10条植えのナビウェル。植付けや施肥を支援する機能を備えたシリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "88bdd856-src-product",
+            "title": "クボタ 製品ページ NW10S",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-10S/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "88bdd856-src-catalog",
+            "title": "クボタ 製品カタログ NAVIWEL スペシャルクラス",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-10S/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "88bdd856-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（NW10S）",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-10S/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "88bdd856-src-manual-1",
+            "title": "取扱説明書 NW10S",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c5cc17e395d3049b03e0f1ccebb02b4d",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "88bdd856-src-manual-2",
+            "title": "取扱説明書 NW10S-8",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6786f3c62fbf9021694f6e51cc07fe3c",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "88bdd856-src-photo",
+            "title": "写真：クボタ NAVIWEL スペシャルクラス",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-10S/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

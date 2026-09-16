@@ -1,0 +1,44 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "複合施設",
+  "productName": "育苗・乾燥調製・精米施設",
+  "summary": "育苗・乾燥調製・精米の設備を、一つの建物にまとめる施設です。",
+  "category": "稲作関連機器",
+  "models": [],
+  "checkedAt": "2026-09-16",
+  "photoModel": "複合施設（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "工程",
+      "value": "育苗・乾燥調製・精米",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/complex/",
+      "checkedAt": "2026-09-16",
+      "sha256": "a152e521cecd40dd2d8fb3de044278b9a93119c54dbd936d319ea4f3aa488e82"
+    },
+    "catalog": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualIndex": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manuals": []
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "modelPolicy": "project-specific",
+  "configurationNote": "育苗・乾燥調製・精米の設備を、施設の計画に合わせて構成します。"
+}

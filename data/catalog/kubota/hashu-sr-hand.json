@@ -1,0 +1,67 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "SR-21E",
+  "productName": "手動ばらまき機",
+  "summary": "手回しハンドルで播種・覆土を行う小型機。在庫限りの製品です。",
+  "category": "稲作関連機器",
+  "models": [
+    "SR-21E"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "SR-21E（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "方式",
+      "value": "手動ハンドル",
+      "source": "product"
+    },
+    {
+      "label": "用途",
+      "value": "播種・覆土",
+      "source": "product"
+    },
+    {
+      "label": "販売状況",
+      "value": "在庫限り",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-hand/",
+      "checkedAt": "2026-09-16",
+      "sha256": "c9f459cd6954e265ef030494cc079e416bdcaec0ebc60b1475ba261b2727e783"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-hand/?nav=catalog",
+      "documents": [
+        {
+          "title": "水稲用播種機SRシリーズ",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-00-2-0013-09.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-hand/",
+      "sha256": "695bb278ce8997c6749c733bd1d8f68f67c53fda2d4e509e37b9cbb54de0758b"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（SR-21E）",
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/hashu-SR-hand/?nav=manual",
+      "sha256": "fa4e23869ddc9e7c8c5c1a18b3181a0789596a5a01735982b62aa438b1931b9e"
+    },
+    "manuals": [
+      {
+        "title": "SR-21E",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=38651c4450f87348fcbe1f992746a954"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "DR7130",
+  "productName": "DIONITH",
+  "summary": "130馬力・7条刈りの自脱型コンバインです。",
+  "category": "コンバイン",
+  "models": [
+    "DR7130"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "DR7130（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "130馬力",
+      "source": "product"
+    },
+    {
+      "label": "条数",
+      "value": "7条刈",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-7130/",
+      "checkedAt": "2026-09-16",
+      "sha256": "3f3220b8c95770f8b19bfe1a1b5a5333b35846ac698d8dc8aac2c9a68732ae00"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-7130/?nav=catalog",
+      "documents": [
+        {
+          "title": "DIONITH DR7130(7条刈)",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0028-03.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/DR-7130/",
+      "sha256": "ee210745c5e399fb797e9826af5af0c67c5229124b05af6627587614d27a0853"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（DR7130）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/DR-7130/?nav=manual",
+      "sha256": "4caa5f746d9b5237572e99e91e8c1f0b35c8eac550b47dfb5c14004b9d1cdd47"
+    },
+    "manuals": [
+      {
+        "title": "DR7130",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2b346a0aa375a07f5a90a344a61416c4"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

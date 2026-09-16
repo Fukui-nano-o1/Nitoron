@@ -1,0 +1,126 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "58ce2891-9e24-4331-82ff-c00df8419393",
+      "title": "【カタログ解説】クボタ SL280-350-SPF Slugger Uシフト・Uシャトル仕様スペシャル（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "58ce2891-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "58ce2891-002",
+          "type": "text",
+          "text": "28馬力・35馬力のトラクタ。Uシフト・Uシャトル仕様のスラッガーです。"
+        },
+        {
+          "id": "58ce2891-003",
+          "type": "bullet",
+          "text": "馬力：28/35馬力"
+        },
+        {
+          "id": "58ce2891-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "58ce2891-005",
+          "type": "text",
+          "text": "SL280SPF(PC) / SL350(H)SPF(PC)"
+        },
+        {
+          "id": "58ce2891-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "58ce2891-007",
+          "type": "text",
+          "text": "掲載写真：SL280-350-SPF（公式シリーズ掲載例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/6abaad7577c3fc2186896d59c63fd99d/SL-35-SP_card.jpg",
+        "summary": "28馬力・35馬力のトラクタ。Uシフト・Uシャトル仕様のスラッガーです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "58ce2891-src-product",
+            "title": "クボタ 製品ページ SL280-350-SPF",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-350-SP/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "58ce2891-src-catalog",
+            "title": "クボタ 製品カタログ Slugger Uシフト・Uシャトル仕様スペシャル",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-350-SP/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "58ce2891-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（SL280-350-SPF）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-350-SP/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "58ce2891-src-manual-1",
+            "title": "取扱説明書 SL280",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1f71e393b3809197ed66df836fe833e5",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "58ce2891-src-manual-2",
+            "title": "取扱説明書 SL350",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1f36c15d6a3d18d52e8d493bc8187cb9",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "58ce2891-src-photo",
+            "title": "写真：クボタ Slugger Uシフト・Uシャトル仕様スペシャル",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-350-SP/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

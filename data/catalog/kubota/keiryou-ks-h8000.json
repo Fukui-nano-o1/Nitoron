@@ -1,0 +1,51 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "KS-H8000-U-L",
+  "productName": "フレコン計量機 ミニトン",
+  "summary": "軒下高3mの建物にも設置できる、背の低いフレコン計量機ユニットです。",
+  "category": "稲作関連機器",
+  "models": [
+    "KS-H8000-U-L"
+  ],
+  "checkedAt": "2026-09-16",
+  "photoModel": "KS-H8000-U-L（公式シリーズ掲載例）",
+  "facts": [
+    {
+      "label": "設置の目安",
+      "value": "軒下高3m",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H8000/",
+      "checkedAt": "2026-09-16",
+      "sha256": "5e78e4d60210e74655a1d44841060b90e59b6d03ce9371b2bfc70aaa460b648c"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H8000/?nav=catalog",
+      "documents": [
+        {
+          "title": "スーパートン福郎KS-H8000-U-Lミニトン",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/9-20-3-0011-02.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/rice_equipment/keiryou-KS-H8000/",
+      "sha256": "72e4b418f5f9f0ed143dda27dd8d233bb9c8b256477be06c0f966eb13ad548c1"
+    },
+    "manualIndex": {
+      "title": "取扱説明書検索（型式で探す）",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manuals": []
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-category-listing",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}
