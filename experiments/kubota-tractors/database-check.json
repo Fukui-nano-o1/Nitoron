@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-09-16",
+  "projectId": "ycvbjzlqrxnwalhhgzat",
+  "operation": "18 additions; 2 guarded model-list updates",
+  "before": {
+    "exact_previous_records": 2,
+    "expected_existing_notes": 2,
+    "expected_existing_publications": 2,
+    "notes": 117,
+    "publications": 116,
+    "untouched_notes_hash": "440c5188fc496f6df6a8205e7868de10",
+    "untouched_publications_hash": "e6e924958d108b120d9e46906444575f"
+  },
+  "after": {
+    "exact_records": 20,
+    "notes": 135,
+    "publications": 134,
+    "tractor_cards": 42,
+    "untouched_notes_hash": "440c5188fc496f6df6a8205e7868de10",
+    "untouched_publications_hash": "e6e924958d108b120d9e46906444575f"
+  },
+  "exactRecords": 20,
+  "otherNotesAndPublicationsUnchanged": true,
+  "buildExitCode": 0
+}

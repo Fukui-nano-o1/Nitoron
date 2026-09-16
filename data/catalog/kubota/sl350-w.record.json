@@ -1,0 +1,124 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "4352f671-df70-416b-83dd-37e40c2be8dc",
+      "title": "【カタログ解説】クボタ SL350W 淡路島スペシャル（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "4352f671-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "4352f671-002",
+          "type": "text",
+          "text": "狭いほ場での作業向けに、全長・全幅を抑えたトラクター。水稲や玉葱などに使います。"
+        },
+        {
+          "id": "4352f671-003",
+          "type": "bullet",
+          "text": "馬力：35PS"
+        },
+        {
+          "id": "4352f671-004",
+          "type": "bullet",
+          "text": "用途：狭いほ場"
+        },
+        {
+          "id": "4352f671-005",
+          "type": "bullet",
+          "text": "おすすめの作物：水稲、玉葱、その他野菜"
+        },
+        {
+          "id": "4352f671-006",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "4352f671-007",
+          "type": "text",
+          "text": "SL350(H)W"
+        },
+        {
+          "id": "4352f671-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "4352f671-009",
+          "type": "text",
+          "text": "掲載写真：SL350(H)W（公式掲載の仕様例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/SL350KW.jpg",
+        "summary": "狭いほ場での作業向けに、全長・全幅を抑えたトラクター。水稲や玉葱などに使います。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "4352f671-src-product",
+            "title": "クボタ公式 特殊仕様トラクタ：SL350(H)W",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "4352f671-src-catalog",
+            "title": "クボタ 製品カタログ 淡路島スペシャル",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0038-07.pdf#page=13",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "4352f671-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "4352f671-src-photo",
+            "title": "写真：クボタ公式 SL350(H)W",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

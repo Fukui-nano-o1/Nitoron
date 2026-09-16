@@ -1,0 +1,129 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "c9a79276-6b5a-4f01-80f2-8e5c61b81c6f",
+      "title": "【カタログ解説】クボタ JB13X-HC・JB13XSHC ハイクリ仕様（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "c9a79276-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "c9a79276-002",
+          "type": "text",
+          "text": "キャベツなどの管理作業向けに、地上高を確保したトラクター。 在庫限りの製品です。"
+        },
+        {
+          "id": "c9a79276-003",
+          "type": "bullet",
+          "text": "馬力：13.5PS"
+        },
+        {
+          "id": "c9a79276-004",
+          "type": "bullet",
+          "text": "用途：野菜管理作業"
+        },
+        {
+          "id": "c9a79276-005",
+          "type": "bullet",
+          "text": "おすすめの作物：キャベツ"
+        },
+        {
+          "id": "c9a79276-006",
+          "type": "bullet",
+          "text": "販売状況：在庫限り（公式掲載）"
+        },
+        {
+          "id": "c9a79276-007",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "c9a79276-008",
+          "type": "text",
+          "text": "JB13X-HC / JB13XSHC"
+        },
+        {
+          "id": "c9a79276-009",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "c9a79276-010",
+          "type": "text",
+          "text": "掲載写真：JB13X-HC JB13XSHC（公式掲載の仕様例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB13X-HC.jpg",
+        "summary": "キャベツなどの管理作業向けに、地上高を確保したトラクター。 在庫限りの製品です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "c9a79276-src-product",
+            "title": "クボタ公式 特殊仕様トラクタ：JB13X-HC JB13XSHC",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_8f0d01472da8852d64b760a614729f2d",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c9a79276-src-catalog",
+            "title": "クボタ 製品カタログ ハイクリ仕様",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-2022-5.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c9a79276-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c9a79276-src-photo",
+            "title": "写真：クボタ公式 JB13X-HC JB13XSHC",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_8f0d01472da8852d64b760a614729f2d",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

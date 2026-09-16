@@ -1,0 +1,54 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "SL330K",
+  "productName": "果樹園スペシャル",
+  "category": "トラクタ",
+  "checkedAt": "2026-09-16",
+  "summary": "果樹園やハウスでの作業に合わせて、座席位置と車高を低くしたトラクター。",
+  "models": [
+    "SL330K(W)"
+  ],
+  "photoModel": "SL330K(W)（公式掲載の仕様例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "33PS",
+      "source": "product"
+    },
+    {
+      "label": "用途",
+      "value": "果樹園作業",
+      "source": "product"
+    },
+    {
+      "label": "おすすめの作物",
+      "value": "果樹全般",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_c9f88faa4f8154bf2df212a49f83b53b",
+      "title": "クボタ公式 特殊仕様トラクタ：SL330K(W)",
+      "checkedAt": "2026-09-16",
+      "sha256": "47678f8bf0a49f9f820c8a12828b7bacc12fecf2ca5f1508a98636070694c1ef"
+    },
+    "catalog": {
+      "title": "製品カタログはこちら（p.23）",
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0038-07.pdf#page=13"
+    },
+    "manualIndex": {
+      "title": "クボタ 取扱説明書検索",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manuals": []
+  },
+  "verification": {
+    "photo": "official-speciality-section",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

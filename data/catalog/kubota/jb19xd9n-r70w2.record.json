@@ -1,0 +1,129 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "7a6c416c-2c9c-4be0-83db-34ac53121375",
+      "title": "【カタログ解説】クボタ JB19XD9NR70W2 サトウキビ向け超幅狭仕様（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "7a6c416c-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "7a6c416c-002",
+          "type": "text",
+          "text": "サトウキビの狭いうね間での管理作業に使う、幅を抑えたトラクター。 在庫限りの製品です。"
+        },
+        {
+          "id": "7a6c416c-003",
+          "type": "bullet",
+          "text": "馬力：19PS"
+        },
+        {
+          "id": "7a6c416c-004",
+          "type": "bullet",
+          "text": "用途：中耕管理作業"
+        },
+        {
+          "id": "7a6c416c-005",
+          "type": "bullet",
+          "text": "おすすめの作物：サトウキビ"
+        },
+        {
+          "id": "7a6c416c-006",
+          "type": "bullet",
+          "text": "販売状況：在庫限り（公式掲載）"
+        },
+        {
+          "id": "7a6c416c-007",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "7a6c416c-008",
+          "type": "text",
+          "text": "JB19XD9NR70W2"
+        },
+        {
+          "id": "7a6c416c-009",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "7a6c416c-010",
+          "type": "text",
+          "text": "掲載写真：JB19XD9NR70W2（公式掲載の仕様例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB19XD9N_%E8%B6%85%E5%B9%85%E7%8B%AD.jpg",
+        "summary": "サトウキビの狭いうね間での管理作業に使う、幅を抑えたトラクター。 在庫限りの製品です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "7a6c416c-src-product",
+            "title": "クボタ公式 特殊仕様トラクタ：JB19XD9NR70W2",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_5",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "7a6c416c-src-catalog",
+            "title": "クボタ 製品カタログ サトウキビ向け超幅狭仕様",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-10-3-0001-01.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "7a6c416c-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "7a6c416c-src-photo",
+            "title": "写真：クボタ公式 JB19XD9NR70W2",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_5",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

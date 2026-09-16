@@ -1,0 +1,60 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "FT280FHT・FT280HN",
+  "productName": "ハイクリ仕様",
+  "category": "トラクタ",
+  "checkedAt": "2026-09-16",
+  "summary": "水稲や畑作物の管理作業に使う、地上高の高いトラクター。 在庫限りの製品です。",
+  "models": [
+    "FT280FHT",
+    "FT280F(Q)HN"
+  ],
+  "photoModel": "FT280FHT FT280F(Q)HN（公式掲載の仕様例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "28PS",
+      "source": "product"
+    },
+    {
+      "label": "用途",
+      "value": "中耕管理作業  収穫、うね立て作業",
+      "source": "product"
+    },
+    {
+      "label": "おすすめの作物",
+      "value": "水稲、大豆、麦、玉葱、その他野菜",
+      "source": "product"
+    },
+    {
+      "label": "販売状況",
+      "value": "在庫限り（公式掲載）",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1",
+      "title": "クボタ公式 特殊仕様トラクタ：FT280FHT FT280F(Q)HN",
+      "checkedAt": "2026-09-16",
+      "sha256": "47678f8bf0a49f9f820c8a12828b7bacc12fecf2ca5f1508a98636070694c1ef"
+    },
+    "catalog": {
+      "title": "製品カタログはこちら（p.35）",
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0025-10.pdf#page=19"
+    },
+    "manualIndex": {
+      "title": "クボタ 取扱説明書検索",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manuals": []
+  },
+  "verification": {
+    "photo": "official-speciality-section",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

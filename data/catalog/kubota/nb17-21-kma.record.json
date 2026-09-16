@@ -1,0 +1,129 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "95dd9833-22d0-4c48-8828-ae1645b50713",
+      "title": "【カタログ解説】クボタ NB17KMA・NB21KMA 低床仕様（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "95dd9833-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "95dd9833-002",
+          "type": "text",
+          "text": "果樹園やハウス内の作業向けに車高を抑えた、NBシリーズの低床トラクター。 在庫限りの製品です。"
+        },
+        {
+          "id": "95dd9833-003",
+          "type": "bullet",
+          "text": "馬力：17PS/21PS"
+        },
+        {
+          "id": "95dd9833-004",
+          "type": "bullet",
+          "text": "用途：果樹園・ハウス作業"
+        },
+        {
+          "id": "95dd9833-005",
+          "type": "bullet",
+          "text": "おすすめの作物：果樹・ハウス栽培作物全般"
+        },
+        {
+          "id": "95dd9833-006",
+          "type": "bullet",
+          "text": "販売状況：在庫限り（公式掲載）"
+        },
+        {
+          "id": "95dd9833-007",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "95dd9833-008",
+          "type": "text",
+          "text": "NB17KMA / NB21(F)KMA"
+        },
+        {
+          "id": "95dd9833-009",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "95dd9833-010",
+          "type": "text",
+          "text": "掲載写真：NB17KMA NB21(F)KMA（公式掲載の仕様例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/NB21%28F%29KMA.jpg",
+        "summary": "果樹園やハウス内の作業向けに車高を抑えた、NBシリーズの低床トラクター。 在庫限りの製品です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "95dd9833-src-product",
+            "title": "クボタ公式 特殊仕様トラクタ：NB17KMA NB21(F)KMA",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_231aada334ea9bb51cf5830c42bd4319",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "95dd9833-src-catalog",
+            "title": "クボタ 製品カタログ 低床仕様",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0023-04.pdf#page=16",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "95dd9833-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "95dd9833-src-photo",
+            "title": "写真：クボタ公式 NB17KMA NB21(F)KMA",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_231aada334ea9bb51cf5830c42bd4319",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

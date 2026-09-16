@@ -1,0 +1,118 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "32cdbd34-0b9b-4fa3-8464-2d635e8da98e",
+      "title": "【カタログ解説】クボタ M1010W-N 幅狭トレッドN仕様（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "32cdbd34-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "32cdbd34-002",
+          "type": "text",
+          "text": "北海道の畑作体系に合わせた、幅狭トレッド仕様のトラクター。"
+        },
+        {
+          "id": "32cdbd34-003",
+          "type": "bullet",
+          "text": "馬力：101PS"
+        },
+        {
+          "id": "32cdbd34-004",
+          "type": "bullet",
+          "text": "用途：畑作管理"
+        },
+        {
+          "id": "32cdbd34-005",
+          "type": "bullet",
+          "text": "おすすめの作物：麦大豆、野菜"
+        },
+        {
+          "id": "32cdbd34-006",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "32cdbd34-007",
+          "type": "text",
+          "text": "M1010W-N"
+        },
+        {
+          "id": "32cdbd34-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "32cdbd34-009",
+          "type": "text",
+          "text": "掲載写真：M1010W-N（公式掲載の仕様例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/M1010W-N.jpg",
+        "summary": "北海道の畑作体系に合わせた、幅狭トレッド仕様のトラクター。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "32cdbd34-src-product",
+            "title": "クボタ公式 特殊仕様トラクタ：M1010W-N",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1_1_1_1",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "32cdbd34-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "32cdbd34-src-photo",
+            "title": "写真：クボタ公式 M1010W-N",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1_1_1_1",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

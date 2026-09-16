@@ -1,0 +1,129 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "88dd1479-4751-4567-8735-873890195d7d",
+      "title": "【カタログ解説】クボタ FT220HN ハイクリ・ハイクリワイド仕様（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "88dd1479-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "88dd1479-002",
+          "type": "text",
+          "text": "中耕管理や収穫・うね立てに使う、地上高の高いトラクター。トレッドの異なる仕様があります。 在庫限りの製品です。"
+        },
+        {
+          "id": "88dd1479-003",
+          "type": "bullet",
+          "text": "馬力：22PS"
+        },
+        {
+          "id": "88dd1479-004",
+          "type": "bullet",
+          "text": "用途：中耕管理作業  収穫、うね立て作業"
+        },
+        {
+          "id": "88dd1479-005",
+          "type": "bullet",
+          "text": "おすすめの作物：大豆、麦、玉葱、その他野菜"
+        },
+        {
+          "id": "88dd1479-006",
+          "type": "bullet",
+          "text": "販売状況：在庫限り（公式掲載）"
+        },
+        {
+          "id": "88dd1479-007",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "88dd1479-008",
+          "type": "text",
+          "text": "FT220HN(-8)"
+        },
+        {
+          "id": "88dd1479-009",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "88dd1479-010",
+          "type": "text",
+          "text": "掲載写真：FT220HN(-8)（公式掲載の仕様例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/FT220HN.jpg",
+        "summary": "中耕管理や収穫・うね立てに使う、地上高の高いトラクター。トレッドの異なる仕様があります。 在庫限りの製品です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "88dd1479-src-product",
+            "title": "クボタ公式 特殊仕様トラクタ：FT220HN(-8)",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "88dd1479-src-catalog",
+            "title": "クボタ 製品カタログ ハイクリ・ハイクリワイド仕様",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0025-10.pdf#page=19",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "88dd1479-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "88dd1479-src-photo",
+            "title": "写真：クボタ公式 FT220HN(-8)",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

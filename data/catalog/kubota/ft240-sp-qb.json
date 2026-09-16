@@ -1,0 +1,59 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "FT240SPQBMAQR2W23",
+  "productName": "サトウキビ向けキャビン仕様",
+  "category": "トラクタ",
+  "checkedAt": "2026-09-16",
+  "summary": "サトウキビの管理作業向けに、キャビン付き本体と幅狭ロータリを組み合わせたトラクター。 在庫限りの製品です。",
+  "models": [
+    "FT240SPQBMAQR2W23"
+  ],
+  "photoModel": "FT240SPQBMAQR2W23（公式掲載の仕様例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "24PS",
+      "source": "product"
+    },
+    {
+      "label": "用途",
+      "value": "中耕管理作業",
+      "source": "product"
+    },
+    {
+      "label": "おすすめの作物",
+      "value": "サトウキビ",
+      "source": "product"
+    },
+    {
+      "label": "販売状況",
+      "value": "在庫限り（公式掲載）",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_2",
+      "title": "クボタ公式 特殊仕様トラクタ：FT240SPQBMAQR2W23",
+      "checkedAt": "2026-09-16",
+      "sha256": "47678f8bf0a49f9f820c8a12828b7bacc12fecf2ca5f1508a98636070694c1ef"
+    },
+    "catalog": {
+      "title": "製品カタログはこちら",
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-3-0020-01.pdf"
+    },
+    "manualIndex": {
+      "title": "クボタ 取扱説明書検索",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manuals": []
+  },
+  "verification": {
+    "photo": "official-speciality-section",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

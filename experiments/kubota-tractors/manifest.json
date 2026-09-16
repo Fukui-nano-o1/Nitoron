@@ -1,0 +1,408 @@
+{
+  "checkedAt": "2026-09-16",
+  "baseCommit": "bd0e0669cf6ba61830b7997503690921430db16b",
+  "basicCardsAlreadyListed": 24,
+  "specialCardsAdded": 18,
+  "existingCardsSupplemented": 2,
+  "tractorCardsAfter": 42,
+  "scope": "Official Japan tractor index (24 product families, excluding the feature-page card), plus all 20 sections of the special-specification feature. Not a claim to cover all historical tractors or every option combination.",
+  "basicCoverage": [
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M7-134-174/",
+      "path": "data/catalog/kubota/m7-134-174.json",
+      "series": "M7-134-174"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M-100GEP-135GEP/",
+      "path": "data/catalog/kubota/m-100gep-135gep.json",
+      "series": "M100GEP-135GEP"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M-1060W/",
+      "path": "data/catalog/kubota/m-1060w.json",
+      "series": "M1060W"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050/",
+      "path": "data/catalog/kubota/mr-800-1050.json",
+      "series": "MR800-1050"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M-860W-1010W/",
+      "path": "data/catalog/kubota/m-860w-1010w.json",
+      "series": "M860W-1010W-SE"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-800-1050-A2H/",
+      "path": "data/catalog/kubota/mr-800-1050-a2h.json",
+      "series": "MR800A2H-1050A2H"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-1000-AH/",
+      "path": "data/catalog/kubota/mr-1000-ah.json",
+      "series": "MR1000AH"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/M720W/",
+      "path": "data/catalog/kubota/m720w.json",
+      "series": "M720W"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-600-700/",
+      "path": "data/catalog/kubota/mr-600-700.json",
+      "series": "MR600-700"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/MR-70-SP/",
+      "path": "data/catalog/kubota/mr-70-sp.json",
+      "series": "MR70"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-600/",
+      "path": "data/catalog/kubota/sl-280-600.json",
+      "series": "SL-280-600"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-38-54-SP/",
+      "path": "data/catalog/kubota/sl-38-54-sp.json",
+      "series": "SL38HSP-54HSP"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-350-SP/",
+      "path": "data/catalog/kubota/sl-280-350-sp.json",
+      "series": "SL280-350-SPF"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-24/",
+      "path": "data/catalog/kubota/sl-24.json",
+      "series": "SL24"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/ST-25-31/",
+      "path": "data/catalog/kubota/st-25-31.json",
+      "series": "ST25-31"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-195-245/",
+      "path": "data/catalog/kubota/nb-195-245.json",
+      "series": "NB-195-245"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-115-195/",
+      "path": "data/catalog/kubota/jb-115-195.json",
+      "series": "JB115-195"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-17-23/",
+      "path": "data/catalog/kubota/nb-17-23.json",
+      "series": "NB17-23"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-GS/",
+      "path": "data/catalog/kubota/nb-21-gs.json",
+      "series": "NB21GS"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NB-21-SP/",
+      "path": "data/catalog/kubota/nb-21-sp.json",
+      "series": "NB21SP"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11-19/",
+      "path": "data/catalog/kubota/jb-11-19.json",
+      "series": "JB11X-19X"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-11XLD-13XSLD/",
+      "path": "data/catalog/kubota/jb-11xld-13xsld.json",
+      "series": "JB13XSLDSLH130"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/",
+      "path": "data/catalog/kubota/jb-13x-n.json",
+      "series": "JB13XN"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/NR-17-23/",
+      "path": "data/catalog/kubota/nr-17-23.json",
+      "series": "NR17-23"
+    }
+  ],
+  "entries": [
+    {
+      "action": "add",
+      "key": "jb13x-dsa5",
+      "path": "data/catalog/kubota/jb13x-dsa5.json",
+      "id": "4ae67856-00c0-47f0-80d3-c68b42a1748b",
+      "series": "JB13XDSA5",
+      "models": [
+        "JB13XDSA5"
+      ],
+      "specialIndex": 0,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_853ef31137e4032e4c51f171726ba3be",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB13XDSA5.jpg"
+    },
+    {
+      "action": "add",
+      "key": "nb17-21-kma",
+      "path": "data/catalog/kubota/nb17-21-kma.json",
+      "id": "95dd9833-22d0-4c48-8828-ae1645b50713",
+      "series": "NB17KMA・NB21KMA",
+      "models": [
+        "NB17KMA",
+        "NB21(F)KMA"
+      ],
+      "specialIndex": 1,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_231aada334ea9bb51cf5830c42bd4319",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/NB21%28F%29KMA.jpg"
+    },
+    {
+      "action": "add",
+      "key": "sl330-k",
+      "path": "data/catalog/kubota/sl330-k.json",
+      "id": "d2c09eb7-1984-4b0e-8462-b0a229063783",
+      "series": "SL330K",
+      "models": [
+        "SL330K(W)"
+      ],
+      "specialIndex": 2,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_c9f88faa4f8154bf2df212a49f83b53b",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/SL330K.jpg"
+    },
+    {
+      "action": "add",
+      "key": "jb13x-hc",
+      "path": "data/catalog/kubota/jb13x-hc.json",
+      "id": "c9a79276-6b5a-4f01-80f2-8e5c61b81c6f",
+      "series": "JB13X-HC・JB13XSHC",
+      "models": [
+        "JB13X-HC",
+        "JB13XSHC"
+      ],
+      "specialIndex": 3,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_8f0d01472da8852d64b760a614729f2d",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB13X-HC.jpg"
+    },
+    {
+      "action": "add",
+      "key": "ft220-hn",
+      "path": "data/catalog/kubota/ft220-hn.json",
+      "id": "88dd1479-4751-4567-8735-873890195d7d",
+      "series": "FT220HN",
+      "models": [
+        "FT220HN(-8)"
+      ],
+      "specialIndex": 4,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/FT220HN.jpg"
+    },
+    {
+      "action": "add",
+      "key": "ft280-ht-hn",
+      "path": "data/catalog/kubota/ft280-ht-hn.json",
+      "id": "3b8382ae-7cb9-4c55-8436-2900fdf7d3ef",
+      "series": "FT280FHT・FT280HN",
+      "models": [
+        "FT280FHT",
+        "FT280F(Q)HN"
+      ],
+      "specialIndex": 5,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/FT280FHN.jpg"
+    },
+    {
+      "action": "add",
+      "key": "ft280-pcr1",
+      "path": "data/catalog/kubota/ft280-pcr1.json",
+      "id": "24f4f017-94f4-4496-8d5e-d7d1d98b4354",
+      "series": "FT280-PCR1",
+      "models": [
+        "FT280(Q)-PCR1"
+      ],
+      "specialIndex": 6,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/FT280%28Q%29_PCR1.jpg"
+    },
+    {
+      "action": "add",
+      "key": "jb17-19-r8w22",
+      "path": "data/catalog/kubota/jb17-19-r8w22.json",
+      "id": "91df5111-e8fc-4073-859c-08828aecb9c9",
+      "series": "JB17X・JB19X-R8W22",
+      "models": [
+        "JB17XBS9R8W22",
+        "JB19XBS9R8W22",
+        "JB19XBS-PC3NR8W22"
+      ],
+      "specialIndex": 8,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB17XBS9%E5%B9%85%E7%8B%AD.jpg"
+    },
+    {
+      "action": "add",
+      "key": "jb17-19-r8w3",
+      "path": "data/catalog/kubota/jb17-19-r8w3.json",
+      "id": "ef97c2d5-fddc-4336-8bb3-e52b1ac90021",
+      "series": "JB17X・JB19X-R8W3",
+      "models": [
+        "JB17XBS9R8W3",
+        "JB19XBS9R8W3",
+        "JB19XBS-PC3NR8W3"
+      ],
+      "specialIndex": 9,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_4",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB19PC_%E6%A8%99%E6%BA%96%E3%82%AB%E3%83%83%E3%83%88.jpg"
+    },
+    {
+      "action": "add",
+      "key": "jb19xd9n-r70w2",
+      "path": "data/catalog/kubota/jb19xd9n-r70w2.json",
+      "id": "7a6c416c-2c9c-4be0-83db-34ac53121375",
+      "series": "JB19XD9NR70W2",
+      "models": [
+        "JB19XD9NR70W2"
+      ],
+      "specialIndex": 10,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_5",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB19XD9N_%E8%B6%85%E5%B9%85%E7%8B%AD.jpg"
+    },
+    {
+      "action": "add",
+      "key": "nb21-nma-r10w23",
+      "path": "data/catalog/kubota/nb21-nma-r10w23.json",
+      "id": "c3150d23-9b18-4baf-8ab5-8f82741c7c69",
+      "series": "NB21NMAR10W23",
+      "models": [
+        "NB21NMAR10W23"
+      ],
+      "specialIndex": 11,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_3",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/NB21%E3%82%AD%E3%83%92%E3%82%99%E3%83%88%E3%83%A9_%E6%A8%99%E6%BA%96.jpg"
+    },
+    {
+      "action": "add",
+      "key": "ft240-sp-qb",
+      "path": "data/catalog/kubota/ft240-sp-qb.json",
+      "id": "48bc3bae-84e0-4b88-8431-9fc98085f656",
+      "series": "FT240SPQBMAQR2W23",
+      "models": [
+        "FT240SPQBMAQR2W23"
+      ],
+      "specialIndex": 12,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_2",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/FT240SP%E3%82%AD%E3%83%92%E3%82%99%E3%83%88%E3%83%A9_%E6%A8%99%E6%BA%96%E3%82%AB%E3%83%83%E3%83%88.jpg"
+    },
+    {
+      "action": "add",
+      "key": "sl330-ft",
+      "path": "data/catalog/kubota/sl330-ft.json",
+      "id": "762fa99a-77ce-481f-8438-5124493b83f6",
+      "series": "SL330FT",
+      "models": [
+        "SL330FT(W)"
+      ],
+      "specialIndex": 14,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/SL330FT.jpg"
+    },
+    {
+      "action": "add",
+      "key": "sl350-w",
+      "path": "data/catalog/kubota/sl350-w.json",
+      "id": "4352f671-df70-416b-83dd-37e40c2be8dc",
+      "series": "SL350W",
+      "models": [
+        "SL350(H)W"
+      ],
+      "specialIndex": 15,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/SL350KW.jpg"
+    },
+    {
+      "action": "add",
+      "key": "jb15x-dsaz7",
+      "path": "data/catalog/kubota/jb15x-dsaz7.json",
+      "id": "65b3ecd0-8c98-4ffc-8521-039a8784c575",
+      "series": "JB15XDSAZ7",
+      "models": [
+        "JB15XDSAZ7"
+      ],
+      "specialIndex": 16,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1_1",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB15XDSAZ7.jpg"
+    },
+    {
+      "action": "add",
+      "key": "mr1000-1050-at",
+      "path": "data/catalog/kubota/mr1000-1050-at.json",
+      "id": "26cce46e-a951-4a7c-8ef2-8bca9947fd26",
+      "series": "MR1000-AT・MR1050H-AT",
+      "models": [
+        "MR1000-AT",
+        "MR1050H-AT"
+      ],
+      "specialIndex": 17,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1_1_1",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/MR1000-AT.jpg"
+    },
+    {
+      "action": "add",
+      "key": "m1010w-n",
+      "path": "data/catalog/kubota/m1010w-n.json",
+      "id": "32cdbd34-0b9b-4fa3-8464-2d635e8da98e",
+      "series": "M1010W-N",
+      "models": [
+        "M1010W-N"
+      ],
+      "specialIndex": 18,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1_1_1_1",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/M1010W-N.jpg"
+    },
+    {
+      "action": "add",
+      "key": "m110ge-at",
+      "path": "data/catalog/kubota/m110ge-at.json",
+      "id": "f03ba774-8d5e-4331-8c01-f16e865e3cf5",
+      "series": "M110GE-AT",
+      "models": [
+        "M110GE-AT"
+      ],
+      "specialIndex": 19,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1_1_1_1_1",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/M110GE-AT.jpg"
+    },
+    {
+      "action": "update",
+      "key": "jb-13x-n",
+      "path": "data/catalog/kubota/jb-13x-n.json",
+      "id": "8cb96126-b6e3-4652-8b36-fc4e319bdba8",
+      "series": "JB13XN",
+      "models": [
+        "JB13XN",
+        "JB13XNM"
+      ],
+      "previousModels": [
+        "JB13XN(M)"
+      ],
+      "specialIndex": 7,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1"
+    },
+    {
+      "action": "update",
+      "key": "nr-17-23",
+      "path": "data/catalog/kubota/nr-17-23.json",
+      "id": "f2634e03-1e48-4712-8cf2-3a8ec8ca43f8",
+      "series": "NR17-23",
+      "models": [
+        "NR17FM",
+        "NR23FM"
+      ],
+      "previousModels": [
+        "NR17",
+        "NR23"
+      ],
+      "specialIndex": 13,
+      "sourceUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1"
+    }
+  ]
+}

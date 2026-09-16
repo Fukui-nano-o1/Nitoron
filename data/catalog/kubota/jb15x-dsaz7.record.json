@@ -1,0 +1,129 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "65b3ecd0-8c98-4ffc-8521-039a8784c575",
+      "title": "【カタログ解説】クボタ JB15XDSAZ7 可変トレッド仕様（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "65b3ecd0-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "65b3ecd0-002",
+          "type": "text",
+          "text": "作付けの幅に合わせてトレッドを調整できる、たまねぎなどの管理作業向けトラクター。 在庫限りの製品です。"
+        },
+        {
+          "id": "65b3ecd0-003",
+          "type": "bullet",
+          "text": "馬力：15PS"
+        },
+        {
+          "id": "65b3ecd0-004",
+          "type": "bullet",
+          "text": "用途：野菜管理作業"
+        },
+        {
+          "id": "65b3ecd0-005",
+          "type": "bullet",
+          "text": "おすすめの作物：たまねぎ"
+        },
+        {
+          "id": "65b3ecd0-006",
+          "type": "bullet",
+          "text": "販売状況：在庫限り（公式掲載）"
+        },
+        {
+          "id": "65b3ecd0-007",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "65b3ecd0-008",
+          "type": "text",
+          "text": "JB15XDSAZ7"
+        },
+        {
+          "id": "65b3ecd0-009",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "65b3ecd0-010",
+          "type": "text",
+          "text": "掲載写真：JB15XDSAZ7（公式掲載の仕様例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB15XDSAZ7.jpg",
+        "summary": "作付けの幅に合わせてトレッドを調整できる、たまねぎなどの管理作業向けトラクター。 在庫限りの製品です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "65b3ecd0-src-product",
+            "title": "クボタ公式 特殊仕様トラクタ：JB15XDSAZ7",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1_1",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "65b3ecd0-src-catalog",
+            "title": "クボタ 製品カタログ 可変トレッド仕様",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-2026-2.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "65b3ecd0-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "65b3ecd0-src-photo",
+            "title": "写真：クボタ公式 JB15XDSAZ7",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1_1",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

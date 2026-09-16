@@ -38,7 +38,7 @@
         {
           "id": "8cb96126-006",
           "type": "text",
-          "text": "JB13XN(M)"
+          "text": "JB13XN(M) / JB13XN / JB13XNM"
         },
         {
           "id": "8cb96126-007",
@@ -105,6 +105,12 @@
             "id": "8cb96126-src-manual-1",
             "title": "取扱説明書 JB13X",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fde9264cf376fffe2ee4ddf4a988880d",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "8cb96126-src-models",
+            "title": "クボタ公式 特殊仕様の型式一覧",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1",
             "date": "2026-09-16"
           },
           {

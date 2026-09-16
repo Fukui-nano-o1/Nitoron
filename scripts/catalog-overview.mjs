@@ -29,6 +29,7 @@ export function validateOverview(entry, photo) {
   const notListed = ref => ref?.availability === 'not-listed' && !ref.url && ref.checkedAt === entry.checkedAt
   if (!official(entry.sources?.catalog?.url) && !notListed(entry.sources?.catalog)) fail('公式カタログの参照先または未掲載の確認が必要です')
   if (!official(entry.sources?.manualIndex?.url) && !((entry.modelPolicy === 'project-specific' || cropGuide) && notListed(entry.sources?.manualIndex))) fail('取扱説明書の参照先が必要です')
+  if (entry.sources.modelIndex && (!official(entry.sources.modelIndex.url) || !entry.sources.modelIndex.title?.trim() || entry.sources.modelIndex.checkedAt !== entry.checkedAt)) fail('仕様型式の参照先と確認日が必要です')
   if (entry.sources.manufacturer) {
     const ref = entry.sources.manufacturer
     let valid = false
@@ -62,6 +63,7 @@ export function buildOverview(entry, photo) {
       ...(entry.sources.catalog.url ? [source('catalog', `${entry.maker} 製品カタログ ${entry.productName}`, entry.sources.catalog.url)] : []),
       ...(entry.sources.manualIndex.url ? [source('manual-index', entry.sources.manualIndex.title, entry.sources.manualIndex.url)] : []),
       ...((entry.sources.manuals || []).length <= 4 ? (entry.sources.manuals || []) : []).map((m, i) => source(`manual-${i + 1}`, `取扱説明書 ${m.title}`, m.url)),
+      ...(entry.sources.modelIndex ? [source('models', entry.sources.modelIndex.title, entry.sources.modelIndex.url)] : []),
       photo.source,
     ] }
   return { id, title: `【カタログ解説】${entry.maker} ${entry.series} ${entry.productName}（${entry.category}）`,

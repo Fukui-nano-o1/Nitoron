@@ -1,0 +1,118 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "26cce46e-a951-4a7c-8ef2-8bca9947fd26",
+      "title": "【カタログ解説】クボタ MR1000-AT・MR1050H-AT 可変トレッドAT仕様（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "26cce46e-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "26cce46e-002",
+          "type": "text",
+          "text": "うね幅に応じてトレッドを変更できる、畑作管理向けのトラクター。"
+        },
+        {
+          "id": "26cce46e-003",
+          "type": "bullet",
+          "text": "馬力：100/105PS"
+        },
+        {
+          "id": "26cce46e-004",
+          "type": "bullet",
+          "text": "用途：畑作管理"
+        },
+        {
+          "id": "26cce46e-005",
+          "type": "bullet",
+          "text": "おすすめの作物：麦大豆、野菜"
+        },
+        {
+          "id": "26cce46e-006",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "26cce46e-007",
+          "type": "text",
+          "text": "MR1000-AT / MR1050H-AT"
+        },
+        {
+          "id": "26cce46e-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "26cce46e-009",
+          "type": "text",
+          "text": "掲載写真：MR1000-AT MR1050H-AT（公式掲載の仕様例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/MR1000-AT.jpg",
+        "summary": "うね幅に応じてトレッドを変更できる、畑作管理向けのトラクター。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "26cce46e-src-product",
+            "title": "クボタ公式 特殊仕様トラクタ：MR1000-AT MR1050H-AT",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1_1_1",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "26cce46e-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "26cce46e-src-photo",
+            "title": "写真：クボタ公式 MR1000-AT MR1050H-AT",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1_1_1",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

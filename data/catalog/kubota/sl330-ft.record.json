@@ -1,0 +1,124 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "762fa99a-77ce-481f-8438-5124493b83f6",
+      "title": "【カタログ解説】クボタ SL330FT コンパクトスペシャル（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "762fa99a-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "762fa99a-002",
+          "type": "text",
+          "text": "ハウス内と水田の両方で使う、小型で車高を抑えたトラクター。"
+        },
+        {
+          "id": "762fa99a-003",
+          "type": "bullet",
+          "text": "馬力：33PS"
+        },
+        {
+          "id": "762fa99a-004",
+          "type": "bullet",
+          "text": "用途：ハウス内作業、水田"
+        },
+        {
+          "id": "762fa99a-005",
+          "type": "bullet",
+          "text": "おすすめの作物：ハウス栽培作物全般、水稲"
+        },
+        {
+          "id": "762fa99a-006",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "762fa99a-007",
+          "type": "text",
+          "text": "SL330FT(W)"
+        },
+        {
+          "id": "762fa99a-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "762fa99a-009",
+          "type": "text",
+          "text": "掲載写真：SL330FT(W)（公式掲載の仕様例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/SL330FT.jpg",
+        "summary": "ハウス内と水田の両方で使う、小型で車高を抑えたトラクター。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "762fa99a-src-product",
+            "title": "クボタ公式 特殊仕様トラクタ：SL330FT(W)",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "762fa99a-src-catalog",
+            "title": "クボタ 製品カタログ コンパクトスペシャル",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0038-07.pdf#page=13",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "762fa99a-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "762fa99a-src-photo",
+            "title": "写真：クボタ公式 SL330FT(W)",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

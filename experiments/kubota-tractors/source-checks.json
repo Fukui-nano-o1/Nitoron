@@ -1,0 +1,170 @@
+{
+  "sourcePages": [
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/",
+      "finalUrl": "https://agriculture.kubota.co.jp/product/tractor/",
+      "status": 200,
+      "sha256": "b49674ad179ec69c4b8a4b424fccb7b48a2ac80253176ea67f5efa3f38d70ccf"
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/",
+      "finalUrl": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/",
+      "status": 200,
+      "sha256": "47678f8bf0a49f9f820c8a12828b7bacc12fecf2ca5f1508a98636070694c1ef"
+    }
+  ],
+  "photoChecks": [
+    {
+      "key": "ft220-hn",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/FT220HN.jpg",
+      "sha256": "951414627f993e5cea6816bb3acdc88f33506db3084448f47a2a75c260c70cc2",
+      "width": 680,
+      "height": 500,
+      "format": "JPEG"
+    },
+    {
+      "key": "ft240-sp-qb",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/FT240SP%E3%82%AD%E3%83%92%E3%82%99%E3%83%88%E3%83%A9_%E6%A8%99%E6%BA%96%E3%82%AB%E3%83%83%E3%83%88.jpg",
+      "sha256": "da4104c6edb04b9c50efce7c3a6f0c0a74759ee98952330be81feb6cf5b1de7d",
+      "width": 680,
+      "height": 500,
+      "format": "JPEG"
+    },
+    {
+      "key": "ft280-ht-hn",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/FT280FHN.jpg",
+      "sha256": "5e64fc6fe882f89a1f0c192827b1bbc1b9fdce6522c8f9d0d711784d7278e78c",
+      "width": 680,
+      "height": 500,
+      "format": "JPEG"
+    },
+    {
+      "key": "ft280-pcr1",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/FT280%28Q%29_PCR1.jpg",
+      "sha256": "7f18244da393e6fe0576a9497dcb0268097549e9f572f5aef6dd2fdbe5d24e34",
+      "width": 680,
+      "height": 500,
+      "format": "JPEG"
+    },
+    {
+      "key": "jb13x-dsa5",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB13XDSA5.jpg",
+      "sha256": "9659fee0b635ad61ccb8833f2672964fa3440f70d2fcc257185b050ea7486fe4",
+      "width": 680,
+      "height": 420,
+      "format": "JPEG"
+    },
+    {
+      "key": "jb13x-hc",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB13X-HC.jpg",
+      "sha256": "dad1c12657c542e94fd3e467c63530967f895d6a13090c65627a2c7180cb9a4a",
+      "width": 680,
+      "height": 500,
+      "format": "JPEG"
+    },
+    {
+      "key": "jb15x-dsaz7",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB15XDSAZ7.jpg",
+      "sha256": "ecfdd3bbc39171d799a5d3d66fa9da94f8f38250992d24b843ddb0f58a70536e",
+      "width": 680,
+      "height": 500,
+      "format": "JPEG"
+    },
+    {
+      "key": "jb17-19-r8w22",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB17XBS9%E5%B9%85%E7%8B%AD.jpg",
+      "sha256": "65824945a65aa3250e162515b9b0f61d2ae217cc292b7909b37223aeb39117d5",
+      "width": 680,
+      "height": 500,
+      "format": "JPEG"
+    },
+    {
+      "key": "jb17-19-r8w3",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB19PC_%E6%A8%99%E6%BA%96%E3%82%AB%E3%83%83%E3%83%88.jpg",
+      "sha256": "e52851c6d60d099ec213fe0eef537386a3dcd35a3bf8a338d5556f6a25b5e1d5",
+      "width": 680,
+      "height": 500,
+      "format": "JPEG"
+    },
+    {
+      "key": "jb19xd9n-r70w2",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB19XD9N_%E8%B6%85%E5%B9%85%E7%8B%AD.jpg",
+      "sha256": "9304ae7706895be46e16d656b81d764e9037a70496ac4d6dbc09f362b1786d27",
+      "width": 680,
+      "height": 500,
+      "format": "JPEG"
+    },
+    {
+      "key": "m1010w-n",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/M1010W-N.jpg",
+      "sha256": "bb7a4c8ce42ac421da78f111ed9674e1ee7e79cb24dbc40cefc712013ddbde25",
+      "width": 680,
+      "height": 500,
+      "format": "JPEG"
+    },
+    {
+      "key": "m110ge-at",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/M110GE-AT.jpg",
+      "sha256": "2e07d46c0082af7c40d761e9eca5d2a3dedbf6bf58d758566977e71e38405815",
+      "width": 680,
+      "height": 500,
+      "format": "JPEG"
+    },
+    {
+      "key": "mr1000-1050-at",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/MR1000-AT.jpg",
+      "sha256": "fe7ec79149a24cfb7879961d19e1145938dc7aedbd098adc345e6e7c9f25ec83",
+      "width": 680,
+      "height": 500,
+      "format": "JPEG"
+    },
+    {
+      "key": "nb17-21-kma",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/NB21%28F%29KMA.jpg",
+      "sha256": "fc42c69cf4f188dcf985c8595eb6edd874a9d9ffabb3925c59ae2f5e0264cadc",
+      "width": 680,
+      "height": 470,
+      "format": "JPEG"
+    },
+    {
+      "key": "nb21-nma-r10w23",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/NB21%E3%82%AD%E3%83%92%E3%82%99%E3%83%88%E3%83%A9_%E6%A8%99%E6%BA%96.jpg",
+      "sha256": "f9c292dad5420d9725038f15b950ffa8af57b37353e535cddbbcd8dfda37fc0b",
+      "width": 680,
+      "height": 470,
+      "format": "JPEG"
+    },
+    {
+      "key": "sl330-ft",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/SL330FT.jpg",
+      "sha256": "288eb89356e37d3223404c22e64ccedc30f7359fbf6cd3feb34c125be01cd8f3",
+      "width": 680,
+      "height": 450,
+      "format": "JPEG"
+    },
+    {
+      "key": "sl330-k",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/SL330K.jpg",
+      "sha256": "3382eb43ac17651058447b706f884dae414202a341e8dfb49742eff4b90f5a75",
+      "width": 680,
+      "height": 420,
+      "format": "JPEG"
+    },
+    {
+      "key": "sl350-w",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/SL350KW.jpg",
+      "sha256": "f179a9304bf30240a5956fba7a261ee3ebcbd8289d90aafedded4819a5e0239e",
+      "width": 680,
+      "height": 500,
+      "format": "JPEG"
+    }
+  ],
+  "visualReview": "18 photos inspected; exact official product section used",
+  "notes": [
+    "Parenthesized model notation is preserved as printed; unverified option combinations are not expanded.",
+    "Stock-only notices are retained. The main index also contains an announced future model; index coverage does not mean all models are currently on sale.",
+    "Feature-page model labels and photo filenames can differ. Pictures are described as the official specification example; filenames do not override the model text.",
+    "Dimension lines containing apparent typographical errors, including M110GE-AT front tread 1200m, are not copied into facts.",
+    "No 3D, repair procedure, price or model compatibility was inferred."
+  ]
+}

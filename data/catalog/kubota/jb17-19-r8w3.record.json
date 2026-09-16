@@ -1,0 +1,129 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "ef97c2d5-fddc-4336-8bb3-e52b1ac90021",
+      "title": "【カタログ解説】クボタ JB17X・JB19X-R8W3 サトウキビ向け幅狭仕様（固定式ロータリ）（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "ef97c2d5-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "ef97c2d5-002",
+          "type": "text",
+          "text": "サトウキビのうね間管理向けトラクター。固定式ロータリとの組合せです。 在庫限りの製品です。"
+        },
+        {
+          "id": "ef97c2d5-003",
+          "type": "bullet",
+          "text": "馬力：17PS/19PS"
+        },
+        {
+          "id": "ef97c2d5-004",
+          "type": "bullet",
+          "text": "用途：中耕管理作業"
+        },
+        {
+          "id": "ef97c2d5-005",
+          "type": "bullet",
+          "text": "おすすめの作物：サトウキビ"
+        },
+        {
+          "id": "ef97c2d5-006",
+          "type": "bullet",
+          "text": "販売状況：在庫限り（公式掲載）"
+        },
+        {
+          "id": "ef97c2d5-007",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "ef97c2d5-008",
+          "type": "text",
+          "text": "JB17XBS9R8W3 / JB19XBS9R8W3 / JB19XBS-PC3NR8W3"
+        },
+        {
+          "id": "ef97c2d5-009",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "ef97c2d5-010",
+          "type": "text",
+          "text": "掲載写真：JB17XBS9R8W3 JB19XBS9R8W3 JB19XBS-PC3NR8W3（公式掲載の仕様例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/JB19PC_%E6%A8%99%E6%BA%96%E3%82%AB%E3%83%83%E3%83%88.jpg",
+        "summary": "サトウキビのうね間管理向けトラクター。固定式ロータリとの組合せです。 在庫限りの製品です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "ef97c2d5-src-product",
+            "title": "クボタ公式 特殊仕様トラクタ：JB17XBS9R8W3 JB19XBS9R8W3 JB19XBS-PC3NR8W3",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_4",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ef97c2d5-src-catalog",
+            "title": "クボタ 製品カタログ サトウキビ向け幅狭仕様（固定式ロータリ）",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-10-3-0001-01.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ef97c2d5-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ef97c2d5-src-photo",
+            "title": "写真：クボタ公式 JB17XBS9R8W3 JB19XBS9R8W3 JB19XBS-PC3NR8W3",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_4",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

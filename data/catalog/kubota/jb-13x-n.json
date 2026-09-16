@@ -7,7 +7,9 @@
   "summary": "13.5馬力の超幅狭仕様トラクタ。うね間の管理作業に使う在庫限りの製品です。",
   "category": "トラクタ",
   "models": [
-    "JB13XN(M)"
+    "JB13XN(M)",
+    "JB13XN",
+    "JB13XNM"
   ],
   "checkedAt": "2026-09-16",
   "photoModel": "JB13XN（公式シリーズ掲載例）",
@@ -54,7 +56,13 @@
         "title": "JB13X",
         "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fde9264cf376fffe2ee4ddf4a988880d"
       }
-    ]
+    ],
+    "modelIndex": {
+      "title": "クボタ公式 特殊仕様の型式一覧",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1",
+      "checkedAt": "2026-09-16",
+      "sha256": "47678f8bf0a49f9f820c8a12828b7bacc12fecf2ca5f1508a98636070694c1ef"
+    }
   },
   "verification": {
     "productPage": "read",

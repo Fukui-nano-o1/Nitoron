@@ -1,0 +1,54 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "M110GE-AT",
+  "productName": "可変トレッドAT仕様",
+  "category": "トラクタ",
+  "checkedAt": "2026-09-16",
+  "summary": "麦・大豆・野菜などのうね幅に合わせて使う、可変トレッド仕様のトラクター。",
+  "models": [
+    "M110GE-AT"
+  ],
+  "photoModel": "M110GE-AT（公式掲載の仕様例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "110PS",
+      "source": "product"
+    },
+    {
+      "label": "用途",
+      "value": "畑作管理",
+      "source": "product"
+    },
+    {
+      "label": "おすすめの作物",
+      "value": "麦大豆、野菜",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1_1_1_1_1",
+      "title": "クボタ公式 特殊仕様トラクタ：M110GE-AT",
+      "checkedAt": "2026-09-16",
+      "sha256": "47678f8bf0a49f9f820c8a12828b7bacc12fecf2ca5f1508a98636070694c1ef"
+    },
+    "catalog": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualIndex": {
+      "title": "クボタ 取扱説明書検索",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manuals": []
+  },
+  "verification": {
+    "photo": "official-speciality-section",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

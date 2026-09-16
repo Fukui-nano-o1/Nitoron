@@ -8,7 +8,9 @@
   "category": "トラクタ",
   "models": [
     "NR17",
-    "NR23"
+    "NR23",
+    "NR17FM",
+    "NR23FM"
   ],
   "checkedAt": "2026-09-16",
   "photoModel": "NR17-23（公式シリーズ掲載例）",
@@ -55,7 +57,13 @@
         "title": "NR23F",
         "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=532b81fa223a1b1ec74139a5b8151d12"
       }
-    ]
+    ],
+    "modelIndex": {
+      "title": "クボタ公式 特殊仕様の型式一覧",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1",
+      "checkedAt": "2026-09-16",
+      "sha256": "47678f8bf0a49f9f820c8a12828b7bacc12fecf2ca5f1508a98636070694c1ef"
+    }
   },
   "verification": {
     "productPage": "read",

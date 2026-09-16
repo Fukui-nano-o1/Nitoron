@@ -1,0 +1,54 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "SL350W",
+  "productName": "淡路島スペシャル",
+  "category": "トラクタ",
+  "checkedAt": "2026-09-16",
+  "summary": "狭いほ場での作業向けに、全長・全幅を抑えたトラクター。水稲や玉葱などに使います。",
+  "models": [
+    "SL350(H)W"
+  ],
+  "photoModel": "SL350(H)W（公式掲載の仕様例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "35PS",
+      "source": "product"
+    },
+    {
+      "label": "用途",
+      "value": "狭いほ場",
+      "source": "product"
+    },
+    {
+      "label": "おすすめの作物",
+      "value": "水稲、玉葱、その他野菜",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1",
+      "title": "クボタ公式 特殊仕様トラクタ：SL350(H)W",
+      "checkedAt": "2026-09-16",
+      "sha256": "47678f8bf0a49f9f820c8a12828b7bacc12fecf2ca5f1508a98636070694c1ef"
+    },
+    "catalog": {
+      "title": "製品カタログはこちら（p.23）",
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0038-07.pdf#page=13"
+    },
+    "manualIndex": {
+      "title": "クボタ 取扱説明書検索",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manuals": []
+  },
+  "verification": {
+    "photo": "official-speciality-section",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

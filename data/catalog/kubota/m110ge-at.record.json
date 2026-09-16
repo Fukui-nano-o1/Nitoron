@@ -1,0 +1,118 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "f03ba774-8d5e-4331-8c01-f16e865e3cf5",
+      "title": "【カタログ解説】クボタ M110GE-AT 可変トレッドAT仕様（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "f03ba774-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "f03ba774-002",
+          "type": "text",
+          "text": "麦・大豆・野菜などのうね幅に合わせて使う、可変トレッド仕様のトラクター。"
+        },
+        {
+          "id": "f03ba774-003",
+          "type": "bullet",
+          "text": "馬力：110PS"
+        },
+        {
+          "id": "f03ba774-004",
+          "type": "bullet",
+          "text": "用途：畑作管理"
+        },
+        {
+          "id": "f03ba774-005",
+          "type": "bullet",
+          "text": "おすすめの作物：麦大豆、野菜"
+        },
+        {
+          "id": "f03ba774-006",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "f03ba774-007",
+          "type": "text",
+          "text": "M110GE-AT"
+        },
+        {
+          "id": "f03ba774-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "f03ba774-009",
+          "type": "text",
+          "text": "掲載写真：M110GE-AT（公式掲載の仕様例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/M110GE-AT.jpg",
+        "summary": "麦・大豆・野菜などのうね幅に合わせて使う、可変トレッド仕様のトラクター。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "f03ba774-src-product",
+            "title": "クボタ公式 特殊仕様トラクタ：M110GE-AT",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1_1_1_1_1",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f03ba774-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f03ba774-src-photo",
+            "title": "写真：クボタ公式 M110GE-AT",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1_1_1_1_1_1_1",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

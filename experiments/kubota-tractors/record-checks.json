@@ -1,0 +1,149 @@
+{
+  "records": 20,
+  "roundTrip": true,
+  "searchAllListedModelNotations": true,
+  "existingBlockIdsPreserved": true,
+  "existingProsePhotosAndSourcesPreserved": true,
+  "results": [
+    {
+      "id": "4ae67856-00c0-47f0-80d3-c68b42a1748b",
+      "key": "jb13x-dsa5",
+      "action": "add",
+      "models": 1,
+      "sources": 4
+    },
+    {
+      "id": "95dd9833-22d0-4c48-8828-ae1645b50713",
+      "key": "nb17-21-kma",
+      "action": "add",
+      "models": 2,
+      "sources": 4
+    },
+    {
+      "id": "d2c09eb7-1984-4b0e-8462-b0a229063783",
+      "key": "sl330-k",
+      "action": "add",
+      "models": 1,
+      "sources": 4
+    },
+    {
+      "id": "c9a79276-6b5a-4f01-80f2-8e5c61b81c6f",
+      "key": "jb13x-hc",
+      "action": "add",
+      "models": 2,
+      "sources": 4
+    },
+    {
+      "id": "88dd1479-4751-4567-8735-873890195d7d",
+      "key": "ft220-hn",
+      "action": "add",
+      "models": 1,
+      "sources": 4
+    },
+    {
+      "id": "3b8382ae-7cb9-4c55-8436-2900fdf7d3ef",
+      "key": "ft280-ht-hn",
+      "action": "add",
+      "models": 2,
+      "sources": 4
+    },
+    {
+      "id": "24f4f017-94f4-4496-8d5e-d7d1d98b4354",
+      "key": "ft280-pcr1",
+      "action": "add",
+      "models": 1,
+      "sources": 4
+    },
+    {
+      "id": "91df5111-e8fc-4073-859c-08828aecb9c9",
+      "key": "jb17-19-r8w22",
+      "action": "add",
+      "models": 3,
+      "sources": 4
+    },
+    {
+      "id": "ef97c2d5-fddc-4336-8bb3-e52b1ac90021",
+      "key": "jb17-19-r8w3",
+      "action": "add",
+      "models": 3,
+      "sources": 4
+    },
+    {
+      "id": "7a6c416c-2c9c-4be0-83db-34ac53121375",
+      "key": "jb19xd9n-r70w2",
+      "action": "add",
+      "models": 1,
+      "sources": 4
+    },
+    {
+      "id": "c3150d23-9b18-4baf-8ab5-8f82741c7c69",
+      "key": "nb21-nma-r10w23",
+      "action": "add",
+      "models": 1,
+      "sources": 4
+    },
+    {
+      "id": "48bc3bae-84e0-4b88-8431-9fc98085f656",
+      "key": "ft240-sp-qb",
+      "action": "add",
+      "models": 1,
+      "sources": 4
+    },
+    {
+      "id": "762fa99a-77ce-481f-8438-5124493b83f6",
+      "key": "sl330-ft",
+      "action": "add",
+      "models": 1,
+      "sources": 4
+    },
+    {
+      "id": "4352f671-df70-416b-83dd-37e40c2be8dc",
+      "key": "sl350-w",
+      "action": "add",
+      "models": 1,
+      "sources": 4
+    },
+    {
+      "id": "65b3ecd0-8c98-4ffc-8521-039a8784c575",
+      "key": "jb15x-dsaz7",
+      "action": "add",
+      "models": 1,
+      "sources": 4
+    },
+    {
+      "id": "26cce46e-a951-4a7c-8ef2-8bca9947fd26",
+      "key": "mr1000-1050-at",
+      "action": "add",
+      "models": 2,
+      "sources": 3
+    },
+    {
+      "id": "32cdbd34-0b9b-4fa3-8464-2d635e8da98e",
+      "key": "m1010w-n",
+      "action": "add",
+      "models": 1,
+      "sources": 3
+    },
+    {
+      "id": "f03ba774-8d5e-4331-8c01-f16e865e3cf5",
+      "key": "m110ge-at",
+      "action": "add",
+      "models": 1,
+      "sources": 3
+    },
+    {
+      "id": "8cb96126-b6e3-4652-8b36-fc4e319bdba8",
+      "key": "jb-13x-n",
+      "action": "update",
+      "models": 3,
+      "sources": 6
+    },
+    {
+      "id": "f2634e03-1e48-4712-8cf2-3a8ec8ca43f8",
+      "key": "nr-17-23",
+      "action": "update",
+      "models": 4,
+      "sources": 7
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "d2c09eb7-1984-4b0e-8462-b0a229063783",
+      "title": "【カタログ解説】クボタ SL330K 果樹園スペシャル（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "d2c09eb7-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "d2c09eb7-002",
+          "type": "text",
+          "text": "果樹園やハウスでの作業に合わせて、座席位置と車高を低くしたトラクター。"
+        },
+        {
+          "id": "d2c09eb7-003",
+          "type": "bullet",
+          "text": "馬力：33PS"
+        },
+        {
+          "id": "d2c09eb7-004",
+          "type": "bullet",
+          "text": "用途：果樹園作業"
+        },
+        {
+          "id": "d2c09eb7-005",
+          "type": "bullet",
+          "text": "おすすめの作物：果樹全般"
+        },
+        {
+          "id": "d2c09eb7-006",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "d2c09eb7-007",
+          "type": "text",
+          "text": "SL330K(W)"
+        },
+        {
+          "id": "d2c09eb7-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "d2c09eb7-009",
+          "type": "text",
+          "text": "掲載写真：SL330K(W)（公式掲載の仕様例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/SL330K.jpg",
+        "summary": "果樹園やハウスでの作業に合わせて、座席位置と車高を低くしたトラクター。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "d2c09eb7-src-product",
+            "title": "クボタ公式 特殊仕様トラクタ：SL330K(W)",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_c9f88faa4f8154bf2df212a49f83b53b",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d2c09eb7-src-catalog",
+            "title": "クボタ 製品カタログ 果樹園スペシャル",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0038-07.pdf#page=13",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d2c09eb7-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d2c09eb7-src-photo",
+            "title": "写真：クボタ公式 SL330K(W)",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_c9f88faa4f8154bf2df212a49f83b53b",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "c3150d23-9b18-4baf-8ab5-8f82741c7c69",
+      "title": "【カタログ解説】クボタ NB21NMAR10W23 サトウキビ向け幅狭仕様（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "c3150d23-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "c3150d23-002",
+          "type": "text",
+          "text": "サトウキビのうね間管理に使う、NBシリーズの幅狭トラクター。 在庫限りの製品です。"
+        },
+        {
+          "id": "c3150d23-003",
+          "type": "bullet",
+          "text": "馬力：21PS"
+        },
+        {
+          "id": "c3150d23-004",
+          "type": "bullet",
+          "text": "用途：中耕管理作業"
+        },
+        {
+          "id": "c3150d23-005",
+          "type": "bullet",
+          "text": "おすすめの作物：サトウキビ"
+        },
+        {
+          "id": "c3150d23-006",
+          "type": "bullet",
+          "text": "販売状況：在庫限り（公式掲載）"
+        },
+        {
+          "id": "c3150d23-007",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "c3150d23-008",
+          "type": "text",
+          "text": "NB21NMAR10W23"
+        },
+        {
+          "id": "c3150d23-009",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "c3150d23-010",
+          "type": "text",
+          "text": "掲載写真：NB21NMAR10W23（公式掲載の仕様例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/846c66b5cac72577b14a7812f62632e1/NB21%E3%82%AD%E3%83%92%E3%82%99%E3%83%88%E3%83%A9_%E6%A8%99%E6%BA%96.jpg",
+        "summary": "サトウキビのうね間管理に使う、NBシリーズの幅狭トラクター。 在庫限りの製品です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "c3150d23-src-product",
+            "title": "クボタ公式 特殊仕様トラクタ：NB21NMAR10W23",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_3",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c3150d23-src-catalog",
+            "title": "クボタ 製品カタログ サトウキビ向け幅狭仕様",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-10-3-0002-01.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c3150d23-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c3150d23-src-photo",
+            "title": "写真：クボタ公式 NB21NMAR10W23",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_3",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

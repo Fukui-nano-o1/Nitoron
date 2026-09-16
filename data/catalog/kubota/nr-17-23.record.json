@@ -38,7 +38,7 @@
         {
           "id": "f2634e03-006",
           "type": "text",
-          "text": "NR17 / NR23"
+          "text": "NR17 / NR23 / NR17FM / NR23FM"
         },
         {
           "id": "f2634e03-007",
@@ -111,6 +111,12 @@
             "id": "f2634e03-src-manual-2",
             "title": "取扱説明書 NR23F",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=532b81fa223a1b1ec74139a5b8151d12",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f2634e03-src-models",
+            "title": "クボタ公式 特殊仕様の型式一覧",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_6ae2ab876e86d15e9551cecde0a27f0d_1_1_1_1_1_1_1",
             "date": "2026-09-16"
           },
           {

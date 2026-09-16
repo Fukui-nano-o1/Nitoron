@@ -1,0 +1,59 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "JB13XDSA5",
+  "productName": "低床仕様",
+  "category": "トラクタ",
+  "checkedAt": "2026-09-16",
+  "summary": "果樹園の枝下やハウス内の作業に使う、低床仕様のトラクター。 在庫限りの製品です。",
+  "models": [
+    "JB13XDSA5"
+  ],
+  "photoModel": "JB13XDSA5（公式掲載の仕様例）",
+  "facts": [
+    {
+      "label": "馬力",
+      "value": "13.5PS",
+      "source": "product"
+    },
+    {
+      "label": "用途",
+      "value": "果樹園・ハウス作業",
+      "source": "product"
+    },
+    {
+      "label": "おすすめの作物",
+      "value": "果樹・ハウス栽培作物全般",
+      "source": "product"
+    },
+    {
+      "label": "販売状況",
+      "value": "在庫限り（公式掲載）",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/speciality-tractors/#id_853ef31137e4032e4c51f171726ba3be",
+      "title": "クボタ公式 特殊仕様トラクタ：JB13XDSA5",
+      "checkedAt": "2026-09-16",
+      "sha256": "47678f8bf0a49f9f820c8a12828b7bacc12fecf2ca5f1508a98636070694c1ef"
+    },
+    "catalog": {
+      "title": "製品カタログはこちら",
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-3-0009-03.pdf"
+    },
+    "manualIndex": {
+      "title": "クボタ 取扱説明書検索",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manuals": []
+  },
+  "verification": {
+    "photo": "official-speciality-section",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}
