@@ -1,0 +1,281 @@
+{
+  "checkedAt": "2026-09-16",
+  "scope": "Official tiller and mini_cultivator listings; base models, excluding attachment products and unlisted historical models.",
+  "indexes": [
+    {
+      "url": "https://agriculture.kubota.co.jp/product/tiller/",
+      "sha256": "4b90c38c790c9390b34005cfd3f0cbec2c65278069912a249945ea5040dcd878",
+      "series": 8
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/",
+      "sha256": "346dc5c974e6bab2ef5bdfc670d7286b1ad5a7dedc934acc89ffb291551eb034",
+      "series": 9
+    }
+  ],
+  "officialSeries": 17,
+  "officialModels": 31,
+  "coveredSeries": 17,
+  "coveredModels": 31,
+  "addedCards": 9,
+  "kubotaCatalogCards": 27,
+  "coverage": [
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/tiller/TA-951N-1051N/",
+      "category": "tiller",
+      "models": [
+        {
+          "model": "TA951N",
+          "cardId": "44fa1e7a-48b2-4ecd-8e82-c14a833f9afe",
+          "search": true
+        },
+        {
+          "model": "TA1051N",
+          "cardId": "44fa1e7a-48b2-4ecd-8e82-c14a833f9afe",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/",
+      "category": "tiller",
+      "models": [
+        {
+          "model": "TA701N",
+          "cardId": "cb311f16-85d8-4ba7-885b-3329415c627c",
+          "search": true
+        },
+        {
+          "model": "TA801N",
+          "cardId": "c41905d8-fa77-4486-8067-1ad028c170ca",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/tiller/TS-552N-752N/",
+      "category": "tiller",
+      "models": [
+        {
+          "model": "TS552N",
+          "cardId": "ef09bf08-654c-4209-87e5-450d6ed254a6",
+          "search": true
+        },
+        {
+          "model": "TS752N",
+          "cardId": "ef09bf08-654c-4209-87e5-450d6ed254a6",
+          "search": true
+        },
+        {
+          "model": "PC752N",
+          "cardId": "ef09bf08-654c-4209-87e5-450d6ed254a6",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/tiller/TS-551N-751N/",
+      "category": "tiller",
+      "models": [
+        {
+          "model": "TS551N",
+          "cardId": "a15a26f1-2d1c-48c1-8e5d-55d53a159e38",
+          "search": true
+        },
+        {
+          "model": "TS751N",
+          "cardId": "a15a26f1-2d1c-48c1-8e5d-55d53a159e38",
+          "search": true
+        },
+        {
+          "model": "PC751N",
+          "cardId": "a15a26f1-2d1c-48c1-8e5d-55d53a159e38",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/tiller/TS-350N-450N/",
+      "category": "tiller",
+      "models": [
+        {
+          "model": "TS350WN",
+          "cardId": "d18d897a-7bdb-40c4-81e4-0023b68f3d0a",
+          "search": true
+        },
+        {
+          "model": "TS450WN",
+          "cardId": "d18d897a-7bdb-40c4-81e4-0023b68f3d0a",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/tiller/FTN-800/",
+      "category": "tiller",
+      "models": [
+        {
+          "model": "FTN800",
+          "cardId": "0aabcba2-89f6-42b7-80fa-42779a607a20",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/tiller/TG-7000N-9000N/",
+      "category": "tiller",
+      "models": [
+        {
+          "model": "TG7000N",
+          "cardId": "9654c335-d28d-41b5-82af-c18de33da29f",
+          "search": true
+        },
+        {
+          "model": "TG9000N",
+          "cardId": "9654c335-d28d-41b5-82af-c18de33da29f",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/tiller/KRA-750-850/",
+      "category": "tiller",
+      "models": [
+        {
+          "model": "KRA750",
+          "cardId": "5eca494e-619c-4ffd-8162-8d03d07cce9a",
+          "search": true
+        },
+        {
+          "model": "KRA850",
+          "cardId": "5eca494e-619c-4ffd-8162-8d03d07cce9a",
+          "search": true
+        },
+        {
+          "model": "K75R",
+          "cardId": "5eca494e-619c-4ffd-8162-8d03d07cce9a",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/mini_cultivator/TME-150-200/",
+      "category": "mini_cultivator",
+      "models": [
+        {
+          "model": "TME150",
+          "cardId": "b4ae09e2-cfd6-4916-86b0-39fac57c9066",
+          "search": true
+        },
+        {
+          "model": "TME200",
+          "cardId": "b4ae09e2-cfd6-4916-86b0-39fac57c9066",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/mini_cultivator/TMS-200/",
+      "category": "mini_cultivator",
+      "models": [
+        {
+          "model": "TMS200",
+          "cardId": "ba845f4a-995a-4ab7-8c05-3efb4aad0227",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/mini_cultivator/TMS-300/",
+      "category": "mini_cultivator",
+      "models": [
+        {
+          "model": "TMS300",
+          "cardId": "5b4be6c4-4f1d-470c-8411-da6107264344",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/mini_cultivator/TRS-300/",
+      "category": "mini_cultivator",
+      "models": [
+        {
+          "model": "TRS300",
+          "cardId": "d41e8089-3ec7-4259-8d92-bdf3c05e30e8",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/mini_cultivator/FTR-3500/",
+      "category": "mini_cultivator",
+      "models": [
+        {
+          "model": "FTR3500",
+          "cardId": "c204a33e-968f-4147-8552-9a4c538561be",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/mini_cultivator/TMS-400/",
+      "category": "mini_cultivator",
+      "models": [
+        {
+          "model": "TMS400",
+          "cardId": "a7748bfd-ac9d-41e8-8e04-e01590d07256",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/mini_cultivator/TRS-5000-7000/",
+      "category": "mini_cultivator",
+      "models": [
+        {
+          "model": "TRS5000",
+          "cardId": "5f55acdd-c334-4fcb-8cfd-4aa116dcb425",
+          "search": true
+        },
+        {
+          "model": "TRS6000",
+          "cardId": "5f55acdd-c334-4fcb-8cfd-4aa116dcb425",
+          "search": true
+        },
+        {
+          "model": "TRS7000",
+          "cardId": "5f55acdd-c334-4fcb-8cfd-4aa116dcb425",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/mini_cultivator/TRS-900/",
+      "category": "mini_cultivator",
+      "models": [
+        {
+          "model": "TRS900",
+          "cardId": "5bb24fc7-de34-4714-8492-b2a00a145d70",
+          "search": true
+        }
+      ]
+    },
+    {
+      "productUrl": "https://agriculture.kubota.co.jp/product/mini_cultivator/FTR-70-90/",
+      "category": "mini_cultivator",
+      "models": [
+        {
+          "model": "FTR70",
+          "cardId": "9fbc248c-2e79-4c55-82b2-f843c1ec68ee",
+          "search": true
+        },
+        {
+          "model": "FTR90",
+          "cardId": "9fbc248c-2e79-4c55-82b2-f843c1ec68ee",
+          "search": true
+        }
+      ]
+    }
+  ]
+}

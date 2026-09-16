@@ -1,0 +1,66 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "TA-801N",
+  "productName": "ニューベジマスター",
+  "category": "管理機・テーラー・耕うん機",
+  "models": [
+    "TA801N"
+  ],
+  "summary": "ニューベジマスターの7.0馬力モデル。作業に合わせて仕様やアタッチメントを選べます。",
+  "checkedAt": "2026-09-16",
+  "photoModel": "TA801N-SCK",
+  "facts": [
+    {
+      "label": "出力",
+      "value": "7.0馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/",
+      "checkedAt": "2026-09-16",
+      "sha256": "92451dbe9f10c316ed8754cc0019768de1e19215b397e7f998df2a0174aefd91"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-20-2-0010-04.pdf",
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/?nav=catalog"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（TA-801N）",
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/?nav=manual"
+    },
+    "manuals": [
+      {
+        "title": "TA801N-N",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d04863f100d59b3eb688a11f95b0ae60"
+      },
+      {
+        "title": "TA801N-SCJ",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=063e26c670d07bb7c4d30e6fc69fe056"
+      },
+      {
+        "title": "TA801N-SCK",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=999600eb275cc7196161261972daa59b"
+      },
+      {
+        "title": "TA801N-SCW",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=102f0bb6efb3a6128a3c750dd16729be"
+      }
+    ],
+    "lineup": {
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/?nav=nav_2",
+      "sha256": "344248864fbd6269d45a315287ffa1796f61795429a0e831e92227e1bd602cf9",
+      "checkedAt": "2026-09-16"
+    }
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-product-lineup",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

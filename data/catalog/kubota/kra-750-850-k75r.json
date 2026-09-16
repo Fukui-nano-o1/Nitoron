@@ -1,0 +1,64 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "KRA-750-850-K75R",
+  "productName": "クボタ耕うん機",
+  "category": "管理機・テーラー・耕うん機",
+  "models": [
+    "KRA750",
+    "KRA850",
+    "K75R"
+  ],
+  "summary": "水田と畑の作業向けの耕うん機。KRA750・KRA850・K75Rをまとめています。",
+  "checkedAt": "2026-09-16",
+  "photoModel": "KRA750／KRA850／K75Rシリーズの公式参考写真",
+  "facts": [
+    {
+      "label": "出力帯",
+      "value": "7.5〜8.5馬力",
+      "source": "product"
+    },
+    {
+      "label": "用途",
+      "value": "水田・畑の耕うん",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tiller/KRA-750-850/",
+      "checkedAt": "2026-09-16",
+      "sha256": "320b0a63e8195f86a8bce9d363bf1eec4faac31d688d95436a9da3c4516e99a7"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-30-2-0001-03n2.pdf",
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tiller/KRA-750-850/?nav=catalog"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（KRA-750-850-K75R）",
+      "url": "https://agriculture.kubota.co.jp/product/tiller/KRA-750-850/?nav=manual"
+    },
+    "manuals": [
+      {
+        "title": "KRA750",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=24146db4eb48c718b84cae0a0799dcfc"
+      },
+      {
+        "title": "KRA850",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3806734b256c27e41ec2c6bffa26d9e7"
+      },
+      {
+        "title": "K75R",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=109a0ca3bc27f3e96597370d5c8cf03d"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-series",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

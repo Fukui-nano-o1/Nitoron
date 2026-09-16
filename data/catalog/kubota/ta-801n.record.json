@@ -1,0 +1,138 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "c41905d8-fa77-4486-8067-1ad028c170ca",
+      "title": "【カタログ解説】クボタ TA-801N ニューベジマスター（管理機・テーラー・耕うん機）",
+      "category": "管理機・テーラー・耕うん機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "c41905d8-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "c41905d8-002",
+          "type": "text",
+          "text": "ニューベジマスターの7.0馬力モデル。作業に合わせて仕様やアタッチメントを選べます。"
+        },
+        {
+          "id": "c41905d8-003",
+          "type": "bullet",
+          "text": "出力：7.0馬力"
+        },
+        {
+          "id": "c41905d8-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "c41905d8-005",
+          "type": "text",
+          "text": "TA801N"
+        },
+        {
+          "id": "c41905d8-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "c41905d8-007",
+          "type": "text",
+          "text": "掲載写真：TA801N-SCK。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "管理機・テーラー・耕うん機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/878323e4778fab80c64806f66953ca4d/05_TA801N-SCK.jpg",
+        "summary": "ニューベジマスターの7.0馬力モデル。作業に合わせて仕様やアタッチメントを選べます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "c41905d8-src-product",
+            "title": "クボタ 製品ページ TA-801N",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c41905d8-src-catalog",
+            "title": "クボタ 製品カタログ ニューベジマスター",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-20-2-0010-04.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c41905d8-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（TA-801N）",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c41905d8-src-manual-1",
+            "title": "取扱説明書 TA801N-N",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d04863f100d59b3eb688a11f95b0ae60",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c41905d8-src-manual-2",
+            "title": "取扱説明書 TA801N-SCJ",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=063e26c670d07bb7c4d30e6fc69fe056",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c41905d8-src-manual-3",
+            "title": "取扱説明書 TA801N-SCK",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=999600eb275cc7196161261972daa59b",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c41905d8-src-manual-4",
+            "title": "取扱説明書 TA801N-SCW",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=102f0bb6efb3a6128a3c750dd16729be",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c41905d8-src-photo",
+            "title": "写真：クボタ TA801N-SCK",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

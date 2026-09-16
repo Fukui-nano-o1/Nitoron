@@ -1,0 +1,54 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "TS-350WN-450WN",
+  "productName": "ニューウネマスターJr.",
+  "category": "管理機・テーラー・耕うん機",
+  "models": [
+    "TS350WN",
+    "TS450WN"
+  ],
+  "summary": "うねづくりやうね間の作業に使う、小型の管理機シリーズ。",
+  "checkedAt": "2026-09-16",
+  "photoModel": "TS350WN",
+  "facts": [
+    {
+      "label": "出力帯",
+      "value": "3.0〜4.2馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TS-350N-450N/",
+      "checkedAt": "2026-09-16",
+      "sha256": "56d4eb633c340237e542ea9e9df8b68ef1996f0f8a2d8e36cc43795c9a1828e4"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-20-2-0006-01c.pdf",
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tiller/TS-350N-450N/?nav=catalog"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（TS-350WN-450WN）",
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TS-350N-450N/?nav=manual"
+    },
+    "manuals": [
+      {
+        "title": "TS350WN",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f7696a9b362ac5a51c3dc8f098b73923"
+      },
+      {
+        "title": "TS450WN",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3f998e713a6e02287c374fd26835d87e"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-series",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

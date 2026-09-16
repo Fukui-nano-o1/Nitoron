@@ -1,0 +1,63 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "FTR-3500",
+  "productName": "NEW 菜ビ",
+  "category": "ミニ耕うん機",
+  "models": [
+    "FTR3500"
+  ],
+  "summary": "耕うん部を前方に配置したミニ耕うん機。家庭菜園の耕うんやうね立てに使えます。",
+  "checkedAt": "2026-09-16",
+  "photoModel": "FTR3500",
+  "facts": [
+    {
+      "label": "出力",
+      "value": "3.0馬力",
+      "source": "product"
+    },
+    {
+      "label": "耕うん幅",
+      "value": "500mm",
+      "source": "product"
+    },
+    {
+      "label": "ロータリ配置",
+      "value": "フロントロータリ",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/FTR-3500/",
+      "checkedAt": "2026-09-16",
+      "sha256": "da730b87dca7a636ababdf65284debe3841d261af2423771e6a224b1c50b79bc"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-10-2-0004-24.pdf",
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/mini_cultivator/FTR-3500/?nav=catalog"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（FTR-3500）",
+      "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/FTR-3500/?nav=manual"
+    },
+    "manuals": [
+      {
+        "title": "FTR3500",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=52720e003547c70561bf5e03b95aa99f"
+      },
+      {
+        "title": "FTR3500C",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c3e878e27f52e2a57ace4d9a76fd9acf"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-official-series",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

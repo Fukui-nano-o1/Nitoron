@@ -1,0 +1,125 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "0aabcba2-89f6-42b7-80fa-42779a607a20",
+      "title": "【カタログ解説】クボタ FTN-800 ねぎ管理機（管理機・テーラー・耕うん機）",
+      "category": "管理機・テーラー・耕うん機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "0aabcba2-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "0aabcba2-002",
+          "type": "text",
+          "text": "白ねぎ栽培の管理作業向けの専用機。作業に合うアタッチメントを装着して使います。"
+        },
+        {
+          "id": "0aabcba2-003",
+          "type": "bullet",
+          "text": "出力：7.0馬力"
+        },
+        {
+          "id": "0aabcba2-004",
+          "type": "bullet",
+          "text": "用途：ねぎの管理作業"
+        },
+        {
+          "id": "0aabcba2-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "0aabcba2-006",
+          "type": "text",
+          "text": "FTN800"
+        },
+        {
+          "id": "0aabcba2-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "0aabcba2-008",
+          "type": "text",
+          "text": "掲載写真：FTN800。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "管理機・テーラー・耕うん機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/4c6c16bb568db89011cd62f3f671af9d/negi_kanri_card.jpg",
+        "summary": "白ねぎ栽培の管理作業向けの専用機。作業に合うアタッチメントを装着して使います。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "0aabcba2-src-product",
+            "title": "クボタ 製品ページ FTN-800",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/FTN-800/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0aabcba2-src-catalog",
+            "title": "クボタ 製品カタログ ねぎ管理機",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-10-3-0011-02new.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0aabcba2-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（FTN-800）",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/FTN-800/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0aabcba2-src-manual-1",
+            "title": "取扱説明書 FTN800",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c058f544c737782deacefa532d9add4c",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "0aabcba2-src-photo",
+            "title": "写真：クボタ FTN800",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/FTN-800/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

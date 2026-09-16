@@ -1,0 +1,70 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "TA-951N-1051N",
+  "productName": "ニュースーパーベジマスター",
+  "category": "管理機・テーラー・耕うん機",
+  "models": [
+    "TA951N",
+    "TA1051N"
+  ],
+  "summary": "耕うんからうねづくりまで、アタッチメントを組み合わせて使う管理機シリーズ。",
+  "checkedAt": "2026-09-16",
+  "photoModel": "TA951N-W",
+  "facts": [
+    {
+      "label": "出力帯",
+      "value": "8.5〜10.5馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TA-951N-1051N/",
+      "checkedAt": "2026-09-16",
+      "sha256": "71bb51d0901767d4831b49a7f25f94647d878cf422d3a0af516d05607e9df0af"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-20-2-0009-02n.pdf",
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tiller/TA-951N-1051N/?nav=catalog"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（TA-951N-1051N）",
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TA-951N-1051N/?nav=manual"
+    },
+    "manuals": [
+      {
+        "title": "TA951N",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=878d5691c824ee2aaf770f7d36c151d6"
+      },
+      {
+        "title": "TA951N-W",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=565030e1fce4e481f9823a7de3b8a047"
+      },
+      {
+        "title": "TA1051N",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=300891a62162b960cf02ce3827bb363c"
+      },
+      {
+        "title": "TA1051N-EL3W",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=466accbac9a66b805ba50e42ad715740"
+      },
+      {
+        "title": "TA1051N-L3W",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ab8aa05e782481f55fc1412a97e7ac34"
+      },
+      {
+        "title": "TA1051N-W",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ca43108ded5aabc7793d3f9b928cdd54"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-product-lineup",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

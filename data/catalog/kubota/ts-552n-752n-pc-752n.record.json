@@ -1,0 +1,119 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "ef09bf08-654c-4209-87e5-450d6ed254a6",
+      "title": "【カタログ解説】クボタ TS-552N-752N-PC-752N ウネマスターPro（管理機・テーラー・耕うん機）",
+      "category": "管理機・テーラー・耕うん機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "ef09bf08-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "ef09bf08-002",
+          "type": "text",
+          "text": "うね間の管理作業に使う管理機シリーズ。作業やほ場に応じた1輪・2輪仕様を用意しています。"
+        },
+        {
+          "id": "ef09bf08-003",
+          "type": "bullet",
+          "text": "出力帯：4.2・6.3馬力"
+        },
+        {
+          "id": "ef09bf08-004",
+          "type": "bullet",
+          "text": "走行仕様：1輪／2輪（型式により異なる）"
+        },
+        {
+          "id": "ef09bf08-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "ef09bf08-006",
+          "type": "text",
+          "text": "TS552N / TS752N / PC752N"
+        },
+        {
+          "id": "ef09bf08-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "ef09bf08-008",
+          "type": "text",
+          "text": "掲載写真：TS552N。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "管理機・テーラー・耕うん機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/e100551ad7a557d1a090d13f9bc4bfef/TS552N.jpg",
+        "summary": "うね間の管理作業に使う管理機シリーズ。作業やほ場に応じた1輪・2輪仕様を用意しています。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "ef09bf08-src-product",
+            "title": "クボタ 製品ページ TS-552N-752N-PC-752N",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TS-552N-752N/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ef09bf08-src-catalog",
+            "title": "クボタ 製品カタログ ウネマスターPro",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-20-2-0012-02.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ef09bf08-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（TS-552N-752N-PC-752N）",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TS-552N-752N/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ef09bf08-src-photo",
+            "title": "写真：クボタ TS552N",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TS-552N-752N/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

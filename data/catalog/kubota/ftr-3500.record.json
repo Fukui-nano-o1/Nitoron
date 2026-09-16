@@ -1,0 +1,136 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "c204a33e-968f-4147-8552-9a4c538561be",
+      "title": "【カタログ解説】クボタ FTR-3500 NEW 菜ビ（ミニ耕うん機）",
+      "category": "ミニ耕うん機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "c204a33e-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "c204a33e-002",
+          "type": "text",
+          "text": "耕うん部を前方に配置したミニ耕うん機。家庭菜園の耕うんやうね立てに使えます。"
+        },
+        {
+          "id": "c204a33e-003",
+          "type": "bullet",
+          "text": "出力：3.0馬力"
+        },
+        {
+          "id": "c204a33e-004",
+          "type": "bullet",
+          "text": "耕うん幅：500mm"
+        },
+        {
+          "id": "c204a33e-005",
+          "type": "bullet",
+          "text": "ロータリ配置：フロントロータリ"
+        },
+        {
+          "id": "c204a33e-006",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "c204a33e-007",
+          "type": "text",
+          "text": "FTR3500"
+        },
+        {
+          "id": "c204a33e-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "c204a33e-009",
+          "type": "text",
+          "text": "掲載写真：FTR3500。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "ミニ耕うん機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/1eae0469956fcf8e5593d14a1cb2fd0b/card-FTR-3500.jpg",
+        "summary": "耕うん部を前方に配置したミニ耕うん機。家庭菜園の耕うんやうね立てに使えます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "c204a33e-src-product",
+            "title": "クボタ 製品ページ FTR-3500",
+            "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/FTR-3500/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c204a33e-src-catalog",
+            "title": "クボタ 製品カタログ NEW 菜ビ",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-10-2-0004-24.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c204a33e-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（FTR-3500）",
+            "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/FTR-3500/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c204a33e-src-manual-1",
+            "title": "取扱説明書 FTR3500",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=52720e003547c70561bf5e03b95aa99f",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c204a33e-src-manual-2",
+            "title": "取扱説明書 FTR3500C",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c3e878e27f52e2a57ace4d9a76fd9acf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c204a33e-src-photo",
+            "title": "写真：クボタ FTR3500",
+            "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/FTR-3500/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

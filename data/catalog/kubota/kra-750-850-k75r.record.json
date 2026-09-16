@@ -1,0 +1,137 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "5eca494e-619c-4ffd-8162-8d03d07cce9a",
+      "title": "【カタログ解説】クボタ KRA-750-850-K75R クボタ耕うん機（管理機・テーラー・耕うん機）",
+      "category": "管理機・テーラー・耕うん機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "5eca494e-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "5eca494e-002",
+          "type": "text",
+          "text": "水田と畑の作業向けの耕うん機。KRA750・KRA850・K75Rをまとめています。"
+        },
+        {
+          "id": "5eca494e-003",
+          "type": "bullet",
+          "text": "出力帯：7.5〜8.5馬力"
+        },
+        {
+          "id": "5eca494e-004",
+          "type": "bullet",
+          "text": "用途：水田・畑の耕うん"
+        },
+        {
+          "id": "5eca494e-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "5eca494e-006",
+          "type": "text",
+          "text": "KRA750 / KRA850 / K75R"
+        },
+        {
+          "id": "5eca494e-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "5eca494e-008",
+          "type": "text",
+          "text": "掲載写真：KRA750／KRA850／K75Rシリーズの公式参考写真。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "管理機・テーラー・耕うん機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/573b7f2a8ed1b534b1a8f241ac647083/kra_card.jpg",
+        "summary": "水田と畑の作業向けの耕うん機。KRA750・KRA850・K75Rをまとめています。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "5eca494e-src-product",
+            "title": "クボタ 製品ページ KRA-750-850-K75R",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/KRA-750-850/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5eca494e-src-catalog",
+            "title": "クボタ 製品カタログ クボタ耕うん機",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-30-2-0001-03n2.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5eca494e-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（KRA-750-850-K75R）",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/KRA-750-850/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5eca494e-src-manual-1",
+            "title": "取扱説明書 KRA750",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=24146db4eb48c718b84cae0a0799dcfc",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5eca494e-src-manual-2",
+            "title": "取扱説明書 KRA850",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3806734b256c27e41ec2c6bffa26d9e7",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5eca494e-src-manual-3",
+            "title": "取扱説明書 K75R",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=109a0ca3bc27f3e96597370d5c8cf03d",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5eca494e-src-photo",
+            "title": "写真：クボタ KRA750／KRA850／K75Rシリーズの公式参考写真",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/KRA-750-850/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

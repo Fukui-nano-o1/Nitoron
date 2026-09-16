@@ -1,0 +1,131 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "9654c335-d28d-41b5-82af-c18de33da29f",
+      "title": "【カタログ解説】クボタ TG-7000N-9000N クボタテーラー（管理機・テーラー・耕うん機）",
+      "category": "管理機・テーラー・耕うん機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "9654c335-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "9654c335-002",
+          "type": "text",
+          "text": "水田の耕うん・代かきと、畑の耕うん・うね立てに対応するテーラー。"
+        },
+        {
+          "id": "9654c335-003",
+          "type": "bullet",
+          "text": "出力帯：6.3〜8.0馬力"
+        },
+        {
+          "id": "9654c335-004",
+          "type": "bullet",
+          "text": "用途：水田・畑の耕うん"
+        },
+        {
+          "id": "9654c335-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "9654c335-006",
+          "type": "text",
+          "text": "TG7000N / TG9000N"
+        },
+        {
+          "id": "9654c335-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "9654c335-008",
+          "type": "text",
+          "text": "掲載写真：TG7000N／TG9000Nシリーズの公式参考写真。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "管理機・テーラー・耕うん機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/1406e1fc7febef8ed0f160c44d1ab8c6/tg7000n-9000n_card.jpg",
+        "summary": "水田の耕うん・代かきと、畑の耕うん・うね立てに対応するテーラー。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "9654c335-src-product",
+            "title": "クボタ 製品ページ TG-7000N-9000N",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TG-7000N-9000N/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "9654c335-src-catalog",
+            "title": "クボタ 製品カタログ クボタテーラー",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-20-2-0007-01.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "9654c335-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（TG-7000N-9000N）",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TG-7000N-9000N/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "9654c335-src-manual-1",
+            "title": "取扱説明書 TG7000N",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a6ea8471c120fe8cc35a2954c9b9c595",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "9654c335-src-manual-2",
+            "title": "取扱説明書 TG9000N",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cb2c2041d9763d84d7d655e81178f444",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "9654c335-src-photo",
+            "title": "写真：クボタ TG7000N／TG9000Nシリーズの公式参考写真",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TG-7000N-9000N/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

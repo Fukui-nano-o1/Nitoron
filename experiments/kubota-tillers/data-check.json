@@ -1,0 +1,110 @@
+[
+  {
+    "id": "44fa1e7a-48b2-4ecd-8e82-c14a833f9afe",
+    "series": "TA-951N-1051N",
+    "models": [
+      "TA951N",
+      "TA1051N"
+    ],
+    "photo": "https://agriculture.kubota.co.jp/img_sys/uploadImages/8a8ca435bbb8662a0d6e3d9c99ce33fe/TA951N.jpg",
+    "search": true,
+    "publication": true,
+    "sources": 4
+  },
+  {
+    "id": "c41905d8-fa77-4486-8067-1ad028c170ca",
+    "series": "TA-801N",
+    "models": [
+      "TA801N"
+    ],
+    "photo": "https://agriculture.kubota.co.jp/img_sys/uploadImages/878323e4778fab80c64806f66953ca4d/05_TA801N-SCK.jpg",
+    "search": true,
+    "publication": true,
+    "sources": 8
+  },
+  {
+    "id": "ef09bf08-654c-4209-87e5-450d6ed254a6",
+    "series": "TS-552N-752N-PC-752N",
+    "models": [
+      "TS552N",
+      "TS752N",
+      "PC752N"
+    ],
+    "photo": "https://agriculture.kubota.co.jp/img_sys/uploadImages/e100551ad7a557d1a090d13f9bc4bfef/TS552N.jpg",
+    "search": true,
+    "publication": true,
+    "sources": 4
+  },
+  {
+    "id": "a15a26f1-2d1c-48c1-8e5d-55d53a159e38",
+    "series": "TS-551N-751N-PC-751N",
+    "models": [
+      "TS551N",
+      "TS751N",
+      "PC751N"
+    ],
+    "photo": "https://agriculture.kubota.co.jp/img_sys/uploadImages/e1080525d95f4e8f0e13fd1e2b746ad7/2_TS551N.jpg",
+    "search": true,
+    "publication": true,
+    "sources": 7
+  },
+  {
+    "id": "d18d897a-7bdb-40c4-81e4-0023b68f3d0a",
+    "series": "TS-350WN-450WN",
+    "models": [
+      "TS350WN",
+      "TS450WN"
+    ],
+    "photo": "https://agriculture.kubota.co.jp/img_sys/productCardImage/2726237824f62fcb01158b10ee787198/new-unemaster_jr_card.jpg",
+    "search": true,
+    "publication": true,
+    "sources": 6
+  },
+  {
+    "id": "0aabcba2-89f6-42b7-80fa-42779a607a20",
+    "series": "FTN-800",
+    "models": [
+      "FTN800"
+    ],
+    "photo": "https://agriculture.kubota.co.jp/img_sys/productCardImage/4c6c16bb568db89011cd62f3f671af9d/negi_kanri_card.jpg",
+    "search": true,
+    "publication": true,
+    "sources": 5
+  },
+  {
+    "id": "9654c335-d28d-41b5-82af-c18de33da29f",
+    "series": "TG-7000N-9000N",
+    "models": [
+      "TG7000N",
+      "TG9000N"
+    ],
+    "photo": "https://agriculture.kubota.co.jp/img_sys/productCardImage/1406e1fc7febef8ed0f160c44d1ab8c6/tg7000n-9000n_card.jpg",
+    "search": true,
+    "publication": true,
+    "sources": 6
+  },
+  {
+    "id": "5eca494e-619c-4ffd-8162-8d03d07cce9a",
+    "series": "KRA-750-850-K75R",
+    "models": [
+      "KRA750",
+      "KRA850",
+      "K75R"
+    ],
+    "photo": "https://agriculture.kubota.co.jp/img_sys/productCardImage/573b7f2a8ed1b534b1a8f241ac647083/kra_card.jpg",
+    "search": true,
+    "publication": true,
+    "sources": 7
+  },
+  {
+    "id": "c204a33e-968f-4147-8552-9a4c538561be",
+    "series": "FTR-3500",
+    "models": [
+      "FTR3500"
+    ],
+    "photo": "https://agriculture.kubota.co.jp/img_sys/productCardImage/1eae0469956fcf8e5593d14a1cb2fd0b/card-FTR-3500.jpg",
+    "search": true,
+    "publication": true,
+    "sources": 6
+  }
+]

@@ -1,0 +1,104 @@
+{
+  "checkedAt": "2026-09-16",
+  "project": "ycvbjzlqrxnwalhhgzat",
+  "addedCards": 9,
+  "existingRowsUnchanged": true,
+  "before": [
+    {
+      "table_name": "publications",
+      "total": 25,
+      "untouched_hash": "3a78a1e9378b6ba93c01e92ae841ff4c"
+    },
+    {
+      "table_name": "notes",
+      "total": 26,
+      "untouched_hash": "565390d90b460c76439bd85e8d530abf"
+    }
+  ],
+  "after": [
+    {
+      "table_name": "publications",
+      "total": 25,
+      "untouched_hash": "3a78a1e9378b6ba93c01e92ae841ff4c"
+    },
+    {
+      "table_name": "notes",
+      "total": 26,
+      "untouched_hash": "565390d90b460c76439bd85e8d530abf"
+    }
+  ],
+  "checks": [
+    {
+      "id": "0aabcba2-89f6-42b7-80fa-42779a607a20",
+      "is_public": true,
+      "snapshot_matches": true,
+      "note_matches": true,
+      "indexed": true,
+      "photo": "https://agriculture.kubota.co.jp/img_sys/productCardImage/4c6c16bb568db89011cd62f3f671af9d/negi_kanri_card.jpg"
+    },
+    {
+      "id": "44fa1e7a-48b2-4ecd-8e82-c14a833f9afe",
+      "is_public": true,
+      "snapshot_matches": true,
+      "note_matches": true,
+      "indexed": true,
+      "photo": "https://agriculture.kubota.co.jp/img_sys/uploadImages/8a8ca435bbb8662a0d6e3d9c99ce33fe/TA951N.jpg"
+    },
+    {
+      "id": "5eca494e-619c-4ffd-8162-8d03d07cce9a",
+      "is_public": true,
+      "snapshot_matches": true,
+      "note_matches": true,
+      "indexed": true,
+      "photo": "https://agriculture.kubota.co.jp/img_sys/productCardImage/573b7f2a8ed1b534b1a8f241ac647083/kra_card.jpg"
+    },
+    {
+      "id": "9654c335-d28d-41b5-82af-c18de33da29f",
+      "is_public": true,
+      "snapshot_matches": true,
+      "note_matches": true,
+      "indexed": true,
+      "photo": "https://agriculture.kubota.co.jp/img_sys/productCardImage/1406e1fc7febef8ed0f160c44d1ab8c6/tg7000n-9000n_card.jpg"
+    },
+    {
+      "id": "a15a26f1-2d1c-48c1-8e5d-55d53a159e38",
+      "is_public": true,
+      "snapshot_matches": true,
+      "note_matches": true,
+      "indexed": true,
+      "photo": "https://agriculture.kubota.co.jp/img_sys/uploadImages/e1080525d95f4e8f0e13fd1e2b746ad7/2_TS551N.jpg"
+    },
+    {
+      "id": "c204a33e-968f-4147-8552-9a4c538561be",
+      "is_public": true,
+      "snapshot_matches": true,
+      "note_matches": true,
+      "indexed": true,
+      "photo": "https://agriculture.kubota.co.jp/img_sys/productCardImage/1eae0469956fcf8e5593d14a1cb2fd0b/card-FTR-3500.jpg"
+    },
+    {
+      "id": "c41905d8-fa77-4486-8067-1ad028c170ca",
+      "is_public": true,
+      "snapshot_matches": true,
+      "note_matches": true,
+      "indexed": true,
+      "photo": "https://agriculture.kubota.co.jp/img_sys/uploadImages/878323e4778fab80c64806f66953ca4d/05_TA801N-SCK.jpg"
+    },
+    {
+      "id": "d18d897a-7bdb-40c4-81e4-0023b68f3d0a",
+      "is_public": true,
+      "snapshot_matches": true,
+      "note_matches": true,
+      "indexed": true,
+      "photo": "https://agriculture.kubota.co.jp/img_sys/productCardImage/2726237824f62fcb01158b10ee787198/new-unemaster_jr_card.jpg"
+    },
+    {
+      "id": "ef09bf08-654c-4209-87e5-450d6ed254a6",
+      "is_public": true,
+      "snapshot_matches": true,
+      "note_matches": true,
+      "indexed": true,
+      "photo": "https://agriculture.kubota.co.jp/img_sys/uploadImages/e100551ad7a557d1a090d13f9bc4bfef/TS552N.jpg"
+    }
+  ]
+}

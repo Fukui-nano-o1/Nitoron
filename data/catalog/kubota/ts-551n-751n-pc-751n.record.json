@@ -1,0 +1,137 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "a15a26f1-2d1c-48c1-8e5d-55d53a159e38",
+      "title": "【カタログ解説】クボタ TS-551N-751N-PC-751N ニューウネマスター（管理機・テーラー・耕うん機）",
+      "category": "管理機・テーラー・耕うん機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "a15a26f1-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "a15a26f1-002",
+          "type": "text",
+          "text": "うね間の管理作業に対応する、1輪・2輪仕様の管理機シリーズ。"
+        },
+        {
+          "id": "a15a26f1-003",
+          "type": "bullet",
+          "text": "出力帯：4.2〜6.3馬力"
+        },
+        {
+          "id": "a15a26f1-004",
+          "type": "bullet",
+          "text": "販売状況：在庫限り（2026年9月16日の公式掲載）"
+        },
+        {
+          "id": "a15a26f1-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "a15a26f1-006",
+          "type": "text",
+          "text": "TS551N / TS751N / PC751N"
+        },
+        {
+          "id": "a15a26f1-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "a15a26f1-008",
+          "type": "text",
+          "text": "掲載写真：TS551N（1輪仕様）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "管理機・テーラー・耕うん機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/e1080525d95f4e8f0e13fd1e2b746ad7/2_TS551N.jpg",
+        "summary": "うね間の管理作業に対応する、1輪・2輪仕様の管理機シリーズ。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "a15a26f1-src-product",
+            "title": "クボタ 製品ページ TS-551N-751N-PC-751N",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TS-551N-751N/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "a15a26f1-src-catalog",
+            "title": "クボタ 製品カタログ ニューウネマスター",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-20-2-0008-04.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "a15a26f1-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（TS-551N-751N-PC-751N）",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TS-551N-751N/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "a15a26f1-src-manual-1",
+            "title": "取扱説明書 TS551N(W)",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=83691715fdc5baf20ed0742b0b85785b",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "a15a26f1-src-manual-2",
+            "title": "取扱説明書 TS751N(W)",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b06f50d1f89bd8b2a0fb771c1a69c2b0",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "a15a26f1-src-manual-3",
+            "title": "取扱説明書 PC751N",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=226d1f15ecd35f784d2a20c3ecf56d7f",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "a15a26f1-src-photo",
+            "title": "写真：クボタ TS551N（1輪仕様）",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TS-551N-751N/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

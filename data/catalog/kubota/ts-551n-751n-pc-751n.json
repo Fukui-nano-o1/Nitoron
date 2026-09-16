@@ -1,0 +1,64 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "TS-551N-751N-PC-751N",
+  "productName": "ニューウネマスター",
+  "category": "管理機・テーラー・耕うん機",
+  "models": [
+    "TS551N",
+    "TS751N",
+    "PC751N"
+  ],
+  "summary": "うね間の管理作業に対応する、1輪・2輪仕様の管理機シリーズ。",
+  "checkedAt": "2026-09-16",
+  "photoModel": "TS551N（1輪仕様）",
+  "facts": [
+    {
+      "label": "出力帯",
+      "value": "4.2〜6.3馬力",
+      "source": "product"
+    },
+    {
+      "label": "販売状況",
+      "value": "在庫限り（2026年9月16日の公式掲載）",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TS-551N-751N/",
+      "checkedAt": "2026-09-16",
+      "sha256": "5174fb5c0f8ab50cb90179fed27e9d78b6387d012894ad14686c047d953e2de7"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-20-2-0008-04.pdf",
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tiller/TS-551N-751N/?nav=catalog"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（TS-551N-751N-PC-751N）",
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TS-551N-751N/?nav=manual"
+    },
+    "manuals": [
+      {
+        "title": "TS551N(W)",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=83691715fdc5baf20ed0742b0b85785b"
+      },
+      {
+        "title": "TS751N(W)",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b06f50d1f89bd8b2a0fb771c1a69c2b0"
+      },
+      {
+        "title": "PC751N",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=226d1f15ecd35f784d2a20c3ecf56d7f"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-product-lineup",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

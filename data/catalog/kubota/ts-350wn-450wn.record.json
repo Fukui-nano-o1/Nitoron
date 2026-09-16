@@ -1,0 +1,126 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "d18d897a-7bdb-40c4-81e4-0023b68f3d0a",
+      "title": "【カタログ解説】クボタ TS-350WN-450WN ニューウネマスターJr.（管理機・テーラー・耕うん機）",
+      "category": "管理機・テーラー・耕うん機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "d18d897a-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "d18d897a-002",
+          "type": "text",
+          "text": "うねづくりやうね間の作業に使う、小型の管理機シリーズ。"
+        },
+        {
+          "id": "d18d897a-003",
+          "type": "bullet",
+          "text": "出力帯：3.0〜4.2馬力"
+        },
+        {
+          "id": "d18d897a-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "d18d897a-005",
+          "type": "text",
+          "text": "TS350WN / TS450WN"
+        },
+        {
+          "id": "d18d897a-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "d18d897a-007",
+          "type": "text",
+          "text": "掲載写真：TS350WN。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "管理機・テーラー・耕うん機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/productCardImage/2726237824f62fcb01158b10ee787198/new-unemaster_jr_card.jpg",
+        "summary": "うねづくりやうね間の作業に使う、小型の管理機シリーズ。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "d18d897a-src-product",
+            "title": "クボタ 製品ページ TS-350WN-450WN",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TS-350N-450N/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d18d897a-src-catalog",
+            "title": "クボタ 製品カタログ ニューウネマスターJr.",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-20-2-0006-01c.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d18d897a-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（TS-350WN-450WN）",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TS-350N-450N/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d18d897a-src-manual-1",
+            "title": "取扱説明書 TS350WN",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f7696a9b362ac5a51c3dc8f098b73923",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d18d897a-src-manual-2",
+            "title": "取扱説明書 TS450WN",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3f998e713a6e02287c374fd26835d87e",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d18d897a-src-photo",
+            "title": "写真：クボタ TS350WN",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TS-350N-450N/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

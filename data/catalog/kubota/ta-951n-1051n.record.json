@@ -1,0 +1,114 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "44fa1e7a-48b2-4ecd-8e82-c14a833f9afe",
+      "title": "【カタログ解説】クボタ TA-951N-1051N ニュースーパーベジマスター（管理機・テーラー・耕うん機）",
+      "category": "管理機・テーラー・耕うん機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "44fa1e7a-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "44fa1e7a-002",
+          "type": "text",
+          "text": "耕うんからうねづくりまで、アタッチメントを組み合わせて使う管理機シリーズ。"
+        },
+        {
+          "id": "44fa1e7a-003",
+          "type": "bullet",
+          "text": "出力帯：8.5〜10.5馬力"
+        },
+        {
+          "id": "44fa1e7a-004",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "44fa1e7a-005",
+          "type": "text",
+          "text": "TA951N / TA1051N"
+        },
+        {
+          "id": "44fa1e7a-006",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "44fa1e7a-007",
+          "type": "text",
+          "text": "掲載写真：TA951N-W。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "管理機・テーラー・耕うん機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/8a8ca435bbb8662a0d6e3d9c99ce33fe/TA951N.jpg",
+        "summary": "耕うんからうねづくりまで、アタッチメントを組み合わせて使う管理機シリーズ。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "44fa1e7a-src-product",
+            "title": "クボタ 製品ページ TA-951N-1051N",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TA-951N-1051N/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "44fa1e7a-src-catalog",
+            "title": "クボタ 製品カタログ ニュースーパーベジマスター",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-20-2-0009-02n.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "44fa1e7a-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（TA-951N-1051N）",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TA-951N-1051N/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "44fa1e7a-src-photo",
+            "title": "写真：クボタ TA951N-W",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TA-951N-1051N/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

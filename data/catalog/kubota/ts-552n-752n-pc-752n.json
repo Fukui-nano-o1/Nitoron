@@ -1,0 +1,72 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "TS-552N-752N-PC-752N",
+  "productName": "ウネマスターPro",
+  "category": "管理機・テーラー・耕うん機",
+  "models": [
+    "TS552N",
+    "TS752N",
+    "PC752N"
+  ],
+  "summary": "うね間の管理作業に使う管理機シリーズ。作業やほ場に応じた1輪・2輪仕様を用意しています。",
+  "checkedAt": "2026-09-16",
+  "photoModel": "TS552N",
+  "facts": [
+    {
+      "label": "出力帯",
+      "value": "4.2・6.3馬力",
+      "source": "product"
+    },
+    {
+      "label": "走行仕様",
+      "value": "1輪／2輪（型式により異なる）",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TS-552N-752N/",
+      "checkedAt": "2026-09-16",
+      "sha256": "4ede78dd254257ac9803d76fe6fa2c12581db6592155ba13d0cd1f965a988896"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/1-20-2-0012-02.pdf",
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tiller/TS-552N-752N/?nav=catalog"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（TS-552N-752N-PC-752N）",
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TS-552N-752N/?nav=manual"
+    },
+    "manuals": [
+      {
+        "title": "TS552N",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=24e01830d213d75deb99c22b9cd91ddd"
+      },
+      {
+        "title": "TS552NW",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6f611188ad4a81ffc2edab83b0705d76"
+      },
+      {
+        "title": "TS752N",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f51238cd02c93b89d8fbee5667d077fc"
+      },
+      {
+        "title": "TS752NW",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dd50e4d9c47cdf72d24e89d248edb35b"
+      },
+      {
+        "title": "PC752N",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=db9ad56c71619aeed9723314d1456037"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-product-lineup",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}
