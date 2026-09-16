@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-09-16",
+  "projectId": "ycvbjzlqrxnwalhhgzat",
+  "operation": "10 insertions; existing IDs and models rejected; no updates",
+  "before": {
+    "notes": 135,
+    "publications": 134,
+    "tractorCards": 42,
+    "notesHash": "a132b883e8fe92c960b1de783366e66b",
+    "publicationsHash": "215302899ca3fbfb499ea8844344d1f9"
+  },
+  "after": {
+    "notes": 145,
+    "publications": 144,
+    "tractorCards": 52,
+    "addedNotes": 10,
+    "addedPublications": 10,
+    "untouchedNotesHash": "a132b883e8fe92c960b1de783366e66b",
+    "untouchedPublicationsHash": "215302899ca3fbfb499ea8844344d1f9"
+  },
+  "exactRecordsVerifiedInTransaction": 10,
+  "exactUniquePublishedCardsVerifiedAfterInsert": 10,
+  "mismatchesAfterInsert": 0,
+  "existingRowsUnchanged": true,
+  "duplicateModelsBeforeInsert": 0,
+  "catalogTestsPassed": 9,
+  "buildExitCode": 0
+}

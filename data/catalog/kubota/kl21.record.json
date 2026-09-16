@@ -1,0 +1,123 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "761988ef-dd88-430a-8aaf-ac3134c9a138",
+      "title": "【カタログ解説】クボタ KL21 旧型モデル（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "761988ef-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "761988ef-002",
+          "type": "text",
+          "text": "21馬力の旧型トラクタ。公式販売年度検索のKL21は1999年〜2003年の販売。KL21の取扱説明書を参照できます。"
+        },
+        {
+          "id": "761988ef-003",
+          "type": "bullet",
+          "text": "馬力：21馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "761988ef-004",
+          "type": "bullet",
+          "text": "販売期間：1999年〜2003年（公式販売年度検索・KL21）"
+        },
+        {
+          "id": "761988ef-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "761988ef-006",
+          "type": "text",
+          "text": "KL21"
+        },
+        {
+          "id": "761988ef-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "761988ef-008",
+          "type": "text",
+          "text": "KL21の公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "761988ef-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "761988ef-010",
+          "type": "text",
+          "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "",
+        "summary": "21馬力の旧型トラクタ。公式販売年度検索のKL21は1999年〜2003年の販売。KL21の取扱説明書を参照できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "761988ef-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KL21（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL21&searchType=3",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "761988ef-src-sales-index",
+            "title": "クボタ 販売年度検索 KL21",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL21",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "761988ef-src-manual",
+            "title": "取扱説明書 KL21",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1aa48fc4880bb0c9b8a3bf979d3b917e",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

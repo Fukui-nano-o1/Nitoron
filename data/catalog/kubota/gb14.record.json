@@ -1,0 +1,123 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "5be0c623-cfe9-4fef-81c6-c6cf14d831e4",
+      "title": "【カタログ解説】クボタ GB14 旧型モデル（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "5be0c623-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "5be0c623-002",
+          "type": "text",
+          "text": "14馬力の旧型トラクタ。公式販売年度検索のGB14は1997年〜2000年の販売。GB14の取扱説明書を参照できます。"
+        },
+        {
+          "id": "5be0c623-003",
+          "type": "bullet",
+          "text": "馬力：14馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "5be0c623-004",
+          "type": "bullet",
+          "text": "販売期間：1997年〜2000年（公式販売年度検索・GB14）"
+        },
+        {
+          "id": "5be0c623-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "5be0c623-006",
+          "type": "text",
+          "text": "GB14"
+        },
+        {
+          "id": "5be0c623-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "5be0c623-008",
+          "type": "text",
+          "text": "GB14の公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "5be0c623-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "5be0c623-010",
+          "type": "text",
+          "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "",
+        "summary": "14馬力の旧型トラクタ。公式販売年度検索のGB14は1997年〜2000年の販売。GB14の取扱説明書を参照できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "5be0c623-src-manual-index",
+            "title": "クボタ 取扱説明書検索 GB14（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=GB14&searchType=3",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5be0c623-src-sales-index",
+            "title": "クボタ 販売年度検索 GB14",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=GB14",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "5be0c623-src-manual",
+            "title": "取扱説明書 GB14",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a02ffd91ece5e7efeb46db8f10a74059",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

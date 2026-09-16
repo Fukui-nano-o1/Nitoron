@@ -1,0 +1,87 @@
+{
+  "checkedAt": "2026-09-16",
+  "additions": 10,
+  "duplicateCount": 0,
+  "checks": [
+    {
+      "model": "GL23",
+      "id": "8b3015c8-1e6c-4b93-8940-a0678975dd30",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 3
+    },
+    {
+      "model": "GL32",
+      "id": "104fd350-6d78-4977-81b9-e9c5d3ce460a",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 3
+    },
+    {
+      "model": "KL21",
+      "id": "761988ef-dd88-430a-8aaf-ac3134c9a138",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 3
+    },
+    {
+      "model": "KL27",
+      "id": "259ff054-3131-44fb-8a49-2b190faa2838",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 3
+    },
+    {
+      "model": "KL33",
+      "id": "b471b2be-8bb5-4ead-892d-a95dc3111d07",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 3
+    },
+    {
+      "model": "KT24",
+      "id": "34d5dfa0-e9d9-4c17-8377-405ae4496673",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 3
+    },
+    {
+      "model": "GB14",
+      "id": "5be0c623-cfe9-4fef-81c6-c6cf14d831e4",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 3
+    },
+    {
+      "model": "GT21",
+      "id": "22f332e7-7596-4480-8c65-e2369e59ccc2",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 3
+    },
+    {
+      "model": "FT25",
+      "id": "c10a1feb-d5cb-4ace-8196-43494a046254",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 3
+    },
+    {
+      "model": "MZ65",
+      "id": "92717297-efc9-4115-865c-48cbce3d1726",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 3
+    }
+  ]
+}

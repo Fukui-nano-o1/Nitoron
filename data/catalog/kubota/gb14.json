@@ -1,0 +1,52 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "GB14",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "GB14"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "14馬力の旧型トラクタ。公式販売年度検索のGB14は1997年〜2000年の販売。GB14の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=GB14&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "44f6b9a59f0af6772d63cf19376daa2c2ffda8fe252b6c060188339f7a03e959",
+      "result": {
+        "model": "GB14",
+        "category": "トラクタ",
+        "horsepower": "14馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=GB14",
+      "checkedAt": "2026-09-16",
+      "sha256": "1a92087e6a4c4aa7a6ccb4c1ebaa257d5fc7bbb69e544153d0fb1528d2094cb9",
+      "result": {
+        "model": "GB14",
+        "startYear": 1997,
+        "endYear": 2000
+      }
+    },
+    "manuals": [
+      {
+        "title": "GB14",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a02ffd91ece5e7efeb46db8f10a74059",
+        "checkedAt": "2026-09-16",
+        "sha256": "e4980b8db8306413bca3159ff039f8e5beb343d2a776e6225e4a589a98cfead1"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "not-added",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

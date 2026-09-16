@@ -1,0 +1,52 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "MZ65",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "MZ65"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "65馬力の旧型トラクタ。公式販売年度検索のMZ65は2006年〜2009年の販売。MZ65の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=MZ65&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "e2a490c2b73e4daca2baec76dcfa5fab9b0c2fe5e4da854184fd8c4d94364c1e",
+      "result": {
+        "model": "MZ65",
+        "category": "トラクタ",
+        "horsepower": "65馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=MZ65",
+      "checkedAt": "2026-09-16",
+      "sha256": "e68fb09ee7110a0c2d01be83690c4fb064874f2587fbba16f92d01fd22160727",
+      "result": {
+        "model": "MZ65",
+        "startYear": 2006,
+        "endYear": 2009
+      }
+    },
+    "manuals": [
+      {
+        "title": "MZ65",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=effc299a1addb07e7089f9b269c31f2f",
+        "checkedAt": "2026-09-16",
+        "sha256": "82e6f40096b5e180665b5b05298c8c7b95e87b8d996a15d3d12f59bc60274043"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "not-added",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

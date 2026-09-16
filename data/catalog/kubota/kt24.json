@@ -1,0 +1,52 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KT24",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "KT24"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "24馬力の旧型トラクタ。公式販売年度検索のKT24は2002年〜2005年の販売。KT24の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT24&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "260a15f47150d239b5495bb2fe6c3349dcefba8b098c369f458151a6c09d09e1",
+      "result": {
+        "model": "KT24",
+        "category": "トラクタ",
+        "horsepower": "24馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT24",
+      "checkedAt": "2026-09-16",
+      "sha256": "dd3ef5b9aff231d51b931704444fa555b0c83d3d819afb4b33d90cd43cb5a9c6",
+      "result": {
+        "model": "KT24",
+        "startYear": 2002,
+        "endYear": 2005
+      }
+    },
+    "manuals": [
+      {
+        "title": "KT24",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4f16c818875d9fcb6867c7bdc89be7eb",
+        "checkedAt": "2026-09-16",
+        "sha256": "630344d381657d4d3ca00509b0c04f186c3c3cfba26e5dca5a035ed1d8f92862"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "not-added",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

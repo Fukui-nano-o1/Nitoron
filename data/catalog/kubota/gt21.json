@@ -1,0 +1,52 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "GT21",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "GT21"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "21馬力の旧型トラクタ。公式販売年度検索のGT21は1997年〜2002年の販売。GT21の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=GT21&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "498a3db2a80c230c137dbae90bc0ee51b2afcb9854d352459137aea358bae821",
+      "result": {
+        "model": "GT21",
+        "category": "トラクタ",
+        "horsepower": "21馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=GT21",
+      "checkedAt": "2026-09-16",
+      "sha256": "df1855a6730c34718e9b7f26682866987290a62337dff64226f8808a6ea66d1f",
+      "result": {
+        "model": "GT21",
+        "startYear": 1997,
+        "endYear": 2002
+      }
+    },
+    "manuals": [
+      {
+        "title": "GT21",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0fcbc61acd0479dc77e3cccc0f5ffca7",
+        "checkedAt": "2026-09-16",
+        "sha256": "0fc74713addafdb211ae05998d5907f7bec67cda5b8debacfc77655476cf7cd2"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "not-added",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

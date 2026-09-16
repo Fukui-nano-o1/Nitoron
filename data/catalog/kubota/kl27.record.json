@@ -1,0 +1,123 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "259ff054-3131-44fb-8a49-2b190faa2838",
+      "title": "【カタログ解説】クボタ KL27 旧型モデル（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "259ff054-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "259ff054-002",
+          "type": "text",
+          "text": "27馬力の旧型トラクタ。公式販売年度検索のKL27は1999年〜2003年の販売。KL27の取扱説明書を参照できます。"
+        },
+        {
+          "id": "259ff054-003",
+          "type": "bullet",
+          "text": "馬力：27馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "259ff054-004",
+          "type": "bullet",
+          "text": "販売期間：1999年〜2003年（公式販売年度検索・KL27）"
+        },
+        {
+          "id": "259ff054-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "259ff054-006",
+          "type": "text",
+          "text": "KL27"
+        },
+        {
+          "id": "259ff054-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "259ff054-008",
+          "type": "text",
+          "text": "KL27の公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "259ff054-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "259ff054-010",
+          "type": "text",
+          "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "",
+        "summary": "27馬力の旧型トラクタ。公式販売年度検索のKL27は1999年〜2003年の販売。KL27の取扱説明書を参照できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "259ff054-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KL27（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL27&searchType=3",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "259ff054-src-sales-index",
+            "title": "クボタ 販売年度検索 KL27",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL27",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "259ff054-src-manual",
+            "title": "取扱説明書 KL27",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c2626d850c80ea07e7511bbae4c76f4b",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

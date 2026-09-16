@@ -1,0 +1,123 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "c10a1feb-d5cb-4ace-8196-43494a046254",
+      "title": "【カタログ解説】クボタ FT25 旧型モデル（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "c10a1feb-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "c10a1feb-002",
+          "type": "text",
+          "text": "25馬力の旧型トラクタ。公式販売年度検索のFT25(F)は2012年〜2016年の販売。FT25の取扱説明書を参照できます。"
+        },
+        {
+          "id": "c10a1feb-003",
+          "type": "bullet",
+          "text": "馬力：25馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "c10a1feb-004",
+          "type": "bullet",
+          "text": "販売期間：2012年〜2016年（公式販売年度検索・FT25(F)）"
+        },
+        {
+          "id": "c10a1feb-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "c10a1feb-006",
+          "type": "text",
+          "text": "FT25"
+        },
+        {
+          "id": "c10a1feb-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "c10a1feb-008",
+          "type": "text",
+          "text": "FT25の公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "c10a1feb-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "c10a1feb-010",
+          "type": "text",
+          "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "",
+        "summary": "25馬力の旧型トラクタ。公式販売年度検索のFT25(F)は2012年〜2016年の販売。FT25の取扱説明書を参照できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "c10a1feb-src-manual-index",
+            "title": "クボタ 取扱説明書検索 FT25（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=FT25&searchType=3",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c10a1feb-src-sales-index",
+            "title": "クボタ 販売年度検索 FT25",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=FT25",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "c10a1feb-src-manual",
+            "title": "取扱説明書 FT25",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=5737c6ec2e0716f3d8a7a5c4e0de0d9a",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

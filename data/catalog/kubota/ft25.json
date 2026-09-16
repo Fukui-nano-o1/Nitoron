@@ -1,0 +1,52 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "FT25",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "FT25"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "25馬力の旧型トラクタ。公式販売年度検索のFT25(F)は2012年〜2016年の販売。FT25の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=FT25&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "d7553ff6bc8ee4f2b31eff4c600a68ceae79104e853812a1e2380fcf902e3d02",
+      "result": {
+        "model": "FT25",
+        "category": "トラクタ",
+        "horsepower": "25馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=FT25",
+      "checkedAt": "2026-09-16",
+      "sha256": "78717656e79ebc12517ae41617bf42f6e14373535bbe5eee6039b47a6fb05543",
+      "result": {
+        "model": "FT25(F)",
+        "startYear": 2012,
+        "endYear": 2016
+      }
+    },
+    "manuals": [
+      {
+        "title": "FT25",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=5737c6ec2e0716f3d8a7a5c4e0de0d9a",
+        "checkedAt": "2026-09-16",
+        "sha256": "753db6de48c06f2e601099eae378d18e52f436b95d98987ba624c81ed2f101f7"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "not-added",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

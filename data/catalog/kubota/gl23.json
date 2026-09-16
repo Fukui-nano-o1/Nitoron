@@ -1,0 +1,52 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "GL23",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "GL23"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "23馬力の旧型トラクタ。公式販売年度検索のGL-23は1990年〜1993年の販売。GL23の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=GL23&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "c48becaedd60c874d20e463505c3d958934d0871f57bcd7b24fff71138cdaa45",
+      "result": {
+        "model": "GL23",
+        "category": "トラクタ",
+        "horsepower": "23馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=GL23",
+      "checkedAt": "2026-09-16",
+      "sha256": "c5d2140d88e7b0aaf79dbabb2ab0726802c1536cba9ce6e5804bb629b19bf18a",
+      "result": {
+        "model": "GL-23",
+        "startYear": 1990,
+        "endYear": 1993
+      }
+    },
+    "manuals": [
+      {
+        "title": "GL23",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=941e1aaaba585b952b62c14a3a175a61",
+        "checkedAt": "2026-09-16",
+        "sha256": "0334478b8101875fd7438f3f5f19dbe1be94732e50fcbd031f45d38c4f81cf8a"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "not-added",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

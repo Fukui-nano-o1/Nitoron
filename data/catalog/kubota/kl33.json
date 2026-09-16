@@ -1,0 +1,52 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KL33",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "KL33"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "33馬力の旧型トラクタ。公式販売年度検索のKL33は1999年〜2003年の販売。KL33の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL33&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "5f66018cc9981deea167750a81bf4397e0f19685a2ff12f692be6b9cb8bba17e",
+      "result": {
+        "model": "KL33",
+        "category": "トラクタ",
+        "horsepower": "33馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL33",
+      "checkedAt": "2026-09-16",
+      "sha256": "f2efcbadb7c2fd0c00e171c8b006799132a72e02d79479ac2272addbefbe3910",
+      "result": {
+        "model": "KL33",
+        "startYear": 1999,
+        "endYear": 2003
+      }
+    },
+    "manuals": [
+      {
+        "title": "KL33",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1fc214004c9481e4c8073e85323bfd4b",
+        "checkedAt": "2026-09-16",
+        "sha256": "0142b4d8e8c9a0b0d0a150320b260dab12eb85beec31ea95bc6a28f2478eafa1"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "not-added",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

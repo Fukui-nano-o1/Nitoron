@@ -1,0 +1,52 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KL21",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "KL21"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "21馬力の旧型トラクタ。公式販売年度検索のKL21は1999年〜2003年の販売。KL21の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL21&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "186385d6fde96a10d6663a1df4e05821b2829bddaf337262e5e685dc896560c1",
+      "result": {
+        "model": "KL21",
+        "category": "トラクタ",
+        "horsepower": "21馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL21",
+      "checkedAt": "2026-09-16",
+      "sha256": "752e74cc95d81e6a93d70f6cb51e64ae9bbfef982c35bb4900258b0d256f31d3",
+      "result": {
+        "model": "KL21",
+        "startYear": 1999,
+        "endYear": 2003
+      }
+    },
+    "manuals": [
+      {
+        "title": "KL21",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1aa48fc4880bb0c9b8a3bf979d3b917e",
+        "checkedAt": "2026-09-16",
+        "sha256": "c596039d6840e452f3bd30823e601964782ffd8cb39d1434649fb0f5cb96feab"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "not-added",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

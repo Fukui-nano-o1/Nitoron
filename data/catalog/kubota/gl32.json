@@ -1,0 +1,52 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "GL32",
+  "productName": "旧型モデル",
+  "category": "トラクタ",
+  "models": [
+    "GL32"
+  ],
+  "checkedAt": "2026-09-16",
+  "summary": "32馬力の旧型トラクタ。公式販売年度検索のGL-32は1990年〜1993年の販売。GL32の取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=GL32&searchType=3",
+      "checkedAt": "2026-09-16",
+      "sha256": "4c2c257c42059de87fd8aa1fb2aad3b1ce07b9facc28315a20b68ab9d5bfbe4b",
+      "result": {
+        "model": "GL32",
+        "category": "トラクタ",
+        "horsepower": "32馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=GL32",
+      "checkedAt": "2026-09-16",
+      "sha256": "aea1da74f49cf9e64f80cd72f8d06df1036fb2ff0ee7d0224f044db7016c1205",
+      "result": {
+        "model": "GL-32",
+        "startYear": 1990,
+        "endYear": 1993
+      }
+    },
+    "manuals": [
+      {
+        "title": "GL32",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=598b3e71ec378bd83e0a727608b5db01",
+        "checkedAt": "2026-09-16",
+        "sha256": "5acafebe1927de8730e9deee7d359cc6655dd49e0f96cf08bbbedc4d128ad7f7"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "not-added",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}
