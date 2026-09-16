@@ -1,0 +1,59 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "AW-4-5",
+  "productName": "ASWEL",
+  "category": "田植機",
+  "models": [
+    "AW4",
+    "AW5"
+  ],
+  "summary": "4条植と5条植から選べる田植機。旋回や走行、あぜ越えを支援する機能が用意されています。",
+  "checkedAt": "2026-09-16",
+  "photoModel": "AW4",
+  "facts": [
+    {
+      "label": "植付条数",
+      "value": "4条／5条",
+      "source": "product"
+    },
+    {
+      "label": "基本型式",
+      "value": "AW4／AW5",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/taueki/AW-4-5/",
+      "checkedAt": "2026-09-16",
+      "sha256": "fd590270d3412ba8eb1be8038e4c9567965a7548159a21545a074ba770091312"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0021-04n.pdf",
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/taueki/AW-4-5/?nav=catalog"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（AW-4-5）",
+      "url": "https://agriculture.kubota.co.jp/product/taueki/AW-4-5/?nav=manual"
+    },
+    "manuals": [
+      {
+        "title": "AW4",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fe9fc289c3ff0af142b6d3bead98a923"
+      },
+      {
+        "title": "AW5",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3ef815416f775098fe977004015c6193"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-product-lineup",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

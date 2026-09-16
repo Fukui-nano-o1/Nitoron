@@ -1,0 +1,63 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "SKP-101",
+  "productName": "全自動野菜移植機 ベジータ",
+  "category": "野菜関連機器",
+  "models": [
+    "SKP-101",
+    "SKP-101W",
+    "SKP-101M",
+    "SKP-101PC-H",
+    "SKP-101PC-T",
+    "SKP-101MPC"
+  ],
+  "summary": "野菜苗を植え付ける全自動移植機。標準・往復2条・マルチ・パワクロなどの仕様があります。",
+  "checkedAt": "2026-09-16",
+  "photoModel": "SKP-101W",
+  "facts": [
+    {
+      "label": "植付方式",
+      "value": "1条／往復2条（仕様により異なる）",
+      "source": "product"
+    },
+    {
+      "label": "W仕様",
+      "value": "SKP-101Wは往復2条仕様",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-SKP-101/",
+      "checkedAt": "2026-09-16",
+      "sha256": "a11f670a159d3c1a0e105d91454c9a3c1670671d2c6a5716276248ec011c1f6c"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7502001503.pdf",
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-SKP-101/?nav=catalog"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（SKP-101）",
+      "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-SKP-101/?nav=manual"
+    },
+    "manuals": [
+      {
+        "title": "SKP-101(W,M）",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8d55a249e6baa5c06772297520da2051"
+      },
+      {
+        "title": "SKP-101MPC,SKP-101PC-H, SKP-101PC-T",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=136f951362dab62e64eb8e841183c2a9"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-product-lineup",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

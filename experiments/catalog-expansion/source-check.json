@@ -1,0 +1,94 @@
+{
+  "photos": [
+    {
+      "key": "NB-195-245",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/3ee93b14593fe957bfe48559e26b3ab3/NB195.jpg",
+      "status": 200,
+      "bytes": 143018
+    },
+    {
+      "key": "SL-280-600",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/26c856e09c95fa3b84fcd99d49ff2770/lineup-sl280cgs3.jpg",
+      "status": 200,
+      "bytes": 117687
+    },
+    {
+      "key": "NW-50S",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/84494daf461d60fdc60eb53515f3109f/nw50s-gs.jpg",
+      "status": 200,
+      "bytes": 119529
+    },
+    {
+      "key": "AW-4-5",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/a0c8e74f14b5d2c13d98238161f20522/img1.jpg",
+      "status": 200,
+      "bytes": 144024
+    },
+    {
+      "key": "ER-211-213",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/4f1d1a79777c5110efc6b8c0a3a4509b/img1%20%281%29.jpg",
+      "status": 200,
+      "bytes": 143682
+    },
+    {
+      "key": "KR-217-323",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/d8a6e743bc5b48b268702702e72a16f0/img1.jpg",
+      "status": 200,
+      "bytes": 161516
+    },
+    {
+      "key": "transplant-SKP-101",
+      "url": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/6fada8f1413b8c146799eec565e2dd1c/02.jpg",
+      "status": 200,
+      "bytes": 271427
+    },
+    {
+      "key": "transplant-KP-202",
+      "url": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/ac3af0d45fb8aa662b67498939888b3a/02.jpg",
+      "status": 200,
+      "bytes": 257837
+    }
+  ],
+  "catalogs": [
+    {
+      "series": "NB-195-245",
+      "status": 200,
+      "pdf": true
+    },
+    {
+      "series": "SL-280-600",
+      "status": 200,
+      "pdf": true
+    },
+    {
+      "series": "NW-50S",
+      "status": 200,
+      "pdf": true
+    },
+    {
+      "series": "AW-4-5",
+      "status": 200,
+      "pdf": true
+    },
+    {
+      "series": "ER-211-213",
+      "status": 200,
+      "pdf": true
+    },
+    {
+      "series": "KR-217-323",
+      "status": 200,
+      "pdf": true
+    },
+    {
+      "series": "SKP-101",
+      "status": 200,
+      "pdf": true
+    },
+    {
+      "series": "KP-202",
+      "status": 200,
+      "pdf": true
+    }
+  ]
+}

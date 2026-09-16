@@ -1,0 +1,131 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "92d4ac7f-956c-4237-8e56-012dddb7571b",
+      "title": "【カタログ解説】クボタ AW-4-5 ASWEL（田植機）",
+      "category": "田植機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "92d4ac7f-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "92d4ac7f-002",
+          "type": "text",
+          "text": "4条植と5条植から選べる田植機。旋回や走行、あぜ越えを支援する機能が用意されています。"
+        },
+        {
+          "id": "92d4ac7f-003",
+          "type": "bullet",
+          "text": "植付条数：4条／5条"
+        },
+        {
+          "id": "92d4ac7f-004",
+          "type": "bullet",
+          "text": "基本型式：AW4／AW5"
+        },
+        {
+          "id": "92d4ac7f-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "92d4ac7f-006",
+          "type": "text",
+          "text": "AW4 / AW5"
+        },
+        {
+          "id": "92d4ac7f-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "92d4ac7f-008",
+          "type": "text",
+          "text": "掲載写真：AW4。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "田植機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/a0c8e74f14b5d2c13d98238161f20522/img1.jpg",
+        "summary": "4条植と5条植から選べる田植機。旋回や走行、あぜ越えを支援する機能が用意されています。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "92d4ac7f-src-product",
+            "title": "クボタ 製品ページ AW-4-5",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/AW-4-5/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "92d4ac7f-src-catalog",
+            "title": "クボタ 製品カタログ ASWEL",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0021-04n.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "92d4ac7f-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（AW-4-5）",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/AW-4-5/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "92d4ac7f-src-manual-1",
+            "title": "取扱説明書 AW4",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fe9fc289c3ff0af142b6d3bead98a923",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "92d4ac7f-src-manual-2",
+            "title": "取扱説明書 AW5",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3ef815416f775098fe977004015c6193",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "92d4ac7f-71b-src-photo",
+            "title": "写真：クボタ AW4",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/AW-4-5/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

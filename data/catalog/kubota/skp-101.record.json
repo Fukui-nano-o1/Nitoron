@@ -1,0 +1,131 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "dd48937d-804a-45f2-8b3a-3685fa4ccd7e",
+      "title": "【カタログ解説】クボタ SKP-101 全自動野菜移植機 ベジータ（野菜関連機器）",
+      "category": "野菜関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "dd48937d-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "dd48937d-002",
+          "type": "text",
+          "text": "野菜苗を植え付ける全自動移植機。標準・往復2条・マルチ・パワクロなどの仕様があります。"
+        },
+        {
+          "id": "dd48937d-003",
+          "type": "bullet",
+          "text": "植付方式：1条／往復2条（仕様により異なる）"
+        },
+        {
+          "id": "dd48937d-004",
+          "type": "bullet",
+          "text": "W仕様：SKP-101Wは往復2条仕様"
+        },
+        {
+          "id": "dd48937d-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "dd48937d-006",
+          "type": "text",
+          "text": "SKP-101 / SKP-101W / SKP-101M / SKP-101PC-H / SKP-101PC-T / SKP-101MPC"
+        },
+        {
+          "id": "dd48937d-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "dd48937d-008",
+          "type": "text",
+          "text": "掲載写真：SKP-101W。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "野菜関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/6fada8f1413b8c146799eec565e2dd1c/02.jpg",
+        "summary": "野菜苗を植え付ける全自動移植機。標準・往復2条・マルチ・パワクロなどの仕様があります。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "dd48937d-src-product",
+            "title": "クボタ 製品ページ SKP-101",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-SKP-101/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "dd48937d-src-catalog",
+            "title": "クボタ 製品カタログ 全自動野菜移植機 ベジータ",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7502001503.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "dd48937d-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（SKP-101）",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-SKP-101/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "dd48937d-src-manual-1",
+            "title": "取扱説明書 SKP-101(W,M）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8d55a249e6baa5c06772297520da2051",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "dd48937d-src-manual-2",
+            "title": "取扱説明書 SKP-101MPC,SKP-101PC-H, SKP-101PC-T",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=136f951362dab62e64eb8e841183c2a9",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "dd48937d-d7e-src-photo",
+            "title": "写真：クボタ SKP-101W",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-SKP-101/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

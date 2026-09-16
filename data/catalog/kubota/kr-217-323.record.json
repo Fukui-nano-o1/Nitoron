@@ -1,0 +1,143 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "f00cc551-4f19-4b12-8c2e-84232addbe21",
+      "title": "【カタログ解説】クボタ KR-217-323 KALWAY（コンバイン）",
+      "category": "コンバイン",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "f00cc551-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "f00cc551-002",
+          "type": "text",
+          "text": "2条刈と3条刈をそろえるコンバインシリーズ。刈取り・脱こくの機能を型式ごとに確認できます。"
+        },
+        {
+          "id": "f00cc551-003",
+          "type": "bullet",
+          "text": "刈取条数：2条／3条"
+        },
+        {
+          "id": "f00cc551-004",
+          "type": "bullet",
+          "text": "出力帯：16.5〜23馬力"
+        },
+        {
+          "id": "f00cc551-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "f00cc551-006",
+          "type": "text",
+          "text": "KR217 / KR220 / KR321 / KR323"
+        },
+        {
+          "id": "f00cc551-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "f00cc551-008",
+          "type": "text",
+          "text": "掲載写真：KR217。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "コンバイン",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/d8a6e743bc5b48b268702702e72a16f0/img1.jpg",
+        "summary": "2条刈と3条刈をそろえるコンバインシリーズ。刈取り・脱こくの機能を型式ごとに確認できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "f00cc551-src-product",
+            "title": "クボタ 製品ページ KR-217-323",
+            "url": "https://agriculture.kubota.co.jp/product/combine/KR-217-323/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f00cc551-src-catalog",
+            "title": "クボタ 製品カタログ KALWAY",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0026-04n.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f00cc551-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（KR-217-323）",
+            "url": "https://agriculture.kubota.co.jp/product/combine/KR-217-323/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f00cc551-src-manual-1",
+            "title": "取扱説明書 KR217",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=65cc2c8205a05d7379fa3a6386f710e1",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f00cc551-src-manual-2",
+            "title": "取扱説明書 KR220",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0768281a05da9f27df178b5c39a51263",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f00cc551-src-manual-3",
+            "title": "取扱説明書 KR321",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=93d65641ff3f1586614cf2c1ad240b6c",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f00cc551-src-manual-4",
+            "title": "取扱説明書 KR323",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ce5140df15d046a66883807d18d0264b",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f00cc551-e21-src-photo",
+            "title": "写真：クボタ KR217",
+            "url": "https://agriculture.kubota.co.jp/product/combine/KR-217-323/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { readdir, readFile } from 'node:fs/promises'
 import { join } from 'node:path'
+import { validateOverview, catalogId } from '../scripts/catalog-overview.mjs'
 // カタログ解説データの構造規則：数値には頁、手順語なし、出典の必須項目。
 const root = new URL('../data/catalog/', import.meta.url).pathname
 const procedure = /(外して|取り外し|緩め|ゆるめ|締め付け|締付け|注入し|抜き|洗い|浸し|絞)/
@@ -12,7 +13,12 @@ async function entries() {
 }
 test('every catalogue entry cites its sources and keeps the three rules', async () => {
   const all = await entries(); assert.ok(all.length >= 1)
+  const photos = JSON.parse(await readFile(new URL('../data/card-photos.json', import.meta.url), 'utf8')).entries
   for (const [name, e] of all) {
+    if (e.schema === 'nitoron-catalog/2') {
+      validateOverview(e, photos.find(p => p.id === catalogId(e.maker, e.series)))
+      continue
+    }
     assert.equal(e.schema, 'nitoron-catalog/1', name)
     assert.deepEqual(e.rules, ['原文と図を転載しない', '数値は必ず頁を添える', '原典にない手順を書かない'], name)
     assert.ok(/^https:\/\/agriculture\.kubota\.co\.jp\//.test(e.sources.product.url) && e.sources.product.checkedAt, name)

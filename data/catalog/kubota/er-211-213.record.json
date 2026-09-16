@@ -1,0 +1,136 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "53e30141-e9a6-43c4-87ef-dc0afd2661b9",
+      "title": "【カタログ解説】クボタ ER-211-213 NEW Racty（コンバイン）",
+      "category": "コンバイン",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "53e30141-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "53e30141-002",
+          "type": "text",
+          "text": "稲などの刈取りに使う2条刈コンバイン。刈取り操作の支援機能を備えた小型シリーズです。"
+        },
+        {
+          "id": "53e30141-003",
+          "type": "bullet",
+          "text": "刈取条数：2条"
+        },
+        {
+          "id": "53e30141-004",
+          "type": "bullet",
+          "text": "出力帯：10.5〜12.5馬力"
+        },
+        {
+          "id": "53e30141-005",
+          "type": "bullet",
+          "text": "販売案内：ER211Nは公式ページで「在庫限り」と案内（確認日時点）"
+        },
+        {
+          "id": "53e30141-006",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "53e30141-007",
+          "type": "text",
+          "text": "ER211N / ER213N"
+        },
+        {
+          "id": "53e30141-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "53e30141-009",
+          "type": "text",
+          "text": "掲載写真：ER211N-C（ホッパ仕様）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "コンバイン",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/4f1d1a79777c5110efc6b8c0a3a4509b/img1%20%281%29.jpg",
+        "summary": "稲などの刈取りに使う2条刈コンバイン。刈取り操作の支援機能を備えた小型シリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "53e30141-src-product",
+            "title": "クボタ 製品ページ ER-211-213",
+            "url": "https://agriculture.kubota.co.jp/product/combine/ER-211-213/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "53e30141-src-catalog",
+            "title": "クボタ 製品カタログ NEW Racty",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0014-04n.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "53e30141-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（ER-211-213）",
+            "url": "https://agriculture.kubota.co.jp/product/combine/ER-211-213/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "53e30141-src-manual-1",
+            "title": "取扱説明書 ER211N",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6f3ef77ac0e3619e98159e9b6febf557",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "53e30141-src-manual-2",
+            "title": "取扱説明書 ER213N",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=979d472a84804b9f647bc185a877a8b5",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "53e30141-1b9-src-photo",
+            "title": "写真：クボタ ER211N-C（ホッパ仕様）",
+            "url": "https://agriculture.kubota.co.jp/product/combine/ER-211-213/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

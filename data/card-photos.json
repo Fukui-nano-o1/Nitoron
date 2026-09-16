@@ -142,6 +142,86 @@
         "title": "写真：クボタ FTR70・90",
         "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/FTR-70-90/"
       }
+    },
+    {
+      "id": "3231bd3b-074d-4175-88e7-cd26d10dfabe",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/3ee93b14593fe957bfe48559e26b3ab3/NB195.jpg",
+      "source": {
+        "id": "3231bd3b-abe-src-photo",
+        "title": "写真：クボタ NB195",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/NB-195-245/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "d7a46049-b8da-4cf4-8070-fb2b37d48849",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/26c856e09c95fa3b84fcd99d49ff2770/lineup-sl280cgs3.jpg",
+      "source": {
+        "id": "d7a46049-849-src-photo",
+        "title": "写真：クボタ SL280CGS3",
+        "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-600/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "6d8b3274-3893-4712-8620-4238d1ba40b0",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/84494daf461d60fdc60eb53515f3109f/nw50s-gs.jpg",
+      "source": {
+        "id": "6d8b3274-0b0-src-photo",
+        "title": "写真：クボタ NW50S-GS",
+        "url": "https://agriculture.kubota.co.jp/product/taueki/NW-50S/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "92d4ac7f-956c-4237-8e56-012dddb7571b",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/a0c8e74f14b5d2c13d98238161f20522/img1.jpg",
+      "source": {
+        "id": "92d4ac7f-71b-src-photo",
+        "title": "写真：クボタ AW4",
+        "url": "https://agriculture.kubota.co.jp/product/taueki/AW-4-5/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "53e30141-e9a6-43c4-87ef-dc0afd2661b9",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/4f1d1a79777c5110efc6b8c0a3a4509b/img1%20%281%29.jpg",
+      "source": {
+        "id": "53e30141-1b9-src-photo",
+        "title": "写真：クボタ ER211N-C（ホッパ仕様）",
+        "url": "https://agriculture.kubota.co.jp/product/combine/ER-211-213/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "f00cc551-4f19-4b12-8c2e-84232addbe21",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/d8a6e743bc5b48b268702702e72a16f0/img1.jpg",
+      "source": {
+        "id": "f00cc551-e21-src-photo",
+        "title": "写真：クボタ KR217",
+        "url": "https://agriculture.kubota.co.jp/product/combine/KR-217-323/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "dd48937d-804a-45f2-8b3a-3685fa4ccd7e",
+      "url": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/6fada8f1413b8c146799eec565e2dd1c/02.jpg",
+      "source": {
+        "id": "dd48937d-d7e-src-photo",
+        "title": "写真：クボタ SKP-101W",
+        "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-SKP-101/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "b31b411e-7817-464b-88fa-25546ebea989",
+      "url": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/ac3af0d45fb8aa662b67498939888b3a/02.jpg",
+      "source": {
+        "id": "b31b411e-989-src-photo",
+        "title": "写真：クボタ KP-202",
+        "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-KP-202/",
+        "date": "2026-09-16"
+      }
     }
   ]
 }

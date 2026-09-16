@@ -1,0 +1,146 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "SL-280-600",
+  "productName": "Slugger",
+  "category": "トラクタ",
+  "models": [
+    "SL280",
+    "SL320",
+    "SL350",
+    "SL380",
+    "SL410",
+    "SL450",
+    "SL480H",
+    "SL540H",
+    "SL600H"
+  ],
+  "summary": "耕うんなどの作業に使うトラクタシリーズ。出力帯と走行仕様の違いを公式の主要諸元で確認できます。",
+  "checkedAt": "2026-09-16",
+  "photoModel": "SL280CGS3",
+  "facts": [
+    {
+      "label": "出力帯",
+      "value": "28〜60馬力",
+      "source": "product"
+    },
+    {
+      "label": "走行仕様",
+      "value": "ホイール／パワクロ（型式により異なる）",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-600/",
+      "checkedAt": "2026-09-16",
+      "sha256": "07f3b82c9f91835a40ec3b36dea187c21d70cb291e91ff045531215358a8c40c"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0039-11.pdf",
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/tractor/SL-280-600/?nav=catalog"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（SL-280-600）",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-600/?nav=manual"
+    },
+    "manuals": [
+      {
+        "title": "SL280",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1f71e393b3809197ed66df836fe833e5"
+      },
+      {
+        "title": "SL280-GS3［直進アシスト機能編］",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=86098ef82c97fa789a47a8d2e8800794"
+      },
+      {
+        "title": "SL320",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=95f6870ff3dcd442254e334a9033d349"
+      },
+      {
+        "title": "SL320-GS3［直進アシスト機能編］",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c2c2a04512b35d13102459f8784f1a2d"
+      },
+      {
+        "title": "SL350",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1f36c15d6a3d18d52e8d493bc8187cb9"
+      },
+      {
+        "title": "SL350-GS3［直進アシスト機能編］",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=5c8e07660e3000f141dda8b83107ed6e"
+      },
+      {
+        "title": "SL350-W 淡路仕様トラクタ",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8c249675aea6c3cbd91661bbae767ff1"
+      },
+      {
+        "title": "SL380",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cee8d6b7ce52554fd70354e37bbf44a2"
+      },
+      {
+        "title": "SL380H-GS3［直進アシスト機能編］",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fb0650ff38f84d526883336ff5119dc0"
+      },
+      {
+        "title": "SL410",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=5352696a9ca3397beb79f116f3a33991"
+      },
+      {
+        "title": "SL410H-GS3［直進アシスト機能編］",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b957d47523c4e92a822cc38703a3bcc3"
+      },
+      {
+        "title": "SL450",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a9813e9550fee3110373c21fa012eee7"
+      },
+      {
+        "title": "SL450H-GS3［直進アシスト機能編］",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=37db6bb5f1db992df92a919d20757eec"
+      },
+      {
+        "title": "SL450H 幅狭トレッド仕様",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1359aa933b48b754a2f54adb688bfa77"
+      },
+      {
+        "title": "SL480H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1f4fe6a4411edc2ff625888b4093e917"
+      },
+      {
+        "title": "SL480H-GS3［直進アシスト機能編］",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fd5ac6ce504b74460b93610f39e481f7"
+      },
+      {
+        "title": "SL480H 幅狭トレッド仕様",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cbef46321026d8404bc3216d4774c8a9"
+      },
+      {
+        "title": "SL540H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d3a7f48c12e697d50c8a7ae7684644ef"
+      },
+      {
+        "title": "SL540H-GS3［直進アシスト機能編］",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4837ba5cd49c7f03caaa423049e66daf"
+      },
+      {
+        "title": "SL540H-C 幅狭トレッド仕様",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=bf424cb7b0dea050a42b9739eb261a3a"
+      },
+      {
+        "title": "SL600H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=05546b0e38ab9175cd905eebcc6ebb76"
+      },
+      {
+        "title": "SL600H-GS3［直進アシスト機能編］",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4fc848051e4459b8a6afeb210c3664ec"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-product-lineup",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

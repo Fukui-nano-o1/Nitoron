@@ -1,0 +1,69 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "KR-217-323",
+  "productName": "KALWAY",
+  "category": "コンバイン",
+  "models": [
+    "KR217",
+    "KR220",
+    "KR321",
+    "KR323"
+  ],
+  "summary": "2条刈と3条刈をそろえるコンバインシリーズ。刈取り・脱こくの機能を型式ごとに確認できます。",
+  "checkedAt": "2026-09-16",
+  "photoModel": "KR217",
+  "facts": [
+    {
+      "label": "刈取条数",
+      "value": "2条／3条",
+      "source": "product"
+    },
+    {
+      "label": "出力帯",
+      "value": "16.5〜23馬力",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/combine/KR-217-323/",
+      "checkedAt": "2026-09-16",
+      "sha256": "b1dc72b9b0b1692f706015a3335ab9336e3e362c05215a3c8bc163ec2f246fce"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/5-10-2-0026-04n.pdf",
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/combine/KR-217-323/?nav=catalog"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（KR-217-323）",
+      "url": "https://agriculture.kubota.co.jp/product/combine/KR-217-323/?nav=manual"
+    },
+    "manuals": [
+      {
+        "title": "KR217",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=65cc2c8205a05d7379fa3a6386f710e1"
+      },
+      {
+        "title": "KR220",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0768281a05da9f27df178b5c39a51263"
+      },
+      {
+        "title": "KR321",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=93d65641ff3f1586614cf2c1ad240b6c"
+      },
+      {
+        "title": "KR323",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ce5140df15d046a66883807d18d0264b"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-product-lineup",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

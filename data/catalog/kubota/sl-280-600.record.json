@@ -1,0 +1,119 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "d7a46049-b8da-4cf4-8070-fb2b37d48849",
+      "title": "【カタログ解説】クボタ SL-280-600 Slugger（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "d7a46049-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "d7a46049-002",
+          "type": "text",
+          "text": "耕うんなどの作業に使うトラクタシリーズ。出力帯と走行仕様の違いを公式の主要諸元で確認できます。"
+        },
+        {
+          "id": "d7a46049-003",
+          "type": "bullet",
+          "text": "出力帯：28〜60馬力"
+        },
+        {
+          "id": "d7a46049-004",
+          "type": "bullet",
+          "text": "走行仕様：ホイール／パワクロ（型式により異なる）"
+        },
+        {
+          "id": "d7a46049-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "d7a46049-006",
+          "type": "text",
+          "text": "SL280 / SL320 / SL350 / SL380 / SL410 / SL450 / SL480H / SL540H / SL600H"
+        },
+        {
+          "id": "d7a46049-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "d7a46049-008",
+          "type": "text",
+          "text": "掲載写真：SL280CGS3。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/26c856e09c95fa3b84fcd99d49ff2770/lineup-sl280cgs3.jpg",
+        "summary": "耕うんなどの作業に使うトラクタシリーズ。出力帯と走行仕様の違いを公式の主要諸元で確認できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "d7a46049-src-product",
+            "title": "クボタ 製品ページ SL-280-600",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-600/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d7a46049-src-catalog",
+            "title": "クボタ 製品カタログ Slugger",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0039-11.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d7a46049-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（SL-280-600）",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-600/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "d7a46049-849-src-photo",
+            "title": "写真：クボタ SL280CGS3",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/SL-280-600/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "3231bd3b-074d-4175-88e7-cd26d10dfabe",
+      "title": "【カタログ解説】クボタ NB-195-245 NBシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "3231bd3b-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "3231bd3b-002",
+          "type": "text",
+          "text": "直進アシスト機能を備えたコンパクトトラクタ。ホイール仕様とパワクロ仕様から選べます。"
+        },
+        {
+          "id": "3231bd3b-003",
+          "type": "bullet",
+          "text": "出力帯：19〜24馬力"
+        },
+        {
+          "id": "3231bd3b-004",
+          "type": "bullet",
+          "text": "走行仕様：ホイール／パワクロ（型式により異なる）"
+        },
+        {
+          "id": "3231bd3b-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "3231bd3b-006",
+          "type": "text",
+          "text": "NB195 / NB225 / NB245"
+        },
+        {
+          "id": "3231bd3b-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "3231bd3b-008",
+          "type": "text",
+          "text": "掲載写真：NB195。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/3ee93b14593fe957bfe48559e26b3ab3/NB195.jpg",
+        "summary": "直進アシスト機能を備えたコンパクトトラクタ。ホイール仕様とパワクロ仕様から選べます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "3231bd3b-src-product",
+            "title": "クボタ 製品ページ NB-195-245",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/NB-195-245/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "3231bd3b-src-catalog",
+            "title": "クボタ 製品カタログ NBシリーズ",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/2-20-2-0051-01.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "3231bd3b-src-manual-index",
+            "title": "取扱説明書検索（NB-195-245）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "3231bd3b-abe-src-photo",
+            "title": "写真：クボタ NB195",
+            "url": "https://agriculture.kubota.co.jp/product/tractor/NB-195-245/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

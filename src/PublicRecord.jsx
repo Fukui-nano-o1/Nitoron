@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useId, useRef, useState } from 'react'
 import RecordBody from './RecordBody.jsx'
 import PhotoGallery from './PhotoGallery.jsx'
 import RecordMemo from './RecordMemo.jsx'
@@ -35,16 +35,50 @@ function SectionNav({ record, hasDiscussion, hasRelated, search = null }) {
 // 最下部の関連カード行（Airbnb の「他の宿泊先」）。同じシリーズ→同じメーカーの順に横1段ずつ。0件の行は出さない。
 function RelatedRow({ row, excludeId }) {
   const [records, setRecords] = useState(null)
+  const track = useRef(null)
+  const trackId = useId()
+  const [edges, setEdges] = useState({ start: true, end: true })
   const state = { query: row.query, region: '', filters: { ...EMPTY_FILTERS, kind: 'trouble' }, sort: 'recent', page: 0 }
   useEffect(() => {
     let cancelled = false
+    setRecords(null)
     listPublic({ ...state, limit: 12 }).then(data => { if (!cancelled) setRecords(data.records.filter(r => r.id !== excludeId)) }).catch(() => { if (!cancelled) setRecords([]) })
     return () => { cancelled = true }
   }, [row.query, excludeId])
+  useEffect(() => {
+    const el = track.current
+    if (!el) return
+    const update = () => setEdges({ start: el.scrollLeft <= 2, end: el.scrollLeft + el.clientWidth >= el.scrollWidth - 2 })
+    el.scrollLeft = 0
+    update()
+    el.addEventListener('scroll', update, { passive: true })
+    const observer = new ResizeObserver(update)
+    observer.observe(el)
+    return () => { el.removeEventListener('scroll', update); observer.disconnect() }
+  }, [records])
+  const move = direction => {
+    const el = track.current
+    if (!el) return
+    const first = el.firstElementChild
+    const stride = (first?.getBoundingClientRect().width || el.clientWidth) + (parseFloat(getComputedStyle(el).columnGap) || 0)
+    const left = direction * stride * Math.max(1, Math.floor(el.clientWidth / stride))
+    el.scrollBy({ left, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })
+  }
+  const onKeyDown = event => {
+    if (event.target !== event.currentTarget || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return
+    event.preventDefault()
+    if (event.key === 'Home' || event.key === 'End') track.current.scrollTo({ left: event.key === 'Home' ? 0 : track.current.scrollWidth, behavior: 'instant' })
+    else move(event.key === 'ArrowLeft' ? -1 : 1)
+  }
   if (!records?.length) return null
   return <section className="listing-row" aria-label={row.label}>
-    <div className="listing-row-head"><h2>{row.label}</h2><a href={discoverHref(state)}>すべて見る</a></div>
-    <div className="listing-row-scroll">{records.map(r => <RecordCard key={r.id} record={r} href={`#/public/${r.id}`} publicMode />)}</div>
+    <div className="listing-row-head"><h2>{row.label}</h2><div className="listing-row-actions"><a href={discoverHref(state)}>すべて見る</a>
+      {!(edges.start && edges.end) && <div className="listing-row-arrows print-hidden">
+        <button type="button" aria-label={`${row.label}を前へ`} aria-controls={trackId} disabled={edges.start} onClick={() => move(-1)}><Icon name="left" size={16} /></button>
+        <button type="button" aria-label={`${row.label}を次へ`} aria-controls={trackId} disabled={edges.end} onClick={() => move(1)}><Icon name="right" size={16} /></button>
+      </div>}
+    </div></div>
+    <div ref={track} id={trackId} className="listing-row-scroll" tabIndex={0} role="group" aria-label={row.label} onKeyDown={onKeyDown}>{records.map(r => <RecordCard key={r.id} record={r} href={`#/public/${r.id}`} publicMode />)}</div>
   </section>
 }
 // 記録の公開ページ。Airbnb の listing と同じ並び：戻る → 見出し → 写真 → 記録者 → 要点 → 本文。右カード（PCの右／スマホの下部固定バー）の主操作は「質問・指摘を送る」。

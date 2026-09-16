@@ -1,0 +1,64 @@
+{
+  "new_cards": [
+    {
+      "id": "3231bd3b-074d-4175-88e7-cd26d10dfabe",
+      "title": "【カタログ解説】クボタ NB-195-245 NBシリーズ（トラクタ）",
+      "has_photo": true,
+      "search_indexed": true,
+      "source_matches": true
+    },
+    {
+      "id": "d7a46049-b8da-4cf4-8070-fb2b37d48849",
+      "title": "【カタログ解説】クボタ SL-280-600 Slugger（トラクタ）",
+      "has_photo": true,
+      "search_indexed": true,
+      "source_matches": true
+    },
+    {
+      "id": "6d8b3274-3893-4712-8620-4238d1ba40b0",
+      "title": "【カタログ解説】クボタ NW-50S NAVIWELスペシャルクラス（田植機）",
+      "has_photo": true,
+      "search_indexed": true,
+      "source_matches": true
+    },
+    {
+      "id": "92d4ac7f-956c-4237-8e56-012dddb7571b",
+      "title": "【カタログ解説】クボタ AW-4-5 ASWEL（田植機）",
+      "has_photo": true,
+      "search_indexed": true,
+      "source_matches": true
+    },
+    {
+      "id": "53e30141-e9a6-43c4-87ef-dc0afd2661b9",
+      "title": "【カタログ解説】クボタ ER-211-213 NEW Racty（コンバイン）",
+      "has_photo": true,
+      "search_indexed": true,
+      "source_matches": true
+    },
+    {
+      "id": "f00cc551-4f19-4b12-8c2e-84232addbe21",
+      "title": "【カタログ解説】クボタ KR-217-323 KALWAY（コンバイン）",
+      "has_photo": true,
+      "search_indexed": true,
+      "source_matches": true
+    },
+    {
+      "id": "dd48937d-804a-45f2-8b3a-3685fa4ccd7e",
+      "title": "【カタログ解説】クボタ SKP-101 全自動野菜移植機 ベジータ（野菜関連機器）",
+      "has_photo": true,
+      "search_indexed": true,
+      "source_matches": true
+    },
+    {
+      "id": "b31b411e-7817-464b-88fa-25546ebea989",
+      "title": "【カタログ解説】クボタ KP-202 乗用半自動野菜移植機 ベジライダー（野菜関連機器）",
+      "has_photo": true,
+      "search_indexed": true,
+      "source_matches": true
+    }
+  ],
+  "visible_cards": 22,
+  "kubota_catalog_count": 18,
+  "untouched_notes_hash": "aa86be38c9960cdeb45a74f35f41e51c",
+  "untouched_publications_hash": "2eb1cd5f92aa31fcd70def7a4961c2d5"
+}

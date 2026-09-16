@@ -4,10 +4,19 @@
 import { readFile, writeFile } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
 import { emptyMeta } from '../src/domain.js'
+import { buildOverview, catalogId } from './catalog-overview.mjs'
 
 const [,, input, output] = process.argv
 if (!input) { console.error('使い方: node scripts/catalog-to-record.mjs data/catalog/kubota/tms-200.json [out.record.json]'); process.exit(2) }
 const entry = JSON.parse(await readFile(input, 'utf8'))
+if (entry.schema === 'nitoron-catalog/2') {
+  const registry = JSON.parse(await readFile(new URL('../data/card-photos.json', import.meta.url), 'utf8'))
+  const record = buildOverview(entry, registry.entries.find(p => p.id === catalogId(entry.maker, entry.series)))
+  const out = output || input.replace(/\.json$/, '.record.json')
+  await writeFile(out, JSON.stringify({ format: 'nitoron-workspace', version: 1, exportedAt: `${record.date}T00:00:00.000Z`, records: [record] }, null, 2) + '\n')
+  console.log(JSON.stringify({ out, id: record.id, blocks: record.blocks.length, sources: record.meta.sources.length }))
+  process.exit(0)
+}
 const manual = entry.sources.manual, product = entry.sources.product
 // 同じ入力からは同じIDにする（再取込で重複しないよう、取り込む側で判断できる）
 const stableUuid = seed => { const h = createHash('sha256').update(seed).digest('hex'); return `${h.slice(0, 8)}-${h.slice(8, 12)}-4${h.slice(13, 16)}-8${h.slice(17, 20)}-${h.slice(20, 32)}` }

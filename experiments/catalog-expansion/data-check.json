@@ -1,0 +1,70 @@
+{
+  "checkedAt": "2026-09-16T08:46:55.444Z",
+  "count": 8,
+  "checks": [
+    {
+      "series": "NB-195-245",
+      "id": "3231bd3b-074d-4175-88e7-cd26d10dfabe",
+      "sourceCount": 4,
+      "searchableModels": 3,
+      "regenerated": true,
+      "publicationProblems": []
+    },
+    {
+      "series": "SL-280-600",
+      "id": "d7a46049-b8da-4cf4-8070-fb2b37d48849",
+      "sourceCount": 4,
+      "searchableModels": 9,
+      "regenerated": true,
+      "publicationProblems": []
+    },
+    {
+      "series": "NW-50S",
+      "id": "6d8b3274-3893-4712-8620-4238d1ba40b0",
+      "sourceCount": 4,
+      "searchableModels": 3,
+      "regenerated": true,
+      "publicationProblems": []
+    },
+    {
+      "series": "AW-4-5",
+      "id": "92d4ac7f-956c-4237-8e56-012dddb7571b",
+      "sourceCount": 6,
+      "searchableModels": 2,
+      "regenerated": true,
+      "publicationProblems": []
+    },
+    {
+      "series": "ER-211-213",
+      "id": "53e30141-e9a6-43c4-87ef-dc0afd2661b9",
+      "sourceCount": 6,
+      "searchableModels": 2,
+      "regenerated": true,
+      "publicationProblems": []
+    },
+    {
+      "series": "KR-217-323",
+      "id": "f00cc551-4f19-4b12-8c2e-84232addbe21",
+      "sourceCount": 8,
+      "searchableModels": 4,
+      "regenerated": true,
+      "publicationProblems": []
+    },
+    {
+      "series": "SKP-101",
+      "id": "dd48937d-804a-45f2-8b3a-3685fa4ccd7e",
+      "sourceCount": 6,
+      "searchableModels": 6,
+      "regenerated": true,
+      "publicationProblems": []
+    },
+    {
+      "series": "KP-202",
+      "id": "b31b411e-7817-464b-88fa-25546ebea989",
+      "sourceCount": 5,
+      "searchableModels": 1,
+      "regenerated": true,
+      "publicationProblems": []
+    }
+  ]
+}

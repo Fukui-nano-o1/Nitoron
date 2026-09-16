@@ -1,0 +1,125 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "b31b411e-7817-464b-88fa-25546ebea989",
+      "title": "【カタログ解説】クボタ KP-202 乗用半自動野菜移植機 ベジライダー（野菜関連機器）",
+      "category": "野菜関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "b31b411e-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "b31b411e-002",
+          "type": "text",
+          "text": "座って苗の供給を行う、乗用の半自動野菜移植機。2条の植付けに対応します。"
+        },
+        {
+          "id": "b31b411e-003",
+          "type": "bullet",
+          "text": "植付条数：2条"
+        },
+        {
+          "id": "b31b411e-004",
+          "type": "bullet",
+          "text": "方式：乗用・半自動"
+        },
+        {
+          "id": "b31b411e-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "b31b411e-006",
+          "type": "text",
+          "text": "KP-202"
+        },
+        {
+          "id": "b31b411e-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "b31b411e-008",
+          "type": "text",
+          "text": "掲載写真：KP-202。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "野菜関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/ac3af0d45fb8aa662b67498939888b3a/02.jpg",
+        "summary": "座って苗の供給を行う、乗用の半自動野菜移植機。2条の植付けに対応します。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "b31b411e-src-product",
+            "title": "クボタ 製品ページ KP-202",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-KP-202/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b31b411e-src-catalog",
+            "title": "クボタ 製品カタログ 乗用半自動野菜移植機 ベジライダー",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-50-2-0031-02.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b31b411e-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（KP-202）",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-KP-202/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b31b411e-src-manual-1",
+            "title": "取扱説明書 KP-202",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=860320be12a1c050cd7731794e231bd3",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b31b411e-989-src-photo",
+            "title": "写真：クボタ KP-202",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-KP-202/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

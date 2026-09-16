@@ -1,0 +1,119 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "6d8b3274-3893-4712-8620-4238d1ba40b0",
+      "title": "【カタログ解説】クボタ NW-50S NAVIWELスペシャルクラス（田植機）",
+      "category": "田植機",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "6d8b3274-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "6d8b3274-002",
+          "type": "text",
+          "text": "5条植の乗用田植機。直進や植付けの支援、田植えと同時に行う作業の機能を備えています。"
+        },
+        {
+          "id": "6d8b3274-003",
+          "type": "bullet",
+          "text": "植付条数：5条"
+        },
+        {
+          "id": "6d8b3274-004",
+          "type": "bullet",
+          "text": "掲載仕様：NW50S-GS／NW50S-F-GS"
+        },
+        {
+          "id": "6d8b3274-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "6d8b3274-006",
+          "type": "text",
+          "text": "NW50S / NW50S-GS / NW50S-F-GS"
+        },
+        {
+          "id": "6d8b3274-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "6d8b3274-008",
+          "type": "text",
+          "text": "掲載写真：NW50S-GS。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "田植機",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/84494daf461d60fdc60eb53515f3109f/nw50s-gs.jpg",
+        "summary": "5条植の乗用田植機。直進や植付けの支援、田植えと同時に行う作業の機能を備えています。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "6d8b3274-src-product",
+            "title": "クボタ 製品ページ NW-50S",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-50S/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6d8b3274-src-catalog",
+            "title": "クボタ 製品カタログ NAVIWELスペシャルクラス",
+            "url": "https://agriculture.kubota.co.jp/img_sys/catalog/3-20-2-0034-02.pdf",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6d8b3274-src-manual-index",
+            "title": "取扱説明書検索（NW-50S）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6d8b3274-0b0-src-photo",
+            "title": "写真：クボタ NW50S-GS",
+            "url": "https://agriculture.kubota.co.jp/product/taueki/NW-50S/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}
