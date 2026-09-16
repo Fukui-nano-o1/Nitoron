@@ -1,0 +1,177 @@
+{
+  "checkedAt": "2026-09-16",
+  "crop": "白ねぎ・長ネギ",
+  "baseCommit": "b0f9e20225b6e8586d6a905fab16ded7829090fc",
+  "addedCards": 15,
+  "publishedModelsAndPartNumbers": 26,
+  "kubotaCards": 2,
+  "kubotaListedAttachmentCards": 5,
+  "otherManufacturerCards": 8,
+  "entries": [
+    {
+      "key": "kv-2200",
+      "path": "data/catalog/kubota/kv-2200.json",
+      "id": "87cdc591-16a4-4b13-8eaa-19ad837a9f88",
+      "maker": "クボタ",
+      "series": "KV2200",
+      "name": "乗用管理機",
+      "sourceKey": "post643",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system05/?post_id=post643#post643",
+      "photoUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/kv2200w-bs_01.jpg"
+    },
+    {
+      "key": "dr-3ud",
+      "path": "data/catalog/kubota/dr-3ud.json",
+      "id": "b1aa54ab-aece-42cd-895c-775eda8d12c9",
+      "maker": "クボタ",
+      "series": "DR-3UD",
+      "name": "正逆転3連ロータリカルチ",
+      "sourceKey": "post1735",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system05/?post_id=post1735#post1735",
+      "photoUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/12/2b530e80c7d0de90885e285c5d798063.png"
+    },
+    {
+      "key": "ve-31",
+      "path": "data/catalog/minoru/ve-31.json",
+      "id": "0fad860a-19f2-41ba-829f-85a8ebbbda49",
+      "maker": "みのる産業",
+      "series": "VE-31",
+      "name": "野菜全自動播種機",
+      "sourceKey": "post768",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system02/?post_id=post768#post768",
+      "photoUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/VE-31_01.jpg"
+    },
+    {
+      "key": "hp-16",
+      "path": "data/catalog/nitten/hp-16.json",
+      "id": "4e4ebb7c-ccbb-48ba-8fa0-be01b83eb7c2",
+      "maker": "日本甜菜製糖",
+      "series": "HP-16",
+      "name": "ひっぱりくん",
+      "sourceKey": "post780",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system02/?post_id=post780#post780",
+      "photoUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/HP_1-01.jpg"
+    },
+    {
+      "key": "un6501x",
+      "path": "data/catalog/kanto-noki/un6501x.json",
+      "id": "ce816970-097d-458c-8140-007a2e9b861e",
+      "maker": "関東農機",
+      "series": "UN6501X",
+      "name": "逆転ロータリ",
+      "sourceKey": "post785",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system05/?post_id=post785#post785",
+      "photoUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/2eb21ed80f5ddfed37d392f0e8938dd7.jpg"
+    },
+    {
+      "key": "tnw-20",
+      "path": "data/catalog/honda-nouki/tnw-20.json",
+      "id": "8d8092b3-715e-48b8-8495-a8f9e46ecc86",
+      "maker": "本田農機工業",
+      "series": "TNW-20",
+      "name": "長ネギ掘取機",
+      "sourceKey": "post335",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system13/?post_id=post335#post335",
+      "photoUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/TNW-20_01.jpg"
+    },
+    {
+      "key": "mb-1d2",
+      "path": "data/catalog/matsumoto/mb-1d2.json",
+      "id": "cfdf77e0-b861-4fa4-82a7-302ce456ae75",
+      "maker": "マツモト",
+      "series": "MB-1D2",
+      "name": "ベストロボ",
+      "sourceKey": "post822",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system16/?post_id=post822#post822",
+      "photoUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/MB-1D2.jpg"
+    },
+    {
+      "key": "skmz-x2-j",
+      "path": "data/catalog/matsumoto/skmz-x2-j.json",
+      "id": "fad5d9d9-38ec-43eb-88af-a7a8a74ca028",
+      "maker": "マツモト",
+      "series": "SKMZ-X2・SKMZJ",
+      "name": "スーパーキリスポ",
+      "sourceKey": "post823",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system16/?post_id=post823#post823",
+      "photoUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/6295beb2649910ddaa97f74397bdc7ff.jpg"
+    },
+    {
+      "key": "mn-103",
+      "path": "data/catalog/matsumoto/mn-103.json",
+      "id": "b68218d6-ed99-4abb-8add-41d1a2b0ce56",
+      "maker": "マツモト",
+      "series": "MN-103・MN-103-3",
+      "name": "長ネギ専用選別機",
+      "sourceKey": "post373",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system16/?post_id=post373#post373",
+      "photoUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/5ca598c2e17f4b3f5dd804ba980d404d.jpg"
+    },
+    {
+      "key": "okm-s2n",
+      "path": "data/catalog/shinwa/okm-s2n.json",
+      "id": "cf061d3b-d902-4943-8e6d-e650e952ff7d",
+      "maker": "シンワ",
+      "series": "OKM-S2N",
+      "name": "野菜袋詰機 風太",
+      "sourceKey": "post374",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system16/?post_id=post374#post374",
+      "photoUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/OKM-2N_01.jpg"
+    },
+    {
+      "key": "rv-mini-max-30",
+      "path": "data/catalog/kubota-attachments/rv-mini-max-30.json",
+      "id": "59916189-31da-4ba1-80b0-1e7a8f3d3322",
+      "maker": "クボタ取扱",
+      "series": "98612-22350",
+      "name": "RVミニマックスロータ30",
+      "sourceKey": "ta-negi-system",
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/07.html",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/5cda5383fdbd12222dca21b72c0cf5b0/attachment_img55.jpg"
+    },
+    {
+      "key": "rv-backfill-70-100",
+      "path": "data/catalog/kubota-attachments/rv-backfill-70-100.json",
+      "id": "6bed04aa-764a-4b76-856c-897cc3e6993c",
+      "maker": "クボタ取扱",
+      "series": "98612-55350",
+      "name": "RV転作ねぎ埋め戻しロータ70-100",
+      "sourceKey": "ta-negi-system",
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/07.html",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/5cda5383fdbd12222dca21b72c0cf5b0/attachment_img59.jpg"
+    },
+    {
+      "key": "rv-hiller-w",
+      "path": "data/catalog/kubota-attachments/rv-hiller-w.json",
+      "id": "9b10f745-278f-4cb7-85cc-892c8d3f9590",
+      "maker": "クボタ取扱",
+      "series": "98612-56350",
+      "name": "RV土寄せロータW",
+      "sourceKey": "ta-negi-system",
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/07.html",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/5cda5383fdbd12222dca21b72c0cf5b0/attachment_img63.jpg"
+    },
+    {
+      "key": "rv-mini-max-60",
+      "path": "data/catalog/kubota-attachments/rv-mini-max-60.json",
+      "id": "f27557ef-4dc9-405f-8a71-e10493119ea8",
+      "maker": "クボタ取扱",
+      "series": "98612-25350",
+      "name": "RVミニマックスロータ60",
+      "sourceKey": "ta-negi-system",
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/07.html",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/5cda5383fdbd12222dca21b72c0cf5b0/attachment_img67.jpg"
+    },
+    {
+      "key": "rv-negi-digger",
+      "path": "data/catalog/kubota-attachments/rv-negi-digger.json",
+      "id": "4ba1854e-f5d1-48d7-88a3-dce931069e2c",
+      "maker": "クボタ取扱",
+      "series": "98612-50350",
+      "name": "RV転作ねぎ掘取り機",
+      "sourceKey": "ta-negi-system",
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/07.html",
+      "photoUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/5cda5383fdbd12222dca21b72c0cf5b0/attachment_img69.jpg"
+    }
+  ]
+}

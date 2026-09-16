@@ -1,0 +1,113 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "fad5d9d9-38ec-43eb-88af-a7a8a74ca028",
+      "title": "【カタログ解説】マツモト SKMZ-X2・SKMZJ スーパーキリスポ（野菜関連機器）",
+      "category": "野菜関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "fad5d9d9-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "fad5d9d9-002",
+          "type": "text",
+          "text": "長ネギの根・葉切りと皮むきに使う、スーパーキリスポの調製機シリーズです。"
+        },
+        {
+          "id": "fad5d9d9-003",
+          "type": "bullet",
+          "text": "作物：長ネギ・白ねぎ"
+        },
+        {
+          "id": "fad5d9d9-004",
+          "type": "bullet",
+          "text": "作業：根切り・葉切り・皮むき"
+        },
+        {
+          "id": "fad5d9d9-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "fad5d9d9-006",
+          "type": "text",
+          "text": "SKMZ-X2 / SKMZ-X2-75C / SKMZ-X2-55C / SKMZJ / SKMZJ-75C / SKMZJ-55C"
+        },
+        {
+          "id": "fad5d9d9-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "fad5d9d9-008",
+          "type": "text",
+          "text": "掲載写真：スーパーキリスポ（公式ガイドの参考写真）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "マツモトカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "野菜関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/6295beb2649910ddaa97f74397bdc7ff.jpg",
+        "summary": "長ネギの根・葉切りと皮むきに使う、スーパーキリスポの調製機シリーズです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "fad5d9d9-src-product",
+            "title": "クボタ公式 白ねぎ栽培ガイド：マツモト スーパーキリスポ",
+            "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system16/?post_id=post823#post823",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "fad5d9d9-src-manufacturer",
+            "title": "マツモト公式 製品情報 スーパーキリスポ",
+            "url": "https://kkmatsumoto.co.jp/products/leek01/skmz-x2.html",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "fad5d9d9-src-photo",
+            "title": "写真：クボタ公式ガイド掲載 マツモト スーパーキリスポ",
+            "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system16/?post_id=post823#post823",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "みのる産業",
+  "series": "VE-31",
+  "productName": "野菜全自動播種機",
+  "category": "野菜関連機器",
+  "checkedAt": "2026-09-16",
+  "summary": "白ねぎの育苗に使う、ポット220苗箱対応の全自動播種機です。",
+  "models": [
+    "VE-31"
+  ],
+  "photoModel": "VE-31",
+  "facts": [
+    {
+      "label": "苗箱",
+      "value": "ポット220苗箱",
+      "source": "product"
+    },
+    {
+      "label": "作業",
+      "value": "土入れ・播種・覆土",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "kind": "kubota-crop-guide",
+      "title": "クボタ公式 白ねぎ栽培ガイド：みのる産業 野菜全自動播種機",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system02/?post_id=post768#post768",
+      "checkedAt": "2026-09-16"
+    },
+    "catalog": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualIndex": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manuals": []
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "b1aa54ab-aece-42cd-895c-775eda8d12c9",
+      "title": "【カタログ解説】クボタ DR-3UD 正逆転3連ロータリカルチ（野菜関連機器）",
+      "category": "野菜関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "b1aa54ab-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "b1aa54ab-002",
+          "type": "text",
+          "text": "白ねぎの中耕・培土に使う、KV2200シリーズ専用のロータリカルチです。"
+        },
+        {
+          "id": "b1aa54ab-003",
+          "type": "bullet",
+          "text": "装着対象：KV2200シリーズ専用"
+        },
+        {
+          "id": "b1aa54ab-004",
+          "type": "bullet",
+          "text": "作業：中耕・培土"
+        },
+        {
+          "id": "b1aa54ab-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "b1aa54ab-006",
+          "type": "text",
+          "text": "DR-3UD"
+        },
+        {
+          "id": "b1aa54ab-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "b1aa54ab-008",
+          "type": "text",
+          "text": "掲載写真：DR-3UD（KV2200への装着例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "野菜関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/12/2b530e80c7d0de90885e285c5d798063.png",
+        "summary": "白ねぎの中耕・培土に使う、KV2200シリーズ専用のロータリカルチです。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "b1aa54ab-src-product",
+            "title": "クボタ公式 白ねぎ栽培ガイド：クボタ 正逆転3連ロータリカルチ",
+            "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system05/?post_id=post1735#post1735",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b1aa54ab-src-photo",
+            "title": "写真：クボタ公式ガイド掲載 クボタ 正逆転3連ロータリカルチ",
+            "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system05/?post_id=post1735#post1735",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ取扱",
+  "series": "98612-22350",
+  "productName": "RVミニマックスロータ30",
+  "category": "管理機用アタッチメント",
+  "identifierKind": "part-number",
+  "checkedAt": "2026-09-16",
+  "summary": "白ねぎの植付け溝づくりに使う管理機用アタッチメント。",
+  "models": [
+    "98612-22350"
+  ],
+  "photoModel": "RVミニマックスロータ30（作業時の装着例）",
+  "facts": [
+    {
+      "label": "作業",
+      "value": "植付け溝づくり",
+      "source": "product"
+    },
+    {
+      "label": "掲載機種",
+      "value": "TA701N-SCJV / TA801N-SCJV",
+      "source": "product"
+    },
+    {
+      "label": "装着不可",
+      "value": "TA801N-NY",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "title": "クボタ公式 TA白ねぎ栽培システム：RVミニマックスロータ30",
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/07.html",
+      "checkedAt": "2026-09-16"
+    },
+    "catalog": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualIndex": {
+      "title": "クボタ 取扱説明書検索",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/"
+    },
+    "manuals": []
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "6bed04aa-764a-4b76-856c-897cc3e6993c",
+      "title": "【カタログ解説】クボタ取扱 98612-55350 RV転作ねぎ埋め戻しロータ70-100（管理機用アタッチメント）",
+      "category": "管理機用アタッチメント",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "6bed04aa-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "6bed04aa-002",
+          "type": "text",
+          "text": "白ねぎの植付け後の埋め戻しや、中耕・除草に使うアタッチメント。"
+        },
+        {
+          "id": "6bed04aa-003",
+          "type": "bullet",
+          "text": "作業：埋め戻し・中耕・除草"
+        },
+        {
+          "id": "6bed04aa-004",
+          "type": "bullet",
+          "text": "掲載機種：TA701N-SCJV / TA801N-SCJV"
+        },
+        {
+          "id": "6bed04aa-005",
+          "type": "bullet",
+          "text": "装着不可：TA801N-NY"
+        },
+        {
+          "id": "6bed04aa-006",
+          "type": "h2",
+          "text": "品番"
+        },
+        {
+          "id": "6bed04aa-007",
+          "type": "text",
+          "text": "98612-55350"
+        },
+        {
+          "id": "6bed04aa-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "6bed04aa-009",
+          "type": "text",
+          "text": "掲載写真：RV転作ねぎ埋め戻しロータ70-100（作業時の装着例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタ取扱カタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "管理機用アタッチメント",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/5cda5383fdbd12222dca21b72c0cf5b0/attachment_img59.jpg",
+        "summary": "白ねぎの植付け後の埋め戻しや、中耕・除草に使うアタッチメント。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "6bed04aa-src-product",
+            "title": "クボタ公式 TA白ねぎ栽培システム：RV転作ねぎ埋め戻しロータ70-100",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/07.html",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6bed04aa-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6bed04aa-src-photo",
+            "title": "写真：クボタ公式 RV転作ねぎ埋め戻しロータ70-100",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/07.html",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

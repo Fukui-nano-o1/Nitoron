@@ -1,0 +1,113 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "b68218d6-ed99-4abb-8add-41d1a2b0ce56",
+      "title": "【カタログ解説】マツモト MN-103・MN-103-3 長ネギ専用選別機（野菜関連機器）",
+      "category": "野菜関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "b68218d6-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "b68218d6-002",
+          "type": "text",
+          "text": "皮むき後の長ネギを太さで分ける選別機。選別段階の異なる型式があります。"
+        },
+        {
+          "id": "b68218d6-003",
+          "type": "bullet",
+          "text": "作物：長ネギ・白ねぎ"
+        },
+        {
+          "id": "b68218d6-004",
+          "type": "bullet",
+          "text": "選別：長ネギの太さによる選別"
+        },
+        {
+          "id": "b68218d6-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "b68218d6-006",
+          "type": "text",
+          "text": "MN-103 / MN-103-3"
+        },
+        {
+          "id": "b68218d6-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "b68218d6-008",
+          "type": "text",
+          "text": "掲載写真：長ネギ専用選別機（公式ガイドの参考写真）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "マツモトカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "野菜関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/5ca598c2e17f4b3f5dd804ba980d404d.jpg",
+        "summary": "皮むき後の長ネギを太さで分ける選別機。選別段階の異なる型式があります。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "b68218d6-src-product",
+            "title": "クボタ公式 白ねぎ栽培ガイド：マツモト 長ネギ専用選別機",
+            "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system16/?post_id=post373#post373",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b68218d6-src-manufacturer",
+            "title": "マツモト公式 製品情報 長ネギ専用選別機",
+            "url": "https://kkmatsumoto.co.jp/products/leek04/mn-103-3.html",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "b68218d6-src-photo",
+            "title": "写真：クボタ公式ガイド掲載 マツモト 長ネギ専用選別機",
+            "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system16/?post_id=post373#post373",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

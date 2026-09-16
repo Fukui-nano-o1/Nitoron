@@ -1,0 +1,43 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "関東農機",
+  "series": "UN6501X",
+  "productName": "逆転ロータリ",
+  "category": "野菜関連機器",
+  "checkedAt": "2026-09-16",
+  "summary": "白ねぎの除草・土揚げ用ロータリ。クボタの超幅狭仕様トラクタとの組合せが紹介されています。",
+  "models": [
+    "UN6501X"
+  ],
+  "photoModel": "UN6501X（トラクタへの装着例）",
+  "facts": [
+    {
+      "label": "作業",
+      "value": "除草・土揚げ",
+      "source": "product"
+    },
+    {
+      "label": "掲載されている組合せ",
+      "value": "クボタ JB13XN / JB13XNM",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "kind": "kubota-crop-guide",
+      "title": "クボタ公式 白ねぎ栽培ガイド：関東農機 逆転ロータリ",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system05/?post_id=post785#post785",
+      "checkedAt": "2026-09-16"
+    },
+    "catalog": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualIndex": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manuals": []
+  }
+}

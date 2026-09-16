@@ -1,0 +1,43 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "シンワ",
+  "series": "OKM-S2N",
+  "productName": "野菜袋詰機 風太",
+  "category": "野菜関連機器",
+  "checkedAt": "2026-09-16",
+  "summary": "白ねぎなどの袋詰めを補助する機器。送風で袋の入口を広げます。",
+  "models": [
+    "OKM-S2N"
+  ],
+  "photoModel": "風太（公式ガイドの参考写真）",
+  "facts": [
+    {
+      "label": "作業",
+      "value": "野菜の袋詰め",
+      "source": "product"
+    },
+    {
+      "label": "区分",
+      "value": "袋詰め補助機器",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "kind": "kubota-crop-guide",
+      "title": "クボタ公式 白ねぎ栽培ガイド：シンワ 野菜袋詰機 風太",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system16/?post_id=post374#post374",
+      "checkedAt": "2026-09-16"
+    },
+    "catalog": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualIndex": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manuals": []
+  }
+}

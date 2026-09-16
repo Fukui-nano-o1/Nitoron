@@ -1,0 +1,44 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "日本甜菜製糖",
+  "series": "HP-16",
+  "productName": "ひっぱりくん",
+  "category": "野菜関連機器",
+  "checkedAt": "2026-09-16",
+  "summary": "白ねぎのチェーンポット苗を植え付ける、手引き式の簡易移植器です。",
+  "models": [
+    "HP-16",
+    "HP-16 73溝切付"
+  ],
+  "photoModel": "ひっぱりくん（公式ガイドの参考写真）",
+  "facts": [
+    {
+      "label": "対象",
+      "value": "チェーンポット苗",
+      "source": "product"
+    },
+    {
+      "label": "区分",
+      "value": "手引き式の簡易移植器",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "kind": "kubota-crop-guide",
+      "title": "クボタ公式 白ねぎ栽培ガイド：日本甜菜製糖 ひっぱりくん",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system02/?post_id=post780#post780",
+      "checkedAt": "2026-09-16"
+    },
+    "catalog": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualIndex": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manuals": []
+  }
+}

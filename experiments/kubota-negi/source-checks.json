@@ -1,0 +1,289 @@
+{
+  "sources": [
+    {
+      "key": "matsumoto-model-0",
+      "url": "https://kkmatsumoto.co.jp/products/leek/x.html",
+      "finalUrl": "https://kkmatsumoto.co.jp/products/leek/x.html",
+      "status": 200,
+      "sha256": "2b28917a9702f3a5871b657d00cbe8fac3c8c494f8afedf934d811831059c7e4"
+    },
+    {
+      "key": "matsumoto-model-4",
+      "url": "https://kkmatsumoto.co.jp/products/leek01/skmzj.html",
+      "finalUrl": "https://kkmatsumoto.co.jp/products/leek01/skmzj.html",
+      "status": 200,
+      "sha256": "2f86ebfb81665441b4dd6ac4c921b58cf29a6fe36b17d0278c2f5810b5aea374"
+    },
+    {
+      "key": "ta-negi-system",
+      "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/07.html",
+      "finalUrl": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/07.html",
+      "status": 200,
+      "sha256": "6bb2b6339518d8fa75dd5da14df200a56bd33f6ae510ff0792f0b461a46b8805"
+    },
+    {
+      "key": "matsumoto-model-5",
+      "url": "https://kkmatsumoto.co.jp/products/leek04/mn-103-3.html",
+      "finalUrl": "https://kkmatsumoto.co.jp/products/leek04/mn-103-3.html",
+      "status": 200,
+      "sha256": "2a15b8895318efad6eaa54e8ad7f4e4c70cbba99bbfef13001c6f0611a4c9e82"
+    },
+    {
+      "key": "spring_onion_system16",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system16/",
+      "finalUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system16/",
+      "status": 200,
+      "sha256": "0bc8da6eb404ee35c0cdf0f218380814283cd56566b72812e364543902185923"
+    },
+    {
+      "key": "vegetable-index",
+      "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/",
+      "finalUrl": "https://agriculture.kubota.co.jp/product/vegetable_equipment/",
+      "status": 200,
+      "sha256": "b924c71d17cbfd32e9495512ffa296572a1f1d318e514890fc6c9397803b0419"
+    },
+    {
+      "key": "jb-negi-system",
+      "url": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/04.html",
+      "finalUrl": "https://agriculture.kubota.co.jp/product/tractor/JB-13X-N/04.html",
+      "status": 200,
+      "sha256": "676a27f8236a8c1592dd777436ee0d9daa183f287c45538124430c9f01fa2715"
+    },
+    {
+      "key": "spring-onion-guide",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/farm_products/spring_onion/",
+      "finalUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/farm_products/spring_onion/",
+      "status": 200,
+      "sha256": "40ee01cfd1e8f2383d8c5113b475ea4b29597a1795130f874ab9293a929e1715"
+    },
+    {
+      "key": "matsumoto-home",
+      "url": "https://kkmatsumoto.co.jp/",
+      "finalUrl": "https://kkmatsumoto.co.jp/",
+      "status": 200,
+      "sha256": "c1a4ca3967162a0d67f5c8a0ccf7e0cbe176aff61b3819f20a625b51616964e1"
+    },
+    {
+      "key": "spring_onion_system05",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system05/",
+      "finalUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system05/",
+      "status": 200,
+      "sha256": "dbc4e40845b66f6d1d021f7788c5d124cb35bc2a6c947936b54044eac5cba30e"
+    },
+    {
+      "key": "kv2200",
+      "url": "https://agriculture.kubota.co.jp/product/kusakari_bojo/kanri-KV2200/",
+      "finalUrl": "https://agriculture.kubota.co.jp/product/kusakari_bojo/kanri-KV2200/",
+      "status": 200,
+      "sha256": "be499fc81fdc39f6f6c2a8ec301e1033ee9172f94d4f0f041e311cc7e89a4c79"
+    },
+    {
+      "key": "matsumoto-model-7",
+      "url": "https://kkmatsumoto.co.jp/products/leek06/mb-zs.html",
+      "finalUrl": "https://kkmatsumoto.co.jp/products/leek06/mb-zs.html",
+      "status": 200,
+      "sha256": "84fbe229bf1971e4498ebf86eb520b2b8935118f48359a27d0f9058c65b9600f"
+    },
+    {
+      "key": "attachment-index",
+      "url": "https://agriculture.kubota.co.jp/product/tiller_attachment/",
+      "finalUrl": "https://agriculture.kubota.co.jp/product/tiller_attachment/",
+      "status": 200,
+      "sha256": "ab6e0b878feba3a319cbca9b804f3e77c3d9a17fcbdbe3fe3e7a6fb104e70cb8"
+    },
+    {
+      "key": "spring_onion_system02",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system02/",
+      "finalUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system02/",
+      "status": 200,
+      "sha256": "8ac4ac0b30318dcca66ad3148ea228928f10dd43d58feeae91bfb52c3e6b9dd6"
+    },
+    {
+      "key": "matsumoto-model-2",
+      "url": "https://kkmatsumoto.co.jp/products/leek01/skmz-r2.html",
+      "finalUrl": "https://kkmatsumoto.co.jp/products/leek01/skmz-r2.html",
+      "status": 200,
+      "sha256": "ec93a74f02102f0f9539ca988e030551e3e67ee1f120a9c54b28d5c6619bc92d"
+    },
+    {
+      "key": "matsumoto-model-8",
+      "url": "https://kkmatsumoto.co.jp/products/leek06/msk-3ss.html",
+      "finalUrl": "https://kkmatsumoto.co.jp/products/leek06/msk-3ss.html",
+      "status": 200,
+      "sha256": "ac2df025f593a47ed3b7900969a2e2bd6d9c5fc928b1ac6ac563fe3b2d02b95b"
+    },
+    {
+      "key": "matsumoto-leek",
+      "url": "https://kkmatsumoto.co.jp/products/leek/",
+      "finalUrl": "https://kkmatsumoto.co.jp/products/leek/",
+      "status": 200,
+      "sha256": "e3246a0c4cda1bbeb5d05fcf4c9fe5b6c618ebeed541a55bb405e7770c781ca5"
+    },
+    {
+      "key": "matsumoto-model-1",
+      "url": "https://kkmatsumoto.co.jp/products/leek01/mb-1d2.html",
+      "finalUrl": "https://kkmatsumoto.co.jp/products/leek01/mb-1d2.html",
+      "status": 200,
+      "sha256": "8c4590b44dca41eca87bb4989c1b4efa518ac4f1952e9df40cdcff2b8d839989"
+    },
+    {
+      "key": "matsumoto-model-3",
+      "url": "https://kkmatsumoto.co.jp/products/leek01/skmz-x2.html",
+      "finalUrl": "https://kkmatsumoto.co.jp/products/leek01/skmz-x2.html",
+      "status": 200,
+      "sha256": "628e893bc6c6e866cef54ac4cd88b903d4b3a02b645fb7cea2e0db6b8b665cab"
+    },
+    {
+      "key": "matsumoto-model-6",
+      "url": "https://kkmatsumoto.co.jp/products/leek04/mn-103.html",
+      "finalUrl": "https://kkmatsumoto.co.jp/products/leek04/mn-103.html",
+      "status": 200,
+      "sha256": "0f501b7e274862208b189b5dddf2bc1c4161c9ec065491f9a17db1244aba4ac1"
+    },
+    {
+      "key": "spring_onion_system01",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system01/",
+      "finalUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system01/",
+      "status": 200,
+      "sha256": "64793e2b2e98c20fd1f223551e8b0c26ffb07f058be1e503ff7248328165c119"
+    },
+    {
+      "key": "spring_onion_system13",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system13/",
+      "finalUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system13/",
+      "status": 200,
+      "sha256": "d58bedc580ad155b09a8849680eba75888c6093e68d7495393a3dca8631d6821"
+    }
+  ],
+  "photoChecks": [
+    {
+      "key": "dr-3ud",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/12/2b530e80c7d0de90885e285c5d798063.png",
+      "sha256": "5b84a8634c64f1aa3c1100811c7ba08582bd22b4aa41cc73c76957f842549570",
+      "width": 1000,
+      "height": 760,
+      "format": "PNG"
+    },
+    {
+      "key": "hp-16",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/HP_1-01.jpg",
+      "sha256": "4cce37757fcb6deb5fe5a7e2dcfb1d0786d9d99d24a3a43d0a22369577ef41b9",
+      "width": 600,
+      "height": 450,
+      "format": "JPEG"
+    },
+    {
+      "key": "kv-2200",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/kv2200w-bs_01.jpg",
+      "sha256": "4447ae02c897fccba12a71b307f7877b5b9c714b6795263ab283a4cafc61a5f6",
+      "width": 600,
+      "height": 450,
+      "format": "JPEG"
+    },
+    {
+      "key": "mb-1d2",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/MB-1D2.jpg",
+      "sha256": "e8f92853b4472cbade6bf9b677f5c0badbf4d6cb29db26d60f95b814d6f6903f",
+      "width": 600,
+      "height": 450,
+      "format": "JPEG"
+    },
+    {
+      "key": "mn-103",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/5ca598c2e17f4b3f5dd804ba980d404d.jpg",
+      "sha256": "df85a21f4b73bccf5e9c58e491b8096c2ecf8a0b2cba898c261c05dea5c95fdd",
+      "width": 1000,
+      "height": 750,
+      "format": "JPEG"
+    },
+    {
+      "key": "okm-s2n",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/OKM-2N_01.jpg",
+      "sha256": "97ef9a70abab21700c460f00f2890be33616a4b110793561ac13a1e91dfead37",
+      "width": 600,
+      "height": 450,
+      "format": "JPEG"
+    },
+    {
+      "key": "rv-backfill-70-100",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/5cda5383fdbd12222dca21b72c0cf5b0/attachment_img59.jpg",
+      "sha256": "31b17f7aab9981028fe338c0c0703fb4e2038394fde27f577dafd7f6b1fe7461",
+      "width": 600,
+      "height": 400,
+      "format": "JPEG"
+    },
+    {
+      "key": "rv-hiller-w",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/5cda5383fdbd12222dca21b72c0cf5b0/attachment_img63.jpg",
+      "sha256": "2ff891db2b5a8bd8163a95d27a81f8a0d76adba4349b8d95a5d3489b05e330f8",
+      "width": 600,
+      "height": 400,
+      "format": "JPEG"
+    },
+    {
+      "key": "rv-mini-max-30",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/5cda5383fdbd12222dca21b72c0cf5b0/attachment_img55.jpg",
+      "sha256": "f0a60c7f065d53679d30a0dd8d1d45aedebd6be42d46de9acfc3b924d35b8af0",
+      "width": 600,
+      "height": 400,
+      "format": "JPEG"
+    },
+    {
+      "key": "rv-mini-max-60",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/5cda5383fdbd12222dca21b72c0cf5b0/attachment_img67.jpg",
+      "sha256": "7a5697669d150355f2007074377a10e1d5761383e175ad7a813a38e3b8098d0f",
+      "width": 600,
+      "height": 400,
+      "format": "JPEG"
+    },
+    {
+      "key": "rv-negi-digger",
+      "url": "https://agriculture.kubota.co.jp/img_sys/uploadImages/5cda5383fdbd12222dca21b72c0cf5b0/attachment_img69.jpg",
+      "sha256": "33b6b7356459802a6259c85d20990db764fb18674056462963bf3ccb23e8c14d",
+      "width": 600,
+      "height": 400,
+      "format": "JPEG"
+    },
+    {
+      "key": "skmz-x2-j",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/6295beb2649910ddaa97f74397bdc7ff.jpg",
+      "sha256": "6655da8cf634f94daed80390ce40a312a056cb64a860abd9177e31064dea5574",
+      "width": 800,
+      "height": 607,
+      "format": "JPEG"
+    },
+    {
+      "key": "tnw-20",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/TNW-20_01.jpg",
+      "sha256": "2de5d7e38a902ece1d9b2a5345180f23b45bc6f410dd26b7ef7034af6f7fbea7",
+      "width": 600,
+      "height": 450,
+      "format": "JPEG"
+    },
+    {
+      "key": "un6501x",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/2eb21ed80f5ddfed37d392f0e8938dd7.jpg",
+      "sha256": "5dad02ffd339ad29c94ceca6e33a54181efe6ee79369720e1332ecf2930c8ec7",
+      "width": 600,
+      "height": 450,
+      "format": "JPEG"
+    },
+    {
+      "key": "ve-31",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/VE-31_01.jpg",
+      "sha256": "8437f83b354659f4dd815af4e089df818cb2bc72e37ea3cbd4c73f0b5d878921",
+      "width": 600,
+      "height": 450,
+      "format": "JPEG"
+    }
+  ],
+  "photoVisualReview": "15 / 15: machine, implement or installation photo; diagrams not used",
+  "notes": [
+    "Kubota crop guide includes products from other manufacturers. Maker labels are retained; the five RV attachments are labelled クボタ取扱 because the page does not name the OEM.",
+    "MN-103-03 in the guide table conflicts with its body. MN-103-3 is confirmed by the guide body and Matsumoto product page. No MN-103-03 model created; changing stage counts are omitted.",
+    "TA page introduction names TA701N-SCJV and TA801N-SCJV; the footnote repeats TA701N-SCJV. TA801N-NY exclusion is retained.",
+    "Existing FTN800, TA801N and JB13XN cards are retained and not duplicated.",
+    "Unresolved generic boom/tractor-mounted sprayers, radio sprayer and Q-hoe cultivator are not assigned invented models. Guide post650 mixes spraying/scattering terminology and does not reliably map both manufacturers to model names, so no exact product is created from that entry.",
+    "Current sales availability, repair instructions and 3D compatibility are not inferred from historical guide listings."
+  ]
+}

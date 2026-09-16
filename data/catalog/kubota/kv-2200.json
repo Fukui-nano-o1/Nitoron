@@ -1,0 +1,46 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "KV2200",
+  "productName": "乗用管理機",
+  "category": "野菜関連機器",
+  "checkedAt": "2026-09-16",
+  "summary": "白ねぎなどの中間管理に使う乗用管理機。作業に合わせた機器を組み合わせます。",
+  "models": [
+    "KV2200",
+    "KV2200W",
+    "KV2200-BS",
+    "KV2200W-BS"
+  ],
+  "photoModel": "KV2200W-BS（ブームスプレーヤ装着例）",
+  "facts": [
+    {
+      "label": "作物",
+      "value": "白ねぎ・野菜",
+      "source": "product"
+    },
+    {
+      "label": "区分",
+      "value": "乗用管理機",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "kind": "kubota-crop-guide",
+      "title": "クボタ公式 白ねぎ栽培ガイド：クボタ 乗用管理機",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system05/?post_id=post643#post643",
+      "checkedAt": "2026-09-16"
+    },
+    "catalog": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualIndex": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manuals": []
+  }
+}

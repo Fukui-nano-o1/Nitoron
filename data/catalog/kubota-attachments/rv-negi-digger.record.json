@@ -1,0 +1,118 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "4ba1854e-f5d1-48d7-88a3-dce931069e2c",
+      "title": "【カタログ解説】クボタ取扱 98612-50350 RV転作ねぎ掘取り機（管理機用アタッチメント）",
+      "category": "管理機用アタッチメント",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "4ba1854e-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "4ba1854e-002",
+          "type": "text",
+          "text": "白ねぎの収穫時に使う管理機用の掘取りアタッチメント。"
+        },
+        {
+          "id": "4ba1854e-003",
+          "type": "bullet",
+          "text": "作業：掘取り"
+        },
+        {
+          "id": "4ba1854e-004",
+          "type": "bullet",
+          "text": "掲載機種：TA701N-SCJV / TA801N-SCJV"
+        },
+        {
+          "id": "4ba1854e-005",
+          "type": "bullet",
+          "text": "装着不可：TA801N-NY"
+        },
+        {
+          "id": "4ba1854e-006",
+          "type": "h2",
+          "text": "品番"
+        },
+        {
+          "id": "4ba1854e-007",
+          "type": "text",
+          "text": "98612-50350"
+        },
+        {
+          "id": "4ba1854e-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "4ba1854e-009",
+          "type": "text",
+          "text": "掲載写真：RV転作ねぎ掘取り機（作業時の装着例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタ取扱カタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "管理機用アタッチメント",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/5cda5383fdbd12222dca21b72c0cf5b0/attachment_img69.jpg",
+        "summary": "白ねぎの収穫時に使う管理機用の掘取りアタッチメント。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "4ba1854e-src-product",
+            "title": "クボタ公式 TA白ねぎ栽培システム：RV転作ねぎ掘取り機",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/07.html",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "4ba1854e-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "4ba1854e-src-photo",
+            "title": "写真：クボタ公式 RV転作ねぎ掘取り機",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/07.html",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

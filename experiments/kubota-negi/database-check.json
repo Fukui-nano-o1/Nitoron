@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-09-16",
+  "projectId": "ycvbjzlqrxnwalhhgzat",
+  "operation": "add-only",
+  "before": {
+    "catalogs": 94,
+    "notes": 102,
+    "notes_hash": "577f0f33ec39a4bb9167195829f82c20",
+    "publications": 101,
+    "publications_hash": "8c1a19990431b342bca8a65efff00137"
+  },
+  "after": {
+    "catalogs": 109,
+    "exact_records": 15,
+    "notes": 117,
+    "old_notes_hash": "577f0f33ec39a4bb9167195829f82c20",
+    "old_publications_hash": "8c1a19990431b342bca8a65efff00137",
+    "publications": 116
+  },
+  "exactRecords": 15,
+  "existingNotesUnchanged": true,
+  "existingPublicationsUnchanged": true
+}

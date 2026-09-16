@@ -1,0 +1,113 @@
+{
+  "records": 15,
+  "roundTrip": true,
+  "deterministic": true,
+  "searchAllListedModels": true,
+  "results": [
+    {
+      "id": "87cdc591-16a4-4b13-8eaa-19ad837a9f88",
+      "key": "kv-2200",
+      "models": 4,
+      "sources": 2,
+      "blocks": 8
+    },
+    {
+      "id": "b1aa54ab-aece-42cd-895c-775eda8d12c9",
+      "key": "dr-3ud",
+      "models": 1,
+      "sources": 2,
+      "blocks": 8
+    },
+    {
+      "id": "0fad860a-19f2-41ba-829f-85a8ebbbda49",
+      "key": "ve-31",
+      "models": 1,
+      "sources": 2,
+      "blocks": 8
+    },
+    {
+      "id": "4e4ebb7c-ccbb-48ba-8fa0-be01b83eb7c2",
+      "key": "hp-16",
+      "models": 2,
+      "sources": 2,
+      "blocks": 8
+    },
+    {
+      "id": "ce816970-097d-458c-8140-007a2e9b861e",
+      "key": "un6501x",
+      "models": 1,
+      "sources": 2,
+      "blocks": 8
+    },
+    {
+      "id": "8d8092b3-715e-48b8-8495-a8f9e46ecc86",
+      "key": "tnw-20",
+      "models": 1,
+      "sources": 2,
+      "blocks": 8
+    },
+    {
+      "id": "cfdf77e0-b861-4fa4-82a7-302ce456ae75",
+      "key": "mb-1d2",
+      "models": 2,
+      "sources": 3,
+      "blocks": 8
+    },
+    {
+      "id": "fad5d9d9-38ec-43eb-88af-a7a8a74ca028",
+      "key": "skmz-x2-j",
+      "models": 6,
+      "sources": 3,
+      "blocks": 8
+    },
+    {
+      "id": "b68218d6-ed99-4abb-8add-41d1a2b0ce56",
+      "key": "mn-103",
+      "models": 2,
+      "sources": 3,
+      "blocks": 8
+    },
+    {
+      "id": "cf061d3b-d902-4943-8e6d-e650e952ff7d",
+      "key": "okm-s2n",
+      "models": 1,
+      "sources": 2,
+      "blocks": 8
+    },
+    {
+      "id": "59916189-31da-4ba1-80b0-1e7a8f3d3322",
+      "key": "rv-mini-max-30",
+      "models": 1,
+      "sources": 3,
+      "blocks": 9
+    },
+    {
+      "id": "6bed04aa-764a-4b76-856c-897cc3e6993c",
+      "key": "rv-backfill-70-100",
+      "models": 1,
+      "sources": 3,
+      "blocks": 9
+    },
+    {
+      "id": "9b10f745-278f-4cb7-85cc-892c8d3f9590",
+      "key": "rv-hiller-w",
+      "models": 1,
+      "sources": 3,
+      "blocks": 9
+    },
+    {
+      "id": "f27557ef-4dc9-405f-8a71-e10493119ea8",
+      "key": "rv-mini-max-60",
+      "models": 1,
+      "sources": 3,
+      "blocks": 9
+    },
+    {
+      "id": "4ba1854e-f5d1-48d7-88a3-dce931069e2c",
+      "key": "rv-negi-digger",
+      "models": 1,
+      "sources": 3,
+      "blocks": 9
+    }
+  ]
+}

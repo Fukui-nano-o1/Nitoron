@@ -1,0 +1,48 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "マツモト",
+  "series": "MN-103・MN-103-3",
+  "productName": "長ネギ専用選別機",
+  "category": "野菜関連機器",
+  "checkedAt": "2026-09-16",
+  "summary": "皮むき後の長ネギを太さで分ける選別機。選別段階の異なる型式があります。",
+  "models": [
+    "MN-103",
+    "MN-103-3"
+  ],
+  "photoModel": "長ネギ専用選別機（公式ガイドの参考写真）",
+  "facts": [
+    {
+      "label": "作物",
+      "value": "長ネギ・白ねぎ",
+      "source": "product"
+    },
+    {
+      "label": "選別",
+      "value": "長ネギの太さによる選別",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "kind": "kubota-crop-guide",
+      "title": "クボタ公式 白ねぎ栽培ガイド：マツモト 長ネギ専用選別機",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system16/?post_id=post373#post373",
+      "checkedAt": "2026-09-16"
+    },
+    "catalog": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualIndex": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manuals": [],
+    "manufacturer": {
+      "title": "マツモト公式 製品情報 長ネギ専用選別機",
+      "url": "https://kkmatsumoto.co.jp/products/leek04/mn-103-3.html"
+    }
+  }
+}

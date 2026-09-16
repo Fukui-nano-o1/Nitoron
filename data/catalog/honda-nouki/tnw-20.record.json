@@ -1,0 +1,107 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "8d8092b3-715e-48b8-8495-a8f9e46ecc86",
+      "title": "【カタログ解説】本田農機工業 TNW-20 長ネギ掘取機（野菜関連機器）",
+      "category": "野菜関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "8d8092b3-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "8d8092b3-002",
+          "type": "text",
+          "text": "長ネギの収穫時に使う、トラクタ装着型の掘取機です。"
+        },
+        {
+          "id": "8d8092b3-003",
+          "type": "bullet",
+          "text": "作物：長ネギ・白ねぎ"
+        },
+        {
+          "id": "8d8092b3-004",
+          "type": "bullet",
+          "text": "作業：掘取り"
+        },
+        {
+          "id": "8d8092b3-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "8d8092b3-006",
+          "type": "text",
+          "text": "TNW-20"
+        },
+        {
+          "id": "8d8092b3-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "8d8092b3-008",
+          "type": "text",
+          "text": "掲載写真：TNW-20（トラクタへの装着例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "本田農機工業カタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "野菜関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/TNW-20_01.jpg",
+        "summary": "長ネギの収穫時に使う、トラクタ装着型の掘取機です。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "8d8092b3-src-product",
+            "title": "クボタ公式 白ねぎ栽培ガイド：本田農機工業 長ネギ掘取機",
+            "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system13/?post_id=post335#post335",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "8d8092b3-src-photo",
+            "title": "写真：クボタ公式ガイド掲載 本田農機工業 長ネギ掘取機",
+            "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system13/?post_id=post335#post335",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "87cdc591-16a4-4b13-8eaa-19ad837a9f88",
+      "title": "【カタログ解説】クボタ KV2200 乗用管理機（野菜関連機器）",
+      "category": "野菜関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "87cdc591-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "87cdc591-002",
+          "type": "text",
+          "text": "白ねぎなどの中間管理に使う乗用管理機。作業に合わせた機器を組み合わせます。"
+        },
+        {
+          "id": "87cdc591-003",
+          "type": "bullet",
+          "text": "作物：白ねぎ・野菜"
+        },
+        {
+          "id": "87cdc591-004",
+          "type": "bullet",
+          "text": "区分：乗用管理機"
+        },
+        {
+          "id": "87cdc591-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "87cdc591-006",
+          "type": "text",
+          "text": "KV2200 / KV2200W / KV2200-BS / KV2200W-BS"
+        },
+        {
+          "id": "87cdc591-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "87cdc591-008",
+          "type": "text",
+          "text": "掲載写真：KV2200W-BS（ブームスプレーヤ装着例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "野菜関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/kv2200w-bs_01.jpg",
+        "summary": "白ねぎなどの中間管理に使う乗用管理機。作業に合わせた機器を組み合わせます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "87cdc591-src-product",
+            "title": "クボタ公式 白ねぎ栽培ガイド：クボタ 乗用管理機",
+            "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system05/?post_id=post643#post643",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "87cdc591-src-photo",
+            "title": "写真：クボタ公式ガイド掲載 クボタ 乗用管理機",
+            "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system05/?post_id=post643#post643",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

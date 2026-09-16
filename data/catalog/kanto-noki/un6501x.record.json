@@ -1,0 +1,107 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "ce816970-097d-458c-8140-007a2e9b861e",
+      "title": "【カタログ解説】関東農機 UN6501X 逆転ロータリ（野菜関連機器）",
+      "category": "野菜関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "ce816970-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "ce816970-002",
+          "type": "text",
+          "text": "白ねぎの除草・土揚げ用ロータリ。クボタの超幅狭仕様トラクタとの組合せが紹介されています。"
+        },
+        {
+          "id": "ce816970-003",
+          "type": "bullet",
+          "text": "作業：除草・土揚げ"
+        },
+        {
+          "id": "ce816970-004",
+          "type": "bullet",
+          "text": "掲載されている組合せ：クボタ JB13XN / JB13XNM"
+        },
+        {
+          "id": "ce816970-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "ce816970-006",
+          "type": "text",
+          "text": "UN6501X"
+        },
+        {
+          "id": "ce816970-007",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "ce816970-008",
+          "type": "text",
+          "text": "掲載写真：UN6501X（トラクタへの装着例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "関東農機カタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "野菜関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/special/yasai_guide/cms_kubota/wp-content/uploads/2020/06/2eb21ed80f5ddfed37d392f0e8938dd7.jpg",
+        "summary": "白ねぎの除草・土揚げ用ロータリ。クボタの超幅狭仕様トラクタとの組合せが紹介されています。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "ce816970-src-product",
+            "title": "クボタ公式 白ねぎ栽培ガイド：関東農機 逆転ロータリ",
+            "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system05/?post_id=post785#post785",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ce816970-src-photo",
+            "title": "写真：クボタ公式ガイド掲載 関東農機 逆転ロータリ",
+            "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system05/?post_id=post785#post785",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

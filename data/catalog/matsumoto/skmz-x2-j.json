@@ -1,0 +1,52 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "マツモト",
+  "series": "SKMZ-X2・SKMZJ",
+  "productName": "スーパーキリスポ",
+  "category": "野菜関連機器",
+  "checkedAt": "2026-09-16",
+  "summary": "長ネギの根・葉切りと皮むきに使う、スーパーキリスポの調製機シリーズです。",
+  "models": [
+    "SKMZ-X2",
+    "SKMZ-X2-75C",
+    "SKMZ-X2-55C",
+    "SKMZJ",
+    "SKMZJ-75C",
+    "SKMZJ-55C"
+  ],
+  "photoModel": "スーパーキリスポ（公式ガイドの参考写真）",
+  "facts": [
+    {
+      "label": "作物",
+      "value": "長ネギ・白ねぎ",
+      "source": "product"
+    },
+    {
+      "label": "作業",
+      "value": "根切り・葉切り・皮むき",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "kind": "kubota-crop-guide",
+      "title": "クボタ公式 白ねぎ栽培ガイド：マツモト スーパーキリスポ",
+      "url": "https://agriculture.kubota.co.jp/special/yasai_guide/cat_system/spring_onion_system16/?post_id=post823#post823",
+      "checkedAt": "2026-09-16"
+    },
+    "catalog": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manualIndex": {
+      "availability": "not-listed",
+      "checkedAt": "2026-09-16"
+    },
+    "manuals": [],
+    "manufacturer": {
+      "title": "マツモト公式 製品情報 スーパーキリスポ",
+      "url": "https://kkmatsumoto.co.jp/products/leek01/skmz-x2.html"
+    }
+  }
+}

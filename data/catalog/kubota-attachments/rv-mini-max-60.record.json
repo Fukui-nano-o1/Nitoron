@@ -1,0 +1,118 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "f27557ef-4dc9-405f-8a71-e10493119ea8",
+      "title": "【カタログ解説】クボタ取扱 98612-25350 RVミニマックスロータ60（管理機用アタッチメント）",
+      "category": "管理機用アタッチメント",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "f27557ef-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "f27557ef-002",
+          "type": "text",
+          "text": "白ねぎの生育に合わせた土揚げ用アタッチメント。"
+        },
+        {
+          "id": "f27557ef-003",
+          "type": "bullet",
+          "text": "作業：土揚げ"
+        },
+        {
+          "id": "f27557ef-004",
+          "type": "bullet",
+          "text": "掲載機種：TA701N-SCJV / TA801N-SCJV"
+        },
+        {
+          "id": "f27557ef-005",
+          "type": "bullet",
+          "text": "装着不可：TA801N-NY"
+        },
+        {
+          "id": "f27557ef-006",
+          "type": "h2",
+          "text": "品番"
+        },
+        {
+          "id": "f27557ef-007",
+          "type": "text",
+          "text": "98612-25350"
+        },
+        {
+          "id": "f27557ef-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "f27557ef-009",
+          "type": "text",
+          "text": "掲載写真：RVミニマックスロータ60（作業時の装着例）。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタ取扱カタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "管理機用アタッチメント",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/uploadImages/5cda5383fdbd12222dca21b72c0cf5b0/attachment_img67.jpg",
+        "summary": "白ねぎの生育に合わせた土揚げ用アタッチメント。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "f27557ef-src-product",
+            "title": "クボタ公式 TA白ねぎ栽培システム：RVミニマックスロータ60",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/07.html",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f27557ef-src-manual-index",
+            "title": "クボタ 取扱説明書検索",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "f27557ef-src-photo",
+            "title": "写真：クボタ公式 RVミニマックスロータ60",
+            "url": "https://agriculture.kubota.co.jp/product/tiller/TA-701N-801N/07.html",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}
