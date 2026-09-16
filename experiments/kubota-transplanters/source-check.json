@@ -1,0 +1,66 @@
+{
+  "checkedAt": "2026-09-16",
+  "photosVisuallyReviewed": 2,
+  "links": [
+    {
+      "series": "SKP-200",
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-50-2-0038-01.pdf",
+      "kind": "catalog",
+      "status": 200,
+      "contentType": "application/pdf",
+      "pdfHeader": true
+    },
+    {
+      "series": "SKP-200",
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-50-2-0025-02.pdf",
+      "kind": "catalog",
+      "status": 200,
+      "contentType": "application/pdf",
+      "pdfHeader": true
+    },
+    {
+      "series": "KP-403T-4T-4TS-OPK-4",
+      "url": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/df46624927686b0b4452c4c88fbd97a9/230601_04_thumb.jpg",
+      "kind": "photo",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "width": 1342,
+      "height": 756,
+      "sha256": "f64a05809604717bb156ac0891876939cd141cc3712c443bd4c685abcabb22d9"
+    },
+    {
+      "series": "SKP-200",
+      "url": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/1d3844a33fc723a8369b01b039c5b1ce/skp-200h_thumb.jpg",
+      "kind": "photo",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "width": 1280,
+      "height": 720,
+      "sha256": "418213558b35320135bd959375c9ead7ddcb43e166423f4d785b709c0658b36e"
+    },
+    {
+      "series": "KP-403T-4T-4TS-OPK-4",
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-5130-2.pdf",
+      "kind": "catalog",
+      "status": 200,
+      "contentType": "application/pdf",
+      "pdfHeader": true
+    },
+    {
+      "series": "KP-403T-4T-4TS-OPK-4",
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-50-2-0017-02.pdf",
+      "kind": "catalog",
+      "status": 200,
+      "contentType": "application/pdf",
+      "pdfHeader": true
+    },
+    {
+      "series": "KP-403T-4T-4TS-OPK-4",
+      "kind": "catalog",
+      "url": "https://agriculture.kubota.co.jp/img_sys/catalog/%E3%81%9F%E3%81%BE%E3%81%AD%E3%81%8E%E7%A7%BB%E6%A4%8D%E6%A9%9FKP-403T%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%B0.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "pdfHeader": true
+    }
+  ]
+}

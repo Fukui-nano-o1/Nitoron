@@ -1,0 +1,57 @@
+{
+  "checkedAt": "2026-09-16",
+  "project": "ycvbjzlqrxnwalhhgzat",
+  "addedCards": 2,
+  "updatedCards": 1,
+  "otherRowsUnchanged": true,
+  "before": [
+    {
+      "table_name": "publications",
+      "total": 33,
+      "untouched_hash": "e95715e2dbb6738703f12b7984e29e2f"
+    },
+    {
+      "table_name": "notes",
+      "total": 34,
+      "untouched_hash": "a61f22921dc4eb9d6fb3e45c8ec8f8d1"
+    }
+  ],
+  "after": [
+    {
+      "table_name": "publications",
+      "total": 33,
+      "untouched_hash": "e95715e2dbb6738703f12b7984e29e2f"
+    },
+    {
+      "table_name": "notes",
+      "total": 34,
+      "untouched_hash": "a61f22921dc4eb9d6fb3e45c8ec8f8d1"
+    }
+  ],
+  "checks": [
+    {
+      "id": "6b0d9370-4b4b-4528-8591-4fe154f37b28",
+      "snapshot_matches": true,
+      "note_matches": true,
+      "is_public": true,
+      "indexed": true,
+      "photo": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/df46624927686b0b4452c4c88fbd97a9/230601_04_thumb.jpg"
+    },
+    {
+      "id": "7cd20590-8141-4a33-893f-69e7cae81b9b",
+      "snapshot_matches": true,
+      "note_matches": true,
+      "is_public": true,
+      "indexed": true,
+      "photo": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/b075b3214375be3c5f91c286b52996e5/02.jpg"
+    },
+    {
+      "id": "ca14e4e6-5ab3-40c8-89b1-0e5af208e74a",
+      "snapshot_matches": true,
+      "note_matches": true,
+      "is_public": true,
+      "indexed": true,
+      "photo": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/1d3844a33fc723a8369b01b039c5b1ce/skp-200h_thumb.jpg"
+    }
+  ]
+}

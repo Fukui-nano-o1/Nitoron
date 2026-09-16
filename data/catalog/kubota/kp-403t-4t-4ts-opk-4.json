@@ -1,0 +1,92 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "product-overview",
+  "maker": "クボタ",
+  "series": "KP-403T-4T-4TS-OPK-4",
+  "productName": "たまねぎ移植機",
+  "category": "野菜関連機器",
+  "models": [
+    "KP-403T",
+    "KP-4T",
+    "KP-4TS",
+    "OPK-4"
+  ],
+  "summary": "たまねぎの苗を植え付ける4条植えの移植機。乗用・半自動と歩行・全自動の機種があります。",
+  "checkedAt": "2026-09-16",
+  "photoModel": "KP-403T",
+  "facts": [
+    {
+      "label": "植付条数",
+      "value": "4条",
+      "source": "product"
+    },
+    {
+      "label": "乗用・半自動",
+      "value": "KP-403T／KP-4T／KP-4TS",
+      "source": "product"
+    },
+    {
+      "label": "歩行・全自動",
+      "value": "OPK-4",
+      "source": "product"
+    }
+  ],
+  "sources": {
+    "product": {
+      "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-onion-OPK-4-KP-2TE-4T/",
+      "checkedAt": "2026-09-16",
+      "sha256": "0e307e5e3a54cf0c170c2cc6863f0799ad229110b56aafc638fb4bf6a75812f2"
+    },
+    "catalog": {
+      "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-onion-OPK-4-KP-2TE-4T/?nav=catalog",
+      "documents": [
+        {
+          "title": "歩行4条全自動たまねぎ移植機OPK-4",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-5130-2.pdf"
+        },
+        {
+          "title": "乗用4条半自動たまねぎ移植機KP-4T KP-4TS",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/7-50-2-0017-02.pdf"
+        },
+        {
+          "title": "乗用半自動たまねぎ移植機 KP-403T",
+          "url": "https://agriculture.kubota.co.jp/img_sys/catalog/%E3%81%9F%E3%81%BE%E3%81%AD%E3%81%8E%E7%A7%BB%E6%A4%8D%E6%A9%9FKP-403T%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%B0.pdf"
+        }
+      ],
+      "linkedFrom": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-onion-OPK-4-KP-2TE-4T/"
+    },
+    "manualIndex": {
+      "title": "取扱説明書を型式から選ぶ（KP-403T-4T-4TS-OPK-4）",
+      "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-onion-OPK-4-KP-2TE-4T/?nav=manual"
+    },
+    "manuals": [
+      {
+        "title": "OPK-4",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6d3a1e06d6a06349436bc054313b648c"
+      },
+      {
+        "title": "KP-4T",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2bcab9d935d219641434683dd9d18a03"
+      },
+      {
+        "title": "KP-4TS",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0b8aff0438617c055eb55f0ba5d226fa"
+      },
+      {
+        "title": "KP403T【機番～000071】",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=943aa0fcda4ee2901a7de9321663b114"
+      },
+      {
+        "title": "KP403T【機番000071～】",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=576d026223582a390cd323bef4bad026"
+      }
+    ]
+  },
+  "verification": {
+    "productPage": "read",
+    "photo": "matched-to-product-lineup",
+    "manualBody": "not-reviewed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  }
+}

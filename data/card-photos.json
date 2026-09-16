@@ -312,6 +312,26 @@
         "url": "https://agriculture.kubota.co.jp/product/mini_cultivator/FTR-3500/",
         "date": "2026-09-16"
       }
+    },
+    {
+      "id": "ca14e4e6-5ab3-40c8-89b1-0e5af208e74a",
+      "url": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/1d3844a33fc723a8369b01b039c5b1ce/skp-200h_thumb.jpg",
+      "source": {
+        "id": "ca14e4e6-src-photo",
+        "title": "写真：クボタ SKP-200H",
+        "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-SKP-200/",
+        "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "6b0d9370-4b4b-4528-8591-4fe154f37b28",
+      "url": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/df46624927686b0b4452c4c88fbd97a9/230601_04_thumb.jpg",
+      "source": {
+        "id": "6b0d9370-src-photo",
+        "title": "写真：クボタ KP-403T",
+        "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-onion-OPK-4-KP-2TE-4T/",
+        "date": "2026-09-16"
+      }
     }
   ]
 }

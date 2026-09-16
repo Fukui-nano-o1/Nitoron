@@ -55,6 +55,12 @@ blocks.push(block('h2', '未確認'))
 for (const v of entry.notVerified) blocks.push(block('bullet', v))
 blocks.push(block('divider', ''), block('text', `執筆 ${entry.timing.start} 〜 ${entry.timing.end || '記録中'}／読んだ頁数 ${entry.timing.pagesRead}／取扱説明書 SHA-256 ${manual.sha256.slice(0, 16)}…`))
 
+// 現行の型式一覧は末尾へ追加し、既存本文・出典・ブロックIDを維持する。
+if (entry.models?.length) {
+  if (!entry.sources.modelIndex?.url || !entry.sources.modelIndex?.checkedAt) throw new Error('型式一覧の出典と確認日が必要です')
+  blocks.push(block('h2', '公式掲載の型式'), block('text', entry.models.join(' / ')))
+}
+
 const meta = { ...emptyMeta('trouble'), inputMode: 'free',
   coverUrl: photo?.url || '',
   author: `${entry.maker}カタログ解説（Nitoron運営・非公式）`, club: 'Nitoron / 4H Club', crop: entry.category,
@@ -63,6 +69,7 @@ const meta = { ...emptyMeta('trouble'), inputMode: 'free',
     { id: `${id.slice(0, 8)}-src-product`, title: `${entry.maker} 製品ページ ${entry.series} ${entry.productName}`, url: product.url, date: product.checkedAt },
     { id: `${id.slice(0, 8)}-src-manual`, title: `${entry.maker} 取扱説明書 ${manual.partNumber}（${entry.salesModel}）`, url: manual.noticeUrl, date: manual.checkedAt },
     ...(photo ? [photo.source] : []),
+    ...(entry.models?.length ? [{ id: `${id.slice(0, 8)}-src-models`, title: `型式一覧：${entry.maker} ${entry.series}`, url: entry.sources.modelIndex.url, date: entry.sources.modelIndex.checkedAt }] : []),
   ] }
 const record = { id, title: `【カタログ解説】${entry.maker} ${entry.series} ${entry.productName}（${entry.category}）`, category: entry.category, type: 'メモ', date: (entry.timing.end || entry.timing.start).slice(0, 10), blocks, meta }
 const backup = { format: 'nitoron-workspace', version: 1, exportedAt: `${record.date}T00:00:00.000Z`, records: [record] }

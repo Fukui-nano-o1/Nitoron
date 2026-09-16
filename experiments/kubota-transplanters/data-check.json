@@ -1,0 +1,44 @@
+{
+  "newCards": [
+    {
+      "id": "ca14e4e6-5ab3-40c8-89b1-0e5af208e74a",
+      "models": [
+        "SKP-200",
+        "SKP-200H"
+      ],
+      "photo": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/1d3844a33fc723a8369b01b039c5b1ce/skp-200h_thumb.jpg",
+      "publication": true,
+      "modelSearch": true
+    },
+    {
+      "id": "6b0d9370-4b4b-4528-8591-4fe154f37b28",
+      "models": [
+        "KP-403T",
+        "KP-4T",
+        "KP-4TS",
+        "OPK-4"
+      ],
+      "photo": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/df46624927686b0b4452c4c88fbd97a9/230601_04_thumb.jpg",
+      "publication": true,
+      "modelSearch": true
+    }
+  ],
+  "updatedCard": {
+    "id": "7cd20590-8141-4a33-893f-69e7cae81b9b",
+    "originalBlocksUnchanged": 150,
+    "originalSourcesUnchanged": 3,
+    "addedBlocks": 2,
+    "models": [
+      "KP103E-50LX",
+      "KP103E-60LX",
+      "KP103E-120WLLX",
+      "KP103E-60JX",
+      "KP103E-90JLLX",
+      "KP103E-90EX",
+      "KP103E-120WCEX",
+      "KP103E-70PBXLD",
+      "KP103E-70PSBXLD"
+    ],
+    "modelSearch": true
+  }
+}

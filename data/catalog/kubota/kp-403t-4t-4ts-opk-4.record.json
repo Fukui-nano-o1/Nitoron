@@ -1,0 +1,124 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "6b0d9370-4b4b-4528-8591-4fe154f37b28",
+      "title": "【カタログ解説】クボタ KP-403T-4T-4TS-OPK-4 たまねぎ移植機（野菜関連機器）",
+      "category": "野菜関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "6b0d9370-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "6b0d9370-002",
+          "type": "text",
+          "text": "たまねぎの苗を植え付ける4条植えの移植機。乗用・半自動と歩行・全自動の機種があります。"
+        },
+        {
+          "id": "6b0d9370-003",
+          "type": "bullet",
+          "text": "植付条数：4条"
+        },
+        {
+          "id": "6b0d9370-004",
+          "type": "bullet",
+          "text": "乗用・半自動：KP-403T／KP-4T／KP-4TS"
+        },
+        {
+          "id": "6b0d9370-005",
+          "type": "bullet",
+          "text": "歩行・全自動：OPK-4"
+        },
+        {
+          "id": "6b0d9370-006",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "6b0d9370-007",
+          "type": "text",
+          "text": "KP-403T / KP-4T / KP-4TS / OPK-4"
+        },
+        {
+          "id": "6b0d9370-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "6b0d9370-009",
+          "type": "text",
+          "text": "掲載写真：KP-403T。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "野菜関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/df46624927686b0b4452c4c88fbd97a9/230601_04_thumb.jpg",
+        "summary": "たまねぎの苗を植え付ける4条植えの移植機。乗用・半自動と歩行・全自動の機種があります。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "6b0d9370-src-product",
+            "title": "クボタ 製品ページ KP-403T-4T-4TS-OPK-4",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-onion-OPK-4-KP-2TE-4T/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6b0d9370-src-catalog",
+            "title": "クボタ 製品カタログ たまねぎ移植機",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-onion-OPK-4-KP-2TE-4T/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6b0d9370-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（KP-403T-4T-4TS-OPK-4）",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-onion-OPK-4-KP-2TE-4T/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "6b0d9370-src-photo",
+            "title": "写真：クボタ KP-403T",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-onion-OPK-4-KP-2TE-4T/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

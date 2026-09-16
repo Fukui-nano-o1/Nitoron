@@ -759,6 +759,16 @@
           "id": "7cd20590-150",
           "type": "text",
           "text": "執筆 2026-09-15T08:20+09:00 〜 2026-09-15T08:26+09:00／読んだ頁数 30／取扱説明書 SHA-256 4617541957065657…"
+        },
+        {
+          "id": "7cd20590-151",
+          "type": "h2",
+          "text": "公式掲載の型式"
+        },
+        {
+          "id": "7cd20590-152",
+          "type": "text",
+          "text": "KP103E-50LX / KP103E-60LX / KP103E-120WLLX / KP103E-60JX / KP103E-90JLLX / KP103E-90EX / KP103E-120WCEX / KP103E-70PBXLD / KP103E-70PSBXLD"
         }
       ],
       "meta": {
@@ -810,6 +820,12 @@
             "id": "7cd20590-b9b-src-photo",
             "title": "写真：クボタ KP103E（葉菜類用）",
             "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-KP-103/"
+          },
+          {
+            "id": "7cd20590-src-models",
+            "title": "型式一覧：クボタ KP-103",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-KP-103/",
+            "date": "2026-09-16"
           }
         ],
         "attachments": [],

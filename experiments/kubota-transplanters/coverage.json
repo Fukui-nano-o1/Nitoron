@@ -1,0 +1,129 @@
+{
+  "checkedAt": "2026-09-16",
+  "indexUrl": "https://agriculture.kubota.co.jp/product/vegetable_equipment/",
+  "indexSha256": "0978bd0f433233ba9bd93e18c5bd19ea85fbbcf22a1f5e12ff821d532969cd4c",
+  "scope": "Vegetable transplanters in the official vegetable equipment listing; excludes seeders, rice transplanters and unlisted historical models.",
+  "officialSeries": 5,
+  "modelVariants": 22,
+  "catalogCards": 29,
+  "coverage": [
+    {
+      "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-SKP-200/",
+      "cardId": "ca14e4e6-5ab3-40c8-89b1-0e5af208e74a",
+      "models": [
+        {
+          "model": "SKP-200",
+          "search": true
+        },
+        {
+          "model": "SKP-200H",
+          "search": true
+        }
+      ]
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-SKP-101/",
+      "cardId": "dd48937d-804a-45f2-8b3a-3685fa4ccd7e",
+      "models": [
+        {
+          "model": "SKP-101",
+          "search": true
+        },
+        {
+          "model": "SKP-101W",
+          "search": true
+        },
+        {
+          "model": "SKP-101M",
+          "search": true
+        },
+        {
+          "model": "SKP-101PC-H",
+          "search": true
+        },
+        {
+          "model": "SKP-101PC-T",
+          "search": true
+        },
+        {
+          "model": "SKP-101MPC",
+          "search": true
+        }
+      ]
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-KP-202/",
+      "cardId": "b31b411e-7817-464b-88fa-25546ebea989",
+      "models": [
+        {
+          "model": "KP-202",
+          "search": true
+        }
+      ]
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-KP-103/",
+      "cardId": "7cd20590-8141-4a33-893f-69e7cae81b9b",
+      "models": [
+        {
+          "model": "KP103E-50LX",
+          "search": true
+        },
+        {
+          "model": "KP103E-60LX",
+          "search": true
+        },
+        {
+          "model": "KP103E-120WLLX",
+          "search": true
+        },
+        {
+          "model": "KP103E-60JX",
+          "search": true
+        },
+        {
+          "model": "KP103E-90JLLX",
+          "search": true
+        },
+        {
+          "model": "KP103E-90EX",
+          "search": true
+        },
+        {
+          "model": "KP103E-120WCEX",
+          "search": true
+        },
+        {
+          "model": "KP103E-70PBXLD",
+          "search": true
+        },
+        {
+          "model": "KP103E-70PSBXLD",
+          "search": true
+        }
+      ]
+    },
+    {
+      "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-onion-OPK-4-KP-2TE-4T/",
+      "cardId": "6b0d9370-4b4b-4528-8591-4fe154f37b28",
+      "models": [
+        {
+          "model": "KP-403T",
+          "search": true
+        },
+        {
+          "model": "KP-4T",
+          "search": true
+        },
+        {
+          "model": "KP-4TS",
+          "search": true
+        },
+        {
+          "model": "OPK-4",
+          "search": true
+        }
+      ]
+    }
+  ]
+}

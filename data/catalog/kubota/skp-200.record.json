@@ -1,0 +1,136 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "records": [
+    {
+      "id": "ca14e4e6-5ab3-40c8-89b1-0e5af208e74a",
+      "title": "【カタログ解説】クボタ SKP-200 乗用全自動野菜移植機（野菜関連機器）",
+      "category": "野菜関連機器",
+      "type": "メモ",
+      "date": "2026-09-16",
+      "blocks": [
+        {
+          "id": "ca14e4e6-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "ca14e4e6-002",
+          "type": "text",
+          "text": "座って操作する、2条植えの全自動野菜移植機。標準仕様と高機能仕様があります。"
+        },
+        {
+          "id": "ca14e4e6-003",
+          "type": "bullet",
+          "text": "植付条数：2条"
+        },
+        {
+          "id": "ca14e4e6-004",
+          "type": "bullet",
+          "text": "方式：乗用・全自動"
+        },
+        {
+          "id": "ca14e4e6-005",
+          "type": "bullet",
+          "text": "仕様：SKP-200：標準／SKP-200H：高機能"
+        },
+        {
+          "id": "ca14e4e6-006",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "ca14e4e6-007",
+          "type": "text",
+          "text": "SKP-200 / SKP-200H"
+        },
+        {
+          "id": "ca14e4e6-008",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "ca14e4e6-009",
+          "type": "text",
+          "text": "掲載写真：SKP-200H。装備は型式・仕様によって異なります。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "野菜関連機器",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://agriculture.kubota.co.jp/img_sys/modalPageCardImage/1d3844a33fc723a8369b01b039c5b1ce/skp-200h_thumb.jpg",
+        "summary": "座って操作する、2条植えの全自動野菜移植機。標準仕様と高機能仕様があります。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "ca14e4e6-src-product",
+            "title": "クボタ 製品ページ SKP-200",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-SKP-200/",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ca14e4e6-src-catalog",
+            "title": "クボタ 製品カタログ 乗用全自動野菜移植機",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-SKP-200/?nav=catalog",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ca14e4e6-src-manual-index",
+            "title": "取扱説明書を型式から選ぶ（SKP-200）",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-SKP-200/?nav=manual",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ca14e4e6-src-manual-1",
+            "title": "取扱説明書 SKP-200H",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c09f9caf5e08836d4673ccdd69bb041e",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ca14e4e6-src-manual-2",
+            "title": "取扱説明書 SKP-200",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7af6266cc52234b5aa339b16695f7fc4",
+            "date": "2026-09-16"
+          },
+          {
+            "id": "ca14e4e6-src-photo",
+            "title": "写真：クボタ SKP-200H",
+            "url": "https://agriculture.kubota.co.jp/product/vegetable_equipment/transplant-SKP-200/",
+            "date": "2026-09-16"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}
