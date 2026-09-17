@@ -1,0 +1,77 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KL50H",
+  "productName": "初期KLシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KL50H"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "50馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL50Hは2000年〜2004年の販売。KL50Hの公式取扱説明書を参照できます。KL50-PCの資料は、別型式として掲載しています。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL50H&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "bd859a7bf82fe76efff809e8bacea625e1354bc530fd3c899c72c05a84b36f14",
+      "result": {
+        "model": "KL50H",
+        "category": "トラクタ",
+        "horsepower": "50馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL50H",
+      "checkedAt": "2026-09-17",
+      "sha256": "39e951ff4532ee0bb5887d979bc0d4ef46759cd776434cc0e981443c922419aa",
+      "result": {
+        "model": "KL50H",
+        "startYear": 2000,
+        "endYear": 2004
+      }
+    },
+    "manuals": [
+      {
+        "title": "KL50H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2f885d0fbe2e131bfc9d98363e55d1d4",
+        "checkedAt": "2026-09-17",
+        "sha256": "34fbb0b269082b45260bc1810ec64680a8da907260963ad72b74c857d3e06ef9"
+      }
+    ],
+    "relatedManuals": [],
+    "siblingModels": [
+      {
+        "title": "KL50-PC",
+        "kind": "sibling",
+        "horsepower": "50馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3df1d4b96d8976ff5986393e8767f5b2",
+        "checkedAt": "2026-09-17",
+        "sha256": "65f86cc479a0e242734257969819f46153dbbb8ea4719a1b66ee87081769c8c2",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2",
+        "indexSha256": "c5c77a0f4378d099f8a0fc24f03f8e5bbfa7d81fe734c7b6933891b77cd8967f",
+        "sales": {
+          "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL",
+          "checkedAt": "2026-09-17",
+          "sha256": "4c9a7283b011c18b3db445c9598540812a42df677c55b00b722d6b4e07abd702",
+          "result": {
+            "model": "KL50-PC",
+            "startYear": 2001,
+            "endYear": 2004
+          }
+        }
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KL-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KL50H"
+}

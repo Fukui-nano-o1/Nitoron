@@ -1,0 +1,54 @@
+{
+  "checkedAt": "2026-09-17",
+  "projectId": "ycvbjzlqrxnwalhhgzat",
+  "scope": "Initial KL models first sold in 1999–2000",
+  "operation": "7 insertions and 8 existing KL card updates; atomic guarded transaction",
+  "before": {
+    "duplicateNewModels": [],
+    "existingNewNoteIds": 0,
+    "existingNewPublicationIds": 0,
+    "notes": 166,
+    "oldExactMatches": 8,
+    "owners": [
+      "de300000-0000-4000-8000-000000000012"
+    ],
+    "publications": 165,
+    "tractorCards": 73,
+    "untouchedNotesHash": "9611bdbc3b9b3bc0c3c6482ba887faaa",
+    "untouchedPublicationsHash": "17ae752baf93a4063295c9b2831e74bd"
+  },
+  "after": {
+    "notes": 173,
+    "photoCards": 15,
+    "publications": 172,
+    "tractorCards": 80,
+    "modelOccurrences": {
+      "KL21": 1,
+      "KL23": 1,
+      "KL25": 1,
+      "KL27": 1,
+      "KL30": 1,
+      "KL33": 1,
+      "KL36": 1,
+      "KL43": 1,
+      "KL28H": 1,
+      "KL31H": 1,
+      "KL34H": 1,
+      "KL38H": 1,
+      "KL41H": 1,
+      "KL46H": 1,
+      "KL50H": 1
+    },
+    "exactSavedRecords": 15,
+    "untouchedNotesHash": "9611bdbc3b9b3bc0c3c6482ba887faaa",
+    "untouchedPublicationsHash": "17ae752baf93a4063295c9b2831e74bd"
+  },
+  "basicModels": 15,
+  "additions": 7,
+  "existingCardsUpdated": 8,
+  "existingOwnershipCreationDatesPublicationDatesAndPublicFlagsPreserved": true,
+  "unrelatedRowsUnchanged": true,
+  "duplicateModels": 0,
+  "catalogTestsPassed": 9,
+  "buildExitCode": 0
+}

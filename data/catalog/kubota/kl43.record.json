@@ -1,14 +1,14 @@
 {
   "format": "nitoron-workspace",
   "version": 1,
-  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "exportedAt": "2026-09-17T00:00:00.000Z",
   "records": [
     {
       "id": "081b57dd-7672-4fa6-8e52-6f3d4b79476d",
-      "title": "【カタログ解説】クボタ KL43 旧型モデル（トラクタ）",
+      "title": "【カタログ解説】クボタ KL43 初期KLシリーズ（トラクタ）",
       "category": "トラクタ",
       "type": "メモ",
-      "date": "2026-09-16",
+      "date": "2026-09-17",
       "blocks": [
         {
           "id": "081b57dd-001",
@@ -18,7 +18,7 @@
         {
           "id": "081b57dd-002",
           "type": "text",
-          "text": "43馬力の旧型トラクタ。公式販売年度検索のKL43は2000年〜2004年の販売。KL43の取扱説明書を参照できます。"
+          "text": "43馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL43は2000年〜2004年の販売。KL43の公式取扱説明書を参照できます。"
         },
         {
           "id": "081b57dd-003",
@@ -58,7 +58,7 @@
         {
           "id": "081b57dd-010",
           "type": "text",
-          "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
         },
         {
           "id": "081b57dd-011",
@@ -84,7 +84,7 @@
         "start": "",
         "end": "",
         "coverUrl": "https://nouki-ichiba.net/cdn/shop/products/04171731_607a9cfe8c07f.jpg?v=1683063087&width=1946",
-        "summary": "43馬力の旧型トラクタ。公式販売年度検索のKL43は2000年〜2004年の販売。KL43の取扱説明書を参照できます。",
+        "summary": "43馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL43は2000年〜2004年の販売。KL43の公式取扱説明書を参照できます。",
         "issue": "",
         "hypothesis": "",
         "action": "",
@@ -107,25 +107,25 @@
             "id": "081b57dd-src-manual-index",
             "title": "クボタ 取扱説明書検索 KL43（完全一致）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL43&searchType=3",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "081b57dd-src-sales-index",
             "title": "クボタ 販売年度検索 KL43",
             "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL43",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "081b57dd-src-manual",
             "title": "取扱説明書 KL43",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7634ea65a4e6d9041cfd3f7de18e334a",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "081b57dd-src-photo",
             "title": "写真：農キング クボタ KL43（中古実機）",
             "url": "https://nouki-ichiba.net/products/02943",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           }
         ],
         "attachments": [],

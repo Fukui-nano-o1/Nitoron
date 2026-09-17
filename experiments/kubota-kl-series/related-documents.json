@@ -1,0 +1,2770 @@
+{
+  "checkedAt": "2026-09-17",
+  "scope": "Initial KL generation: the 15 basic manual-index models with a 1999 or 2000 sales start; later KL generations, KL-R and KL-Z are excluded. Four PC documents are related records, including two separately-labelled sibling models, not a statement of interchangeability.",
+  "counts": {
+    "basicModels": 15,
+    "documents": 19,
+    "documentKinds": {
+      "base": 15,
+      "variant": 2,
+      "sibling": 2
+    },
+    "salesRowsBeforeDeduplication": 19,
+    "salesRowsAfterDeduplication": 19,
+    "allPrefixManualRows": 204,
+    "allPrefixTractorRows": 160,
+    "allPrefixSalesRows": 124,
+    "excludedManualRows": 185,
+    "excludedSalesRows": 105
+  },
+  "documents": [
+    {
+      "baseModel": "KL21",
+      "docKind": "base",
+      "model": "KL21",
+      "title": "KL21",
+      "horsepower": 21,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1aa48fc4880bb0c9b8a3bf979d3b917e",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2",
+      "indexSha256": "1005dc3bd20f815b76f1a017ec96cf28dd49499b047e2536825824d7760199da",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "f6151b05987cfbbb3c2c2093d0ac06ba15075ac1798213df2617164b40a3f595",
+        "file": "KL21-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL23",
+      "docKind": "base",
+      "model": "KL23",
+      "title": "KL23",
+      "horsepower": 23,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6e7b33fdea3adc80ebd648fffb665bb8",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2",
+      "indexSha256": "1005dc3bd20f815b76f1a017ec96cf28dd49499b047e2536825824d7760199da",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "59bb46e487af53ee1ca60bcf2f1e6bbfed2c09253e419ccd0117172b11222d6b",
+        "file": "KL23-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL25",
+      "docKind": "base",
+      "model": "KL25",
+      "title": "KL25",
+      "horsepower": 25,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43fa7f58b7eac7ac872209342e62e8f1",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2",
+      "indexSha256": "1005dc3bd20f815b76f1a017ec96cf28dd49499b047e2536825824d7760199da",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "54dfb21f2347db5a28b97b5506c45b1531b2035b8068e0faa17e819c39029b9d",
+        "file": "KL25-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL25",
+      "docKind": "variant",
+      "model": "KL25-PC",
+      "title": "KL25-PC",
+      "horsepower": 25,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=31839b036f63806cba3f47b93af8ccb5",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2",
+      "indexSha256": "1005dc3bd20f815b76f1a017ec96cf28dd49499b047e2536825824d7760199da",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "16d7796cd7dbc6a9dcbd20408d720e5db83cf81e4eb699c99437b02561881429",
+        "file": "KL25-PC-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL27",
+      "docKind": "base",
+      "model": "KL27",
+      "title": "KL27",
+      "horsepower": 27,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c2626d850c80ea07e7511bbae4c76f4b",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2",
+      "indexSha256": "1005dc3bd20f815b76f1a017ec96cf28dd49499b047e2536825824d7760199da",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "de888e0d385a3995b833865e640f5c45a770528f7ebefae7f033c396c1a2b601",
+        "file": "KL27-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL28H",
+      "docKind": "base",
+      "model": "KL28H",
+      "title": "KL28H",
+      "horsepower": 28,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fa83a11a198d5a7f0bf77a1987bcd006",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2",
+      "indexSha256": "fb601b8be46444a964c8345b558935ab61eef19e87a0704c598825440e1746f5",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "84c99e4544e9edf7eb8c9b0874e68bbbfeaefd2ccfac0b9aa556a42477fa29b0",
+        "file": "KL28H-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL30",
+      "docKind": "base",
+      "model": "KL30",
+      "title": "KL30",
+      "horsepower": 30,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b86e8d03fe992d1b0e19656875ee557c",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2",
+      "indexSha256": "fb601b8be46444a964c8345b558935ab61eef19e87a0704c598825440e1746f5",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "1842b46d8cdca56ccfb8d3e24ea419f5e85b3ee14405e0445e9e2f480051c8c7",
+        "file": "KL30-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL31H",
+      "docKind": "base",
+      "model": "KL31H",
+      "title": "KL31H",
+      "horsepower": 31,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=aff1621254f7c1be92f64550478c56e6",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2",
+      "indexSha256": "fb601b8be46444a964c8345b558935ab61eef19e87a0704c598825440e1746f5",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "3379bc17eb88df530d17d755fb4d54bf33da18509e93ade2a7dbc5f5a795f0d2",
+        "file": "KL31H-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL33",
+      "docKind": "base",
+      "model": "KL33",
+      "title": "KL33",
+      "horsepower": 33,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1fc214004c9481e4c8073e85323bfd4b",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2",
+      "indexSha256": "4b1c03fd9855146fefb54e31ca49337f70c02e9f5639d534e03bf73cf6e636bc",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "67b3dc47f39df4e3e88a56d7244f0c4030783577697471de9819c9d2c1cd31fb",
+        "file": "KL33-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL33",
+      "docKind": "variant",
+      "model": "KL33-PC",
+      "title": "KL33-PC",
+      "horsepower": 33,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3b3dbaf68507998acd6a5a5254ab2d76",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2",
+      "indexSha256": "4b1c03fd9855146fefb54e31ca49337f70c02e9f5639d534e03bf73cf6e636bc",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "fb258500f308f89758e2127dc23d1c33f2dfafddc643935f5ef10d63fba50b9e",
+        "file": "KL33-PC-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL34H",
+      "docKind": "base",
+      "model": "KL34H",
+      "title": "KL34H",
+      "horsepower": 34,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d516b13671a4179d9b7b458a6ebdeb92",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2",
+      "indexSha256": "4b1c03fd9855146fefb54e31ca49337f70c02e9f5639d534e03bf73cf6e636bc",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "3913d73bedcd7d445777199777be1cfaec65cb835d4ab985da47fbfa2d18a45a",
+        "file": "KL34H-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL36",
+      "docKind": "base",
+      "model": "KL36",
+      "title": "KL36",
+      "horsepower": 36,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0a113ef6b61820daa5611c870ed8d5ee",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2",
+      "indexSha256": "6f1ec9b50c434697549fd38738418766a9f3900b8aaddcf44efc3c5593e2e8f5",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "f7778164a35ba502d31abb79e619f3c4d60330297c3349c674c1269161e43573",
+        "file": "KL36-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL38H",
+      "docKind": "base",
+      "model": "KL38H",
+      "title": "KL38H",
+      "horsepower": 38,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=01882513d5fa7c329e940dda99b12147",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2",
+      "indexSha256": "6f1ec9b50c434697549fd38738418766a9f3900b8aaddcf44efc3c5593e2e8f5",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "dabd7ca4d53345881b862ac37e74878c8055cf62df5fb7fb286ac662c90a40a9",
+        "file": "KL38H-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL41H",
+      "docKind": "sibling",
+      "model": "KL41-PC",
+      "title": "KL41-PC",
+      "horsepower": 42,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8b6dd7db9af49e67306feb59a8bdc52c",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2",
+      "indexSha256": "6f1ec9b50c434697549fd38738418766a9f3900b8aaddcf44efc3c5593e2e8f5",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "19ceff758e9bb5d32801eae52daf7e64dbaa98e8de8bc8e7ff5f4c6607f9bec2",
+        "file": "KL41-PC-notice.html"
+      },
+      "relationship": "sibling-initial-generation",
+      "mappingNote": "Same initial KL generation and numeric family; retain complete official PC model name and its independent horsepower. This is not the H machine manual."
+    },
+    {
+      "baseModel": "KL41H",
+      "docKind": "base",
+      "model": "KL41H",
+      "title": "KL41H",
+      "horsepower": 41,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8b5040a8a5baf3e0e67386c2e3a9b903",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2",
+      "indexSha256": "63b10af752d03fc2cb502c3caee9592f1f255350710da8f49ebebd4ddf7f7f70",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "2d0e322bbf8df6096f0bff5e9505edb3fd68c3bb01ddf35099f222c4f49d1c96",
+        "file": "KL41H-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL43",
+      "docKind": "base",
+      "model": "KL43",
+      "title": "KL43",
+      "horsepower": 43,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7634ea65a4e6d9041cfd3f7de18e334a",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2",
+      "indexSha256": "63b10af752d03fc2cb502c3caee9592f1f255350710da8f49ebebd4ddf7f7f70",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "08fec4ace9387fd5ef64e38224c332f7699e2d9d55344e9788252970fe67c7cb",
+        "file": "KL43-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL46H",
+      "docKind": "base",
+      "model": "KL46H",
+      "title": "KL46H",
+      "horsepower": 46,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1cc3633c579a90cfdd895e64021e2163",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2",
+      "indexSha256": "63b10af752d03fc2cb502c3caee9592f1f255350710da8f49ebebd4ddf7f7f70",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "cd63f02c742b2acf5af00fbe4a5e76ad7bbe9d6f9e1f75f74e0a3973736bc936",
+        "file": "KL46H-notice.html"
+      }
+    },
+    {
+      "baseModel": "KL50H",
+      "docKind": "sibling",
+      "model": "KL50-PC",
+      "title": "KL50-PC",
+      "horsepower": 50,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3df1d4b96d8976ff5986393e8767f5b2",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2",
+      "indexSha256": "c5c77a0f4378d099f8a0fc24f03f8e5bbfa7d81fe734c7b6933891b77cd8967f",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "65f86cc479a0e242734257969819f46153dbbb8ea4719a1b66ee87081769c8c2",
+        "file": "KL50-PC-notice.html"
+      },
+      "relationship": "sibling-initial-generation",
+      "mappingNote": "Same initial KL generation and numeric family; retain complete official PC model name and its independent horsepower. This is not the H machine manual."
+    },
+    {
+      "baseModel": "KL50H",
+      "docKind": "base",
+      "model": "KL50H",
+      "title": "KL50H",
+      "horsepower": 50,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2f885d0fbe2e131bfc9d98363e55d1d4",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2",
+      "indexSha256": "c5c77a0f4378d099f8a0fc24f03f8e5bbfa7d81fe734c7b6933891b77cd8967f",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "34fbb0b269082b45260bc1810ec64680a8da907260963ad72b74c857d3e06ef9",
+        "file": "KL50H-notice.html"
+      }
+    }
+  ],
+  "salesRows": [
+    {
+      "baseModel": "KL21",
+      "model": "KL21",
+      "rawModel": "KL21",
+      "startYear": 1999,
+      "endYear": 2003,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL",
+      "indexSha256": "686fc6e5b0f2c780f845746f2511c8fafd47b2fd5cc1a69cb87415eefbf8d978",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL23",
+      "model": "KL23",
+      "rawModel": "KL23",
+      "startYear": 1999,
+      "endYear": 2003,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL",
+      "indexSha256": "686fc6e5b0f2c780f845746f2511c8fafd47b2fd5cc1a69cb87415eefbf8d978",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL25",
+      "model": "KL25",
+      "rawModel": "KL25",
+      "startYear": 1999,
+      "endYear": 2003,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL",
+      "indexSha256": "686fc6e5b0f2c780f845746f2511c8fafd47b2fd5cc1a69cb87415eefbf8d978",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL27",
+      "model": "KL27",
+      "rawModel": "KL27",
+      "startYear": 1999,
+      "endYear": 2003,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL",
+      "indexSha256": "686fc6e5b0f2c780f845746f2511c8fafd47b2fd5cc1a69cb87415eefbf8d978",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL28H",
+      "model": "KL28H",
+      "rawModel": "KL28H",
+      "startYear": 2000,
+      "endYear": 2003,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL",
+      "indexSha256": "454a73528f0010269a4e7fcd520b91fcfb987241f9356c9230a55c85fcae6494",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL30",
+      "model": "KL30",
+      "rawModel": "KL30",
+      "startYear": 1999,
+      "endYear": 2003,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL",
+      "indexSha256": "454a73528f0010269a4e7fcd520b91fcfb987241f9356c9230a55c85fcae6494",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL31H",
+      "model": "KL31H",
+      "rawModel": "KL31H",
+      "startYear": 2000,
+      "endYear": 2003,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL",
+      "indexSha256": "454a73528f0010269a4e7fcd520b91fcfb987241f9356c9230a55c85fcae6494",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL33",
+      "model": "KL33",
+      "rawModel": "KL33",
+      "startYear": 1999,
+      "endYear": 2003,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL",
+      "indexSha256": "b05f7e8f1b11e8577d5549e9e6199ed1601881bb40b8fb8e14fe1b862cce1243",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL34H",
+      "model": "KL34H",
+      "rawModel": "KL34H",
+      "startYear": 2000,
+      "endYear": 2003,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL",
+      "indexSha256": "b05f7e8f1b11e8577d5549e9e6199ed1601881bb40b8fb8e14fe1b862cce1243",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL36",
+      "model": "KL36",
+      "rawModel": "KL36",
+      "startYear": 2000,
+      "endYear": 2004,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL",
+      "indexSha256": "b05f7e8f1b11e8577d5549e9e6199ed1601881bb40b8fb8e14fe1b862cce1243",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL38H",
+      "model": "KL38H",
+      "rawModel": "KL38H",
+      "startYear": 2000,
+      "endYear": 2004,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL",
+      "indexSha256": "b05f7e8f1b11e8577d5549e9e6199ed1601881bb40b8fb8e14fe1b862cce1243",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL41H",
+      "model": "KL41H",
+      "rawModel": "KL41H",
+      "startYear": 2000,
+      "endYear": 2004,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL",
+      "indexSha256": "4bfad61e34463158d873e7b0d644b6addc30d0ddff95f00de4a4d3000be91ab6",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL43",
+      "model": "KL43",
+      "rawModel": "KL43",
+      "startYear": 2000,
+      "endYear": 2004,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL",
+      "indexSha256": "4bfad61e34463158d873e7b0d644b6addc30d0ddff95f00de4a4d3000be91ab6",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL46H",
+      "model": "KL46H",
+      "rawModel": "KL46H",
+      "startYear": 2000,
+      "endYear": 2004,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL",
+      "indexSha256": "4bfad61e34463158d873e7b0d644b6addc30d0ddff95f00de4a4d3000be91ab6",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL50H",
+      "model": "KL50H",
+      "rawModel": "KL50H",
+      "startYear": 2000,
+      "endYear": 2004,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL",
+      "indexSha256": "4bfad61e34463158d873e7b0d644b6addc30d0ddff95f00de4a4d3000be91ab6",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL25",
+      "model": "KL25-PC",
+      "rawModel": "＊KL25-PC",
+      "startYear": 2000,
+      "endYear": 2003,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL",
+      "indexSha256": "4c9a7283b011c18b3db445c9598540812a42df677c55b00b722d6b4e07abd702",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL33",
+      "model": "KL33-PC",
+      "rawModel": "＊KL33-PC",
+      "startYear": 2000,
+      "endYear": 2003,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL",
+      "indexSha256": "4c9a7283b011c18b3db445c9598540812a42df677c55b00b722d6b4e07abd702",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KL41H",
+      "model": "KL41-PC",
+      "rawModel": "＊KL41-PC",
+      "startYear": 2001,
+      "endYear": 2004,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL",
+      "indexSha256": "4c9a7283b011c18b3db445c9598540812a42df677c55b00b722d6b4e07abd702",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17",
+      "relationship": "sibling-initial-generation"
+    },
+    {
+      "baseModel": "KL50H",
+      "model": "KL50-PC",
+      "rawModel": "＊KL50-PC",
+      "startYear": 2001,
+      "endYear": 2004,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL",
+      "indexSha256": "4c9a7283b011c18b3db445c9598540812a42df677c55b00b722d6b4e07abd702",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17",
+      "relationship": "sibling-initial-generation"
+    }
+  ],
+  "excludedManualRows": [
+    {
+      "model": "KL210",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL210H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL225",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL230",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL230H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL245",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL2450",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL245H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL24R",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL24Rガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL24Rポイントシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL250",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL250H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL265",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL2650果樹園・水田兼用トラクタ",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL265H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL26R",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL26R-K",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL26Rガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL26Rポイントシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2"
+    },
+    {
+      "model": "KL270",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL270H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL2750",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL27R",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL280H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL285",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL285-PC",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL2850",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL2850J大径タイヤ仕様",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL285H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL28R",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL28Rガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL28Rポイントシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL300",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL310H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL315",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL3150",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL3150果樹園・水田兼用トラクタ",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL3150淡路仕様トラクタ",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL315H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL31R",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL31R-K",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2"
+    },
+    {
+      "model": "KL31R-W",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL31Rガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL31Rポイントシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL31Z",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL31ZH",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL31ZHガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL31Zガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL330",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL3350コンパクトスペシャルトラクタ",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL33R-T",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL340H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL345",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL345-PC",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL3450",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL3450-PCF転作仕様",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL3450H-PCF転作仕様",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL3450淡路仕様トラクタ",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL345H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL345H-PC",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL34R",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL34R-W",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL34Z",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2"
+    },
+    {
+      "model": "KL34ZH",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL34ZHガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL34Zガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL360",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL37Z",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL37ZH",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL37ZHガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL37ZHポイントシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL37Zガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL37Zポイントシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL380H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL385",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL385H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL3950",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL3950H-PCS",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL40Z",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL40ZH",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL40ZHガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL40Zガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL40Zポイントシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL410H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL415",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2"
+    },
+    {
+      "model": "KL415H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL415H-PC",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL430",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL4350",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL4350H-C",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL4350H-PCS",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL44Z",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL44ZH",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL44ZH-8F",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL44ZH-C",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL44ZH-C6",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL44ZHガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL44Zガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL44Zポイントシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL460H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL465H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL4750H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL4750H-C",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL48ZH",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL48ZH-C",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL48ZH-C6",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL48ZHガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2"
+    },
+    {
+      "model": "KL48Zポイントシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL500H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL505H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL505H-PC",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL5150H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL5150H-C",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL5150H-PCS",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL5150H-WTワイドトレッド仕様",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL53ZH",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL53ZH-C",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL53ZH-C6",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL53ZH-WT",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL53ZHガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL53Zポイントシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL550H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL5550H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL555H",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL58ZH",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL58ZHガイドシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL58Zポイントシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL26R-PCメンテナンスシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL270-PC",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL28R-PCメンテナンスシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2"
+    },
+    {
+      "model": "KL31R-PCメンテナンスシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL330-PC",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL34R-PCメンテナンスシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL34RH-PCメンテナンスシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL40ZC-PCメンテナンスシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL44ZC-PCメンテナンスシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL48ZC-PCメンテナンスシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL53ZC-PCメンテナンスシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL53ZHQ-PCT",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL58ZC-PCメンテナンスシート",
+      "category": "トラクタ",
+      "reason": "Later KL generation or its variant/supplement; outside initial 1999–2000-start scope",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-BF-K150A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-BF-K32S",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-BF-K60A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-BF-N120AH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-BF-N30SH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-BF-N60AH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-HS-Q-05",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-HS-Q-05-K",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-HS-Q-12",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-HS-Q-12-K",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-HS-Q-20",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-HS-Q-20-K",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-K150A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-K32S",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-K60A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-K6MS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-N150AH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-N32SH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-N60AH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-N6MSH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP2-K150A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP2-K32S",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP2-K400B",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP2-K60A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP2-K6MS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-K150A（H）",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-K32S（H）",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-K60A（H）",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-K6MS（H）",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-N150AH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-N32SH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-N60AH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-N6MSH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K-1500L",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K120AHS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K150A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K300BHS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K30SHS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K32S",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K400B",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K60A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=200&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K60AHS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=200&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K6MS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=200&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K6MSHS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=200&q=KL&searchType=2"
+    }
+  ],
+  "excludedSalesRows": [
+    {
+      "model": "KL210",
+      "rawModel": "KL210",
+      "startYear": 2003,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL210H",
+      "rawModel": "KL210H",
+      "startYear": 2003,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL225",
+      "rawModel": "KL225",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL230",
+      "rawModel": "KL230",
+      "startYear": 2003,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL230H",
+      "rawModel": "KL230H",
+      "startYear": 2003,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL245",
+      "rawModel": "KL245",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL2450",
+      "rawModel": "KL2450",
+      "startYear": 2009,
+      "endYear": 2010,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL2450H",
+      "rawModel": "KL2450H",
+      "startYear": 2009,
+      "endYear": 2010,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL245H",
+      "rawModel": "KL245H",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL24R",
+      "rawModel": "KL24R",
+      "startYear": 2010,
+      "endYear": 2016,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL24RH",
+      "rawModel": "KL24RH",
+      "startYear": 2010,
+      "endYear": 2016,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL250",
+      "rawModel": "KL250",
+      "startYear": 2003,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL250H",
+      "rawModel": "KL250H",
+      "startYear": 2003,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL265",
+      "rawModel": "KL265",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL265H",
+      "rawModel": "KL265H",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL26R-PC",
+      "rawModel": "KL26R-PC",
+      "startYear": 2010,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL270",
+      "rawModel": "KL270",
+      "startYear": 2003,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL270D-PC",
+      "rawModel": "KL270D-PC",
+      "startYear": 2006,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL270H",
+      "rawModel": "KL270H",
+      "startYear": 2003,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL2750",
+      "rawModel": "KL2750",
+      "startYear": 2009,
+      "endYear": 2010,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL2750H",
+      "rawModel": "KL2750H",
+      "startYear": 2009,
+      "endYear": 2010,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL27R",
+      "rawModel": "KL27R",
+      "startYear": 2010,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL27RH",
+      "rawModel": "KL27RH",
+      "startYear": 2010,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL280H",
+      "rawModel": "KL280H",
+      "startYear": 2003,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL285",
+      "rawModel": "KL285",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL285-PC",
+      "rawModel": "KL285-PC",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL2850-PC",
+      "rawModel": "KL2850-PC",
+      "startYear": 2009,
+      "endYear": 2011,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL285H",
+      "rawModel": "KL285H",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL28R-PC",
+      "rawModel": "KL28R-PC",
+      "startYear": 2010,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL300",
+      "rawModel": "KL300",
+      "startYear": 2003,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL300D",
+      "rawModel": "KL300D",
+      "startYear": 2005,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL310H",
+      "rawModel": "KL310H",
+      "startYear": 2003,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL315",
+      "rawModel": "KL315",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL3150",
+      "rawModel": "KL3150",
+      "startYear": 2009,
+      "endYear": 2010,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL3150H",
+      "rawModel": "KL3150H",
+      "startYear": 2009,
+      "endYear": 2010,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL315H",
+      "rawModel": "KL315H",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL31R",
+      "rawModel": "KL31R",
+      "startYear": 2010,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL31R-PC",
+      "rawModel": "KL31R-PC",
+      "startYear": 2010,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL31RH",
+      "rawModel": "KL31RH",
+      "startYear": 2010,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL31Z",
+      "rawModel": "KL31Z",
+      "startYear": 2013,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL31Z-PC",
+      "rawModel": "KL31Z-PC",
+      "startYear": 2013,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL31ZH",
+      "rawModel": "KL31ZH",
+      "startYear": 2013,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL31ZH-PC",
+      "rawModel": "KL31ZH-PC",
+      "startYear": 2013,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL330",
+      "rawModel": "KL330",
+      "startYear": 2003,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL330D",
+      "rawModel": "KL330D",
+      "startYear": 2005,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL330D-PC",
+      "rawModel": "KL330D-PC",
+      "startYear": 2006,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL340H",
+      "rawModel": "KL340H",
+      "startYear": 2003,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL345",
+      "rawModel": "KL345",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL345-PC",
+      "rawModel": "KL345-PC",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL3450",
+      "rawModel": "KL3450",
+      "startYear": 2009,
+      "endYear": 2010,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL3450-PC",
+      "rawModel": "KL3450-PC",
+      "startYear": 2009,
+      "endYear": 2011,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL3450H",
+      "rawModel": "KL3450H",
+      "startYear": 2009,
+      "endYear": 2010,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL3450H-PC",
+      "rawModel": "KL3450H-PC",
+      "startYear": 2009,
+      "endYear": 2011,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL345H",
+      "rawModel": "KL345H",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL345H-PC",
+      "rawModel": "KL345H-PC",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL34R",
+      "rawModel": "KL34R",
+      "startYear": 2010,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL34R-PC",
+      "rawModel": "KL34R-PC",
+      "startYear": 2010,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL34RH",
+      "rawModel": "KL34RH",
+      "startYear": 2010,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL34RH-PC",
+      "rawModel": "KL34RH-PC",
+      "startYear": 2010,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL34Z",
+      "rawModel": "KL34Z",
+      "startYear": 2013,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL34ZH",
+      "rawModel": "KL34ZH",
+      "startYear": 2013,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL37Z",
+      "rawModel": "KL37Z",
+      "startYear": 2013,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL37ZH",
+      "rawModel": "KL37ZH",
+      "startYear": 2013,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL37ZH-PC",
+      "rawModel": "KL37ZH-PC",
+      "startYear": 2013,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL40Z",
+      "rawModel": "KL40Z",
+      "startYear": 2011,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL40ZH",
+      "rawModel": "KL40ZH",
+      "startYear": 2011,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL40ZH-PC",
+      "rawModel": "KL40ZH-PC",
+      "startYear": 2011,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL44Z",
+      "rawModel": "KL44Z",
+      "startYear": 2011,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL44ZH",
+      "rawModel": "KL44ZH",
+      "startYear": 2011,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL44ZH-PC",
+      "rawModel": "KL44ZH-PC",
+      "startYear": 2011,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL48ZH",
+      "rawModel": "KL48ZH",
+      "startYear": 2011,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL48ZH-PC",
+      "rawModel": "KL48ZH-PC",
+      "startYear": 2011,
+      "endYear": 2015,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL53ZH",
+      "rawModel": "KL53ZH",
+      "startYear": 2011,
+      "endYear": 2014,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL53ZH-PC",
+      "rawModel": "KL53ZH-PC",
+      "startYear": 2011,
+      "endYear": 2014,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL58ZH",
+      "rawModel": "KL58ZH",
+      "startYear": 2011,
+      "endYear": 2014,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL58ZH-PC",
+      "rawModel": "KL58ZH-PC",
+      "startYear": 2011,
+      "endYear": 2014,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL360",
+      "rawModel": "●KL360",
+      "startYear": 2004,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL380H",
+      "rawModel": "●KL380H",
+      "startYear": 2004,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL385",
+      "rawModel": "●KL385",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL385H",
+      "rawModel": "●KL385H",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL3950",
+      "rawModel": "●KL3950",
+      "startYear": 2009,
+      "endYear": 2011,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL3950H",
+      "rawModel": "●KL3950H",
+      "startYear": 2009,
+      "endYear": 2011,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL410H",
+      "rawModel": "●KL410H",
+      "startYear": 2004,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL410H-PC",
+      "rawModel": "●KL410H-PC",
+      "startYear": 2004,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL415",
+      "rawModel": "●KL415",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL415H",
+      "rawModel": "●KL415H",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL415H-PC",
+      "rawModel": "●KL415H-PC",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL430",
+      "rawModel": "●KL430",
+      "startYear": 2004,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL4350",
+      "rawModel": "●KL4350",
+      "startYear": 2009,
+      "endYear": 2011,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL4350H",
+      "rawModel": "●KL4350H",
+      "startYear": 2009,
+      "endYear": 2011,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL4350H-PC",
+      "rawModel": "●KL4350H-PC",
+      "startYear": 2009,
+      "endYear": 2011,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL460H",
+      "rawModel": "●KL460H",
+      "startYear": 2004,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL465H",
+      "rawModel": "●KL465H",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL4750H",
+      "rawModel": "●KL4750H",
+      "startYear": 2009,
+      "endYear": 2011,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL500H",
+      "rawModel": "●KL500H",
+      "startYear": 2004,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL500H-PC",
+      "rawModel": "●KL500H-PC",
+      "startYear": 2004,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL505H",
+      "rawModel": "●KL505H",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL505H-PC",
+      "rawModel": "●KL505H-PC",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL5150H",
+      "rawModel": "●KL5150H",
+      "startYear": 2009,
+      "endYear": 2011,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL5150H-PC",
+      "rawModel": "●KL5150H-PC",
+      "startYear": 2009,
+      "endYear": 2011,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL550H",
+      "rawModel": "●KL550H",
+      "startYear": 2004,
+      "endYear": 2007,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL5550H",
+      "rawModel": "●KL5550H",
+      "startYear": 2009,
+      "endYear": 2011,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL555H",
+      "rawModel": "●KL555H",
+      "startYear": 2007,
+      "endYear": 2009,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL270-PC",
+      "rawModel": "＊KL270-PC",
+      "startYear": 2004,
+      "endYear": 2006,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    },
+    {
+      "model": "KL330-PC",
+      "rawModel": "＊KL330-PC",
+      "startYear": 2004,
+      "endYear": 2006,
+      "reason": "Later KL generation/variant: sales start after 2000 and not an initial-generation PC model",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL"
+    }
+  ],
+  "excludedNonTractorRows": [
+    {
+      "model": "KL-BF-K150A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-BF-K32S",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-BF-K60A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-BF-N120AH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-BF-N30SH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-BF-N60AH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-HS-Q-05",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-HS-Q-05-K",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-HS-Q-12",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-HS-Q-12-K",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-HS-Q-20",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-HS-Q-20-K",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-K150A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-K32S",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-K60A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-K6MS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-N150AH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-N32SH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-N60AH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP-N6MSH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP2-K150A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP2-K32S",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP2-K400B",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP2-K60A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-IP2-K6MS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-K150A（H）",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-K32S（H）",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-K60A（H）",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-K6MS（H）",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-N150AH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-N32SH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-N60AH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD-N6MSH",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K-1500L",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K120AHS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K150A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K300BHS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K30SHS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K32S",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K400B",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K60A",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=200&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K60AHS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=200&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K6MS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=200&q=KL&searchType=2"
+    },
+    {
+      "model": "KL-SD2-K6MSHS",
+      "category": "その他（除雪機・計量機・業務用厨房機器）",
+      "reason": "Other product category",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=200&q=KL&searchType=2"
+    }
+  ],
+  "notes": [
+    "Completeness applies to the initial KL generation with basic sales starts in 1999 or 2000, not every KL-prefixed product.",
+    "KL25-PC and KL33-PC start in 2000; KL41-PC and KL50-PC start in 2001 and are initial-generation sibling machines.",
+    "KL41H is indexed as 41 hp; KL41-PC is indexed as 42 hp. Keep these values separate and do not substitute the PC manual for the H manual.",
+    "The leading ＊ and ● in the sales index are footnote markers; rawModel retains the exact label while model removes the marker.",
+    "Official indexes warn that not all historic products/manuals are listed."
+  ]
+}

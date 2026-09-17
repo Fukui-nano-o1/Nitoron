@@ -1,0 +1,139 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-17T00:00:00.000Z",
+  "records": [
+    {
+      "id": "a0037552-12f5-4b5d-8ec5-ddb40d076996",
+      "title": "【カタログ解説】クボタ KL34H 初期KLシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-17",
+      "blocks": [
+        {
+          "id": "a0037552-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "a0037552-002",
+          "type": "text",
+          "text": "34馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL34Hは2000年〜2003年の販売。KL34Hの公式取扱説明書を参照できます。"
+        },
+        {
+          "id": "a0037552-003",
+          "type": "bullet",
+          "text": "馬力：34馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "a0037552-004",
+          "type": "bullet",
+          "text": "販売期間：2000年〜2003年（公式販売年度検索・KL34H）"
+        },
+        {
+          "id": "a0037552-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "a0037552-006",
+          "type": "text",
+          "text": "KL34H"
+        },
+        {
+          "id": "a0037552-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "a0037552-008",
+          "type": "text",
+          "text": "KL34Hの公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "a0037552-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "a0037552-010",
+          "type": "text",
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "a0037552-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "a0037552-012",
+          "type": "text",
+          "text": "掲載写真：KL34Hの中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://growthpower.jp/efs-gp-upload/2019-04/thumbnail/188d873e7bc38a5dbce3f3076145951c_450x338_thumb.jpg",
+        "summary": "34馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL34Hは2000年〜2003年の販売。KL34Hの公式取扱説明書を参照できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "a0037552-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KL34H（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL34H&searchType=3",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "a0037552-src-sales-index",
+            "title": "クボタ 販売年度検索 KL34H",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL34H",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "a0037552-src-manual",
+            "title": "取扱説明書 KL34H",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d516b13671a4179d9b7b458a6ebdeb92",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "a0037552-src-photo",
+            "title": "写真：GROWTH POWER クボタ KL34H（中古実機）",
+            "url": "https://growthpower.jp/Japanese/content/30067",
+            "date": "2026-09-17"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

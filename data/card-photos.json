@@ -1346,7 +1346,7 @@
         "id": "761988ef-src-photo",
         "title": "写真：ノウキナビ クボタ KL21（中古実機）",
         "url": "https://www.noukinavi.com/shop_use/products/detail/2830",
-        "date": "2026-09-16"
+        "date": "2026-09-17"
       }
     },
     {
@@ -1358,7 +1358,7 @@
         "id": "259ff054-src-photo",
         "title": "写真：ノウキナビ クボタ KL27（中古実機）",
         "url": "https://www.noukinavi.com/shop_use/products/detail/4062",
-        "date": "2026-09-16"
+        "date": "2026-09-17"
       }
     },
     {
@@ -1370,7 +1370,7 @@
         "id": "b471b2be-src-photo",
         "title": "写真：ノウキナビ クボタ KL33（中古実機）",
         "url": "https://www.noukinavi.com/shop_use/products/detail/7120",
-        "date": "2026-09-16"
+        "date": "2026-09-17"
       }
     },
     {
@@ -1442,7 +1442,7 @@
         "id": "bae731f6-src-photo",
         "title": "写真：ノウキナビ クボタ KL23（中古実機）",
         "url": "https://www.noukinavi.com/shop_use/products/detail/4388",
-        "date": "2026-09-16"
+        "date": "2026-09-17"
       }
     },
     {
@@ -1454,7 +1454,7 @@
         "id": "07a4533c-src-photo",
         "title": "写真：ノウキナビ クボタ KL25（中古実機）",
         "url": "https://www.noukinavi.com/shop_use/products/detail/24216",
-        "date": "2026-09-16"
+        "date": "2026-09-17"
       }
     },
     {
@@ -1466,7 +1466,7 @@
         "id": "3b44565b-src-photo",
         "title": "写真：ノウキナビ クボタ KL30（中古実機）",
         "url": "https://www.noukinavi.com/shop_use/products/detail/7030",
-        "date": "2026-09-16"
+        "date": "2026-09-17"
       }
     },
     {
@@ -1478,7 +1478,7 @@
         "id": "83a04806-src-photo",
         "title": "写真：スペース（中古農機具販売） クボタ KL36（中古実機）",
         "url": "https://chuko-noki.com/3680/",
-        "date": "2026-09-16"
+        "date": "2026-09-17"
       }
     },
     {
@@ -1490,7 +1490,7 @@
         "id": "081b57dd-src-photo",
         "title": "写真：農キング クボタ KL43（中古実機）",
         "url": "https://nouki-ichiba.net/products/02943",
-        "date": "2026-09-16"
+        "date": "2026-09-17"
       }
     },
     {
@@ -1683,6 +1683,98 @@
         "id": "68c605b7-src-photo",
         "title": "写真：茨城中古農建機販売 クボタ KT305（中古実機）",
         "url": "https://www.noukenki.jp/result/%e3%82%af%e3%83%9c%e3%82%bf%e3%83%88%e3%83%a9%e3%82%af%e3%82%bf%e3%83%bckt305-%e3%83%af%e3%83%b3%e3%82%aa%e3%83%bc%e3%83%8a%e3%83%bc%e8%bb%8a/",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "ad7afe85-2990-46b9-83cf-71ecbead5902",
+      "model": "KL28H",
+      "kind": "used-machine-photo",
+      "url": "https://www.keletagro.com/images/image.php?s=t&f=traktor_5058_kubota_kl28h_u_shift_59708.jpg&w=320&h=240&wm=ka",
+      "source": {
+        "id": "ad7afe85-src-photo",
+        "title": "写真：Keletagro クボタ KL28H（中古実機）",
+        "url": "https://www.keletagro.com/en/compact-tractors/current-used-japanese-compact-tractors/t-5058/kubota-kl28h-u-shift",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "8a87a00e-953f-44f6-8024-5922b1e8e4df",
+      "model": "KL31H",
+      "kind": "used-machine-photo",
+      "url": "https://growthpower.jp/efs-gp-upload/2019-01/thumbnail/41a54a07d27041090447f4fc13d169ad_450x338_thumb.jpg",
+      "source": {
+        "id": "8a87a00e-src-photo",
+        "title": "写真：GROWTH POWER クボタ KL31H（中古実機）",
+        "url": "https://growthpower.jp/Japanese/content/27190",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "a0037552-12f5-4b5d-8ec5-ddb40d076996",
+      "model": "KL34H",
+      "kind": "used-machine-photo",
+      "url": "https://growthpower.jp/efs-gp-upload/2019-04/thumbnail/188d873e7bc38a5dbce3f3076145951c_450x338_thumb.jpg",
+      "source": {
+        "id": "a0037552-src-photo",
+        "title": "写真：GROWTH POWER クボタ KL34H（中古実機）",
+        "url": "https://growthpower.jp/Japanese/content/30067",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "e96b5a05-1034-4293-8304-8ede3c47e8a1",
+      "model": "KL38H",
+      "kind": "used-machine-photo",
+      "url": "https://centry.co.jp/wp-content/uploads/2024/03/20240301_081324454_iOS-1024x768.jpg",
+      "source": {
+        "id": "e96b5a05-src-photo",
+        "title": "写真：CENTRY クボタ KL38H（中古実機）",
+        "url": "https://centry.co.jp/products/kubota%e3%80%80%e3%83%88%e3%83%a9%e3%82%af%e3%82%bf%e3%83%bc%e3%80%80kl38",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "d77b16a1-ed99-4ccc-850c-15976c27f262",
+      "model": "KL41H",
+      "kind": "used-machine-photo",
+      "url": "https://antei.co.jp/sites/default/files/styles/original_brand/public/pictures/tractor/11370/11370-22468.jpg?itok=5GQVIGFa",
+      "source": {
+        "id": "d77b16a1-src-photo",
+        "title": "写真：あんてい クボタ KL41H（掲載表記：KL41HFQBMAP、中古実機）",
+        "url": "https://antei.co.jp/%E4%B8%AD%E5%8F%A4%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC/%E3%82%AF%E3%83%9C%E3%82%BF/%E3%82%AF%E3%83%9C%E3%82%BF%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BCkl41hfqbmap%EF%BC%94%EF%BC%91%E9%A6%AC%E5%8A%9B%E3%83%8F%E3%82%A4%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%81%A7%E3%81%99%E3%80%82",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "8505f080-7e5b-409a-86a4-b1cdc7664f00",
+      "model": "KL46H",
+      "kind": "used-machine-photo",
+      "url": "https://d3h4rk66tmhbaz.cloudfront.net/images/products/detail/162218/0bd26d0e53efcd53a5cadd7ecc3eb488.jpg?id=4ec1d4cbe05f7cd439fc18a96a5ea9d33ca4cd14",
+      "imageHost": "d3h4rk66tmhbaz.cloudfront.net",
+      "sourceImageReference": {
+        "url": "https://d3h4rk66tmhbaz.cloudfront.net/images/products/detail/162218/0bd26d0e53efcd53a5cadd7ecc3eb488.jpg?id=4ec1d4cbe05f7cd439fc18a96a5ea9d33ca4cd14",
+        "pageUrl": "https://biglemon.kenkey.jp/item/162218",
+        "pageSha256": "d9776e70cd0921088bdbd67ca5235d8e267162bd1159fc1cf2be4440e9a4161b",
+        "verifiedInPage": true,
+        "element": "<img class=\"sp-image\" width=\"376\" height=\"282\" src=\"https://d3h4rk66tmhbaz.cloudfront.net/images/products/detail/162218/0bd26d0e53efcd53a5cadd7ecc3eb488.jpg?id=4ec1d4cbe05f7cd439fc18a96a5ea9d33ca4cd14\" alt=\"thumb\">"
+      },
+      "source": {
+        "id": "8505f080-src-photo",
+        "title": "写真：BIGLEMON クボタ KL46H（中古実機）",
+        "url": "https://biglemon.kenkey.jp/item/162218",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "08ea8719-06a5-40b4-8761-6f9d83d09b4b",
+      "model": "KL50H",
+      "kind": "used-machine-photo",
+      "url": "https://antei.co.jp/sites/default/files/styles/w620p_brand/public/pictures/tractor/11580/11580-25520.jpeg?itok=WZlhTa-u",
+      "source": {
+        "id": "08ea8719-src-photo",
+        "title": "写真：あんてい クボタ KL50H（中古実機）",
+        "url": "https://antei.co.jp/%E4%B8%AD%E5%8F%A4%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC/%E3%82%AF%E3%83%9C%E3%82%BF/%E3%81%93%E3%81%AE%E3%83%8F%E3%82%A4%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%82%AF%E3%83%9C%E3%82%BF%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BCkl50h%E3%81%91%E3%82%93%E5%BC%95%E3%81%AB%E3%81%A9%E3%81%A7%E3%81%99%E3%81%8B",
         "date": "2026-09-17"
       }
     }

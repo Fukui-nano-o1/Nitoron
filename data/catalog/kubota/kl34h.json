@@ -1,0 +1,55 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KL34H",
+  "productName": "初期KLシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KL34H"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "34馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL34Hは2000年〜2003年の販売。KL34Hの公式取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL34H&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "efcaaa3d278d20f5b15cf5b58f3f9e4c0e6762cdfbcf1e36fe918501f5283077",
+      "result": {
+        "model": "KL34H",
+        "category": "トラクタ",
+        "horsepower": "34馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL34H",
+      "checkedAt": "2026-09-17",
+      "sha256": "e58fb267ce418ae854f35a3ed2bc9cd53875ad2aa8f1949c7f9b640d54bc7fa3",
+      "result": {
+        "model": "KL34H",
+        "startYear": 2000,
+        "endYear": 2003
+      }
+    },
+    "manuals": [
+      {
+        "title": "KL34H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d516b13671a4179d9b7b458a6ebdeb92",
+        "checkedAt": "2026-09-17",
+        "sha256": "3913d73bedcd7d445777199777be1cfaec65cb835d4ab985da47fbfa2d18a45a"
+      }
+    ],
+    "relatedManuals": []
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KL-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KL34H"
+}

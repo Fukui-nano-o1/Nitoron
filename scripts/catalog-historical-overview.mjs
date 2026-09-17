@@ -37,6 +37,14 @@ export function validateHistoricalOverview(entry, photo, expectedId) {
     const url = official(item.url)
     if (!belongs(item.title) || item.title === entry.series || !['variant', 'guide'].includes(item.kind) || url?.pathname !== '/after-support/manual/notice.html' || !/^[a-f0-9]{32}$/.test(url.searchParams.get('hash') || '') || item.checkedAt !== entry.checkedAt || !/^[a-f0-9]{64}$/.test(item.sha256 || '')) fail('関連資料の基本型式・参照先・確認記録が一致しません')
   }
+  // H型のカードから同世代PC型を参照する場合も、諸元・取説を別型式として保持する。
+  const siblings = entry.sources.siblingModels || []
+  if (!Array.isArray(siblings) || new Set(siblings.map(item => item.title)).size !== siblings.length) fail('別型式の資料が重複しています')
+  for (const item of siblings) {
+    const url = official(item.url), salesUrl = official(item.sales?.url), result = item.sales?.result
+    if (!/^KL\d+H$/.test(entry.series) || item.title !== `${entry.series.slice(0, -1)}-PC` || item.kind !== 'sibling' || !/^\d+(?:\.\d+)?馬力$/.test(item.horsepower || '') || url?.pathname !== '/after-support/manual/notice.html' || !/^[a-f0-9]{32}$/.test(url.searchParams.get('hash') || '') || item.checkedAt !== entry.checkedAt || !/^[a-f0-9]{64}$/.test(item.sha256 || '')) fail('別型式の型式名・馬力・取説を確認してください')
+    if (salesUrl?.pathname !== '/after-support/psyss/list.html' || result?.model !== item.title || item.sales.checkedAt !== entry.checkedAt || !/^[a-f0-9]{64}$/.test(item.sales.sha256 || '') || !Number.isInteger(result.startYear) || !Number.isInteger(result.endYear) || result.startYear < 1900 || result.endYear < result.startYear || result.endYear >= Number(entry.checkedAt.slice(0, 4))) fail('別型式の販売年度を確認してください')
+  }
   if (entry.symptoms?.length || entry.machineRef) fail('この概要には未確認の修理案内・3Dを付けません')
   if (photo || entry.photoModel) {
     const listedModels = [entry.series, period.model, ...variants.map(item => item.model), ...related.filter(item => item.kind === 'variant').map(item => item.title)]
@@ -44,7 +52,8 @@ export function validateHistoricalOverview(entry, photo, expectedId) {
     if (!photo || !expectedId || photo.id !== expectedId || photo.model !== entry.series || entry.photoModel !== (photo.labelModel || photo.model) || !listedModels.includes(modelKey(entry.photoModel)) || photo.kind !== 'used-machine-photo') fail('写真と公式掲載の型式が一致しません')
     let image, source
     try { image = new URL(photo.url); source = new URL(photo.source.url) } catch { fail('写真と掲載元のURLが必要です') }
-    if (image.protocol !== 'https:' || source.protocol !== 'https:' || image.hostname !== source.hostname || !photo.source.title?.trim() || photo.source.date !== entry.checkedAt) fail('写真の掲載元・出典・確認日が一致しません')
+    const embeddedCdn = photo.imageHost === image.hostname && photo.sourceImageReference?.url === photo.url && photo.sourceImageReference?.pageUrl === photo.source.url && /^[a-f0-9]{64}$/.test(photo.sourceImageReference?.pageSha256 || '')
+    if (image.protocol !== 'https:' || source.protocol !== 'https:' || (image.hostname !== source.hostname && !embeddedCdn) || !photo.source.title?.trim() || photo.source.date !== entry.checkedAt) fail('写真の掲載元・出典・確認日が一致しません')
   }
 }
 
@@ -71,6 +80,11 @@ export function buildHistoricalOverview(entry, id, photo) {
     blocks.push(block('h2', '仕様別の取扱説明書・補足資料'), block('text', '実機の型式末尾と資料名を照合してください。各資料へのリンクは「出典・資料」にあります。'))
     for (const item of related) blocks.push(block('bullet', `${item.title}（${item.kind === 'guide' ? '補足資料' : '仕様別資料'}）`))
   }
+  const siblings = entry.sources.siblingModels || []
+  if (siblings.length) {
+    blocks.push(block('h2', '同世代の別型式'), block('text', `以下は${entry.series}とは別型式です。馬力・販売期間と取扱説明書は、それぞれの型式の資料を参照してください。`))
+    for (const item of siblings) blocks.push(block('bullet', `${item.title}：${item.horsepower}、${item.sales.result.startYear}年〜${item.sales.result.endYear}年（公式取扱説明書検索・販売年度検索）`))
+  }
   const source = (key, title, url) => ({ id: `${id.slice(0, 8)}-src-${key}`, title, url, date: entry.checkedAt })
   return {
     id, title: `【カタログ解説】${entry.maker} ${entry.series} ${entry.productName}（${entry.category}）`,
@@ -84,6 +98,7 @@ export function buildHistoricalOverview(entry, id, photo) {
         source('manual', `取扱説明書 ${entry.series}`, entry.sources.manuals[0].url),
         ...(photo ? [photo.source] : []),
         ...related.map((item, index) => source(`related-${index + 1}`, `クボタ 公式資料 ${item.title}`, item.url)),
+        ...siblings.flatMap((item, index) => [source(`sibling-${index + 1}`, `別型式の公式資料 ${item.title}`, item.url), source(`sibling-sales-${index + 1}`, `別型式の販売年度 ${item.title}`, item.sales.url)]),
       ],
     },
   }

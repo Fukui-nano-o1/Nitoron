@@ -3,18 +3,18 @@
   "coverage": "historical-overview",
   "maker": "クボタ",
   "series": "KL33",
-  "productName": "旧型モデル",
+  "productName": "初期KLシリーズ",
   "category": "トラクタ",
   "models": [
     "KL33"
   ],
-  "checkedAt": "2026-09-16",
-  "summary": "33馬力の旧型トラクタ。公式販売年度検索のKL33は1999年〜2003年の販売。KL33の取扱説明書を参照できます。",
+  "checkedAt": "2026-09-17",
+  "summary": "33馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL33は1999年〜2003年の販売。KL33の公式取扱説明書を参照できます。仕様別の公式資料も掲載しています。",
   "sources": {
     "manualIndex": {
       "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL33&searchType=3",
-      "checkedAt": "2026-09-16",
-      "sha256": "5f66018cc9981deea167750a81bf4397e0f19685a2ff12f692be6b9cb8bba17e",
+      "checkedAt": "2026-09-17",
+      "sha256": "cd3ab1fd0d9d8fdb002ea7b5ed8d88d178f150c18a069ccbc2e4d14e8b781718",
       "result": {
         "model": "KL33",
         "category": "トラクタ",
@@ -23,20 +23,39 @@
     },
     "salesIndex": {
       "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL33",
-      "checkedAt": "2026-09-16",
-      "sha256": "f2efcbadb7c2fd0c00e171c8b006799132a72e02d79479ac2272addbefbe3910",
+      "checkedAt": "2026-09-17",
+      "sha256": "000020c028c13322f643aa8aa88e736a711e5e91c8f0633bac8f87d9f2a6ad60",
       "result": {
         "model": "KL33",
         "startYear": 1999,
         "endYear": 2003
-      }
+      },
+      "variants": [
+        {
+          "model": "KL33-PC",
+          "startYear": 2000,
+          "endYear": 2003
+        }
+      ]
     },
     "manuals": [
       {
         "title": "KL33",
         "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1fc214004c9481e4c8073e85323bfd4b",
-        "checkedAt": "2026-09-16",
-        "sha256": "0142b4d8e8c9a0b0d0a150320b260dab12eb85beec31ea95bc6a28f2478eafa1"
+        "checkedAt": "2026-09-17",
+        "sha256": "67b3dc47f39df4e3e88a56d7244f0c4030783577697471de9819c9d2c1cd31fb"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KL33-PC",
+        "kind": "variant",
+        "horsepower": "33馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3b3dbaf68507998acd6a5a5254ab2d76",
+        "checkedAt": "2026-09-17",
+        "sha256": "fb258500f308f89758e2127dc23d1c33f2dfafddc643935f5ef10d63fba50b9e",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2",
+        "indexSha256": "4b1c03fd9855146fefb54e31ca49337f70c02e9f5639d534e03bf73cf6e636bc"
       }
     ]
   },
@@ -46,6 +65,7 @@
     "manualNotice": "HTTP 200",
     "manualBody": "not-reviewed",
     "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KL-prefix-pages-and-notice-links-confirmed",
     "repairGuide": "not-added",
     "threeD": "not-added"
   },

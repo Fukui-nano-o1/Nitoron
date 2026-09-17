@@ -1,14 +1,14 @@
 {
   "format": "nitoron-workspace",
   "version": 1,
-  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "exportedAt": "2026-09-17T00:00:00.000Z",
   "records": [
     {
       "id": "07a4533c-88ca-4451-817e-fa00eeaea77d",
-      "title": "【カタログ解説】クボタ KL25 旧型モデル（トラクタ）",
+      "title": "【カタログ解説】クボタ KL25 初期KLシリーズ（トラクタ）",
       "category": "トラクタ",
       "type": "メモ",
-      "date": "2026-09-16",
+      "date": "2026-09-17",
       "blocks": [
         {
           "id": "07a4533c-001",
@@ -18,7 +18,7 @@
         {
           "id": "07a4533c-002",
           "type": "text",
-          "text": "25馬力の旧型トラクタ。公式販売年度検索のKL25は1999年〜2003年の販売。KL25の取扱説明書を参照できます。"
+          "text": "25馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL25は1999年〜2003年の販売。KL25の公式取扱説明書を参照できます。仕様別の公式資料も掲載しています。"
         },
         {
           "id": "07a4533c-003",
@@ -58,7 +58,7 @@
         {
           "id": "07a4533c-010",
           "type": "text",
-          "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
         },
         {
           "id": "07a4533c-011",
@@ -69,6 +69,31 @@
           "id": "07a4533c-012",
           "type": "text",
           "text": "掲載写真：KL25の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        },
+        {
+          "id": "07a4533c-013",
+          "type": "h2",
+          "text": "仕様別の販売期間"
+        },
+        {
+          "id": "07a4533c-014",
+          "type": "bullet",
+          "text": "KL25-PC：2000年〜2003年（公式販売年度検索）"
+        },
+        {
+          "id": "07a4533c-015",
+          "type": "h2",
+          "text": "仕様別の取扱説明書・補足資料"
+        },
+        {
+          "id": "07a4533c-016",
+          "type": "text",
+          "text": "実機の型式末尾と資料名を照合してください。各資料へのリンクは「出典・資料」にあります。"
+        },
+        {
+          "id": "07a4533c-017",
+          "type": "bullet",
+          "text": "KL25-PC（仕様別資料）"
         }
       ],
       "meta": {
@@ -84,7 +109,7 @@
         "start": "",
         "end": "",
         "coverUrl": "https://www.noukinavi.com/html/upload/save_image/0327184657_64216611b1a81.jpg",
-        "summary": "25馬力の旧型トラクタ。公式販売年度検索のKL25は1999年〜2003年の販売。KL25の取扱説明書を参照できます。",
+        "summary": "25馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL25は1999年〜2003年の販売。KL25の公式取扱説明書を参照できます。仕様別の公式資料も掲載しています。",
         "issue": "",
         "hypothesis": "",
         "action": "",
@@ -107,25 +132,31 @@
             "id": "07a4533c-src-manual-index",
             "title": "クボタ 取扱説明書検索 KL25（完全一致）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL25&searchType=3",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "07a4533c-src-sales-index",
             "title": "クボタ 販売年度検索 KL25",
             "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL25",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "07a4533c-src-manual",
             "title": "取扱説明書 KL25",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43fa7f58b7eac7ac872209342e62e8f1",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "07a4533c-src-photo",
             "title": "写真：ノウキナビ クボタ KL25（中古実機）",
             "url": "https://www.noukinavi.com/shop_use/products/detail/24216",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
+          },
+          {
+            "id": "07a4533c-src-related-1",
+            "title": "クボタ 公式資料 KL25-PC",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=31839b036f63806cba3f47b93af8ccb5",
+            "date": "2026-09-17"
           }
         ],
         "attachments": [],

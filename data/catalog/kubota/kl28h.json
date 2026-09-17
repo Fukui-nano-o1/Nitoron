@@ -1,0 +1,55 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KL28H",
+  "productName": "初期KLシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KL28H"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "28馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL28Hは2000年〜2003年の販売。KL28Hの公式取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL28H&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "0e1488779f9c721087e6e8220feea25f4ddfb3f1a85b4e67e442e18d7722021a",
+      "result": {
+        "model": "KL28H",
+        "category": "トラクタ",
+        "horsepower": "28馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL28H",
+      "checkedAt": "2026-09-17",
+      "sha256": "5301b61e155ad7da18ddfce6a3302f4ebdbff9827a2f55dd210ba30d2a05ac17",
+      "result": {
+        "model": "KL28H",
+        "startYear": 2000,
+        "endYear": 2003
+      }
+    },
+    "manuals": [
+      {
+        "title": "KL28H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fa83a11a198d5a7f0bf77a1987bcd006",
+        "checkedAt": "2026-09-17",
+        "sha256": "84c99e4544e9edf7eb8c9b0874e68bbbfeaefd2ccfac0b9aa556a42477fa29b0"
+      }
+    ],
+    "relatedManuals": []
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KL-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KL28H"
+}

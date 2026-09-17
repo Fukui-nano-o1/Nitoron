@@ -1,14 +1,14 @@
 {
   "format": "nitoron-workspace",
   "version": 1,
-  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "exportedAt": "2026-09-17T00:00:00.000Z",
   "records": [
     {
       "id": "83a04806-d6cd-4723-888a-4cd070bd48b8",
-      "title": "【カタログ解説】クボタ KL36 旧型モデル（トラクタ）",
+      "title": "【カタログ解説】クボタ KL36 初期KLシリーズ（トラクタ）",
       "category": "トラクタ",
       "type": "メモ",
-      "date": "2026-09-16",
+      "date": "2026-09-17",
       "blocks": [
         {
           "id": "83a04806-001",
@@ -18,7 +18,7 @@
         {
           "id": "83a04806-002",
           "type": "text",
-          "text": "36馬力の旧型トラクタ。公式販売年度検索のKL36は2000年〜2004年の販売。KL36の取扱説明書を参照できます。"
+          "text": "36馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL36は2000年〜2004年の販売。KL36の公式取扱説明書を参照できます。"
         },
         {
           "id": "83a04806-003",
@@ -58,7 +58,7 @@
         {
           "id": "83a04806-010",
           "type": "text",
-          "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
         },
         {
           "id": "83a04806-011",
@@ -84,7 +84,7 @@
         "start": "",
         "end": "",
         "coverUrl": "https://chuko-noki.com/new/wp/wp-content/uploads/old_tractor_032_000.jpg",
-        "summary": "36馬力の旧型トラクタ。公式販売年度検索のKL36は2000年〜2004年の販売。KL36の取扱説明書を参照できます。",
+        "summary": "36馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL36は2000年〜2004年の販売。KL36の公式取扱説明書を参照できます。",
         "issue": "",
         "hypothesis": "",
         "action": "",
@@ -107,25 +107,25 @@
             "id": "83a04806-src-manual-index",
             "title": "クボタ 取扱説明書検索 KL36（完全一致）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL36&searchType=3",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "83a04806-src-sales-index",
             "title": "クボタ 販売年度検索 KL36",
             "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL36",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "83a04806-src-manual",
             "title": "取扱説明書 KL36",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0a113ef6b61820daa5611c870ed8d5ee",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "83a04806-src-photo",
             "title": "写真：スペース（中古農機具販売） クボタ KL36（中古実機）",
             "url": "https://chuko-noki.com/3680/",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           }
         ],
         "attachments": [],

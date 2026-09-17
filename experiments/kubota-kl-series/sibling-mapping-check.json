@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-09-17",
+  "purpose": "Read-only verification of same-generation PC sibling grouping, not assertion of applicability to an H model",
+  "documents": [
+    {
+      "model": "KL41-PC",
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8b6dd7db9af49e67306feb59a8bdc52c"
+    },
+    {
+      "model": "KL50-PC",
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3df1d4b96d8976ff5986393e8767f5b2"
+    }
+  ],
+  "downloadStatus": 200,
+  "identicalContent": true,
+  "sha256": "7abbd254848143c1a5b8365f39dfc2eaa93ac38d90073e7804ab2d4d2d76f0c0",
+  "pages": 4,
+  "visuallyVerifiedPages": [
+    1
+  ],
+  "coverModels": [
+    "KL25-PC",
+    "KL33-PC",
+    "KL41-PC",
+    "KL50-PC"
+  ],
+  "ownWordsFindings": [
+    "The four PC models share one supplementary manual covering differences from wheeled models.",
+    "The cover instructs readers to consult the main manual for other explanations.",
+    "No H model is specified on the cover as the corresponding wheeled model. This does not establish interchangeability with KL41H or KL50H."
+  ],
+  "storageNote": "PDF remains scratch-only for reading; publication uses official notice links, with no PDF bytes copied to the repository."
+}

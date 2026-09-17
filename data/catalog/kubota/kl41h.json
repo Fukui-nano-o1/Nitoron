@@ -1,0 +1,77 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KL41H",
+  "productName": "初期KLシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KL41H"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "41馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL41Hは2000年〜2004年の販売。KL41Hの公式取扱説明書を参照できます。KL41-PCの資料は、別型式として掲載しています。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL41H&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "6e370547d577193d298505a6e4f48f93ff7dbd90c2bc7b945c1279e63b5bd393",
+      "result": {
+        "model": "KL41H",
+        "category": "トラクタ",
+        "horsepower": "41馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL41H",
+      "checkedAt": "2026-09-17",
+      "sha256": "a0b623932a1e9da2b45a79bb65ee3039e201a12e2e28973da5bef75aa04285d4",
+      "result": {
+        "model": "KL41H",
+        "startYear": 2000,
+        "endYear": 2004
+      }
+    },
+    "manuals": [
+      {
+        "title": "KL41H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8b5040a8a5baf3e0e67386c2e3a9b903",
+        "checkedAt": "2026-09-17",
+        "sha256": "2d0e322bbf8df6096f0bff5e9505edb3fd68c3bb01ddf35099f222c4f49d1c96"
+      }
+    ],
+    "relatedManuals": [],
+    "siblingModels": [
+      {
+        "title": "KL41-PC",
+        "kind": "sibling",
+        "horsepower": "42馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8b6dd7db9af49e67306feb59a8bdc52c",
+        "checkedAt": "2026-09-17",
+        "sha256": "19ceff758e9bb5d32801eae52daf7e64dbaa98e8de8bc8e7ff5f4c6607f9bec2",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2",
+        "indexSha256": "6f1ec9b50c434697549fd38738418766a9f3900b8aaddcf44efc3c5593e2e8f5",
+        "sales": {
+          "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL",
+          "checkedAt": "2026-09-17",
+          "sha256": "4c9a7283b011c18b3db445c9598540812a42df677c55b00b722d6b4e07abd702",
+          "result": {
+            "model": "KL41-PC",
+            "startYear": 2001,
+            "endYear": 2004
+          }
+        }
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KL-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KL41H"
+}

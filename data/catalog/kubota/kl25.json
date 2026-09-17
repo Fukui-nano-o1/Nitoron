@@ -3,18 +3,18 @@
   "coverage": "historical-overview",
   "maker": "クボタ",
   "series": "KL25",
-  "productName": "旧型モデル",
+  "productName": "初期KLシリーズ",
   "category": "トラクタ",
   "models": [
     "KL25"
   ],
-  "checkedAt": "2026-09-16",
-  "summary": "25馬力の旧型トラクタ。公式販売年度検索のKL25は1999年〜2003年の販売。KL25の取扱説明書を参照できます。",
+  "checkedAt": "2026-09-17",
+  "summary": "25馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL25は1999年〜2003年の販売。KL25の公式取扱説明書を参照できます。仕様別の公式資料も掲載しています。",
   "sources": {
     "manualIndex": {
       "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL25&searchType=3",
-      "checkedAt": "2026-09-16",
-      "sha256": "be6997f3ea18cef4de474cf5e627fe4047667787e927bd8c9005c02473a76e54",
+      "checkedAt": "2026-09-17",
+      "sha256": "4e008d5a95c5101168ef78fa2b6306ea893bb61086b7434ac0f6f5614340221a",
       "result": {
         "model": "KL25",
         "category": "トラクタ",
@@ -23,20 +23,39 @@
     },
     "salesIndex": {
       "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL25",
-      "checkedAt": "2026-09-16",
-      "sha256": "0e310948704c1c3e436d48423411eedc9eeeb7d2bf473330df1a5706849c3604",
+      "checkedAt": "2026-09-17",
+      "sha256": "fa007a5fe480956f5a47f02af792f9aa541e4e9ebac5e4ff5a80af7d1d7c7c77",
       "result": {
         "model": "KL25",
         "startYear": 1999,
         "endYear": 2003
-      }
+      },
+      "variants": [
+        {
+          "model": "KL25-PC",
+          "startYear": 2000,
+          "endYear": 2003
+        }
+      ]
     },
     "manuals": [
       {
         "title": "KL25",
         "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43fa7f58b7eac7ac872209342e62e8f1",
-        "checkedAt": "2026-09-16",
-        "sha256": "aae8771f1dc73ea089e8d01d87a7247e3a99480a0b9448d8975f966c1c95cff7"
+        "checkedAt": "2026-09-17",
+        "sha256": "54dfb21f2347db5a28b97b5506c45b1531b2035b8068e0faa17e819c39029b9d"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KL25-PC",
+        "kind": "variant",
+        "horsepower": "25馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=31839b036f63806cba3f47b93af8ccb5",
+        "checkedAt": "2026-09-17",
+        "sha256": "16d7796cd7dbc6a9dcbd20408d720e5db83cf81e4eb699c99437b02561881429",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2",
+        "indexSha256": "1005dc3bd20f815b76f1a017ec96cf28dd49499b047e2536825824d7760199da"
       }
     ]
   },
@@ -46,6 +65,7 @@
     "manualNotice": "HTTP 200",
     "manualBody": "not-reviewed",
     "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KL-prefix-pages-and-notice-links-confirmed",
     "repairGuide": "not-added",
     "threeD": "not-added"
   },

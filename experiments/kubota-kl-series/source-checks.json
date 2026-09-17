@@ -1,0 +1,263 @@
+{
+  "checkedAt": "2026-09-17",
+  "scope": "Initial KL generation: the 15 basic manual-index models with a 1999 or 2000 sales start; later KL generations, KL-R and KL-Z are excluded. Four PC documents are related records, including two separately-labelled sibling models, not a statement of interchangeability.",
+  "expectedEntries": 15,
+  "additions": 7,
+  "entries": [
+    {
+      "model": "KL21",
+      "path": "data/catalog/kubota/kl21.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL21&searchType=3",
+      "manualIndexSha256": "2b3b10ecaec900a2a316ac0b9016c797435f64e8981b751aa4ec6ba0bbcb9d30",
+      "horsepower": "21馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL21",
+      "salesSha256": "ec6675579db8bc2f503af72609d0fbae1b8ee689e8b9de2b0d91a07b8764fe94",
+      "salesResult": {
+        "model": "KL21",
+        "startYear": 1999,
+        "endYear": 2003
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1aa48fc4880bb0c9b8a3bf979d3b917e",
+      "manualStatus": 200,
+      "manualSha256": "f6151b05987cfbbb3c2c2093d0ac06ba15075ac1798213df2617164b40a3f595"
+    },
+    {
+      "model": "KL23",
+      "path": "data/catalog/kubota/kl23.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL23&searchType=3",
+      "manualIndexSha256": "f0a7b2ff0ad25349df33860b2797469c95d8ca8bd7d8d23da049a6308971657b",
+      "horsepower": "23馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL23",
+      "salesSha256": "36ae63f15e0e22ba7b9c8e87235da940f771d05349b98f78cdefd26ba4e77436",
+      "salesResult": {
+        "model": "KL23",
+        "startYear": 1999,
+        "endYear": 2003
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6e7b33fdea3adc80ebd648fffb665bb8",
+      "manualStatus": 200,
+      "manualSha256": "59bb46e487af53ee1ca60bcf2f1e6bbfed2c09253e419ccd0117172b11222d6b"
+    },
+    {
+      "model": "KL25",
+      "path": "data/catalog/kubota/kl25.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL25&searchType=3",
+      "manualIndexSha256": "4e008d5a95c5101168ef78fa2b6306ea893bb61086b7434ac0f6f5614340221a",
+      "horsepower": "25馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL25",
+      "salesSha256": "fa007a5fe480956f5a47f02af792f9aa541e4e9ebac5e4ff5a80af7d1d7c7c77",
+      "salesResult": {
+        "model": "KL25",
+        "startYear": 1999,
+        "endYear": 2003
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43fa7f58b7eac7ac872209342e62e8f1",
+      "manualStatus": 200,
+      "manualSha256": "54dfb21f2347db5a28b97b5506c45b1531b2035b8068e0faa17e819c39029b9d"
+    },
+    {
+      "model": "KL27",
+      "path": "data/catalog/kubota/kl27.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL27&searchType=3",
+      "manualIndexSha256": "a4d1dd0095a9ea59e978237fde1ce5c633fbedffcf263b1aa408d11fe8bcc14e",
+      "horsepower": "27馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL27",
+      "salesSha256": "c2f41df182fac748468405d4a6ca020c139108b5e2ca20dc6877dada585ec127",
+      "salesResult": {
+        "model": "KL27",
+        "startYear": 1999,
+        "endYear": 2003
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c2626d850c80ea07e7511bbae4c76f4b",
+      "manualStatus": 200,
+      "manualSha256": "de888e0d385a3995b833865e640f5c45a770528f7ebefae7f033c396c1a2b601"
+    },
+    {
+      "model": "KL28H",
+      "path": "data/catalog/kubota/kl28h.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL28H&searchType=3",
+      "manualIndexSha256": "0e1488779f9c721087e6e8220feea25f4ddfb3f1a85b4e67e442e18d7722021a",
+      "horsepower": "28馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL28H",
+      "salesSha256": "5301b61e155ad7da18ddfce6a3302f4ebdbff9827a2f55dd210ba30d2a05ac17",
+      "salesResult": {
+        "model": "KL28H",
+        "startYear": 2000,
+        "endYear": 2003
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fa83a11a198d5a7f0bf77a1987bcd006",
+      "manualStatus": 200,
+      "manualSha256": "84c99e4544e9edf7eb8c9b0874e68bbbfeaefd2ccfac0b9aa556a42477fa29b0"
+    },
+    {
+      "model": "KL30",
+      "path": "data/catalog/kubota/kl30.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL30&searchType=3",
+      "manualIndexSha256": "d449eee2565dbc977e866a6a098bca1d925324cb0a1087856d3ebf19111d3f6f",
+      "horsepower": "30馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL30",
+      "salesSha256": "81b76da131b337c994f5adef0079ef1b60b7a41e01006755dcb4863ade5c5747",
+      "salesResult": {
+        "model": "KL30",
+        "startYear": 1999,
+        "endYear": 2003
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b86e8d03fe992d1b0e19656875ee557c",
+      "manualStatus": 200,
+      "manualSha256": "1842b46d8cdca56ccfb8d3e24ea419f5e85b3ee14405e0445e9e2f480051c8c7"
+    },
+    {
+      "model": "KL31H",
+      "path": "data/catalog/kubota/kl31h.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL31H&searchType=3",
+      "manualIndexSha256": "44435c8c293cf758d9e6d51748c44797923514a4750d95d11e08f9043fa6a523",
+      "horsepower": "31馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL31H",
+      "salesSha256": "96d63f80dc6412d30f87c399a832fef0dc871ebefc596e8637345838b6eb86b2",
+      "salesResult": {
+        "model": "KL31H",
+        "startYear": 2000,
+        "endYear": 2003
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=aff1621254f7c1be92f64550478c56e6",
+      "manualStatus": 200,
+      "manualSha256": "3379bc17eb88df530d17d755fb4d54bf33da18509e93ade2a7dbc5f5a795f0d2"
+    },
+    {
+      "model": "KL33",
+      "path": "data/catalog/kubota/kl33.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL33&searchType=3",
+      "manualIndexSha256": "cd3ab1fd0d9d8fdb002ea7b5ed8d88d178f150c18a069ccbc2e4d14e8b781718",
+      "horsepower": "33馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL33",
+      "salesSha256": "000020c028c13322f643aa8aa88e736a711e5e91c8f0633bac8f87d9f2a6ad60",
+      "salesResult": {
+        "model": "KL33",
+        "startYear": 1999,
+        "endYear": 2003
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1fc214004c9481e4c8073e85323bfd4b",
+      "manualStatus": 200,
+      "manualSha256": "67b3dc47f39df4e3e88a56d7244f0c4030783577697471de9819c9d2c1cd31fb"
+    },
+    {
+      "model": "KL34H",
+      "path": "data/catalog/kubota/kl34h.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL34H&searchType=3",
+      "manualIndexSha256": "efcaaa3d278d20f5b15cf5b58f3f9e4c0e6762cdfbcf1e36fe918501f5283077",
+      "horsepower": "34馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL34H",
+      "salesSha256": "e58fb267ce418ae854f35a3ed2bc9cd53875ad2aa8f1949c7f9b640d54bc7fa3",
+      "salesResult": {
+        "model": "KL34H",
+        "startYear": 2000,
+        "endYear": 2003
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d516b13671a4179d9b7b458a6ebdeb92",
+      "manualStatus": 200,
+      "manualSha256": "3913d73bedcd7d445777199777be1cfaec65cb835d4ab985da47fbfa2d18a45a"
+    },
+    {
+      "model": "KL36",
+      "path": "data/catalog/kubota/kl36.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL36&searchType=3",
+      "manualIndexSha256": "c42b15e7371bcddc051987ffd2a48dbb2a83b0f16bbdfea4e5ec9469457d39b5",
+      "horsepower": "36馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL36",
+      "salesSha256": "0b206e24b74bc1276dd1ba82eedae6e69aa3883e1096991b6ae859bfa2ca60be",
+      "salesResult": {
+        "model": "KL36",
+        "startYear": 2000,
+        "endYear": 2004
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0a113ef6b61820daa5611c870ed8d5ee",
+      "manualStatus": 200,
+      "manualSha256": "f7778164a35ba502d31abb79e619f3c4d60330297c3349c674c1269161e43573"
+    },
+    {
+      "model": "KL38H",
+      "path": "data/catalog/kubota/kl38h.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL38H&searchType=3",
+      "manualIndexSha256": "5a6e1ad7bf2c0978d8f1db599b12b0a0592041708f31369024d2392814d45b5c",
+      "horsepower": "38馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL38H",
+      "salesSha256": "08eba4bce52a5aa07ba3ec7e06ff976ca12d4fe21bb6256c9eb4216c14600303",
+      "salesResult": {
+        "model": "KL38H",
+        "startYear": 2000,
+        "endYear": 2004
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=01882513d5fa7c329e940dda99b12147",
+      "manualStatus": 200,
+      "manualSha256": "dabd7ca4d53345881b862ac37e74878c8055cf62df5fb7fb286ac662c90a40a9"
+    },
+    {
+      "model": "KL41H",
+      "path": "data/catalog/kubota/kl41h.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL41H&searchType=3",
+      "manualIndexSha256": "6e370547d577193d298505a6e4f48f93ff7dbd90c2bc7b945c1279e63b5bd393",
+      "horsepower": "41馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL41H",
+      "salesSha256": "a0b623932a1e9da2b45a79bb65ee3039e201a12e2e28973da5bef75aa04285d4",
+      "salesResult": {
+        "model": "KL41H",
+        "startYear": 2000,
+        "endYear": 2004
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8b5040a8a5baf3e0e67386c2e3a9b903",
+      "manualStatus": 200,
+      "manualSha256": "2d0e322bbf8df6096f0bff5e9505edb3fd68c3bb01ddf35099f222c4f49d1c96"
+    },
+    {
+      "model": "KL43",
+      "path": "data/catalog/kubota/kl43.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL43&searchType=3",
+      "manualIndexSha256": "425b5ba5dadeebcac314c2008d838a334bba8b97c4c26eb0dcceed20d01864b8",
+      "horsepower": "43馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL43",
+      "salesSha256": "58ba527e54ea0484d4a24db57b343202a4237915c8a650bc011cf5d6d1990003",
+      "salesResult": {
+        "model": "KL43",
+        "startYear": 2000,
+        "endYear": 2004
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7634ea65a4e6d9041cfd3f7de18e334a",
+      "manualStatus": 200,
+      "manualSha256": "08fec4ace9387fd5ef64e38224c332f7699e2d9d55344e9788252970fe67c7cb"
+    },
+    {
+      "model": "KL46H",
+      "path": "data/catalog/kubota/kl46h.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL46H&searchType=3",
+      "manualIndexSha256": "b818a623f4129a0546a659064d4ce3c30ea8d1fc07505fcfff4d3d082c96be83",
+      "horsepower": "46馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL46H",
+      "salesSha256": "08639dc8c2c4b98d466dffdb67a98cd3c9344d938933ef1159d699033acd6c67",
+      "salesResult": {
+        "model": "KL46H",
+        "startYear": 2000,
+        "endYear": 2004
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1cc3633c579a90cfdd895e64021e2163",
+      "manualStatus": 200,
+      "manualSha256": "cd63f02c742b2acf5af00fbe4a5e76ad7bbe9d6f9e1f75f74e0a3973736bc936"
+    },
+    {
+      "model": "KL50H",
+      "path": "data/catalog/kubota/kl50h.json",
+      "manualIndexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL50H&searchType=3",
+      "manualIndexSha256": "bd859a7bf82fe76efff809e8bacea625e1354bc530fd3c899c72c05a84b36f14",
+      "horsepower": "50馬力",
+      "salesUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL50H",
+      "salesSha256": "39e951ff4532ee0bb5887d979bc0d4ef46759cd776434cc0e981443c922419aa",
+      "salesResult": {
+        "model": "KL50H",
+        "startYear": 2000,
+        "endYear": 2004
+      },
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2f885d0fbe2e131bfc9d98363e55d1d4",
+      "manualStatus": 200,
+      "manualSha256": "34fbb0b269082b45260bc1810ec64680a8da907260963ad72b74c857d3e06ef9"
+    }
+  ]
+}

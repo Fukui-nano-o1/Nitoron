@@ -3,18 +3,18 @@
   "coverage": "historical-overview",
   "maker": "クボタ",
   "series": "KL21",
-  "productName": "旧型モデル",
+  "productName": "初期KLシリーズ",
   "category": "トラクタ",
   "models": [
     "KL21"
   ],
-  "checkedAt": "2026-09-16",
-  "summary": "21馬力の旧型トラクタ。公式販売年度検索のKL21は1999年〜2003年の販売。KL21の取扱説明書を参照できます。",
+  "checkedAt": "2026-09-17",
+  "summary": "21馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL21は1999年〜2003年の販売。KL21の公式取扱説明書を参照できます。",
   "sources": {
     "manualIndex": {
       "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL21&searchType=3",
-      "checkedAt": "2026-09-16",
-      "sha256": "186385d6fde96a10d6663a1df4e05821b2829bddaf337262e5e685dc896560c1",
+      "checkedAt": "2026-09-17",
+      "sha256": "2b3b10ecaec900a2a316ac0b9016c797435f64e8981b751aa4ec6ba0bbcb9d30",
       "result": {
         "model": "KL21",
         "category": "トラクタ",
@@ -23,8 +23,8 @@
     },
     "salesIndex": {
       "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL21",
-      "checkedAt": "2026-09-16",
-      "sha256": "752e74cc95d81e6a93d70f6cb51e64ae9bbfef982c35bb4900258b0d256f31d3",
+      "checkedAt": "2026-09-17",
+      "sha256": "ec6675579db8bc2f503af72609d0fbae1b8ee689e8b9de2b0d91a07b8764fe94",
       "result": {
         "model": "KL21",
         "startYear": 1999,
@@ -35,10 +35,11 @@
       {
         "title": "KL21",
         "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1aa48fc4880bb0c9b8a3bf979d3b917e",
-        "checkedAt": "2026-09-16",
-        "sha256": "c596039d6840e452f3bd30823e601964782ffd8cb39d1434649fb0f5cb96feab"
+        "checkedAt": "2026-09-17",
+        "sha256": "f6151b05987cfbbb3c2c2093d0ac06ba15075ac1798213df2617164b40a3f595"
       }
-    ]
+    ],
+    "relatedManuals": []
   },
   "verification": {
     "manualIndex": "exact-model-and-horsepower-confirmed",
@@ -46,6 +47,7 @@
     "manualNotice": "HTTP 200",
     "manualBody": "not-reviewed",
     "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KL-prefix-pages-and-notice-links-confirmed",
     "repairGuide": "not-added",
     "threeD": "not-added"
   },

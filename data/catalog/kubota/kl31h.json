@@ -1,0 +1,55 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KL31H",
+  "productName": "初期KLシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KL31H"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "31馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL31Hは2000年〜2003年の販売。KL31Hの公式取扱説明書を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL31H&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "44435c8c293cf758d9e6d51748c44797923514a4750d95d11e08f9043fa6a523",
+      "result": {
+        "model": "KL31H",
+        "category": "トラクタ",
+        "horsepower": "31馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL31H",
+      "checkedAt": "2026-09-17",
+      "sha256": "96d63f80dc6412d30f87c399a832fef0dc871ebefc596e8637345838b6eb86b2",
+      "result": {
+        "model": "KL31H",
+        "startYear": 2000,
+        "endYear": 2003
+      }
+    },
+    "manuals": [
+      {
+        "title": "KL31H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=aff1621254f7c1be92f64550478c56e6",
+        "checkedAt": "2026-09-17",
+        "sha256": "3379bc17eb88df530d17d755fb4d54bf33da18509e93ade2a7dbc5f5a795f0d2"
+      }
+    ],
+    "relatedManuals": []
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KL-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KL31H"
+}

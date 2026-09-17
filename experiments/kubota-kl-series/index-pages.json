@@ -1,0 +1,2124 @@
+[
+  {
+    "kind": "manual",
+    "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL&searchType=2",
+    "checkedAt": "2026-09-17",
+    "file": "manual.html",
+    "sha256": "1005dc3bd20f815b76f1a017ec96cf28dd49499b047e2536825824d7760199da",
+    "reportedCount": 204,
+    "reportedPage": "1/9ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KL21",
+        "bariki": "21馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1aa48fc4880bb0c9b8a3bf979d3b917e"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL210",
+        "bariki": "21馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dc5689792e08eb2e219dce49e64c885b"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL210H",
+        "bariki": "21馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=846c260d715e5b854ffad5f70a516c88"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL225",
+        "bariki": "22馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d58072be2820e8682c0a27c0518e805e"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL23",
+        "bariki": "23馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6e7b33fdea3adc80ebd648fffb665bb8"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL230",
+        "bariki": "23馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a8ecbabae151abacba7dbde04f761c37"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL230H",
+        "bariki": "23馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=32b30a250abd6331e03a2a1f16466346"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL245",
+        "bariki": "24馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b6edc1cd1f36e45daf6d7824d7bb2283"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL2450",
+        "bariki": "24馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=670e8a43b246801ca1eaca97b3e19189"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL245H",
+        "bariki": "24馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=81e74d678581a3bb7a720b019f4f1a93"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL24R",
+        "bariki": "24馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e0cf1f47118daebc5b16269099ad7347"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL24Rガイドシート",
+        "bariki": "24馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=96b9bff013acedfb1d140579e2fbeb63"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL24Rポイントシート",
+        "bariki": "24馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=71ad16ad2c4d81f348082ff6c4b20768"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL25",
+        "bariki": "25馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43fa7f58b7eac7ac872209342e62e8f1"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL25-PC",
+        "bariki": "25馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=31839b036f63806cba3f47b93af8ccb5"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL250",
+        "bariki": "25馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f0adc8838f4bdedde4ec2cfad0515589"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL250H",
+        "bariki": "25馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3b5dca501ee1e6d8cd7b905f4e1bf723"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL265",
+        "bariki": "26馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e2a2dcc36a08a345332c751b2f2e476c"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL2650果樹園・水田兼用トラクタ",
+        "bariki": "26馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4558dbb6f6f8bb2e16d03b85bde76e2c"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL265H",
+        "bariki": "26馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=afda332245e2af431fb7b672a68b659d"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL26R",
+        "bariki": "26馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=632cee946db83e7a52ce5e8d6f0fed35"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL26R-K",
+        "bariki": "26馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=677e09724f0e2df9b6c000b75b5da10d"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL26Rガイドシート",
+        "bariki": "26馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=795c7a7a5ec6b460ec00c5841019b9e9"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL26Rポイントシート",
+        "bariki": "26馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fa3a3c407f82377f55c19c5d403335c7"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL27",
+        "bariki": "27馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c2626d850c80ea07e7511bbae4c76f4b"
+      }
+    ]
+  },
+  {
+    "kind": "manual",
+    "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KL&searchType=2",
+    "checkedAt": "2026-09-17",
+    "file": "manual-25.html",
+    "sha256": "fb601b8be46444a964c8345b558935ab61eef19e87a0704c598825440e1746f5",
+    "reportedCount": 204,
+    "reportedPage": "2/9ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KL270",
+        "bariki": "27馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ce78d1da254c0843eb23951ae077ff5f"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL270H",
+        "bariki": "27馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e0ec453e28e061cc58ac43f91dc2f3f0"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL2750",
+        "bariki": "27馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7250eb93b3c18cc9daa29cf58af7a004"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL27R",
+        "bariki": "27馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=013a006f03dbc5392effeb8f18fda755"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL280H",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=301ad0e3bd5cb1627a2044908a42fdc2"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL285",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4d5b995358e7798bc7e9d9db83c612a5"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL285-PC",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ab88b15733f543179858600245108dd8"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL2850",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b0b183c207f46f0cca7dc63b2604f5cc"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL2850J大径タイヤ仕様",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f9028faec74be6ec9b852b0a542e2f39"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL285H",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8f7d807e1f53eff5f9efbe5cb81090fb"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL28H",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fa83a11a198d5a7f0bf77a1987bcd006"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL28R",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=02a32ad2669e6fe298e607fe7cc0e1a0"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL28Rガイドシート",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3d8e28caf901313a554cebc7d32e67e5"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL28Rポイントシート",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e97ee2054defb209c35fe4dc94599061"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL30",
+        "bariki": "30馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b86e8d03fe992d1b0e19656875ee557c"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL300",
+        "bariki": "30馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=84f7e69969dea92a925508f7c1f9579a"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL310H",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f4552671f8909587cf485ea990207f3b"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL315",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=362e80d4df43b03ae6d3f8540cd63626"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3150",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fe8c15fed5f808006ce95eddb7366e35"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3150果樹園・水田兼用トラクタ",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1efa39bcaec6f3900149160693694536"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3150淡路仕様トラクタ",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=92fb0c6d1758261f10d052e6e2c1123c"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL315H",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=22ac3c5a5bf0b520d281c122d1490650"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31H",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=aff1621254f7c1be92f64550478c56e6"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31R",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f7e9050c92a851b0016442ab604b0488"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31R-K",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=addfa9b7e234254d26e9c7f2af1005cb"
+      }
+    ]
+  },
+  {
+    "kind": "manual",
+    "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KL&searchType=2",
+    "checkedAt": "2026-09-17",
+    "file": "manual-50.html",
+    "sha256": "4b1c03fd9855146fefb54e31ca49337f70c02e9f5639d534e03bf73cf6e636bc",
+    "reportedCount": 204,
+    "reportedPage": "3/9ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31R-W",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=847cc55b7032108eee6dd897f3bca8a5"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31Rガイドシート",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a67f096809415ca1c9f112d96d27689b"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31Rポイントシート",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2a084e55c87b1ebcdaad1f62fdbbac8e"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31Z",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fc49306d97602c8ed1be1dfbf0835ead"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31ZH",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f9a40a4780f5e1306c46f1c8daecee3b"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31ZHガイドシート",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=5ec91aac30eae62f4140325d09b9afd0"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31Zガイドシート",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=19b650660b253761af189682e03501dd"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL33",
+        "bariki": "33馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1fc214004c9481e4c8073e85323bfd4b"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL33-PC",
+        "bariki": "33馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3b3dbaf68507998acd6a5a5254ab2d76"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL330",
+        "bariki": "33馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ca8155f4d27f205953f9d3d7974bdd70"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3350コンパクトスペシャルトラクタ",
+        "bariki": "33馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dd45045f8c68db9f54e70c67048d32e8"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL33R-T",
+        "bariki": "33馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=49c9adb18e44be0711a94e827042f630"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL340H",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=22fb0cee7e1f3bde58293de743871417"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL345",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=aeb3135b436aa55373822c010763dd54"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL345-PC",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43feaeeecd7b2fe2ae2e26d917b6477d"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3450",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=98d6f58ab0dafbb86b083a001561bb34"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3450-PCF転作仕様",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=51ef186e18dc00c2d31982567235c559"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3450H-PCF転作仕様",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4b0a59ddf11c58e7446c9df0da541a84"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3450淡路仕様トラクタ",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=67d16d00201083a2b118dd5128dd6f59"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL345H",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=352407221afb776e3143e8a1a0577885"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL345H-PC",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dd8eb9f23fbd362da0e3f4e70b878c16"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34H",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d516b13671a4179d9b7b458a6ebdeb92"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34R",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1f50893f80d6830d62765ffad7721742"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34R-W",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6c3cf77d52820cd0fe646d38bc2145ca"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34Z",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=170c944978496731ba71f34c25826a34"
+      }
+    ]
+  },
+  {
+    "kind": "manual",
+    "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=75&q=KL&searchType=2",
+    "checkedAt": "2026-09-17",
+    "file": "manual-75.html",
+    "sha256": "6f1ec9b50c434697549fd38738418766a9f3900b8aaddcf44efc3c5593e2e8f5",
+    "reportedCount": 204,
+    "reportedPage": "4/9ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34ZH",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0efe32849d230d7f53049ddc4a4b0c60"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34ZHガイドシート",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=704afe073992cbe4813cae2f7715336f"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34Zガイドシート",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7ce3284b743aefde80ffd9aec500e085"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL36",
+        "bariki": "36馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0a113ef6b61820daa5611c870ed8d5ee"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL360",
+        "bariki": "36馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=07871915a8107172b3b5dc15a6574ad3"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL37Z",
+        "bariki": "37馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=024d7f84fff11dd7e8d9c510137a2381"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL37ZH",
+        "bariki": "37馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cfbce4c1d7c425baf21d6b6f2babe6be"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL37ZHガイドシート",
+        "bariki": "37馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c2aee86157b4a40b78132f1e71a9e6f1"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL37ZHポイントシート",
+        "bariki": "37馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d56b9fc4b0f1be8871f5e1c40c0067e7"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL37Zガイドシート",
+        "bariki": "37馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4b0250793549726d5c1ea3906726ebfe"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL37Zポイントシート",
+        "bariki": "37馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=20aee3a5f4643755a79ee5f6a73050ac"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL380H",
+        "bariki": "38馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=061412e4a03c02f9902576ec55ebbe77"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL385",
+        "bariki": "38馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=5705e1164a8394aace6018e27d20d237"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL385H",
+        "bariki": "38馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a64c94baaf368e1840a1324e839230de"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL38H",
+        "bariki": "38馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=01882513d5fa7c329e940dda99b12147"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3950",
+        "bariki": "39馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=acf4b89d3d503d8252c9c4ba75ddbf6d"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3950H-PCS",
+        "bariki": "39馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=892c91e0a653ba19df81a90f89d99bcd"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL40Z",
+        "bariki": "40馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b6a1085a27ab7bff7550f8a3bd017df8"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL40ZH",
+        "bariki": "40馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f47d0ad31c4c49061b9e505593e3db98"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL40ZHガイドシート",
+        "bariki": "40馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f57a2f557b098c43f11ab969efe1504b"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL40Zガイドシート",
+        "bariki": "40馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c8fbbc86abe8bd6a5eb6a3b4d0411301"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL40Zポイントシート",
+        "bariki": "40馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=621461af90cadfdaf0e8d4cc25129f91"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL41-PC",
+        "bariki": "42馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8b6dd7db9af49e67306feb59a8bdc52c"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL410H",
+        "bariki": "41馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a4300b002bcfb71f291dac175d52df94"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL415",
+        "bariki": "41馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e205ee2a5de471a70c1fd1b46033a75f"
+      }
+    ]
+  },
+  {
+    "kind": "manual",
+    "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=100&q=KL&searchType=2",
+    "checkedAt": "2026-09-17",
+    "file": "manual-100.html",
+    "sha256": "63b10af752d03fc2cb502c3caee9592f1f255350710da8f49ebebd4ddf7f7f70",
+    "reportedCount": 204,
+    "reportedPage": "5/9ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KL415H",
+        "bariki": "41馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b56a18e0eacdf51aa2a5306b0f533204"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL415H-PC",
+        "bariki": "42馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2a9d121cd9c3a1832bb6d2cc6bd7a8a7"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL41H",
+        "bariki": "41馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8b5040a8a5baf3e0e67386c2e3a9b903"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL43",
+        "bariki": "43馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7634ea65a4e6d9041cfd3f7de18e334a"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL430",
+        "bariki": "43馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=24896ee4c6526356cc127852413ea3b4"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL4350",
+        "bariki": "43馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=23ce1851341ec1fa9e0c259de10bf87c"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL4350H-C",
+        "bariki": "43馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=da0d1111d2dc5d489242e60ebcbaf988"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL4350H-PCS",
+        "bariki": "43馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1e056d2b0ebd5c878c550da6ac5d3724"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL44Z",
+        "bariki": "44馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3e89ebdb49f712c7d90d1b39e348bbbf"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL44ZH",
+        "bariki": "44馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=430c3626b879b4005d41b8a46172e0c0"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL44ZH-8F",
+        "bariki": "44馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ccc0aa1b81bf81e16c676ddb977c5881"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL44ZH-C",
+        "bariki": "44馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c4015b7f368e6b4871809f49debe0579"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL44ZH-C6",
+        "bariki": "44馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=bea5955b308361a1b07bc55042e25e54"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL44ZHガイドシート",
+        "bariki": "44馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7fa732b517cbed14a48843d74526c11a"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL44Zガイドシート",
+        "bariki": "44馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cbb6a3b884f4f88b3a8e3d44c636cbd8"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL44Zポイントシート",
+        "bariki": "44馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1f4477bad7af3616c1f933a02bfabe4e"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL460H",
+        "bariki": "46馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d045c59a90d7587d8d671b5f5aec4e7c"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL465H",
+        "bariki": "46馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0d0871f0806eae32d30983b62252da50"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL46H",
+        "bariki": "46馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1cc3633c579a90cfdd895e64021e2163"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL4750H",
+        "bariki": "47馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9f53d83ec0691550f7d2507d57f4f5a2"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL4750H-C",
+        "bariki": "47馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d2ed45a52bc0edfa11c2064e9edee8bf"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL48ZH",
+        "bariki": "48馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4daa3db355ef2b0e64b472968cb70f0d"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL48ZH-C",
+        "bariki": "48馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e820a45f1dfc7b95282d10b6087e11c0"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL48ZH-C6",
+        "bariki": "48馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=90794e3b050f815354e3e29e977a88ab"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL48ZHガイドシート",
+        "bariki": "48馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b7892fb3c2f009c65f686f6355c895b5"
+      }
+    ]
+  },
+  {
+    "kind": "manual",
+    "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=125&q=KL&searchType=2",
+    "checkedAt": "2026-09-17",
+    "file": "manual-125.html",
+    "sha256": "c5c77a0f4378d099f8a0fc24f03f8e5bbfa7d81fe734c7b6933891b77cd8967f",
+    "reportedCount": 204,
+    "reportedPage": "6/9ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KL48Zポイントシート",
+        "bariki": "48馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=74bba22728b6185eec06286af6bec36d"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL50-PC",
+        "bariki": "50馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3df1d4b96d8976ff5986393e8767f5b2"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL500H",
+        "bariki": "50馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8d6dc35e506fc23349dd10ee68dabb64"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL505H",
+        "bariki": "50馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=92262bf907af914b95a0fc33c3f33bf6"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL505H-PC",
+        "bariki": "50馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b55ec28c52d5f6205684a473a2193564"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL50H",
+        "bariki": "50馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2f885d0fbe2e131bfc9d98363e55d1d4"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL5150H",
+        "bariki": "51馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=64223ccf70bbb65a3a4aceac37e21016"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL5150H-C",
+        "bariki": "51馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4b6538a44a1dfdc2b83477cd76dee98e"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL5150H-PCS",
+        "bariki": "51馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c8c41c4a18675a74e01c8a20e8a0f662"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL5150H-WTワイドトレッド仕様",
+        "bariki": "51馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c4b31ce7d95c75ca70d50c19aef08bf1"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL53ZH",
+        "bariki": "53馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3cef96dcc9b8035d23f69e30bb19218a"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL53ZH-C",
+        "bariki": "53馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a3d68b461bd9d3533ee1dd3ce4628ed4"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL53ZH-C6",
+        "bariki": "53馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1c1d4df596d01da60385f0bb17a4a9e0"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL53ZH-WT",
+        "bariki": "53馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e6cb2a3c14431b55aa50c06529eaa21b"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL53ZHガイドシート",
+        "bariki": "53馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6395ebd0f4b478145ecfbaf939454fa4"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL53Zポイントシート",
+        "bariki": "53馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ef4e3b775c934dada217712d76f3d51f"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL550H",
+        "bariki": "55馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=168908dd3227b8358eababa07fcaf091"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL5550H",
+        "bariki": "55馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2ba596643cbbbc20318224181fa46b28"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL555H",
+        "bariki": "55馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d240e3d38a8882ecad8633c8f9c78c9b"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL58ZH",
+        "bariki": "58馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=437d7d1d97917cd627a34a6a0fb41136"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL58ZHガイドシート",
+        "bariki": "58馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d707329bece455a462b58ce00d1194c9"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL58Zポイントシート",
+        "bariki": "58馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=5c936263f3428a40227908d5a3847c0b"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL26R-PCメンテナンスシート",
+        "bariki": "26馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d554f7bb7be44a7267068a7df88ddd20"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL270-PC",
+        "bariki": "27馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8e82ab7243b7c66d768f1b8ce1c967eb"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL28R-PCメンテナンスシート",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fc3cf452d3da8402bebb765225ce8c0e"
+      }
+    ]
+  },
+  {
+    "kind": "manual",
+    "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=150&q=KL&searchType=2",
+    "checkedAt": "2026-09-17",
+    "file": "manual-150.html",
+    "sha256": "ec93cdec910f119c99e1325f43ee9dacff901eab27a85b13166c7b753e191aab",
+    "reportedCount": 204,
+    "reportedPage": "7/9ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31R-PCメンテナンスシート",
+        "bariki": "31馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8c235f89a8143a28a1d6067e959dd858"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL330-PC",
+        "bariki": "33馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ede7e2b6d13a41ddf9f4bdef84fdc737"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34R-PCメンテナンスシート",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7504adad8bb96320eb3afdd4df6e1f60"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34RH-PCメンテナンスシート",
+        "bariki": "34馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=210f760a89db30aa72ca258a3483cc7f"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL40ZC-PCメンテナンスシート",
+        "bariki": "40馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=aa169b49b583a2b5af89203c2b78c67c"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL44ZC-PCメンテナンスシート",
+        "bariki": "44馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6d0f846348a856321729a2f36734d1a7"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL48ZC-PCメンテナンスシート",
+        "bariki": "48馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=043c3d7e489c69b48737cc0c92d0f3a2"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL53ZC-PCメンテナンスシート",
+        "bariki": "53馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=58e4d44e550d0f7ee0a23d6b02d9b0db"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL53ZHQ-PCT",
+        "bariki": "53馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9232fe81225bcaef853ae32870a2b0fe"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL58ZC-PCメンテナンスシート",
+        "bariki": "58馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0f840be9b8db4d3fbd5ba2ce59211f55"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-BF-K150A",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c0f168ce8900fa56e57789e2a2f2c9d0"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-BF-K32S",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8c6744c9d42ec2cb9e8885b54ff744d0"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-BF-K60A",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f1c1592588411002af340cbaedd6fc33"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-BF-N120AH",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e07413354875be01a996dc560274708e"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-BF-N30SH",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=67d96d458abdef21792e6d8e590244e7"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-BF-N60AH",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a8e864d04c95572d1aece099af852d0a"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-HS-Q-05",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7143d7fbadfa4693b9eec507d9d37443"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-HS-Q-05-K",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=72da7fd6d1302c0a159f6436d01e9eb0"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-HS-Q-12",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6e0721b2c6977135b916ef286bcb49ec"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-HS-Q-12-K",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fc8001f834f6a5f0561080d134d53d29"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-HS-Q-20",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4b04a686b0ad13dce35fa99fa4161c65"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-HS-Q-20-K",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=61b4a64be663682e8cb037d9719ad8cd"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-IP-K150A",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3621f1454cacf995530ea53652ddf8fb"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-IP-K32S",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c15da1f2b5e5ed6e6837a3802f0d1593"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-IP-K60A",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=68053af2923e00204c3ca7c6a3150cf7"
+      }
+    ]
+  },
+  {
+    "kind": "manual",
+    "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=175&q=KL&searchType=2",
+    "checkedAt": "2026-09-17",
+    "file": "manual-175.html",
+    "sha256": "c65d52043598c6e45d05e6d2b6f7711d60189051b315bd934b0d2325e11a08c5",
+    "reportedCount": 204,
+    "reportedPage": "8/9ページ",
+    "rows": [
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-IP-K6MS",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2dace78f80bc92e6d7493423d729448e"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-IP-N150AH",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=df7f28ac89ca37bf1abd2f6c184fe1cf"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-IP-N32SH",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=96ea64f3a1aa2fd00c72faacf0cb8ac9"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-IP-N60AH",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=da8ce53cf0240070ce6c69c48cd588ee"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-IP-N6MSH",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=82489c9737cc245530c7a6ebef3753ec"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-IP2-K150A",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6754e06e46dfa419d5afe3c9781cecad"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-IP2-K32S",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=55a0df4b5a1786cd13a7a8de759859d4"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-IP2-K400B",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d880067f879409df09ac50ba315707aa"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-IP2-K60A",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dc727151e5d55dde1e950767cf861ca5"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-IP2-K6MS",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c90e274d55309db944076afb3ff9c391"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD-K150A（H）",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7c590f01490190db0ed02a5070e20f01"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD-K32S（H）",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=35cf8659cfcb13224cbd47863a34fc58"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD-K60A（H）",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=beb22fb694d513edcf5533cf006dfeae"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD-K6MS（H）",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9e3cfc48eccf81a0d57663e129aef3cb"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD-N150AH",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=28267ab848bcf807b2ed53c3a8f8fc8a"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD-N32SH",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=7a53928fa4dd31e82c6ef826f341daec"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD-N60AH",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1905aedab9bf2477edc068a355bba31a"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD-N6MSH",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1141938ba2c2b13f5505d7c424ebae5f"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD2-K-1500L",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=39ea40e164f970c54b0530436d5a9f7a"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD2-K120AHS",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=898aef0932f6aaecda27aba8e9903991"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD2-K150A",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=71d7232b9fed020ca23729017873089e"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD2-K300BHS",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=acb5d1120b8a0b8d3d97905ba9a72dc4"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD2-K30SHS",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2122c699d5e3d2fa6690771845bd7904"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD2-K32S",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=845f3cb43a07259b2e4724dfa5c5c0d1"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD2-K400B",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2151b4c76b4dcb048d06a5c32942b6f6"
+      }
+    ]
+  },
+  {
+    "kind": "manual",
+    "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=200&q=KL&searchType=2",
+    "checkedAt": "2026-09-17",
+    "file": "manual-200.html",
+    "sha256": "86917e7a6d5aa9e35cc97c378607b45c7f7e047fee4dffd35121b7e9ae406048",
+    "reportedCount": 204,
+    "reportedPage": "9/9ページ",
+    "rows": [
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD2-K60A",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=11338326597d14a1f7c745853f4d50a8"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD2-K60AHS",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9426c311e76888b3b2368150cd05f362"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD2-K6MS",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=f35fd567065af297ae65b621e0a21ae9"
+      },
+      {
+        "category": "その他（除雪機・計量機・業務用厨房機器）",
+        "spec-id": "KL-SD2-K6MSHS",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=74791edf1f8e8b8289a5067737630874"
+      }
+    ]
+  },
+  {
+    "kind": "sales",
+    "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL",
+    "checkedAt": "2026-09-17",
+    "file": "sales.html",
+    "sha256": "686fc6e5b0f2c780f845746f2511c8fafd47b2fd5cc1a69cb87415eefbf8d978",
+    "reportedCount": 124,
+    "reportedPage": "1/5ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KL21",
+        "startYear": "1999年",
+        "endYear pc": "2003年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL210",
+        "startYear": "2003年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL210H",
+        "startYear": "2003年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL225",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL23",
+        "startYear": "1999年",
+        "endYear pc": "2003年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL230",
+        "startYear": "2003年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL230H",
+        "startYear": "2003年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL245",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL2450",
+        "startYear": "2009年",
+        "endYear pc": "2010年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL2450H",
+        "startYear": "2009年",
+        "endYear pc": "2010年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL245H",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL24R",
+        "startYear": "2010年",
+        "endYear pc": "2016年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL24RH",
+        "startYear": "2010年",
+        "endYear pc": "2016年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL25",
+        "startYear": "1999年",
+        "endYear pc": "2003年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL250",
+        "startYear": "2003年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL250H",
+        "startYear": "2003年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL265",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL265H",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL26R-PC",
+        "startYear": "2010年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL27",
+        "startYear": "1999年",
+        "endYear pc": "2003年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL270",
+        "startYear": "2003年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL270D-PC",
+        "startYear": "2006年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL270H",
+        "startYear": "2003年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL2750",
+        "startYear": "2009年",
+        "endYear pc": "2010年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL2750H",
+        "startYear": "2009年",
+        "endYear pc": "2010年"
+      }
+    ]
+  },
+  {
+    "kind": "sales",
+    "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&searchType=2&category=1&q=KL",
+    "checkedAt": "2026-09-17",
+    "file": "sales-25.html",
+    "sha256": "454a73528f0010269a4e7fcd520b91fcfb987241f9356c9230a55c85fcae6494",
+    "reportedCount": 124,
+    "reportedPage": "2/5ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KL27R",
+        "startYear": "2010年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL27RH",
+        "startYear": "2010年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL280H",
+        "startYear": "2003年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL285",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL285-PC",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL2850-PC",
+        "startYear": "2009年",
+        "endYear pc": "2011年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL285H",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL28H",
+        "startYear": "2000年",
+        "endYear pc": "2003年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL28R-PC",
+        "startYear": "2010年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL30",
+        "startYear": "1999年",
+        "endYear pc": "2003年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL300",
+        "startYear": "2003年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL300D",
+        "startYear": "2005年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL310H",
+        "startYear": "2003年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL315",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3150",
+        "startYear": "2009年",
+        "endYear pc": "2010年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3150H",
+        "startYear": "2009年",
+        "endYear pc": "2010年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL315H",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31H",
+        "startYear": "2000年",
+        "endYear pc": "2003年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31R",
+        "startYear": "2010年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31R-PC",
+        "startYear": "2010年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31RH",
+        "startYear": "2010年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31Z",
+        "startYear": "2013年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31Z-PC",
+        "startYear": "2013年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31ZH",
+        "startYear": "2013年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL31ZH-PC",
+        "startYear": "2013年",
+        "endYear pc": "2015年"
+      }
+    ]
+  },
+  {
+    "kind": "sales",
+    "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=50&searchType=2&category=1&q=KL",
+    "checkedAt": "2026-09-17",
+    "file": "sales-50.html",
+    "sha256": "b05f7e8f1b11e8577d5549e9e6199ed1601881bb40b8fb8e14fe1b862cce1243",
+    "reportedCount": 124,
+    "reportedPage": "3/5ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KL33",
+        "startYear": "1999年",
+        "endYear pc": "2003年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL330",
+        "startYear": "2003年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL330D",
+        "startYear": "2005年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL330D-PC",
+        "startYear": "2006年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL340H",
+        "startYear": "2003年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL345",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL345-PC",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3450",
+        "startYear": "2009年",
+        "endYear pc": "2010年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3450-PC",
+        "startYear": "2009年",
+        "endYear pc": "2011年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3450H",
+        "startYear": "2009年",
+        "endYear pc": "2010年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL3450H-PC",
+        "startYear": "2009年",
+        "endYear pc": "2011年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL345H",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL345H-PC",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34H",
+        "startYear": "2000年",
+        "endYear pc": "2003年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34R",
+        "startYear": "2010年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34R-PC",
+        "startYear": "2010年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34RH",
+        "startYear": "2010年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34RH-PC",
+        "startYear": "2010年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34Z",
+        "startYear": "2013年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL34ZH",
+        "startYear": "2013年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL36",
+        "startYear": "2000年",
+        "endYear pc": "2004年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL37Z",
+        "startYear": "2013年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL37ZH",
+        "startYear": "2013年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL37ZH-PC",
+        "startYear": "2013年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL38H",
+        "startYear": "2000年",
+        "endYear pc": "2004年"
+      }
+    ]
+  },
+  {
+    "kind": "sales",
+    "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=75&searchType=2&category=1&q=KL",
+    "checkedAt": "2026-09-17",
+    "file": "sales-75.html",
+    "sha256": "4bfad61e34463158d873e7b0d644b6addc30d0ddff95f00de4a4d3000be91ab6",
+    "reportedCount": 124,
+    "reportedPage": "4/5ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KL40Z",
+        "startYear": "2011年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL40ZH",
+        "startYear": "2011年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL40ZH-PC",
+        "startYear": "2011年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL41H",
+        "startYear": "2000年",
+        "endYear pc": "2004年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL43",
+        "startYear": "2000年",
+        "endYear pc": "2004年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL44Z",
+        "startYear": "2011年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL44ZH",
+        "startYear": "2011年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL44ZH-PC",
+        "startYear": "2011年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL46H",
+        "startYear": "2000年",
+        "endYear pc": "2004年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL48ZH",
+        "startYear": "2011年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL48ZH-PC",
+        "startYear": "2011年",
+        "endYear pc": "2015年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL50H",
+        "startYear": "2000年",
+        "endYear pc": "2004年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL53ZH",
+        "startYear": "2011年",
+        "endYear pc": "2014年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL53ZH-PC",
+        "startYear": "2011年",
+        "endYear pc": "2014年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL58ZH",
+        "startYear": "2011年",
+        "endYear pc": "2014年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KL58ZH-PC",
+        "startYear": "2011年",
+        "endYear pc": "2014年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL360",
+        "startYear": "2004年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL380H",
+        "startYear": "2004年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL385",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL385H",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL3950",
+        "startYear": "2009年",
+        "endYear pc": "2011年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL3950H",
+        "startYear": "2009年",
+        "endYear pc": "2011年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL410H",
+        "startYear": "2004年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL410H-PC",
+        "startYear": "2004年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL415",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      }
+    ]
+  },
+  {
+    "kind": "sales",
+    "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL",
+    "checkedAt": "2026-09-17",
+    "file": "sales-100.html",
+    "sha256": "4c9a7283b011c18b3db445c9598540812a42df677c55b00b722d6b4e07abd702",
+    "reportedCount": 124,
+    "reportedPage": "5/5ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL415H",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL415H-PC",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL430",
+        "startYear": "2004年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL4350",
+        "startYear": "2009年",
+        "endYear pc": "2011年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL4350H",
+        "startYear": "2009年",
+        "endYear pc": "2011年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL4350H-PC",
+        "startYear": "2009年",
+        "endYear pc": "2011年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL460H",
+        "startYear": "2004年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL465H",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL4750H",
+        "startYear": "2009年",
+        "endYear pc": "2011年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL500H",
+        "startYear": "2004年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL500H-PC",
+        "startYear": "2004年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL505H",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL505H-PC",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL5150H",
+        "startYear": "2009年",
+        "endYear pc": "2011年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL5150H-PC",
+        "startYear": "2009年",
+        "endYear pc": "2011年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL550H",
+        "startYear": "2004年",
+        "endYear pc": "2007年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL5550H",
+        "startYear": "2009年",
+        "endYear pc": "2011年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "●KL555H",
+        "startYear": "2007年",
+        "endYear pc": "2009年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "＊KL25-PC",
+        "startYear": "2000年",
+        "endYear pc": "2003年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "＊KL270-PC",
+        "startYear": "2004年",
+        "endYear pc": "2006年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "＊KL33-PC",
+        "startYear": "2000年",
+        "endYear pc": "2003年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "＊KL330-PC",
+        "startYear": "2004年",
+        "endYear pc": "2006年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "＊KL41-PC",
+        "startYear": "2001年",
+        "endYear pc": "2004年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "＊KL50-PC",
+        "startYear": "2001年",
+        "endYear pc": "2004年"
+      }
+    ]
+  }
+]

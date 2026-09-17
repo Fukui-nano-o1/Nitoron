@@ -1,0 +1,139 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-17T00:00:00.000Z",
+  "records": [
+    {
+      "id": "ad7afe85-2990-46b9-83cf-71ecbead5902",
+      "title": "【カタログ解説】クボタ KL28H 初期KLシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-17",
+      "blocks": [
+        {
+          "id": "ad7afe85-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "ad7afe85-002",
+          "type": "text",
+          "text": "28馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL28Hは2000年〜2003年の販売。KL28Hの公式取扱説明書を参照できます。"
+        },
+        {
+          "id": "ad7afe85-003",
+          "type": "bullet",
+          "text": "馬力：28馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "ad7afe85-004",
+          "type": "bullet",
+          "text": "販売期間：2000年〜2003年（公式販売年度検索・KL28H）"
+        },
+        {
+          "id": "ad7afe85-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "ad7afe85-006",
+          "type": "text",
+          "text": "KL28H"
+        },
+        {
+          "id": "ad7afe85-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "ad7afe85-008",
+          "type": "text",
+          "text": "KL28Hの公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "ad7afe85-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "ad7afe85-010",
+          "type": "text",
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "ad7afe85-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "ad7afe85-012",
+          "type": "text",
+          "text": "掲載写真：KL28Hの中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://www.keletagro.com/images/image.php?s=t&f=traktor_5058_kubota_kl28h_u_shift_59708.jpg&w=320&h=240&wm=ka",
+        "summary": "28馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL28Hは2000年〜2003年の販売。KL28Hの公式取扱説明書を参照できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "ad7afe85-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KL28H（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL28H&searchType=3",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "ad7afe85-src-sales-index",
+            "title": "クボタ 販売年度検索 KL28H",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL28H",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "ad7afe85-src-manual",
+            "title": "取扱説明書 KL28H",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fa83a11a198d5a7f0bf77a1987bcd006",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "ad7afe85-src-photo",
+            "title": "写真：Keletagro クボタ KL28H（中古実機）",
+            "url": "https://www.keletagro.com/en/compact-tractors/current-used-japanese-compact-tractors/t-5058/kubota-kl28h-u-shift",
+            "date": "2026-09-17"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

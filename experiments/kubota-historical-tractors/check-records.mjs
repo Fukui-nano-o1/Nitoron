@@ -47,7 +47,7 @@ for (const item of manifest.entries) {
   assert.deepEqual(publicSnapshot(roundTrip), publicSnapshot(record))
   assert.equal(matches(roundTrip, item.model), true)
   assert.equal(matches(roundTrip, item.model.replace(/([A-Z]+)(\d)/, '$1-$2')), true)
-  assert.equal(record.meta.sources.length, (photo ? 4 : 3) + (entry.sources.relatedManuals?.length || 0))
+  assert.equal(record.meta.sources.length, (photo ? 4 : 3) + (entry.sources.relatedManuals?.length || 0) + 2 * (entry.sources.siblingModels?.length || 0))
   assert.equal(record.meta.coverUrl, photo?.url || '')
   checks.push({ model: item.model, id: record.id, duplicate: false, roundTrip: true, searchable: true, sources: record.meta.sources.length, photo: !!photo })
 }

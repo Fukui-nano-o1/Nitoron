@@ -1,0 +1,166 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-17T00:00:00.000Z",
+  "records": [
+    {
+      "id": "d77b16a1-ed99-4ccc-850c-15976c27f262",
+      "title": "【カタログ解説】クボタ KL41H 初期KLシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-17",
+      "blocks": [
+        {
+          "id": "d77b16a1-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "d77b16a1-002",
+          "type": "text",
+          "text": "41馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL41Hは2000年〜2004年の販売。KL41Hの公式取扱説明書を参照できます。KL41-PCの資料は、別型式として掲載しています。"
+        },
+        {
+          "id": "d77b16a1-003",
+          "type": "bullet",
+          "text": "馬力：41馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "d77b16a1-004",
+          "type": "bullet",
+          "text": "販売期間：2000年〜2004年（公式販売年度検索・KL41H）"
+        },
+        {
+          "id": "d77b16a1-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "d77b16a1-006",
+          "type": "text",
+          "text": "KL41H"
+        },
+        {
+          "id": "d77b16a1-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "d77b16a1-008",
+          "type": "text",
+          "text": "KL41Hの公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "d77b16a1-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "d77b16a1-010",
+          "type": "text",
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "d77b16a1-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "d77b16a1-012",
+          "type": "text",
+          "text": "掲載写真：KL41Hの中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        },
+        {
+          "id": "d77b16a1-013",
+          "type": "h2",
+          "text": "同世代の別型式"
+        },
+        {
+          "id": "d77b16a1-014",
+          "type": "text",
+          "text": "以下はKL41Hとは別型式です。馬力・販売期間と取扱説明書は、それぞれの型式の資料を参照してください。"
+        },
+        {
+          "id": "d77b16a1-015",
+          "type": "bullet",
+          "text": "KL41-PC：42馬力、2001年〜2004年（公式取扱説明書検索・販売年度検索）"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://antei.co.jp/sites/default/files/styles/original_brand/public/pictures/tractor/11370/11370-22468.jpg?itok=5GQVIGFa",
+        "summary": "41馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL41Hは2000年〜2004年の販売。KL41Hの公式取扱説明書を参照できます。KL41-PCの資料は、別型式として掲載しています。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "d77b16a1-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KL41H（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL41H&searchType=3",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "d77b16a1-src-sales-index",
+            "title": "クボタ 販売年度検索 KL41H",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL41H",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "d77b16a1-src-manual",
+            "title": "取扱説明書 KL41H",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8b5040a8a5baf3e0e67386c2e3a9b903",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "d77b16a1-src-photo",
+            "title": "写真：あんてい クボタ KL41H（掲載表記：KL41HFQBMAP、中古実機）",
+            "url": "https://antei.co.jp/%E4%B8%AD%E5%8F%A4%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC/%E3%82%AF%E3%83%9C%E3%82%BF/%E3%82%AF%E3%83%9C%E3%82%BF%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BCkl41hfqbmap%EF%BC%94%EF%BC%91%E9%A6%AC%E5%8A%9B%E3%83%8F%E3%82%A4%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%81%A7%E3%81%99%E3%80%82",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "d77b16a1-src-sibling-1",
+            "title": "別型式の公式資料 KL41-PC",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8b6dd7db9af49e67306feb59a8bdc52c",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "d77b16a1-src-sibling-sales-1",
+            "title": "別型式の販売年度 KL41-PC",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL",
+            "date": "2026-09-17"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-17T00:00:00.000Z",
+  "records": [
+    {
+      "id": "08ea8719-06a5-40b4-8761-6f9d83d09b4b",
+      "title": "【カタログ解説】クボタ KL50H 初期KLシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-17",
+      "blocks": [
+        {
+          "id": "08ea8719-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "08ea8719-002",
+          "type": "text",
+          "text": "50馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL50Hは2000年〜2004年の販売。KL50Hの公式取扱説明書を参照できます。KL50-PCの資料は、別型式として掲載しています。"
+        },
+        {
+          "id": "08ea8719-003",
+          "type": "bullet",
+          "text": "馬力：50馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "08ea8719-004",
+          "type": "bullet",
+          "text": "販売期間：2000年〜2004年（公式販売年度検索・KL50H）"
+        },
+        {
+          "id": "08ea8719-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "08ea8719-006",
+          "type": "text",
+          "text": "KL50H"
+        },
+        {
+          "id": "08ea8719-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "08ea8719-008",
+          "type": "text",
+          "text": "KL50Hの公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "08ea8719-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "08ea8719-010",
+          "type": "text",
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "08ea8719-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "08ea8719-012",
+          "type": "text",
+          "text": "掲載写真：KL50Hの中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        },
+        {
+          "id": "08ea8719-013",
+          "type": "h2",
+          "text": "同世代の別型式"
+        },
+        {
+          "id": "08ea8719-014",
+          "type": "text",
+          "text": "以下はKL50Hとは別型式です。馬力・販売期間と取扱説明書は、それぞれの型式の資料を参照してください。"
+        },
+        {
+          "id": "08ea8719-015",
+          "type": "bullet",
+          "text": "KL50-PC：50馬力、2001年〜2004年（公式取扱説明書検索・販売年度検索）"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://antei.co.jp/sites/default/files/styles/w620p_brand/public/pictures/tractor/11580/11580-25520.jpeg?itok=WZlhTa-u",
+        "summary": "50馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL50Hは2000年〜2004年の販売。KL50Hの公式取扱説明書を参照できます。KL50-PCの資料は、別型式として掲載しています。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "08ea8719-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KL50H（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL50H&searchType=3",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "08ea8719-src-sales-index",
+            "title": "クボタ 販売年度検索 KL50H",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL50H",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "08ea8719-src-manual",
+            "title": "取扱説明書 KL50H",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2f885d0fbe2e131bfc9d98363e55d1d4",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "08ea8719-src-photo",
+            "title": "写真：あんてい クボタ KL50H（中古実機）",
+            "url": "https://antei.co.jp/%E4%B8%AD%E5%8F%A4%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC/%E3%82%AF%E3%83%9C%E3%82%BF/%E3%81%93%E3%81%AE%E3%83%8F%E3%82%A4%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%82%AF%E3%83%9C%E3%82%BF%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BCkl50h%E3%81%91%E3%82%93%E5%BC%95%E3%81%AB%E3%81%A9%E3%81%A7%E3%81%99%E3%81%8B",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "08ea8719-src-sibling-1",
+            "title": "別型式の公式資料 KL50-PC",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3df1d4b96d8976ff5986393e8767f5b2",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "08ea8719-src-sibling-sales-1",
+            "title": "別型式の販売年度 KL50-PC",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=100&searchType=2&category=1&q=KL",
+            "date": "2026-09-17"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

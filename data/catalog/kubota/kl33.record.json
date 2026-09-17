@@ -1,14 +1,14 @@
 {
   "format": "nitoron-workspace",
   "version": 1,
-  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "exportedAt": "2026-09-17T00:00:00.000Z",
   "records": [
     {
       "id": "b471b2be-8bb5-4ead-892d-a95dc3111d07",
-      "title": "【カタログ解説】クボタ KL33 旧型モデル（トラクタ）",
+      "title": "【カタログ解説】クボタ KL33 初期KLシリーズ（トラクタ）",
       "category": "トラクタ",
       "type": "メモ",
-      "date": "2026-09-16",
+      "date": "2026-09-17",
       "blocks": [
         {
           "id": "b471b2be-001",
@@ -18,7 +18,7 @@
         {
           "id": "b471b2be-002",
           "type": "text",
-          "text": "33馬力の旧型トラクタ。公式販売年度検索のKL33は1999年〜2003年の販売。KL33の取扱説明書を参照できます。"
+          "text": "33馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL33は1999年〜2003年の販売。KL33の公式取扱説明書を参照できます。仕様別の公式資料も掲載しています。"
         },
         {
           "id": "b471b2be-003",
@@ -58,7 +58,7 @@
         {
           "id": "b471b2be-010",
           "type": "text",
-          "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
         },
         {
           "id": "b471b2be-011",
@@ -69,6 +69,31 @@
           "id": "b471b2be-012",
           "type": "text",
           "text": "掲載写真：KL33の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        },
+        {
+          "id": "b471b2be-013",
+          "type": "h2",
+          "text": "仕様別の販売期間"
+        },
+        {
+          "id": "b471b2be-014",
+          "type": "bullet",
+          "text": "KL33-PC：2000年〜2003年（公式販売年度検索）"
+        },
+        {
+          "id": "b471b2be-015",
+          "type": "h2",
+          "text": "仕様別の取扱説明書・補足資料"
+        },
+        {
+          "id": "b471b2be-016",
+          "type": "text",
+          "text": "実機の型式末尾と資料名を照合してください。各資料へのリンクは「出典・資料」にあります。"
+        },
+        {
+          "id": "b471b2be-017",
+          "type": "bullet",
+          "text": "KL33-PC（仕様別資料）"
         }
       ],
       "meta": {
@@ -84,7 +109,7 @@
         "start": "",
         "end": "",
         "coverUrl": "https://www.noukinavi.com/html/upload/save_image/00200100001/7120/0_detail.jpg",
-        "summary": "33馬力の旧型トラクタ。公式販売年度検索のKL33は1999年〜2003年の販売。KL33の取扱説明書を参照できます。",
+        "summary": "33馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL33は1999年〜2003年の販売。KL33の公式取扱説明書を参照できます。仕様別の公式資料も掲載しています。",
         "issue": "",
         "hypothesis": "",
         "action": "",
@@ -107,25 +132,31 @@
             "id": "b471b2be-src-manual-index",
             "title": "クボタ 取扱説明書検索 KL33（完全一致）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL33&searchType=3",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "b471b2be-src-sales-index",
             "title": "クボタ 販売年度検索 KL33",
             "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL33",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "b471b2be-src-manual",
             "title": "取扱説明書 KL33",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1fc214004c9481e4c8073e85323bfd4b",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "b471b2be-src-photo",
             "title": "写真：ノウキナビ クボタ KL33（中古実機）",
             "url": "https://www.noukinavi.com/shop_use/products/detail/7120",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
+          },
+          {
+            "id": "b471b2be-src-related-1",
+            "title": "クボタ 公式資料 KL33-PC",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3b3dbaf68507998acd6a5a5254ab2d76",
+            "date": "2026-09-17"
           }
         ],
         "attachments": [],

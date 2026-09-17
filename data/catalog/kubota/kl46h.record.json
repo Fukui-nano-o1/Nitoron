@@ -1,0 +1,139 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-17T00:00:00.000Z",
+  "records": [
+    {
+      "id": "8505f080-7e5b-409a-86a4-b1cdc7664f00",
+      "title": "【カタログ解説】クボタ KL46H 初期KLシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-17",
+      "blocks": [
+        {
+          "id": "8505f080-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "8505f080-002",
+          "type": "text",
+          "text": "46馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL46Hは2000年〜2004年の販売。KL46Hの公式取扱説明書を参照できます。"
+        },
+        {
+          "id": "8505f080-003",
+          "type": "bullet",
+          "text": "馬力：46馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "8505f080-004",
+          "type": "bullet",
+          "text": "販売期間：2000年〜2004年（公式販売年度検索・KL46H）"
+        },
+        {
+          "id": "8505f080-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "8505f080-006",
+          "type": "text",
+          "text": "KL46H"
+        },
+        {
+          "id": "8505f080-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "8505f080-008",
+          "type": "text",
+          "text": "KL46Hの公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "8505f080-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "8505f080-010",
+          "type": "text",
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "8505f080-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "8505f080-012",
+          "type": "text",
+          "text": "掲載写真：KL46Hの中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://d3h4rk66tmhbaz.cloudfront.net/images/products/detail/162218/0bd26d0e53efcd53a5cadd7ecc3eb488.jpg?id=4ec1d4cbe05f7cd439fc18a96a5ea9d33ca4cd14",
+        "summary": "46馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL46Hは2000年〜2004年の販売。KL46Hの公式取扱説明書を参照できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "8505f080-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KL46H（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL46H&searchType=3",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "8505f080-src-sales-index",
+            "title": "クボタ 販売年度検索 KL46H",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL46H",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "8505f080-src-manual",
+            "title": "取扱説明書 KL46H",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1cc3633c579a90cfdd895e64021e2163",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "8505f080-src-photo",
+            "title": "写真：BIGLEMON クボタ KL46H（中古実機）",
+            "url": "https://biglemon.kenkey.jp/item/162218",
+            "date": "2026-09-17"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

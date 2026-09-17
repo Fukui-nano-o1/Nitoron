@@ -2,41 +2,41 @@
   "schema": "nitoron-catalog/2",
   "coverage": "historical-overview",
   "maker": "クボタ",
-  "series": "KL36",
+  "series": "KL46H",
   "productName": "初期KLシリーズ",
   "category": "トラクタ",
   "models": [
-    "KL36"
+    "KL46H"
   ],
   "checkedAt": "2026-09-17",
-  "summary": "36馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL36は2000年〜2004年の販売。KL36の公式取扱説明書を参照できます。",
+  "summary": "46馬力の初期KLシリーズ旧型トラクタ。公式販売年度検索のKL46Hは2000年〜2004年の販売。KL46Hの公式取扱説明書を参照できます。",
   "sources": {
     "manualIndex": {
-      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL36&searchType=3",
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KL46H&searchType=3",
       "checkedAt": "2026-09-17",
-      "sha256": "c42b15e7371bcddc051987ffd2a48dbb2a83b0f16bbdfea4e5ec9469457d39b5",
+      "sha256": "b818a623f4129a0546a659064d4ce3c30ea8d1fc07505fcfff4d3d082c96be83",
       "result": {
-        "model": "KL36",
+        "model": "KL46H",
         "category": "トラクタ",
-        "horsepower": "36馬力"
+        "horsepower": "46馬力"
       }
     },
     "salesIndex": {
-      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL36",
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KL46H",
       "checkedAt": "2026-09-17",
-      "sha256": "0b206e24b74bc1276dd1ba82eedae6e69aa3883e1096991b6ae859bfa2ca60be",
+      "sha256": "08639dc8c2c4b98d466dffdb67a98cd3c9344d938933ef1159d699033acd6c67",
       "result": {
-        "model": "KL36",
+        "model": "KL46H",
         "startYear": 2000,
         "endYear": 2004
       }
     },
     "manuals": [
       {
-        "title": "KL36",
-        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0a113ef6b61820daa5611c870ed8d5ee",
+        "title": "KL46H",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1cc3633c579a90cfdd895e64021e2163",
         "checkedAt": "2026-09-17",
-        "sha256": "f7778164a35ba502d31abb79e619f3c4d60330297c3349c674c1269161e43573"
+        "sha256": "cd63f02c742b2acf5af00fbe4a5e76ad7bbe9d6f9e1f75f74e0a3973736bc936"
       }
     ],
     "relatedManuals": []
@@ -51,5 +51,5 @@
     "repairGuide": "not-added",
     "threeD": "not-added"
   },
-  "photoModel": "KL36"
+  "photoModel": "KL46H"
 }
