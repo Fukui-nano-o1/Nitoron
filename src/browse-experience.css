@@ -1,0 +1,69 @@
+/* Browse surfaces, studied against Airbnb Japan on 2026-09-17. */
+:root{font-family:Arial,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif}
+.catalog{max-width:1760px;padding:0 48px 88px}
+.catalog .category-bar{padding:16px 0 18px;margin-bottom:10px;gap:24px}
+.category-chips{gap:26px;scrollbar-width:none}
+.category-chips button{font-size:.875rem;min-height:48px;padding:10px 0;transition:color .18s,border-color .18s}
+.category-chips button[aria-pressed=true]{color:#222;border-bottom-color:#222}
+.filter-button{background:#fff;border-radius:12px;min-height:48px;transition:background .18s,border-color .18s}
+.filter-button:hover{background:#f7f7f7}
+.record-grid,.loading-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:34px 20px}
+.card-visual{border-radius:20px;background:#eee;contain:paint}
+.card-photo-track{display:flex;width:100%;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none}
+.card-photo-track::-webkit-scrollbar{display:none}
+.card-photo-track>.cover-link{flex:0 0 100%;width:100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
+.record-card .record-cover{aspect-ratio:1.05;background:#f2f2f2}
+.record-card .record-cover img,.record-card .record-cover.catalogue-photo img{height:100%;width:100%;object-fit:cover;background:#eee}
+.card-badge{top:12px;left:12px;padding:5px 11px;max-width:calc(100% - 70px);font-size:.75rem;line-height:1.5;box-shadow:0 2px 8px #0000001a}
+.save-heart{top:4px;right:5px;z-index:2;padding:0;background:transparent;border:0;transition:transform .18s}
+.save-heart:active{transform:scale(.9)}
+.save-heart svg{stroke-width:1.8}
+.card-copy{padding:10px 2px 0}
+.card-location,.record-card h2,.card-author,.card-bottom{font-size:.875rem;line-height:1.5}
+.card-location>span{font-size:.75rem}
+.record-card .catalog-copy h2{display:block;color:#222;font-size:.9375rem;line-height:1.5;font-weight:600;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-description{color:#6a6a6a;font-size:.8125rem;line-height:1.6;margin:1px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-copy:focus-visible{border-radius:6px;outline-offset:5px}
+.photo-arrow{width:32px;height:32px;min-height:32px;top:calc(50% - 16px);padding:0;background:#fffffff2;z-index:2;transition:opacity .18s,transform .18s,box-shadow .18s}
+.photo-arrow:hover{transform:scale(1.06);box-shadow:0 2px 8px #0003}
+.card-visual .photo-arrow:disabled{opacity:0;pointer-events:none}
+.photo-dots{pointer-events:none;bottom:12px}
+.discover-count{margin:4px 0 24px;scroll-margin-top:110px;font-size:.9375rem}
+.discovery-rows{display:grid;gap:40px;padding-top:10px}
+.discovery-row{min-width:0;min-height:200px}
+.discovery-row-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.discovery-row-head h2{font-size:1.25rem;line-height:1.5;font-weight:700;letter-spacing:-.3px;margin:0;min-width:0}
+.discovery-row-head h2 a{display:flex;align-items:center;gap:8px;color:#222;text-decoration:none}
+.discovery-row-head h2 a>svg{flex-shrink:0}
+.discovery-row-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.discovery-row-actions>a{font-size:.8125rem;font-weight:600;text-underline-offset:3px;margin-right:12px}
+.discovery-row-actions button{display:grid;place-items:center;border-radius:50%;width:32px;height:32px;min-height:32px;background:#f2f2f2;padding:0;transition:background .18s,transform .18s}
+.discovery-row-actions button:hover:not(:disabled){background:#e9e9e9;transform:scale(1.05)}
+.discovery-row-actions button:disabled{opacity:.3;cursor:default}
+.discovery-rail{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 80px)/6);gap:16px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;padding:2px 0 8px}
+.discovery-rail::-webkit-scrollbar{display:none}
+.discovery-rail>.record-card{scroll-snap-align:start}
+.discovery-rail:focus-visible{outline:2px solid #222;outline-offset:5px;border-radius:20px}
+.discovery-rail .card-skeleton>div{aspect-ratio:1.05;border-radius:20px}
+.card-skeleton>div,.card-skeleton>span{animation:browse-pulse 1.5s ease-in-out infinite}
+@keyframes browse-pulse{50%{background-color:#e7e7e7}}
+.listing-row-scroll .card-visual{border-radius:18px}
+.mobile-nav a{transition:color .18s,background .18s}
+.mobile-nav a:active{background:#f7f7f7;border-radius:12px}
+.dialog:not(.gallery){box-shadow:0 14px 64px #0003}
+.filter-form section{padding:24px 0}
+.filter-footer .primary{background:#222}
+@media(min-width:1600px){.catalog{padding-left:64px;padding-right:64px}.discovery-rail{grid-auto-columns:calc((100% - 96px)/7)}.record-grid,.loading-grid{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media(max-width:1199px){.catalog{padding-left:32px;padding-right:32px}.record-grid,.loading-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.discovery-rail{grid-auto-columns:calc((100% - 64px)/5)}}
+@media(max-width:950px){.record-grid,.loading-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.discovery-rail{grid-auto-columns:calc((100% - 48px)/4)}}
+@media(max-width:760px){
+ .catalog{padding:0 24px 104px}.catalog .category-bar{padding-top:8px;gap:14px;margin-bottom:10px}.category-chips{gap:22px}.category-chips button{font-size:.8125rem;min-height:44px}.filter-button{width:46px;min-height:46px;padding:0;display:grid;place-items:center;flex-shrink:0}.filter-button>span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ .record-grid,.loading-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px}.record-card .catalog-copy h2{font-size:.9375rem}.card-description{font-size:.8125rem}.card-visual{border-radius:18px}
+ .discovery-rows{gap:30px;padding-top:4px}.discovery-row-head{margin-bottom:12px}.discovery-row-head h2{font-size:1.125rem}.discovery-row-actions>a{display:none}.discovery-row-actions{gap:4px}.discovery-row-actions button{width:36px;height:36px;min-height:36px}
+ .discovery-rail{grid-auto-columns:calc((100% - 28px)/2.15);gap:12px;margin-right:-24px;padding-right:24px}.discovery-rail .card-description{font-size:.75rem}.discovery-rail .catalog-copy h2{font-size:.875rem}.discovery-rail .card-badge{font-size:.6875rem;padding:4px 8px;left:10px;top:10px}.discovery-row{min-height:160px}
+ .discover-count{scroll-margin-top:95px;margin-bottom:18px}.pagination{gap:16px}.pagination .secondary{padding:10px 18px}
+ .dialog:not(.gallery){padding:24px;border-radius:24px 24px 0 0;margin:auto 0 0;width:100%;max-width:100%;max-height:90dvh}.dialog:not(.gallery) .dialog-head{padding-bottom:18px}.filter-footer{bottom:-24px}.filter-form .choice-grid{gap:8px}
+}
+@media(max-width:550px){.record-grid,.loading-grid{grid-template-columns:minmax(0,1fr);gap:30px}.record-grid .record-cover{aspect-ratio:1.08}.record-grid .catalog-copy h2{font-size:1rem}.record-grid .card-description{font-size:.875rem}.record-grid .card-badge{font-size:.8125rem}.card-location,.record-card h2,.card-author,.card-bottom{font-size:.9375rem}.discovery-rail .card-location,.discovery-rail .record-card h2,.discovery-rail .card-author,.discovery-rail .card-bottom{font-size:.8125rem}}
+@media(hover:none){.photo-arrow{opacity:1;background:#ffffffe6}.photo-arrow.prev{left:8px}.photo-arrow.next{right:8px}.photo-arrow{width:36px;height:36px;min-height:36px;top:calc(50% - 18px)}}
+@media(prefers-reduced-motion:reduce){.card-skeleton>div,.card-skeleton>span{animation:none}.photo-arrow,.save-heart,.filter-button,.category-chips button,.discovery-row-actions button,.mobile-nav a{transition:none}}

@@ -1,4 +1,4 @@
-import React, { useEffect, useId, useRef, useState } from 'react'
+import React, { useEffect, useId, useMemo, useRef, useState } from 'react'
 import RecordBody from './RecordBody.jsx'
 import PhotoGallery from './PhotoGallery.jsx'
 import RecordMemo from './RecordMemo.jsx'
@@ -13,19 +13,46 @@ import { RecordCard } from './Catalog.jsx'
 import { EMPTY_FILTERS, discoverHref } from './search.js'
 import { sectionsOf, relatedRows, isCatalogRecord, catalogNav } from './catalog-domain.js'
 // ページ内の飛び先。ハッシュルーティングと衝突しないよう、リンク先は書き換えずにスクロールだけする。
-const jump = id => e => { e.preventDefault(); document.getElementById(id)?.scrollIntoView({ block: 'start', behavior: 'smooth' }) }
+const jump = id => e => { e.preventDefault(); document.getElementById(id)?.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }) }
 // 節ナビ（Airbnb の listing で写真の下に出る「写真・アメニティ・レビュー・地図」の行）。上部に固定され、本文の h2 が3つ以上あるときに出す。
 // カタログ解説では記録内検索もこの固定バーに置く（PC は右端に入力欄、スマホは虫めがねを押すと入力行が開く）。本文の途中に置くと探さないと見つからない。
 function SectionNav({ record, hasDiscussion, hasRelated, search = null }) {
-  const sections = isCatalogRecord(record) ? catalogNav(record.blocks) : sectionsOf(record.blocks)
+  const catalog = isCatalogRecord(record)
+  const sections = useMemo(() => catalog ? catalogNav(record.blocks) : sectionsOf(record.blocks), [catalog, record.blocks])
   const [open, setOpen] = useState(false)
-  const inputRef = useRef(null)
+  const [active, setActive] = useState('')
+  const inputRef = useRef(null), navRef = useRef(null), tabsRef = useRef(null)
+  const items = useMemo(() => [...sections, ...(hasDiscussion ? [{ id: 'discussion', title: '対話' }] : []), ...(hasRelated ? [{ id: 'related', title: '関連' }] : [])], [sections, hasDiscussion, hasRelated])
+  useEffect(() => {
+    let frame = 0
+    const update = () => {
+      frame = 0
+      const offset = (navRef.current?.getBoundingClientRect().bottom || 0) + 28
+      const available = items.map(item => ({ ...item, element: document.getElementById(item.id) })).filter(item => item.element)
+      let current = available[0]?.id || ''
+      for (const item of available) {
+        if (item.element.getBoundingClientRect().top <= offset) current = item.id
+        else break
+      }
+      setActive(current)
+    }
+    const queue = () => { if (!frame) frame = requestAnimationFrame(update) }
+    queue()
+    window.addEventListener('scroll', queue, { passive: true })
+    window.addEventListener('resize', queue)
+    return () => { cancelAnimationFrame(frame); window.removeEventListener('scroll', queue); window.removeEventListener('resize', queue) }
+  }, [items, search?.query])
+  useEffect(() => {
+    const track = tabsRef.current, selected = track?.querySelector('[aria-current="location"]')
+    if (!selected) return
+    const child = selected.getBoundingClientRect(), parent = track.getBoundingClientRect()
+    if (child.left < parent.left || child.right > parent.right) track.scrollBy({ left: child.left - parent.left - 12, behavior: 'instant' })
+  }, [active])
   if (sections.length < 3 && !search) return null
-  const items = [...sections, ...(hasDiscussion ? [{ id: 'discussion', title: '対話' }] : []), ...(hasRelated ? [{ id: 'related', title: '関連' }] : [])]
   const expanded = !!search && (open || !!search.query)
   const toggle = () => { if (expanded) { search.onQuery(''); setOpen(false) } else { setOpen(true); setTimeout(() => inputRef.current?.focus({ preventScroll: true }), 50) } }
-  return <nav className={`section-nav print-hidden${expanded ? ' search-open' : ''}`} aria-label="この記録の節">
-    <div className="section-nav-tabs">{items.map(s => <a key={s.id} href={`#${s.id}`} onClick={jump(s.id)}>{s.title.replace(/（.*?）/g, '')}</a>)}</div>
+  return <nav ref={navRef} className={`section-nav print-hidden${expanded ? ' search-open' : ''}`} aria-label="この記録の節">
+    <div ref={tabsRef} className="section-nav-tabs">{items.map(s => <a key={s.id} href={`#${s.id}`} aria-current={active === s.id ? 'location' : undefined} onClick={jump(s.id)}>{s.title.replace(/（.*?）/g, '')}</a>)}</div>
     {search && <>
       <button type="button" className="nav-search-toggle" aria-expanded={expanded} aria-label={expanded ? '記録内検索を閉じる' : 'この記録の中を探す'} onClick={toggle}><Icon name={expanded ? 'close' : 'search'} size={18} /></button>
       <form className="nav-search" role="search" onSubmit={e => { e.preventDefault(); inputRef.current?.blur() }}><Icon name="search" size={16} /><input ref={inputRef} type="search" maxLength={160} value={search.query} onChange={e => search.onQuery(e.target.value)} placeholder="この記録の中を探す（部品名・症状・数値）" aria-label="この記録の中を探す" />{search.query && <button type="button" className="quiet" onClick={() => { search.onQuery(''); inputRef.current?.focus({ preventScroll: true }) }}>クリア</button>}</form>
@@ -89,6 +116,7 @@ export default function PublicRecord({ record, focusSection = '', onBack, select
   const [moreOpen, setMoreOpen] = useState(false)
   // カタログ解説の記録内検索。欄は上部の固定バー（SectionNav）に、結果は本文（RecordBody）に。語が変わったら結果の先頭が固定バーの下に来るよう送る。
   const [bodyQuery, setBodyQuery] = useState('')
+  useEffect(() => { setBodyQuery(''); setMoreOpen(false) }, [record.id])
   const bodySearch = isCatalogRecord(record) ? { query: bodyQuery, onQuery: setBodyQuery } : null
   useEffect(() => { if (!bodyQuery.trim()) return; const el = document.getElementById('record-search-results'), bar = document.querySelector('.section-nav'); if (el && el.getBoundingClientRect().top < (bar?.getBoundingClientRect().bottom || 0)) el.scrollIntoView({ block: 'start' }) }, [bodyQuery])
   // 「#/public/:id?sec=sec-xxx」で来たら（取扱説明書の頁ページの小見出しから）、その節を開いた状態で先頭に据え、短く光らせて焦点を示す。
@@ -117,7 +145,7 @@ export default function PublicRecord({ record, focusSection = '', onBack, select
     : [[[m?.crop, m?.variety].filter(Boolean).join(' ') || '作物未記録', '作物'], [`${count}件`, '観測した事実'], [record.date, '記録日']]
   const back = onBack ? <button onClick={onBack} aria-label="一覧へ戻る"><Icon name="left" size={16} /><span>一覧へ戻る</span></button> : <a href="#/discover" aria-label="記録を探す"><Icon name="left" size={16} /><span>記録を探す</span></a>
   const editLink = editHref && <a className="text-action owner-edit" href={editHref}><Icon name="pencil" size={16} />編集する</a>
-  const toDiscussion = e => { e.preventDefault(); document.getElementById('discussion')?.scrollIntoView({ block: 'start', behavior: 'smooth' }) }
+  const toDiscussion = jump('discussion')
   // 「その他」メニューからログイン案内へ進むときは、メニューを閉じてから開く（モーダルを重ねない）。
   const accountFromMore = () => { setMoreOpen(false); onAccount() }
   const highlights = <div className="listing-highlights">

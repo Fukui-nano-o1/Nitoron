@@ -1,0 +1,84 @@
+/* Scoped to the shared header so older page styles cannot change its layout. */
+.site-header.header-experience{background:#fafafa;border-bottom:1px solid #ebebeb;color:#222}
+.site-header.header-experience .header-top{display:grid;grid-template-columns:minmax(160px,1fr) minmax(300px,550px) minmax(160px,1fr);gap:24px;min-height:88px;padding:0 48px;max-width:1760px}
+.site-header.header-experience .brand{margin:0;flex:none;font-size:2rem;color:#ff385c;letter-spacing:-1.7px;justify-self:start}
+.site-header.header-experience .header-center{position:relative;display:flex;align-items:center;justify-content:center;min-width:0;min-height:88px}
+.site-header.header-experience .desktop-navigation{height:88px;gap:36px;margin:0;justify-content:center}
+.site-header.header-experience .desktop-navigation[hidden]{display:none}
+.site-header.header-experience .desktop-navigation>a{position:relative;border:0;padding:0 4px;height:88px;color:#6a6a6a;font-size:.9375rem;font-weight:500;white-space:nowrap;transition:color .18s}
+.site-header.header-experience .desktop-navigation>a:hover,.site-header.header-experience .desktop-navigation>a[aria-current=page]{color:#222}
+.site-header.header-experience .desktop-navigation>a[aria-current=page]{font-weight:650}
+.site-header.header-experience .desktop-navigation>a[aria-current=page]:after{position:absolute;content:"";height:3px;left:4px;right:4px;bottom:15px;border-radius:4px;background:#222}
+.site-header.header-experience .header-actions{position:relative;gap:14px;justify-self:end;min-width:0}
+.site-header.header-experience .header-repair-link{display:block;border-radius:24px;padding:12px;color:#222;text-decoration:none;font-size:.8125rem;font-weight:600;white-space:nowrap}
+.site-header.header-experience .header-repair-link:hover{background:#f7f7f7}
+.site-header.header-experience .profile-control{display:flex;min-height:46px;padding:6px 7px 6px 13px;gap:12px;transition:box-shadow .18s;border:1px solid #ddd;border-radius:30px;background:#fff}
+.site-header.header-experience .profile-avatar{width:32px;height:32px;background:#6a6a6a}
+.site-header.header-experience .header-account-menu{position:absolute;right:0;top:calc(100% + 12px);width:240px;background:#fff;border:1px solid #ebebeb;border-radius:16px;box-shadow:0 8px 32px #00000026;padding:8px 0;display:grid;z-index:4;overflow:hidden}
+.site-header.header-experience .header-account-menu>a{display:flex;align-items:center;gap:13px;padding:13px 20px;color:#222;text-decoration:none;font-size:.875rem;line-height:1.5;min-height:48px}
+.site-header.header-experience .header-account-menu>a:hover,.site-header.header-experience .header-account-menu>a:focus-visible{background:#f7f7f7}
+.site-header.header-experience .header-account-menu>a[aria-current=page]{font-weight:650}
+.site-header.header-experience .header-account-menu>a:last-child{border-top:1px solid #ebebeb;margin-top:6px;padding-top:17px}
+.site-header.header-experience .menu-notify-dot{width:8px;height:8px;flex:0 0 8px;border-radius:50%;background:#ff385c;margin-left:auto}
+.site-header.header-experience .compact-search{width:min(390px,100%);flex:0 1 390px;margin:0;min-height:50px;padding:0 8px 0 20px;transform:none;opacity:1;pointer-events:auto;gap:0}
+.site-header.header-experience.search-open .compact-search,.site-header.header-experience.no-search .compact-search{display:none}
+.site-header.header-experience .compact-copy{display:block;min-width:0;overflow:hidden;text-align:left}
+.site-header.header-experience .compact-main{display:block;padding-right:14px;font-weight:600;font-size:.8125rem}
+.site-header.header-experience .compact-mobile-subtitle{display:none}
+.site-header.header-experience .compact-search>svg:first-child{display:none}
+.site-header.header-experience .compact-region{font-size:.8125rem;padding:0 13px}
+.site-header.header-experience .header-search{max-width:1760px;padding:0 48px}
+.site-header.header-experience .header-search-inner{min-height:0}
+.site-header.header-experience .header-search-heading{display:none}
+.site-header.header-experience .header-search .search-pill{width:min(850px,100%);margin:0 0 25px;min-height:66px;padding:0 8px 0 0;border-color:#ddd;box-shadow:0 3px 12px #00000012}
+.site-header.header-experience .search-part,.site-header.header-experience .region-part{padding:13px 30px;transition:background .16s;min-width:0}
+.site-header.header-experience .search-part{flex:1.6;border-radius:36px}
+.site-header.header-experience .region-part{flex:1;border-radius:0}
+.site-header.header-experience .search-part:hover,.site-header.header-experience .region-part:hover{background:#f7f7f7;border-radius:36px}
+.site-header.header-experience .search-part:focus-within,.site-header.header-experience .region-part:focus-within{background:#f7f7f7;border-radius:36px}
+.site-header.header-experience .search-part>span,.site-header.header-experience .region-part>span{font-size:.75rem;color:#222;margin-bottom:2px;font-weight:650}
+.site-header.header-experience .search-part input,.site-header.header-experience .region-part input{font-size:.875rem;min-height:22px;line-height:1.6;color:#222}
+.site-header.header-experience .search-part input::placeholder,.site-header.header-experience .region-part input::placeholder{color:#717171}
+.site-header.header-experience .search-submit{width:48px;height:48px;min-height:48px;border-radius:50%;background:#ff385c;color:#fff;transition:background .16s,transform .16s}
+.site-header.header-experience .search-submit:hover{background:#e31c5f}
+.site-header.header-experience .search-submit:active{transform:scale(.94)}
+.site-header.header-experience .search-submit>span{display:none}
+.site-header.header-experience.is-scrolled .header-top,.site-header.header-experience.is-scrolled .header-center,.site-header.header-experience.is-scrolled .desktop-navigation,.site-header.header-experience.is-scrolled .desktop-navigation>a{min-height:78px;height:78px}
+.site-header.header-experience.is-scrolled .header-search{max-width:none}
+.site-header.header-experience.is-scrolled .header-search .search-pill{margin:16px auto 24px}
+@media(max-width:1180px){
+  .site-header.header-experience .header-top{padding:0 32px;grid-template-columns:minmax(100px,1fr) minmax(280px,430px) minmax(100px,1fr);gap:20px}
+  .site-header.header-experience .header-repair-link{display:none}
+  .site-header.header-experience .header-search{padding:0 32px}
+}
+@media(max-width:760px){
+  .site-header.header-experience{border-bottom:0;background:#fff}
+  .site-header.header-experience .header-top,.site-header.header-experience.is-scrolled .header-top{display:block;min-height:90px;height:auto;padding:16px 24px 12px}
+  .site-header.header-experience .brand,.site-header.header-experience .desktop-navigation,.site-header.header-experience .header-actions{display:none}
+  .site-header.header-experience .header-center,.site-header.header-experience.is-scrolled .header-center{display:block;min-height:62px;height:auto}
+  .site-header.header-experience .compact-search,.site-header.header-experience.search-open .compact-search,.site-header.header-experience.no-search .compact-search{display:flex;width:100%;min-height:62px;margin:0;opacity:1;transform:none;pointer-events:auto;gap:15px;padding:9px 20px;box-shadow:0 3px 12px #00000014;border-color:#e5e5e5;text-align:left}
+  .site-header.header-experience .compact-search>svg:first-child{display:block;margin:0;flex-shrink:0;width:22px;height:22px}
+  .site-header.header-experience .compact-copy{display:grid;gap:3px}
+  .site-header.header-experience .compact-main{font-size:.875rem;padding:0;line-height:1.4}
+  .site-header.header-experience .compact-mobile-subtitle{display:block;color:#717171;font-size:.75rem;line-height:1.5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400}
+  .site-header.header-experience .compact-sep,.site-header.header-experience .compact-region,.site-header.header-experience .compact-go{display:none}
+  .site-header.header-experience .header-search,.site-header.header-experience.is-scrolled .header-search{position:absolute;top:100%;left:0;right:0;padding:0 24px;background:#fff;border:0;box-shadow:none;border-radius:0 0 24px 24px;max-width:none}
+  .site-header.header-experience.search-open .header-search{border-bottom:1px solid #ebebeb;box-shadow:0 16px 28px #00000014}
+  .site-header.header-experience .header-search-inner{display:block}
+  .site-header.header-experience .header-search-heading{display:flex;align-items:center;justify-content:space-between;padding:4px 0 14px;font-size:1rem}
+  .site-header.header-experience .header-search-heading>button{display:grid;place-items:center;min-height:36px;width:36px;border-radius:50%;background:#f7f7f7}
+  .site-header.header-experience .header-search .search-pill,.site-header.header-experience.is-scrolled .header-search .search-pill{display:grid;grid-template-columns:1fr;gap:12px;min-height:0;width:100%;padding:0;margin:0 0 22px;border:0;border-radius:0;box-shadow:none;transform:none}
+  .site-header.header-experience .search-part,.site-header.header-experience .region-part{display:block;flex:none;padding:14px 18px;border:1px solid #ddd;border-radius:16px;background:#fff;min-width:0}
+  .site-header.header-experience .search-part:hover,.site-header.header-experience .region-part:hover,.site-header.header-experience .search-part:focus-within,.site-header.header-experience .region-part:focus-within{border-radius:16px}
+  .site-header.header-experience .search-part>span,.site-header.header-experience .region-part>span{font-size:.75rem;margin-bottom:5px}
+  .site-header.header-experience .search-part input,.site-header.header-experience .region-part input{font-size:1rem;min-height:25px}
+  .site-header.header-experience .search-submit{display:flex;justify-content:center;gap:10px;width:100%;border-radius:12px;min-height:48px;height:48px;margin-top:2px;background:linear-gradient(100deg,#e61e4d,#d70466);font-weight:650}
+  .site-header.header-experience .search-submit>span{display:inline}
+}
+@media(max-width:420px){
+  .site-header.header-experience .header-top,.site-header.header-experience.is-scrolled .header-top{padding-left:20px;padding-right:20px}
+  .site-header.header-experience .header-search,.site-header.header-experience.is-scrolled .header-search{padding-left:20px;padding-right:20px}
+}
+@media(prefers-reduced-motion:reduce){
+  .site-header.header-experience .desktop-navigation>a,.site-header.header-experience .profile-control,.site-header.header-experience .search-part,.site-header.header-experience .region-part,.site-header.header-experience .search-submit{transition:none}
+}

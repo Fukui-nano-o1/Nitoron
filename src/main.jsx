@@ -33,6 +33,10 @@ import { EMPTY_FILTERS, filterRecord, listFromParams, paramsFromList } from './s
 import { SEARCH_ENABLED } from './flags.js'
 import './styles.css'
 import './design.css'
+import './browse-experience.css'
+import './header-experience.css'
+import './detail-experience.css'
+import { isDiscoveryHome } from './discovery-domain.js'
 
 const routeFromLocation = () => {
   if (/^#\/?profile(\/|$)/.test(location.hash)) location.hash = '/account/personal'
@@ -181,7 +185,7 @@ function App({ verifiedSession }) {
     getOwnPublication(route.id, session.user.id).then(row => { if (!cancelled) setOwnPublication({ loading: false, error: '', row }) }).catch(e => { if (!cancelled) setOwnPublication({ loading: false, error: e.message, row: null }) })
     return () => { cancelled = true }
   }, [publishedNow, route.id, session?.user.id, refresh])
-  useEffect(() => { if (!SEARCH_ENABLED) return; const keys = e => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (!searchRef.current) { location.hash = '/discover'; setTimeout(() => searchRef.current?.focus(), 0) } else { setSearchOpen(true); setTimeout(() => searchRef.current?.focus({ preventScroll: true }), 0) } } }; window.addEventListener('keydown', keys); return () => window.removeEventListener('keydown', keys) }, [])
+  useEffect(() => { if (!SEARCH_ENABLED) return; const keys = e => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (!searchRef.current) { setSearchOpen(true); location.hash = '/discover'; setTimeout(() => searchRef.current?.focus(), 0) } else { setSearchOpen(true); setTimeout(() => searchRef.current?.focus({ preventScroll: true }), 0) } } }; window.addEventListener('keydown', keys); return () => window.removeEventListener('keydown', keys) }, [])
   useEffect(() => { if (!toast) return; const t = setTimeout(() => setToast(''), 4500); return () => clearTimeout(t) }, [toast])
   useEffect(() => {
     if (previousOwner.current !== undefined && previousOwner.current !== session?.user.id) { setSelected([]); setDialog(null); setName(''); try { sessionStorage.removeItem(COMPARE_KEY) } catch { /* 保持なし */ } }
@@ -225,6 +229,7 @@ function App({ verifiedSession }) {
   useEffect(() => {
     if (!['discover', 'saved'].includes(route.view)) return
     if (route.view === 'saved' && !bookmarks.ready) return
+    if (route.view === 'discover' && isDiscoveryHome({ query, region, page: publicPage, filters, sort })) return
     let cancelled = false
     setPublicState(s => ({ ...s, loading: true, error: '' }))
     // 保存リスト：一覧と「すべて」は本人の bookmark、名前付きリストは所属で絞る。
@@ -369,7 +374,7 @@ function App({ verifiedSession }) {
       : route.view === 'saved' ? <SavedList session={session} view={route.id} list={lists.lists.find(l => l.id === route.id)} lists={lists} picking={picking} onPicking={setPicking} notify={setToast} records={publicState.records} count={publicState.count} loading={publicState.loading || !bookmarks.ready}
           error={bookmarks.error ? <ErrorNotice retry={bookmarks.retry}>{bookmarks.error}</ErrorNotice> : publicState.error ? <ErrorNotice retry={() => setRefresh(r => r + 1)}>{publicState.error}</ErrorNotice> : null}
           page={publicPage} onPage={setPublicPage} savedIds={bookmarks.ids} onSave={heart} activityCounts={activity.counts} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select} onAccount={() => setDialog({ type: 'account' })} />
-      : <Catalog view={route.view} records={displayed} total={publicMode ? publicState.count : displayed.length} loading={publicMode ? publicState.loading : !ready}
+      : <Catalog view={route.view} page={publicPage} records={displayed} total={publicMode ? publicState.count : displayed.length} loading={publicMode ? publicState.loading : !ready}
           error={publicMode && publicState.error ? <ErrorNotice retry={() => setRefresh(r => r + 1)}>{publicState.error}</ErrorNotice> : null}
           query={query} onQuery={setQuery} region={region} onRegion={setRegion}
           filters={filters} onFilters={setFilters} sort={sort} onSort={setSort} onReset={resetSearch} onRepair={startRepair} savedIds={bookmarks.ids} onSave={heart} activityCounts={activity.counts} searchRef={searchRef} keyOf={keyOf} selectedKeys={selected.map(keyOf)} onSelect={select}

@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-17",
+  "checks": [
+    "Independent category rows render",
+    "1440px has no horizontal overflow",
+    "Rail position survives detail and Back",
+    "Search URL filters records",
+    "Save heart persists via existing API",
+    "Save sheet creates list and closes with Escape",
+    "Gallery starts selected photo, arrow keys, Escape and focus return",
+    "Filtered grid pagination retains category",
+    "Desktop account menu reaches saved lists",
+    "390px has no horizontal overflow",
+    "Mobile search opens, filters and shows one-column result",
+    "Mobile search Escape restores focus",
+    "Mobile detail photo opens correct index",
+    "820px tablet has no horizontal overflow",
+    "Unauthenticated private gate still hides records",
+    "No runtime page errors"
+  ],
+  "errors": [],
+  "scope": "Local Chromium; 165 repository catalog snapshots, local photo bytes; auth and database mocked; production credentials and writes excluded.",
+  "reference": {
+    "url": "https://www.airbnb.jp/",
+    "observedAt": "2026-09-17",
+    "patterns": [
+      "category browse rails",
+      "compact scrolling header",
+      "consistent rounded photo frames",
+      "short card labels",
+      "save hearts",
+      "full-screen photo viewer"
+    ]
+  },
+  "unitTests": {
+    "passed": 28,
+    "failed": 0,
+    "command": "node --test tests/discovery-home.test.js tests/search-url.test.js tests/catalog-domain.test.js tests/scroll-chrome.test.js tests/private-access.test.js"
+  },
+  "build": "npm run build passed",
+  "viewports": [
+    1440,
+    820,
+    390
+  ],
+  "productionValidation": "Production login, database writes and deployment were not part of local UI validation."
+}
