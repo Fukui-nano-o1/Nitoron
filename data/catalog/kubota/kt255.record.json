@@ -1,0 +1,225 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-17T00:00:00.000Z",
+  "records": [
+    {
+      "id": "1d36f8e0-1e6a-4f91-8c1a-ac9960de39e0",
+      "title": "【カタログ解説】クボタ KT255 KTシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-17",
+      "blocks": [
+        {
+          "id": "1d36f8e0-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "1d36f8e0-002",
+          "type": "text",
+          "text": "25馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT255(F)は2008年〜2012年の販売。KT255の取扱説明書と仕様別の公式資料を参照できます。"
+        },
+        {
+          "id": "1d36f8e0-003",
+          "type": "bullet",
+          "text": "馬力：25馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "1d36f8e0-004",
+          "type": "bullet",
+          "text": "販売期間：2008年〜2012年（公式販売年度検索・KT255(F)）"
+        },
+        {
+          "id": "1d36f8e0-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "1d36f8e0-006",
+          "type": "text",
+          "text": "KT255"
+        },
+        {
+          "id": "1d36f8e0-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "1d36f8e0-008",
+          "type": "text",
+          "text": "KT255の公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "1d36f8e0-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "1d36f8e0-010",
+          "type": "text",
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "1d36f8e0-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "1d36f8e0-012",
+          "type": "text",
+          "text": "掲載写真：KT255の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        },
+        {
+          "id": "1d36f8e0-013",
+          "type": "h2",
+          "text": "仕様別の販売期間"
+        },
+        {
+          "id": "1d36f8e0-014",
+          "type": "bullet",
+          "text": "KT255(F)-PC：2008年〜2012年（公式販売年度検索）"
+        },
+        {
+          "id": "1d36f8e0-015",
+          "type": "h2",
+          "text": "仕様別の取扱説明書・補足資料"
+        },
+        {
+          "id": "1d36f8e0-016",
+          "type": "text",
+          "text": "実機の型式末尾と資料名を照合してください。各資料へのリンクは「出典・資料」にあります。"
+        },
+        {
+          "id": "1d36f8e0-017",
+          "type": "bullet",
+          "text": "KT255-NE（仕様別資料）"
+        },
+        {
+          "id": "1d36f8e0-018",
+          "type": "bullet",
+          "text": "KT255ポイントシート（補足資料）"
+        },
+        {
+          "id": "1d36f8e0-019",
+          "type": "bullet",
+          "text": "KT255-PC（仕様別資料）"
+        },
+        {
+          "id": "1d36f8e0-020",
+          "type": "bullet",
+          "text": "KT255-PCR（仕様別資料）"
+        },
+        {
+          "id": "1d36f8e0-021",
+          "type": "bullet",
+          "text": "KT255-PCポイントシート（補足資料）"
+        },
+        {
+          "id": "1d36f8e0-022",
+          "type": "bullet",
+          "text": "KT255-PCメンテナンスシート（補足資料）"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://nouki-ichiba.net/cdn/shop/files/S__3973147_0.jpg?v=1749449550&width=1946",
+        "summary": "25馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT255(F)は2008年〜2012年の販売。KT255の取扱説明書と仕様別の公式資料を参照できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "1d36f8e0-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KT255（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT255&searchType=3",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "1d36f8e0-src-sales-index",
+            "title": "クボタ 販売年度検索 KT255",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT255",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "1d36f8e0-src-manual",
+            "title": "取扱説明書 KT255",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=754dda4b1ba34c6fa89716b85d68532b",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "1d36f8e0-src-photo",
+            "title": "写真：農キング クボタ KT255（中古実機）",
+            "url": "https://nouki-ichiba.net/products/18523",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "1d36f8e0-src-related-1",
+            "title": "クボタ 公式資料 KT255-NE",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6a2feef8ed6a9fe76d6b3f30f02150b4",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "1d36f8e0-src-related-2",
+            "title": "クボタ 公式資料 KT255ポイントシート",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=db2b4182156b2f1f817860ac9f409ad7",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "1d36f8e0-src-related-3",
+            "title": "クボタ 公式資料 KT255-PC",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=68b1fbe7f16e4ae3024973f12f3cb313",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "1d36f8e0-src-related-4",
+            "title": "クボタ 公式資料 KT255-PCR",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=41bfd20a38bb1b0bec75acf0845530a7",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "1d36f8e0-src-related-5",
+            "title": "クボタ 公式資料 KT255-PCポイントシート",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d6723e7cd6735df68d1ce4c704c29a04",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "1d36f8e0-src-related-6",
+            "title": "クボタ 公式資料 KT255-PCメンテナンスシート",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4e2545f819e67f0615003dd7e04a6087",
+            "date": "2026-09-17"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

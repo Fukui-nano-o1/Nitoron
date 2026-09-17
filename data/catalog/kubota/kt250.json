@@ -1,0 +1,83 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KT250",
+  "productName": "KTシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KT250"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "25馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT250(F)は2005年〜2008年の販売。KT250の取扱説明書と仕様別の公式資料を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT250&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "9e4b70a56038c66ae4036ed8bd0dfa808ccc5aecc50f8343d6f5a8b6b79ea883",
+      "result": {
+        "model": "KT250",
+        "category": "トラクタ",
+        "horsepower": "25馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT250",
+      "checkedAt": "2026-09-17",
+      "sha256": "4e533afb2c13a01e78312106993f43599896a39d54f6e17c712460a02ffcbbf7",
+      "result": {
+        "model": "KT250(F)",
+        "startYear": 2005,
+        "endYear": 2008
+      },
+      "variants": [
+        {
+          "model": "KT250(F)-PC",
+          "startYear": 2005,
+          "endYear": 2008
+        }
+      ]
+    },
+    "manuals": [
+      {
+        "title": "KT250",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b1563a78ec59337587f6ab6397699afc",
+        "checkedAt": "2026-09-17",
+        "sha256": "2729ba213e105ff55b93a2d776a3661a2372fcb3286337a7cecdb392a77509ed"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KT250-PC",
+        "kind": "variant",
+        "horsepower": "25馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=03f544613917945245041ea1581df0c2",
+        "checkedAt": "2026-09-17",
+        "sha256": "17fbdcaa06513cbe558c0a63546ab5183c6100874c98aac4d4f4237166f6c3b0",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      },
+      {
+        "title": "KT250-PCメンテナンスシート",
+        "kind": "guide",
+        "horsepower": "25馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8b4066554730ddfaa0266346bdc1b202",
+        "checkedAt": "2026-09-17",
+        "sha256": "5e486bddbcd5c7ba49ffebf5b0c85b66a8bdc22e0385135b87ec9904ee98ae7a",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KT-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KT250"
+}

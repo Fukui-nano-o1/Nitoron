@@ -1,0 +1,633 @@
+[
+  {
+    "kind": "manual",
+    "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+    "checkedAt": "2026-09-17",
+    "file": "manual.html",
+    "sha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+    "reportedCount": 62,
+    "reportedPage": "1/3ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KT20",
+        "bariki": "20馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cd89fef7ffdd490db800357f47722b20"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT20-HN-8",
+        "bariki": "20馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3f900db2608fb3eecb3ee77ba9ef5f60"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT20Q",
+        "bariki": "20馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2290a7385ed77cc5592dc2153229f082"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT210",
+        "bariki": "21馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a2137a2ae8e39b5002a3f8909ecb88fe"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT215",
+        "bariki": "21馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=53adaf494dc89ef7196d73636eb2451b"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT215ポイントシート",
+        "bariki": "21馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a1519de5b5d44b31a01de013b9b51a80"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT22",
+        "bariki": "22馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=390e982518a50e280d8e2b535462ec1f"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT22Q",
+        "bariki": "22馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=708f3cf8100d5e71834b1db77dfa15d6"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT230",
+        "bariki": "23馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=46072631582fc240dd2674a7d063b040"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT230ZFQ",
+        "bariki": "23馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=522a9ae9a99880d39e5daec35375e999"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT235",
+        "bariki": "23馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43baa6762fa81bb43b39c62553b2970d"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT235ZFQ",
+        "bariki": "23馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e5e63da79fcd2bebbd7cb8bf1c1d0274"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT235ポイントシート",
+        "bariki": "23馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9f36407ead0629fc166f14dde7970f68"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT24",
+        "bariki": "24馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4f16c818875d9fcb6867c7bdc89be7eb"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT24-FHN",
+        "bariki": "27馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=86c51678350f656dcc7f490a43946ee5"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT24-FHT",
+        "bariki": "27馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=806d926414ce19d907700e23177ab4ff"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT24-HN",
+        "bariki": "27馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0f3c5d0c3666eec8cd311bec6d878915"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT24-HT",
+        "bariki": "27馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=bf5cd8b2509011b9502a72296edc14a0"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT24Q",
+        "bariki": "24馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a26398dca6f47b49876cbaffbc9954f9"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT250",
+        "bariki": "25馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b1563a78ec59337587f6ab6397699afc"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT255",
+        "bariki": "25馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=754dda4b1ba34c6fa89716b85d68532b"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT255-NE",
+        "bariki": "25馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6a2feef8ed6a9fe76d6b3f30f02150b4"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT255ポイントシート",
+        "bariki": "25馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=db2b4182156b2f1f817860ac9f409ad7"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT27",
+        "bariki": "27馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a5e0ff62be0b08456fc7f1e88812af3d"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT27Q",
+        "bariki": "27馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1e6e0a04d20f50967c64dac2d639a577"
+      }
+    ]
+  },
+  {
+    "kind": "manual",
+    "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+    "checkedAt": "2026-09-17",
+    "file": "manual-25.html",
+    "sha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+    "reportedCount": 62,
+    "reportedPage": "2/3ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KT280",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c6bff625bdb0393992c9d4db0c6bbe45"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT285",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4da04049a062f5adfe81b67dd755cecc"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT285ポイントシート",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8f1d43620bc6bb580df6e80b0dc05c48"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT30",
+        "bariki": "30馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2cbca44843a864533ec05b321ae1f9d1"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT30-FQHN",
+        "bariki": "30馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ac52c626afc10d4075708ac4c778ddfc"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT300",
+        "bariki": "30馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b59c67bf196a4758191e42f76670ceba"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT305",
+        "bariki": "30馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=20d135f0f28185b84a4cf7aa51f29500"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT305ポイントシート",
+        "bariki": "30馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9c3b1830513cc3b8fc4b76635d32e692"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT30Q",
+        "bariki": "30馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d6ef5f7fa914c19931a55bb262ec879c"
+      },
+      {
+        "category": "野菜関連機器",
+        "spec-id": "KTH100-128",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dd77279f7d325eec933f05b1672f6a1f"
+      },
+      {
+        "category": "野菜関連機器",
+        "spec-id": "KTH100-200",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0eec27c419d0fe24e53c90338cdc8bc6"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT20-PC",
+        "bariki": "20馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6c340f25839e6acdc73414517203f5f0"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT210-PC",
+        "bariki": "21馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43dd49b4fdb9bede653e94468ff8df1e"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT210-PCメンテナンスシート",
+        "bariki": "21馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=31857b449c407203749ae32dd0e7d64a"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT215-PC",
+        "bariki": "21馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fc2c7c47b918d0c2d792a719dfb602ef"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT215-PCポイントシート",
+        "bariki": "21馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dc58e3a306451c9d670adcd37004f48f"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT215-PCメンテナンスシート",
+        "bariki": "21馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1b0114c51cc532ed34e1954b5b9e4b58"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT230-PC",
+        "bariki": "23馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8a1e808b55fde9455cb3d8857ed88389"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT230-PCメンテナンスシート",
+        "bariki": "23馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=062ddb6c727310e76b6200b7c71f63b5"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT235-PC",
+        "bariki": "23馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=731c83db8d2ff01bdc000083fd3c3740"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT235-PCポイントシート",
+        "bariki": "23馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=36a16a2505369e0c922b6ea7a23a56d2"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT235-PCメンテナンスシート",
+        "bariki": "23馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=818f4654ed39a1c147d1e51a00ffb4cb"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT24-PC",
+        "bariki": "24馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d91d1b4d82419de8a614abce9cc0e6d4"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT250-PC",
+        "bariki": "25馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=03f544613917945245041ea1581df0c2"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT250-PCメンテナンスシート",
+        "bariki": "25馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8b4066554730ddfaa0266346bdc1b202"
+      }
+    ]
+  },
+  {
+    "kind": "manual",
+    "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+    "checkedAt": "2026-09-17",
+    "file": "manual-50.html",
+    "sha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351",
+    "reportedCount": 62,
+    "reportedPage": "3/3ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KT255-PC",
+        "bariki": "25馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=68b1fbe7f16e4ae3024973f12f3cb313"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT255-PCR",
+        "bariki": "25馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=41bfd20a38bb1b0bec75acf0845530a7"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT255-PCポイントシート",
+        "bariki": "25馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d6723e7cd6735df68d1ce4c704c29a04"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT255-PCメンテナンスシート",
+        "bariki": "25馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4e2545f819e67f0615003dd7e04a6087"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT27-PC",
+        "bariki": "27馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a0160709701140704575d499c997b6ca"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT280-PC",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c667d53acd899a97a85de0c201ba99be"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT280-PCメンテナンスシート",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=aace49c7d80767cffec0e513ae886df0"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT285-PC",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=af21d0c97db2e27e13572cbf59eb343d"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT285-PCR",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c9f95a0a5af052bffce5c89917335f67"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT285-PCポイントシート",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e58cc5ca94270acaceed13bc82dfedf7"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT285-PCメンテナンスシート",
+        "bariki": "28馬力",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b9d487a30398d42ecff55c228ed5652b"
+      },
+      {
+        "category": "トラクタ作業機",
+        "spec-id": "KTBM2200E",
+        "bariki": "-",
+        "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e19347e1c3ca0c0b97de5fb3b690855a"
+      }
+    ]
+  },
+  {
+    "kind": "sales",
+    "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+    "checkedAt": "2026-09-17",
+    "file": "sales.html",
+    "sha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+    "reportedCount": 34,
+    "reportedPage": "1/2ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KT20",
+        "startYear": "2002年 ～2005年",
+        "endYear pc": "2005年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT20-PC",
+        "startYear": "2002年 ～2005年",
+        "endYear pc": "2005年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT210(F)",
+        "startYear": "2005年 ～2008年",
+        "endYear pc": "2008年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT210(F)-PC",
+        "startYear": "2005年 ～2008年",
+        "endYear pc": "2008年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT210(F)-PC",
+        "startYear": "2005年 ～2008年",
+        "endYear pc": "2008年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT215(F)",
+        "startYear": "2008年 ～2012年",
+        "endYear pc": "2012年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT215(F)-PC",
+        "startYear": "2008年 ～2012年",
+        "endYear pc": "2012年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT215(F)-PC",
+        "startYear": "2008年 ～2012年",
+        "endYear pc": "2012年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT22",
+        "startYear": "2002年 ～2005年",
+        "endYear pc": "2005年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT230(F)",
+        "startYear": "2005年 ～2008年",
+        "endYear pc": "2008年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT230(F)-PC",
+        "startYear": "2005年 ～2008年",
+        "endYear pc": "2008年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT230(F)-PC",
+        "startYear": "2005年 ～2008年",
+        "endYear pc": "2008年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT235(F)",
+        "startYear": "2008年 ～2012年",
+        "endYear pc": "2012年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT235(F)-PC",
+        "startYear": "2008年 ～2012年",
+        "endYear pc": "2012年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT235(F)-PC",
+        "startYear": "2008年 ～2012年",
+        "endYear pc": "2012年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT24",
+        "startYear": "2002年 ～2005年",
+        "endYear pc": "2005年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT24-PC",
+        "startYear": "2002年 ～2005年",
+        "endYear pc": "2005年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT250(F)",
+        "startYear": "2005年 ～2008年",
+        "endYear pc": "2008年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT250(F)-PC",
+        "startYear": "2005年 ～2008年",
+        "endYear pc": "2008年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT250(F)-PC",
+        "startYear": "2005年 ～2008年",
+        "endYear pc": "2008年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT255(F)",
+        "startYear": "2008年 ～2012年",
+        "endYear pc": "2012年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT255(F)-PC",
+        "startYear": "2008年 ～2012年",
+        "endYear pc": "2012年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT255(F)-PC",
+        "startYear": "2008年 ～2012年",
+        "endYear pc": "2012年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT27",
+        "startYear": "2002年 ～2005年",
+        "endYear pc": "2005年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT27-PC",
+        "startYear": "2002年 ～2005年",
+        "endYear pc": "2005年"
+      }
+    ]
+  },
+  {
+    "kind": "sales",
+    "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&q=KT&searchType=2&category=1",
+    "checkedAt": "2026-09-17",
+    "file": "sales-25.html",
+    "sha256": "ba3e5d91e9d982618aec8917c7d0d9e51bbafe95c184292fd76b8a4bd9657648",
+    "reportedCount": 34,
+    "reportedPage": "2/2ページ",
+    "rows": [
+      {
+        "category": "トラクタ",
+        "spec-id": "KT280(F)",
+        "startYear": "2005年 ～2008年",
+        "endYear pc": "2008年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT280(F)-PC",
+        "startYear": "2005年 ～2008年",
+        "endYear pc": "2008年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT280(F)-PC",
+        "startYear": "2005年 ～2008年",
+        "endYear pc": "2008年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT285(F)",
+        "startYear": "2008年 ～2012年",
+        "endYear pc": "2012年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT285(F)-PC",
+        "startYear": "2008年 ～2012年",
+        "endYear pc": "2012年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT285(F)-PC",
+        "startYear": "2008年 ～2012年",
+        "endYear pc": "2012年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT30",
+        "startYear": "2002年 ～2005年",
+        "endYear pc": "2005年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT300(F)",
+        "startYear": "2005年 ～2008年",
+        "endYear pc": "2008年"
+      },
+      {
+        "category": "トラクタ",
+        "spec-id": "KT305(F)",
+        "startYear": "2008年 ～2012年",
+        "endYear pc": "2012年"
+      }
+    ]
+  }
+]

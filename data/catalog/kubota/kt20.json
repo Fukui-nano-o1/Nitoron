@@ -3,18 +3,18 @@
   "coverage": "historical-overview",
   "maker": "クボタ",
   "series": "KT20",
-  "productName": "旧型モデル",
+  "productName": "KTシリーズ",
   "category": "トラクタ",
   "models": [
     "KT20"
   ],
-  "checkedAt": "2026-09-16",
-  "summary": "20馬力の旧型トラクタ。公式販売年度検索のKT20は2002年〜2005年の販売。KT20の取扱説明書を参照できます。",
+  "checkedAt": "2026-09-17",
+  "summary": "20馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT20は2002年〜2005年の販売。KT20の取扱説明書と仕様別の公式資料を参照できます。",
   "sources": {
     "manualIndex": {
       "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT20&searchType=3",
-      "checkedAt": "2026-09-16",
-      "sha256": "3f95508511667137843ff42f6af13cf561aeaff2d8f2b20255e1cc6e55ceb20b",
+      "checkedAt": "2026-09-17",
+      "sha256": "eff25718b80742591f11ab70be2c12563fb172cf7e8fc066ab9cd38ae826ca8a",
       "result": {
         "model": "KT20",
         "category": "トラクタ",
@@ -23,20 +23,59 @@
     },
     "salesIndex": {
       "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT20",
-      "checkedAt": "2026-09-16",
-      "sha256": "7d46a344a72c73bff58da30829768a3f11d009388a6bd082ae7bd6b3efba22f0",
+      "checkedAt": "2026-09-17",
+      "sha256": "a167bb87ec73d672403d33e91bf6ac4274b22c09aa75ebbe2fc53f6515e4307e",
       "result": {
         "model": "KT20",
         "startYear": 2002,
         "endYear": 2005
-      }
+      },
+      "variants": [
+        {
+          "model": "KT20-PC",
+          "startYear": 2002,
+          "endYear": 2005
+        }
+      ]
     },
     "manuals": [
       {
         "title": "KT20",
         "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cd89fef7ffdd490db800357f47722b20",
-        "checkedAt": "2026-09-16",
-        "sha256": "3bd2698aa01ba52eb8a52430d291e421a76d67ee1abb457fd163387b197ff76e"
+        "checkedAt": "2026-09-17",
+        "sha256": "a64eb00783c842b2e374a26570b570e659deb883db702a1dbda0930d7a7f3888"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KT20-HN-8",
+        "kind": "variant",
+        "horsepower": "20馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3f900db2608fb3eecb3ee77ba9ef5f60",
+        "checkedAt": "2026-09-17",
+        "sha256": "a9f770b6126888eeb94728dc43732d50dd73a592f15316864156c68e09b8dcc9",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+        "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4"
+      },
+      {
+        "title": "KT20Q",
+        "kind": "variant",
+        "horsepower": "20馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2290a7385ed77cc5592dc2153229f082",
+        "checkedAt": "2026-09-17",
+        "sha256": "f3249cbb8c1a6ccdd5a2ddb5f55013c54f2953ad7eee15e5f0a388d45329db43",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+        "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4"
+      },
+      {
+        "title": "KT20-PC",
+        "kind": "variant",
+        "horsepower": "20馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6c340f25839e6acdc73414517203f5f0",
+        "checkedAt": "2026-09-17",
+        "sha256": "8bfd4ad509b88d311aa9ec12fe556e95ea8adcb9ce8384935f315d017f0e2a2b",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
       }
     ]
   },
@@ -46,6 +85,7 @@
     "manualNotice": "HTTP 200",
     "manualBody": "not-reviewed",
     "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KT-prefix-pages-and-notice-links-confirmed",
     "repairGuide": "not-added",
     "threeD": "not-added"
   },

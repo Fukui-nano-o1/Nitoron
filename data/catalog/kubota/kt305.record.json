@@ -1,0 +1,160 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-17T00:00:00.000Z",
+  "records": [
+    {
+      "id": "68c605b7-f9c9-4fc5-84e8-6062e9862492",
+      "title": "【カタログ解説】クボタ KT305 KTシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-17",
+      "blocks": [
+        {
+          "id": "68c605b7-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "68c605b7-002",
+          "type": "text",
+          "text": "30馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT305(F)は2008年〜2012年の販売。KT305の取扱説明書と仕様別の公式資料を参照できます。"
+        },
+        {
+          "id": "68c605b7-003",
+          "type": "bullet",
+          "text": "馬力：30馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "68c605b7-004",
+          "type": "bullet",
+          "text": "販売期間：2008年〜2012年（公式販売年度検索・KT305(F)）"
+        },
+        {
+          "id": "68c605b7-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "68c605b7-006",
+          "type": "text",
+          "text": "KT305"
+        },
+        {
+          "id": "68c605b7-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "68c605b7-008",
+          "type": "text",
+          "text": "KT305の公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "68c605b7-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "68c605b7-010",
+          "type": "text",
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "68c605b7-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "68c605b7-012",
+          "type": "text",
+          "text": "掲載写真：KT305の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        },
+        {
+          "id": "68c605b7-013",
+          "type": "h2",
+          "text": "仕様別の取扱説明書・補足資料"
+        },
+        {
+          "id": "68c605b7-014",
+          "type": "text",
+          "text": "実機の型式末尾と資料名を照合してください。各資料へのリンクは「出典・資料」にあります。"
+        },
+        {
+          "id": "68c605b7-015",
+          "type": "bullet",
+          "text": "KT305ポイントシート（補足資料）"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://www.noukenki.jp/wp-content/uploads/2022/11/1-2.jpg",
+        "summary": "30馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT305(F)は2008年〜2012年の販売。KT305の取扱説明書と仕様別の公式資料を参照できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "68c605b7-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KT305（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT305&searchType=3",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "68c605b7-src-sales-index",
+            "title": "クボタ 販売年度検索 KT305",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT305",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "68c605b7-src-manual",
+            "title": "取扱説明書 KT305",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=20d135f0f28185b84a4cf7aa51f29500",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "68c605b7-src-photo",
+            "title": "写真：茨城中古農建機販売 クボタ KT305（中古実機）",
+            "url": "https://www.noukenki.jp/result/%e3%82%af%e3%83%9c%e3%82%bf%e3%83%88%e3%83%a9%e3%82%af%e3%82%bf%e3%83%bckt305-%e3%83%af%e3%83%b3%e3%82%aa%e3%83%bc%e3%83%8a%e3%83%bc%e8%bb%8a/",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "68c605b7-src-related-1",
+            "title": "クボタ 公式資料 KT305ポイントシート",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9c3b1830513cc3b8fc4b76635d32e692",
+            "date": "2026-09-17"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

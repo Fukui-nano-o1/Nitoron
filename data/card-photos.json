@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkedAt": "2026-09-16",
+  "checkedAt": "2026-09-17",
   "context": "private-development",
   "entries": [
     {
@@ -1382,7 +1382,7 @@
         "id": "34d5dfa0-src-photo",
         "title": "写真：ノウキナビ クボタ KT24（中古実機）",
         "url": "https://www.noukinavi.com/shop_use/products/detail/7192",
-        "date": "2026-09-16"
+        "date": "2026-09-17"
       }
     },
     {
@@ -1502,7 +1502,7 @@
         "id": "ad0847cb-src-photo",
         "title": "写真：サンセレクトジャパン クボタ KT20（中古実機）",
         "url": "https://sun-jp.co.jp/jp/fa_list/detail.php?no=4905",
-        "date": "2026-09-16"
+        "date": "2026-09-17"
       }
     },
     {
@@ -1514,7 +1514,7 @@
         "id": "cb655ab0-src-photo",
         "title": "写真：ノウキナビ クボタ KT22（中古実機）",
         "url": "https://www.noukinavi.com/shop_use/products/detail/2031",
-        "date": "2026-09-16"
+        "date": "2026-09-17"
       }
     },
     {
@@ -1526,7 +1526,7 @@
         "id": "c65a466a-src-photo",
         "title": "写真：スペース（中古農機具販売） クボタ KT27（中古実機）",
         "url": "https://chuko-noki.com/31488/",
-        "date": "2026-09-16"
+        "date": "2026-09-17"
       }
     },
     {
@@ -1551,6 +1551,139 @@
         "title": "写真：福治商会 クボタ GT19（中古実機）",
         "url": "https://fukujishoukai.jp/item/tractor/20240210-320/",
         "date": "2026-09-16"
+      }
+    },
+    {
+      "id": "73bce570-dd91-4dd0-8a1c-ff638c477924",
+      "model": "KT30",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukenki.jp/wp-content/uploads/2019/07/053ffda6230832ff9da20c0dd1ef73a0_06f027ee763c3b9a3eea98106fdb059e-660x496.jpg",
+      "source": {
+        "id": "73bce570-src-photo",
+        "title": "写真：茨城中古農建機販売 クボタ KT30（中古実機）",
+        "url": "https://www.noukenki.jp/result/%E3%82%AF%E3%83%9C%E3%82%BF%E3%80%80%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BCkt30/",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "6e52a9b3-2f7e-4fc9-88c2-55ed6162edb4",
+      "model": "KT210",
+      "kind": "used-machine-photo",
+      "url": "https://nouki-ichiba.net/cdn/shop/files/DSCN3711.jpg?v=1704423845&width=1946",
+      "source": {
+        "id": "6e52a9b3-src-photo",
+        "title": "写真：農キング クボタ KT210（中古実機）",
+        "url": "https://nouki-ichiba.net/products/13424",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "a93987e9-62bf-4589-8828-67dc37b45cd2",
+      "model": "KT215",
+      "kind": "used-machine-photo",
+      "url": "https://ummkt.com/image/item/itm0073888/012ec746-5f23-d761-a0a9-3fdc3df782b1.jpg",
+      "source": {
+        "id": "a93987e9-src-photo",
+        "title": "写真：UMM中古農機市場 クボタ KT215（中古実機）",
+        "url": "https://ummkt.com/market/detail.php?id=itm0073888",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "c6c11e33-31d1-4326-8de4-843e1ec94b4f",
+      "model": "KT230",
+      "kind": "used-machine-photo",
+      "url": "https://nouki-ichiba.net/cdn/shop/files/IMG_8490.jpg?v=1706258628&width=1946",
+      "source": {
+        "id": "c6c11e33-src-photo",
+        "title": "写真：農キング クボタ KT230（中古実機）",
+        "url": "https://nouki-ichiba.net/products/13679",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "b5298c71-c50c-44d7-8dca-a47d85d3dde6",
+      "model": "KT235",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukinavi.com/html/upload/save_image/0715142635_6a571a0b4afdb.JPG",
+      "source": {
+        "id": "b5298c71-src-photo",
+        "title": "写真：ノウキナビ クボタ KT235（中古実機）",
+        "url": "https://www.noukinavi.com/shop_use/products/detail/27552",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "2a1519a0-84c7-424a-832a-ee40794d3bd8",
+      "model": "KT250",
+      "kind": "used-machine-photo",
+      "url": "https://nouki-ichiba.net/cdn/shop/files/IMG_5124.jpg?v=1689841814&width=1946",
+      "source": {
+        "id": "2a1519a0-src-photo",
+        "title": "写真：農キング クボタ KT250（中古実機）",
+        "url": "https://nouki-ichiba.net/products/11303",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "1d36f8e0-1e6a-4f91-8c1a-ac9960de39e0",
+      "model": "KT255",
+      "kind": "used-machine-photo",
+      "url": "https://nouki-ichiba.net/cdn/shop/files/S__3973147_0.jpg?v=1749449550&width=1946",
+      "source": {
+        "id": "1d36f8e0-src-photo",
+        "title": "写真：農キング クボタ KT255（中古実機）",
+        "url": "https://nouki-ichiba.net/products/18523",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "293344ad-9708-4c63-84e4-18746601d27b",
+      "model": "KT280",
+      "kind": "used-machine-photo",
+      "labelModel": "KT280F",
+      "url": "https://nouki-ichiba.net/cdn/shop/files/IMG_2024-05-14-17-36-01-772.jpg?v=1715676768&width=1946",
+      "source": {
+        "id": "293344ad-src-photo",
+        "title": "写真：農キング クボタ KT280F（中古実機）",
+        "url": "https://nouki-ichiba.net/products/15038",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "abb7a8d9-e468-4c55-8b4b-139032076341",
+      "model": "KT285",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukenki.jp/wp-content/uploads/2024/07/1-1-660x496.jpg",
+      "source": {
+        "id": "abb7a8d9-src-photo",
+        "title": "写真：茨城中古農建機販売 クボタ KT285（中古実機）",
+        "url": "https://www.noukenki.jp/stock/kubota-kt285-%e5%89%8d%e3%82%bf%e3%82%a4%e3%83%a4%e6%96%b0%e5%93%81/",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "c0842812-5b31-4fde-874b-34493c0af776",
+      "model": "KT300",
+      "kind": "used-machine-photo",
+      "url": "https://growthpower.jp/efs-gp-upload/2019-01/thumbnail/98c6deb53ef49562b93d97833cbda939_450x338_thumb.jpg",
+      "source": {
+        "id": "c0842812-src-photo",
+        "title": "写真：GROWTH POWER クボタ KT300（中古実機）",
+        "url": "https://growthpower.jp/Japanese/content/27206",
+        "date": "2026-09-17"
+      }
+    },
+    {
+      "id": "68c605b7-f9c9-4fc5-84e8-6062e9862492",
+      "model": "KT305",
+      "kind": "used-machine-photo",
+      "url": "https://www.noukenki.jp/wp-content/uploads/2022/11/1-2.jpg",
+      "source": {
+        "id": "68c605b7-src-photo",
+        "title": "写真：茨城中古農建機販売 クボタ KT305（中古実機）",
+        "url": "https://www.noukenki.jp/result/%e3%82%af%e3%83%9c%e3%82%bf%e3%83%88%e3%83%a9%e3%82%af%e3%82%bf%e3%83%bckt305-%e3%83%af%e3%83%b3%e3%82%aa%e3%83%bc%e3%83%8a%e3%83%bc%e8%bb%8a/",
+        "date": "2026-09-17"
       }
     }
   ]

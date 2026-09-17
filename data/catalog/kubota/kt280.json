@@ -1,0 +1,83 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KT280",
+  "productName": "KTシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KT280"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "28馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT280(F)は2005年〜2008年の販売。KT280の取扱説明書と仕様別の公式資料を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT280&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "c5f7f5a56a0fd982446129ba1fa39f7c0692de1aff9100f924b15c8c2799f8cc",
+      "result": {
+        "model": "KT280",
+        "category": "トラクタ",
+        "horsepower": "28馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT280",
+      "checkedAt": "2026-09-17",
+      "sha256": "ac393b611bb7b8b9c88fb1afad70776f5cbb252b1bf31e4dc1e8ea67b92f6ff1",
+      "result": {
+        "model": "KT280(F)",
+        "startYear": 2005,
+        "endYear": 2008
+      },
+      "variants": [
+        {
+          "model": "KT280(F)-PC",
+          "startYear": 2005,
+          "endYear": 2008
+        }
+      ]
+    },
+    "manuals": [
+      {
+        "title": "KT280",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c6bff625bdb0393992c9d4db0c6bbe45",
+        "checkedAt": "2026-09-17",
+        "sha256": "513c9037260c4445d24a91356c5211d4049f6987867dab14053413909874a4e4"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KT280-PC",
+        "kind": "variant",
+        "horsepower": "28馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c667d53acd899a97a85de0c201ba99be",
+        "checkedAt": "2026-09-17",
+        "sha256": "c947e5cbc399b74acd9de1c6e2527c8916bc8cbb98a6c836832459fc394f16e4",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351"
+      },
+      {
+        "title": "KT280-PCメンテナンスシート",
+        "kind": "guide",
+        "horsepower": "28馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=aace49c7d80767cffec0e513ae886df0",
+        "checkedAt": "2026-09-17",
+        "sha256": "b69aff052a5d3ff5b47e0db20a352d7ff74a624c5adc0754e50e56b166331451",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KT-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KT280F"
+}

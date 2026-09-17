@@ -1,0 +1,93 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KT230",
+  "productName": "KTシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KT230"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "23馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT230(F)は2005年〜2008年の販売。KT230の取扱説明書と仕様別の公式資料を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT230&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "e84fe02bc883d1f2ba914a165ae7aa44764b3272e3352c90494ee8736fbb7869",
+      "result": {
+        "model": "KT230",
+        "category": "トラクタ",
+        "horsepower": "23馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT230",
+      "checkedAt": "2026-09-17",
+      "sha256": "493355b814a5e71e4bf6e2751eeff42f0abd1e3c40f0bfc15f75d470ac1c06da",
+      "result": {
+        "model": "KT230(F)",
+        "startYear": 2005,
+        "endYear": 2008
+      },
+      "variants": [
+        {
+          "model": "KT230(F)-PC",
+          "startYear": 2005,
+          "endYear": 2008
+        }
+      ]
+    },
+    "manuals": [
+      {
+        "title": "KT230",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=46072631582fc240dd2674a7d063b040",
+        "checkedAt": "2026-09-17",
+        "sha256": "87ed82af572575e3d5ac037539f4638a52ae267137b4d513f863e500104502fd"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KT230ZFQ",
+        "kind": "variant",
+        "horsepower": "23馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=522a9ae9a99880d39e5daec35375e999",
+        "checkedAt": "2026-09-17",
+        "sha256": "978a474de97fadf554c8c6bcc6c99360a85e1693607f5f11b11b62aefb859ff0",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+        "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4"
+      },
+      {
+        "title": "KT230-PC",
+        "kind": "variant",
+        "horsepower": "23馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8a1e808b55fde9455cb3d8857ed88389",
+        "checkedAt": "2026-09-17",
+        "sha256": "f6cf85c7157fb15416b9bcf0c4d0ae9ffcb67e5d2b3b25f5596005e1754fd410",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      },
+      {
+        "title": "KT230-PCメンテナンスシート",
+        "kind": "guide",
+        "horsepower": "23馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=062ddb6c727310e76b6200b7c71f63b5",
+        "checkedAt": "2026-09-17",
+        "sha256": "d9887ccef955a638c473ce6ab86cd4c9eb7235a87ddeb47b666d0c8f0e07a3a1",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KT-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KT230"
+}

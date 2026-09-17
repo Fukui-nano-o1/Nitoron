@@ -1,0 +1,123 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KT255",
+  "productName": "KTシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KT255"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "25馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT255(F)は2008年〜2012年の販売。KT255の取扱説明書と仕様別の公式資料を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT255&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "9df705d58885062fd685cb44139184a678529b3a94195ed4de574cd04d30f59f",
+      "result": {
+        "model": "KT255",
+        "category": "トラクタ",
+        "horsepower": "25馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT255",
+      "checkedAt": "2026-09-17",
+      "sha256": "a75df434771f4ba1f478635e6269fe0aea948253115d87ebbfb22042df6b9a7d",
+      "result": {
+        "model": "KT255(F)",
+        "startYear": 2008,
+        "endYear": 2012
+      },
+      "variants": [
+        {
+          "model": "KT255(F)-PC",
+          "startYear": 2008,
+          "endYear": 2012
+        }
+      ]
+    },
+    "manuals": [
+      {
+        "title": "KT255",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=754dda4b1ba34c6fa89716b85d68532b",
+        "checkedAt": "2026-09-17",
+        "sha256": "c193b43d06e1874875823d2739c14107d5c409c14b7b900cf1dc0c3b9b48f5f2"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KT255-NE",
+        "kind": "variant",
+        "horsepower": "25馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6a2feef8ed6a9fe76d6b3f30f02150b4",
+        "checkedAt": "2026-09-17",
+        "sha256": "96979cfe3e372c6aebe823c15f52929b5b09e5e9702e29af7afc7248b309d26c",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+        "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4"
+      },
+      {
+        "title": "KT255ポイントシート",
+        "kind": "guide",
+        "horsepower": "25馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=db2b4182156b2f1f817860ac9f409ad7",
+        "checkedAt": "2026-09-17",
+        "sha256": "4dd5a80e5adc56ac531765e7ebec9722f32cf264626f9d7846a80272dfa5145b",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+        "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4"
+      },
+      {
+        "title": "KT255-PC",
+        "kind": "variant",
+        "horsepower": "25馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=68b1fbe7f16e4ae3024973f12f3cb313",
+        "checkedAt": "2026-09-17",
+        "sha256": "50894c404fb68b403954d5143006c642b1010b10bdc079002cfb35c9bfcb9d92",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351"
+      },
+      {
+        "title": "KT255-PCR",
+        "kind": "variant",
+        "horsepower": "25馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=41bfd20a38bb1b0bec75acf0845530a7",
+        "checkedAt": "2026-09-17",
+        "sha256": "ce6f8725d49c04e5338fc11fb5f7a59b9e38913dcd6161e424356bfd643aee56",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351"
+      },
+      {
+        "title": "KT255-PCポイントシート",
+        "kind": "guide",
+        "horsepower": "25馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d6723e7cd6735df68d1ce4c704c29a04",
+        "checkedAt": "2026-09-17",
+        "sha256": "6062636ccf56b3472e865bbf6f58a623c75e029af78bf528e70ef9251de43c3a",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351"
+      },
+      {
+        "title": "KT255-PCメンテナンスシート",
+        "kind": "guide",
+        "horsepower": "25馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4e2545f819e67f0615003dd7e04a6087",
+        "checkedAt": "2026-09-17",
+        "sha256": "7967032379e381396ac766861f6cae2bf24ad8e73c3e752b446131de91b4f581",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KT-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KT255"
+}

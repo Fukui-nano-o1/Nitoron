@@ -1,0 +1,83 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KT210",
+  "productName": "KTシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KT210"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "21馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT210(F)は2005年〜2008年の販売。KT210の取扱説明書と仕様別の公式資料を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT210&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "603044e464027671df9ebf1ed9b51298c961a5451d58590babe1c03bbb012707",
+      "result": {
+        "model": "KT210",
+        "category": "トラクタ",
+        "horsepower": "21馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT210",
+      "checkedAt": "2026-09-17",
+      "sha256": "a3bc7cc1edf92170035af6aa30206f28cc5749aac5880610f636cbd4fac1cce2",
+      "result": {
+        "model": "KT210(F)",
+        "startYear": 2005,
+        "endYear": 2008
+      },
+      "variants": [
+        {
+          "model": "KT210(F)-PC",
+          "startYear": 2005,
+          "endYear": 2008
+        }
+      ]
+    },
+    "manuals": [
+      {
+        "title": "KT210",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a2137a2ae8e39b5002a3f8909ecb88fe",
+        "checkedAt": "2026-09-17",
+        "sha256": "ea889876454645f123ea7def890d68fa716b304ca47925901aa0a8ffa9b1fe1d"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KT210-PC",
+        "kind": "variant",
+        "horsepower": "21馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43dd49b4fdb9bede653e94468ff8df1e",
+        "checkedAt": "2026-09-17",
+        "sha256": "1d0d783682951364d933ffdf8efb079731bb918eabb1ec07f1883f6681772922",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      },
+      {
+        "title": "KT210-PCメンテナンスシート",
+        "kind": "guide",
+        "horsepower": "21馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=31857b449c407203749ae32dd0e7d64a",
+        "checkedAt": "2026-09-17",
+        "sha256": "f0ebe5dd4235c6d9cc9fb817a8535f84ab5d998c05c3a8df60ad7ca8d3a3ea43",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KT-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KT210"
+}

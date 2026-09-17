@@ -1,0 +1,113 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KT235",
+  "productName": "KTシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KT235"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "23馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT235(F)は2008年〜2012年の販売。KT235の取扱説明書と仕様別の公式資料を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT235&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "2f3dc1ea681a5ed9feabd11d9cbda3eef8912951aac5ed6fb6a06b375f08fab1",
+      "result": {
+        "model": "KT235",
+        "category": "トラクタ",
+        "horsepower": "23馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT235",
+      "checkedAt": "2026-09-17",
+      "sha256": "f32ef1b2e62615d7682a29a0d39798f86e7457936955b0236ab16cf16e8672fa",
+      "result": {
+        "model": "KT235(F)",
+        "startYear": 2008,
+        "endYear": 2012
+      },
+      "variants": [
+        {
+          "model": "KT235(F)-PC",
+          "startYear": 2008,
+          "endYear": 2012
+        }
+      ]
+    },
+    "manuals": [
+      {
+        "title": "KT235",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43baa6762fa81bb43b39c62553b2970d",
+        "checkedAt": "2026-09-17",
+        "sha256": "0299e6885805ea4a2805a359c9dc7e3c9aa0b68317cfe5904f391bd293ae1204"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KT235ZFQ",
+        "kind": "variant",
+        "horsepower": "23馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e5e63da79fcd2bebbd7cb8bf1c1d0274",
+        "checkedAt": "2026-09-17",
+        "sha256": "6019756fead5ebf0eb15f2dee4d0bd0c3d6472a892fda6349647d69c8707dd5f",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+        "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4"
+      },
+      {
+        "title": "KT235ポイントシート",
+        "kind": "guide",
+        "horsepower": "23馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9f36407ead0629fc166f14dde7970f68",
+        "checkedAt": "2026-09-17",
+        "sha256": "c6eaeb064d4b64a23c31be6ef8852bcc34d33eff01b9f1b9e0ff608f3f9a6ca3",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+        "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4"
+      },
+      {
+        "title": "KT235-PC",
+        "kind": "variant",
+        "horsepower": "23馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=731c83db8d2ff01bdc000083fd3c3740",
+        "checkedAt": "2026-09-17",
+        "sha256": "2414f473307b804d1a01a3167de40536e31f58529e8d1db1315ddc807707aad4",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      },
+      {
+        "title": "KT235-PCポイントシート",
+        "kind": "guide",
+        "horsepower": "23馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=36a16a2505369e0c922b6ea7a23a56d2",
+        "checkedAt": "2026-09-17",
+        "sha256": "22b2f1d2b730db64a9bbabe6d5f43b4b58d268db6874f28463fb551016fbd338",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      },
+      {
+        "title": "KT235-PCメンテナンスシート",
+        "kind": "guide",
+        "horsepower": "23馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=818f4654ed39a1c147d1e51a00ffb4cb",
+        "checkedAt": "2026-09-17",
+        "sha256": "d2e0657314bbf182f25cc062d1257508058329b0700692e610270cb66aff0c24",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KT-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KT235"
+}

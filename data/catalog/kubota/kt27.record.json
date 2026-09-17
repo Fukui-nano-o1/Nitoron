@@ -1,14 +1,14 @@
 {
   "format": "nitoron-workspace",
   "version": 1,
-  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "exportedAt": "2026-09-17T00:00:00.000Z",
   "records": [
     {
       "id": "c65a466a-a379-4642-85a6-9ee879762757",
-      "title": "【カタログ解説】クボタ KT27 旧型モデル（トラクタ）",
+      "title": "【カタログ解説】クボタ KT27 KTシリーズ（トラクタ）",
       "category": "トラクタ",
       "type": "メモ",
-      "date": "2026-09-16",
+      "date": "2026-09-17",
       "blocks": [
         {
           "id": "c65a466a-001",
@@ -18,7 +18,7 @@
         {
           "id": "c65a466a-002",
           "type": "text",
-          "text": "27馬力の旧型トラクタ。公式販売年度検索のKT27は2002年〜2005年の販売。KT27の取扱説明書を参照できます。"
+          "text": "27馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT27は2002年〜2005年の販売。KT27の取扱説明書と仕様別の公式資料を参照できます。"
         },
         {
           "id": "c65a466a-003",
@@ -58,7 +58,7 @@
         {
           "id": "c65a466a-010",
           "type": "text",
-          "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
         },
         {
           "id": "c65a466a-011",
@@ -69,6 +69,36 @@
           "id": "c65a466a-012",
           "type": "text",
           "text": "掲載写真：KT27の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        },
+        {
+          "id": "c65a466a-013",
+          "type": "h2",
+          "text": "仕様別の販売期間"
+        },
+        {
+          "id": "c65a466a-014",
+          "type": "bullet",
+          "text": "KT27-PC：2002年〜2005年（公式販売年度検索）"
+        },
+        {
+          "id": "c65a466a-015",
+          "type": "h2",
+          "text": "仕様別の取扱説明書・補足資料"
+        },
+        {
+          "id": "c65a466a-016",
+          "type": "text",
+          "text": "実機の型式末尾と資料名を照合してください。各資料へのリンクは「出典・資料」にあります。"
+        },
+        {
+          "id": "c65a466a-017",
+          "type": "bullet",
+          "text": "KT27Q（仕様別資料）"
+        },
+        {
+          "id": "c65a466a-018",
+          "type": "bullet",
+          "text": "KT27-PC（仕様別資料）"
         }
       ],
       "meta": {
@@ -84,7 +114,7 @@
         "start": "",
         "end": "",
         "coverUrl": "https://chuko-noki.com/new/wp/wp-content/uploads/KT27-12228-37-%E6%8A%9C%E7%B2%8B%E7%94%A8.jpg",
-        "summary": "27馬力の旧型トラクタ。公式販売年度検索のKT27は2002年〜2005年の販売。KT27の取扱説明書を参照できます。",
+        "summary": "27馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT27は2002年〜2005年の販売。KT27の取扱説明書と仕様別の公式資料を参照できます。",
         "issue": "",
         "hypothesis": "",
         "action": "",
@@ -107,25 +137,37 @@
             "id": "c65a466a-src-manual-index",
             "title": "クボタ 取扱説明書検索 KT27（完全一致）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT27&searchType=3",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "c65a466a-src-sales-index",
             "title": "クボタ 販売年度検索 KT27",
             "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT27",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "c65a466a-src-manual",
             "title": "取扱説明書 KT27",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a5e0ff62be0b08456fc7f1e88812af3d",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "c65a466a-src-photo",
             "title": "写真：スペース（中古農機具販売） クボタ KT27（中古実機）",
             "url": "https://chuko-noki.com/31488/",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
+          },
+          {
+            "id": "c65a466a-src-related-1",
+            "title": "クボタ 公式資料 KT27Q",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1e6e0a04d20f50967c64dac2d639a577",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "c65a466a-src-related-2",
+            "title": "クボタ 公式資料 KT27-PC",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a0160709701140704575d499c997b6ca",
+            "date": "2026-09-17"
           }
         ],
         "attachments": [],

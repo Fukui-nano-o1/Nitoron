@@ -1,0 +1,214 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-17T00:00:00.000Z",
+  "records": [
+    {
+      "id": "b5298c71-c50c-44d7-8dca-a47d85d3dde6",
+      "title": "【カタログ解説】クボタ KT235 KTシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-17",
+      "blocks": [
+        {
+          "id": "b5298c71-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "b5298c71-002",
+          "type": "text",
+          "text": "23馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT235(F)は2008年〜2012年の販売。KT235の取扱説明書と仕様別の公式資料を参照できます。"
+        },
+        {
+          "id": "b5298c71-003",
+          "type": "bullet",
+          "text": "馬力：23馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "b5298c71-004",
+          "type": "bullet",
+          "text": "販売期間：2008年〜2012年（公式販売年度検索・KT235(F)）"
+        },
+        {
+          "id": "b5298c71-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "b5298c71-006",
+          "type": "text",
+          "text": "KT235"
+        },
+        {
+          "id": "b5298c71-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "b5298c71-008",
+          "type": "text",
+          "text": "KT235の公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "b5298c71-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "b5298c71-010",
+          "type": "text",
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "b5298c71-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "b5298c71-012",
+          "type": "text",
+          "text": "掲載写真：KT235の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        },
+        {
+          "id": "b5298c71-013",
+          "type": "h2",
+          "text": "仕様別の販売期間"
+        },
+        {
+          "id": "b5298c71-014",
+          "type": "bullet",
+          "text": "KT235(F)-PC：2008年〜2012年（公式販売年度検索）"
+        },
+        {
+          "id": "b5298c71-015",
+          "type": "h2",
+          "text": "仕様別の取扱説明書・補足資料"
+        },
+        {
+          "id": "b5298c71-016",
+          "type": "text",
+          "text": "実機の型式末尾と資料名を照合してください。各資料へのリンクは「出典・資料」にあります。"
+        },
+        {
+          "id": "b5298c71-017",
+          "type": "bullet",
+          "text": "KT235ZFQ（仕様別資料）"
+        },
+        {
+          "id": "b5298c71-018",
+          "type": "bullet",
+          "text": "KT235ポイントシート（補足資料）"
+        },
+        {
+          "id": "b5298c71-019",
+          "type": "bullet",
+          "text": "KT235-PC（仕様別資料）"
+        },
+        {
+          "id": "b5298c71-020",
+          "type": "bullet",
+          "text": "KT235-PCポイントシート（補足資料）"
+        },
+        {
+          "id": "b5298c71-021",
+          "type": "bullet",
+          "text": "KT235-PCメンテナンスシート（補足資料）"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://www.noukinavi.com/html/upload/save_image/0715142635_6a571a0b4afdb.JPG",
+        "summary": "23馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT235(F)は2008年〜2012年の販売。KT235の取扱説明書と仕様別の公式資料を参照できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "b5298c71-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KT235（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT235&searchType=3",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "b5298c71-src-sales-index",
+            "title": "クボタ 販売年度検索 KT235",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT235",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "b5298c71-src-manual",
+            "title": "取扱説明書 KT235",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43baa6762fa81bb43b39c62553b2970d",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "b5298c71-src-photo",
+            "title": "写真：ノウキナビ クボタ KT235（中古実機）",
+            "url": "https://www.noukinavi.com/shop_use/products/detail/27552",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "b5298c71-src-related-1",
+            "title": "クボタ 公式資料 KT235ZFQ",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e5e63da79fcd2bebbd7cb8bf1c1d0274",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "b5298c71-src-related-2",
+            "title": "クボタ 公式資料 KT235ポイントシート",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9f36407ead0629fc166f14dde7970f68",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "b5298c71-src-related-3",
+            "title": "クボタ 公式資料 KT235-PC",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=731c83db8d2ff01bdc000083fd3c3740",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "b5298c71-src-related-4",
+            "title": "クボタ 公式資料 KT235-PCポイントシート",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=36a16a2505369e0c922b6ea7a23a56d2",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "b5298c71-src-related-5",
+            "title": "クボタ 公式資料 KT235-PCメンテナンスシート",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=818f4654ed39a1c147d1e51a00ffb4cb",
+            "date": "2026-09-17"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

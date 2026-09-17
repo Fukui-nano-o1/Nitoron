@@ -1,0 +1,66 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KT305",
+  "productName": "KTシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KT305"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "30馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT305(F)は2008年〜2012年の販売。KT305の取扱説明書と仕様別の公式資料を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT305&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "b1fec21fd55b86303a47e43f17b7b26382d09b0c8a7469a8d0759ebbb4cddf44",
+      "result": {
+        "model": "KT305",
+        "category": "トラクタ",
+        "horsepower": "30馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT305",
+      "checkedAt": "2026-09-17",
+      "sha256": "af839857c8c42220fa07f05dda48e8859810234c660b4a51d645716d70bbe144",
+      "result": {
+        "model": "KT305(F)",
+        "startYear": 2008,
+        "endYear": 2012
+      }
+    },
+    "manuals": [
+      {
+        "title": "KT305",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=20d135f0f28185b84a4cf7aa51f29500",
+        "checkedAt": "2026-09-17",
+        "sha256": "09fbc846b2eb4c05d193f6877967251095305f3b545bca444203168fe99ab9ec"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KT305ポイントシート",
+        "kind": "guide",
+        "horsepower": "30馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9c3b1830513cc3b8fc4b76635d32e692",
+        "checkedAt": "2026-09-17",
+        "sha256": "c3c91e911c02c53be7384b2b8942aa15c113c7ca2f96ca2f04c45933acbd5300",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KT-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KT305"
+}

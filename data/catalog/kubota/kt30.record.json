@@ -1,0 +1,171 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-17T00:00:00.000Z",
+  "records": [
+    {
+      "id": "73bce570-dd91-4dd0-8a1c-ff638c477924",
+      "title": "【カタログ解説】クボタ KT30 KTシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-17",
+      "blocks": [
+        {
+          "id": "73bce570-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "73bce570-002",
+          "type": "text",
+          "text": "30馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT30は2002年〜2005年の販売。KT30の取扱説明書と仕様別の公式資料を参照できます。"
+        },
+        {
+          "id": "73bce570-003",
+          "type": "bullet",
+          "text": "馬力：30馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "73bce570-004",
+          "type": "bullet",
+          "text": "販売期間：2002年〜2005年（公式販売年度検索・KT30）"
+        },
+        {
+          "id": "73bce570-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "73bce570-006",
+          "type": "text",
+          "text": "KT30"
+        },
+        {
+          "id": "73bce570-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "73bce570-008",
+          "type": "text",
+          "text": "KT30の公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "73bce570-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "73bce570-010",
+          "type": "text",
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "73bce570-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "73bce570-012",
+          "type": "text",
+          "text": "掲載写真：KT30の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        },
+        {
+          "id": "73bce570-013",
+          "type": "h2",
+          "text": "仕様別の取扱説明書・補足資料"
+        },
+        {
+          "id": "73bce570-014",
+          "type": "text",
+          "text": "実機の型式末尾と資料名を照合してください。各資料へのリンクは「出典・資料」にあります。"
+        },
+        {
+          "id": "73bce570-015",
+          "type": "bullet",
+          "text": "KT30-FQHN（仕様別資料）"
+        },
+        {
+          "id": "73bce570-016",
+          "type": "bullet",
+          "text": "KT30Q（仕様別資料）"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://www.noukenki.jp/wp-content/uploads/2019/07/053ffda6230832ff9da20c0dd1ef73a0_06f027ee763c3b9a3eea98106fdb059e-660x496.jpg",
+        "summary": "30馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT30は2002年〜2005年の販売。KT30の取扱説明書と仕様別の公式資料を参照できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "73bce570-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KT30（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT30&searchType=3",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "73bce570-src-sales-index",
+            "title": "クボタ 販売年度検索 KT30",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT30",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "73bce570-src-manual",
+            "title": "取扱説明書 KT30",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2cbca44843a864533ec05b321ae1f9d1",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "73bce570-src-photo",
+            "title": "写真：茨城中古農建機販売 クボタ KT30（中古実機）",
+            "url": "https://www.noukenki.jp/result/%E3%82%AF%E3%83%9C%E3%82%BF%E3%80%80%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BCkt30/",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "73bce570-src-related-1",
+            "title": "クボタ 公式資料 KT30-FQHN",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ac52c626afc10d4075708ac4c778ddfc",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "73bce570-src-related-2",
+            "title": "クボタ 公式資料 KT30Q",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d6ef5f7fa914c19931a55bb262ec879c",
+            "date": "2026-09-17"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

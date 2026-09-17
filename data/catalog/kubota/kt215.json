@@ -1,0 +1,103 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KT215",
+  "productName": "KTシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KT215"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "21馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT215(F)は2008年〜2012年の販売。KT215の取扱説明書と仕様別の公式資料を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT215&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "ca237ca20aee559850c84168416698cd76eead528011ec2be958763da1f1bd4a",
+      "result": {
+        "model": "KT215",
+        "category": "トラクタ",
+        "horsepower": "21馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT215",
+      "checkedAt": "2026-09-17",
+      "sha256": "b7a7d32fbddd6ad956ca84e76232604cd823dfcebfee2c5c879eaccfda74021b",
+      "result": {
+        "model": "KT215(F)",
+        "startYear": 2008,
+        "endYear": 2012
+      },
+      "variants": [
+        {
+          "model": "KT215(F)-PC",
+          "startYear": 2008,
+          "endYear": 2012
+        }
+      ]
+    },
+    "manuals": [
+      {
+        "title": "KT215",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=53adaf494dc89ef7196d73636eb2451b",
+        "checkedAt": "2026-09-17",
+        "sha256": "1b785ced6eea4f03ba9ad12f8c9e237e7440a77ba605d2e84905c7ec6e3c3c03"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KT215ポイントシート",
+        "kind": "guide",
+        "horsepower": "21馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a1519de5b5d44b31a01de013b9b51a80",
+        "checkedAt": "2026-09-17",
+        "sha256": "b3a04584a45563a60906269e511db666c697cbfc9013f15b89ff411603bf609a",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+        "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4"
+      },
+      {
+        "title": "KT215-PC",
+        "kind": "variant",
+        "horsepower": "21馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fc2c7c47b918d0c2d792a719dfb602ef",
+        "checkedAt": "2026-09-17",
+        "sha256": "b02b65e0acf4ae529ade3ba1e02d001fdc982f4383e39bffcc2c248e51a260eb",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      },
+      {
+        "title": "KT215-PCポイントシート",
+        "kind": "guide",
+        "horsepower": "21馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dc58e3a306451c9d670adcd37004f48f",
+        "checkedAt": "2026-09-17",
+        "sha256": "7bfede474c1e02a9fd46309b1a11cba67a535e057d81016fa81b6f02f1805e83",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      },
+      {
+        "title": "KT215-PCメンテナンスシート",
+        "kind": "guide",
+        "horsepower": "21馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1b0114c51cc532ed34e1954b5b9e4b58",
+        "checkedAt": "2026-09-17",
+        "sha256": "a46c2079f2d9ab510af32a1fd6f0a97279b41bf88d652bbf6493d49227e8f1c2",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KT-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KT215"
+}

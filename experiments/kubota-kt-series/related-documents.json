@@ -1,0 +1,1255 @@
+{
+  "checkedAt": "2026-09-17",
+  "counts": {
+    "basicModels": 15,
+    "documents": 59,
+    "documentKinds": {
+      "base": 15,
+      "variant": 27,
+      "guide": 17
+    },
+    "salesRowsBeforeDeduplication": 34,
+    "salesRowsAfterDeduplication": 26
+  },
+  "documents": [
+    {
+      "baseModel": "KT20",
+      "docKind": "base",
+      "model": "KT20",
+      "title": "KT20",
+      "horsepower": 20,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cd89fef7ffdd490db800357f47722b20",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "a64eb00783c842b2e374a26570b570e659deb883db702a1dbda0930d7a7f3888",
+        "file": "KT20-notice.html"
+      }
+    },
+    {
+      "baseModel": "KT20",
+      "docKind": "variant",
+      "model": "KT20-HN-8",
+      "title": "KT20-HN-8",
+      "horsepower": 20,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3f900db2608fb3eecb3ee77ba9ef5f60",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "a9f770b6126888eeb94728dc43732d50dd73a592f15316864156c68e09b8dcc9",
+        "file": "notice-3f900db2608fb3eecb3ee77ba9ef5f60.html"
+      }
+    },
+    {
+      "baseModel": "KT20",
+      "docKind": "variant",
+      "model": "KT20Q",
+      "title": "KT20Q",
+      "horsepower": 20,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2290a7385ed77cc5592dc2153229f082",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "f3249cbb8c1a6ccdd5a2ddb5f55013c54f2953ad7eee15e5f0a388d45329db43",
+        "file": "notice-2290a7385ed77cc5592dc2153229f082.html"
+      }
+    },
+    {
+      "baseModel": "KT210",
+      "docKind": "base",
+      "model": "KT210",
+      "title": "KT210",
+      "horsepower": 21,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a2137a2ae8e39b5002a3f8909ecb88fe",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "ea889876454645f123ea7def890d68fa716b304ca47925901aa0a8ffa9b1fe1d",
+        "file": "KT210-notice.html"
+      }
+    },
+    {
+      "baseModel": "KT215",
+      "docKind": "base",
+      "model": "KT215",
+      "title": "KT215",
+      "horsepower": 21,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=53adaf494dc89ef7196d73636eb2451b",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "1b785ced6eea4f03ba9ad12f8c9e237e7440a77ba605d2e84905c7ec6e3c3c03",
+        "file": "KT215-notice.html"
+      }
+    },
+    {
+      "baseModel": "KT215",
+      "docKind": "guide",
+      "model": "KT215ポイントシート",
+      "title": "KT215ポイントシート",
+      "horsepower": 21,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a1519de5b5d44b31a01de013b9b51a80",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "b3a04584a45563a60906269e511db666c697cbfc9013f15b89ff411603bf609a",
+        "file": "notice-a1519de5b5d44b31a01de013b9b51a80.html"
+      }
+    },
+    {
+      "baseModel": "KT22",
+      "docKind": "base",
+      "model": "KT22",
+      "title": "KT22",
+      "horsepower": 22,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=390e982518a50e280d8e2b535462ec1f",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "2be4ec1c823b95f227bad4fe6d04108eef20fdfde39928830315ea18cff8119c",
+        "file": "KT22-notice.html"
+      }
+    },
+    {
+      "baseModel": "KT22",
+      "docKind": "variant",
+      "model": "KT22Q",
+      "title": "KT22Q",
+      "horsepower": 22,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=708f3cf8100d5e71834b1db77dfa15d6",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "72782b94f20224007deeb986402c595536559fc7ab61ca362a143bbcc8cc6f49",
+        "file": "notice-708f3cf8100d5e71834b1db77dfa15d6.html"
+      }
+    },
+    {
+      "baseModel": "KT230",
+      "docKind": "base",
+      "model": "KT230",
+      "title": "KT230",
+      "horsepower": 23,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=46072631582fc240dd2674a7d063b040",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "87ed82af572575e3d5ac037539f4638a52ae267137b4d513f863e500104502fd",
+        "file": "KT230-notice.html"
+      }
+    },
+    {
+      "baseModel": "KT230",
+      "docKind": "variant",
+      "model": "KT230ZFQ",
+      "title": "KT230ZFQ",
+      "horsepower": 23,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=522a9ae9a99880d39e5daec35375e999",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "978a474de97fadf554c8c6bcc6c99360a85e1693607f5f11b11b62aefb859ff0",
+        "file": "notice-522a9ae9a99880d39e5daec35375e999.html"
+      }
+    },
+    {
+      "baseModel": "KT235",
+      "docKind": "base",
+      "model": "KT235",
+      "title": "KT235",
+      "horsepower": 23,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43baa6762fa81bb43b39c62553b2970d",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "0299e6885805ea4a2805a359c9dc7e3c9aa0b68317cfe5904f391bd293ae1204",
+        "file": "KT235-notice.html"
+      }
+    },
+    {
+      "baseModel": "KT235",
+      "docKind": "variant",
+      "model": "KT235ZFQ",
+      "title": "KT235ZFQ",
+      "horsepower": 23,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e5e63da79fcd2bebbd7cb8bf1c1d0274",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "6019756fead5ebf0eb15f2dee4d0bd0c3d6472a892fda6349647d69c8707dd5f",
+        "file": "notice-e5e63da79fcd2bebbd7cb8bf1c1d0274.html"
+      }
+    },
+    {
+      "baseModel": "KT235",
+      "docKind": "guide",
+      "model": "KT235ポイントシート",
+      "title": "KT235ポイントシート",
+      "horsepower": 23,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9f36407ead0629fc166f14dde7970f68",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "c6eaeb064d4b64a23c31be6ef8852bcc34d33eff01b9f1b9e0ff608f3f9a6ca3",
+        "file": "notice-9f36407ead0629fc166f14dde7970f68.html"
+      }
+    },
+    {
+      "baseModel": "KT24",
+      "docKind": "base",
+      "model": "KT24",
+      "title": "KT24",
+      "horsepower": 24,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4f16c818875d9fcb6867c7bdc89be7eb",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "488809068a80a0f6677ed66ebd5638b27457bd8f418daad601f92b462ea39503",
+        "file": "KT24-notice.html"
+      }
+    },
+    {
+      "baseModel": "KT24",
+      "docKind": "variant",
+      "model": "KT24-FHN",
+      "title": "KT24-FHN",
+      "horsepower": 27,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=86c51678350f656dcc7f490a43946ee5",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "fdb6fc0e9a2ec5a091e10166f4c4c06b9cb83c6a92080d4b8a0c3949b07adfc5",
+        "file": "notice-86c51678350f656dcc7f490a43946ee5.html"
+      }
+    },
+    {
+      "baseModel": "KT24",
+      "docKind": "variant",
+      "model": "KT24-FHT",
+      "title": "KT24-FHT",
+      "horsepower": 27,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=806d926414ce19d907700e23177ab4ff",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "1184510c05d81d403dfa46cfcd421262b4d33dc62514aaf4c3582b6ee64334f2",
+        "file": "notice-806d926414ce19d907700e23177ab4ff.html"
+      }
+    },
+    {
+      "baseModel": "KT24",
+      "docKind": "variant",
+      "model": "KT24-HN",
+      "title": "KT24-HN",
+      "horsepower": 27,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0f3c5d0c3666eec8cd311bec6d878915",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "890f7250f64fd1fcc3d10fe12b148a98090c68f75131c4dbc62180d2f3bf11f5",
+        "file": "notice-0f3c5d0c3666eec8cd311bec6d878915.html"
+      }
+    },
+    {
+      "baseModel": "KT24",
+      "docKind": "variant",
+      "model": "KT24-HT",
+      "title": "KT24-HT",
+      "horsepower": 27,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=bf5cd8b2509011b9502a72296edc14a0",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "7818d2efb03cf35ae252eb5f9bb8ba3658dc50d622a41706642125e1f0afee35",
+        "file": "notice-bf5cd8b2509011b9502a72296edc14a0.html"
+      }
+    },
+    {
+      "baseModel": "KT24",
+      "docKind": "variant",
+      "model": "KT24Q",
+      "title": "KT24Q",
+      "horsepower": 24,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a26398dca6f47b49876cbaffbc9954f9",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "b03c16db9fac691dbb1e0023a7fe7730000af33a32160fb28ae5017756540530",
+        "file": "notice-a26398dca6f47b49876cbaffbc9954f9.html"
+      }
+    },
+    {
+      "baseModel": "KT250",
+      "docKind": "base",
+      "model": "KT250",
+      "title": "KT250",
+      "horsepower": 25,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b1563a78ec59337587f6ab6397699afc",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "2729ba213e105ff55b93a2d776a3661a2372fcb3286337a7cecdb392a77509ed",
+        "file": "KT250-notice.html"
+      }
+    },
+    {
+      "baseModel": "KT255",
+      "docKind": "base",
+      "model": "KT255",
+      "title": "KT255",
+      "horsepower": 25,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=754dda4b1ba34c6fa89716b85d68532b",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "c193b43d06e1874875823d2739c14107d5c409c14b7b900cf1dc0c3b9b48f5f2",
+        "file": "KT255-notice.html"
+      }
+    },
+    {
+      "baseModel": "KT255",
+      "docKind": "variant",
+      "model": "KT255-NE",
+      "title": "KT255-NE",
+      "horsepower": 25,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6a2feef8ed6a9fe76d6b3f30f02150b4",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "96979cfe3e372c6aebe823c15f52929b5b09e5e9702e29af7afc7248b309d26c",
+        "file": "notice-6a2feef8ed6a9fe76d6b3f30f02150b4.html"
+      }
+    },
+    {
+      "baseModel": "KT255",
+      "docKind": "guide",
+      "model": "KT255ポイントシート",
+      "title": "KT255ポイントシート",
+      "horsepower": 25,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=db2b4182156b2f1f817860ac9f409ad7",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "4dd5a80e5adc56ac531765e7ebec9722f32cf264626f9d7846a80272dfa5145b",
+        "file": "notice-db2b4182156b2f1f817860ac9f409ad7.html"
+      }
+    },
+    {
+      "baseModel": "KT27",
+      "docKind": "base",
+      "model": "KT27",
+      "title": "KT27",
+      "horsepower": 27,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a5e0ff62be0b08456fc7f1e88812af3d",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "7a930f0b3b59b25379ac1c3f1e25d0012ecb1369f290dca0dd03380eeaaefa73",
+        "file": "KT27-notice.html"
+      }
+    },
+    {
+      "baseModel": "KT27",
+      "docKind": "variant",
+      "model": "KT27Q",
+      "title": "KT27Q",
+      "horsepower": 27,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1e6e0a04d20f50967c64dac2d639a577",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+      "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "74774b59abf513ec985261e3a1eb4b335c630eec2d006e1b68b2e41916da5c42",
+        "file": "notice-1e6e0a04d20f50967c64dac2d639a577.html"
+      }
+    },
+    {
+      "baseModel": "KT280",
+      "docKind": "base",
+      "model": "KT280",
+      "title": "KT280",
+      "horsepower": 28,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c6bff625bdb0393992c9d4db0c6bbe45",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "513c9037260c4445d24a91356c5211d4049f6987867dab14053413909874a4e4",
+        "file": "KT280-notice.html"
+      }
+    },
+    {
+      "baseModel": "KT285",
+      "docKind": "base",
+      "model": "KT285",
+      "title": "KT285",
+      "horsepower": 28,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4da04049a062f5adfe81b67dd755cecc",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "8bccb1d983bc5592b5aeeec2f65a2735b54fac14ee40205544d2a29cd60ce07d",
+        "file": "KT285-notice.html"
+      }
+    },
+    {
+      "baseModel": "KT285",
+      "docKind": "guide",
+      "model": "KT285ポイントシート",
+      "title": "KT285ポイントシート",
+      "horsepower": 28,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8f1d43620bc6bb580df6e80b0dc05c48",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "25b5145c63ba666a6ff938d7f7db6e8dc5fdbdf22a5653825050c0306c17d774",
+        "file": "notice-8f1d43620bc6bb580df6e80b0dc05c48.html"
+      }
+    },
+    {
+      "baseModel": "KT30",
+      "docKind": "base",
+      "model": "KT30",
+      "title": "KT30",
+      "horsepower": 30,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2cbca44843a864533ec05b321ae1f9d1",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "df22830268e5901785ed83be52fd600f7490fabc3ddcaf90f21a98d09278c1ec",
+        "file": "KT30-notice.html"
+      }
+    },
+    {
+      "baseModel": "KT30",
+      "docKind": "variant",
+      "model": "KT30-FQHN",
+      "title": "KT30-FQHN",
+      "horsepower": 30,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ac52c626afc10d4075708ac4c778ddfc",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "6b2349bcee244b9ffa750ec8c95b927256ce1828d809fc7f27ab76d7dfe96935",
+        "file": "notice-ac52c626afc10d4075708ac4c778ddfc.html"
+      }
+    },
+    {
+      "baseModel": "KT300",
+      "docKind": "base",
+      "model": "KT300",
+      "title": "KT300",
+      "horsepower": 30,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b59c67bf196a4758191e42f76670ceba",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "9a693639c2ae6ca853cef4c18492c89ef34ba881dc4be649897354c6fe76ec0f",
+        "file": "KT300-notice.html"
+      }
+    },
+    {
+      "baseModel": "KT305",
+      "docKind": "base",
+      "model": "KT305",
+      "title": "KT305",
+      "horsepower": 30,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=20d135f0f28185b84a4cf7aa51f29500",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "09fbc846b2eb4c05d193f6877967251095305f3b545bca444203168fe99ab9ec",
+        "file": "KT305-notice.html"
+      }
+    },
+    {
+      "baseModel": "KT305",
+      "docKind": "guide",
+      "model": "KT305ポイントシート",
+      "title": "KT305ポイントシート",
+      "horsepower": 30,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=9c3b1830513cc3b8fc4b76635d32e692",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "c3c91e911c02c53be7384b2b8942aa15c113c7ca2f96ca2f04c45933acbd5300",
+        "file": "notice-9c3b1830513cc3b8fc4b76635d32e692.html"
+      }
+    },
+    {
+      "baseModel": "KT30",
+      "docKind": "variant",
+      "model": "KT30Q",
+      "title": "KT30Q",
+      "horsepower": 30,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d6ef5f7fa914c19931a55bb262ec879c",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "1138d0b907c7c09a206d71a8f96ae41920c381433bbdefaecb1cf62ef56b123b",
+        "file": "notice-d6ef5f7fa914c19931a55bb262ec879c.html"
+      }
+    },
+    {
+      "baseModel": "KT20",
+      "docKind": "variant",
+      "model": "KT20-PC",
+      "title": "KT20-PC",
+      "horsepower": 20,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6c340f25839e6acdc73414517203f5f0",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "8bfd4ad509b88d311aa9ec12fe556e95ea8adcb9ce8384935f315d017f0e2a2b",
+        "file": "notice-6c340f25839e6acdc73414517203f5f0.html"
+      }
+    },
+    {
+      "baseModel": "KT210",
+      "docKind": "variant",
+      "model": "KT210-PC",
+      "title": "KT210-PC",
+      "horsepower": 21,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43dd49b4fdb9bede653e94468ff8df1e",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "1d0d783682951364d933ffdf8efb079731bb918eabb1ec07f1883f6681772922",
+        "file": "notice-43dd49b4fdb9bede653e94468ff8df1e.html"
+      }
+    },
+    {
+      "baseModel": "KT210",
+      "docKind": "guide",
+      "model": "KT210-PCメンテナンスシート",
+      "title": "KT210-PCメンテナンスシート",
+      "horsepower": 21,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=31857b449c407203749ae32dd0e7d64a",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "f0ebe5dd4235c6d9cc9fb817a8535f84ab5d998c05c3a8df60ad7ca8d3a3ea43",
+        "file": "notice-31857b449c407203749ae32dd0e7d64a.html"
+      }
+    },
+    {
+      "baseModel": "KT215",
+      "docKind": "variant",
+      "model": "KT215-PC",
+      "title": "KT215-PC",
+      "horsepower": 21,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fc2c7c47b918d0c2d792a719dfb602ef",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "b02b65e0acf4ae529ade3ba1e02d001fdc982f4383e39bffcc2c248e51a260eb",
+        "file": "notice-fc2c7c47b918d0c2d792a719dfb602ef.html"
+      }
+    },
+    {
+      "baseModel": "KT215",
+      "docKind": "guide",
+      "model": "KT215-PCポイントシート",
+      "title": "KT215-PCポイントシート",
+      "horsepower": 21,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dc58e3a306451c9d670adcd37004f48f",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "7bfede474c1e02a9fd46309b1a11cba67a535e057d81016fa81b6f02f1805e83",
+        "file": "notice-dc58e3a306451c9d670adcd37004f48f.html"
+      }
+    },
+    {
+      "baseModel": "KT215",
+      "docKind": "guide",
+      "model": "KT215-PCメンテナンスシート",
+      "title": "KT215-PCメンテナンスシート",
+      "horsepower": 21,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1b0114c51cc532ed34e1954b5b9e4b58",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "a46c2079f2d9ab510af32a1fd6f0a97279b41bf88d652bbf6493d49227e8f1c2",
+        "file": "notice-1b0114c51cc532ed34e1954b5b9e4b58.html"
+      }
+    },
+    {
+      "baseModel": "KT230",
+      "docKind": "variant",
+      "model": "KT230-PC",
+      "title": "KT230-PC",
+      "horsepower": 23,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8a1e808b55fde9455cb3d8857ed88389",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "f6cf85c7157fb15416b9bcf0c4d0ae9ffcb67e5d2b3b25f5596005e1754fd410",
+        "file": "notice-8a1e808b55fde9455cb3d8857ed88389.html"
+      }
+    },
+    {
+      "baseModel": "KT230",
+      "docKind": "guide",
+      "model": "KT230-PCメンテナンスシート",
+      "title": "KT230-PCメンテナンスシート",
+      "horsepower": 23,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=062ddb6c727310e76b6200b7c71f63b5",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "d9887ccef955a638c473ce6ab86cd4c9eb7235a87ddeb47b666d0c8f0e07a3a1",
+        "file": "notice-062ddb6c727310e76b6200b7c71f63b5.html"
+      }
+    },
+    {
+      "baseModel": "KT235",
+      "docKind": "variant",
+      "model": "KT235-PC",
+      "title": "KT235-PC",
+      "horsepower": 23,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=731c83db8d2ff01bdc000083fd3c3740",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "2414f473307b804d1a01a3167de40536e31f58529e8d1db1315ddc807707aad4",
+        "file": "notice-731c83db8d2ff01bdc000083fd3c3740.html"
+      }
+    },
+    {
+      "baseModel": "KT235",
+      "docKind": "guide",
+      "model": "KT235-PCポイントシート",
+      "title": "KT235-PCポイントシート",
+      "horsepower": 23,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=36a16a2505369e0c922b6ea7a23a56d2",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "22b2f1d2b730db64a9bbabe6d5f43b4b58d268db6874f28463fb551016fbd338",
+        "file": "notice-36a16a2505369e0c922b6ea7a23a56d2.html"
+      }
+    },
+    {
+      "baseModel": "KT235",
+      "docKind": "guide",
+      "model": "KT235-PCメンテナンスシート",
+      "title": "KT235-PCメンテナンスシート",
+      "horsepower": 23,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=818f4654ed39a1c147d1e51a00ffb4cb",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "d2e0657314bbf182f25cc062d1257508058329b0700692e610270cb66aff0c24",
+        "file": "notice-818f4654ed39a1c147d1e51a00ffb4cb.html"
+      }
+    },
+    {
+      "baseModel": "KT24",
+      "docKind": "variant",
+      "model": "KT24-PC",
+      "title": "KT24-PC",
+      "horsepower": 24,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d91d1b4d82419de8a614abce9cc0e6d4",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "08f18697a11423d138ffb8a28dc02bae7c6a05dedd07d1f8129a7353fb0da148",
+        "file": "notice-d91d1b4d82419de8a614abce9cc0e6d4.html"
+      }
+    },
+    {
+      "baseModel": "KT250",
+      "docKind": "variant",
+      "model": "KT250-PC",
+      "title": "KT250-PC",
+      "horsepower": 25,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=03f544613917945245041ea1581df0c2",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "17fbdcaa06513cbe558c0a63546ab5183c6100874c98aac4d4f4237166f6c3b0",
+        "file": "notice-03f544613917945245041ea1581df0c2.html"
+      }
+    },
+    {
+      "baseModel": "KT250",
+      "docKind": "guide",
+      "model": "KT250-PCメンテナンスシート",
+      "title": "KT250-PCメンテナンスシート",
+      "horsepower": 25,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8b4066554730ddfaa0266346bdc1b202",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "5e486bddbcd5c7ba49ffebf5b0c85b66a8bdc22e0385135b87ec9904ee98ae7a",
+        "file": "notice-8b4066554730ddfaa0266346bdc1b202.html"
+      }
+    },
+    {
+      "baseModel": "KT255",
+      "docKind": "variant",
+      "model": "KT255-PC",
+      "title": "KT255-PC",
+      "horsepower": 25,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=68b1fbe7f16e4ae3024973f12f3cb313",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "50894c404fb68b403954d5143006c642b1010b10bdc079002cfb35c9bfcb9d92",
+        "file": "notice-68b1fbe7f16e4ae3024973f12f3cb313.html"
+      }
+    },
+    {
+      "baseModel": "KT255",
+      "docKind": "variant",
+      "model": "KT255-PCR",
+      "title": "KT255-PCR",
+      "horsepower": 25,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=41bfd20a38bb1b0bec75acf0845530a7",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "ce6f8725d49c04e5338fc11fb5f7a59b9e38913dcd6161e424356bfd643aee56",
+        "file": "notice-41bfd20a38bb1b0bec75acf0845530a7.html"
+      }
+    },
+    {
+      "baseModel": "KT255",
+      "docKind": "guide",
+      "model": "KT255-PCポイントシート",
+      "title": "KT255-PCポイントシート",
+      "horsepower": 25,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d6723e7cd6735df68d1ce4c704c29a04",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "6062636ccf56b3472e865bbf6f58a623c75e029af78bf528e70ef9251de43c3a",
+        "file": "notice-d6723e7cd6735df68d1ce4c704c29a04.html"
+      }
+    },
+    {
+      "baseModel": "KT255",
+      "docKind": "guide",
+      "model": "KT255-PCメンテナンスシート",
+      "title": "KT255-PCメンテナンスシート",
+      "horsepower": 25,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4e2545f819e67f0615003dd7e04a6087",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "7967032379e381396ac766861f6cae2bf24ad8e73c3e752b446131de91b4f581",
+        "file": "notice-4e2545f819e67f0615003dd7e04a6087.html"
+      }
+    },
+    {
+      "baseModel": "KT27",
+      "docKind": "variant",
+      "model": "KT27-PC",
+      "title": "KT27-PC",
+      "horsepower": 27,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a0160709701140704575d499c997b6ca",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "542672146eed79b04e6505870ade2d8ab769c9b229575236092debb924d4177a",
+        "file": "notice-a0160709701140704575d499c997b6ca.html"
+      }
+    },
+    {
+      "baseModel": "KT280",
+      "docKind": "variant",
+      "model": "KT280-PC",
+      "title": "KT280-PC",
+      "horsepower": 28,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c667d53acd899a97a85de0c201ba99be",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "c947e5cbc399b74acd9de1c6e2527c8916bc8cbb98a6c836832459fc394f16e4",
+        "file": "notice-c667d53acd899a97a85de0c201ba99be.html"
+      }
+    },
+    {
+      "baseModel": "KT280",
+      "docKind": "guide",
+      "model": "KT280-PCメンテナンスシート",
+      "title": "KT280-PCメンテナンスシート",
+      "horsepower": 28,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=aace49c7d80767cffec0e513ae886df0",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "b69aff052a5d3ff5b47e0db20a352d7ff74a624c5adc0754e50e56b166331451",
+        "file": "notice-aace49c7d80767cffec0e513ae886df0.html"
+      }
+    },
+    {
+      "baseModel": "KT285",
+      "docKind": "variant",
+      "model": "KT285-PC",
+      "title": "KT285-PC",
+      "horsepower": 28,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=af21d0c97db2e27e13572cbf59eb343d",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "9656008776dab8f6bc963be19ea758504143ed34851778fd56a35a4fb125477e",
+        "file": "notice-af21d0c97db2e27e13572cbf59eb343d.html"
+      }
+    },
+    {
+      "baseModel": "KT285",
+      "docKind": "variant",
+      "model": "KT285-PCR",
+      "title": "KT285-PCR",
+      "horsepower": 28,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c9f95a0a5af052bffce5c89917335f67",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "9af59c38aad092567ecce9cc406bd7eec757076a9414bd81a69ac9e01528c456",
+        "file": "notice-c9f95a0a5af052bffce5c89917335f67.html"
+      }
+    },
+    {
+      "baseModel": "KT285",
+      "docKind": "guide",
+      "model": "KT285-PCポイントシート",
+      "title": "KT285-PCポイントシート",
+      "horsepower": 28,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e58cc5ca94270acaceed13bc82dfedf7",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "a0671b5e79449a62336373bfbe28d5a9dc8c51c9c16a127e19a3fec8fd31781b",
+        "file": "notice-e58cc5ca94270acaceed13bc82dfedf7.html"
+      }
+    },
+    {
+      "baseModel": "KT285",
+      "docKind": "guide",
+      "model": "KT285-PCメンテナンスシート",
+      "title": "KT285-PCメンテナンスシート",
+      "horsepower": 28,
+      "noticeUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b9d487a30398d42ecff55c228ed5652b",
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+      "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351",
+      "checkedAt": "2026-09-17",
+      "noticeCheck": {
+        "status": 200,
+        "sha256": "f449fa19d129e64c6ea37a0140626debb91876de09827c9e59c067068e2209b1",
+        "file": "notice-b9d487a30398d42ecff55c228ed5652b.html"
+      }
+    }
+  ],
+  "salesRows": [
+    {
+      "baseModel": "KT20",
+      "model": "KT20",
+      "startYear": 2002,
+      "endYear": 2005,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT20",
+      "model": "KT20-PC",
+      "startYear": 2002,
+      "endYear": 2005,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT210",
+      "model": "KT210(F)",
+      "startYear": 2005,
+      "endYear": 2008,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT210",
+      "model": "KT210(F)-PC",
+      "startYear": 2005,
+      "endYear": 2008,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 1,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT215",
+      "model": "KT215(F)",
+      "startYear": 2008,
+      "endYear": 2012,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT215",
+      "model": "KT215(F)-PC",
+      "startYear": 2008,
+      "endYear": 2012,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 1,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT22",
+      "model": "KT22",
+      "startYear": 2002,
+      "endYear": 2005,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT230",
+      "model": "KT230(F)",
+      "startYear": 2005,
+      "endYear": 2008,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT230",
+      "model": "KT230(F)-PC",
+      "startYear": 2005,
+      "endYear": 2008,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 1,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT235",
+      "model": "KT235(F)",
+      "startYear": 2008,
+      "endYear": 2012,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT235",
+      "model": "KT235(F)-PC",
+      "startYear": 2008,
+      "endYear": 2012,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 1,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT24",
+      "model": "KT24",
+      "startYear": 2002,
+      "endYear": 2005,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT24",
+      "model": "KT24-PC",
+      "startYear": 2002,
+      "endYear": 2005,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT250",
+      "model": "KT250(F)",
+      "startYear": 2005,
+      "endYear": 2008,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT250",
+      "model": "KT250(F)-PC",
+      "startYear": 2005,
+      "endYear": 2008,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 1,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT255",
+      "model": "KT255(F)",
+      "startYear": 2008,
+      "endYear": 2012,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT255",
+      "model": "KT255(F)-PC",
+      "startYear": 2008,
+      "endYear": 2012,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 1,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT27",
+      "model": "KT27",
+      "startYear": 2002,
+      "endYear": 2005,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT27",
+      "model": "KT27-PC",
+      "startYear": 2002,
+      "endYear": 2005,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT",
+      "indexSha256": "eea48c28851557529830a8414b8ff31c583efbd57168690536470c90b29c63c7",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT280",
+      "model": "KT280(F)",
+      "startYear": 2005,
+      "endYear": 2008,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&q=KT&searchType=2&category=1",
+      "indexSha256": "ba3e5d91e9d982618aec8917c7d0d9e51bbafe95c184292fd76b8a4bd9657648",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT280",
+      "model": "KT280(F)-PC",
+      "startYear": 2005,
+      "endYear": 2008,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&q=KT&searchType=2&category=1",
+      "indexSha256": "ba3e5d91e9d982618aec8917c7d0d9e51bbafe95c184292fd76b8a4bd9657648",
+      "duplicateRowCount": 1,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT285",
+      "model": "KT285(F)",
+      "startYear": 2008,
+      "endYear": 2012,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&q=KT&searchType=2&category=1",
+      "indexSha256": "ba3e5d91e9d982618aec8917c7d0d9e51bbafe95c184292fd76b8a4bd9657648",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT285",
+      "model": "KT285(F)-PC",
+      "startYear": 2008,
+      "endYear": 2012,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&q=KT&searchType=2&category=1",
+      "indexSha256": "ba3e5d91e9d982618aec8917c7d0d9e51bbafe95c184292fd76b8a4bd9657648",
+      "duplicateRowCount": 1,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT30",
+      "model": "KT30",
+      "startYear": 2002,
+      "endYear": 2005,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&q=KT&searchType=2&category=1",
+      "indexSha256": "ba3e5d91e9d982618aec8917c7d0d9e51bbafe95c184292fd76b8a4bd9657648",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT300",
+      "model": "KT300(F)",
+      "startYear": 2005,
+      "endYear": 2008,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&q=KT&searchType=2&category=1",
+      "indexSha256": "ba3e5d91e9d982618aec8917c7d0d9e51bbafe95c184292fd76b8a4bd9657648",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    },
+    {
+      "baseModel": "KT305",
+      "model": "KT305(F)",
+      "startYear": 2008,
+      "endYear": 2012,
+      "indexUrl": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?p=25&q=KT&searchType=2&category=1",
+      "indexSha256": "ba3e5d91e9d982618aec8917c7d0d9e51bbafe95c184292fd76b8a4bd9657648",
+      "duplicateRowCount": 0,
+      "checkedAt": "2026-09-17"
+    }
+  ],
+  "excludedNonTractorRows": [
+    {
+      "category": "野菜関連機器",
+      "spec-id": "KTH100-128",
+      "bariki": "-",
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dd77279f7d325eec933f05b1672f6a1f",
+      "sourceUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "sourceSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+    },
+    {
+      "category": "野菜関連機器",
+      "spec-id": "KTH100-200",
+      "bariki": "-",
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0eec27c419d0fe24e53c90338cdc8bc6",
+      "sourceUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+      "sourceSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+    },
+    {
+      "category": "トラクタ作業機",
+      "spec-id": "KTBM2200E",
+      "bariki": "-",
+      "manualUrl": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e19347e1c3ca0c0b97de5fb3b690855a",
+      "sourceUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+      "sourceSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351"
+    }
+  ],
+  "notes": [
+    "Official sales search explicitly says it does not include every historically released product. Completeness means coverage of retrieved official KT indexes, not an absolute claim over undocumented variants.",
+    "Sales names for three-digit models retain the official (F) notation; no inference about the exact F equipment meaning.",
+    "Suffix specification rows can have horsepower values inconsistent with the base row (KT24-FHN/FHT/HN/HT show 27 hp vs KT24 at 24 hp); do not copy those to basic-model cards.",
+    "Point sheets and maintenance sheets are additional documents for the same model, not additional machines.",
+    "Some PC entries occur twice in the sales-year index; exact row duplicates were not counted as additional models."
+  ]
+}

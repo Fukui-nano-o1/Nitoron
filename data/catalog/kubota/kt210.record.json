@@ -1,0 +1,181 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-17T00:00:00.000Z",
+  "records": [
+    {
+      "id": "6e52a9b3-2f7e-4fc9-88c2-55ed6162edb4",
+      "title": "【カタログ解説】クボタ KT210 KTシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-17",
+      "blocks": [
+        {
+          "id": "6e52a9b3-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "6e52a9b3-002",
+          "type": "text",
+          "text": "21馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT210(F)は2005年〜2008年の販売。KT210の取扱説明書と仕様別の公式資料を参照できます。"
+        },
+        {
+          "id": "6e52a9b3-003",
+          "type": "bullet",
+          "text": "馬力：21馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "6e52a9b3-004",
+          "type": "bullet",
+          "text": "販売期間：2005年〜2008年（公式販売年度検索・KT210(F)）"
+        },
+        {
+          "id": "6e52a9b3-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "6e52a9b3-006",
+          "type": "text",
+          "text": "KT210"
+        },
+        {
+          "id": "6e52a9b3-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "6e52a9b3-008",
+          "type": "text",
+          "text": "KT210の公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "6e52a9b3-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "6e52a9b3-010",
+          "type": "text",
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "6e52a9b3-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "6e52a9b3-012",
+          "type": "text",
+          "text": "掲載写真：KT210の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        },
+        {
+          "id": "6e52a9b3-013",
+          "type": "h2",
+          "text": "仕様別の販売期間"
+        },
+        {
+          "id": "6e52a9b3-014",
+          "type": "bullet",
+          "text": "KT210(F)-PC：2005年〜2008年（公式販売年度検索）"
+        },
+        {
+          "id": "6e52a9b3-015",
+          "type": "h2",
+          "text": "仕様別の取扱説明書・補足資料"
+        },
+        {
+          "id": "6e52a9b3-016",
+          "type": "text",
+          "text": "実機の型式末尾と資料名を照合してください。各資料へのリンクは「出典・資料」にあります。"
+        },
+        {
+          "id": "6e52a9b3-017",
+          "type": "bullet",
+          "text": "KT210-PC（仕様別資料）"
+        },
+        {
+          "id": "6e52a9b3-018",
+          "type": "bullet",
+          "text": "KT210-PCメンテナンスシート（補足資料）"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://nouki-ichiba.net/cdn/shop/files/DSCN3711.jpg?v=1704423845&width=1946",
+        "summary": "21馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT210(F)は2005年〜2008年の販売。KT210の取扱説明書と仕様別の公式資料を参照できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "6e52a9b3-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KT210（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT210&searchType=3",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "6e52a9b3-src-sales-index",
+            "title": "クボタ 販売年度検索 KT210",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT210",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "6e52a9b3-src-manual",
+            "title": "取扱説明書 KT210",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a2137a2ae8e39b5002a3f8909ecb88fe",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "6e52a9b3-src-photo",
+            "title": "写真：農キング クボタ KT210（中古実機）",
+            "url": "https://nouki-ichiba.net/products/13424",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "6e52a9b3-src-related-1",
+            "title": "クボタ 公式資料 KT210-PC",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=43dd49b4fdb9bede653e94468ff8df1e",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "6e52a9b3-src-related-2",
+            "title": "クボタ 公式資料 KT210-PCメンテナンスシート",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=31857b449c407203749ae32dd0e7d64a",
+            "date": "2026-09-17"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

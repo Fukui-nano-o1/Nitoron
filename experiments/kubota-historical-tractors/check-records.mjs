@@ -9,9 +9,10 @@ const read = async path => JSON.parse(await readFile(new URL(path, root), 'utf8'
 const manifestPath = process.argv[2] || 'experiments/kubota-historical-tractors/source-checks.json'
 const manifest = await read(manifestPath)
 const photos = (await read('data/card-photos.json')).entries
-assert.equal(manifest.entries.length, 10)
+const expected = manifest.expectedEntries || 10
+assert.equal(manifest.entries.length, expected)
 const models = manifest.entries.map(entry => entry.model)
-assert.equal(new Set(models).size, 10)
+assert.equal(new Set(models).size, expected)
 const normalizeModel = value => value.normalize('NFKC').toUpperCase().replace(/[-‐‑–—\s]/g, '')
 const candidatePaths = new Set(manifest.entries.map(entry => entry.path))
 const existingRecords = []
@@ -46,11 +47,11 @@ for (const item of manifest.entries) {
   assert.deepEqual(publicSnapshot(roundTrip), publicSnapshot(record))
   assert.equal(matches(roundTrip, item.model), true)
   assert.equal(matches(roundTrip, item.model.replace(/([A-Z]+)(\d)/, '$1-$2')), true)
-  assert.equal(record.meta.sources.length, photo ? 4 : 3)
+  assert.equal(record.meta.sources.length, (photo ? 4 : 3) + (entry.sources.relatedManuals?.length || 0))
   assert.equal(record.meta.coverUrl, photo?.url || '')
   checks.push({ model: item.model, id: record.id, duplicate: false, roundTrip: true, searchable: true, sources: record.meta.sources.length, photo: !!photo })
 }
-assert.equal(new Set(checks.map(check => check.id)).size, 10)
-const result = { checkedAt: manifest.checkedAt, additions: checks.length, duplicateCount: 0, checks }
+assert.equal(new Set(checks.map(check => check.id)).size, expected)
+const result = { checkedAt: manifest.checkedAt, additions: manifest.additions ?? checks.length, duplicateCount: 0, checks }
 await writeFile(new URL(manifestPath.replace(/source-checks\.json$/, 'record-checks.json'), root), JSON.stringify(result, null, 2) + '\n')
 console.log(JSON.stringify(result, null, 2))

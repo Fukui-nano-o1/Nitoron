@@ -1,0 +1,113 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KT285",
+  "productName": "KTシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KT285"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "28馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT285(F)は2008年〜2012年の販売。KT285の取扱説明書と仕様別の公式資料を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT285&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "2da9933edff02874ac02a108e0a6ac8cb55ae8031b2d51544389a44e3479fbc1",
+      "result": {
+        "model": "KT285",
+        "category": "トラクタ",
+        "horsepower": "28馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT285",
+      "checkedAt": "2026-09-17",
+      "sha256": "ba727013e4172ed5acf2391913a706272e017e155cdce2fb5627bc1e43b5a247",
+      "result": {
+        "model": "KT285(F)",
+        "startYear": 2008,
+        "endYear": 2012
+      },
+      "variants": [
+        {
+          "model": "KT285(F)-PC",
+          "startYear": 2008,
+          "endYear": 2012
+        }
+      ]
+    },
+    "manuals": [
+      {
+        "title": "KT285",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4da04049a062f5adfe81b67dd755cecc",
+        "checkedAt": "2026-09-17",
+        "sha256": "8bccb1d983bc5592b5aeeec2f65a2735b54fac14ee40205544d2a29cd60ce07d"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KT285ポイントシート",
+        "kind": "guide",
+        "horsepower": "28馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8f1d43620bc6bb580df6e80b0dc05c48",
+        "checkedAt": "2026-09-17",
+        "sha256": "25b5145c63ba666a6ff938d7f7db6e8dc5fdbdf22a5653825050c0306c17d774",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      },
+      {
+        "title": "KT285-PC",
+        "kind": "variant",
+        "horsepower": "28馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=af21d0c97db2e27e13572cbf59eb343d",
+        "checkedAt": "2026-09-17",
+        "sha256": "9656008776dab8f6bc963be19ea758504143ed34851778fd56a35a4fb125477e",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351"
+      },
+      {
+        "title": "KT285-PCR",
+        "kind": "variant",
+        "horsepower": "28馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c9f95a0a5af052bffce5c89917335f67",
+        "checkedAt": "2026-09-17",
+        "sha256": "9af59c38aad092567ecce9cc406bd7eec757076a9414bd81a69ac9e01528c456",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351"
+      },
+      {
+        "title": "KT285-PCポイントシート",
+        "kind": "guide",
+        "horsepower": "28馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e58cc5ca94270acaceed13bc82dfedf7",
+        "checkedAt": "2026-09-17",
+        "sha256": "a0671b5e79449a62336373bfbe28d5a9dc8c51c9c16a127e19a3fec8fd31781b",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351"
+      },
+      {
+        "title": "KT285-PCメンテナンスシート",
+        "kind": "guide",
+        "horsepower": "28馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b9d487a30398d42ecff55c228ed5652b",
+        "checkedAt": "2026-09-17",
+        "sha256": "f449fa19d129e64c6ea37a0140626debb91876de09827c9e59c067068e2209b1",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KT-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KT285"
+}

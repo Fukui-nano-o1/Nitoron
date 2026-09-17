@@ -1,0 +1,203 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-17T00:00:00.000Z",
+  "records": [
+    {
+      "id": "a93987e9-62bf-4589-8828-67dc37b45cd2",
+      "title": "【カタログ解説】クボタ KT215 KTシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-17",
+      "blocks": [
+        {
+          "id": "a93987e9-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "a93987e9-002",
+          "type": "text",
+          "text": "21馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT215(F)は2008年〜2012年の販売。KT215の取扱説明書と仕様別の公式資料を参照できます。"
+        },
+        {
+          "id": "a93987e9-003",
+          "type": "bullet",
+          "text": "馬力：21馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "a93987e9-004",
+          "type": "bullet",
+          "text": "販売期間：2008年〜2012年（公式販売年度検索・KT215(F)）"
+        },
+        {
+          "id": "a93987e9-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "a93987e9-006",
+          "type": "text",
+          "text": "KT215"
+        },
+        {
+          "id": "a93987e9-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "a93987e9-008",
+          "type": "text",
+          "text": "KT215の公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "a93987e9-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "a93987e9-010",
+          "type": "text",
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "a93987e9-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "a93987e9-012",
+          "type": "text",
+          "text": "掲載写真：KT215の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        },
+        {
+          "id": "a93987e9-013",
+          "type": "h2",
+          "text": "仕様別の販売期間"
+        },
+        {
+          "id": "a93987e9-014",
+          "type": "bullet",
+          "text": "KT215(F)-PC：2008年〜2012年（公式販売年度検索）"
+        },
+        {
+          "id": "a93987e9-015",
+          "type": "h2",
+          "text": "仕様別の取扱説明書・補足資料"
+        },
+        {
+          "id": "a93987e9-016",
+          "type": "text",
+          "text": "実機の型式末尾と資料名を照合してください。各資料へのリンクは「出典・資料」にあります。"
+        },
+        {
+          "id": "a93987e9-017",
+          "type": "bullet",
+          "text": "KT215ポイントシート（補足資料）"
+        },
+        {
+          "id": "a93987e9-018",
+          "type": "bullet",
+          "text": "KT215-PC（仕様別資料）"
+        },
+        {
+          "id": "a93987e9-019",
+          "type": "bullet",
+          "text": "KT215-PCポイントシート（補足資料）"
+        },
+        {
+          "id": "a93987e9-020",
+          "type": "bullet",
+          "text": "KT215-PCメンテナンスシート（補足資料）"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://ummkt.com/image/item/itm0073888/012ec746-5f23-d761-a0a9-3fdc3df782b1.jpg",
+        "summary": "21馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT215(F)は2008年〜2012年の販売。KT215の取扱説明書と仕様別の公式資料を参照できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "a93987e9-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KT215（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT215&searchType=3",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "a93987e9-src-sales-index",
+            "title": "クボタ 販売年度検索 KT215",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT215",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "a93987e9-src-manual",
+            "title": "取扱説明書 KT215",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=53adaf494dc89ef7196d73636eb2451b",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "a93987e9-src-photo",
+            "title": "写真：UMM中古農機市場 クボタ KT215（中古実機）",
+            "url": "https://ummkt.com/market/detail.php?id=itm0073888",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "a93987e9-src-related-1",
+            "title": "クボタ 公式資料 KT215ポイントシート",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a1519de5b5d44b31a01de013b9b51a80",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "a93987e9-src-related-2",
+            "title": "クボタ 公式資料 KT215-PC",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=fc2c7c47b918d0c2d792a719dfb602ef",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "a93987e9-src-related-3",
+            "title": "クボタ 公式資料 KT215-PCポイントシート",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=dc58e3a306451c9d670adcd37004f48f",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "a93987e9-src-related-4",
+            "title": "クボタ 公式資料 KT215-PCメンテナンスシート",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1b0114c51cc532ed34e1954b5b9e4b58",
+            "date": "2026-09-17"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

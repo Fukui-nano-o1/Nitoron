@@ -1,0 +1,76 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KT30",
+  "productName": "KTシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KT30"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "30馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT30は2002年〜2005年の販売。KT30の取扱説明書と仕様別の公式資料を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT30&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "2670ba653d5532e6bde96b7fecfb199d548dcc2b8d4c8feb843ef9fd0dc9d3b7",
+      "result": {
+        "model": "KT30",
+        "category": "トラクタ",
+        "horsepower": "30馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT30",
+      "checkedAt": "2026-09-17",
+      "sha256": "cacc18f438655e4813f9fe2f978f92abe06ab8c492fdb893a31213fcd204ffb5",
+      "result": {
+        "model": "KT30",
+        "startYear": 2002,
+        "endYear": 2005
+      }
+    },
+    "manuals": [
+      {
+        "title": "KT30",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2cbca44843a864533ec05b321ae1f9d1",
+        "checkedAt": "2026-09-17",
+        "sha256": "df22830268e5901785ed83be52fd600f7490fabc3ddcaf90f21a98d09278c1ec"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KT30-FQHN",
+        "kind": "variant",
+        "horsepower": "30馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=ac52c626afc10d4075708ac4c778ddfc",
+        "checkedAt": "2026-09-17",
+        "sha256": "6b2349bcee244b9ffa750ec8c95b927256ce1828d809fc7f27ab76d7dfe96935",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      },
+      {
+        "title": "KT30Q",
+        "kind": "variant",
+        "horsepower": "30馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d6ef5f7fa914c19931a55bb262ec879c",
+        "checkedAt": "2026-09-17",
+        "sha256": "1138d0b907c7c09a206d71a8f96ae41920c381433bbdefaecb1cf62ef56b123b",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
+      }
+    ]
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KT-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KT30"
+}

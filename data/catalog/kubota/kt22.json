@@ -3,18 +3,18 @@
   "coverage": "historical-overview",
   "maker": "クボタ",
   "series": "KT22",
-  "productName": "旧型モデル",
+  "productName": "KTシリーズ",
   "category": "トラクタ",
   "models": [
     "KT22"
   ],
-  "checkedAt": "2026-09-16",
-  "summary": "22馬力の旧型トラクタ。公式販売年度検索のKT22は2002年〜2005年の販売。KT22の取扱説明書を参照できます。",
+  "checkedAt": "2026-09-17",
+  "summary": "22馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT22は2002年〜2005年の販売。KT22の取扱説明書と仕様別の公式資料を参照できます。",
   "sources": {
     "manualIndex": {
       "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT22&searchType=3",
-      "checkedAt": "2026-09-16",
-      "sha256": "2ea0301a68e69d67f3b5412170c2bad375a0200da66c0d4df5c5ffbaf6660064",
+      "checkedAt": "2026-09-17",
+      "sha256": "3d45ad2cb6dbdfa9635a80de818b8aa4c2d5a82b068c4c39067848abefdc74ea",
       "result": {
         "model": "KT22",
         "category": "トラクタ",
@@ -23,8 +23,8 @@
     },
     "salesIndex": {
       "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT22",
-      "checkedAt": "2026-09-16",
-      "sha256": "c0046899dda2b79bd73bf61f9d4ca30f5a5ab8cb537c6c7d1d7d82cd07a45a6c",
+      "checkedAt": "2026-09-17",
+      "sha256": "e0280b52c4d2f7cb2659ca14a1579903f107af4c0706d4704be9391fa587fffb",
       "result": {
         "model": "KT22",
         "startYear": 2002,
@@ -35,8 +35,20 @@
       {
         "title": "KT22",
         "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=390e982518a50e280d8e2b535462ec1f",
-        "checkedAt": "2026-09-16",
-        "sha256": "cf79add67d05e8ed1c74caebc6c09151fe308bb4c149c15d5e6ce2bbd8aa10c9"
+        "checkedAt": "2026-09-17",
+        "sha256": "2be4ec1c823b95f227bad4fe6d04108eef20fdfde39928830315ea18cff8119c"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KT22Q",
+        "kind": "variant",
+        "horsepower": "22馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=708f3cf8100d5e71834b1db77dfa15d6",
+        "checkedAt": "2026-09-17",
+        "sha256": "72782b94f20224007deeb986402c595536559fc7ab61ca362a143bbcc8cc6f49",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+        "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4"
       }
     ]
   },
@@ -46,6 +58,7 @@
     "manualNotice": "HTTP 200",
     "manualBody": "not-reviewed",
     "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KT-prefix-pages-and-notice-links-confirmed",
     "repairGuide": "not-added",
     "threeD": "not-added"
   },

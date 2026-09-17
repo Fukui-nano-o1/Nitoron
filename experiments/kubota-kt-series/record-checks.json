@@ -1,0 +1,142 @@
+{
+  "checkedAt": "2026-09-17",
+  "additions": 11,
+  "duplicateCount": 0,
+  "checks": [
+    {
+      "model": "KT20",
+      "id": "ad0847cb-1422-4ea6-8495-d0085f0634eb",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 7,
+      "photo": true
+    },
+    {
+      "model": "KT22",
+      "id": "cb655ab0-e404-4f27-8850-e3d2153a0a56",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 5,
+      "photo": true
+    },
+    {
+      "model": "KT24",
+      "id": "34d5dfa0-e9d9-4c17-8377-405ae4496673",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 10,
+      "photo": true
+    },
+    {
+      "model": "KT27",
+      "id": "c65a466a-a379-4642-85a6-9ee879762757",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 6,
+      "photo": true
+    },
+    {
+      "model": "KT30",
+      "id": "73bce570-dd91-4dd0-8a1c-ff638c477924",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 6,
+      "photo": true
+    },
+    {
+      "model": "KT210",
+      "id": "6e52a9b3-2f7e-4fc9-88c2-55ed6162edb4",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 6,
+      "photo": true
+    },
+    {
+      "model": "KT230",
+      "id": "c6c11e33-31d1-4326-8de4-843e1ec94b4f",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 7,
+      "photo": true
+    },
+    {
+      "model": "KT250",
+      "id": "2a1519a0-84c7-424a-832a-ee40794d3bd8",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 6,
+      "photo": true
+    },
+    {
+      "model": "KT280",
+      "id": "293344ad-9708-4c63-84e4-18746601d27b",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 6,
+      "photo": true
+    },
+    {
+      "model": "KT300",
+      "id": "c0842812-5b31-4fde-874b-34493c0af776",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 4,
+      "photo": true
+    },
+    {
+      "model": "KT215",
+      "id": "a93987e9-62bf-4589-8828-67dc37b45cd2",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 8,
+      "photo": true
+    },
+    {
+      "model": "KT235",
+      "id": "b5298c71-c50c-44d7-8dca-a47d85d3dde6",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 9,
+      "photo": true
+    },
+    {
+      "model": "KT255",
+      "id": "1d36f8e0-1e6a-4f91-8c1a-ac9960de39e0",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 10,
+      "photo": true
+    },
+    {
+      "model": "KT285",
+      "id": "abb7a8d9-e468-4c55-8b4b-139032076341",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 9,
+      "photo": true
+    },
+    {
+      "model": "KT305",
+      "id": "68c605b7-f9c9-4fc5-84e8-6062e9862492",
+      "duplicate": false,
+      "roundTrip": true,
+      "searchable": true,
+      "sources": 5,
+      "photo": true
+    }
+  ]
+}

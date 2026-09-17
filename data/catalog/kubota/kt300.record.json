@@ -1,0 +1,139 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-17T00:00:00.000Z",
+  "records": [
+    {
+      "id": "c0842812-5b31-4fde-874b-34493c0af776",
+      "title": "【カタログ解説】クボタ KT300 KTシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-17",
+      "blocks": [
+        {
+          "id": "c0842812-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "c0842812-002",
+          "type": "text",
+          "text": "30馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT300(F)は2005年〜2008年の販売。KT300の取扱説明書と仕様別の公式資料を参照できます。"
+        },
+        {
+          "id": "c0842812-003",
+          "type": "bullet",
+          "text": "馬力：30馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "c0842812-004",
+          "type": "bullet",
+          "text": "販売期間：2005年〜2008年（公式販売年度検索・KT300(F)）"
+        },
+        {
+          "id": "c0842812-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "c0842812-006",
+          "type": "text",
+          "text": "KT300"
+        },
+        {
+          "id": "c0842812-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "c0842812-008",
+          "type": "text",
+          "text": "KT300の公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "c0842812-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "c0842812-010",
+          "type": "text",
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "c0842812-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "c0842812-012",
+          "type": "text",
+          "text": "掲載写真：KT300の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://growthpower.jp/efs-gp-upload/2019-01/thumbnail/98c6deb53ef49562b93d97833cbda939_450x338_thumb.jpg",
+        "summary": "30馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT300(F)は2005年〜2008年の販売。KT300の取扱説明書と仕様別の公式資料を参照できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "c0842812-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KT300（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT300&searchType=3",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "c0842812-src-sales-index",
+            "title": "クボタ 販売年度検索 KT300",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT300",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "c0842812-src-manual",
+            "title": "取扱説明書 KT300",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b59c67bf196a4758191e42f76670ceba",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "c0842812-src-photo",
+            "title": "写真：GROWTH POWER クボタ KT300（中古実機）",
+            "url": "https://growthpower.jp/Japanese/content/27206",
+            "date": "2026-09-17"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-09-17",
+  "context": "Local Nitoron app; proposed publication snapshots; Auth/API mocked; Actual image bytes fetched over HTTPS from all 15 source URLs rendered via browser routes. Browser image routes use verified downloaded bytes; direct browser delivery from external photo hosts is not covered by this check. Source HTTPS responses and dimensions are verified separately in photo-checks.json. No production login or email sent.",
+  "agentBrowser": "Reused Playwright fallback after the agent-browser CLI daemon failed in the preceding photo batch; Chromium 153 restored from existing local binaries; Japanese fallback font configured",
+  "browser": "153.0.8010.0",
+  "downloadedImagesRendered": 15,
+  "results": [
+    {
+      "width": 1280,
+      "view": "cards",
+      "loaded": 15,
+      "objectFit": "contain"
+    },
+    {
+      "width": 1280,
+      "view": "details",
+      "loaded": 15,
+      "sourceLinks": 15,
+      "usedPhotoNotes": 15,
+      "galleryVerified": true
+    },
+    {
+      "width": 390,
+      "view": "cards",
+      "loaded": 15,
+      "objectFit": "contain"
+    },
+    {
+      "width": 390,
+      "view": "details",
+      "loaded": 15,
+      "sourceLinks": 15,
+      "usedPhotoNotes": 15,
+      "galleryVerified": true
+    }
+  ],
+  "pageErrors": []
+}

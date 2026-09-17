@@ -3,18 +3,18 @@
   "coverage": "historical-overview",
   "maker": "クボタ",
   "series": "KT27",
-  "productName": "旧型モデル",
+  "productName": "KTシリーズ",
   "category": "トラクタ",
   "models": [
     "KT27"
   ],
-  "checkedAt": "2026-09-16",
-  "summary": "27馬力の旧型トラクタ。公式販売年度検索のKT27は2002年〜2005年の販売。KT27の取扱説明書を参照できます。",
+  "checkedAt": "2026-09-17",
+  "summary": "27馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT27は2002年〜2005年の販売。KT27の取扱説明書と仕様別の公式資料を参照できます。",
   "sources": {
     "manualIndex": {
       "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT27&searchType=3",
-      "checkedAt": "2026-09-16",
-      "sha256": "ad863492bc8dbc1b00b28305e370b372737c7134ac2cafaacad19f25cb1b4ce0",
+      "checkedAt": "2026-09-17",
+      "sha256": "0a76e0c28c6426fe55cb1dc7783b8e4b5bcacc4ff3c78f24bcde9ad74ffff26d",
       "result": {
         "model": "KT27",
         "category": "トラクタ",
@@ -23,20 +23,49 @@
     },
     "salesIndex": {
       "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT27",
-      "checkedAt": "2026-09-16",
-      "sha256": "b388a14dc747206b4c712435ccb7d9327c3cb6e0d745b0ded5655ef6eab0d46a",
+      "checkedAt": "2026-09-17",
+      "sha256": "a9ddd2b397c719ab50acb496627c3255c2a1f16d0d83af822f3eaef69e5dedbb",
       "result": {
         "model": "KT27",
         "startYear": 2002,
         "endYear": 2005
-      }
+      },
+      "variants": [
+        {
+          "model": "KT27-PC",
+          "startYear": 2002,
+          "endYear": 2005
+        }
+      ]
     },
     "manuals": [
       {
         "title": "KT27",
         "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a5e0ff62be0b08456fc7f1e88812af3d",
-        "checkedAt": "2026-09-16",
-        "sha256": "3b931bb260e100190e31d0535309bf96cee53c9fe91b7c320eb11684669c3d13"
+        "checkedAt": "2026-09-17",
+        "sha256": "7a930f0b3b59b25379ac1c3f1e25d0012ecb1369f290dca0dd03380eeaaefa73"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KT27Q",
+        "kind": "variant",
+        "horsepower": "27馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=1e6e0a04d20f50967c64dac2d639a577",
+        "checkedAt": "2026-09-17",
+        "sha256": "74774b59abf513ec985261e3a1eb4b335c630eec2d006e1b68b2e41916da5c42",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+        "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4"
+      },
+      {
+        "title": "KT27-PC",
+        "kind": "variant",
+        "horsepower": "27馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a0160709701140704575d499c997b6ca",
+        "checkedAt": "2026-09-17",
+        "sha256": "542672146eed79b04e6505870ade2d8ab769c9b229575236092debb924d4177a",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=50&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "fc0c51556c6bb91d3b4a22a4635776a6c5cd4f8dd10553c5563043b29eb69351"
       }
     ]
   },
@@ -46,6 +75,7 @@
     "manualNotice": "HTTP 200",
     "manualBody": "not-reviewed",
     "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KT-prefix-pages-and-notice-links-confirmed",
     "repairGuide": "not-added",
     "threeD": "not-added"
   },

@@ -1,14 +1,14 @@
 {
   "format": "nitoron-workspace",
   "version": 1,
-  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "exportedAt": "2026-09-17T00:00:00.000Z",
   "records": [
     {
       "id": "ad0847cb-1422-4ea6-8495-d0085f0634eb",
-      "title": "【カタログ解説】クボタ KT20 旧型モデル（トラクタ）",
+      "title": "【カタログ解説】クボタ KT20 KTシリーズ（トラクタ）",
       "category": "トラクタ",
       "type": "メモ",
-      "date": "2026-09-16",
+      "date": "2026-09-17",
       "blocks": [
         {
           "id": "ad0847cb-001",
@@ -18,7 +18,7 @@
         {
           "id": "ad0847cb-002",
           "type": "text",
-          "text": "20馬力の旧型トラクタ。公式販売年度検索のKT20は2002年〜2005年の販売。KT20の取扱説明書を参照できます。"
+          "text": "20馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT20は2002年〜2005年の販売。KT20の取扱説明書と仕様別の公式資料を参照できます。"
         },
         {
           "id": "ad0847cb-003",
@@ -58,7 +58,7 @@
         {
           "id": "ad0847cb-010",
           "type": "text",
-          "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
         },
         {
           "id": "ad0847cb-011",
@@ -69,6 +69,41 @@
           "id": "ad0847cb-012",
           "type": "text",
           "text": "掲載写真：KT20の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        },
+        {
+          "id": "ad0847cb-013",
+          "type": "h2",
+          "text": "仕様別の販売期間"
+        },
+        {
+          "id": "ad0847cb-014",
+          "type": "bullet",
+          "text": "KT20-PC：2002年〜2005年（公式販売年度検索）"
+        },
+        {
+          "id": "ad0847cb-015",
+          "type": "h2",
+          "text": "仕様別の取扱説明書・補足資料"
+        },
+        {
+          "id": "ad0847cb-016",
+          "type": "text",
+          "text": "実機の型式末尾と資料名を照合してください。各資料へのリンクは「出典・資料」にあります。"
+        },
+        {
+          "id": "ad0847cb-017",
+          "type": "bullet",
+          "text": "KT20-HN-8（仕様別資料）"
+        },
+        {
+          "id": "ad0847cb-018",
+          "type": "bullet",
+          "text": "KT20Q（仕様別資料）"
+        },
+        {
+          "id": "ad0847cb-019",
+          "type": "bullet",
+          "text": "KT20-PC（仕様別資料）"
         }
       ],
       "meta": {
@@ -84,7 +119,7 @@
         "start": "",
         "end": "",
         "coverUrl": "https://sun-jp.co.jp/system/photo/fa-00004905-1.jpg",
-        "summary": "20馬力の旧型トラクタ。公式販売年度検索のKT20は2002年〜2005年の販売。KT20の取扱説明書を参照できます。",
+        "summary": "20馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT20は2002年〜2005年の販売。KT20の取扱説明書と仕様別の公式資料を参照できます。",
         "issue": "",
         "hypothesis": "",
         "action": "",
@@ -107,25 +142,43 @@
             "id": "ad0847cb-src-manual-index",
             "title": "クボタ 取扱説明書検索 KT20（完全一致）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT20&searchType=3",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "ad0847cb-src-sales-index",
             "title": "クボタ 販売年度検索 KT20",
             "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT20",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "ad0847cb-src-manual",
             "title": "取扱説明書 KT20",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=cd89fef7ffdd490db800357f47722b20",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "ad0847cb-src-photo",
             "title": "写真：サンセレクトジャパン クボタ KT20（中古実機）",
             "url": "https://sun-jp.co.jp/jp/fa_list/detail.php?no=4905",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
+          },
+          {
+            "id": "ad0847cb-src-related-1",
+            "title": "クボタ 公式資料 KT20-HN-8",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=3f900db2608fb3eecb3ee77ba9ef5f60",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "ad0847cb-src-related-2",
+            "title": "クボタ 公式資料 KT20Q",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=2290a7385ed77cc5592dc2153229f082",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "ad0847cb-src-related-3",
+            "title": "クボタ 公式資料 KT20-PC",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=6c340f25839e6acdc73414517203f5f0",
+            "date": "2026-09-17"
           }
         ],
         "attachments": [],

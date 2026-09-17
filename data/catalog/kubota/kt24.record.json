@@ -1,14 +1,14 @@
 {
   "format": "nitoron-workspace",
   "version": 1,
-  "exportedAt": "2026-09-16T00:00:00.000Z",
+  "exportedAt": "2026-09-17T00:00:00.000Z",
   "records": [
     {
       "id": "34d5dfa0-e9d9-4c17-8377-405ae4496673",
-      "title": "【カタログ解説】クボタ KT24 旧型モデル（トラクタ）",
+      "title": "【カタログ解説】クボタ KT24 KTシリーズ（トラクタ）",
       "category": "トラクタ",
       "type": "メモ",
-      "date": "2026-09-16",
+      "date": "2026-09-17",
       "blocks": [
         {
           "id": "34d5dfa0-001",
@@ -18,7 +18,7 @@
         {
           "id": "34d5dfa0-002",
           "type": "text",
-          "text": "24馬力の旧型トラクタ。公式販売年度検索のKT24は2002年〜2005年の販売。KT24の取扱説明書を参照できます。"
+          "text": "24馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT24は2002年〜2005年の販売。KT24の取扱説明書と仕様別の公式資料を参照できます。"
         },
         {
           "id": "34d5dfa0-003",
@@ -58,7 +58,7 @@
         {
           "id": "34d5dfa0-010",
           "type": "text",
-          "text": "2026-09-16に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
         },
         {
           "id": "34d5dfa0-011",
@@ -69,6 +69,56 @@
           "id": "34d5dfa0-012",
           "type": "text",
           "text": "掲載写真：KT24の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        },
+        {
+          "id": "34d5dfa0-013",
+          "type": "h2",
+          "text": "仕様別の販売期間"
+        },
+        {
+          "id": "34d5dfa0-014",
+          "type": "bullet",
+          "text": "KT24-PC：2002年〜2005年（公式販売年度検索）"
+        },
+        {
+          "id": "34d5dfa0-015",
+          "type": "h2",
+          "text": "仕様別の取扱説明書・補足資料"
+        },
+        {
+          "id": "34d5dfa0-016",
+          "type": "text",
+          "text": "実機の型式末尾と資料名を照合してください。各資料へのリンクは「出典・資料」にあります。"
+        },
+        {
+          "id": "34d5dfa0-017",
+          "type": "bullet",
+          "text": "KT24-FHN（仕様別資料）"
+        },
+        {
+          "id": "34d5dfa0-018",
+          "type": "bullet",
+          "text": "KT24-FHT（仕様別資料）"
+        },
+        {
+          "id": "34d5dfa0-019",
+          "type": "bullet",
+          "text": "KT24-HN（仕様別資料）"
+        },
+        {
+          "id": "34d5dfa0-020",
+          "type": "bullet",
+          "text": "KT24-HT（仕様別資料）"
+        },
+        {
+          "id": "34d5dfa0-021",
+          "type": "bullet",
+          "text": "KT24Q（仕様別資料）"
+        },
+        {
+          "id": "34d5dfa0-022",
+          "type": "bullet",
+          "text": "KT24-PC（仕様別資料）"
         }
       ],
       "meta": {
@@ -84,7 +134,7 @@
         "start": "",
         "end": "",
         "coverUrl": "https://www.noukinavi.com/html/upload/save_image/00200100001/7192/0_detail.jpg",
-        "summary": "24馬力の旧型トラクタ。公式販売年度検索のKT24は2002年〜2005年の販売。KT24の取扱説明書を参照できます。",
+        "summary": "24馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT24は2002年〜2005年の販売。KT24の取扱説明書と仕様別の公式資料を参照できます。",
         "issue": "",
         "hypothesis": "",
         "action": "",
@@ -107,25 +157,61 @@
             "id": "34d5dfa0-src-manual-index",
             "title": "クボタ 取扱説明書検索 KT24（完全一致）",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT24&searchType=3",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "34d5dfa0-src-sales-index",
             "title": "クボタ 販売年度検索 KT24",
             "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT24",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "34d5dfa0-src-manual",
             "title": "取扱説明書 KT24",
             "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4f16c818875d9fcb6867c7bdc89be7eb",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
           },
           {
             "id": "34d5dfa0-src-photo",
             "title": "写真：ノウキナビ クボタ KT24（中古実機）",
             "url": "https://www.noukinavi.com/shop_use/products/detail/7192",
-            "date": "2026-09-16"
+            "date": "2026-09-17"
+          },
+          {
+            "id": "34d5dfa0-src-related-1",
+            "title": "クボタ 公式資料 KT24-FHN",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=86c51678350f656dcc7f490a43946ee5",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "34d5dfa0-src-related-2",
+            "title": "クボタ 公式資料 KT24-FHT",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=806d926414ce19d907700e23177ab4ff",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "34d5dfa0-src-related-3",
+            "title": "クボタ 公式資料 KT24-HN",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0f3c5d0c3666eec8cd311bec6d878915",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "34d5dfa0-src-related-4",
+            "title": "クボタ 公式資料 KT24-HT",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=bf5cd8b2509011b9502a72296edc14a0",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "34d5dfa0-src-related-5",
+            "title": "クボタ 公式資料 KT24Q",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a26398dca6f47b49876cbaffbc9954f9",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "34d5dfa0-src-related-6",
+            "title": "クボタ 公式資料 KT24-PC",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d91d1b4d82419de8a614abce9cc0e6d4",
+            "date": "2026-09-17"
           }
         ],
         "attachments": [],

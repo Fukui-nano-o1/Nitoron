@@ -1,0 +1,55 @@
+{
+  "schema": "nitoron-catalog/2",
+  "coverage": "historical-overview",
+  "maker": "クボタ",
+  "series": "KT300",
+  "productName": "KTシリーズ",
+  "category": "トラクタ",
+  "models": [
+    "KT300"
+  ],
+  "checkedAt": "2026-09-17",
+  "summary": "30馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT300(F)は2005年〜2008年の販売。KT300の取扱説明書と仕様別の公式資料を参照できます。",
+  "sources": {
+    "manualIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT300&searchType=3",
+      "checkedAt": "2026-09-17",
+      "sha256": "dacca440267863c610d8d88c3960e59eaf28567edd141a447ec2205fcb1b6cae",
+      "result": {
+        "model": "KT300",
+        "category": "トラクタ",
+        "horsepower": "30馬力"
+      }
+    },
+    "salesIndex": {
+      "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT300",
+      "checkedAt": "2026-09-17",
+      "sha256": "ecbe5d6335019ce12111327d62f8fff961af2dd64b70d2aebe46fc5a19b46fa0",
+      "result": {
+        "model": "KT300(F)",
+        "startYear": 2005,
+        "endYear": 2008
+      }
+    },
+    "manuals": [
+      {
+        "title": "KT300",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b59c67bf196a4758191e42f76670ceba",
+        "checkedAt": "2026-09-17",
+        "sha256": "9a693639c2ae6ca853cef4c18492c89ef34ba881dc4be649897354c6fe76ec0f"
+      }
+    ],
+    "relatedManuals": []
+  },
+  "verification": {
+    "manualIndex": "exact-model-and-horsepower-confirmed",
+    "salesIndex": "matching-model-and-sales-period-confirmed",
+    "manualNotice": "HTTP 200",
+    "manualBody": "not-reviewed",
+    "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KT-prefix-pages-and-notice-links-confirmed",
+    "repairGuide": "not-added",
+    "threeD": "not-added"
+  },
+  "photoModel": "KT300"
+}

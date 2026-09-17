@@ -1,0 +1,214 @@
+{
+  "format": "nitoron-workspace",
+  "version": 1,
+  "exportedAt": "2026-09-17T00:00:00.000Z",
+  "records": [
+    {
+      "id": "abb7a8d9-e468-4c55-8b4b-139032076341",
+      "title": "【カタログ解説】クボタ KT285 KTシリーズ（トラクタ）",
+      "category": "トラクタ",
+      "type": "メモ",
+      "date": "2026-09-17",
+      "blocks": [
+        {
+          "id": "abb7a8d9-001",
+          "type": "h2",
+          "text": "製品の概要"
+        },
+        {
+          "id": "abb7a8d9-002",
+          "type": "text",
+          "text": "28馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT285(F)は2008年〜2012年の販売。KT285の取扱説明書と仕様別の公式資料を参照できます。"
+        },
+        {
+          "id": "abb7a8d9-003",
+          "type": "bullet",
+          "text": "馬力：28馬力（公式取扱説明書検索）"
+        },
+        {
+          "id": "abb7a8d9-004",
+          "type": "bullet",
+          "text": "販売期間：2008年〜2012年（公式販売年度検索・KT285(F)）"
+        },
+        {
+          "id": "abb7a8d9-005",
+          "type": "h2",
+          "text": "対象の型式"
+        },
+        {
+          "id": "abb7a8d9-006",
+          "type": "text",
+          "text": "KT285"
+        },
+        {
+          "id": "abb7a8d9-007",
+          "type": "h2",
+          "text": "取扱説明書"
+        },
+        {
+          "id": "abb7a8d9-008",
+          "type": "text",
+          "text": "KT285の公式取扱説明書は、出典の案内ページから確認できます。"
+        },
+        {
+          "id": "abb7a8d9-009",
+          "type": "h2",
+          "text": "確認した範囲"
+        },
+        {
+          "id": "abb7a8d9-010",
+          "type": "text",
+          "text": "2026-09-17に公式検索の型式・馬力・販売期間と取扱説明書の案内先を確認。本文の整備手順・部品の適合・現在の在庫や中古価格は確認していません。"
+        },
+        {
+          "id": "abb7a8d9-011",
+          "type": "h2",
+          "text": "写真について"
+        },
+        {
+          "id": "abb7a8d9-012",
+          "type": "text",
+          "text": "掲載写真：KT285の中古実機。装備・塗装・状態は撮影個体のもので、販売在庫や新品時の標準仕様を示すものではありません。"
+        },
+        {
+          "id": "abb7a8d9-013",
+          "type": "h2",
+          "text": "仕様別の販売期間"
+        },
+        {
+          "id": "abb7a8d9-014",
+          "type": "bullet",
+          "text": "KT285(F)-PC：2008年〜2012年（公式販売年度検索）"
+        },
+        {
+          "id": "abb7a8d9-015",
+          "type": "h2",
+          "text": "仕様別の取扱説明書・補足資料"
+        },
+        {
+          "id": "abb7a8d9-016",
+          "type": "text",
+          "text": "実機の型式末尾と資料名を照合してください。各資料へのリンクは「出典・資料」にあります。"
+        },
+        {
+          "id": "abb7a8d9-017",
+          "type": "bullet",
+          "text": "KT285ポイントシート（補足資料）"
+        },
+        {
+          "id": "abb7a8d9-018",
+          "type": "bullet",
+          "text": "KT285-PC（仕様別資料）"
+        },
+        {
+          "id": "abb7a8d9-019",
+          "type": "bullet",
+          "text": "KT285-PCR（仕様別資料）"
+        },
+        {
+          "id": "abb7a8d9-020",
+          "type": "bullet",
+          "text": "KT285-PCポイントシート（補足資料）"
+        },
+        {
+          "id": "abb7a8d9-021",
+          "type": "bullet",
+          "text": "KT285-PCメンテナンスシート（補足資料）"
+        }
+      ],
+      "meta": {
+        "schema": 1,
+        "kind": "trouble",
+        "inputMode": "free",
+        "author": "クボタカタログ解説（Nitoron運営・非公式）",
+        "club": "Nitoron / 4H Club",
+        "crop": "トラクタ",
+        "variety": "",
+        "region": "",
+        "areaA": "",
+        "start": "",
+        "end": "",
+        "coverUrl": "https://www.noukenki.jp/wp-content/uploads/2024/07/1-1-660x496.jpg",
+        "summary": "28馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT285(F)は2008年〜2012年の販売。KT285の取扱説明書と仕様別の公式資料を参照できます。",
+        "issue": "",
+        "hypothesis": "",
+        "action": "",
+        "result": "",
+        "interpretation": "",
+        "learning": "",
+        "conditions": "",
+        "stage": "仮説",
+        "target": "",
+        "deadline": "",
+        "criterion": "",
+        "verdict": "",
+        "revenue": "",
+        "cost": "",
+        "hours": "",
+        "yieldKg": "",
+        "observations": [],
+        "sources": [
+          {
+            "id": "abb7a8d9-src-manual-index",
+            "title": "クボタ 取扱説明書検索 KT285（完全一致）",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT285&searchType=3",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "abb7a8d9-src-sales-index",
+            "title": "クボタ 販売年度検索 KT285",
+            "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT285",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "abb7a8d9-src-manual",
+            "title": "取扱説明書 KT285",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4da04049a062f5adfe81b67dd755cecc",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "abb7a8d9-src-photo",
+            "title": "写真：茨城中古農建機販売 クボタ KT285（中古実機）",
+            "url": "https://www.noukenki.jp/stock/kubota-kt285-%e5%89%8d%e3%82%bf%e3%82%a4%e3%83%a4%e6%96%b0%e5%93%81/",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "abb7a8d9-src-related-1",
+            "title": "クボタ 公式資料 KT285ポイントシート",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=8f1d43620bc6bb580df6e80b0dc05c48",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "abb7a8d9-src-related-2",
+            "title": "クボタ 公式資料 KT285-PC",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=af21d0c97db2e27e13572cbf59eb343d",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "abb7a8d9-src-related-3",
+            "title": "クボタ 公式資料 KT285-PCR",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=c9f95a0a5af052bffce5c89917335f67",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "abb7a8d9-src-related-4",
+            "title": "クボタ 公式資料 KT285-PCポイントシート",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=e58cc5ca94270acaceed13bc82dfedf7",
+            "date": "2026-09-17"
+          },
+          {
+            "id": "abb7a8d9-src-related-5",
+            "title": "クボタ 公式資料 KT285-PCメンテナンスシート",
+            "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=b9d487a30398d42ecff55c228ed5652b",
+            "date": "2026-09-17"
+          }
+        ],
+        "attachments": [],
+        "origin": null,
+        "subject": "normal",
+        "machineRef": null,
+        "repair": null
+      }
+    }
+  ]
+}

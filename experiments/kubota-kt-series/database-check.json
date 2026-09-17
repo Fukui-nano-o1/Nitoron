@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-09-17",
+  "projectId": "ycvbjzlqrxnwalhhgzat",
+  "operation": "11 insertions and 4 existing KT card updates; atomic guarded transaction",
+  "before": {
+    "duplicateNewModels": [],
+    "existingNewNoteIds": 0,
+    "existingNewPublicationIds": 0,
+    "notes": 155,
+    "oldExactMatches": 4,
+    "owners": [
+      "de300000-0000-4000-8000-000000000012"
+    ],
+    "publications": 154,
+    "tractorCards": 62,
+    "untouchedNotesHash": "beaf9817d32a35150517abe1a5416568",
+    "untouchedPublicationsHash": "03032ce4f9ce27649d431297ca546fbc"
+  },
+  "after": {
+    "notes": 166,
+    "photoCards": 15,
+    "publications": 165,
+    "tractorCards": 73,
+    "modelOccurrences": {
+      "KT20": 1,
+      "KT22": 1,
+      "KT24": 1,
+      "KT27": 1,
+      "KT30": 1,
+      "KT210": 1,
+      "KT215": 1,
+      "KT230": 1,
+      "KT235": 1,
+      "KT250": 1,
+      "KT255": 1,
+      "KT280": 1,
+      "KT285": 1,
+      "KT300": 1,
+      "KT305": 1
+    },
+    "exactSavedRecords": 15,
+    "untouchedNotesHash": "beaf9817d32a35150517abe1a5416568",
+    "untouchedPublicationsHash": "03032ce4f9ce27649d431297ca546fbc"
+  },
+  "basicModels": 15,
+  "additions": 11,
+  "existingCardsUpdated": 4,
+  "existingOwnershipCreationDatesPublicationDatesAndPublicFlagsPreserved": true,
+  "unrelatedRowsUnchanged": true,
+  "duplicateModels": 0,
+  "catalogTestsPassed": 9,
+  "buildExitCode": 0
+}

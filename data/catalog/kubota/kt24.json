@@ -3,18 +3,18 @@
   "coverage": "historical-overview",
   "maker": "クボタ",
   "series": "KT24",
-  "productName": "旧型モデル",
+  "productName": "KTシリーズ",
   "category": "トラクタ",
   "models": [
     "KT24"
   ],
-  "checkedAt": "2026-09-16",
-  "summary": "24馬力の旧型トラクタ。公式販売年度検索のKT24は2002年〜2005年の販売。KT24の取扱説明書を参照できます。",
+  "checkedAt": "2026-09-17",
+  "summary": "24馬力のKTシリーズ旧型トラクタ。公式販売年度検索のKT24は2002年〜2005年の販売。KT24の取扱説明書と仕様別の公式資料を参照できます。",
   "sources": {
     "manualIndex": {
       "url": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT24&searchType=3",
-      "checkedAt": "2026-09-16",
-      "sha256": "260a15f47150d239b5495bb2fe6c3349dcefba8b098c369f458151a6c09d09e1",
+      "checkedAt": "2026-09-17",
+      "sha256": "f34daf7d44ffabdd7a6ad91aefe6882ef40429022d3f87968c391dfb1c7cddea",
       "result": {
         "model": "KT24",
         "category": "トラクタ",
@@ -23,20 +23,89 @@
     },
     "salesIndex": {
       "url": "https://agriculture.kubota.co.jp/after-support/psyss/list.html?searchType=2&category=1&q=KT24",
-      "checkedAt": "2026-09-16",
-      "sha256": "dd3ef5b9aff231d51b931704444fa555b0c83d3d819afb4b33d90cd43cb5a9c6",
+      "checkedAt": "2026-09-17",
+      "sha256": "b0bc982369fdad2bd5cc29343cd56535e0f3815e26b428b2bc01e49b97e1b62c",
       "result": {
         "model": "KT24",
         "startYear": 2002,
         "endYear": 2005
-      }
+      },
+      "variants": [
+        {
+          "model": "KT24-PC",
+          "startYear": 2002,
+          "endYear": 2005
+        }
+      ]
     },
     "manuals": [
       {
         "title": "KT24",
         "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=4f16c818875d9fcb6867c7bdc89be7eb",
-        "checkedAt": "2026-09-16",
-        "sha256": "630344d381657d4d3ca00509b0c04f186c3c3cfba26e5dca5a035ed1d8f92862"
+        "checkedAt": "2026-09-17",
+        "sha256": "488809068a80a0f6677ed66ebd5638b27457bd8f418daad601f92b462ea39503"
+      }
+    ],
+    "relatedManuals": [
+      {
+        "title": "KT24-FHN",
+        "kind": "variant",
+        "horsepower": "27馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=86c51678350f656dcc7f490a43946ee5",
+        "checkedAt": "2026-09-17",
+        "sha256": "fdb6fc0e9a2ec5a091e10166f4c4c06b9cb83c6a92080d4b8a0c3949b07adfc5",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+        "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4"
+      },
+      {
+        "title": "KT24-FHT",
+        "kind": "variant",
+        "horsepower": "27馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=806d926414ce19d907700e23177ab4ff",
+        "checkedAt": "2026-09-17",
+        "sha256": "1184510c05d81d403dfa46cfcd421262b4d33dc62514aaf4c3582b6ee64334f2",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+        "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4"
+      },
+      {
+        "title": "KT24-HN",
+        "kind": "variant",
+        "horsepower": "27馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=0f3c5d0c3666eec8cd311bec6d878915",
+        "checkedAt": "2026-09-17",
+        "sha256": "890f7250f64fd1fcc3d10fe12b148a98090c68f75131c4dbc62180d2f3bf11f5",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+        "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4"
+      },
+      {
+        "title": "KT24-HT",
+        "kind": "variant",
+        "horsepower": "27馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=bf5cd8b2509011b9502a72296edc14a0",
+        "checkedAt": "2026-09-17",
+        "sha256": "7818d2efb03cf35ae252eb5f9bb8ba3658dc50d622a41706642125e1f0afee35",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+        "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4"
+      },
+      {
+        "title": "KT24Q",
+        "kind": "variant",
+        "horsepower": "24馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=a26398dca6f47b49876cbaffbc9954f9",
+        "checkedAt": "2026-09-17",
+        "sha256": "b03c16db9fac691dbb1e0023a7fe7730000af33a32160fb28ae5017756540530",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?q=KT&searchType=2",
+        "indexSha256": "edbb42ac7df7ad8e0ed0919839d95df7c6ca13e29c8820a168612f351419a2c4"
+      },
+      {
+        "title": "KT24-PC",
+        "kind": "variant",
+        "horsepower": "24馬力",
+        "url": "https://agriculture.kubota.co.jp/after-support/manual/notice.html?hash=d91d1b4d82419de8a614abce9cc0e6d4",
+        "checkedAt": "2026-09-17",
+        "sha256": "08f18697a11423d138ffb8a28dc02bae7c6a05dedd07d1f8129a7353fb0da148",
+        "indexUrl": "https://agriculture.kubota.co.jp/after-support/manual/list.html?p=25&q=KT&searchType=2&category=&subCategory=",
+        "indexSha256": "f40dae6eb890a829bff45887cbc8fd29a33f14a8ee67273d3769fe0053eb1cea"
       }
     ]
   },
@@ -46,6 +115,7 @@
     "manualNotice": "HTTP 200",
     "manualBody": "not-reviewed",
     "photo": "matched-to-used-machine-listing",
+    "relatedManuals": "all-KT-prefix-pages-and-notice-links-confirmed",
     "repairGuide": "not-added",
     "threeD": "not-added"
   },
