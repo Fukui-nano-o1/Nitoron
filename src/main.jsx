@@ -5,6 +5,8 @@ const RepairWorkspace = lazy(() => import('./RepairWorkspace.jsx').then(module =
 const RepairDetail = lazy(() => import('./RepairWorkspace.jsx').then(module => ({ default: module.RepairDetail })))
 import { isRepairRecord, newFreeRepairRecord } from './repair-workspace.mjs'
 const Editor = lazy(() => import('./Editor.jsx'))
+const ListingFlow = lazy(() => import('./ListingFlow.jsx'))
+import { LISTING_STEPS, listingStepKey, resolveListingStep } from './listing-flow.js'
 const Compare = lazy(() => import('./Compare.jsx'))
 const Discussion = lazy(() => import('./Discussion.jsx'))
 const Account = lazy(() => import('./Account.jsx'))
@@ -36,6 +38,7 @@ import './design.css'
 import './browse-experience.css'
 import './header-experience.css'
 import './detail-experience.css'
+import './listing-flow.css'
 import { isDiscoveryHome } from './discovery-domain.js'
 
 const routeFromLocation = () => {
@@ -46,7 +49,7 @@ const routeFromLocation = () => {
   const [path, params = ''] = location.hash.replace(/^#\/?/, '').split('?')
   const [view, id, section, extra] = path.split('/')
   // 経営発表に一点集中する間、挑戦・学習ノートの専用ページは閉じる。extra は「#/public/:id/manual/:pdf」の頁番号。
-  return { view: ['mine', 'discover', 'saved', 'list', 'record', 'public', 'compare', 'account', 'user', 'talks', 'repairs', 'repair'].includes(view) ? view : 'discover', id, section, extra, params }
+  return { view: ['mine', 'discover', 'saved', 'list', 'record', 'public', 'compare', 'account', 'user', 'talks', 'repairs', 'repair', 'listing'].includes(view) ? view : 'discover', id, section, extra, params }
 }
 const keyOf = r => `${r.publication ? 'public' : 'mine'}:${r.id}`
 // スクロール位置を覚えておく画面。詳細（public・record）は常に先頭から表示する。
@@ -126,7 +129,8 @@ function App({ verifiedSession }) {
   // ハートの統一動作：未ログインは案内、未保存は即保存（＋リストに追加の案内）、保存済みは保存先シート。
   const heart = record => { if (!session) return openAccount(); if (bookmarks.ids.includes(record.id)) setSheetRecord(record); else bookmarks.toggle(record) }
   const follows = useFollows(session, setToast, openAccount)
-  const [publishing, setPublishing] = useState(false), [publishResult, setPublishResult] = useState(null)
+  const publishLock = useRef(false)
+  const [publishing, setPublishing] = useState(false)
   const [ownPublication, setOwnPublication] = useState({ loading: false, error: '', row: null })
 
   const scrollStore = useRef({}), pendingScroll = useRef(null), navigated = useRef(false)
@@ -167,6 +171,7 @@ function App({ verifiedSession }) {
   // 記録の段階：URLの段階指定を優先し、なければ最後に開いた段階（端末保存）へ。段階を開くたびに位置を記録する。
   useEffect(() => {
     if (route.view !== 'record' || !route.id || !ready) return
+    if (route.section === 'review') { history.replaceState(history.state, '', `#/listing/${route.id}/review`); setRoute(routeFromLocation()); return }
     const key = stepStorageKey(session?.user.id, route.id)
     if (STEP_KEYS.includes(route.section)) { try { localStorage.setItem(key, route.section) } catch { /* 位置は任意 */ } return }
     let last = null
@@ -175,9 +180,18 @@ function App({ verifiedSession }) {
     const step = STEP_KEYS.includes(last) ? last : current && current.title.trim() ? 'content' : 'basics'
     history.replaceState(history.state, '', `#/record/${route.id}/${step}`); setRoute(routeFromLocation())
   }, [route.view, route.id, route.section, ready, session?.user.id])
-  useEffect(() => { setPublishResult(null) }, [route.view, route.id])
+  // Listing progress belongs to the account and record. The URL wins over a saved position.
+  useEffect(() => {
+    if (route.view !== 'listing' || !route.id || !ready) return
+    const key = listingStepKey(session?.user.id, route.id)
+    let saved = null
+    try { saved = localStorage.getItem(key) } catch { /* Progress is optional. */ }
+    const step = resolveListingStep(route.section, saved)
+    if (LISTING_STEPS.includes(route.section)) { try { localStorage.setItem(key, step) } catch { /* Draft storage reports its own failures. */ } }
+    else { history.replaceState(history.state, '', `#/listing/${route.id}/${step}`); setRoute(routeFromLocation()) }
+  }, [route.view, route.id, route.section, ready, session?.user.id])
   // 公開版（本人の snapshot）を取得し、「公開版と異なる変更」の比較に使う。取得失敗は「変更なし」と見せない。
-  const publishedNow = ['record', 'repair'].includes(route.view) && owned.some(p => p.id === route.id && p.is_public)
+  const publishedNow = ['record', 'repair', 'listing'].includes(route.view) && owned.some(p => p.id === route.id && p.is_public)
   useEffect(() => {
     if (!publishedNow || !session) { setOwnPublication({ loading: false, error: '', row: null }); return }
     let cancelled = false
@@ -262,8 +276,8 @@ function App({ verifiedSession }) {
   // 新しい修理記録シート（#/repairs/new）を閉じるときは履歴を増やさず #/repairs に置き換える。
   const closeRepairSheet = () => { history.replaceState(history.state, '', '#/repairs'); setRoute(routeFromLocation()) }
   // 一度も入力しなかった下書きは、記録ページを離れた時点で破棄する。
-  useEffect(() => { setDraft(d => d && (route.view !== 'record' || route.id !== d.id) ? null : d) }, [route.view, route.id])
-  useEffect(() => { document.title = `${['record', 'repair'].includes(route.view) && editorRecord ? editorRecord.title || '無題' : route.view === 'public' && publicRecord ? publicRecord.title : route.view === 'repairs' ? '修理記録' : '機械の修理記録'} | Nitoron` }, [route.view, editorRecord?.title, publicRecord?.title])
+  useEffect(() => { setDraft(d => d && (!['record', 'listing'].includes(route.view) || route.id !== d.id) ? null : d) }, [route.view, route.id])
+  useEffect(() => { document.title = `${['record', 'repair', 'listing'].includes(route.view) && editorRecord ? editorRecord.title || '無題' : route.view === 'public' && publicRecord ? publicRecord.title : route.view === 'repairs' ? '修理記録' : '機械の修理記録'} | Nitoron` }, [route.view, editorRecord?.title, publicRecord?.title])
 
   const rename = value => {
     setName(value); try { localStorage.setItem('nitoron:name', value) } catch { /* Server save remains available. */ }
@@ -275,7 +289,7 @@ function App({ verifiedSession }) {
     // 白紙の新規作成は最初の入力まで保存しない。
     const record = newRecord(kind, name)
     setDraft(record)
-    setDialog(null); location.hash = `/record/${record.id}`
+    setDialog(null); location.hash = record.meta ? `/listing/${record.id}/intro` : `/record/${record.id}`
   }
   const cleanupBlankRecords = async () => {
     const blanks = records.filter(r => isBlankRecord(r) && !owned.some(p => p.id === r.id && p.is_public))
@@ -300,22 +314,25 @@ function App({ verifiedSession }) {
     } catch (e) { if (e.name !== 'AbortError') { setActionError(e.message || 'リンクを共有できませんでした。'); setDialog({ type: 'share', record }) } }
   }
   // 公開：確認画面で表示した snapshot をそのまま送る。保存待ちの間に編集が入ったら、その内容は公開せず中止する。
-  const publishNow = async () => {
+  const publishNow = async expectedKey => {
     const record = editorRecord
-    if (!record || publishing) return
+    if (!record || publishLock.current) return { ok: false, message: '掲載処理中です。' }
     const shown = publicSnapshot(record), shownKey = publicationKey(shown)
-    setPublishing(true); setPublishResult(null)
+    if (typeof expectedKey === 'string' && expectedKey !== shownKey) return { ok: false, message: '内容が変更されました。もう一度確認してください。' }
+    publishLock.current = true
+    setPublishing(true)
     try {
       if (!await flush()) throw new Error('下書きのクラウド保存が完了していません。保存状態の「再試行」を押してから、もう一度公開してください。')
       const latest = recordsRef.current.find(r => r.id === record.id)
-      if (!latest || publicationKey(latest) !== shownKey) throw new Error('保存中に編集が入ったため、公開を中止しました。確認画面の内容を見直してから、もう一度「公開する」を押してください。')
+      if (!latest || publicationKey(latest) !== shownKey) throw new Error('保存中に編集が入ったため、公開を中止しました。確認画面の内容を見直してから、もう一度「掲載する」を押してください。')
       await publishRecord(shown, session)
-      setRefresh(r => r + 1); setPublishResult({ ok: true }); setToast('公開しました。リンクから誰でも読めます。')
-    } catch (e) { setPublishResult({ ok: false, message: e.message }) } finally { setPublishing(false) }
+      const result = { ok: true, id: record.id, key: shownKey }
+      setRefresh(r => r + 1); return result
+    } catch (e) { const result = { ok: false, id: record.id, message: e.message }; return result } finally { publishLock.current = false; setPublishing(false) }
   }
   const stopPublication = async record => {
     if (!window.confirm('公開を停止しますか？ 共有リンクからも読めなくなります。指摘は保管されます。')) return
-    try { await unpublishRecord(record.id, session.user.id); setRefresh(r => r + 1); setPublishResult(null); setToast('公開を停止しました。下書きと指摘は残っています。') } catch (e) { setToast(e.message) }
+    try { await unpublishRecord(record.id, session.user.id); setRefresh(r => r + 1); setToast('公開を停止しました。下書きと指摘は残っています。') } catch (e) { setToast(e.message) }
   }
   const deleteRecord = async record => {
     // Re-read publication state before deleting; don't rely on a stale badge.
@@ -348,19 +365,20 @@ function App({ verifiedSession }) {
   const selectedRecords = selected.map(r => r.publication ? r : records.find(x => x.id === r.id)).filter(Boolean)
   // スマホの公開詳細は写真を最上部に置くため、サイトロゴ行をCSSで隠す（他の画面・PC・戻る動作は変えない）。
   const headerSearch = SEARCH_ENABLED && route.view === 'discover' ? { query, onQuery: setQuery, region, onRegion: setRegion, searchRef, onSubmit: () => { const el = document.getElementById('catalog-results') || document.getElementById('content'); el?.scrollIntoView({ block: 'start', behavior: 'smooth' }); el?.focus({ preventScroll: true }) } } : null
-  return <div className={`workspace${route.view === 'public' ? ' public-view' : ''}${chrome.hidden ? ' chrome-hidden' : ''}`}>
+  return <div className={`workspace${route.view === 'listing' ? ' listing-view' : ''}${route.view === 'public' ? ' public-view' : ''}${chrome.hidden ? ' chrome-hidden' : ''}`}>
     <a className="skip-link" href="#content" onClick={e => { e.preventDefault(); document.getElementById('content')?.focus() }}>本文へ移動</a>
-    <SiteHeader view={navView} name={name} notify={activity.total > 0} search={headerSearch} chrome={chrome} open={searchOpen} onOpen={setSearchOpen} />
+    {route.view !== 'listing' && <SiteHeader view={navView} name={name} notify={activity.total > 0} search={headerSearch} chrome={chrome} open={searchOpen} onOpen={setSearchOpen} />}
     <main id="content" tabIndex={-1} className="main-content">
-      {error && (repairView ? <div className="repair-global-error" role="status"><strong>{sync.cacheFailed ? '未保存' : 'この端末に保存'}</strong><details><summary>保存状態</summary><p>{error}</p><button className="text-action" onClick={retry}>再試行</button></details></div> : <div className="workspace-error print-hidden"><ErrorNotice retry={retry}>{error}</ErrorNotice></div>)}
+      {error && route.view !== 'listing' && (repairView ? <div className="repair-global-error" role="status"><strong>{sync.cacheFailed ? '未保存' : 'この端末に保存'}</strong><details><summary>保存状態</summary><p>{error}</p><button className="text-action" onClick={retry}>再試行</button></details></div> : <div className="workspace-error print-hidden"><ErrorNotice retry={retry}>{error}</ErrorNotice></div>)}
       {!error && needsLogin && ['mine', 'record', 'repairs', 'repair'].includes(route.view) && <div className="workspace-error print-hidden"><div className="notice" role="status"><span>記録はこの端末に保存しています。登録・ログインするとクラウドに保存し、公開や指摘ができます。</span> <button onClick={() => setDialog({ type: 'account' })}>登録・ログイン</button></div></div>}
-      {route.view === 'repairs' ? <RepairWorkspace records={records} ready={ready} onCreate={openRepair} sheetOpen={route.id === 'new'} initialQuery={new URLSearchParams(route.params).get('q') || ''} onSheetClose={closeRepairSheet} />
-      : (route.view === 'repair' || route.view === 'record' && isRepairRecord(editorRecord)) ? !ready ? <p className="loading" role="status">修理記録を読み込み中</p> : isRepairRecord(editorRecord) ? <RepairDetail key={editorRecord.id} record={editorRecord} onSave={record => put(record, session?.user.id || null)} save={repairSave} onShare={owned.some(p => p.id === editorRecord.id && p.is_public) ? () => share(editorRecord) : undefined} management={{ known: !session || ownedReady, published: owned.some(p => p.id === editorRecord.id && p.is_public), publication: ownPublication, publishing, publishResult, session, onRetry: () => setRefresh(r => r + 1), onPublish: publishNow, onUnpublish: () => stopPublication(editorRecord), onDelete: () => deleteRecord(editorRecord), onAccount: openAccount }} /> : <Empty title="修理記録が見つかりません" action={<a className="secondary" href="#/repairs">修理記録へ</a>} />
-      : route.view === 'record' ? ready ? editorRecord ? <Editor key={editorRecord.id} record={editorRecord} step={STEP_KEYS.includes(route.section) ? route.section : 'basics'} onStep={step => { location.hash = `/record/${editorRecord.id}/${step}` }} discussion={owned.some(p => p.id === editorRecord.id) && <Discussion record={{ ...editorRecord, publication: { owner: session?.user.id, isPublic: owned.find(p => p.id === editorRecord.id)?.is_public } }} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} onSeen={until => activity.markSeen(editorRecord.id, until)} />} session={session} flush={flush}
+      {route.view === 'listing' ? !ready ? <p className="loading" role="status">下書きを読み込み中…</p> : editorRecord?.meta ? <ListingFlow key={editorRecord.id} record={editorRecord} step={resolveListingStep(route.section)} onStep={step => { location.hash = `/listing/${editorRecord.id}/${step}` }} onChange={record => put(record, session?.user.id || null)} persisted={records.some(r => r.id === editorRecord.id)} session={session} flush={flush} save={{ status, error, retry, sync, session }} known={ownedReady} published={owned.some(p => p.id === editorRecord.id && p.is_public)} publication={{ ...ownPublication, retry: () => setRefresh(r => r + 1) }} publishing={publishing} onPublish={publishNow} onAccount={openAccount} /> : <Empty title="下書きが見つかりません" action={<a className="secondary" href="#/mine">自分の実践へ</a>} />
+      : route.view === 'repairs' ? <RepairWorkspace records={records} ready={ready} onCreate={openRepair} sheetOpen={route.id === 'new'} initialQuery={new URLSearchParams(route.params).get('q') || ''} onSheetClose={closeRepairSheet} />
+      : (route.view === 'repair' || route.view === 'record' && isRepairRecord(editorRecord)) ? !ready ? <p className="loading" role="status">修理記録を読み込み中</p> : isRepairRecord(editorRecord) ? <RepairDetail key={editorRecord.id} record={editorRecord} onSave={record => put(record, session?.user.id || null)} save={repairSave} onShare={owned.some(p => p.id === editorRecord.id && p.is_public) ? () => share(editorRecord) : undefined} management={{ known: !session || ownedReady, published: owned.some(p => p.id === editorRecord.id && p.is_public), publication: ownPublication, publishing, session, onRetry: () => setRefresh(r => r + 1), onPublish: publishNow, onUnpublish: () => stopPublication(editorRecord), onDelete: () => deleteRecord(editorRecord), onAccount: openAccount }} /> : <Empty title="修理記録が見つかりません" action={<a className="secondary" href="#/repairs">修理記録へ</a>} />
+      : route.view === 'record' ? ready ? editorRecord ? <Editor key={editorRecord.id} record={editorRecord} step={STEP_KEYS.includes(route.section) ? route.section : 'basics'} onStep={step => { location.hash = step === 'review' ? `/listing/${editorRecord.id}/review` : `/record/${editorRecord.id}/${step}` }} discussion={owned.some(p => p.id === editorRecord.id) && <Discussion record={{ ...editorRecord, publication: { owner: session?.user.id, isPublic: owned.find(p => p.id === editorRecord.id)?.is_public } }} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} onSeen={until => activity.markSeen(editorRecord.id, until)} />} session={session} flush={flush}
          
           save={{ status: draft && route.id === draft.id && !records.some(r => r.id === draft.id) ? '未保存の下書き · 書き始めると自動保存します' : status, error, retry, sync, session }}
           onChange={record => put(record, session?.user.id || null)} published={owned.some(p => p.id === editorRecord.id && p.is_public)} publication={{ ...ownPublication, retry: () => setRefresh(r => r + 1) }}
-          onPublish={publishNow} publishing={publishing} publishResult={publishResult} onDelete={() => deleteRecord(editorRecord)} onUnpublish={() => stopPublication(editorRecord)} onShare={() => share(editorRecord)} onAccount={openAccount} /> : <Empty title="この記録は見つかりません" action={<a className="secondary" href="#/mine">自分の実践へ</a>}>保存したアカウントでログインしているか確認してください。</Empty> : <p className="loading" role="status">記録を読み込み中…</p>
+          onDelete={() => deleteRecord(editorRecord)} onUnpublish={() => stopPublication(editorRecord)} onShare={() => share(editorRecord)} onAccount={openAccount} /> : <Empty title="この記録は見つかりません" action={<a className="secondary" href="#/mine">自分の実践へ</a>}>保存したアカウントでログインしているか確認してください。</Empty> : <p className="loading" role="status">記録を読み込み中…</p>
       : route.view === 'public' ? recordError ? <div className="catalog"><ErrorNotice retry={() => setRefresh(r => r + 1)}>{recordError}</ErrorNotice><a href="#/discover">探すへ</a></div> : publicRecord ? route.section === 'manual' ? <ManualPage key={`${publicRecord.id}-${route.extra}`} record={publicRecord} pdf={route.extra} /> : <PublicRecord record={publicRecord} focusSection={new URLSearchParams(route.params).get('sec') || ''} onBack={backToList} selected={selected.some(r => keyOf(r) === keyOf(publicRecord))} onSelect={() => select(publicRecord)} saved={bookmarks.ids.includes(publicRecord.id)} onSave={() => heart(publicRecord)} onShare={() => share(publicRecord)} ready={ready}
           session={session} onAccount={openAccount} notify={setToast} editHref={session?.user.id && session.user.id === publicRecord.publication.owner ? `#/record/${publicRecord.id}/content` : null}
           canFollow={!!publicRecord.publication.owner && session?.user.id !== publicRecord.publication.owner} following={follows.ids.includes(publicRecord.publication.owner)} onFollow={() => follows.toggle(publicRecord.publication.owner, publicRecord.meta?.author || '発表者')} discussion={<Discussion key={publicRecord.id} record={publicRecord} session={session} name={name} onAccount={() => setDialog({ type: 'account' })} onSeen={until => activity.markSeen(publicRecord.id, until)} />} /> : <p className="loading" role="status">記録を読み込み中…</p>
@@ -383,8 +401,8 @@ function App({ verifiedSession }) {
         {publicMode && publicState.count > PAGE_SIZE && <div className="pagination"><button className="secondary" disabled={publicPage === 0 || publicState.loading} onClick={() => setPublicPage(p => p - 1)}>前へ</button><span>{publicPage + 1} / {Math.ceil(publicState.count / PAGE_SIZE)}</span><button className="secondary" disabled={(publicPage + 1) * PAGE_SIZE >= publicState.count || publicState.loading} onClick={() => setPublicPage(p => p + 1)}>次へ</button></div>}
       </Catalog>}
     </main>
-    {!!selected.length && route.view !== 'compare' && <div className="compare-tray print-hidden"><span>{selected.length}件を選択中</span>{selected.length >= 2 ? <a href="#/compare">並べて比較する</a> : <em className="tray-hint">あと1件選ぶと比較できます</em>}<button onClick={() => setSelected([])}>解除</button></div>}
-    <nav className={`mobile-nav print-hidden${chrome.hidden ? ' is-hidden' : ''}`} aria-label="モバイルナビゲーション">{NAV.map(([id, label, icon]) => <a key={id} href={`#/${id}`} aria-current={currentTab(id, navView) ? 'page' : undefined} aria-label={id === 'talks' && activity.total > 0 ? '対話（新着の指摘あり）' : undefined}><span className="nav-icon">{id === 'talks' && activity.total > 0 && <i className="notify-dot" aria-hidden="true" />}<Icon name={icon} size={23} /></span><span>{label}</span></a>)}</nav>
+    {!!selected.length && !['compare', 'listing'].includes(route.view) && <div className="compare-tray print-hidden"><span>{selected.length}件を選択中</span>{selected.length >= 2 ? <a href="#/compare">並べて比較する</a> : <em className="tray-hint">あと1件選ぶと比較できます</em>}<button onClick={() => setSelected([])}>解除</button></div>}
+    {route.view !== 'listing' && <nav className={`mobile-nav print-hidden${chrome.hidden ? ' is-hidden' : ''}`} aria-label="モバイルナビゲーション">{NAV.map(([id, label, icon]) => <a key={id} href={`#/${id}`} aria-current={currentTab(id, navView) ? 'page' : undefined} aria-label={id === 'talks' && activity.total > 0 ? '対話（新着の指摘あり）' : undefined}><span className="nav-icon">{id === 'talks' && activity.total > 0 && <i className="notify-dot" aria-hidden="true" />}<Icon name={icon} size={23} /></span><span>{label}</span></a>)}</nav>}
     {toast && <div className="toast print-hidden" role="status">{typeof toast === 'string' ? toast : <>{toast.text}<button className="toast-action" onClick={() => { const run = toast.action.run; setToast(''); run() }}>{toast.action.label}</button></>}</div>}
     {sheetRecord && session && <SaveSheet key={sheetRecord.id} record={sheetRecord} lists={lists} onClose={() => setSheetRecord(null)} onUnsave={async () => { await bookmarks.toggle(sheetRecord); setSheetRecord(null) }} />}
     {dialog?.type === 'account' && <Account session={session} flush={flush} onClose={() => setDialog(null)} />}

@@ -1,20 +1,19 @@
-import React, { useMemo, useState } from 'react'
+import React, { useState } from 'react'
 import BlockEditor from './BlockEditor.jsx'
 import Cover from './Cover.jsx'
 import Attachments from './Attachments.jsx'
-import PublicRecord from './PublicRecord.jsx'
 import Icon from './Icon.jsx'
-import { KINDS, PHASES, VERDICTS, SECTIONS, METRICS, emptyMeta, today, uid, exportMarkdown, publicSnapshot, publicationProblems, publicationAdvice, publishedDiffers, privateOriginLeaks } from './domain.js'
-import { Field, Dialog, ErrorNotice, download } from './ui.jsx'
+import { KINDS, PHASES, VERDICTS, SECTIONS, METRICS, emptyMeta, today, uid, exportMarkdown } from './domain.js'
+import { Field, Dialog, download } from './ui.jsx'
 
-export const STEPS = [['basics', '基本情報'], ['content', '内容・資料'], ['review', '確認・公開']]
+export const STEPS = [['basics', '基本情報'], ['content', '内容・資料'], ['review', '掲載の準備']]
 // 保存状態チップ。端末保存成功・クラウド同期失敗＝「端末に保存・同期待ち」、端末保存にも失敗＝「保存できていません」。再試行はどの段階からも押せる。
 export function SaveChip({ save }) {
   const trouble = save.sync.cacheFailed || (save.session && save.sync.pending > 0) || !!save.error
   return <span className={`save-chip${trouble ? ' trouble' : ''}`} role="status"><span>{save.status}</span>{trouble && <button className="quiet" onClick={save.retry}>再試行</button>}</span>
 }
 // 記録の編集。発表は「基本情報 → 内容・資料 → 確認・公開」の3段階。段階を移動しても自動保存は続く。
-export default function Editor({ record, step, onStep, onChange, session, flush, save, published, publication, onPublish, publishing, publishResult, onUnpublish, onShare, onDelete, onAccount, discussion }) {
+export default function Editor({ record, step, onStep, onChange, session, flush, save, published, onUnpublish, onShare, onDelete, discussion }) {
   const [confirmDelete, setConfirmDelete] = useState(false), [uploading, setUploading] = useState(false)
   const m = record.meta
   const patch = update => onChange({ ...record, ...update })
@@ -36,25 +35,6 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
     <div className="actions"><button className="secondary" onClick={() => meta(emptyMeta())}>このメモを経営発表にする</button><button className="quiet" onClick={() => setConfirmDelete(true)}>記録を削除</button></div>
   </article></div>{deleteDialog}</>
 
-  const problems = publicationProblems(record), advice = publicationAdvice(record)
-  const verified = !!session?.user && !session.user.is_anonymous && !!session.user.email_confirmed_at
-  // 公開を止める条件：入力検査・認証・クラウド保存完了。推奨項目は別に示す。
-  // 旧仕様で自動転記された非公開の参照元タイトルは、自動生成値と完全一致するときだけ本人操作で置き換えられる。
-  // 本人が書き換えた文章は置換せず、確認画面で見直してもらう。
-  const leaks = privateOriginLeaks(record)
-  const blockers = [
-    ...problems.map(text => {
-      const leak = leaks.find(l => text.startsWith(l.field === 'title' ? 'タイトル' : '要約') && text.includes('非公開の参照元'))
-      if (!leak) return { text }
-      return leak.auto ? { text: `${text}（自動生成のままです）`, label: `「${leak.replacement}」に置き換える`, action: () => leak.field === 'title' ? patch({ title: leak.replacement }) : meta({ summary: leak.replacement }) }
-        : { text: `${text}（本人が編集した文章のため自動では置き換えません。${leak.field === 'title' ? '基本情報' : '内容・資料'}で見直してください）`, label: leak.field === 'title' ? '基本情報へ' : '内容・資料へ', action: () => onStep(leak.field === 'title' ? 'basics' : 'content') }
-    }),
-    ...(!session ? [{ text: 'ログインしていません。公開にはメールアドレスを確認したアカウントが必要です。', action: onAccount, label: '登録・ログイン' }]
-      : !verified ? [{ text: 'メールアドレスの確認が済んでいません。確認してから公開できます。', action: onAccount, label: 'アカウントを確認' }] : []),
-    ...(save.sync.cacheFailed ? [{ text: '端末に保存できていません。空き容量を確認して再試行してください。', action: save.retry, label: '再試行' }]
-      : session && save.sync.pending > 0 ? [{ text: '下書きのクラウド保存が完了していません（同期待ち）。再試行して保存を完了してから公開できます。', action: save.retry, label: '再試行' }] : []),
-  ]
-  const ready = blockers.length === 0 && !uploading
   // 参照元（旧仕様で作られた派生記録に残る）。公開中なら公開ページへ。第三者向けの公開画面には非公開の参照先を出さない（RecordBody側）。
   const originLine = m.origin && <p className="source-line">参考にした記録：{m.origin.public ? <a href={`#/public/${m.origin.id}`}>{m.origin.title || '記録'}</a> : m.origin.title || '記録'}{!m.origin.public && <small>（非公開の自分の記録）</small>}</p>
   const facts = m.observations.filter(o => o.fact.trim()).length
@@ -73,12 +53,10 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
     {m.inputMode === 'sections' ? <><h3 className="reflection-sub">学びと次の一手</h3><p className="reflection-text">{excerpt(m.learning)}</p><button className="text-action" onClick={() => scrollTo('section-learning')}>06 学びと次の一手で編集</button></>
       : <Field label="学びと次の一手" help="次に変えること・続けること・やめること。次の挑戦の仮説に引き継げます。"><textarea rows={3} maxLength={20000} value={m.learning} onChange={e => meta({ learning: e.target.value })} placeholder="次に変えること・続けること・やめること" /></Field>}
   </section>
-  const preview = useMemo(() => ({ ...publicSnapshot(record), publication: { id: record.id, owner: session?.user.id || null, publishedAt: publication?.row?.published_at, updatedAt: publication?.row?.updated_at || new Date().toISOString().slice(0, 10), isPublic: published } }), [record, session?.user.id, publication?.row?.updated_at, published])
-  const differs = publication?.row?.snapshot ? publishedDiffers(record, publication.row.snapshot) : null
   const next = () => onStep(STEPS[index + 1][0]), prev = () => onStep(STEPS[index - 1][0])
   return <>
     {toolbar}
-    <nav className="stepper print-hidden" aria-label="入力の段階">{STEPS.map(([key, label], i) => <button key={key} aria-current={key === step ? 'step' : undefined} onClick={() => onStep(key)}><span className="step-number">{i + 1}</span><span>{label}</span></button>)}</nav>
+    <nav className="stepper print-hidden" aria-label="入力の段階">{STEPS.map(([key, label], i) => <button key={key} disabled={uploading} aria-current={key === step ? 'step' : undefined} onClick={() => onStep(key)}><span className="step-number">{i + 1}</span><span>{label}</span></button>)}</nav>
     <div className="document-layout">
       <article className={`document step-${step}`}>
         {step === 'basics' && <>
@@ -136,29 +114,12 @@ export default function Editor({ record, step, onStep, onChange, session, flush,
             {m.inputMode === 'sections' && <><h3>補足メモ</h3><BlockEditor blocks={record.blocks} onChange={blocks => patch({ blocks })} /></>}
           </details>
         </>}
-        {step === 'review' && <>
-          <section className="review-panel">
-            <h2>{published ? '公開中' : '未公開'}</h2>
-            {published && publication && <p className="hint">{publication.loading ? '公開版を確認中…' : publication.error ? <><span className="diff-unknown">公開版を取得できませんでした。</span> <button className="quiet" onClick={publication.retry}>再試行</button></> : publication.row ? <>公開版の更新：{publication.row.updated_at.slice(0, 10)} · {differs ? <strong className="diff-yes">公開版と異なる変更があります。「公開版を更新」で反映します。</strong> : '公開版と同じ内容です。'}</> : '公開版が見つかりません。'}</p>}
-            {publishResult?.ok && <div className="notice success" role="status"><strong>公開しました。</strong>リンクから誰でも読めます。<div className="actions"><a className="secondary" href={`#/public/${record.id}`}>公開版を見る</a><button className="secondary" onClick={onShare}>リンクを共有</button></div></div>}
-            {publishResult && !publishResult.ok && <ErrorNotice>{publishResult.message}</ErrorNotice>}
-            {blockers.length ? <div className="readiness blockers"><h3>公開できない理由</h3><ul>{blockers.map((b, i) => <li key={i}>{b.text}{b.action && <button className="quiet" onClick={b.action}>{b.label}</button>}</li>)}</ul></div>
-              : <p className="readiness ok"><Icon name="check" size={16} />公開できます。{published ? '内容を確認して「公開版を更新」を押してください。' : '内容を確認して「公開する」を押してください。'}</p>}
-            {advice.length > 0 && <div className="readiness advice"><h3>推奨（公開は止めません）</h3><ul>{advice.map((a, i) => <li key={i}>{a}</li>)}</ul></div>}
-            <div className="actions review-actions">
-              <button className="primary" disabled={!ready || publishing} onClick={onPublish}>{publishing ? '公開しています…' : published ? '公開版を更新' : 'この内容で公開する'}</button>
-              {published && <><a className="secondary" href={`#/public/${record.id}`}>公開版を見る</a><button className="secondary" onClick={onShare}>リンクを共有</button><button className="text-action" onClick={onUnpublish}>公開を停止</button></>}
-            </div>
-            <p className="hint">公開すると、本文・名前・地域・数字・写真・添付資料・資料リンクがログインなしで誰でも読めます。個人情報や他人の未公開情報が含まれていないか確認してください。</p>
-          </section>
-          <div className="preview-frame"><div className="preview-label">プレビュー：公開したときの見え方（この内容がそのまま公開されます）</div><PublicRecord record={preview} preview /></div>
-          {discussion}
-          <div className="actions"><button className="quiet" onClick={() => setConfirmDelete(true)}>記録を削除</button></div>
-        </>}
+        {step === 'review' && <section className="review-panel"><h2>掲載の準備</h2><p>写真・説明・掲載内容を順に確認しましょう。</p><a className="primary" href={`#/listing/${record.id}/review`}>掲載フローへ進む</a></section>}
+        {step === 'content' && <details className="details extra-content"><summary>掲載・記録管理</summary><div className="actions"><a className="primary" href={`#/listing/${record.id}`}>掲載フローへ</a>{published && <><a className="secondary" href={`#/public/${record.id}`}>掲載版を見る</a><button className="text-action" onClick={onShare}>リンクを共有</button><button className="text-action" onClick={onUnpublish}>掲載を停止</button></>}<button className="quiet" onClick={() => setConfirmDelete(true)}>記録を削除</button></div>{discussion}</details>}
       </article>
     </div>
-    <div className="step-bar print-hidden">{index > 0 ? <button className="secondary" onClick={prev}><Icon name="left" size={14} />{STEPS[index - 1][1]}</button> : <span />}
-      {index < STEPS.length - 1 ? <button className="primary" onClick={next}>次へ：{STEPS[index + 1][1]}<Icon name="right" size={14} /></button> : <button className="primary" disabled={!ready || publishing} onClick={onPublish}>{publishing ? '公開しています…' : published ? '公開版を更新' : '公開する'}</button>}</div>
+    <div className="step-bar print-hidden">{index > 0 ? <button className="secondary" disabled={uploading} onClick={prev}><Icon name="left" size={14} />{STEPS[index - 1][1]}</button> : <span />}
+      {index < STEPS.length - 1 ? <button className="primary" disabled={uploading} onClick={next}>次へ：{STEPS[index + 1][1]}<Icon name="right" size={14} /></button> : <button className="primary" onClick={() => onStep('review')}>掲載へ進む</button>}</div>
     {deleteDialog}
   </>
 }

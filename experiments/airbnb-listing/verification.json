@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-18",
+  "checks": [
+    "New listing opens a focused three-phase introduction without global navigation",
+    "Selection cards, input fields, and focus advance with the step",
+    "Upload failure is retryable; two photos upload and cover selection persists",
+    "Empty titles stop the step; Back preserves entered data",
+    "390px layout fits; a complete draft does not publish without explicit confirmation",
+    "Preview renders the publication and Escape restores focus",
+    "Editing after review invalidates the confirmation for the earlier snapshot",
+    "Save and exit, reopen, and reload resume the same draft step",
+    "A failed cloud save keeps the form open with the input intact; retry recovers",
+    "Publication failure shows an error and never shows success",
+    "Explicit publish creates the expected snapshot once, then shows success",
+    "Legacy review links use the new flow; an update replaces the same publication",
+    "Repair records enter the same listing flow while retaining repair data",
+    "Direct listing URLs preserve the private access gate",
+    "No runtime page errors"
+  ],
+  "errors": [],
+  "scope": "Local Chromium at 1440x960 and 390x844. Isolated in-memory auth, notes, publications and file storage; deliberate save/upload/publish failures. No production writes.",
+  "build": "npm run build: passed",
+  "unit_tests": {
+    "passed": 48,
+    "failed": 0,
+    "command": "node --test tests/listing-flow.test.js tests/domain.test.js tests/sync.test.js tests/private-access.test.js tests/repair-entry.test.js tests/repair-workspace.test.js"
+  },
+  "reference": {
+    "url": "https://www.airbnb.jp/resources/hosting-homes/a/how-to-get-started-on-airbnb-3",
+    "published": "2026-04-22",
+    "checked": "2026-09-18",
+    "used": "Three stages: basic information, photos and descriptions, final review and publication. The authenticated Airbnb creation screens were not accessed."
+  }
+}
